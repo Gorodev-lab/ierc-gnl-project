@@ -1,0 +1,21 @@
+{
+  "fuente_shapefile": "/home/gorops/ierc-gnl-project/data/raw/fish_zones_pangas.geojson",
+  "proyectos_analizados": [
+    "Puerto_Libertad",
+    "Topolobampo",
+    "La_Paz"
+  ],
+  "fecha_calculo": "2026-07-27",
+  "metodologia": "Basado en Moreno-Baez et al. (2011, 2012) y Fish_Zones_PANGAS",
+  "crs_reproyectado": "EPSG:32612 (UTM zona 12N)",
+  "columnas": [
+    "proyecto_id",
+    "proyecto_nombre",
+    "latitud",
+    "longitud",
+    "densidad_esfuerzo_pesquero",
+    "proximidad_zona_pesquera_km",
+    "especies_criticas",
+    "riesgo_pesquero"
+  ]
+}

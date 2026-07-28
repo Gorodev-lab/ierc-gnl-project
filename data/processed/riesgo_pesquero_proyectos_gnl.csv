@@ -1,0 +1,6 @@
+proyecto_id,proyecto_nombre,latitud,longitud,estado,estatus,radio_busqueda_km,num_zonas_encontradas,zona_mas_cercana_km,densidad_esfuerzo_pesquero,proximidad_normalizada,especies_criticas_score,riesgo_pesquero,nivel_riesgo,nota
+NFE_Puerto_Libertad,New Fortress Energy - Puerto Libertad,29.9107,-112.6835,Sonora,propuesto,50.0,525,1.96,1.0,0.6755,1.0,90.27,Alto,Solo capas ZPesca
+Sempra_Ensenada,Sempra Energy - Ensenada LNG,31.8667,-116.6333,Baja California,operacional,75.0,0,,0.0,0.0,0.0,0.0,Sin datos,Sin zonas pesqueras en radio de búsqueda
+Sempra_Costa_Azul,Sempra LNG - Costa Azul (Expansión),31.715,-116.57,Baja California,propuesto_expansion,75.0,0,,0.0,0.0,0.0,0.0,Sin datos,Sin zonas pesqueras en radio de búsqueda
+Bazan_San_Felipe,Terminal GNL San Felipe,31.0833,-114.85,Baja California,propuesto,50.0,2369,0.39,1.0,0.9253,1.0,97.76,Alto,Solo capas ZPesca
+Guaymas_Terminal,Terminal GNL Guaymas,27.9179,-110.9039,Sonora,propuesto,100.0,2828,0.76,1.0,0.9267,0.8,93.8,Alto,Riqueza_Relativa incluida (extensión de cobertura)

@@ -1,0 +1,357 @@
+/*
+ * Zohar Intelligence v4 — Esoteria Design System v2 (Híbrido Ciber-Océano)
+ * Amber Terminal IBM 3270 Variant + Ocean Cyber Accents
+ * Estética: terminal hacker premium, scanlines, micro-animaciones, monospaciado
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+/* ─── Design Tokens: Esoteria v2 Híbrido ──────────────────────────── */
+:root {
+  /* Bases Obsidiana */
+  --color-bg:           #080808;
+  --color-surface:      #0F0F0F;
+  --color-surface-2:    #141414;
+  --color-surface-3:    #1A1A1A;
+  --color-border:       #1E1E1E;
+  --color-border-hi:    #2A2A2A;
+
+  /* Ámbar Terminal IBM 3270 (Infraestructura GNL / Alerta) */
+  --color-amber:        #FFB000;
+  --color-amber-dim:    #CC8D00;
+  --color-amber-muted:  #5C4000;
+  --color-amber-faint:  #2A1D00;
+  --color-amber-glow:   rgba(255,176,0,0.08);
+
+  /* Ciber-Océano (Recursos Marinos / PANGAS / Especies) */
+  --color-ocean:        #0ea5e9;
+  --color-ocean-dim:    #0284c7;
+  --color-ocean-muted:  #075985;
+  --color-ocean-glow:   rgba(14,165,233,0.12);
+
+  /* Texto */
+  --color-text-primary:   #FFB000;
+  --color-text-secondary: #CC8D00;
+  --color-text-muted:     #665220;
+  --color-text-disabled:  #302800;
+
+  /* Semántica */
+  --color-ok:     #2ECC71;
+  --color-warn:   #F39C12;
+  --color-alert:  #E74C3C;
+  --color-purple: #9B59B6;
+
+  /* Tipografía */
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  /* Layout */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --shadow-terminal: 0 4px 20px rgba(0,0,0,0.7);
+}
+
+/* ─── Reset & Base ──────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  min-height: 100vh;
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Scanlines Overlay (Esoteria Retro-Terminal) ────────────────── */
+.scanlines {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.06) 2px,
+    rgba(0,0,0,0.06) 4px
+  );
+  mix-blend-mode: multiply;
+}
+
+/* ─── Scrollbars Terminal ────────────────────────────────────────── */
+::-webkit-scrollbar        { width: 5px; height: 5px; }
+::-webkit-scrollbar-track  { background: var(--color-bg); }
+::-webkit-scrollbar-thumb  { background: var(--color-amber-muted); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-amber); }
+
+/* ─── Layout Shell ───────────────────────────────────────────────── */
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+.main-content {
+  flex: 1;
+  padding-bottom: 3rem;
+}
+
+.section {
+  padding: 1.75rem 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-amber);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+}
+
+.section-title::before {
+  content: '▶';
+  font-size: 0.75rem;
+  color: var(--color-amber);
+}
+
+/* ─── Terminal Card ──────────────────────────────────────────────── */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-terminal);
+  transition: border-color 0.15s ease, background 0.15s ease;
+  position: relative;
+}
+
+.card:hover {
+  border-color: var(--color-border-hi);
+  background: var(--color-surface-2);
+}
+
+.card--amber {
+  border-color: var(--color-amber-muted);
+}
+.card--amber:hover {
+  border-color: var(--color-amber);
+  box-shadow: 0 0 15px var(--color-amber-glow);
+}
+
+.card--ocean {
+  border-color: var(--color-ocean-muted);
+}
+.card--ocean:hover {
+  border-color: var(--color-ocean);
+  box-shadow: 0 0 15px var(--color-ocean-glow);
+}
+
+/* ─── Badge Esoteria ─────────────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+}
+
+.badge--alto {
+  background: rgba(231,76,60,0.15);
+  color: var(--color-alert);
+  border: 1px solid var(--color-alert);
+}
+
+.badge--moderado {
+  background: rgba(243,156,18,0.15);
+  color: var(--color-warn);
+  border: 1px solid var(--color-warn);
+}
+
+.badge--bajo {
+  background: rgba(46,204,113,0.15);
+  color: var(--color-ok);
+  border: 1px solid var(--color-ok);
+}
+
+.badge--ocean {
+  background: var(--color-ocean-glow);
+  color: var(--color-ocean);
+  border: 1px solid var(--color-ocean-dim);
+}
+
+/* ─── Scores & Gauges ────────────────────────────────────────────── */
+.score-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-amber);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+.score-label {
+  font-size: 0.6875rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ─── Progress Bar ──────────────────────────────────────────────── */
+.progress-bar {
+  width: 100%;
+  height: 5px;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  transition: width 0.6s ease;
+}
+
+.progress-fill--high   { background: var(--color-alert); }
+.progress-fill--medium { background: var(--color-warn); }
+.progress-fill--low    { background: var(--color-ok); }
+.progress-fill--ocean  { background: var(--color-ocean); }
+
+/* ─── Grids ─────────────────────────────────────────────────────── */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1.25rem;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1.25rem;
+}
+
+/* ─── Stat Rows ─────────────────────────────────────────────────── */
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.75rem;
+}
+
+.stat-row:last-child { border-bottom: none; }
+.stat-row-label { color: var(--color-text-secondary); }
+.stat-row-value { font-weight: 600; color: var(--color-amber); font-variant-numeric: tabular-nums; }
+
+/* ─── Map Wrapper ───────────────────────────────────────────────── */
+.map-wrapper {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border-hi);
+  box-shadow: var(--shadow-terminal);
+  position: relative;
+}
+
+/* ─── Formula Box ───────────────────────────────────────────────── */
+.formula-box {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border-hi);
+  border-left: 3px solid var(--color-amber);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--color-amber);
+  line-height: 1.8;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.5);
+}
+
+/* ─── Micro-Animations Esoteria ──────────────────────────────────── */
+@keyframes hex-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.5; transform: scale(1.05); }
+}
+
+.hex-pulse { animation: hex-pulse 3s ease-in-out infinite; }
+
+@keyframes blink { 50% { opacity: 0; } }
+.blink { animation: blink 1.2s step-start infinite; }
+
+@keyframes alert-pulse {
+  0%, 100% { border-color: var(--color-alert); }
+  50%      { border-color: rgba(231,76,60,0.3); }
+}
+.alert-pulse { animation: alert-pulse 1.5s ease-in-out infinite; }
+
+/* ─── Leaflet Overrides Esoteria ─────────────────────────────────── */
+.leaflet-container {
+  background: #040404 !important;
+  font-family: 'IBM Plex Mono', monospace !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: var(--color-surface) !important;
+  color: var(--color-amber) !important;
+  border: 1px solid var(--color-amber-dim) !important;
+  border-radius: var(--radius-sm) !important;
+  box-shadow: var(--shadow-terminal) !important;
+}
+
+.leaflet-popup-tip {
+  background: var(--color-surface) !important;
+}
+
+.leaflet-popup-content {
+  margin: 10px 14px !important;
+  font-size: 0.75rem !important;
+  line-height: 1.5 !important;
+}
+
+.leaflet-control-zoom a {
+  background: var(--color-surface) !important;
+  color: var(--color-amber) !important;
+  border-color: var(--color-border-hi) !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: var(--color-surface-2) !important;
+  color: var(--color-amber);
+}
+
+.leaflet-control-attribution {
+  background: rgba(8,8,8,0.85) !important;
+  color: var(--color-text-muted) !important;
+  font-size: 0.625rem !important;
+}
+
+.leaflet-control-attribution a {
+  color: var(--color-ocean) !important;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .section { padding: 1.25rem 0.875rem; }
+  .grid-3, .grid-2 { grid-template-columns: 1fr; }
+  .score-number { font-size: 2rem; }
+}
