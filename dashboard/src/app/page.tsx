@@ -23,7 +23,7 @@ color: 'var(--color-text-secondary)',
 lineHeight: 1.6,
 fontFamily: 'var(--font-mono)',
 }}>
-<span style={{ color: 'var(--color-amber)', fontWeight: 700 }}>[ZOHAR v4 / ESOTERIA v2]</span>{' '}
+            <span style={{ color: 'var(--color-amber)', fontWeight: 700 }}>[CAUSA NATURA CENTER]</span>{' '}
 Evaluación espacial del <strong style={{ color: 'var(--color-amber)' }}>Índice Espacial de Riesgo Socioeconómico para Comunidades (IERC)</strong> ante
 proyectos de Gas Natural Licuado (GNL) en el Golfo de California. Datos integrados en el entregable{' '}
 <code style={{ background: 'var(--color-surface-2)', padding: '0.15rem 0.4rem', border: '1px solid var(--color-border-hi)', color: 'var(--color-ocean)' }}>

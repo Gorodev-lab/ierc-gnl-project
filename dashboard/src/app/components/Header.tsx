@@ -49,7 +49,7 @@ lineHeight: 1.2,
 letterSpacing: '0.08em',
 fontFamily: 'var(--font-mono)',
 }}>
-IERC-GNL <span style={{ color: 'var(--color-ocean)' }}>[ESOTERIA v2]</span>
+IERC-GNL <span style={{ color: 'var(--color-ocean)' }}>[CAUSA NATURA CENTER]</span>
 </h1>
 <p style={{
 fontSize: '0.6875rem',

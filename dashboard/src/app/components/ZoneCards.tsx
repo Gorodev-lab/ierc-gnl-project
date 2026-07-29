@@ -22,11 +22,11 @@ nota: string
 }
 
 const ZONE_META: Record<string, { zone: string; icon: string; desc: string }> = {
-'NFE_Puerto_Libertad': {
-zone: 'Puerto Libertad',
-icon: '',
-desc: 'Territorio costero Sonora. Comunidades pesqueras artesanales. Pesca de camarón, chano y almeja.',
-},
+  'MPL_Saguaro_Puerto_Libertad': {
+    zone: 'Puerto Libertad (Saguaro GNL)',
+    icon: '',
+    desc: 'Terminal Saguaro Energía (Mexico Pacific Limited). Comunidades pesqueras artesanales. Pesca de camarón, chano y almeja.',
+  },
 'Bazan_San_Felipe': {
 zone: 'San Felipe',
 icon: '',

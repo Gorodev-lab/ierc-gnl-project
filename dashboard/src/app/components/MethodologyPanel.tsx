@@ -159,9 +159,9 @@ flexWrap: 'wrap',
 gap: '0.75rem',
 fontFamily: 'var(--font-mono)',
 }}>
-<div style={{ fontSize: '0.75rem', color: 'var(--color-amber)' }}>
-IERC-GNL Project · Esoteria Design System v2
-</div>
+      <div style={{ fontSize: '0.75rem', color: 'var(--color-amber)' }}>
+        IERC-GNL Project · Causa Natura Center v2
+      </div>
 <div style={{ fontSize: '0.6875rem', color: 'var(--color-text-muted)' }}>
 Datos: ierc_golfo_california.gpkg · PANGAS GDB · dataMares UCSD · GFW · CONANP
 </div>
