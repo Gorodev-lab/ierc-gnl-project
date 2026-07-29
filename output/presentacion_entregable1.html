@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación Ejecutiva Entregable 1 (Meta 1) — Causa Natura Center</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #0f172a; color: #f8fafc; margin: 0; padding: 40px; line-height: 1.6; }
+        h1 { color: #38bdf8; border-bottom: 2px solid #0284c7; padding-bottom: 12px; font-size: 28px; }
+        h2 { color: #f1f5f9; margin-top: 36px; font-size: 22px; border-bottom: 1px solid #334155; padding-bottom: 8px; }
+        h3 { color: #7dd3fc; font-size: 18px; margin-top: 24px; }
+        .slide-card { background-color: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.4); }
+        .notice-box { background-color: #0f172a; border-left: 4px solid #f59e0b; padding: 16px; margin: 20px 0; border-radius: 4px; color: #fef08a; font-size: 15px; }
+        .citation-box { background-color: #0f172a; border-left: 4px solid #38bdf8; padding: 16px; margin: 20px 0; border-radius: 4px; font-style: italic; color: #cbd5e1; }
+        table { width: 100%; border-collapse: collapse; margin-top: 14px; background-color: #0f172a; border-radius: 6px; overflow: hidden; }
+        th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid #334155; font-size: 14px; }
+        th { background-color: #0284c7; color: #ffffff; }
+        tr:nth-child(even) { background-color: #1e293b; }
+        .badge { background-color: #0369a1; color: #e0f2fe; padding: 4px 8px; border-radius: 4px; font-family: monospace; font-size: 13px; }
+        .btn { display: inline-block; background-color: #0284c7; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; font-weight: bold; margin-top: 15px; }
+        .btn:hover { background-color: #0369a1; }
+    </style>
+</head>
+<body>
+
+    <div class="slide-card">
+        <h1>Presentación Ejecutiva: Entregable 1 — Meta 1 (POA 2026)</h1>
+        <p><strong>Proyecto:</strong> Índice Espacial de Riesgo Socioeconómico para Comunidades (IERC-GNL)</p>
+        <p><strong>Organización:</strong> Causa Natura Center / Causa Natura Data (POA 2026-2028)</p>
+        <p><strong>Equipo de Trabajo:</strong> Juan Carlos Barrera (JCB - Consultor Senior) & Enrique Gorosave (EG - Analista GIS)</p>
+        <p><strong>Fecha de Entrega:</strong> 19 de Agosto de 2026</p>
+    </div>
+
+    <div class="notice-box">
+        <strong>Aclaración Importante sobre el Alcance de Datos del Entregable 1:</strong><br>
+        La información espacial de pesca e infraestructura incluida en este primer entregable constituye el <strong>marco estructural de gabinete, la línea base histórica del estudio PANGAS (Dra. Marcia Moreno-Báez et al.) y los instrumentos de captura</strong>. Los datos primarios oficiales y el mapeo definitivo de proyectos de Gas Natural Licuado (obras, ductos, áreas de seguridad y polígonos comunitarios) serán recolectados y georreferenciados en campo durante las <strong>Semanas 5 a 8 (Meta 2 - Producto 1)</strong> en Punta Chueca, Puerto Libertad y Guaymas.
+    </div>
+
+    <div class="slide-card">
+        <h2>Bloque 1: Resumen de Componentes del Entregable 1</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Componente Exigido por el POA</th>
+                    <th>Formato de Entrega</th>
+                    <th>Estado de Validación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Nota Metodológica Ajustada</td>
+                    <td>Documento Markdown / PDF (`docs/metodologia/Nota_Metodologica_Ajustada_JCB_EG.md`)</td>
+                    <td><span class="badge">Validado 100%</span></td>
+                </tr>
+                <tr>
+                    <td>Repositorio GeoPackage OGC v1.1</td>
+                    <td>Base de Datos SQLite EPSG:4326 (`deliverables/v1_geopackage/ierc_golfo_california.gpkg`)</td>
+                    <td><span class="badge">Validado 100%</span></td>
+                </tr>
+                <tr>
+                    <td>Inventario Geoespacial y Vacíos</td>
+                    <td>Documento de Gabinete (`docs/metodologia/Inventario_y_Matriz_Vacios_Geoespaciales_EG.md`)</td>
+                    <td><span class="badge">Validado 100%</span></td>
+                </tr>
+                <tr>
+                    <td>Catálogo PANGAS y Paquetes de Capas</td>
+                    <td>Visor HTML Maestros + 14 Mapas JPG (`output/paquetes_capas_pangas/ATLAS_PAQUETES_COMPLETO.html`)</td>
+                    <td><span class="badge">Validado 100%</span></td>
+                </tr>
+                <tr>
+                    <td>Protocolo de Campo e Instrumentos Piloto</td>
+                    <td>Mapas Base de Gabinete y Formatos de Captura (`docs/protocolos_campo/`)</td>
+                    <td><span class="badge">Validado 100%</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="slide-card">
+        <h2>Bloque 2: Repositorio GeoPackage OGC v1.1 (7 Capas Base)</h2>
+        <p>Estructura compilada por EG en <code>deliverables/v1_geopackage/ierc_golfo_california.gpkg</code> (CRS EPSG:4326 WGS84):</p>
+        <ul>
+            <li><code>proyectos_gnl</code> (5 Puntos): Ubicación de terminales GNL en el Golfo.</li>
+            <li><code>gasoductos_infraestructura_gnl</code> (2 Líneas): Trazados conocidos de gasoductos (Sonora, Saguaro, Guaymas).</li>
+            <li><code>localidades_estudio_ierc</code> (3 Puntos): Punta Chueca Comca'ac, Puerto Libertad y Guaymas.</li>
+            <li><code>anp_habitats_criticos</code> (2 Polígonos): Áreas Naturales Protegidas (CONANP) y hábitats críticos.</li>
+            <li><code>zonas_pesqueras_pangas</code> (17 Polígonos): Campos pesqueros artesanales integrados con <code>uid_espaciotemporal</code>.</li>
+            <li><code>grilla_h3_riesgo</code> (5,244 Polígonos): Grilla hexagonal Uber H3 adaptativa (Res 8 mar / Res 9 puerto).</li>
+            <li><code>riqueza_relativa_pesquera</code> (11,065 Polígonos): Malla de riqueza biológica acumulada PANGAS.</li>
+        </ul>
+        <p><strong>Clave Única Espacio-Temporal Implementada:</strong></p>
+        <p><code>comunidad - actor - pesquería - arte - zona - temporada - ruta</code></p>
+    </div>
+
+    <div class="slide-card">
+        <h2>Bloque 3: Catálogo Cartográfico Georreferenciado PANGAS</h2>
+        <div class="citation-box">
+            <strong>Atribución Académica Oficial:</strong><br>
+            Moreno-Báez, M., Cudney-Bueno, R., Shaw, W. W., Cudney-Bueno, S., & Torre-Cosío, J. (2011, 2012). Integrating spatial and temporal dimensions of artisanal fishing for management in the Gulf of California, Mexico. Ocean & Coastal Management / Marine Policy. Base de Datos Geográfica PANGAS.
+        </div>
+        <p>7 Paquetes independientes en <code>output/paquetes_capas_pangas/</code> con mapas georreferenciados Web Mercator (EPSG:3857) sobre <strong>OpenStreetMap estándar (estilo QGIS)</strong> e <strong>imagen satelital Esri World Imagery</strong>.</p>
+        <a class="btn" href="./paquetes_capas_pangas/ATLAS_PAQUETES_COMPLETO.html" target="_blank">Abrir Visor Cartográfico Interactivo de Paquetes</a>
+    </div>
+
+    <div class="slide-card">
+        <h2>Bloque 4: Dictamen de Auditoría Técnica</h2>
+        <p><strong>Expediente:</strong> <code>docs/auditoria/AUDITORIA_META1_ENTREGABLE1.md</code></p>
+        <p><strong>Resultado de Auditoría de 3 Niveles:</strong> APROBADO PARA ENVÍO Y PRESENTACIÓN OFICIAL A CAUSA NATURA CENTER.</p>
+        <p><strong>Próximos Pasos (Meta 2 - Semanas 5 a 8):</strong> Inicio del levantamiento de campo socioambiental para la recolección de los datos primarios oficiales en Punta Chueca, Puerto Libertad y Guaymas.</p>
+    </div>
+
+</body>
+</html>
