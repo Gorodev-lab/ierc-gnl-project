@@ -1,123 +1,123 @@
 {
-  "metadata": {
-    "fecha": "2026-07-27",
-    "fuente": "Fish_Zones_PANGAS (Moreno-Báez et al. 2011/2012)",
-    "total_zonas_analizadas": 17
-  },
-  "especies_criticas": [
-    {
-      "codigo": "carspp",
-      "nombre_comun": "Camarones",
-      "nombre_cientifico": "Farfantepenaeus sp.",
-      "estado_iucn": "LC",
-      "importancia": "Alta comercial"
-    },
-    {
-      "codigo": "gymmar",
-      "nombre_comun": "Mero gigante",
-      "nombre_cientifico": "Epinephelus itajara",
-      "estado_iucn": "CR",
-      "importancia": "Crítica"
-    },
-    {
-      "codigo": "rhilon",
-      "nombre_comun": "Rayas guitarrón",
-      "nombre_cientifico": "Rhinobatos lentiginosus",
-      "estado_iucn": "VU",
-      "importancia": "Alta"
-    },
-    {
-      "codigo": "rhipro",
-      "nombre_comun": "Raya bocona",
-      "nombre_cientifico": "Rhinobatos productus",
-      "estado_iucn": "NT",
-      "importancia": "Moderada"
-    },
-    {
-      "codigo": "rhispp",
-      "nombre_comun": "Rayas (spp)",
-      "nombre_cientifico": "Rhinobatos spp.",
-      "estado_iucn": "VU",
-      "importancia": "Alta"
-    },
-    {
-      "codigo": "sphspp",
-      "nombre_comun": "Tiburones",
-      "nombre_cientifico": "Sphyrna spp.",
-      "estado_iucn": "EN",
-      "importancia": "Crítica"
-    },
-    {
-      "codigo": "lutarg",
-      "nombre_comun": "Pargo lunarejo",
-      "nombre_cientifico": "Lutjanus argentiventris",
-      "estado_iucn": "LC",
-      "importancia": "Alta comercial"
-    },
-    {
-      "codigo": "parspp",
-      "nombre_comun": "Pargos (spp)",
-      "nombre_cientifico": "Paralabrax spp.",
-      "estado_iucn": "LC",
-      "importancia": "Alta comercial"
-    },
-    {
-      "codigo": "dasspp",
-      "nombre_comun": "Rayas mariposa",
-      "nombre_cientifico": "Dasyatis spp.",
-      "estado_iucn": "NT",
-      "importancia": "Moderada"
-    },
-    {
-      "codigo": "mycros",
-      "nombre_comun": "Mero almejero",
-      "nombre_cientifico": "Mycteroperca rosacea",
-      "estado_iucn": "NT",
-      "importancia": "Alta"
-    }
-  ],
-  "por_proyecto": {
-    "NFE_Puerto_Libertad": {
-      "especies_presentes": [
-        "carspp",
-        "rhilon",
-        "rhipro",
-        "rhispp",
-        "sphspp",
-        "gymmar",
-        "lutarg",
-        "parspp"
-      ],
-      "num_criticas": 8,
-      "riesgo_pesquero": 90.27
-    },
-    "Bazan_San_Felipe": {
-      "especies_presentes": [
-        "carspp",
-        "rhilon",
-        "rhipro",
-        "rhispp",
-        "sphspp",
-        "gymmar",
-        "lutarg",
-        "parspp",
-        "mycros"
-      ],
-      "num_criticas": 9,
-      "riesgo_pesquero": 97.76
-    },
-    "Guaymas_Terminal": {
-      "especies_presentes": [
-        "carspp",
-        "rhilon",
-        "rhipro",
-        "rhispp",
-        "gymmar",
-        "parspp",
-        "mycros"
-      ],
-      "num_criticas": 7,
-      "riesgo_pesquero": 93.8
-    }
-  }
+"metadata": {
+"fecha": "2026-07-27",
+"fuente": "Fish_Zones_PANGAS (Moreno-Báez et al. 2011/2012)",
+"total_zonas_analizadas": 17
+},
+"especies_criticas": [
+{
+"codigo": "carspp",
+"nombre_comun": "Camarones",
+"nombre_cientifico": "Farfantepenaeus sp.",
+"estado_iucn": "LC",
+"importancia": "Alta comercial"
+},
+{
+"codigo": "gymmar",
+"nombre_comun": "Mero gigante",
+"nombre_cientifico": "Epinephelus itajara",
+"estado_iucn": "CR",
+"importancia": "Crítica"
+},
+{
+"codigo": "rhilon",
+"nombre_comun": "Rayas guitarrón",
+"nombre_cientifico": "Rhinobatos lentiginosus",
+"estado_iucn": "VU",
+"importancia": "Alta"
+},
+{
+"codigo": "rhipro",
+"nombre_comun": "Raya bocona",
+"nombre_cientifico": "Rhinobatos productus",
+"estado_iucn": "NT",
+"importancia": "Moderada"
+},
+{
+"codigo": "rhispp",
+"nombre_comun": "Rayas (spp)",
+"nombre_cientifico": "Rhinobatos spp.",
+"estado_iucn": "VU",
+"importancia": "Alta"
+},
+{
+"codigo": "sphspp",
+"nombre_comun": "Tiburones",
+"nombre_cientifico": "Sphyrna spp.",
+"estado_iucn": "EN",
+"importancia": "Crítica"
+},
+{
+"codigo": "lutarg",
+"nombre_comun": "Pargo lunarejo",
+"nombre_cientifico": "Lutjanus argentiventris",
+"estado_iucn": "LC",
+"importancia": "Alta comercial"
+},
+{
+"codigo": "parspp",
+"nombre_comun": "Pargos (spp)",
+"nombre_cientifico": "Paralabrax spp.",
+"estado_iucn": "LC",
+"importancia": "Alta comercial"
+},
+{
+"codigo": "dasspp",
+"nombre_comun": "Rayas mariposa",
+"nombre_cientifico": "Dasyatis spp.",
+"estado_iucn": "NT",
+"importancia": "Moderada"
+},
+{
+"codigo": "mycros",
+"nombre_comun": "Mero almejero",
+"nombre_cientifico": "Mycteroperca rosacea",
+"estado_iucn": "NT",
+"importancia": "Alta"
+}
+],
+"por_proyecto": {
+"NFE_Puerto_Libertad": {
+"especies_presentes": [
+"carspp",
+"rhilon",
+"rhipro",
+"rhispp",
+"sphspp",
+"gymmar",
+"lutarg",
+"parspp"
+],
+"num_criticas": 8,
+"riesgo_pesquero": 90.27
+},
+"Bazan_San_Felipe": {
+"especies_presentes": [
+"carspp",
+"rhilon",
+"rhipro",
+"rhispp",
+"sphspp",
+"gymmar",
+"lutarg",
+"parspp",
+"mycros"
+],
+"num_criticas": 9,
+"riesgo_pesquero": 97.76
+},
+"Guaymas_Terminal": {
+"especies_presentes": [
+"carspp",
+"rhilon",
+"rhipro",
+"rhispp",
+"gymmar",
+"parspp",
+"mycros"
+],
+"num_criticas": 7,
+"riesgo_pesquero": 93.8
+}
+}
 }

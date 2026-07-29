@@ -64,8 +64,8 @@ El IERC se expresa como una **función ponderada de componentes normalizados** (
 
 ```
 IERC_total = (Amenaza × 0.20) + (Exposición × 0.20) + (Sensibilidad × 0.15) +
-             (Dependencia × 0.15) + (Valor_Biocultural × 0.15) +
-             ((1 - Capacidad_Adaptativa) × 0.15)
+(Dependencia × 0.15) + (Valor_Biocultural × 0.15) +
+((1 - Capacidad_Adaptativa) × 0.15)
 ```
 
 **Donde:**
@@ -82,13 +82,13 @@ Score_Amenaza = w_near × Amenaza_Cercanía + w_noise × Amenaza_Ruido + w_route
 
 Donde:
 - Amenaza_Cercanía = 1 - (Distancia_Mínima / Distancia_Máxima_Referencia)
-  * Distancia_Mínima: Distancia más cercana a infraestructura GNL en metros
-  * Distancia_Máxima_Referencia: 50 km (umbral de influencia aceptable)
+* Distancia_Mínima: Distancia más cercana a infraestructura GNL en metros
+* Distancia_Máxima_Referencia: 50 km (umbral de influencia aceptable)
 
 - Amenaza_Ruido = Nivel_Ruido_dB / 180 (ruido máximo teórico en dB)
 
 - Amenaza_Ruta = Volumen_Tráfico / Volumen_Máximo_Referencia
-  * Volumen_Máximo_Referencia: 1000 buques/año (estimación para terminales GNL)
+* Volumen_Máximo_Referencia: 1000 buques/año (estimación para terminales GNL)
 
 Pesos:
 - w_near = 0.50 (peso principal a la proximidad física)
@@ -103,10 +103,10 @@ Score_Exposición = w_effort × Exposición_Esfuerzo + w_community × Exposició
 
 Donde:
 - Exposición_Esfuerzo = Horas_Esfuerzo_Celda / Horas_Esfuerzo_Máximo_Anual
-  * Horas_Esfuerzo_Máximo_Anual: 8760 horas (1 año completo)
+* Horas_Esfuerzo_Máximo_Anual: 8760 horas (1 año completo)
 
 - Exposición_Comunidad = Población_Afectada / Población_Total_Zona
-  * Población_Afectada: Número de personas en comunidades dentro de la celda H3
+* Población_Afectada: Número de personas en comunidades dentro de la celda H3
 
 Pesos:
 - w_effort = 0.60 (peso principal al esfuerzo pesquero directo)
@@ -120,7 +120,7 @@ Score_Sensibilidad = w_species × Sensibilidad_Especies + w_endemic × Sensibili
 
 Donde:
 - Sensibilidad_Especies = (Número_Especies_Amenazadas / Número_Total_Especies) × Factor_Sensibilidad
-  * Factor_Sensibilidad: 1.5 para especies en peligro crítico, 1.2 para amenazadas, 1.0 para otras
+* Factor_Sensibilidad: 1.5 para especies en peligro crítico, 1.2 para amenazadas, 1.0 para otras
 
 - Sensibilidad_Endémicas = Presencia_Endémicas / 1 (binario: 1 si hay especies endémicas, 0 si no)
 
@@ -136,10 +136,10 @@ Score_Dependencia = w_income × Dependencia_Ingresos + w_food × Dependencia_Ali
 
 Donde:
 - Dependencia_Ingresos = (Porcentaje_Ingresos_Pesca / 100) × Factor_Económico
-  * Factor_Económico: 1.0 si >50% ingresos, 0.8 si 30-50%, 0.5 si 10-30%, 0.2 si <10%
+* Factor_Económico: 1.0 si >50% ingresos, 0.8 si 30-50%, 0.5 si 10-30%, 0.2 si <10%
 
 - Dependencia_Alimentaria = (Porcentaje_Dieta_Marina / 100) × Factor_Cultural
-  * Factor_Cultural: 1.0 si dieta >70% marina, 0.7 si 40-70%, 0.4 si 10-40%, 0.1 si <10%
+* Factor_Cultural: 1.0 si dieta >70% marina, 0.7 si 40-70%, 0.4 si 10-40%, 0.1 si <10%
 
 Pesos:
 - w_income = 0.60 (dependencia económica directa)
@@ -153,10 +153,10 @@ Score_Biocultural = w_sacred × Valor_Sitios_Sagrados + w_routes × Valor_Rutas_
 
 Donde:
 - Valor_Sitios_Sagrados = Número_Sitios_Sagrados / Máximo_Sitios_Región
-  * Máximo_Sitios_Región: 10 (estimación para el Golfo de California)
+* Máximo_Sitios_Región: 10 (estimación para el Golfo de California)
 
 - Valor_Rutas_Ancestrales = Longitud_Rutas / Longitud_Total_Región
-  * Longitud_Total_Región: 500 km (estimación de rutas tradicionales)
+* Longitud_Total_Región: 500 km (estimación de rutas tradicionales)
 
 Pesos:
 - w_sacred = 0.60 (peso principal a sitios de importancia espiritual)
@@ -217,53 +217,53 @@ Para análisis de tendencias, se recomienda calcular el IERC para **múltiples a
 ### 5.1 Fuentes de Incertidumbre
 
 1. **Datos de entrada:**
-   - Precisión de coordenadas GPS (error ±5-20m)
-   - Exactitud de datos de esfuerzo pesquero (VMS vs. registros manuales)
-   - Estimaciones de población comunitaria
+- Precisión de coordenadas GPS (error ±5-20m)
+- Exactitud de datos de esfuerzo pesquero (VMS vs. registros manuales)
+- Estimaciones de población comunitaria
 
 2. **Modelos:**
-   - Ponderaciones subjetivas de componentes
-   - Umbrales de normalización (ej: distancia máxima de referencia)
-   - Factores estacionales
+- Ponderaciones subjetivas de componentes
+- Umbrales de normalización (ej: distancia máxima de referencia)
+- Factores estacionales
 
 3. **Contexto:**
-   - Cambios regulatorios futuros
-   - Nuevos megaproyectos no mapeados
-   - Variabilidad climática
+- Cambios regulatorios futuros
+- Nuevos megaproyectos no mapeados
+- Variabilidad climática
 
 ### 5.2 Simulación de Monte Carlo
 
 **Metodología:**
 
 1. **Variables estocásticas:**
-   - Ponderaciones de componentes: Distribución uniforme [0.15, 0.25] para cada peso
-   - Umbrales de normalización: Distribución normal (μ=valor_base, σ=10%)
-   - Datos de entrada: Distribución normal (μ=valor_observado, σ=incertidumbre_base)
+- Ponderaciones de componentes: Distribución uniforme [0.15, 0.25] para cada peso
+- Umbrales de normalización: Distribución normal (μ=valor_base, σ=10%)
+- Datos de entrada: Distribución normal (μ=valor_observado, σ=incertidumbre_base)
 
 2. **Parámetros de simulación:**
-   - Número de simulaciones: 1000 (equilibrio entre precisión y costo computacional)
-   - Semilla aleatoria: Fija para reproducibilidad
-   - Rango de confianza: 95% (percentiles 2.5 y 97.5)
+- Número de simulaciones: 1000 (equilibrio entre precisión y costo computacional)
+- Semilla aleatoria: Fija para reproducibilidad
+- Rango de confianza: 95% (percentiles 2.5 y 97.5)
 
 3. **Salidas:**
-   - Distribución del IERC_total
-   - Intervalo de confianza para cada celda H3
-   - Sensibilidad de cada componente al score final
-   - Mapa de incertidumbre espacial
+- Distribución del IERC_total
+- Intervalo de confianza para cada celda H3
+- Sensibilidad de cada componente al score final
+- Mapa de incertidumbre espacial
 
 **Fórmula de propagación:**
 
 ```
 Para cada simulación k:
-  - Generar valores estocásticos para todas las variables
-  - Calcular IERC_total(k) usando la misma fórmula algebraica
-  - Registrar resultado
+- Generar valores estocásticos para todas las variables
+- Calcular IERC_total(k) usando la misma fórmula algebraica
+- Registrar resultado
 
 Resultado final:
-  - IERC_medio = Media(IERC_total(k) para k=1..1000)
-  - IERC_IC_2.5 = Percentil_2.5(IERC_total(k))
-  - IERC_IC_97.5 = Percentil_97.5(IERC_total(k))
-  - confidence_dato = 1 - (IERC_IC_97.5 - IERC_IC_2.5) / 2
+- IERC_medio = Media(IERC_total(k) para k=1..1000)
+- IERC_IC_2.5 = Percentil_2.5(IERC_total(k))
+- IERC_IC_97.5 = Percentil_97.5(IERC_total(k))
+- confidence_dato = 1 - (IERC_IC_97.5 - IERC_IC_2.5) / 2
 ```
 
 ### 5.3 Interpretación de Resultados
@@ -297,30 +297,30 @@ Resultado final:
 ### 6.2 Flujo de Procesamiento
 
 1. **Preprocesamiento:**
-   - Indexación espacial con H3 (nivel 8 para mar abierto)
-   - Limpieza y normalización de datos (VMS, AIS, CONAPESCA)
-   - Cálculo de métricas base (esfuerzo, desembarques, diversidad)
+- Indexación espacial con H3 (nivel 8 para mar abierto)
+- Limpieza y normalización de datos (VMS, AIS, CONAPESCA)
+- Cálculo de métricas base (esfuerzo, desembarques, diversidad)
 
 2. **Cálculo de componentes:**
-   - Amenaza: Proximidad a infraestructura + ruido + tráfico
-   - Exposición: Traslape con pesca + comunidades
-   - Sensibilidad: Biodiversidad + especies endémicas
-   - Dependencia: Ingresos + seguridad alimentaria
-   - Valor Biocultural: Sitios sagrados + rutas ancestrales
-   - Capacidad Adaptativa: Matriz GAGE
+- Amenaza: Proximidad a infraestructura + ruido + tráfico
+- Exposición: Traslape con pesca + comunidades
+- Sensibilidad: Biodiversidad + especies endémicas
+- Dependencia: Ingresos + seguridad alimentaria
+- Valor Biocultural: Sitios sagrados + rutas ancestrales
+- Capacidad Adaptativa: Matriz GAGE
 
 3. **Integración temporal:**
-   - Aplicación de factores estacionales
-   - Cálculo de scores quincenales
+- Aplicación de factores estacionales
+- Cálculo de scores quincenales
 
 4. **Análisis de incertidumbre:**
-   - Simulación Monte Carlo
-   - Cálculo de intervalos de confianza
+- Simulación Monte Carlo
+- Cálculo de intervalos de confianza
 
 5. **Generación de outputs:**
-   - Tabla ierc_calculated_scores
-   - Vistas materializadas para dashboards
-   - Mapas de calor y alertas tempranas
+- Tabla ierc_calculated_scores
+- Vistas materializadas para dashboards
+- Mapas de calor y alertas tempranas
 
 ### 6.3 Tecnologías Clave
 
@@ -337,18 +337,18 @@ Resultado final:
 ### 7.1 Fuentes de Validación
 
 1. **Datos históricos:**
-   - Línea base PANGAS/Moreno-Báez (2012) para especies y esfuerzo
-   - Registros de CONAPESCA para desembarques
-   - Estudios de impacto ambiental de proyectos existentes
+- Línea base PANGAS/Moreno-Báez (2012) para especies y esfuerzo
+- Registros de CONAPESCA para desembarques
+- Estudios de impacto ambiental de proyectos existentes
 
 2. **Consulta con actores locales:**
-   - Talleres con comunidades Comca'ac, Yaqui, Seri
-   - Entrevistas con cooperativas pesqueras
-   - Validación con autoridades ambientales (SEMARNAT, CONANP)
+- Talleres con comunidades Comca'ac, Yaqui, Seri
+- Entrevistas con cooperativas pesqueras
+- Validación con autoridades ambientales (SEMARNAT, CONANP)
 
 3. **Benchmarking:**
-   - Comparación con índices similares (ej: Índice de Vulnerabilidad Costera de la UNESCO)
-   - Análisis de correlación con datos de conflictos sociales y ambientales
+- Comparación con índices similares (ej: Índice de Vulnerabilidad Costera de la UNESCO)
+- Análisis de correlación con datos de conflictos sociales y ambientales
 
 ### 7.2 Métricas de Calibración
 
@@ -366,88 +366,88 @@ Resultado final:
 ### 8.1 Supuestos Críticos
 
 1. **Datos disponibles:**
-   - Se asume que los datos de VMS/AIS y CONAPESCA son representativos de la actividad pesquera real
-   - Se asume que las comunidades reportan con precisión sus medios de subsistencia
+- Se asume que los datos de VMS/AIS y CONAPESCA son representativos de la actividad pesquera real
+- Se asume que las comunidades reportan con precisión sus medios de subsistencia
 
 2. **Modelo espacial:**
-   - Las celdas H3 nivel 8 (~0.73 km²) son adecuadas para capturar variaciones espaciales en el Golfo de California
-   - La proximidad a infraestructura es un proxy válido para riesgo de impacto
+- Las celdas H3 nivel 8 (~0.73 km²) son adecuadas para capturar variaciones espaciales en el Golfo de California
+- La proximidad a infraestructura es un proxy válido para riesgo de impacto
 
 3. **Temporalidad:**
-   - La quincena es una unidad temporal adecuada para capturar variaciones estacionales
-   - No se modelan eventos puntuales (ej: derrames, accidentes) por falta de datos históricos
+- La quincena es una unidad temporal adecuada para capturar variaciones estacionales
+- No se modelan eventos puntuales (ej: derrames, accidentes) por falta de datos históricos
 
 ### 8.2 Limitaciones
 
 1. **Datos faltantes:**
-   - Información detallada sobre rutas de navegación ancestrales
-   - Datos de ruido acústico submarino (solo estimaciones basadas en tráfico de buques)
-   - Información socioeconómica desagregada por género en algunas comunidades
+- Información detallada sobre rutas de navegación ancestrales
+- Datos de ruido acústico submarino (solo estimaciones basadas en tráfico de buques)
+- Información socioeconómica desagregada por género en algunas comunidades
 
 2. **Resolución espacial:**
-   - Limitaciones en la precisión de coordenadas GPS en datos históricos
-   - Dificultad para diferenciar actividades pesqueras dentro de una misma celda H3
+- Limitaciones en la precisión de coordenadas GPS en datos históricos
+- Dificultad para diferenciar actividades pesqueras dentro de una misma celda H3
 
 3. **Dinámica compleja:**
-   - No se modelan interacciones entre componentes (ej: cómo la capacidad adaptativa modula la exposición)
-   - Efectos acumulativos a largo plazo no capturados en el análisis quincenal
+- No se modelan interacciones entre componentes (ej: cómo la capacidad adaptativa modula la exposición)
+- Efectos acumulativos a largo plazo no capturados en el análisis quincenal
 
 4. **Contexto político:**
-   - Cambios regulatorios futuros pueden invalidar supuestos del modelo
-   - Litigios en curso (10 juicios de amparo) pueden alterar el panorama de amenazas
+- Cambios regulatorios futuros pueden invalidar supuestos del modelo
+- Litigios en curso (10 juicios de amparo) pueden alterar el panorama de amenazas
 
 ---
 
 ## 9. Próximos Pasos (Semana 2-4)
 
 1. **Implementación técnica:**
-   - Desarrollar módulo `/src/engine/ierc_calculator.py`
-   - Implementar funciones de normalización y ponderación
-   - Desarrollar pipeline de Monte Carlo
+- Desarrollar módulo `/src/engine/ierc_calculator.py`
+- Implementar funciones de normalización y ponderación
+- Desarrollar pipeline de Monte Carlo
 
 2. **Preparación de datos:**
-   - Procesar datos crudos de VMS/AIS/CONAPESCA
-   - Indexar con H3 nivel 8 y 9-11
-   - Validar y limpiar datos de línea base (PANGAS/Moreno-Báez)
+- Procesar datos crudos de VMS/AIS/CONAPESCA
+- Indexar con H3 nivel 8 y 9-11
+- Validar y limpiar datos de línea base (PANGAS/Moreno-Báez)
 
 3. **Consulta comunitaria:**
-   - Validar componentes y ponderaciones con comunidades
-   - Ajustar factores estacionales según conocimiento local
-   - Identificar sitios sagrados y rutas ancestrales no mapeados
+- Validar componentes y ponderaciones con comunidades
+- Ajustar factores estacionales según conocimiento local
+- Identificar sitios sagrados y rutas ancestrales no mapeados
 
 4. **Desarrollo de prototipo:**
-   - Calcular IERC para 3-5 celdas piloto
-   - Generar mapas de calor y dashboards preliminares
-   - Validar resultados con expertos locales
+- Calcular IERC para 3-5 celdas piloto
+- Generar mapas de calor y dashboards preliminares
+- Validar resultados con expertos locales
 
 5. **Documentación:**
-   - Actualizar esta nota metodológica con hallazgos de validación
-   - Desarrollar manual de usuario para LOGR
-   - Crear guías de interpretación de resultados
+- Actualizar esta nota metodológica con hallazgos de validación
+- Desarrollar manual de usuario para LOGR
+- Crear guías de interpretación de resultados
 
 ---
 
 ## 10. Referencias Clave
 
 1. **Línea base ecológica y pesquera:**
-   - PANGAS Project (2012). *Baseline assessment of small-scale fisheries in the Gulf of California*
-   - Moreno-Báez, M. et al. (2012). *Spatial and temporal patterns of small-scale fisheries in the Gulf of California*
+- PANGAS Project (2012). *Baseline assessment of small-scale fisheries in the Gulf of California*
+- Moreno-Báez, M. et al. (2012). *Spatial and temporal patterns of small-scale fisheries in the Gulf of California*
 
 2. **Metodologías de riesgo socioeconómico:**
-   - IPCC (2014). *Climate Change 2014: Impacts, Adaptation, and Vulnerability*
-   - Turner, B.L. et al. (2003). *A framework for vulnerability analysis in sustainability science*
+- IPCC (2014). *Climate Change 2014: Impacts, Adaptation, and Vulnerability*
+- Turner, B.L. et al. (2003). *A framework for vulnerability analysis in sustainability science*
 
 3. **Gobernanza comunitaria:**
-   - Ostrom, E. (1990). *Governing the Commons: The Evolution of Institutions for Collective Action*
-   - Agrawal, A. & Gibson, C. (1999). *Enchantment and Disenchantment: The Role of Community in Natural Resource Conservation*
+- Ostrom, E. (1990). *Governing the Commons: The Evolution of Institutions for Collective Action*
+- Agrawal, A. & Gibson, C. (1999). *Enchantment and Disenchantment: The Role of Community in Natural Resource Conservation*
 
 4. **Indexación espacial:**
-   - Uber H3 Documentation. *Hexagonal hierarchical spatial index*
-   - Bardin, A. et al. (2019). *Spatial analysis of marine protected areas using H3*
+- Uber H3 Documentation. *Hexagonal hierarchical spatial index*
+- Bardin, A. et al. (2019). *Spatial analysis of marine protected areas using H3*
 
 5. **Análisis de incertidumbre:**
-   - Saltelli, A. et al. (2008). *Global Sensitivity Analysis: The Primer*
-   - Helton, J.C. & Davis, F.J. (2003). *Latin Hypercube Sampling and the Propagation of Uncertainty in Analyses of Complex Systems*
+- Saltelli, A. et al. (2008). *Global Sensitivity Analysis: The Primer*
+- Helton, J.C. & Davis, F.J. (2003). *Latin Hypercube Sampling and the Propagation of Uncertainty in Analyses of Complex Systems*
 
 ---
 
@@ -490,37 +490,37 @@ Resultado final:
 **Cálculo manual:**
 
 1. **Score_Amenaza:**
-   - Amenaza_Cercanía = 1 - (8000/50000) = 0.84
-   - Amenaza_Ruido = 160/180 = 0.89
-   - Amenaza_Ruta = 800/1000 = 0.80
-   - Score_Amenaza = (0.84×0.50) + (0.89×0.30) + (0.80×0.20) = 0.84
+- Amenaza_Cercanía = 1 - (8000/50000) = 0.84
+- Amenaza_Ruido = 160/180 = 0.89
+- Amenaza_Ruta = 800/1000 = 0.80
+- Score_Amenaza = (0.84×0.50) + (0.89×0.30) + (0.80×0.20) = 0.84
 
 2. **Score_Exposición:**
-   - Exposición_Esfuerzo = 1200/8760 = 0.14
-   - Exposición_Comunidad = 150/1000 = 0.15 (estimación)
-   - Score_Exposición = (0.14×0.60) + (0.15×0.40) = 0.14
+- Exposición_Esfuerzo = 1200/8760 = 0.14
+- Exposición_Comunidad = 150/1000 = 0.15 (estimación)
+- Score_Exposición = (0.14×0.60) + (0.15×0.40) = 0.14
 
 3. **Score_Sensibilidad:**
-   - Sensibilidad_Especies = (8/43) × 1.2 = 0.22
-   - Sensibilidad_Endémicas = 1
-   - Score_Sensibilidad = (0.22×0.70) + (1×0.30) = 0.45
+- Sensibilidad_Especies = (8/43) × 1.2 = 0.22
+- Sensibilidad_Endémicas = 1
+- Score_Sensibilidad = (0.22×0.70) + (1×0.30) = 0.45
 
 4. **Score_Dependencia:**
-   - Dependencia_Ingresos = 0.65 × 1.0 = 0.65
-   - Dependencia_Alimentaria = 0.80 × 1.0 = 0.80
-   - Score_Dependencia = (0.65×0.60) + (0.80×0.40) = 0.71
+- Dependencia_Ingresos = 0.65 × 1.0 = 0.65
+- Dependencia_Alimentaria = 0.80 × 1.0 = 0.80
+- Score_Dependencia = (0.65×0.60) + (0.80×0.40) = 0.71
 
 5. **Score_Biocultural:**
-   - Valor_Sitios_Sagrados = 1/10 = 0.10
-   - Valor_Rutas_Ancestrales = 5/500 = 0.01
-   - Score_Biocultural = (0.10×0.60) + (0.01×0.40) = 0.06
+- Valor_Sitios_Sagrados = 1/10 = 0.10
+- Valor_Rutas_Ancestrales = 5/500 = 0.01
+- Score_Biocultural = (0.10×0.60) + (0.01×0.40) = 0.06
 
 6. **Score_Capacidad_Adaptativa:**
-   - Score = (14/21) × 0.70 + 0.30 = 0.77
+- Score = (14/21) × 0.70 + 0.30 = 0.77
 
 7. **IERC_Total:**
-   - IERC = (0.84×0.20) + (0.14×0.20) + (0.45×0.15) + (0.71×0.15) + (0.06×0.15) + ((1-0.77)×0.15)
-   - IERC = 0.168 + 0.028 + 0.0675 + 0.1065 + 0.009 + 0.0345 = **0.413**
+- IERC = (0.84×0.20) + (0.14×0.20) + (0.45×0.15) + (0.71×0.15) + (0.06×0.15) + ((1-0.77)×0.15)
+- IERC = 0.168 + 0.028 + 0.0675 + 0.1065 + 0.009 + 0.0345 = **0.413**
 
 **Resultado:** IERC = 41.3 (riesgo moderado-alto)
 

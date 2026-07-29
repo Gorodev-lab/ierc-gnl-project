@@ -13,11 +13,11 @@
 2. [Objetivos Específicos](#objetivos-específicos)
 3. [Alcance Geográfico](#alcance-geográfico)
 4. [Metodología](#metodología)
-   - [4.1 Encuesta a Cooperativas Pesqueras](#41-encuesta-a-cooperativas-pesqueras)
-   - [4.2 Registro de Incidentes y Accidentes](#42-registro-de-incidentes-y-accidentes)
-   - [4.3 Mapeo de Zonas de Pesca Afectadas](#43-mapeo-de-zonas-de-pesca-afectadas)
-   - [4.4 Entrevistas a Autoridades Portuarias](#44-entrevistas-a-autoridades-portuarias)
-   - [4.5 Revisión de Documentación Oficial](#45-revisión-de-documentación-oficial)
+- [4.1 Encuesta a Cooperativas Pesqueras](#41-encuesta-a-cooperativas-pesqueras)
+- [4.2 Registro de Incidentes y Accidentes](#42-registro-de-incidentes-y-accidentes)
+- [4.3 Mapeo de Zonas de Pesca Afectadas](#43-mapeo-de-zonas-de-pesca-afectadas)
+- [4.4 Entrevistas a Autoridades Portuarias](#44-entrevistas-a-autoridades-portuarias)
+- [4.5 Revisión de Documentación Oficial](#45-revisión-de-documentación-oficial)
 5. [Variables Clave a Registrar](#variables-clave-a-registrar)
 6. [Herramientas y Equipos Requeridos](#herramientas-y-equipos-requeridos)
 7. [Formatos de Registro](#formatos-de-registro)
@@ -40,11 +40,11 @@ Los puertos de **Puerto Libertad** y **Guaymas** son puntos críticos para la ev
 
 Este protocolo detalla el enfoque metodológico para evaluar el impacto socioeconómico y ambiental de los proyectos de GNL en estos puertos, con énfasis en:
 
-✅ **Pérdidas económicas** por exclusión de áreas de pesca
-✅ **Traslape con rutas de metaneros** y riesgos de seguridad
-✅ **Impacto en cooperativas pesqueras** y medios de subsistencia
-✅ **Cumplimiento de regulaciones** y protocolos de seguridad
-✅ **Percepción de riesgos** por parte de pescadores y autoridades
+**Pérdidas económicas** por exclusión de áreas de pesca
+**Traslape con rutas de metaneros** y riesgos de seguridad
+**Impacto en cooperativas pesqueras** y medios de subsistencia
+**Cumplimiento de regulaciones** y protocolos de seguridad
+**Percepción de riesgos** por parte de pescadores y autoridades
 
 ---
 
@@ -73,16 +73,16 @@ Evaluar el impacto socioeconómico y ambiental de proyectos de GNL en las operac
 - **Zona de estudio:** 15 km a la redonda desde el puerto
 - **Área aproximada:** 706 km²
 - **Cooperativas principales:**
-  - Cooperativa de Pescadores de Puerto Libertad
-  - Cooperativa de Maricultura de Puerto Libertad
-  - Cooperativa de Buzos de Puerto Libertad
-  - Cooperativa de Pescadores de Altura
+- Cooperativa de Pescadores de Puerto Libertad
+- Cooperativa de Maricultura de Puerto Libertad
+- Cooperativa de Buzos de Puerto Libertad
+- Cooperativa de Pescadores de Altura
 
 - **Infraestructura crítica:**
-  - Terminal portuaria de Puerto Libertad
-  - Zona de exclusión para buques metaneros (300m desde terminal)
-  - Rutas de acceso a zonas de pesca
-  - Áreas de desembarque y comercialización
+- Terminal portuaria de Puerto Libertad
+- Zona de exclusión para buques metaneros (300m desde terminal)
+- Rutas de acceso a zonas de pesca
+- Áreas de desembarque y comercialización
 
 ### Guaymas
 
@@ -90,17 +90,17 @@ Evaluar el impacto socioeconómico y ambiental de proyectos de GNL en las operac
 - **Zona de estudio:** 20 km a la redonda desde el puerto
 - **Área aproximada:** 1,256 km²
 - **Cooperativas principales:**
-  - Cooperativa de Pescadores Ribereños de Guaymas
-  - Cooperativa de Camaronicultores de Guaymas
-  - Cooperativa de Pescadores de Altura de Guaymas
-  - Cooperativa de Buzos y Maricultores
+- Cooperativa de Pescadores Ribereños de Guaymas
+- Cooperativa de Camaronicultores de Guaymas
+- Cooperativa de Pescadores de Altura de Guaymas
+- Cooperativa de Buzos y Maricultores
 
 - **Infraestructura crítica:**
-  - Puerto comercial de Guaymas
-  - Terminal de carga general y contenedores
-  - Zona de exclusión para buques metaneros (proyectada)
-  - Rutas de navegación hacia zonas de pesca
-  - Áreas de procesamiento y comercialización
+- Puerto comercial de Guaymas
+- Terminal de carga general y contenedores
+- Zona de exclusión para buques metaneros (proyectada)
+- Rutas de navegación hacia zonas de pesca
+- Áreas de procesamiento y comercialización
 
 ---
 
@@ -113,28 +113,28 @@ Evaluar el impacto socioeconómico y ambiental de proyectos de GNL en las operac
 **Metodología:**
 
 1. **Selección de muestra:**
-   - **Puerto Libertad:** 5-8 cooperativas (todas las registradas)
-   - **Guaymas:** 6-10 cooperativas (todas las registradas)
-   - **Encuestas por cooperativa:** 10-15 pescadores (muestra representativa)
-   - **Total estimado:** 80-120 encuestas por puerto
+- **Puerto Libertad:** 5-8 cooperativas (todas las registradas)
+- **Guaymas:** 6-10 cooperativas (todas las registradas)
+- **Encuestas por cooperativa:** 10-15 pescadores (muestra representativa)
+- **Total estimado:** 80-120 encuestas por puerto
 
 2. **Entrevistas a líderes:**
-   - Presidentes de cooperativas
-   - Secretarios de actas
-   - Capitanes de embarcaciones
-   - Representantes ante autoridades
+- Presidentes de cooperativas
+- Secretarios de actas
+- Capitanes de embarcaciones
+- Representantes ante autoridades
 
 3. **Revisión de registros internos:**
-   - Libros de bitácora de pesca
-   - Registros de ventas y gastos
-   - Actas de asambleas
-   - Informes de incidentes
+- Libros de bitácora de pesca
+- Registros de ventas y gastos
+- Actas de asambleas
+- Informes de incidentes
 
 4. **Análisis de datos:**
-   - Comparación de datos pre y post implementación de zonas de exclusión
-   - Cálculo de pérdidas económicas
-   - Identificación de especies afectadas
-   - Evaluación de estrategias de adaptación
+- Comparación de datos pre y post implementación de zonas de exclusión
+- Cálculo de pérdidas económicas
+- Identificación de especies afectadas
+- Evaluación de estrategias de adaptación
 
 **Duración estimada:** 4-5 días por puerto
 
@@ -145,27 +145,27 @@ Evaluar el impacto socioeconómico y ambiental de proyectos de GNL en las operac
 **Metodología:**
 
 1. **Reporte diario durante 30 días consecutivos:**
-   - Entrevistas a pescadores al regreso de faenas
-   - Revisión de registros de Capitanía de Puerto
-   - Monitoreo de comunicaciones por radio VHF
+- Entrevistas a pescadores al regreso de faenas
+- Revisión de registros de Capitanía de Puerto
+- Monitoreo de comunicaciones por radio VHF
 
 2. **Entrevistas a testigos:**
-   - Capitanes de embarcaciones locales
-   - Capitanes de puerto
-   - Autoridades de SEMAR y PROFEPA
-   - Personal de terminales portuarias
+- Capitanes de embarcaciones locales
+- Capitanes de puerto
+- Autoridades de SEMAR y PROFEPA
+- Personal de terminales portuarias
 
 3. **Revisión de documentación oficial:**
-   - Reportes de incidentes de Capitanía de Puerto
-   - Denuncias ante PROFEPA
-   - Informes de SEMAR sobre tráfico marítimo
-   - Registros de la Secretaría de Marina
+- Reportes de incidentes de Capitanía de Puerto
+- Denuncias ante PROFEPA
+- Informes de SEMAR sobre tráfico marítimo
+- Registros de la Secretaría de Marina
 
 4. **Registro fotográfico y de video:**
-   - Incidentes visibles (contaminación, colisiones)
-   - Zonas de exclusión con señalización
-   - Embarcaciones involucradas
-   - Daños a equipos de pesca
+- Incidentes visibles (contaminación, colisiones)
+- Zonas de exclusión con señalización
+- Embarcaciones involucradas
+- Daños a equipos de pesca
 
 **Variables clave a registrar:**
 - Fecha, hora y ubicación del incidente
@@ -184,27 +184,27 @@ Evaluar el impacto socioeconómico y ambiental de proyectos de GNL en las operac
 **Metodología:**
 
 1. **Talleres con pescadores:**
-   - Sesión 1: Identificación de zonas tradicionales de pesca
-   - Sesión 2: Mapeo de cambios post implementación de zonas de exclusión
-   - Participantes: 15-20 pescadores experimentados por puerto
+- Sesión 1: Identificación de zonas tradicionales de pesca
+- Sesión 2: Mapeo de cambios post implementación de zonas de exclusión
+- Participantes: 15-20 pescadores experimentados por puerto
 
 2. **Mapeo participativo con GPS:**
-   - Uso de dispositivos GPS de alta precisión (Garmin GPSMAP 66i)
-   - Registro de polígonos de zonas afectadas
-   - Documentación de puntos clave (waypoints)
-   - Validación con datos de VMS/AIS cuando estén disponibles
+- Uso de dispositivos GPS de alta precisión (Garmin GPSMAP 66i)
+- Registro de polígonos de zonas afectadas
+- Documentación de puntos clave (waypoints)
+- Validación con datos de VMS/AIS cuando estén disponibles
 
 3. **Entrevistas a capitanes:**
-   - Trayectos guiados en zonas de pesca tradicionales
-   - Registro de rutas alternativas implementadas
-   - Documentación de pérdidas económicas por zona
+- Trayectos guiados en zonas de pesca tradicionales
+- Registro de rutas alternativas implementadas
+- Documentación de pérdidas económicas por zona
 
 4. **Análisis espacial:**
-   - Superposición de zonas afectadas con:
-     - Zonas de exclusión de metaneros
-     - Rutas de tráfico marítimo
-     - Áreas de alta biodiversidad
-     - Sitios de importancia cultural
+- Superposición de zonas afectadas con:
+- Zonas de exclusión de metaneros
+- Rutas de tráfico marítimo
+- Áreas de alta biodiversidad
+- Sitios de importancia cultural
 
 **Herramientas requeridas:**
 - GPS de alta precisión
@@ -221,38 +221,38 @@ Evaluar el impacto socioeconómico y ambiental de proyectos de GNL en las operac
 **Metodología:**
 
 1. **Entrevistas semiestructuradas con:**
-   - Capitán de Puerto
-   - Subcapitán de Puerto
-   - Oficiales de SEMAR destacados en el puerto
-   - Personal de PROFEPA
-   - Representantes de la Secretaría de Comunicaciones y Transportes
-   - Personal de seguridad portuaria
+- Capitán de Puerto
+- Subcapitán de Puerto
+- Oficiales de SEMAR destacados en el puerto
+- Personal de PROFEPA
+- Representantes de la Secretaría de Comunicaciones y Transportes
+- Personal de seguridad portuaria
 
 2. **Temas clave a cubrir:**
-   - **Regulaciones aplicables:**
-     - Zonas de exclusión para buques metaneros
-     - Protocolos de seguridad marítima
-     - Normas ambientales (NOM-001-SEMARNAT-1996, NOM-052-SEMARNAT-2005)
-     - Acuerdos internacionales (MARPOL, SOLAS)
-   - **Cumplimiento y monitoreo:**
-     - Frecuencia de inspecciones a buques metaneros
-     - Protocolos de respuesta a incidentes
-     - Sistemas de alerta temprana
-     - Coordinación con SEMAR y PROFEPA
-   - **Percepción de riesgos:**
-     - Evaluación de riesgos por parte de autoridades
-     - Planes de contingencia existentes
-     - Capacidad de respuesta a emergencias
-   - **Comunicación con comunidades:**
-     - Mecanismos de difusión de regulaciones
-     - Canales de reporte de incidentes por pescadores
-     - Programas de capacitación a pescadores
+- **Regulaciones aplicables:**
+- Zonas de exclusión para buques metaneros
+- Protocolos de seguridad marítima
+- Normas ambientales (NOM-001-SEMARNAT-1996, NOM-052-SEMARNAT-2005)
+- Acuerdos internacionales (MARPOL, SOLAS)
+- **Cumplimiento y monitoreo:**
+- Frecuencia de inspecciones a buques metaneros
+- Protocolos de respuesta a incidentes
+- Sistemas de alerta temprana
+- Coordinación con SEMAR y PROFEPA
+- **Percepción de riesgos:**
+- Evaluación de riesgos por parte de autoridades
+- Planes de contingencia existentes
+- Capacidad de respuesta a emergencias
+- **Comunicación con comunidades:**
+- Mecanismos de difusión de regulaciones
+- Canales de reporte de incidentes por pescadores
+- Programas de capacitación a pescadores
 
 3. **Revisión de documentación oficial:**
-   - Permisos de operación para terminales de GNL
-   - Estudios de impacto ambiental (EIA) aprobados
-   - Planes de manejo de riesgos
-   - Informes de inspecciones recientes
+- Permisos de operación para terminales de GNL
+- Estudios de impacto ambiental (EIA) aprobados
+- Planes de manejo de riesgos
+- Informes de inspecciones recientes
 
 **Duración estimada:** 2-3 días por puerto
 
@@ -263,46 +263,46 @@ Evaluar el impacto socioeconómico y ambiental de proyectos de GNL en las operac
 **Metodología:**
 
 1. **Fuentes a consultar:**
-   - **Capitanía de Puerto:**
-     - Registros de tráfico marítimo
-     - Reportes de incidentes
-     - Permisos de navegación
-     - Zonas de exclusión establecidas
-   - **SEMAR (Secretaría de Marina):**
-     - Informes de patrullaje
-     - Datos de AIS (Automatic Identification System)
-     - Reportes de contaminación
-     - Operativos de seguridad
-   - **PROFEPA (Procuraduría Federal de Protección al Ambiente):**
-     - Denuncias por contaminación
-     - Inspecciones ambientales
-     - Sanciones aplicadas
-     - Estudios de impacto ambiental
-   - **CONAPESCA (Comisión Nacional de Acuacultura y Pesca):**
-     - Registros de pesca
-     - Estadísticas de desembarques
-     - Permisos de pesca
-     - Programas de ordenamiento pesquero
-   - **SEMARNAT (Secretaría de Medio Ambiente y Recursos Naturales):**
-     - Autorizaciones ambientales
-     - Estudios de riesgo ambiental
-     - Programas de conservación
-   - **Gobierno del Estado de Sonora:**
-     - Informes de impacto socioeconómico
-     - Programas de desarrollo pesquero
-     - Estudios sobre GNL en la región
+- **Capitanía de Puerto:**
+- Registros de tráfico marítimo
+- Reportes de incidentes
+- Permisos de navegación
+- Zonas de exclusión establecidas
+- **SEMAR (Secretaría de Marina):**
+- Informes de patrullaje
+- Datos de AIS (Automatic Identification System)
+- Reportes de contaminación
+- Operativos de seguridad
+- **PROFEPA (Procuraduría Federal de Protección al Ambiente):**
+- Denuncias por contaminación
+- Inspecciones ambientales
+- Sanciones aplicadas
+- Estudios de impacto ambiental
+- **CONAPESCA (Comisión Nacional de Acuacultura y Pesca):**
+- Registros de pesca
+- Estadísticas de desembarques
+- Permisos de pesca
+- Programas de ordenamiento pesquero
+- **SEMARNAT (Secretaría de Medio Ambiente y Recursos Naturales):**
+- Autorizaciones ambientales
+- Estudios de riesgo ambiental
+- Programas de conservación
+- **Gobierno del Estado de Sonora:**
+- Informes de impacto socioeconómico
+- Programas de desarrollo pesquero
+- Estudios sobre GNL en la región
 
 2. **Acceso a información:**
-   - Solicitudes de información pública (Ley General de Transparencia)
-   - Visitas a oficinas gubernamentales
-   - Entrevistas con funcionarios responsables
-   - Revisión de portales de transparencia
+- Solicitudes de información pública (Ley General de Transparencia)
+- Visitas a oficinas gubernamentales
+- Entrevistas con funcionarios responsables
+- Revisión de portales de transparencia
 
 3. **Análisis comparativo:**
-   - Comparar datos oficiales con datos recolectados en campo
-   - Identificar discrepancias y posibles sesgos
-   - Validar metodología de recolección
-   - Complementar información faltante
+- Comparar datos oficiales con datos recolectados en campo
+- Identificar discrepancias y posibles sesgos
+- Validar metodología de recolección
+- Complementar información faltante
 
 **Duración estimada:** 3-5 días por puerto (incluyendo trámites administrativos)
 
@@ -474,11 +474,11 @@ Evaluar el impacto socioeconómico y ambiental de proyectos de GNL en las operac
 - **Nombre de la cooperativa:** _________________________
 - **Número de socios:** _______
 - **Tipo de pesca principal:**
-  - [ ] Artesanal costera
-  - [ ] Semi-industrial
-  - [ ] Industrial
-  - [ ] Maricultura
-  - [ ] Otro: _______________
+- [ ] Artesanal costera
+- [ ] Semi-industrial
+- [ ] Industrial
+- [ ] Maricultura
+- [ ] Otro: _______________
 - **Año de fundación:** _______
 - **Área de operación principal (km²):** _______
 
@@ -502,11 +502,11 @@ Evaluar el impacto socioeconómico y ambiental de proyectos de GNL en las operac
 
 ## Sección 6: Estrategias de Adaptación
 - **Ha cambiado zonas de pesca:** [ ] Sí / [ ] No
-  - Si sí, ¿a qué zonas?: _________________________
+- Si sí, ¿a qué zonas?: _________________________
 - **Ha cambiado especies objetivo:** [ ] Sí / [ ] No
-  - Si sí, ¿a qué especies?: _________________________
+- Si sí, ¿a qué especies?: _________________________
 - **Ha diversificado actividades:** [ ] Sí / [ ] No
-  - Si sí, ¿qué actividades?: _________________________
+- Si sí, ¿qué actividades?: _________________________
 - **Costos adicionales por adaptación:** $_______ MXN/mes
 - **Éxito de la adaptación (1-5):** [ ] 1 / [ ] 2 / [ ] 3 / [ ] 4 / [ ] 5
 
@@ -634,59 +634,59 @@ ________________________________________________________________
 
 ## Sección 1: Regulaciones Aplicables
 - **Zonas de exclusión para metaneros:**
-  - ¿Existen zonas de exclusión establecidas? [ ] Sí / [ ] No
-  - Si sí, ¿cuál es el radio? _______ metros
-  - ¿Están señalizadas? [ ] Sí / [ ] No
-  - ¿Se respeta el radio establecido? [ ] Sí / [ ] No / [ ] Parcialmente
+- ¿Existen zonas de exclusión establecidas? [ ] Sí / [ ] No
+- Si sí, ¿cuál es el radio? _______ metros
+- ¿Están señalizadas? [ ] Sí / [ ] No
+- ¿Se respeta el radio establecido? [ ] Sí / [ ] No / [ ] Parcialmente
 
 - **Protocolos de seguridad para metaneros:**
-  - ¿Qué protocolos aplican? _________________________
-  - ¿Se realizan inspecciones a metaneros? [ ] Sí / [ ] No
-  - Frecuencia de inspecciones: _________________________
-  - ¿Se monitorea el cumplimiento? [ ] Sí / [ ] No
+- ¿Qué protocolos aplican? _________________________
+- ¿Se realizan inspecciones a metaneros? [ ] Sí / [ ] No
+- Frecuencia de inspecciones: _________________________
+- ¿Se monitorea el cumplimiento? [ ] Sí / [ ] No
 
 - **Normas ambientales aplicables:**
-  - NOM-001-SEMARNAT-1996: _________________________
-  - NOM-052-SEMARNAT-2005: _________________________
-  - MARPOL: _________________________
-  - SOLAS: _________________________
+- NOM-001-SEMARNAT-1996: _________________________
+- NOM-052-SEMARNAT-2005: _________________________
+- MARPOL: _________________________
+- SOLAS: _________________________
 
 ## Sección 2: Cumplimiento y Monitoreo
 - **Incidentes reportados en el último año:** _______
-  - Tipos de incidentes: _________________________
-  - Acciones tomadas: _________________________
+- Tipos de incidentes: _________________________
+- Acciones tomadas: _________________________
 - **Sanciones aplicadas a metaneros:** _______
 - **Multas por incumplimiento:** $_______ MXN
 - **Plan de contingencia para emergencias:** [ ] Sí / [ ] No
-  - Si sí, ¿qué incluye?: _________________________
+- Si sí, ¿qué incluye?: _________________________
 
 ## Sección 3: Percepción de Riesgos
 - **Evaluación de riesgos por parte de la autoridad:**
-  - Alto: [ ] Sí / [ ] No
-  - Moderado: [ ] Sí / [ ] No
-  - Bajo: [ ] Sí / [ ] No
+- Alto: [ ] Sí / [ ] No
+- Moderado: [ ] Sí / [ ] No
+- Bajo: [ ] Sí / [ ] No
 - **Principales riesgos identificados:**
-  1. _________________________
-  2. _________________________
-  3. _________________________
+1. _________________________
+2. _________________________
+3. _________________________
 - **Capacidad de respuesta a emergencias:**
-  - Tiempo de respuesta estimado: _______ minutos/horas
-  - Recursos disponibles: _________________________
+- Tiempo de respuesta estimado: _______ minutos/horas
+- Recursos disponibles: _________________________
 
 ## Sección 4: Comunicación con Comunidades
 - **Mecanismos de difusión de regulaciones:**
-  - Talleres: [ ] Sí / [ ] No
-  - Folletos: [ ] Sí / [ ] No
-  - Radio local: [ ] Sí / [ ] No
-  - Redes sociales: [ ] Sí / [ ] No
+- Talleres: [ ] Sí / [ ] No
+- Folletos: [ ] Sí / [ ] No
+- Radio local: [ ] Sí / [ ] No
+- Redes sociales: [ ] Sí / [ ] No
 - **Canales de reporte de incidentes por pescadores:**
-  - Capitanía de Puerto: [ ] Sí / [ ] No
-  - SEMAR: [ ] Sí / [ ] No
-  - PROFEPA: [ ] Sí / [ ] No
-  - Cooperativas: [ ] Sí / [ ] No
+- Capitanía de Puerto: [ ] Sí / [ ] No
+- SEMAR: [ ] Sí / [ ] No
+- PROFEPA: [ ] Sí / [ ] No
+- Cooperativas: [ ] Sí / [ ] No
 - **Programas de capacitación a pescadores:**
-  - ¿Existen? [ ] Sí / [ ] No
-  - Si sí, ¿qué temas cubren?: _________________________
+- ¿Existen? [ ] Sí / [ ] No
+- Si sí, ¿qué temas cubren?: _________________________
 
 **Notas del entrevistador:**
 ________________________________________________________________
@@ -722,29 +722,29 @@ ________________________________________________________________
 
 **En caso de emergencia:**
 - **Mal tiempo o tormenta:**
-  - Buscar refugio en la costa más cercana
-  - Activar baliza de emergencia si es posible
-  - Mantener la calma y seguir protocolos de seguridad
-  - Usar chaleco salvavidas en todo momento
+- Buscar refugio en la costa más cercana
+- Activar baliza de emergencia si es posible
+- Mantener la calma y seguir protocolos de seguridad
+- Usar chaleco salvavidas en todo momento
 
 - **Avería mecánica:**
-  - Intentar reparar si es seguro hacerlo
-  - Activar baliza de emergencia
-  - Esperar rescate en la embarcación (no abandonar)
-  - Usar chaleco salvavidas
+- Intentar reparar si es seguro hacerlo
+- Activar baliza de emergencia
+- Esperar rescate en la embarcación (no abandonar)
+- Usar chaleco salvavidas
 
 - **Incidente con buque metanero:**
-  - Mantener distancia segura
-  - Notificar inmediatamente a Capitanía de Puerto por radio VHF
-  - Registrar coordenadas y detalles del incidente
-  - Tomar fotos/videos si es seguro hacerlo
-  - No confrontar al buque metanero
+- Mantener distancia segura
+- Notificar inmediatamente a Capitanía de Puerto por radio VHF
+- Registrar coordenadas y detalles del incidente
+- Tomar fotos/videos si es seguro hacerlo
+- No confrontar al buque metanero
 
 - **Enfermedad o lesión:**
-  - Administrar primeros auxilios según el caso
-  - Notificar a Capitanía de Puerto
-  - Evacuar si es necesario (llamar a servicios médicos)
-  - Mantener comunicación constante
+- Administrar primeros auxilios según el caso
+- Notificar a Capitanía de Puerto
+- Evacuar si es necesario (llamar a servicios médicos)
+- Mantener comunicación constante
 
 ### 8.2 Seguridad en Zonas Costeras
 
@@ -903,78 +903,78 @@ ________________________________________________________________
 
 #### Puerto Libertad
 - **Capitán de Puerto:** Capitán [Nombre]  
-  - Teléfono: [ ]  
-  - Email: [ ]  
-  - Horario de atención: Lunes a viernes, 8:00-17:00
+- Teléfono: [ ]  
+- Email: [ ]  
+- Horario de atención: Lunes a viernes, 8:00-17:00
 
 - **Subcapitán de Puerto:** Teniente [Nombre]  
-  - Teléfono: [ ]  
-  - Email: [ ]
+- Teléfono: [ ]  
+- Email: [ ]
 
 - **Oficial SEMAR destacado:** [Nombre]  
-  - Teléfono: [ ]  
-  - Email: [ ]
+- Teléfono: [ ]  
+- Email: [ ]
 
 - **Delegado PROFEPA Sonora:** [Nombre]  
-  - Teléfono: [ ]  
-  - Email: [ ]
+- Teléfono: [ ]  
+- Email: [ ]
 
 - **Cooperativa de Pescadores de Puerto Libertad:** Presidente [Nombre]  
-  - Teléfono: [ ]  
-  - Email: [ ]
+- Teléfono: [ ]  
+- Email: [ ]
 
 #### Guaymas
 - **Capitán de Puerto:** Capitán [Nombre]  
-  - Teléfono: [ ]  
-  - Email: [ ]  
-  - Horario de atención: Lunes a viernes, 8:00-17:00
+- Teléfono: [ ]  
+- Email: [ ]  
+- Horario de atención: Lunes a viernes, 8:00-17:00
 
 - **Subcapitán de Puerto:** Teniente [Nombre]  
-  - Teléfono: [ ]  
-  - Email: [ ]
+- Teléfono: [ ]  
+- Email: [ ]
 
 - **Oficial SEMAR destacado:** [Nombre]  
-  - Teléfono: [ ]  
-  - Email: [ ]
+- Teléfono: [ ]  
+- Email: [ ]
 
 - **Delegado PROFEPA Sonora:** [Nombre]  
-  - Teléfono: [ ]  
-  - Email: [ ]
+- Teléfono: [ ]  
+- Email: [ ]
 
 - **Cooperativa de Pescadores Ribereños de Guaymas:** Presidente [Nombre]  
-  - Teléfono: [ ]  
-  - Email: [ ]
+- Teléfono: [ ]  
+- Email: [ ]
 
 ### Organizaciones de la Sociedad Civil
 
 - **Red de Cooperativas Pesqueras del Golfo:** Coordinador [Nombre]  
-  - Teléfono: [ ]  
-  - Email: [ ]
+- Teléfono: [ ]  
+- Email: [ ]
 
 - **Centro de Derechos Humanos del Noroeste:** Investigador [Nombre]  
-  - Teléfono: [ ]  
-  - Email: [ ]
+- Teléfono: [ ]  
+- Email: [ ]
 
 - **Greenpeace México - Oficina Noroeste:** Coordinador [Nombre]  
-  - Teléfono: [ ]  
-  - Email: [ ]
+- Teléfono: [ ]  
+- Email: [ ]
 
 ### Investigadores y Colaboradores
 
 - **Dr. [Nombre]:** Especialista en pesca artesanal  
-  - Institución: [ ]  
-  - Teléfono: [ ]  
-  - Email: [ ]
+- Institución: [ ]  
+- Teléfono: [ ]  
+- Email: [ ]
 
 - **Dra. [Nombre]:** Experta en gobernanza pesquera  
-  - Institución: [ ]  
-  - Teléfono: [ ]  
-  - Email: [ ]
+- Institución: [ ]  
+- Teléfono: [ ]  
+- Email: [ ]
 
 - **Ing. [Nombre]:** Especialista en SIG y análisis espacial  
-  - Institución: [ ]  
-  - Teléfono: [ ]  
-  - Email: [ ]
+- Institución: [ ]  
+- Teléfono: [ ]  
+- Email: [ ]
 
 ---
 
@@ -1071,56 +1071,56 @@ ________________________________________________________________
 Basado en el contexto del proyecto IERC-GNL y la experiencia previa en estudios similares, se esperan los siguientes hallazgos en Puerto Libertad y Guaymas:
 
 1. **Impacto económico significativo:**
-   - Pérdidas económicas anuales estimadas entre $5-15 millones MXN por puerto
-   - Reducción del 20-40% en ingresos de cooperativas pesqueras
-   - Traslape del 30-60% entre zonas de pesca tradicionales y zonas de exclusión
+- Pérdidas económicas anuales estimadas entre $5-15 millones MXN por puerto
+- Reducción del 20-40% en ingresos de cooperativas pesqueras
+- Traslape del 30-60% entre zonas de pesca tradicionales y zonas de exclusión
 
 2. **Riesgos de seguridad:**
-   - Traslape frecuente con rutas de metaneros (2-5 veces por semana en promedio)
-   - Incidentes reportados de colisiones, contaminación y interferencia con equipos
-   - Falta de protocolos claros de comunicación entre pescadores y autoridades
+- Traslape frecuente con rutas de metaneros (2-5 veces por semana en promedio)
+- Incidentes reportados de colisiones, contaminación y interferencia con equipos
+- Falta de protocolos claros de comunicación entre pescadores y autoridades
 
 3. **Impacto en biodiversidad:**
-   - Pérdida de áreas de desove y crianza de especies clave
-   - Reducción en capturas de especies comerciales
-   - Traslape con áreas de alta biodiversidad y sitios de importancia ecológica
+- Pérdida de áreas de desove y crianza de especies clave
+- Reducción en capturas de especies comerciales
+- Traslape con áreas de alta biodiversidad y sitios de importancia ecológica
 
 4. **Desafíos de gobernanza:**
-   - Falta de consulta previa con comunidades pesqueras
-   - Insuficiente difusión de regulaciones entre pescadores
-   - Limitada participación de cooperativas en la toma de decisiones
-   - Percepción de desconfianza hacia autoridades y empresas de GNL
+- Falta de consulta previa con comunidades pesqueras
+- Insuficiente difusión de regulaciones entre pescadores
+- Limitada participación de cooperativas en la toma de decisiones
+- Percepción de desconfianza hacia autoridades y empresas de GNL
 
 ### Recomendaciones Preliminares
 
 1. **Para autoridades portuarias y gubernamentales:**
-   - **Establecer mesas de diálogo** con cooperativas pesqueras para discutir zonas de exclusión y alternativas
-   - **Implementar sistemas de alerta temprana** para pescadores sobre operaciones de metaneros
-   - **Capacitar a pescadores** en protocolos de seguridad y manejo de emergencias
-   - **Revisar y ajustar** zonas de exclusión para minimizar impacto en pesca tradicional
-   - **Establecer mecanismos de compensación** por pérdidas económicas a cooperativas afectadas
+- **Establecer mesas de diálogo** con cooperativas pesqueras para discutir zonas de exclusión y alternativas
+- **Implementar sistemas de alerta temprana** para pescadores sobre operaciones de metaneros
+- **Capacitar a pescadores** en protocolos de seguridad y manejo de emergencias
+- **Revisar y ajustar** zonas de exclusión para minimizar impacto en pesca tradicional
+- **Establecer mecanismos de compensación** por pérdidas económicas a cooperativas afectadas
 
 2. **Para empresas de GNL:**
-   - **Realizar estudios de impacto socioeconómico** previos a la implementación de proyectos
-   - **Implementar programas de responsabilidad social** que beneficien a comunidades pesqueras
-   - **Establecer fondos de compensación** para pescadores afectados por zonas de exclusión
-   - **Mejorar la comunicación y transparencia** con comunidades locales
-   - **Invertir en investigación** sobre alternativas de pesca sostenible en zonas afectadas
+- **Realizar estudios de impacto socioeconómico** previos a la implementación de proyectos
+- **Implementar programas de responsabilidad social** que beneficien a comunidades pesqueras
+- **Establecer fondos de compensación** para pescadores afectados por zonas de exclusión
+- **Mejorar la comunicación y transparencia** con comunidades locales
+- **Invertir en investigación** sobre alternativas de pesca sostenible en zonas afectadas
 
 3. **Para cooperativas pesqueras:**
-   - **Diversificar actividades económicas** para reducir dependencia de zonas de pesca tradicionales
-   - **Fortalecer organización interna** para negociar con autoridades y empresas
-   - **Implementar prácticas de pesca sostenible** para mejorar resiliencia
-   - **Documentar pérdidas y incidentes** para sustentar reclamos y demandas
-   - **Participar en programas de capacitación** en manejo de riesgos y adaptación al cambio
+- **Diversificar actividades económicas** para reducir dependencia de zonas de pesca tradicionales
+- **Fortalecer organización interna** para negociar con autoridades y empresas
+- **Implementar prácticas de pesca sostenible** para mejorar resiliencia
+- **Documentar pérdidas y incidentes** para sustentar reclamos y demandas
+- **Participar en programas de capacitación** en manejo de riesgos y adaptación al cambio
 
 4. **Para el proyecto IERC-GNL:**
-   - **Validar hallazgos** con datos oficiales y actores locales
-   - **Ajustar la metodología** según resultados de campo
-   - **Generar mapas de riesgo** para apoyar la toma de decisiones
-   - **Desarrollar dashboards interactivos** para visualizar resultados
-   - **Elaborar informes técnicos** para autoridades, empresas y comunidades
-   - **Proponer recomendaciones específicas** para mitigar impactos identificados
+- **Validar hallazgos** con datos oficiales y actores locales
+- **Ajustar la metodología** según resultados de campo
+- **Generar mapas de riesgo** para apoyar la toma de decisiones
+- **Desarrollar dashboards interactivos** para visualizar resultados
+- **Elaborar informes técnicos** para autoridades, empresas y comunidades
+- **Proponer recomendaciones específicas** para mitigar impactos identificados
 
 ---
 

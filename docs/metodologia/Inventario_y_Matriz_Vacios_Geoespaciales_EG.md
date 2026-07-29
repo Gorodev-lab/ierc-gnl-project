@@ -26,12 +26,12 @@
 
 | Vacío de Información | Dimensión Afectada | Localidades Objetivo | Método de Captura en Campo (JCB / EG) | Prioridad |
 |---|---|---|---|---|
-| **Rutas Pesqueras Quincenales** | Exposición Pesquera | Punta Chueca, Puerto Libertad, Guaymas | Cartografía participativa con GPS / Digitalización de rutas quincenales | 🔴 Alta |
-| **Zonas Secundarias y de Contingencia** | Exposición / Sensibilidad | Punta Chueca, Puerto Libertad | Talleres comunitarios y mapeo participativo de zonas alternas | 🔴 Alta |
-| **Calendarios Pesqueros por Arte y Especie** | Exposición Temporal | Punta Chueca, Puerto Libertad, Guaymas | Matriz explícita de estacionalidad y especies objetivo quincenales | 🔴 Alta |
-| **Sitios Bioculturales Comca'ac** | Patrimonio Biocultural | Punta Chueca | Mapeo intercultural con la comunidad Comca'ac (bajo CPLI) | 🔴 Alta |
+| **Rutas Pesqueras Quincenales** | Exposición Pesquera | Punta Chueca, Puerto Libertad, Guaymas | Cartografía participativa con GPS / Digitalización de rutas quincenales |  Alta |
+| **Zonas Secundarias y de Contingencia** | Exposición / Sensibilidad | Punta Chueca, Puerto Libertad | Talleres comunitarios y mapeo participativo de zonas alternas |  Alta |
+| **Calendarios Pesqueros por Arte y Especie** | Exposición Temporal | Punta Chueca, Puerto Libertad, Guaymas | Matriz explícita de estacionalidad y especies objetivo quincenales |  Alta |
+| **Sitios Bioculturales Comca'ac** | Patrimonio Biocultural | Punta Chueca | Mapeo intercultural con la comunidad Comca'ac (bajo CPLI) |  Alta |
 | **Cadenas de Valor y Roles de Género** | Vulnerabilidad Social | Guaymas, Puerto Libertad | Entrevistas a mujeres desconchadoras / trabajadoras postcaptura | 🟡 Media |
-| **Puntos de Fondeo y Conflictos con GNL** | Amenaza GNL | Puerto Libertad, Guaymas | Superposición de trazas AIS de metaneros vs rutas de pangas | 🔴 Alta |
+| **Puntos de Fondeo y Conflictos con GNL** | Amenaza GNL | Puerto Libertad, Guaymas | Superposición de trazas AIS de metaneros vs rutas de pangas |  Alta |
 
 ---
 

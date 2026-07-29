@@ -22,13 +22,13 @@ Este archivo GeoPackage constituye el **1er Entregable Espacial del Proyecto IER
 
 | Nombre de Capa | Tipo Geometría | N° Entidades | Descripción |
 |---|---|---|---|
-| 📍 `proyectos_gnl` | `Point` | 5 | Ubicación puntual y nivel de riesgo de terminales GNL en el Golfo. |
-| 🛢️ `gasoductos_infraestructura_gnl` | `LineString` | 2 | Trazados conocidos y proyectados de ductos GNL (Sonora, Saguaro, Guaymas). |
-| 🏡 `localidades_estudio_ierc` | `Point` | 3 | Las 3 localidades prioritarias del POA (Punta Chueca, Puerto Libertad, Guaymas). |
-| 🌿 `anp_habitats_criticos` | `Polygon` | 2 | Áreas Naturales Protegidas (CONANP) y hábitats marinos críticos. |
-| 🐟 `zonas_pesqueras_pangas` | `MultiPolygon` | 17 | Polígonos consolidados por sitio pesquero con la clave `uid_espaciotemporal`. |
+|  `proyectos_gnl` | `Point` | 5 | Ubicación puntual y nivel de riesgo de terminales GNL en el Golfo. |
+|  `gasoductos_infraestructura_gnl` | `LineString` | 2 | Trazados conocidos y proyectados de ductos GNL (Sonora, Saguaro, Guaymas). |
+|  `localidades_estudio_ierc` | `Point` | 3 | Las 3 localidades prioritarias del POA (Punta Chueca, Puerto Libertad, Guaymas). |
+|  `anp_habitats_criticos` | `Polygon` | 2 | Áreas Naturales Protegidas (CONANP) y hábitats marinos críticos. |
+|  `zonas_pesqueras_pangas` | `MultiPolygon` | 17 | Polígonos consolidados por sitio pesquero con la clave `uid_espaciotemporal`. |
 | ⬡ `grilla_h3_riesgo` | `Polygon` | 5,244 | Grilla hexagonal Uber H3 adaptativa (Res 8 / Res 9) con scores IERC. |
-| 📊 `riqueza_relativa_pesquera` | `MultiPolygon` | 11,065 | Malla espacial de riqueza biológica pesquera relativa (PANGAS). |
+|  `riqueza_relativa_pesquera` | `MultiPolygon` | 11,065 | Malla espacial de riqueza biológica pesquera relativa (PANGAS). |
 
 ---
 

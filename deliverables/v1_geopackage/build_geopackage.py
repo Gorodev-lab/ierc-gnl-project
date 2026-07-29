@@ -31,11 +31,11 @@ OUTPUT_GPKG = DELIVERABLE_DIR / 'ierc_golfo_california.gpkg'
 
 DELIVERABLE_DIR.mkdir(parents=True, exist_ok=True)
 
-print("🚀 Iniciando generación del GeoPackage Entregable v1.1 (Causa Natura Data - JCB/EG)")
-print(f"📦 Archivo destino: {OUTPUT_GPKG}")
+print("Iniciando generación del GeoPackage Entregable v1.1 (Causa Natura Data - JCB/EG)")
+print(f"Archivo destino: {OUTPUT_GPKG}")
 
 # ── 1. Capa: proyectos_gnl ───────────────────────────────────────────────────
-print("\n📦 1/7 Construyendo capa 'proyectos_gnl'...")
+print("\n1/7 Construyendo capa 'proyectos_gnl'...")
 risk_json_path = PROCESSED_DIR / 'riesgo_pesquero_proyectos_gnl_detalle.json'
 with open(risk_json_path, 'r', encoding='utf-8') as f:
     risk_data = json.load(f)
@@ -68,10 +68,10 @@ for p in projects_list:
 
 gdf_proyectos = gpd.GeoDataFrame(proj_features, crs="EPSG:4326")
 gdf_proyectos.to_file(OUTPUT_GPKG, layer='proyectos_gnl', driver='GPKG')
-print(f"   ✅ Capa 'proyectos_gnl' creada ({len(gdf_proyectos)} entidades).")
+print(f"   Capa 'proyectos_gnl' creada ({len(gdf_proyectos)} entidades).")
 
 # ── 2. Capa: gasoductos_infraestructura_gnl ──────────────────────────────────
-print("\n📦 2/7 Construyendo capa 'gasoductos_infraestructura_gnl'...")
+print("\n2/7 Construyendo capa 'gasoductos_infraestructura_gnl'...")
 pipelines = [
     {
         'ducto_id': 'DUC_SONORA_P_LIBERTAD',
@@ -92,10 +92,10 @@ pipelines = [
 ]
 gdf_pipelines = gpd.GeoDataFrame(pipelines, crs="EPSG:4326")
 gdf_pipelines.to_file(OUTPUT_GPKG, layer='gasoductos_infraestructura_gnl', driver='GPKG')
-print(f"   ✅ Capa 'gasoductos_infraestructura_gnl' creada ({len(gdf_pipelines)} trazos).")
+print(f"   Capa 'gasoductos_infraestructura_gnl' creada ({len(gdf_pipelines)} trazos).")
 
 # ── 3. Capa: localidades_estudio_ierc ────────────────────────────────────────
-print("\n📦 3/7 Construyendo capa 'localidades_estudio_ierc'...")
+print("\n3/7 Construyendo capa 'localidades_estudio_ierc'...")
 localidades = [
     {
         'localidad_id': 'PUNTA_CHUECA_COMCAAC',
@@ -136,10 +136,10 @@ localidades = [
 ]
 gdf_locs = gpd.GeoDataFrame(localidades, crs="EPSG:4326")
 gdf_locs.to_file(OUTPUT_GPKG, layer='localidades_estudio_ierc', driver='GPKG')
-print(f"   ✅ Capa 'localidades_estudio_ierc' creada ({len(gdf_locs)} localidades).")
+print(f"   Capa 'localidades_estudio_ierc' creada ({len(gdf_locs)} localidades).")
 
 # ── 4. Capa: anp_habitats_criticos ───────────────────────────────────────────
-print("\n📦 4/7 Construyendo capa 'anp_habitats_criticos'...")
+print("\n4/7 Construyendo capa 'anp_habitats_criticos'...")
 anp_polygons = [
     {
         'anp_id': 'APFF_ISLAS_GOLFO',
@@ -160,10 +160,10 @@ anp_polygons = [
 ]
 gdf_anp = gpd.GeoDataFrame(anp_polygons, crs="EPSG:4326")
 gdf_anp.to_file(OUTPUT_GPKG, layer='anp_habitats_criticos', driver='GPKG')
-print(f"   ✅ Capa 'anp_habitats_criticos' creada ({len(gdf_anp)} áreas protegidas).")
+print(f"   Capa 'anp_habitats_criticos' creada ({len(gdf_anp)} áreas protegidas).")
 
 # ── 5. Capa: zonas_pesqueras_pangas ──────────────────────────────────────────
-print("\n📦 5/7 Construyendo capa 'zonas_pesqueras_pangas'...")
+print("\n5/7 Construyendo capa 'zonas_pesqueras_pangas'...")
 pangas_geojson_path = PANGAS_WGS84_DIR / 'ZPesca_PANGAS_wgs84.geojson'
 
 CRITICAL_CODES = {
@@ -223,10 +223,10 @@ for sitio_id, data in sites_map.items():
 
 gdf_pangas = gpd.GeoDataFrame(site_features, crs="EPSG:4326")
 gdf_pangas.to_file(OUTPUT_GPKG, layer='zonas_pesqueras_pangas', driver='GPKG')
-print(f"   ✅ Capa 'zonas_pesqueras_pangas' creada ({len(gdf_pangas)} sitios con `uid_espaciotemporal`).")
+print(f"   Capa 'zonas_pesqueras_pangas' creada ({len(gdf_pangas)} sitios con `uid_espaciotemporal`).")
 
 # ── 6. Capa: riqueza_relativa_pesquera ───────────────────────────────────────
-print("\n📦 6/7 Construyendo capa 'riqueza_relativa_pesquera'...")
+print("\n6/7 Construyendo capa 'riqueza_relativa_pesquera'...")
 riqueza_geojson_path = PANGAS_WGS84_DIR / 'Riqueza_Relativa_wgs84.geojson'
 if riqueza_geojson_path.exists():
     gdf_riqueza = gpd.read_file(riqueza_geojson_path)
@@ -234,13 +234,12 @@ if riqueza_geojson_path.exists():
         gdf_riqueza['riqueza_absoluta'] = gdf_riqueza['all']
     gdf_riqueza = gdf_riqueza.to_crs("EPSG:4326")
     gdf_riqueza.to_file(OUTPUT_GPKG, layer='riqueza_relativa_pesquera', driver='GPKG')
-    print(f"   ✅ Capa 'riqueza_relativa_pesquera' creada ({len(gdf_riqueza)} polígonos).")
+    print(f"   Capa 'riqueza_relativa_pesquera' creada ({len(gdf_riqueza)} polígonos).")
 
 # ── 7. Capa: grilla_h3_riesgo ────────────────────────────────────────────────
-print("\n📦 7/7 Construyendo capa 'grilla_h3_riesgo' (H3 Adaptativa Res 8 / Res 9)...")
+print("\n7/7 Construyendo capa 'grilla_h3_riesgo' (H3 Adaptativa Res 8 / Res 9)...")
 h3_cells = set()
 
-# Puntos focales: Mar abierto (Res 8) y Puertos GNL (Res 9 alrededor de Puerto Libertad y Guaymas)
 focus_coords_res8 = [
     (31.0833, -114.8500), # San Felipe
     (29.0000, -113.5000), # Bahía de los Ángeles
@@ -327,6 +326,6 @@ for cell, res in h3_cell_data:
 
 gdf_h3 = gpd.GeoDataFrame(h3_features, crs="EPSG:4326")
 gdf_h3.to_file(OUTPUT_GPKG, layer='grilla_h3_riesgo', driver='GPKG')
-print(f"   ✅ Capa 'grilla_h3_riesgo' creada ({len(gdf_h3)} celdas H3 adaptativas Res 8/9).")
+print(f"   Capa 'grilla_h3_riesgo' creada ({len(gdf_h3)} celdas H3 adaptativas Res 8/9).")
 
-print(f"\n🎉 ¡GeoPackage v1.1 generado exitosamente en:\n   {OUTPUT_GPKG}!")
+print(f"\nGeoPackage v1.1 generado exitosamente en:\n   {OUTPUT_GPKG}!")

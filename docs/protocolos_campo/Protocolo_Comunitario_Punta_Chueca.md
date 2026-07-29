@@ -90,11 +90,11 @@ Documentar la vulnerabilidad socioambiental y biocultural de la comunidad Comca'
 - **Trayectos guiados:** Acompañar a pescadores locales en sus salidas tradicionales
 - **Registro GPS:** Seguimiento continuo de la ruta (cada 10 segundos)
 - **Entrevistas:** Preguntar sobre:
-  - Puntos de partida y llegada
-  - Zonas de pesca tradicionales
-  - Lugares de descanso y aprovisionamiento
-  - Épocas del año de uso
-  - Cambios recientes en las rutas
+- Puntos de partida y llegada
+- Zonas de pesca tradicionales
+- Lugares de descanso y aprovisionamiento
+- Épocas del año de uso
+- Cambios recientes en las rutas
 
 **Variables a registrar:**
 - ID de la ruta
@@ -193,84 +193,84 @@ Documentar la vulnerabilidad socioambiental y biocultural de la comunidad Comca'
 - **Tamaño del hogar:** _______ personas
 - **Jefe del hogar:** [ ] Hombre / [ ] Mujer / [ ] Otro: _______
 - **Edades:** 
-  - <12 años: _______
-  - 12-18 años: _______
-  - 19-35 años: _______
-  - 36-60 años: _______
-  - >60 años: _______
+- <12 años: _______
+- 12-18 años: _______
+- 19-35 años: _______
+- 36-60 años: _______
+- >60 años: _______
 - **Nivel educativo (promedio):**
-  - [ ] Sin educación
-  - [ ] Primaria
-  - [ ] Secundaria
-  - [ ] Bachillerato
-  - [ ] Universidad
+- [ ] Sin educación
+- [ ] Primaria
+- [ ] Secundaria
+- [ ] Bachillerato
+- [ ] Universidad
 
 ## Sección 2: Actividades Económicas
 - **Principal actividad:**
-  - [ ] Pesca artesanal
-  - [ ] Recolección de moluscos
-  - [ ] Turismo comunitario
-  - [ ] Comercio local
-  - [ ] Otro: _______
+- [ ] Pesca artesanal
+- [ ] Recolección de moluscos
+- [ ] Turismo comunitario
+- [ ] Comercio local
+- [ ] Otro: _______
 - **Ingresos mensuales promedio:** $_______ MXN
 - **% ingresos de la pesca:** _______%
 - **Tipo de pesca:**
-  - [ ] Canoa tradicional
-  - [ ] Panga con motor
-  - [ ] Redes fijas
-  - [ ] Línea y anzuelo
-  - [ ] Otro: _______
+- [ ] Canoa tradicional
+- [ ] Panga con motor
+- [ ] Redes fijas
+- [ ] Línea y anzuelo
+- [ ] Otro: _______
 - **Especies objetivo (top 3):**
-  1. _______
-  2. _______
-  3. _______
+1. _______
+2. _______
+3. _______
 - **Temporada de mayor actividad:**
-  - [ ] Quincena 1-6
-  - [ ] Quincena 7-12
-  - [ ] Quincena 13-18
-  - [ ] Quincena 19-24
-  - [ ] Todo el año
+- [ ] Quincena 1-6
+- [ ] Quincena 7-12
+- [ ] Quincena 13-18
+- [ ] Quincena 19-24
+- [ ] Todo el año
 
 ## Sección 3: Seguridad Alimentaria
 - **% dieta basada en mar:** _______%
 - **Especies clave en dieta:**
-  - [ ] Sardina
-  - [ ] Corvina
-  - [ ] Pulpo
-  - [ ] Almeja
-  - [ ] Otro: _______
+- [ ] Sardina
+- [ ] Corvina
+- [ ] Pulpo
+- [ ] Almeja
+- [ ] Otro: _______
 - **Temporada de escasez:**
-  - [ ] Quincena 1-6
-  - [ ] Quincena 7-12
-  - [ ] Quincena 13-18
-  - [ ] Quincena 19-24
-  - [ ] No hay escasez
+- [ ] Quincena 1-6
+- [ ] Quincena 7-12
+- [ ] Quincena 13-18
+- [ ] Quincena 19-24
+- [ ] No hay escasez
 - **Métodos de conservación:**
-  - [ ] Secado al sol
-  - [ ] Ahumado
-  - [ ] Salado
-  - [ ] Refrigeración
-  - [ ] Otro: _______
+- [ ] Secado al sol
+- [ ] Ahumado
+- [ ] Salado
+- [ ] Refrigeración
+- [ ] Otro: _______
 
 ## Sección 4: Gobernanza y Participación
 - **Participa en asambleas comunitarias:**
-  - [ ] Sí, regularmente
-  - [ ] Sí, ocasionalmente
-  - [ ] No
+- [ ] Sí, regularmente
+- [ ] Sí, ocasionalmente
+- [ ] No
 - **Sabe sobre proyectos de GNL:**
-  - [ ] Sí, mucho
-  - [ ] Sí, algo
-  - [ ] No
+- [ ] Sí, mucho
+- [ ] Sí, algo
+- [ ] No
 - **Percepción de riesgos:**
-  - [ ] Alto
-  - [ ] Moderado
-  - [ ] Bajo
-  - [ ] No sabe
+- [ ] Alto
+- [ ] Moderado
+- [ ] Bajo
+- [ ] No sabe
 - **Mecanismos de denuncia:**
-  - [ ] Asambleas
-  - [ ] Autoridades locales
-  - [ ] Organizaciones civiles
-  - [ ] No conoce
+- [ ] Asambleas
+- [ ] Autoridades locales
+- [ ] Organizaciones civiles
+- [ ] No conoce
 
 **Notas del encuestador:**
 [ ]
@@ -313,18 +313,18 @@ Evaluar el impacto de proyectos de GNL en las operaciones pesqueras y la segurid
 - **Zona de estudio:** 15 km a la redonda desde el puerto
 - **Área aproximada:** 706 km²
 - **Cooperativas principales:**
-  - Cooperativa de Pescadores de Puerto Libertad
-  - Cooperativa de Maricultura
-  - Cooperativa de Buzos
+- Cooperativa de Pescadores de Puerto Libertad
+- Cooperativa de Maricultura
+- Cooperativa de Buzos
 
 #### Guaymas
 - **Ubicación:** 27.9500° N, 110.9000° W
 - **Zona de estudio:** 20 km a la redonda desde el puerto
 - **Área aproximada:** 1,256 km²
 - **Cooperativas principales:**
-  - Cooperativa de Pescadores Ribereños
-  - Cooperativa de Camaronicultores
-  - Cooperativa de Pescadores de Altura
+- Cooperativa de Pescadores Ribereños
+- Cooperativa de Camaronicultores
+- Cooperativa de Pescadores de Altura
 
 ### Metodología
 
@@ -358,10 +358,10 @@ Evaluar el impacto de proyectos de GNL en las operaciones pesqueras y la segurid
 **Sección 3: Traslape con rutas de metaneros**
 - Frecuencia de traslape con rutas de metaneros (semanal/mensual)
 - Tipo de incidentes reportados:
-  - [ ] Colisiones
-  - [ ] Contaminación
-  - [ ] Interferencia con equipos
-  - [ ] Otro: _______
+- [ ] Colisiones
+- [ ] Contaminación
+- [ ] Interferencia con equipos
+- [ ] Otro: _______
 - Pérdida de tiempo de pesca por traslape (horas/semana)
 - Costos adicionales por seguridad (ej: escoltas)
 
@@ -383,11 +383,11 @@ Evaluar el impacto de proyectos de GNL en las operaciones pesqueras y la segurid
 ## Sección 1: Datos de la Cooperativa
 - **Número de socios:** _______
 - **Tipo de pesca principal:**
-  - [ ] Artesanal costera
-  - [ ] Semi-industrial
-  - [ ] Industrial
-  - [ ] Maricultura
-  - [ ] Otro: _______
+- [ ] Artesanal costera
+- [ ] Semi-industrial
+- [ ] Industrial
+- [ ] Maricultura
+- [ ] Otro: _______
 - **Año de fundación:** _______
 - **Área de operación principal (km²):** _______
 
@@ -395,55 +395,55 @@ Evaluar el impacto de proyectos de GNL en las operaciones pesqueras y la segurid
 - **Área total antes de zonas de exclusión:** _______ km²
 - **Área perdida por zonas de exclusión:** _______ km² (_______%)
 - **Especies afectadas (top 3):**
-  1. _______
-  2. _______
-  3. _______
+1. _______
+2. _______
+3. _______
 - **Temporada de mayor impacto:**
-  - [ ] Quincena 1-6
-  - [ ] Quincena 7-12
-  - [ ] Quincena 13-18
-  - [ ] Quincena 19-24
-  - [ ] Todo el año
+- [ ] Quincena 1-6
+- [ ] Quincena 7-12
+- [ ] Quincena 13-18
+- [ ] Quincena 19-24
+- [ ] Todo el año
 - **Pérdida económica estimada (mensual):** $_______ MXN
 - **Estrategias de adaptación:**
-  - [ ] Cambio de zonas de pesca
-  - [ ] Cambio de especies objetivo
-  - [ ] Diversificación de actividades
-  - [ ] Otro: _______
+- [ ] Cambio de zonas de pesca
+- [ ] Cambio de especies objetivo
+- [ ] Diversificación de actividades
+- [ ] Otro: _______
 
 ## Sección 3: Traslape con Rutas de Metaneros
 - **Frecuencia de traslape:**
-  - [ ] Diario
-  - [ ] 2-3 veces por semana
-  - [ ] Semanal
-  - [ ] Mensual
-  - [ ] Ocasional
+- [ ] Diario
+- [ ] 2-3 veces por semana
+- [ ] Semanal
+- [ ] Mensual
+- [ ] Ocasional
 - **Tipo de incidentes reportados:**
-  - [ ] Colisiones
-  - [ ] Contaminación
-  - [ ] Interferencia con equipos
-  - [ ] Otro: _______
+- [ ] Colisiones
+- [ ] Contaminación
+- [ ] Interferencia con equipos
+- [ ] Otro: _______
 - **Pérdida de tiempo de pesca (horas/semana):** _______
 - **Costos adicionales por seguridad:** $_______ MXN/mes
 
 ## Sección 4: Seguridad y Riesgos
 - **Conoce protocolos de seguridad para metaneros:**
-  - [ ] Sí
-  - [ ] No
-  - [ ] Parcialmente
+- [ ] Sí
+- [ ] No
+- [ ] Parcialmente
 - **Capacitación en manejo de emergencias:**
-  - [ ] Sí, reciente
-  - [ ] Sí, pero antigua
-  - [ ] No
+- [ ] Sí, reciente
+- [ ] Sí, pero antigua
+- [ ] No
 - **Percepción de riesgo laboral:**
-  - [ ] Alto
-  - [ ] Moderado
-  - [ ] Bajo
+- [ ] Alto
+- [ ] Moderado
+- [ ] Bajo
 - **Mecanismo de reporte de incidentes:**
-  - [ ] Autoridades portuarias
-  - [ ] SEMAR
-  - [ ] Cooperativa
-  - [ ] Otro: _______
+- [ ] Autoridades portuarias
+- [ ] SEMAR
+- [ ] Cooperativa
+- [ ] Otro: _______
 
 **Notas del encuestador:**
 [ ]
@@ -488,13 +488,13 @@ Evaluar el impacto de proyectos de GNL en las operaciones pesqueras y la segurid
 
 **Embarcaciones involucradas:**
 - **Panga/Barco local:**
-  - Nombre: _______
-  - Tipo: _______
-  - Dueño: _______
+- Nombre: _______
+- Tipo: _______
+- Dueño: _______
 - **Buque metanero:**
-  - Nombre: _______
-  - Bandera: _______
-  - Matrícula: _______
+- Nombre: _______
+- Bandera: _______
+- Matrícula: _______
 
 **Especies afectadas:**
 - [ ] Sardina
@@ -551,10 +551,10 @@ Evaluar el impacto de proyectos de GNL en las operaciones pesqueras y la segurid
 - ID de la zona afectada
 - Coordenadas del polígono (mínimo 4 puntos)
 - Tipo de afectación:
-  - [ ] Zona de exclusión permanente
-  - [ ] Zona de exclusión temporal
-  - [ ] Tráfico intenso de metaneros
-  - [ ] Contaminación
+- [ ] Zona de exclusión permanente
+- [ ] Zona de exclusión temporal
+- [ ] Tráfico intenso de metaneros
+- [ ] Contaminación
 - Especies objetivo en la zona
 - Temporada de uso
 - Pérdida económica estimada
@@ -624,9 +624,9 @@ Evaluar el impacto de proyectos de GNL en las operaciones pesqueras y la segurid
 - **Sistema de referencia:** WGS84 (EPSG:4326)
 - **Formato de registro:** Grados decimales (ej: 29.8167, -112.4167)
 - **Dispositivos recomendados:**
-  - GPS Garmin GPSMAP 66i
-  - Teléfono inteligente con GPS de alta precisión
-  - Tablet con receptor GNSS externo
+- GPS Garmin GPSMAP 66i
+- Teléfono inteligente con GPS de alta precisión
+- Tablet con receptor GNSS externo
 
 **Fechas y horarios:**
 - **Formato:** DD/MM/AAAA
