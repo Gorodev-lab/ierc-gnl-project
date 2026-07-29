@@ -44,29 +44,29 @@ Capa geográfica consolidada de campos pesqueros artesanales del Golfo de Califo
 
 ---
 
-## 5. Diccionario de Atributos (19 Campos)
+## 5. Tabla de Atributos Extraídos Estilo QGIS (19 Campos)
 
-| Nombre de Campo | Tipo de Dato | Rol / Descripción Metodológica |
-|---|---|---|
-| `Id` | `int32` | Atributo espacial/pesquero registrado en PANGAS |
-| `CODE` | `str` | Atributo espacial/pesquero registrado en PANGAS |
-| `M` | `str` | Atributo espacial/pesquero registrado en PANGAS |
-| `J` | `str` | Atributo espacial/pesquero registrado en PANGAS |
-| `R` | `str` | Atributo espacial/pesquero registrado en PANGAS |
-| `G` | `str` | Atributo espacial/pesquero registrado en PANGAS |
-| `ENTREVIS` | `str` | Atributo espacial/pesquero registrado en PANGAS |
-| `Ent_num` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `Entvsdr` | `str` | Atributo espacial/pesquero registrado en PANGAS |
-| `spp_code` | `str` | Atributo espacial/pesquero registrado en PANGAS |
-| `sitio_code` | `str` | Atributo espacial/pesquero registrado en PANGAS |
-| `HABITAT` | `str` | Atributo espacial/pesquero registrado en PANGAS |
-| `day` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `month` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `year` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `sitio_nomb` | `str` | Atributo espacial/pesquero registrado en PANGAS |
-| `CODE_COMP` | `str` | Atributo espacial/pesquero registrado en PANGAS |
-| `Shape_Length` | `float64` | Atributo espacial/pesquero registrado en PANGAS |
-| `Shape_Area` | `float64` | Atributo espacial/pesquero registrado en PANGAS |
+| Nombre del Campo | Tipo de Dato (QGIS/GDAL) | Valor de Ejemplo | Descripción y Rol Metodológico |
+|---|---|---|---|
+| `Id` | `int32` | `1` | Identificador único numérico del registro de zona pesquera. |
+| `CODE` | `str` | `-` | Código alfanumérico asignado al polígono de pesca. |
+| `M` | `str` | `1` | Indicador del mes o temporada (1 = activo, 0 = inactivo). |
+| `J` | `str` | `1` | Indicador estacional o de pesquería. |
+| `R` | `str` | `0` | Indicador de región o zona pesquera. |
+| `G` | `str` | `0` | Indicador de grupo pesquero o gremio. |
+| `ENTREVIS` | `str` | `SLG04SP030506` | Código único de la encuesta o entrevista participativa PANGAS. |
+| `Ent_num` | `int16` | `4` | Número secuencial de la entrevista efectuada. |
+| `Entvsdr` | `str` | `SP` | Iniciales o código del entrevistador de campo. |
+| `spp_code` | `str` | `LITSTY` | Código taxonómico estándar de la especie (ej. LITSTY = Litopenaeus stylirostris). |
+| `sitio_code` | `str` | `SLG` | Código corto del campo o comunidad pesquera (ej. SLG, PLO). |
+| `HABITAT` | `str` | `arena` | Tipo de sustrato o hábitat bentónico (ej. arena, arrecife, fango). |
+| `day` | `int16` | `5` | Día del registro participativo. |
+| `month` | `int16` | `3` | Mes del registro participativo. |
+| `year` | `int16` | `2006` | Año del registro participativo. |
+| `sitio_nomb` | `str` | `Reserva de la Biosfera AGC-DRC` | Nombre oficial del sitio o Área Natural Protegida. |
+| `CODE_COMP` | `str` | `SLG04SP030506_LITSTY_-` | Código compuesto de identificación espacial. |
+| `Shape_Length` | `float64` | `6982.154519027305` | Perímetro total del polígono expresado en metros. |
+| `Shape_Area` | `float64` | `3567391.412694994` | Superficie o área total del polígono expresada en metros cuadrados. |
 
 ### Muestra de Especies Registradas (Códigos SPP):
 `ATRNOB, ATRTUB, BALPOL, CALBEL, CARANX, CARLIM, CARSPP, CYNOTH, CYNPAR, CYNSPP, DASSPP, DOSPON, EPIACA, EPIANA, EPISPP, GYMMAR, HEXNIG, HOPGUE, ISOFUS, LITSTY, LUTARG, LUTPER, MICMEG, MUGSPP, MUSCAL`

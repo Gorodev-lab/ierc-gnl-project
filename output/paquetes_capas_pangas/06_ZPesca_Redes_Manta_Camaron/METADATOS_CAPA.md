@@ -1,6 +1,6 @@
-# Paquete Geográfico y Metadatos: Capa `ZPesca_Redes`
+# Paquete Geográfico y Metadatos: Capa `ZPesca_Redes_Manta_Camaron`
 
-**Título de la Capa:** Polígonos de Pesca con Redes de Enmalle  
+**Título de la Capa:** Polígonos de Pesca de Camarón y Redes de Manta  
 **Base de Datos de Origen:** `Fish_Zones_PANGAS.gdb` (Estudio PANGAS)  
 
 ---
@@ -18,19 +18,19 @@ Esta capa constituye la línea base histórica del estudio PANGAS utilizada por 
 
 ## 2. Ficha Técnica Espacial
 
-- **Nombre de la Capa en GDB:** `ZPesca_Redes`
+- **Nombre de la Capa en GDB:** `ZPesca_Redes_Manta_Camaron`
 - **Tipo de Geometría:** `MultiPolygon`
-- **Número Total de Polígonos / Entidades:** `1,263`
+- **Número Total de Polígonos / Entidades:** `783`
 - **Sistema de Coordenadas Original:** EPSG:4326 (WGS 84 - Grados Decimales)
 - **Proyección de Visualización:** EPSG:3857 (Web Mercator)
-- **Extensión Geográfica (Bounding Box WGS84):** `MinLon: -114.9402, MinLat: 27.9883, MaxLon: -111.6857, MaxLat: 31.8724`
-- **Artes de Pesca Relacionadas:** Redes de enmalle / Agalleras de fondo y deriva
+- **Extensión Geográfica (Bounding Box WGS84):** `MinLon: -114.9402, MinLat: 28.6917, MaxLon: -111.8732, MaxLat: 31.8724`
+- **Artes de Pesca Relacionadas:** Red de manta / Red surpera de camarón
 
 ---
 
 ## 3. Descripción Metodológica
 
-Zonas de esfuerzo pesquero artesanal con redes agalleras de fondo y deriva para especies demersales y pelágicas.
+Caladeros de pesca estacional de camarón mediante redes de manta y surpera en el litoral marino costero de Sonora y Sinaloa.
 
 ---
 
@@ -74,4 +74,4 @@ Zonas de esfuerzo pesquero artesanal con redes agalleras de fondo y deriva para 
 | `Shape_Area` | `float64` | `3567391.412694994` | Superficie o área total del polígono expresada en metros cuadrados. |
 
 ### Muestra de Especies Registradas (Códigos SPP):
-`GYMMAR, LITSTY, MUSCAL, MUSLUN, MUSSPP, MYLCAL, MYLLON, RHILON, RHIPRO, RHISPP`
+`GYMMAR, LITSTY, MYLCAL, MYLLON`

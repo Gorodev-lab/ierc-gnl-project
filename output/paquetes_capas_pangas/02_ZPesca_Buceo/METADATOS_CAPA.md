@@ -44,12 +44,12 @@ Campos y caladeros de pesca artesanal por buceo autónomo y hookah (moluscos, be
 
 ---
 
-## 5. Diccionario de Atributos (5 Campos)
+## 5. Tabla de Atributos Extraídos Estilo QGIS (5 Campos)
 
-| Nombre de Campo | Tipo de Dato | Rol / Descripción Metodológica |
-|---|---|---|
-| `no_comunid` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `comunidad` | `str` | Atributo espacial/pesquero registrado en PANGAS |
-| `ORIG_FID` | `int32` | Atributo espacial/pesquero registrado en PANGAS |
-| `Shape_Length` | `float64` | Atributo espacial/pesquero registrado en PANGAS |
-| `Shape_Area` | `float64` | Atributo espacial/pesquero registrado en PANGAS |
+| Nombre del Campo | Tipo de Dato (QGIS/GDAL) | Valor de Ejemplo | Descripción y Rol Metodológico |
+|---|---|---|---|
+| `no_comunid` | `int16` | `1` | Número correlativo de comunidad pesquera. |
+| `comunidad` | `str` | `PPE, , , , , , , ,` | Nombre o código corto de la comunidad costera. |
+| `ORIG_FID` | `int32` | `0` | Identificador de registro original en el dataset de origen. |
+| `Shape_Length` | `float64` | `240636.40965902145` | Perímetro total del polígono expresado en metros. |
+| `Shape_Area` | `float64` | `557068833.8007089` | Superficie o área total del polígono expresada en metros cuadrados. |

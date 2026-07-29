@@ -12,8 +12,9 @@ Este script:
 3. Genera 2 mapas JPG georreferenciados por capa:
    - mapa_osm.jpg (OpenStreetMap estilo QGIS con ciudades, costas y carreteras)
    - mapa_satelital.jpg (Esri World Imagery Satelital para detalle de litoral)
-4. Genera una carpeta independiente por capa en output/paquetes_capas_pangas/ con su archivo METADATOS_CAPA.md.
-5. Compila el reporte maestro HTML output/paquetes_capas_pangas/ATLAS_PAQUETES_COMPLETO.html.
+4. Extrae la tabla completa de metadatos de atributos (estilo QGIS: Nombre de campo, Tipo de Dato, Valor de Ejemplo y Descripción).
+5. Genera una carpeta independiente por capa en output/paquetes_capas_pangas/ con su archivo METADATOS_CAPA.md.
+6. Compila el reporte maestro HTML output/paquetes_capas_pangas/ATLAS_PAQUETES_COMPLETO.html.
 """
 
 import os
@@ -83,6 +84,7 @@ LAYER_CONFIG = {
         'num_prefix': '06',
         'titulo': 'Polígonos de Pesca de Camarón y Redes de Manta',
         'descripcion': 'Caladeros de pesca estacional de camarón mediante redes de manta y surpera en el litoral marino costero de Sonora y Sinaloa.',
+        'artes': 'Red de manta / Red surpera de camarón',
         'color': '#6b21a8',
         'edge_color': '#581c87'
     },
@@ -90,9 +92,56 @@ LAYER_CONFIG = {
         'num_prefix': '07',
         'titulo': 'Polígonos de Pesca con Trampas (Jaiba y Peces)',
         'descripcion': 'Sitios de pesca artesanal costera y estuarina mediante trampas y nasas para jaiba azul, jaiba café y especies de rocas.',
+        'artes': 'Trampas metálicas / Nasas jaiberas',
         'color': '#0f766e',
         'edge_color': '#134e4a'
     }
+}
+
+FIELD_DESCRIPTIONS = {
+    'Id': 'Identificador único numérico del registro de zona pesquera.',
+    'CODE': 'Código alfanumérico asignado al polígono de pesca.',
+    'M': 'Indicador del mes o temporada (1 = activo, 0 = inactivo).',
+    'J': 'Indicador estacional o de pesquería.',
+    'R': 'Indicador de región o zona pesquera.',
+    'G': 'Indicador de grupo pesquero o gremio.',
+    'NAME': 'Nombre geográfico o toponímico del sitio de pesca.',
+    'ENTREVIS': 'Código único de la encuesta o entrevista participativa PANGAS.',
+    'Int_id': 'Identificador numérico del pescador o informante clave.',
+    'Ent_num': 'Número secuencial de la entrevista efectuada.',
+    'Entvsdr': 'Iniciales o código del entrevistador de campo.',
+    'mes': 'Mes del levantamiento o temporada de pesca (1-12).',
+    'dia': 'Día del levantamiento en campo.',
+    'ano': 'Año del registro de la información (ej. 2005, 2006).',
+    'spp_code': 'Código taxonómico estándar de la especie (ej. LITSTY = Litopenaeus stylirostris).',
+    'sitio_code': 'Código corto del campo o comunidad pesquera (ej. SLG, PLO).',
+    'Met_Pesca': 'Método o arte de pesca registrado (ej. Chinchorro, Trampa, Buceo).',
+    'HABITAT': 'Tipo de sustrato o hábitat bentónico (ej. arena, arrecife, fango).',
+    'CODE_COMP': 'Código compuesto de identificación espacial.',
+    'CODE_FIN': 'Código final concatenado de sitio, entrevista y especie.',
+    'Shape_Length': 'Perímetro total del polígono expresado en metros.',
+    'Shape_Area': 'Superficie o área total del polígono expresada en metros cuadrados.',
+    'no_comunid': 'Número correlativo de comunidad pesquera.',
+    'comunidad': 'Nombre o código corto de la comunidad costera.',
+    'ORIG_FID': 'Identificador de registro original en el dataset de origen.',
+    'day': 'Día del registro participativo.',
+    'month': 'Mes del registro participativo.',
+    'year': 'Año del registro participativo.',
+    'sitio_nomb': 'Nombre oficial del sitio o Área Natural Protegida.',
+    'weight_pc': 'Ponderación porcentual de uso pesquero.',
+    'NorSur': 'Orientación geográfica del caladero (1 = Norte, 0 = Sur).',
+    'TEMP': 'Código de identificación temporal del polígono.',
+    'NAME_ORG': 'Nombre registrado originalmente en las entrevistas.',
+    'all': 'Acumulado de riqueza biológica total.',
+    'artnob': 'Especie pesquera: Balistes polylepis / Pez ballesta.',
+    'atrtub': 'Especie pesquera: Atractoscion nobilis / Seabass.',
+    'balpol': 'Especie pesquera: Balistes polylepis / Cochi.',
+    'carlim': 'Especie pesquera: Carcharias spp. / Tiburón.',
+    'carspp': 'Especie pesquera: Caranx spp. / Jurel.',
+    'isofus': 'Especie pesquera: Isostichopus fuscus / Pepino de mar.',
+    'litsty': 'Especie pesquera: Litopenaeus stylirostris / Camarón azul.',
+    'pinrug': 'Especie pesquera: Pinna rugosa / Hacha de labio.',
+    'stegig': 'Especie pesquera: Strombus gigas / Caracol.'
 }
 
 layers_list = pyogrio.list_layers(GDB_PATH)
@@ -177,8 +226,22 @@ for layer in layer_names:
     plt.close()
     print(f"   Mapa Satelital generado: {sat_jpg_path}")
     
-    # ── 3. Extraer Metadatos y Especies ──
-    schema_fields = [{'campo': col, 'tipo': str(dtype)} for col, dtype in gdf.dtypes.items() if col != 'geometry']
+    # ── 3. Extraer Metadatos y Estructura de Atributos Estilo QGIS ──
+    schema_fields = []
+    for col, dtype in gdf.dtypes.items():
+        if col != 'geometry':
+            non_nulls = gdf[col].dropna()
+            sample_val = str(non_nulls.iloc[0]) if len(non_nulls) > 0 else 'N/A'
+            if len(sample_val) > 40:
+                sample_val = sample_val[:37] + '...'
+            desc = FIELD_DESCRIPTIONS.get(col, f'Atributo espacial registrado en la capa {layer}.')
+            schema_fields.append({
+                'campo': col,
+                'tipo': str(dtype),
+                'ejemplo': sample_val,
+                'descripcion': desc
+            })
+            
     species_list = []
     if 'spp_code' in gdf.columns:
         species_list = sorted(list(gdf['spp_code'].dropna().unique()))[:25]
@@ -211,7 +274,7 @@ Esta capa constituye la línea base histórica del estudio PANGAS utilizada por 
 - **Sistema de Coordenadas Original:** EPSG:4326 (WGS 84 - Grados Decimales)
 - **Proyección de Visualización:** EPSG:3857 (Web Mercator)
 - **Extensión Geográfica (Bounding Box WGS84):** `{bbox_str}`
-- **Artes de Pesca Relacionadas:** {config['artes']}
+- **Artes de Pesca Relacionadas:** {config.get('artes', 'Pesca Artesanal')}
 
 ---
 
@@ -231,13 +294,13 @@ Esta capa constituye la línea base histórica del estudio PANGAS utilizada por 
 
 ---
 
-## 5. Diccionario de Atributos ({len(schema_fields)} Campos)
+## 5. Tabla de Atributos Extraídos Estilo QGIS ({len(schema_fields)} Campos)
 
-| Nombre de Campo | Tipo de Dato | Rol / Descripción Metodológica |
-|---|---|---|
+| Nombre del Campo | Tipo de Dato (QGIS/GDAL) | Valor de Ejemplo | Descripción y Rol Metodológico |
+|---|---|---|---|
 """
     for f_info in schema_fields:
-        md_text += f"| `{f_info['campo']}` | `{f_info['tipo']}` | Atributo espacial/pesquero registrado en PANGAS |\n"
+        md_text += f"| `{f_info['campo']}` | `{f_info['tipo']}` | `{f_info['ejemplo']}` | {f_info['descripcion']} |\n"
 
     if species_list:
         md_text += f"\n### Muestra de Especies Registradas (Códigos SPP):\n`{', '.join(species_list)}`\n"
@@ -250,9 +313,9 @@ Esta capa constituye la línea base histórica del estudio PANGAS utilizada por 
         'layer': layer,
         'titulo': config['titulo'],
         'entities': len(gdf),
-        'artes': config['artes'],
+        'artes': config.get('artes', 'Pesca Artesanal'),
         'bbox': bbox_str,
-        'schema_count': len(schema_fields)
+        'schema_fields': schema_fields
     })
 
 # ── 5. Generar Informe Maestro HTML Consolidado ──
@@ -274,7 +337,7 @@ html_master = f"""<!DOCTYPE html>
         .grid-maps {{ display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }}
         .grid-maps img {{ width: 100%; border-radius: 6px; border: 1px solid #475569; }}
         table {{ width: 100%; border-collapse: collapse; margin-top: 12px; background-color: #0f172a; border-radius: 6px; overflow: hidden; }}
-        th, td {{ padding: 10px 14px; text-align: left; border-bottom: 1px solid #334155; font-size: 14px; }}
+        th, td {{ padding: 10px 14px; text-align: left; border-bottom: 1px solid #334155; font-size: 13px; }}
         th {{ background-color: #0284c7; color: #ffffff; }}
         tr:nth-child(even) {{ background-color: #1e293b; }}
         .badge {{ background-color: #0369a1; color: #e0f2fe; padding: 4px 8px; border-radius: 4px; font-family: monospace; font-size: 13px; }}
@@ -302,6 +365,7 @@ html_master = f"""<!DOCTYPE html>
                 <th>Capa en GDB</th>
                 <th>Entidades</th>
                 <th>Artes de Pesca</th>
+                <th>Campos Extraídos</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -315,6 +379,7 @@ for pkg in package_summary:
                 <td><code>{pkg['layer']}</code></td>
                 <td>{pkg['entities']:,}</td>
                 <td>{pkg['artes']}</td>
+                <td>{len(pkg['schema_fields'])} campos</td>
                 <td><a class="btn" href="./{pkg['folder_name']}/METADATOS_CAPA.md">Ver Ficha Markdown</a></td>
             </tr>
     """
@@ -323,7 +388,7 @@ html_master += """
         </tbody>
     </table>
 
-    <h2>Paquetes Cartográficos Detallados con Mapas Georreferenciados</h2>
+    <h2>Paquetes Cartográficos Detallados con Mapas y Tablas Estilo QGIS</h2>
 """
 
 for pkg in package_summary:
@@ -343,6 +408,31 @@ for pkg in package_summary:
                 <img src="./{pkg['folder_name']}/mapa_satelital.jpg" alt="Mapa Satelital {pkg['layer']}">
             </div>
         </div>
+
+        <h4>Tabla de Atributos Extraídos Estilo QGIS ({len(pkg['schema_fields'])} Campos)</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre de Campo</th>
+                    <th>Tipo de Dato</th>
+                    <th>Valor de Ejemplo</th>
+                    <th>Descripción Metodológica</th>
+                </tr>
+            </thead>
+            <tbody>
+"""
+    for f in pkg['schema_fields']:
+        html_master += f"""
+                <tr>
+                    <td><code>{f['campo']}</code></td>
+                    <td><code>{f['tipo']}</code></td>
+                    <td><code>{f['ejemplo']}</code></td>
+                    <td>{f['descripcion']}</td>
+                </tr>
+"""
+    html_master += """
+            </tbody>
+        </table>
     </div>
     """
 

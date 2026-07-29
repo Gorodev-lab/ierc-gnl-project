@@ -44,32 +44,32 @@ Zonas de operación pesquera artesanal mediante chinchorros de línea de playa y
 
 ---
 
-## 5. Diccionario de Atributos (22 Campos)
+## 5. Tabla de Atributos Extraídos Estilo QGIS (22 Campos)
 
-| Nombre de Campo | Tipo de Dato | Rol / Descripción Metodológica |
-|---|---|---|
-| `Id` | `int32` | Atributo espacial/pesquero registrado en PANGAS |
-| `CODE` | `str` | Atributo espacial/pesquero registrado en PANGAS |
-| `M` | `str` | Atributo espacial/pesquero registrado en PANGAS |
-| `J` | `str` | Atributo espacial/pesquero registrado en PANGAS |
-| `R` | `str` | Atributo espacial/pesquero registrado en PANGAS |
-| `G` | `str` | Atributo espacial/pesquero registrado en PANGAS |
-| `NAME` | `str` | Atributo espacial/pesquero registrado en PANGAS |
-| `ENTREVIS` | `str` | Atributo espacial/pesquero registrado en PANGAS |
-| `Int_id` | `int32` | Atributo espacial/pesquero registrado en PANGAS |
-| `Ent_num` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `Entvsdr` | `str` | Atributo espacial/pesquero registrado en PANGAS |
-| `mes` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `dia` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `ano` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `spp_code` | `str` | Atributo espacial/pesquero registrado en PANGAS |
-| `sitio_code` | `str` | Atributo espacial/pesquero registrado en PANGAS |
-| `Met_Pesca` | `str` | Atributo espacial/pesquero registrado en PANGAS |
-| `HABITAT` | `str` | Atributo espacial/pesquero registrado en PANGAS |
-| `CODE_COMP` | `str` | Atributo espacial/pesquero registrado en PANGAS |
-| `CODE_FIN` | `str` | Atributo espacial/pesquero registrado en PANGAS |
-| `Shape_Length` | `float64` | Atributo espacial/pesquero registrado en PANGAS |
-| `Shape_Area` | `float64` | Atributo espacial/pesquero registrado en PANGAS |
+| Nombre del Campo | Tipo de Dato (QGIS/GDAL) | Valor de Ejemplo | Descripción y Rol Metodológico |
+|---|---|---|---|
+| `Id` | `int32` | `2` | Identificador único numérico del registro de zona pesquera. |
+| `CODE` | `str` | `B` | Código alfanumérico asignado al polígono de pesca. |
+| `M` | `str` | `0` | Indicador del mes o temporada (1 = activo, 0 = inactivo). |
+| `J` | `str` | `0` | Indicador estacional o de pesquería. |
+| `R` | `str` | `0` | Indicador de región o zona pesquera. |
+| `G` | `str` | `0` | Indicador de grupo pesquero o gremio. |
+| `NAME` | `str` | `El Bajo Macho` | Nombre geográfico o toponímico del sitio de pesca. |
+| `ENTREVIS` | `str` | `SLG04SP030506` | Código único de la encuesta o entrevista participativa PANGAS. |
+| `Int_id` | `int32` | `0` | Identificador numérico del pescador o informante clave. |
+| `Ent_num` | `int16` | `4` | Número secuencial de la entrevista efectuada. |
+| `Entvsdr` | `str` | `SP` | Iniciales o código del entrevistador de campo. |
+| `mes` | `int16` | `0` | Mes del levantamiento o temporada de pesca (1-12). |
+| `dia` | `int16` | `0` | Día del levantamiento en campo. |
+| `ano` | `int16` | `0` | Año del registro de la información (ej. 2005, 2006). |
+| `spp_code` | `str` | `LITSTY` | Código taxonómico estándar de la especie (ej. LITSTY = Litopenaeus stylirostris). |
+| `sitio_code` | `str` | `SLG` | Código corto del campo o comunidad pesquera (ej. SLG, PLO). |
+| `Met_Pesca` | `str` | `Chinchorro` | Método o arte de pesca registrado (ej. Chinchorro, Trampa, Buceo). |
+| `HABITAT` | `str` | `arena` | Tipo de sustrato o hábitat bentónico (ej. arena, arrecife, fango). |
+| `CODE_COMP` | `str` | `SLG04SP030506_B` | Código compuesto de identificación espacial. |
+| `CODE_FIN` | `str` | `SLG04SP030506_B_LITSTY` | Código final concatenado de sitio, entrevista y especie. |
+| `Shape_Length` | `float64` | `52970.66149454901` | Perímetro total del polígono expresado en metros. |
+| `Shape_Area` | `float64` | `199078841.69311696` | Superficie o área total del polígono expresada en metros cuadrados. |
 
 ### Muestra de Especies Registradas (Códigos SPP):
 `ATRNOB, CARANX, CARLIM, CARSPP, CYNOTH, CYNPAR, CYNSPP, DASDIP, DASSPP, GYMMAR, HOPGUE, LITSTY, LUTARG, MICMEG, MUGSPP, MUSCAL, MUSLUN, MUSSPP, MYCJOR, MYLCAL, MYLLON, PARPLE, RHILON, RHIPRO, RHISPP`

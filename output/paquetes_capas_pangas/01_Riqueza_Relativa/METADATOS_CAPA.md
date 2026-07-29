@@ -44,59 +44,59 @@ Polígonos de grilla espacial con acumulación de riqueza biológica pesquera de
 
 ---
 
-## 5. Diccionario de Atributos (52 Campos)
+## 5. Tabla de Atributos Extraídos Estilo QGIS (52 Campos)
 
-| Nombre de Campo | Tipo de Dato | Rol / Descripción Metodológica |
-|---|---|---|
-| `artnob` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `atrtub` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `balpol` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `calbel` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `carlim` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `carspp` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `cynoth` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `cynpar` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `cynspp` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `dasdip` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `dasspp` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `dospon` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `epiaca` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `epiana` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `epispp` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `gymmar` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `hexnig` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `hopgue` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `isofus` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `litsty` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `lutarg` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `lutper` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `micmeg` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `mugspp` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `muscal` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `muslun` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `musspp` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `mycjor` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `mycpri` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `mycros` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `mylcal` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `myllon` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `octspp` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `pangen` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `paninf` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `paraur` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `parmac` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `parple` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `parspp` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `phyery` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `pinrug` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `rhilon` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `rhipro` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `rhispp` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `scospp` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `sphspp` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `spocal` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `squcal` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `stegig` | `int16` | Atributo espacial/pesquero registrado en PANGAS |
-| `all` | `float64` | Atributo espacial/pesquero registrado en PANGAS |
-| `Shape_Length` | `float64` | Atributo espacial/pesquero registrado en PANGAS |
-| `Shape_Area` | `float64` | Atributo espacial/pesquero registrado en PANGAS |
+| Nombre del Campo | Tipo de Dato (QGIS/GDAL) | Valor de Ejemplo | Descripción y Rol Metodológico |
+|---|---|---|---|
+| `artnob` | `int16` | `0` | Especie pesquera: Balistes polylepis / Pez ballesta. |
+| `atrtub` | `int16` | `0` | Especie pesquera: Atractoscion nobilis / Seabass. |
+| `balpol` | `int16` | `0` | Especie pesquera: Balistes polylepis / Cochi. |
+| `calbel` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `carlim` | `int16` | `0` | Especie pesquera: Carcharias spp. / Tiburón. |
+| `carspp` | `int16` | `0` | Especie pesquera: Caranx spp. / Jurel. |
+| `cynoth` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `cynpar` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `cynspp` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `dasdip` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `dasspp` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `dospon` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `epiaca` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `epiana` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `epispp` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `gymmar` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `hexnig` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `hopgue` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `isofus` | `int16` | `0` | Especie pesquera: Isostichopus fuscus / Pepino de mar. |
+| `litsty` | `int16` | `0` | Especie pesquera: Litopenaeus stylirostris / Camarón azul. |
+| `lutarg` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `lutper` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `micmeg` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `mugspp` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `muscal` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `muslun` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `musspp` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `mycjor` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `mycpri` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `mycros` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `mylcal` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `myllon` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `octspp` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `pangen` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `paninf` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `paraur` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `parmac` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `parple` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `parspp` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `phyery` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `pinrug` | `int16` | `0` | Especie pesquera: Pinna rugosa / Hacha de labio. |
+| `rhilon` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `rhipro` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `rhispp` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `scospp` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `sphspp` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `spocal` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `squcal` | `int16` | `0` | Atributo espacial registrado en la capa Riqueza_Relativa. |
+| `stegig` | `int16` | `0` | Especie pesquera: Strombus gigas / Caracol. |
+| `all` | `float64` | `0.0` | Acumulado de riqueza biológica total. |
+| `Shape_Length` | `float64` | `11112.0` | Perímetro total del polígono expresado en metros. |
+| `Shape_Area` | `float64` | `7717284.0` | Superficie o área total del polígono expresada en metros cuadrados. |
