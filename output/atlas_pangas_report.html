@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Espacial PANGAS GDB — Causa Natura Data</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0f172a; color: #f8fafc; margin: 0; padding: 40px; line-height: 1.6; }
+        h1 { color: #38bdf8; border-bottom: 2px solid #0284c7; padding-bottom: 12px; font-size: 28px; }
+        h2 { color: #f1f5f9; margin-top: 30px; font-size: 22px; border-bottom: 1px solid #334155; padding-bottom: 8px; }
+        h3 { color: #7dd3fc; margin-top: 20px; font-size: 18px; }
+        .header-card { background-color: #1e293b; border: 1px solid #334155; padding: 24px; border-radius: 8px; margin-bottom: 30px; }
+        .layer-card { background-color: #1e293b; border: 1px solid #334155; padding: 24px; border-radius: 8px; margin-bottom: 40px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3); }
+        .map-img { width: 100%; height: auto; border-radius: 6px; border: 1px solid #475569; margin: 16px 0; }
+        table { width: 100%; border-collapse: collapse; margin-top: 12px; margin-bottom: 16px; background-color: #0f172a; border-radius: 6px; overflow: hidden; }
+        th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid #334155; font-size: 14px; }
+        th { background-color: #0284c7; color: #ffffff; font-weight: 600; }
+        tr:nth-child(even) { background-color: #1e293b; }
+        .badge { background-color: #0369a1; color: #e0f2fe; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; font-family: monospace; }
+    </style>
+</head>
+<body>
+
+    <div class="header-card">
+        <h1>Catálogo Espacial de Capas de la Base de Datos PANGAS (Fish_Zones_PANGAS.gdb)</h1>
+        <p><strong>Proyecto:</strong> Índice Espacial de Riesgo Socioeconómico para Comunidades (IERC-GNL)</p>
+        <p><strong>Organización:</strong> Causa Natura Data (POA 2026-2028)</p>
+        <p><strong>Autores:</strong> Juan Carlos Barrera (JCB - Consultor Senior) & Enrique Gorosave (EG - Analista GIS)</p>
+        <p><strong>Propósito:</strong> Fichas técnicas y atlas cartográfico de gabinete para el inventario de la línea base de pesca artesanal en el Golfo de California.</p>
+    </div>
+
+    <h2>1. Resumen General de Capas (7 Capas)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre de Capa</th>
+                <th>Tipo Geometría</th>
+                <th>Entidades</th>
+                <th>Artes de Pesca</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td><span class="badge">Riqueza_Relativa</span></td>
+                <td>MultiPolygon</td>
+                <td>11,065</td>
+                <td>Todas las artes registradas</td>
+            </tr>
+    
+            <tr>
+                <td><span class="badge">ZPesca_Buceo</span></td>
+                <td>MultiPolygon</td>
+                <td>249</td>
+                <td>Buceo autónomo y semiautónomo (Hookah)</td>
+            </tr>
+    
+            <tr>
+                <td><span class="badge">ZPesca_Chinchorro</span></td>
+                <td>MultiPolygon</td>
+                <td>2,209</td>
+                <td>Chinchorro de línea / Redes agalleras</td>
+            </tr>
+    
+            <tr>
+                <td><span class="badge">ZPesca_PANGAS</span></td>
+                <td>MultiPolygon</td>
+                <td>4,241</td>
+                <td>Multiespecie / PANGAS</td>
+            </tr>
+    
+            <tr>
+                <td><span class="badge">ZPesca_Redes</span></td>
+                <td>MultiPolygon</td>
+                <td>1,263</td>
+                <td>Redes de enmalle / Agalleras</td>
+            </tr>
+    
+            <tr>
+                <td><span class="badge">ZPesca_Redes_Manta_Camaron</span></td>
+                <td>MultiPolygon</td>
+                <td>783</td>
+                <td>Redes de manta / Surpera / Camarón</td>
+            </tr>
+    
+            <tr>
+                <td><span class="badge">ZPesca_Trampa</span></td>
+                <td>MultiPolygon</td>
+                <td>360</td>
+                <td>Trampas jaiberas / Nasas</td>
+            </tr>
+    
+        </tbody>
+    </table>
+
+    <h2>2. Fichas Técnicas Cartográficas Detalladas</h2>
+
+    <div class="layer-card">
+        <h3>Capa: Riqueza_Relativa — Malla de Riqueza Biológica Pesquera Relativa</h3>
+        <p><strong>Descripción:</strong> Polígonos de grilla espacial con acumulación de riqueza de especies de peces y mariscos comerciales del Golfo de California (Estudio PANGAS).</p>
+        <p><strong>Geometría:</strong> MultiPolygon | <strong>Entidades:</strong> 11,065 | <strong>CRS:</strong> EPSG:4326 (WGS84)</p>
+        <p><strong>Bounding Box:</strong> <code>MinLon: -114.9307, MinLat: 27.2977, MaxLon: -110.5188, MaxLat: 31.8423</code></p>
+        
+        <img class="map-img" src="../output/atlas_pangas_jpg/mapa_Riqueza_Relativa.jpg" alt="Mapa Riqueza_Relativa">
+        
+        <h4>Esquema de Atributos</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre de Campo</th>
+                    <th>Tipo de Dato</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+                <tr>
+                    <td><code>artnob</code></td>
+                    <td>int16</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>atrtub</code></td>
+                    <td>int16</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>balpol</code></td>
+                    <td>int16</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>calbel</code></td>
+                    <td>int16</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>carlim</code></td>
+                    <td>int16</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>carspp</code></td>
+                    <td>int16</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>cynoth</code></td>
+                    <td>int16</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>cynpar</code></td>
+                    <td>int16</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>cynspp</code></td>
+                    <td>int16</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>dasdip</code></td>
+                    <td>int16</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>dasspp</code></td>
+                    <td>int16</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>dospon</code></td>
+                    <td>int16</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="layer-card">
+        <h3>Capa: ZPesca_Buceo — Polígonos de Pesca Comercial por Buceo</h3>
+        <p><strong>Descripción:</strong> Sitios y caladeros de pesca artesanal extractiva mediante buceo (moluscos, bentónicos, almeja, callo de hacha, erizo, pepino de mar).</p>
+        <p><strong>Geometría:</strong> MultiPolygon | <strong>Entidades:</strong> 249 | <strong>CRS:</strong> EPSG:4326 (WGS84)</p>
+        <p><strong>Bounding Box:</strong> <code>MinLon: -114.1083, MinLat: 27.4209, MaxLon: -111.7763, MaxLat: 31.5724</code></p>
+        
+        <img class="map-img" src="../output/atlas_pangas_jpg/mapa_ZPesca_Buceo.jpg" alt="Mapa ZPesca_Buceo">
+        
+        <h4>Esquema de Atributos</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre de Campo</th>
+                    <th>Tipo de Dato</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+                <tr>
+                    <td><code>no_comunid</code></td>
+                    <td>int16</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>comunidad</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>ORIG_FID</code></td>
+                    <td>int32</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>Shape_Length</code></td>
+                    <td>float64</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>Shape_Area</code></td>
+                    <td>float64</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="layer-card">
+        <h3>Capa: ZPesca_Chinchorro — Polígonos de Pesca con Chinchorro de Línea</h3>
+        <p><strong>Descripción:</strong> Zonas de operación pesquera artesanal mediante chinchorros de línea de playa y deriva para especies escamadas.</p>
+        <p><strong>Geometría:</strong> MultiPolygon | <strong>Entidades:</strong> 2,209 | <strong>CRS:</strong> EPSG:4326 (WGS84)</p>
+        <p><strong>Bounding Box:</strong> <code>MinLon: -114.9171, MinLat: 27.9883, MaxLon: -111.4621, MaxLat: 31.8624</code></p>
+        
+        <img class="map-img" src="../output/atlas_pangas_jpg/mapa_ZPesca_Chinchorro.jpg" alt="Mapa ZPesca_Chinchorro">
+        
+        <h4>Esquema de Atributos</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre de Campo</th>
+                    <th>Tipo de Dato</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+                <tr>
+                    <td><code>Id</code></td>
+                    <td>int32</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>CODE</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>M</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>J</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>R</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>G</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>NAME</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>ENTREVIS</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>Int_id</code></td>
+                    <td>int32</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>Ent_num</code></td>
+                    <td>int16</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>Entvsdr</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>mes</code></td>
+                    <td>int16</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="layer-card">
+        <h3>Capa: ZPesca_PANGAS — Base Unificada de Zonas Pesqueras PANGAS</h3>
+        <p><strong>Descripción:</strong> Capa maestra consolidada de campos pesqueros artesanales del Golfo de California derivada de entrevistas participativas.</p>
+        <p><strong>Geometría:</strong> MultiPolygon | <strong>Entidades:</strong> 4,241 | <strong>CRS:</strong> EPSG:4326 (WGS84)</p>
+        <p><strong>Bounding Box:</strong> <code>MinLon: -114.9492, MinLat: 27.9883, MaxLon: -111.5713, MaxLat: 31.8958</code></p>
+        
+        <img class="map-img" src="../output/atlas_pangas_jpg/mapa_ZPesca_PANGAS.jpg" alt="Mapa ZPesca_PANGAS">
+        
+        <h4>Esquema de Atributos</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre de Campo</th>
+                    <th>Tipo de Dato</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+                <tr>
+                    <td><code>Id</code></td>
+                    <td>int32</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>CODE</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>M</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>J</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>R</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>G</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>ENTREVIS</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>Ent_num</code></td>
+                    <td>int16</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>Entvsdr</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>spp_code</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>sitio_code</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>HABITAT</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="layer-card">
+        <h3>Capa: ZPesca_Redes — Polígonos de Pesca con Redes de Enmalle</h3>
+        <p><strong>Descripción:</strong> Zonas de esfuerzo pesquero artesanal con redes agalleras y agalleras de fondo para peces demersales y pelágicos menores.</p>
+        <p><strong>Geometría:</strong> MultiPolygon | <strong>Entidades:</strong> 1,263 | <strong>CRS:</strong> EPSG:4326 (WGS84)</p>
+        <p><strong>Bounding Box:</strong> <code>MinLon: -114.9402, MinLat: 27.9883, MaxLon: -111.6857, MaxLat: 31.8724</code></p>
+        
+        <img class="map-img" src="../output/atlas_pangas_jpg/mapa_ZPesca_Redes.jpg" alt="Mapa ZPesca_Redes">
+        
+        <h4>Esquema de Atributos</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre de Campo</th>
+                    <th>Tipo de Dato</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+                <tr>
+                    <td><code>Id</code></td>
+                    <td>int32</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>CODE</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>M</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>J</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>R</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>G</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>NAME</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>ENTREVIS</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>Int_id</code></td>
+                    <td>int32</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>Ent_num</code></td>
+                    <td>int16</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>Entvsdr</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>mes</code></td>
+                    <td>int16</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="layer-card">
+        <h3>Capa: ZPesca_Redes_Manta_Camaron — Polígonos de Pesca de Camarón y Redes de Manta</h3>
+        <p><strong>Descripción:</strong> Caladeros de pesca estacional de camarón con redes de manta y surpera en el litoral de Sonora y Sinaloa.</p>
+        <p><strong>Geometría:</strong> MultiPolygon | <strong>Entidades:</strong> 783 | <strong>CRS:</strong> EPSG:4326 (WGS84)</p>
+        <p><strong>Bounding Box:</strong> <code>MinLon: -114.9402, MinLat: 28.6917, MaxLon: -111.8732, MaxLat: 31.8724</code></p>
+        
+        <img class="map-img" src="../output/atlas_pangas_jpg/mapa_ZPesca_Redes_Manta_Camaron.jpg" alt="Mapa ZPesca_Redes_Manta_Camaron">
+        
+        <h4>Esquema de Atributos</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre de Campo</th>
+                    <th>Tipo de Dato</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+                <tr>
+                    <td><code>Id</code></td>
+                    <td>int32</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>CODE</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>M</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>J</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>R</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>G</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>NAME</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>ENTREVIS</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>Int_id</code></td>
+                    <td>int32</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>Ent_num</code></td>
+                    <td>int16</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>Entvsdr</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>mes</code></td>
+                    <td>int16</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="layer-card">
+        <h3>Capa: ZPesca_Trampa — Polígonos de Pesca con Trampas (Jaiba y Peces)</h3>
+        <p><strong>Descripción:</strong> Sitios de pesca artesanal costera y estuarina mediante trampas y nasas para jaiba azul y especies de rocas.</p>
+        <p><strong>Geometría:</strong> MultiPolygon | <strong>Entidades:</strong> 360 | <strong>CRS:</strong> EPSG:4326 (WGS84)</p>
+        <p><strong>Bounding Box:</strong> <code>MinLon: -114.7043, MinLat: 28.3656, MaxLon: -111.5806, MaxLat: 31.6367</code></p>
+        
+        <img class="map-img" src="../output/atlas_pangas_jpg/mapa_ZPesca_Trampa.jpg" alt="Mapa ZPesca_Trampa">
+        
+        <h4>Esquema de Atributos</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre de Campo</th>
+                    <th>Tipo de Dato</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+                <tr>
+                    <td><code>Id</code></td>
+                    <td>int32</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>CODE</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>M</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>J</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>R</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>G</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>NAME</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>ENTREVIS</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>Int_id</code></td>
+                    <td>int32</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>Ent_num</code></td>
+                    <td>int16</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>Entvsdr</code></td>
+                    <td>str</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+                <tr>
+                    <td><code>mes</code></td>
+                    <td>int16</td>
+                    <td>Atributo espacial/pesquero PANGAS</td>
+                </tr>
+        
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+</html>
