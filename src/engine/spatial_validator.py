@@ -126,6 +126,40 @@ class SpatialValidator:
         )
         
         logger.info("✅ SpatialValidator inicializado con configuración de producción")
+
+    @staticmethod
+    def validate_uid_espaciotemporal(uid_str: str) -> Dict[str, Union[bool, str, Dict[str, str]]]:
+        """
+        Valida que una clave espacio-temporal cumpla el estándar del Manual Metodológico:
+        comunidad-actor-pesquería-arte-zona-temporada-ruta
+        
+        Args:
+            uid_str: Cadena identificadora (ej. PUNTA_CHUECA-ARTESANAL-JAIBAMAX-TRAMPA-ZONA1-OCT_MAR-RUTA1)
+            
+        Returns:
+            Diccionario con resultado de validación y campos descompuestos
+        """
+        parts = uid_str.split('-')
+        if len(parts) < 7:
+            return {
+                'valid': False,
+                'error': f'El UID {uid_str} tiene {len(parts)} componentes, se requieren mínimo 7 (comunidad-actor-pesquería-arte-zona-temporada-ruta)'
+            }
+        
+        return {
+            'valid': True,
+            'uid': uid_str,
+            'components': {
+                'comunidad': parts[0],
+                'actor': parts[1],
+                'pesqueria': parts[2],
+                'arte': parts[3],
+                'zona': parts[4],
+                'temporada': parts[5],
+                'ruta': '-'.join(parts[6:])
+            }
+        }
+
     
     def validate_bounding_box(self, geometry: Union[Point, Polygon, MultiPolygon]) -> bool:
         """

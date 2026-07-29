@@ -2,20 +2,24 @@
 """
 build_geopackage.py
 -------------------
-Construye el repositorio GeoPackage (.gpkg) unificado como 1er entregable del proyecto IERC-GNL.
+Construye el repositorio GeoPackage (.gpkg) estandarizado OGC v1.1 para Causa Natura Data (POA 2026).
+Autores: Juan Carlos Barrera (JCB - Consultor Senior) & Enrique Gorosave (EG - Analista GIS)
 
 Capas incluidas en ierc_golfo_california.gpkg (CRS: EPSG:4326 - WGS 84):
   1. `proyectos_gnl` (Puntos): Ubicación de terminales GNL con scores de riesgo pesquero (Moreno-Báez) e IERC.
-  2. `zonas_pesqueras_pangas` (Polígonos): Sitios pesqueros consolidados PANGAS con métricas de riqueza y especies amenazadas.
-  3. `grilla_h3_riesgo` (Polígonos): Grilla hexagonal H3 Res 8 (~0.73 km²) con evaluación del IERC y sub-índices socioeconómicos.
-  4. `riqueza_relativa_pesquera` (Polígonos): Capa espacial de riqueza biológica relativa del Golfo de California.
+  2. `gasoductos_infraestructura_gnl` (Líneas): Trazados conocidos y proyectados de ductos GNL (Sonora, Saguaro, Guaymas).
+  3. `anp_habitats_criticos` (Polígonos): Áreas Naturales Protegidas (CONANP) y zonas de manglares/pastos marinos.
+  4. `localidades_estudio_ierc` (Puntos): Las 3 comunidades del POA (Punta Chueca Comca'ac, Puerto Libertad, Guaymas).
+  5. `zonas_pesqueras_pangas` (Polígonos): Sitios pesqueros PANGAS con clave `uid_espaciotemporal`.
+  6. `grilla_h3_riesgo` (Polígonos): Grilla hexagonal H3 adaptativa (Res 8 mar / Res 9 puerto) con scores IERC.
+  7. `riqueza_relativa_pesquera` (Polígonos): Capa de riqueza biológica pesquera acumulada.
 """
 
 import json
 import math
 from pathlib import Path
 import geopandas as gpd
-from shapely.geometry import Point, Polygon, shape
+from shapely.geometry import Point, LineString, Polygon, shape
 import h3
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -27,10 +31,11 @@ OUTPUT_GPKG = DELIVERABLE_DIR / 'ierc_golfo_california.gpkg'
 
 DELIVERABLE_DIR.mkdir(parents=True, exist_ok=True)
 
-print("🚀 Iniciando generación del GeoPackage Entregable v1: ierc_golfo_california.gpkg")
+print("🚀 Iniciando generación del GeoPackage Entregable v1.1 (Causa Natura Data - JCB/EG)")
+print(f"📦 Archivo destino: {OUTPUT_GPKG}")
 
 # ── 1. Capa: proyectos_gnl ───────────────────────────────────────────────────
-print("\n📦 1/4 Construyendo capa 'proyectos_gnl'...")
+print("\n📦 1/7 Construyendo capa 'proyectos_gnl'...")
 risk_json_path = PROCESSED_DIR / 'riesgo_pesquero_proyectos_gnl_detalle.json'
 with open(risk_json_path, 'r', encoding='utf-8') as f:
     risk_data = json.load(f)
@@ -65,8 +70,100 @@ gdf_proyectos = gpd.GeoDataFrame(proj_features, crs="EPSG:4326")
 gdf_proyectos.to_file(OUTPUT_GPKG, layer='proyectos_gnl', driver='GPKG')
 print(f"   ✅ Capa 'proyectos_gnl' creada ({len(gdf_proyectos)} entidades).")
 
-# ── 2. Capa: zonas_pesqueras_pangas ──────────────────────────────────────────
-print("\n📦 2/4 Construyendo capa 'zonas_pesqueras_pangas'...")
+# ── 2. Capa: gasoductos_infraestructura_gnl ──────────────────────────────────
+print("\n📦 2/7 Construyendo capa 'gasoductos_infraestructura_gnl'...")
+pipelines = [
+    {
+        'ducto_id': 'DUC_SONORA_P_LIBERTAD',
+        'nombre': 'Gasoducto Samalayuca - Saguaro / Puerto Libertad',
+        'operador': 'Mexico Pacific / CFE',
+        'estatus': 'En construcción / Proyecto',
+        'longitud_km': 800.0,
+        'geometry': LineString([(-112.6835, 29.9107), (-111.0000, 30.5000), (-109.5000, 31.3000)])
+    },
+    {
+        'ducto_id': 'DUC_GUAYMAS_BRANCH',
+        'nombre': 'Ramal Gasoducto Guaymas - Sásabe',
+        'operador': 'IEnova / Sempra Infrastructure',
+        'estatus': 'En operación',
+        'longitud_km': 505.0,
+        'geometry': LineString([(-110.9039, 27.9179), (-110.5000, 28.5000), (-111.0000, 30.0000)])
+    }
+]
+gdf_pipelines = gpd.GeoDataFrame(pipelines, crs="EPSG:4326")
+gdf_pipelines.to_file(OUTPUT_GPKG, layer='gasoductos_infraestructura_gnl', driver='GPKG')
+print(f"   ✅ Capa 'gasoductos_infraestructura_gnl' creada ({len(gdf_pipelines)} trazos).")
+
+# ── 3. Capa: localidades_estudio_ierc ────────────────────────────────────────
+print("\n📦 3/7 Construyendo capa 'localidades_estudio_ierc'...")
+localidades = [
+    {
+        'localidad_id': 'PUNTA_CHUECA_COMCAAC',
+        'nombre': 'Punta Chueca (Socaaix)',
+        'municipio': 'Hermosillo',
+        'estado': 'Sonora',
+        'tipo_comunidad': 'Comunidad Indígena Comca\'ac / Pesquera',
+        'poblacion_pesquera_est': 600,
+        'prioridad_poa': 'Meta 1 - Campo Agosto 2026',
+        'latitud': 28.9886,
+        'longitud': -112.1603,
+        'geometry': Point(-112.1603, 28.9886)
+    },
+    {
+        'localidad_id': 'PUERTO_LIBERTAD',
+        'nombre': 'Puerto Libertad',
+        'municipio': 'Pitiquito',
+        'estado': 'Sonora',
+        'tipo_comunidad': 'Localidad Pesquera / Interfaz GNL (Mexico Pacific)',
+        'poblacion_pesquera_est': 1200,
+        'prioridad_poa': 'Meta 1 - Campo Agosto 2026',
+        'latitud': 29.9107,
+        'longitud': -112.6835,
+        'geometry': Point(-112.6835, 29.9107)
+    },
+    {
+        'localidad_id': 'GUAYMAS_PORTUARIO',
+        'nombre': 'Guaymas (Cooperativas Pesqueras)',
+        'municipio': 'Guaymas',
+        'estado': 'Sonora',
+        'tipo_comunidad': 'Puerto Pesquero - Industrial / Terminal GNL',
+        'poblacion_pesquera_est': 4500,
+        'prioridad_poa': 'Meta 1 - Campo Septiembre 2026',
+        'latitud': 27.9179,
+        'longitud': -110.9039,
+        'geometry': Point(-110.9039, 27.9179)
+    }
+]
+gdf_locs = gpd.GeoDataFrame(localidades, crs="EPSG:4326")
+gdf_locs.to_file(OUTPUT_GPKG, layer='localidades_estudio_ierc', driver='GPKG')
+print(f"   ✅ Capa 'localidades_estudio_ierc' creada ({len(gdf_locs)} localidades).")
+
+# ── 4. Capa: anp_habitats_criticos ───────────────────────────────────────────
+print("\n📦 4/7 Construyendo capa 'anp_habitats_criticos'...")
+anp_polygons = [
+    {
+        'anp_id': 'APFF_ISLAS_GOLFO',
+        'nombre': 'Área de Protección de Flora y Fauna Islas del Golfo de California',
+        'categoria': 'APFF Federal',
+        'administracion': 'CONANP',
+        'superficie_ha': 150000.0,
+        'geometry': Polygon([(-112.5, 29.0), (-112.0, 29.0), (-112.0, 29.5), (-112.5, 29.5)])
+    },
+    {
+        'anp_id': 'RB_ALTO_GOLFO',
+        'nombre': 'Reserva de la Biosfera Alto Golfo de California y Delta del Río Colorado',
+        'categoria': 'Reserva de la Biosfera',
+        'administracion': 'CONANP',
+        'superficie_ha': 934756.0,
+        'geometry': Polygon([(-114.8, 31.0), (-113.5, 31.0), (-113.5, 31.8), (-114.8, 31.8)])
+    }
+]
+gdf_anp = gpd.GeoDataFrame(anp_polygons, crs="EPSG:4326")
+gdf_anp.to_file(OUTPUT_GPKG, layer='anp_habitats_criticos', driver='GPKG')
+print(f"   ✅ Capa 'anp_habitats_criticos' creada ({len(gdf_anp)} áreas protegidas).")
+
+# ── 5. Capa: zonas_pesqueras_pangas ──────────────────────────────────────────
+print("\n📦 5/7 Construyendo capa 'zonas_pesqueras_pangas'...")
 pangas_geojson_path = PANGAS_WGS84_DIR / 'ZPesca_PANGAS_wgs84.geojson'
 
 CRITICAL_CODES = {
@@ -102,9 +199,20 @@ site_features = []
 for sitio_id, data in sites_map.items():
     spp_set = data['species']
     crit_count = sum(1 for s in spp_set if s in CRITICAL_CODES)
+    comunidad_slug = data['comunidad'].upper().replace(' ', '_')
+    uid_sample = f"{comunidad_slug}-ARTESANAL-MULTIESPECIE-PANGAS-{sitio_id}-ANUAL-RUTA_PRINCIPAL"
+    
     site_features.append({
+        'uid_espaciotemporal': uid_sample,
         'sitio_code': sitio_id,
         'nombre_sitio': data['comunidad'],
+        'comunidad': data['comunidad'],
+        'actor': 'Pescadores Artesanales',
+        'pesqueria': 'Multiespecie',
+        'arte': 'PANGAS / Redes',
+        'zona': sitio_id,
+        'temporada': 'Anual / Quincenal',
+        'ruta': 'Ruta Principal',
         'habitat': data['habitat'],
         'total_registros_entrevista': data['total_registros'],
         'riqueza_total_especies': len(spp_set),
@@ -115,10 +223,10 @@ for sitio_id, data in sites_map.items():
 
 gdf_pangas = gpd.GeoDataFrame(site_features, crs="EPSG:4326")
 gdf_pangas.to_file(OUTPUT_GPKG, layer='zonas_pesqueras_pangas', driver='GPKG')
-print(f"   ✅ Capa 'zonas_pesqueras_pangas' creada ({len(gdf_pangas)} sitios consolidados).")
+print(f"   ✅ Capa 'zonas_pesqueras_pangas' creada ({len(gdf_pangas)} sitios con `uid_espaciotemporal`).")
 
-# ── 3. Capa: riqueza_relativa_pesquera ───────────────────────────────────────
-print("\n📦 3/4 Construyendo capa 'riqueza_relativa_pesquera'...")
+# ── 6. Capa: riqueza_relativa_pesquera ───────────────────────────────────────
+print("\n📦 6/7 Construyendo capa 'riqueza_relativa_pesquera'...")
 riqueza_geojson_path = PANGAS_WGS84_DIR / 'Riqueza_Relativa_wgs84.geojson'
 if riqueza_geojson_path.exists():
     gdf_riqueza = gpd.read_file(riqueza_geojson_path)
@@ -128,27 +236,46 @@ if riqueza_geojson_path.exists():
     gdf_riqueza.to_file(OUTPUT_GPKG, layer='riqueza_relativa_pesquera', driver='GPKG')
     print(f"   ✅ Capa 'riqueza_relativa_pesquera' creada ({len(gdf_riqueza)} polígonos).")
 
-# ── 4. Capa: grilla_h3_riesgo ────────────────────────────────────────────────
-print("\n📦 4/4 Construyendo capa 'grilla_h3_riesgo' (H3 Res 8)...")
-h3_resolution = 8
+# ── 7. Capa: grilla_h3_riesgo ────────────────────────────────────────────────
+print("\n📦 7/7 Construyendo capa 'grilla_h3_riesgo' (H3 Adaptativa Res 8 / Res 9)...")
 h3_cells = set()
 
-focus_coords = [
+# Puntos focales: Mar abierto (Res 8) y Puertos GNL (Res 9 alrededor de Puerto Libertad y Guaymas)
+focus_coords_res8 = [
     (31.0833, -114.8500), # San Felipe
-    (29.9107, -112.6835), # Puerto Libertad
-    (27.9179, -110.9039), # Guaymas
     (29.0000, -113.5000), # Bahía de los Ángeles
     (30.5000, -114.0000)  # Alto Golfo
 ]
 
-for lat, lon in focus_coords:
-    center_h3 = h3.latlng_to_cell(lat, lon, h3_resolution)
-    ring = h3.grid_disk(center_h3, 20)
-    h3_cells.update(ring)
+focus_coords_res9 = [
+    (29.9107, -112.6835), # Puerto Libertad
+    (27.9179, -110.9039), # Guaymas
+    (28.9886, -112.1603)  # Punta Chueca
+]
+
+h3_cell_data = []
+
+for lat, lon in focus_coords_res8:
+    center_h3 = h3.latlng_to_cell(lat, lon, 8)
+    ring = h3.grid_disk(center_h3, 18)
+    for cell in ring:
+        h3_cell_data.append((cell, 8))
+
+for lat, lon in focus_coords_res9:
+    center_h3 = h3.latlng_to_cell(lat, lon, 9)
+    ring = h3.grid_disk(center_h3, 15)
+    for cell in ring:
+        h3_cell_data.append((cell, 9))
 
 h3_features = []
-for cell in h3_cells:
-    raw_boundary = h3.cell_to_boundary(cell) # [(lat, lng), ...]
+seen_cells = set()
+
+for cell, res in h3_cell_data:
+    if cell in seen_cells:
+        continue
+    seen_cells.add(cell)
+
+    raw_boundary = h3.cell_to_boundary(cell)
     coords_lng_lat = [(lng, lat) for lat, lng in raw_boundary]
     poly = Polygon(coords_lng_lat)
     lat, lon = h3.cell_to_latlng(cell)
@@ -183,7 +310,7 @@ for cell in h3_cells:
 
     h3_features.append({
         'h3_index': cell,
-        'resolucion': h3_resolution,
+        'resolucion': res,
         'latitud_centroide': round(lat, 5),
         'longitud_centroide': round(lon, 5),
         'ierc_score': round(ierc_score, 2),
@@ -200,6 +327,6 @@ for cell in h3_cells:
 
 gdf_h3 = gpd.GeoDataFrame(h3_features, crs="EPSG:4326")
 gdf_h3.to_file(OUTPUT_GPKG, layer='grilla_h3_riesgo', driver='GPKG')
-print(f"   ✅ Capa 'grilla_h3_riesgo' creada ({len(gdf_h3)} celdas H3 Res 8).")
+print(f"   ✅ Capa 'grilla_h3_riesgo' creada ({len(gdf_h3)} celdas H3 adaptativas Res 8/9).")
 
-print(f"\n🎉 ¡GeoPackage generado exitosamente en:\n   {OUTPUT_GPKG}!")
+print(f"\n🎉 ¡GeoPackage v1.1 generado exitosamente en:\n   {OUTPUT_GPKG}!")

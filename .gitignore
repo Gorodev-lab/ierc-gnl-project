@@ -20,6 +20,9 @@ ENV/
 .pytest_cache/
 .coverage
 
+# Raw heavy datasets (> 50MB) - Global Fishing Watch Zenodo dumps
+data/raw/gfw/
+
 # IDEs & System
 .vscode/
 .idea/
