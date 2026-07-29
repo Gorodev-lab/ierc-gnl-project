@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento Ejecutivo y Catálogo Cartográfico: Entregable 1 — IERC-GNL (Causa Natura Center)</title>
+    <style>
+        /* ESTILOS PARA PANTALLA E IMPRESIÓN */
+        :root {
+            --primary: #0284c7;
+            --primary-dark: #0369a1;
+            --bg-dark: #0f172a;
+            --card-bg: #1e293b;
+            --text-light: #f8fafc;
+            --text-muted: #cbd5e1;
+            --border: #334155;
+            --accent-amber: #f59e0b;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            margin: 0;
+            padding: 40px;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .page-break {
+            page-break-after: always;
+            break-after: page;
+        }
+
+        .header-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 36px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+        }
+
+        h1 {
+            color: #38bdf8;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 12px;
+            font-size: 26px;
+            margin-top: 0;
+        }
+
+        h2 {
+            color: #f1f5f9;
+            margin-top: 30px;
+            font-size: 20px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: #7dd3fc;
+            font-size: 16px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .notice-box {
+            background-color: #0f172a;
+            border-left: 4px solid var(--accent-amber);
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 4px;
+            color: #fef08a;
+            font-size: 14px;
+        }
+
+        .explain-box {
+            background-color: #0f172a;
+            border-left: 4px solid var(--primary);
+            padding: 16px;
+            margin: 18px 0;
+            border-radius: 4px;
+            color: #e0f2fe;
+            font-size: 13.5px;
+        }
+
+        .citation-box {
+            background-color: #0f172a;
+            border-left: 4px solid #38bdf8;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 4px;
+            font-style: italic;
+            color: var(--text-muted);
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 26px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+        }
+
+        .grid-maps {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .grid-maps div {
+            background-color: #0f172a;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .grid-maps img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            border: 1px solid #475569;
+            margin-top: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 14px;
+            background-color: #0f172a;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 10px 14px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            font-size: 13px;
+        }
+
+        th {
+            background-color: var(--primary);
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: #1e293b;
+        }
+
+        code, .badge {
+            background-color: #0369a1;
+            color: #e0f2fe;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: Consolas, Monaco, monospace;
+            font-size: 12.5px;
+        }
+
+        .path-link {
+            color: #38bdf8;
+            font-family: monospace;
+            font-size: 12px;
+            word-break: break-all;
+        }
+
+        /* REGLAS CSS ESPECÍFICAS PARA IMPRESIÓN Y EXPORTACIÓN A PDF */
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 12mm 15mm 12mm 15mm;
+            }
+
+            body {
+                background-color: #ffffff !important;
+                color: #0f172a !important;
+                padding: 0 !important;
+                font-size: 11pt;
+            }
+
+            .container {
+                max-width: 100% !important;
+            }
+
+            .header-card, .card {
+                background-color: #ffffff !important;
+                color: #0f172a !important;
+                border: 1px solid #cbd5e1 !important;
+                box-shadow: none !important;
+                padding: 16px !important;
+                margin-bottom: 20px !important;
+            }
+
+            h1 {
+                color: #0369a1 !important;
+                border-bottom-color: #0284c7 !important;
+                font-size: 20pt !important;
+            }
+
+            h2 {
+                color: #0f172a !important;
+                border-bottom-color: #cbd5e1 !important;
+                font-size: 15pt !important;
+            }
+
+            h3 {
+                color: #0369a1 !important;
+                font-size: 12pt !important;
+            }
+
+            .notice-box {
+                background-color: #fefce8 !important;
+                color: #854d0e !important;
+                border-left-color: #d97706 !important;
+                border: 1px solid #fef08a;
+            }
+
+            .explain-box {
+                background-color: #f0f9ff !important;
+                color: #0c4a6e !important;
+                border-left-color: #0284c7 !important;
+                border: 1px solid #bae6fd;
+            }
+
+            .citation-box {
+                background-color: #f8fafc !important;
+                color: #334155 !important;
+                border-left-color: #0284c7 !important;
+                border: 1px solid #e2e8f0;
+            }
+
+            table {
+                background-color: #ffffff !important;
+                border: 1px solid #cbd5e1 !important;
+            }
+
+            th {
+                background-color: #0284c7 !important;
+                color: #ffffff !important;
+            }
+
+            td {
+                border-bottom-color: #e2e8f0 !important;
+                color: #0f172a !important;
+            }
+
+            tr:nth-child(even) {
+                background-color: #f8fafc !important;
+            }
+
+            code, .badge {
+                background-color: #e0f2fe !important;
+                color: #0369a1 !important;
+                border: 1px solid #bae6fd;
+            }
+
+            .grid-maps div {
+                background-color: #f8fafc !important;
+                border-color: #cbd5e1 !important;
+            }
+
+            .grid-maps img {
+                border-color: #94a3b8 !important;
+            }
+
+            .page-break {
+                page-break-after: always !important;
+                break-after: page !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- PORTADA Y RESUMEN DE ENTREGA -->
+    <div class="header-card">
+        <h1>Documento Ejecutivo y Catálogo Cartográfico: Entregable 1 (Meta 1)</h1>
+        <p><strong>Proyecto:</strong> Índice Espacial de Riesgo Socioeconómico para Comunidades (IERC-GNL)</p>
+        <p><strong>Cliente / Organización:</strong> Causa Natura Center / Causa Natura Data (POA 2026-2028)</p>
+        <p><strong>Equipo Técnico de Autores:</strong> Juan Carlos Barrera (JCB - Consultor Senior) & Enrique Gorosave (EG - Analista GIS)</p>
+        <p><strong>Fecha de Emisión:</strong> 19 de Agosto de 2026</p>
+        <p><strong>Repositorio Git Oficial:</strong> <span class="path-link">https://github.com/Gorodev-lab/ierc-gnl-project</span></p>
+
+        <div class="notice-box">
+            <strong>Nota Explicativa sobre el Alcance de Datos Presentados:</strong><br>
+            La información espacial contenida en este documento representa la <strong>línea base histórica de gabinete (Estudio PANGAS de la Dra. Marcia Moreno-Báez et al.) y el marco estructural del proyecto</strong>. Los datos primarios oficiales y el mapeo definitivo de la infraestructura de Gas Natural Licuado (polígonos de obras, rutas de ductos, áreas de exclusión marina y zonas de pesca comunitaria actualizadas) serán recolectados directamente en campo durante la <strong>Meta 2 (Semanas 5 a 8)</strong> en las comunidades de Punta Chueca (Nación Comca'ac), Puerto Libertad y Guaymas.
+        </div>
+    </div>
+
+    <!-- ESTRUCTURA DEL PROYECTO Y UBICACIÓN DE ARCHIVOS -->
+    <div class="card">
+        <h2>1. Estructura del Proyecto y Ubicación de Archivos en el Repositorio</h2>
+        <p>Para facilitar la revisión, todos los archivos del proyecto están organizados de forma metódica en el repositorio público de GitHub:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Componente / Entregable</th>
+                    <th>Ruta en el Repositorio</th>
+                    <th>Descripción y Contenido</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Base de Datos GeoPackage OGC v1.1</td>
+                    <td><span class="path-link">deliverables/v1_geopackage/ierc_golfo_california.gpkg</span></td>
+                    <td>Archivo único con 7 capas vectoriales estandarizadas en EPSG:4326.</td>
+                </tr>
+                <tr>
+                    <td>Diccionario Técnico de Metadatos</td>
+                    <td><span class="path-link">deliverables/v1_geopackage/GEOPACKAGE_METADATOS.md</span></td>
+                    <td>Explicación de campos, tipos de datos e índices R-Tree.</td>
+                </tr>
+                <tr>
+                    <td>Paquetes por Capa PANGAS (7 Capas)</td>
+                    <td><span class="path-link">output/paquetes_capas_pangas/</span></td>
+                    <td>7 carpetas con mapas georreferenciados en JPG y fichas Markdown.</td>
+                </tr>
+                <tr>
+                    <td>Visor Cartográfico Interactivo</td>
+                    <td><span class="path-link">output/paquetes_capas_pangas/ATLAS_PAQUETES_COMPLETO.html</span></td>
+                    <td>Visualizador navegable en navegador web con mapas comparativos.</td>
+                </tr>
+                <tr>
+                    <td>Nota Metodológica Ajustada</td>
+                    <td><span class="path-link">docs/metodologia/Nota_Metodologica_Ajustada_JCB_EG.md</span></td>
+                    <td>Marco conceptual R = H x V, unidad de análisis y gobernanza Comca'ac.</td>
+                </tr>
+                <tr>
+                    <td>Matriz de Vacíos Geoespaciales</td>
+                    <td><span class="path-link">docs/metodologia/Inventario_y_Matriz_Vacios_Geoespaciales_EG.md</span></td>
+                    <td>Inventario de gabinete y vacíos a recolectar en campo.</td>
+                </tr>
+                <tr>
+                    <td>Expediente de Auditoría Técnica</td>
+                    <td><span class="path-link">docs/auditoria/AUDITORIA_META1_ENTREGABLE1.md</span></td>
+                    <td>Matriz de verificación de 3 niveles y dictamen de aprobación.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="explain-box">
+            <strong>Explicación Accesible de la Estructura:</strong><br>
+            Imagine el repositorio de GitHub como una biblioteca digital bien etiquetada. La carpeta <code>deliverables/</code> contiene el archivo maestro de mapas (GeoPackage), la carpeta <code>output/</code> contiene las imágenes de mapas listas para imprimir o ver en pantalla, y la carpeta <code>docs/</code> contiene las notas metodológicas explicativas.
+        </div>
+    </div>
+
+    <!-- DESCRIPCIÓN DE CAPAS Y UID ESPACIOTEMPORAL -->
+    <div class="card">
+        <h2>2. Descripción de Capas del GeoPackage y Clave Única Espacio-Temporal</h2>
+        <p>El archivo <code>ierc_golfo_california.gpkg</code> almacena 7 capas fundamentales en coordenadas geográficas WGS84 (<code>EPSG:4326</code>):</p>
+
+        <ul>
+            <li><code>proyectos_gnl</code> (Puntos): Ubicación preliminar de 5 terminales GNL en el Golfo de California.</li>
+            <li><code>gasoductos_infraestructura_gnl</code> (Líneas): Trazado de ductos terrestres y marinos hacia las plantas.</li>
+            <li><code>localidades_estudio_ierc</code> (Puntos): Ubicación de Punta Chueca (Comca'ac), Puerto Libertad y Guaymas.</li>
+            <li><code>anp_habitats_criticos</code> (Polígonos): Áreas Naturales Protegidas y hábitats marinos sensibles.</li>
+            <li><code>zonas_pesqueras_pangas</code> (Polígonos): Campos pesqueros artesanales integrados con clave única.</li>
+            <li><code>grilla_h3_riesgo</code> (Polígonos): Malla de 5,244 hexágonos Uber H3 (Res 8 / Res 9) para cálculo del riesgo.</li>
+            <li><code>riqueza_relativa_pesquera</code> (Polígonos): Malla de riqueza biológica pesquera acumulada.</li>
+        </ul>
+
+        <h3>Clave Única Espacio-Temporal (`uid_espaciotemporal`)</h3>
+        <p>Fórmula de identificación:</p>
+        <p><code>comunidad - actor - pesquería - arte - zona - temporada - ruta</code></p>
+
+        <div class="explain-box">
+            <strong>Explicación Accesible de la Clave Única:</strong><br>
+            Funciona exactamente como una clave CURP para una actividad de pesca. Nos indica con precisión: quién pesca, qué especie captura, qué tipo de red o trampa utiliza, en qué lugar específico del mar opera, durante qué meses del año y por qué ruta navega.
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- CATÁLOGO DE PAQUETES CARTOGRÁFICOS POR CAPA -->
+    <h2>3. Catálogo Cartográfico de Capas Pesqueras (Línea Base PANGAS)</h2>
+
+    <!-- PAQUETE 01 -->
+    <div class="card">
+        <h3>Paquete 01: 01_Riqueza_Relativa — Malla de Riqueza Biológica Pesquera Relativa</h3>
+        <p><strong>Ubicación en Repositorio:</strong> <span class="path-link">output/paquetes_capas_pangas/01_Riqueza_Relativa/</span></p>
+        <p><strong>Cita de Origen:</strong> Moreno-Báez, M., et al. (2011, 2012). Ocean & Coastal Management / Marine Policy.</p>
+        <p><strong>Entidades (Polígonos):</strong> 11,065 | <strong>Proyección:</strong> EPSG:4326 (WGS84) / EPSG:3857 (Web Mercator)</p>
+        <p><strong>Descripción Accesible:</strong> Muestra la concentración espacial de especies pesqueras de mayor valor comercial reportadas en el Golfo de California. Los colores más intensos destacan las áreas marinas de mayor productividad biológica.</p>
+
+        <div class="grid-maps">
+            <div>
+                <strong>OpenStreetMap Estándar (Estilo QGIS)</strong>
+                <img src="./paquetes_capas_pangas/01_Riqueza_Relativa/mapa_osm.jpg" alt="Mapa OSM Riqueza Relativa">
+            </div>
+            <div>
+                <strong>Esri World Imagery (Satelital)</strong>
+                <img src="./paquetes_capas_pangas/01_Riqueza_Relativa/mapa_satelital.jpg" alt="Mapa Satelital Riqueza Relativa">
+            </div>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- PAQUETE 02 -->
+    <div class="card">
+        <h3>Paquete 02: 02_ZPesca_Buceo — Polígonos de Pesca Comercial por Buceo</h3>
+        <p><strong>Ubicación en Repositorio:</strong> <span class="path-link">output/paquetes_capas_pangas/02_ZPesca_Buceo/</span></p>
+        <p><strong>Cita de Origen:</strong> Moreno-Báez, M., et al. (2011, 2012). Ocean & Coastal Management / Marine Policy.</p>
+        <p><strong>Entidades (Polígonos):</strong> 249 | <strong>Artes de Pesca:</strong> Buceo autónomo y hookah</p>
+        <p><strong>Especies Principales:</strong> Almeja generosa, callo de hacha, erizo de mar, pepino de mar y caracol.</p>
+        <p><strong>Descripción Accesible:</strong> Zonas cercanas a la costa y arrecifes rocosos donde los buzos se sumergen para extraer moluscos del fondo marino.</p>
+
+        <div class="grid-maps">
+            <div>
+                <strong>OpenStreetMap Estándar (Estilo QGIS)</strong>
+                <img src="./paquetes_capas_pangas/02_ZPesca_Buceo/mapa_osm.jpg" alt="Mapa OSM Buceo">
+            </div>
+            <div>
+                <strong>Esri World Imagery (Satelital)</strong>
+                <img src="./paquetes_capas_pangas/02_ZPesca_Buceo/mapa_satelital.jpg" alt="Mapa Satelital Buceo">
+            </div>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- PAQUETE 03 -->
+    <div class="card">
+        <h3>Paquete 03: 03_ZPesca_Chinchorro — Polígonos de Pesca con Chinchorro de Línea</h3>
+        <p><strong>Ubicación en Repositorio:</strong> <span class="path-link">output/paquetes_capas_pangas/03_ZPesca_Chinchorro/</span></p>
+        <p><strong>Cita de Origen:</strong> Moreno-Báez, M., et al. (2011, 2012). Ocean & Coastal Management / Marine Policy.</p>
+        <p><strong>Entidades (Polígonos):</strong> 2,209 | <strong>Artes de Pesca:</strong> Chinchorro de playa y deriva</p>
+        <p><strong>Especies Principales:</strong> Peces de escama (corvina, curvina reyna, sierra, robalo).</p>
+        <p><strong>Descripción Accesible:</strong> Zonas de playa y estuarios donde se extienden redes flotantes para rodear y capturar peces de escama.</p>
+
+        <div class="grid-maps">
+            <div>
+                <strong>OpenStreetMap Estándar (Estilo QGIS)</strong>
+                <img src="./paquetes_capas_pangas/03_ZPesca_Chinchorro/mapa_osm.jpg" alt="Mapa OSM Chinchorro">
+            </div>
+            <div>
+                <strong>Esri World Imagery (Satelital)</strong>
+                <img src="./paquetes_capas_pangas/03_ZPesca_Chinchorro/mapa_satelital.jpg" alt="Mapa Satelital Chinchorro">
+            </div>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- PAQUETE 04 -->
+    <div class="card">
+        <h3>Paquete 04: 04_ZPesca_PANGAS — Base Unificada de Zonas Pesqueras PANGAS</h3>
+        <p><strong>Ubicación en Repositorio:</strong> <span class="path-link">output/paquetes_capas_pangas/04_ZPesca_PANGAS/</span></p>
+        <p><strong>Cita de Origen:</strong> Moreno-Báez, M., et al. (2011, 2012). Ocean & Coastal Management / Marine Policy.</p>
+        <p><strong>Entidades (Polígonos):</strong> 4,241 | <strong>Artes de Pesca:</strong> Multiespecie / PANGAS</p>
+        <p><strong>Descripción Accesible:</strong> Capa integral que representa la extensión combinada de todos los campos pesqueros mapaedados en la historia del proyecto PANGAS.</p>
+
+        <div class="grid-maps">
+            <div>
+                <strong>OpenStreetMap Estándar (Estilo QGIS)</strong>
+                <img src="./paquetes_capas_pangas/04_ZPesca_PANGAS/mapa_osm.jpg" alt="Mapa OSM PANGAS">
+            </div>
+            <div>
+                <strong>Esri World Imagery (Satelital)</strong>
+                <img src="./paquetes_capas_pangas/04_ZPesca_PANGAS/mapa_satelital.jpg" alt="Mapa Satelital PANGAS">
+            </div>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- PAQUETE 05 -->
+    <div class="card">
+        <h3>Paquete 05: 05_ZPesca_Redes — Polígonos de Pesca con Redes de Enmalle</h3>
+        <p><strong>Ubicación en Repositorio:</strong> <span class="path-link">output/paquetes_capas_pangas/05_ZPesca_Redes/</span></p>
+        <p><strong>Cita de Origen:</strong> Moreno-Báez, M., et al. (2011, 2012). Ocean & Coastal Management / Marine Policy.</p>
+        <p><strong>Entidades (Polígonos):</strong> 1,263 | <strong>Artes de Pesca:</strong> Redes agalleras de fondo y deriva</p>
+        <p><strong>Especies Principales:</strong> Cazón, tiburón pequeño, raya, huachinango y pargo.</p>
+        <p><strong>Descripción Accesible:</strong> Áreas marinas donde se instalan redes agalleras verticales en la columna de agua o en el fondo marino.</p>
+
+        <div class="grid-maps">
+            <div>
+                <strong>OpenStreetMap Estándar (Estilo QGIS)</strong>
+                <img src="./paquetes_capas_pangas/05_ZPesca_Redes/mapa_osm.jpg" alt="Mapa OSM Redes">
+            </div>
+            <div>
+                <strong>Esri World Imagery (Satelital)</strong>
+                <img src="./paquetes_capas_pangas/05_ZPesca_Redes/mapa_satelital.jpg" alt="Mapa Satelital Redes">
+            </div>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- PAQUETE 06 -->
+    <div class="card">
+        <h3>Paquete 06: 06_ZPesca_Redes_Manta_Camaron — Pesca de Camarón y Redes de Manta</h3>
+        <p><strong>Ubicación en Repositorio:</strong> <span class="path-link">output/paquetes_capas_pangas/06_ZPesca_Redes_Manta_Camaron/</span></p>
+        <p><strong>Cita de Origen:</strong> Moreno-Báez, M., et al. (2011, 2012). Ocean & Coastal Management / Marine Policy.</p>
+        <p><strong>Entidades (Polígonos):</strong> 783 | <strong>Artes de Pesca:</strong> Red de manta y surpera</p>
+        <p><strong>Especies Principales:</strong> Camarón azul, camarón café y camarón blanco.</p>
+        <p><strong>Descripción Accesible:</strong> Caladeros costeros de gran importancia económica donde se captura camarón durante la temporada de zafra.</p>
+
+        <div class="grid-maps">
+            <div>
+                <strong>OpenStreetMap Estándar (Estilo QGIS)</strong>
+                <img src="./paquetes_capas_pangas/06_ZPesca_Redes_Manta_Camaron/mapa_osm.jpg" alt="Mapa OSM Camarón">
+            </div>
+            <div>
+                <strong>Esri World Imagery (Satelital)</strong>
+                <img src="./paquetes_capas_pangas/06_ZPesca_Redes_Manta_Camaron/mapa_satelital.jpg" alt="Mapa Satelital Camarón">
+            </div>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- PAQUETE 07 -->
+    <div class="card">
+        <h3>Paquete 07: 07_ZPesca_Trampa — Polígonos de Pesca con Trampas (Jaiba y Peces)</h3>
+        <p><strong>Ubicación en Repositorio:</strong> <span class="path-link">output/paquetes_capas_pangas/07_ZPesca_Trampa/</span></p>
+        <p><strong>Cita de Origen:</strong> Moreno-Báez, M., et al. (2011, 2012). Ocean & Coastal Management / Marine Policy.</p>
+        <p><strong>Entidades (Polígonos):</strong> 360 | <strong>Artes de Pesca:</strong> Trampas y nasas jaiberas</p>
+        <p><strong>Especies Principales:</strong> Jaiba azul, jaiba café y peces de rocas.</p>
+        <p><strong>Descripción Accesible:</strong> Sitios en bahías protegidas y esteros donde se colocan trampas metálicas cebadas en el fondo.</p>
+
+        <div class="grid-maps">
+            <div>
+                <strong>OpenStreetMap Estándar (Estilo QGIS)</strong>
+                <img src="./paquetes_capas_pangas/07_ZPesca_Trampa/mapa_osm.jpg" alt="Mapa OSM Trampa">
+            </div>
+            <div>
+                <strong>Esri World Imagery (Satelital)</strong>
+                <img src="./paquetes_capas_pangas/07_ZPesca_Trampa/mapa_satelital.jpg" alt="Mapa Satelital Trampa">
+            </div>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- GLOSARIO DE TÉRMINOS NO TÉCNICOS -->
+    <div class="card">
+        <h2>4. Glosario de Términos no Técnicos para Revisores</h2>
+        <p>Para facilitar la comprensión entre directivos y revisores socioambientales, a continuación se definen los términos técnicos clave empleados en este informe:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Término Técnico</th>
+                    <th>Definición y Explicación en Lenguaje Cotidiano</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Sistema de Información Geográfica (SIG)</strong></td>
+                    <td>Un software de computadora avanzado para crear, almacenar y analizar mapas digitales interactivos.</td>
+                </tr>
+                <tr>
+                    <td><strong>GeoPackage (.gpkg)</strong></td>
+                    <td>Formato de archivo estándar moderno que guarda múltiples mapas, puntos, líneas y tablas en un solo archivo ligero.</td>
+                </tr>
+                <tr>
+                    <td><strong>Sistema de Coordenadas (CRS) / WGS84</strong></td>
+                    <td>El sistema global de latitud y longitud usado por los teléfonos y GPS para ubicar cualquier punto en la Tierra.</td>
+                </tr>
+                <tr>
+                    <td><strong>Proyección Web Mercator (EPSG:3857)</strong></td>
+                    <td>La fórmula matemática que adapta la esfera terrestre para mostrarla plana en pantallas de computadora y navegadores web.</td>
+                </tr>
+                <tr>
+                    <td><strong>Bounding Box (Extensión Geográfica)</strong></td>
+                    <td>El marco o rectángulo imaginario que encierra los límites exteriores de un mapa.</td>
+                </tr>
+                <tr>
+                    <td><strong>Grilla H3 (Hexágonos Uber)</strong></td>
+                    <td>Una malla espacial que divide el mar en miles de piezas de 6 lados idénticas en tamaño para comparar el riesgo de manera justa.</td>
+                </tr>
+                <tr>
+                    <td><strong>Metadatos</strong></td>
+                    <td>La etiqueta o "acta de nacimiento" que explica qué contiene un mapa digital, quién lo creó y cómo fue medido.</td>
+                </tr>
+                <tr>
+                    <td><strong>Topología</strong></td>
+                    <td>Reglas matemáticas que garantizan que los mapas no tengan errores como polígonos o líneas encimadas por error.</td>
+                </tr>
+                <tr>
+                    <td><strong>R-Tree (Índice Espacial)</strong></td>
+                    <td>Un catálogo interno acelerador dentro de la base de datos que permite encontrar cualquier punto en el mapa al instante.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>
