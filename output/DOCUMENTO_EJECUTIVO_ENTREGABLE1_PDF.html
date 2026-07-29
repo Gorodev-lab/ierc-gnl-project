@@ -3,31 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documento Ejecutivo y Catálogo Cartográfico con Tablas de Metadatos QGIS — IERC-GNL</title>
+    <title>Documento Ejecutivo y Catálogo Cartográfico (POA 2026) — Causa Natura Data</title>
     <style>
+        /* GUÍA DE ESTILO INSTITUCIONAL CAUSA NATURA DATA */
         :root {
-            --primary: #0284c7;
-            --primary-dark: #0369a1;
-            --bg-dark: #0f172a;
-            --card-bg: #1e293b;
-            --text-light: #f8fafc;
-            --text-muted: #cbd5e1;
-            --border: #334155;
-            --accent-amber: #f59e0b;
+            --navy-brand: #002B49;
+            --blue-accent: #006699;
+            --blue-light: #e0f2fe;
+            --bg-main: #f8fafc;
+            --card-bg: #ffffff;
+            --text-dark: #1e293b;
+            --text-muted: #475569;
+            --border-color: #cbd5e1;
+            --amber-border: #d97706;
+            --amber-bg: #fefce8;
+            --amber-text: #854d0e;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Segoe UI', -apple-system, Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-light);
+            font-family: 'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-dark);
             margin: 0;
-            padding: 40px;
+            padding: 30px;
             line-height: 1.6;
             font-size: 13.5px;
         }
 
         .container {
-            max-width: 1150px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
@@ -36,62 +44,82 @@
             break-after: page;
         }
 
-        .header-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 32px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+        .header-banner {
+            background-color: var(--navy-brand);
+            color: #ffffff;
+            border-radius: 8px 8px 0 0;
+            padding: 30px 36px;
+            border-bottom: 4px solid var(--blue-accent);
         }
 
-        h1 {
-            color: #38bdf8;
-            border-bottom: 2px solid var(--primary);
-            padding-bottom: 12px;
-            font-size: 25px;
-            margin-top: 0;
+        .header-banner h1 {
+            color: #ffffff;
+            font-size: 24px;
+            margin: 0 0 10px 0;
+            font-weight: 700;
+            border: none;
+            padding: 0;
+        }
+
+        .header-banner p {
+            margin: 4px 0;
+            font-size: 14px;
+            color: #e2e8f0;
+        }
+
+        .header-meta {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            padding: 24px 36px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         h2 {
-            color: #f1f5f9;
-            margin-top: 28px;
-            font-size: 19px;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 8px;
+            color: var(--navy-brand);
+            margin-top: 26px;
+            font-size: 18px;
+            border-bottom: 2px solid var(--blue-accent);
+            padding-bottom: 6px;
+            font-weight: 700;
         }
 
         h3 {
-            color: #7dd3fc;
-            font-size: 16px;
+            color: var(--blue-accent);
+            font-size: 15px;
             margin-top: 18px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            font-weight: 600;
         }
 
         .notice-box {
-            background-color: #0f172a;
-            border-left: 4px solid var(--accent-amber);
-            padding: 16px;
+            background-color: var(--amber-bg);
+            border-left: 4px solid var(--amber-border);
+            padding: 16px 20px;
             margin: 20px 0;
             border-radius: 4px;
-            color: #fef08a;
+            color: var(--amber-text);
             font-size: 13.5px;
         }
 
         .explain-box {
-            background-color: #0f172a;
-            border-left: 4px solid var(--primary);
-            padding: 15px;
+            background-color: #f0f9ff;
+            border-left: 4px solid var(--blue-accent);
+            padding: 14px 18px;
             margin: 16px 0;
             border-radius: 4px;
-            color: #e0f2fe;
+            color: #0c4a6e;
             font-size: 13px;
         }
 
         .citation-box {
-            background-color: #0f172a;
-            border-left: 4px solid #38bdf8;
-            padding: 14px;
+            background-color: #f8fafc;
+            border-left: 4px solid var(--navy-brand);
+            border: 1px solid var(--border-color);
+            border-left-width: 4px;
+            padding: 14px 18px;
             margin: 16px 0;
             border-radius: 4px;
             font-style: italic;
@@ -101,23 +129,23 @@
 
         .card {
             background-color: var(--card-bg);
-            border: 1px solid var(--border);
+            border: 1px solid var(--border-color);
             border-radius: 8px;
-            padding: 24px;
+            padding: 24px 30px;
             margin-bottom: 28px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
         }
 
         .grid-maps {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 16px;
+            gap: 18px;
             margin: 18px 0;
         }
 
         .grid-maps div {
-            background-color: #0f172a;
-            border: 1px solid var(--border);
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
             border-radius: 6px;
             padding: 10px;
             text-align: center;
@@ -127,7 +155,7 @@
             width: 100%;
             height: auto;
             border-radius: 4px;
-            border: 1px solid #475569;
+            border: 1px solid var(--border-color);
             margin-top: 6px;
         }
 
@@ -135,7 +163,8 @@
             width: 100%;
             border-collapse: collapse;
             margin-top: 12px;
-            background-color: #0f172a;
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
             border-radius: 6px;
             overflow: hidden;
         }
@@ -143,99 +172,84 @@
         th, td {
             padding: 9px 12px;
             text-align: left;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid var(--border-color);
             font-size: 12.5px;
         }
 
         th {
-            background-color: var(--primary);
+            background-color: var(--navy-brand);
             color: #ffffff;
             font-weight: 600;
         }
 
         tr:nth-child(even) {
-            background-color: #1e293b;
+            background-color: #f8fafc;
         }
 
         code, .badge {
-            background-color: #0369a1;
-            color: #e0f2fe;
+            background-color: var(--blue-light);
+            color: var(--blue-accent);
             padding: 3px 6px;
             border-radius: 4px;
             font-family: Consolas, Monaco, monospace;
             font-size: 12px;
+            border: 1px solid #bae6fd;
         }
 
         .path-link {
-            color: #38bdf8;
+            color: var(--blue-accent);
             font-family: monospace;
             font-size: 12px;
             word-break: break-all;
+            font-weight: 600;
         }
 
-        /* ESTILOS DE IMPRESIÓN PARA EXPORTAR A PDF */
+        /* REGLAS DE IMPRESIÓN Y EXPORTACIÓN A PDF */
         @media print {
             @page {
                 size: A4 portrait;
-                margin: 10mm 12mm 10mm 12mm;
+                margin: 12mm 14mm 12mm 14mm;
             }
 
             body {
                 background-color: #ffffff !important;
                 color: #0f172a !important;
                 padding: 0 !important;
-                font-size: 10pt;
+                font-size: 10.5pt;
             }
 
             .container {
                 max-width: 100% !important;
             }
 
-            .header-card, .card {
+            .header-banner {
+                background-color: #002B49 !important;
+                color: #ffffff !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .header-meta, .card {
                 background-color: #ffffff !important;
-                color: #0f172a !important;
                 border: 1px solid #cbd5e1 !important;
                 box-shadow: none !important;
-                padding: 14px !important;
-                margin-bottom: 16px !important;
+                padding: 16px !important;
+                margin-bottom: 18px !important;
             }
 
             h1 {
-                color: #0369a1 !important;
-                border-bottom-color: #0284c7 !important;
-                font-size: 18pt !important;
+                color: #ffffff !important;
             }
 
             h2 {
-                color: #0f172a !important;
-                border-bottom-color: #cbd5e1 !important;
-                font-size: 13pt !important;
+                color: #002B49 !important;
+                border-bottom-color: #006699 !important;
+                font-size: 14pt !important;
             }
 
             h3 {
-                color: #0369a1 !important;
-                font-size: 11pt !important;
-            }
-
-            .notice-box {
-                background-color: #fefce8 !important;
-                color: #854d0e !important;
-                border-left-color: #d97706 !important;
-                border: 1px solid #fef08a;
-            }
-
-            .explain-box {
-                background-color: #f0f9ff !important;
-                color: #0c4a6e !important;
-                border-left-color: #0284c7 !important;
-                border: 1px solid #bae6fd;
-            }
-
-            .citation-box {
-                background-color: #f8fafc !important;
-                color: #334155 !important;
-                border-left-color: #0284c7 !important;
-                border: 1px solid #e2e8f0;
+                color: #006699 !important;
+                font-size: 12pt !important;
             }
 
             table {
@@ -244,8 +258,10 @@
             }
 
             th {
-                background-color: #0284c7 !important;
+                background-color: #002B49 !important;
                 color: #ffffff !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
 
             td {
@@ -255,21 +271,8 @@
 
             tr:nth-child(even) {
                 background-color: #f8fafc !important;
-            }
-
-            code, .badge {
-                background-color: #e0f2fe !important;
-                color: #0369a1 !important;
-                border: 1px solid #bae6fd;
-            }
-
-            .grid-maps div {
-                background-color: #f8fafc !important;
-                border-color: #cbd5e1 !important;
-            }
-
-            .grid-maps img {
-                border-color: #94a3b8 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
 
             .page-break {
@@ -283,13 +286,16 @@
 
 <div class="container">
 
-    <!-- PORTADA -->
-    <div class="header-card">
+    <!-- BANNER Y PORTADA INSTITUCIONAL CAUSA NATURA DATA -->
+    <div class="header-banner">
         <h1>Documento Ejecutivo y Catálogo Cartográfico: Entregable 1 (Meta 1)</h1>
         <p><strong>Proyecto:</strong> Índice Espacial de Riesgo Socioeconómico para Comunidades (IERC-GNL)</p>
-        <p><strong>Cliente / Organización:</strong> Causa Natura Center / Causa Natura Data (POA 2026-2028)</p>
+        <p><strong>Organización:</strong> Causa Natura Center / Causa Natura Data (POA 2026-2028)</p>
+    </div>
+    
+    <div class="header-meta">
         <p><strong>Equipo Técnico de Autores:</strong> Juan Carlos Barrera (JCB - Consultor Senior) & Enrique Gorosave (EG - Analista GIS)</p>
-        <p><strong>Fecha de Emisión:</strong> 19 de Agosto de 2026</p>
+        <p><strong>Fecha de Emisión del Entregable:</strong> 19 de Agosto de 2026</p>
         <p><strong>Repositorio Git Oficial:</strong> <span class="path-link">https://github.com/Gorodev-lab/ierc-gnl-project</span></p>
 
         <div class="notice-box">
@@ -1824,7 +1830,7 @@
     <!-- GLOSARIO DE TÉRMINOS NO TÉCNICOS -->
     <div class="card">
         <h2>4. Glosario de Términos no Técnicos para Revisores</h2>
-        <p>Para apoyar la lectura entre directivos y revisores socioambientales, a continuación se definen los términos técnicos clave empleadas en este informe:</p>
+        <p>Para apoyar la lectura entre directivos y revisores socioambientales, a continuación se definen los términos técnicos clave empleados en este informe:</p>
 
         <table>
             <thead>

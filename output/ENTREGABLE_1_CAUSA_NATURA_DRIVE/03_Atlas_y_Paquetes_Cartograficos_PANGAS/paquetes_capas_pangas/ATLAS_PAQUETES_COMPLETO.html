@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas de Paquetes Geográficos PANGAS — Causa Natura Data</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #0f172a; color: #f8fafc; margin: 0; padding: 40px; line-height: 1.6; }
+        h1 { color: #38bdf8; border-bottom: 2px solid #0284c7; padding-bottom: 12px; font-size: 26px; }
+        h2 { color: #f1f5f9; margin-top: 32px; font-size: 20px; border-bottom: 1px solid #334155; padding-bottom: 6px; }
+        h3 { color: #7dd3fc; font-size: 18px; margin-top: 24px; }
+        .citation-box { background-color: #1e293b; border-left: 4px solid #38bdf8; padding: 16px; margin: 20px 0; border-radius: 4px; font-style: italic; color: #cbd5e1; }
+        .card { background-color: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 24px; margin-bottom: 40px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4); }
+        .grid-maps { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
+        .grid-maps img { width: 100%; border-radius: 6px; border: 1px solid #475569; }
+        table { width: 100%; border-collapse: collapse; margin-top: 12px; background-color: #0f172a; border-radius: 6px; overflow: hidden; }
+        th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid #334155; font-size: 13px; }
+        th { background-color: #0284c7; color: #ffffff; }
+        tr:nth-child(even) { background-color: #1e293b; }
+        .badge { background-color: #0369a1; color: #e0f2fe; padding: 4px 8px; border-radius: 4px; font-family: monospace; font-size: 13px; }
+        .btn { display: inline-block; background-color: #0284c7; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold; margin-top: 10px; }
+        .btn:hover { background-color: #0369a1; }
+    </style>
+</head>
+<body>
+
+    <h1>Catálogo Espacial de Paquetes Geográficos PANGAS (Fish_Zones_PANGAS.gdb)</h1>
+    <p><strong>Proyecto:</strong> Índice Espacial de Riesgo Socioeconómico para Comunidades (IERC-GNL)</p>
+    <p><strong>Organización:</strong> Causa Natura Data (POA 2026-2028)</p>
+    <p><strong>Equipo Técnico:</strong> Juan Carlos Barrera (JCB - Consultor Senior) & Enrique Gorosave (EG - Analista GIS)</p>
+
+    <div class="citation-box">
+        <strong>Atribución y Cita Académica Oficial:</strong><br>
+        Moreno-Báez, M., Cudney-Bueno, R., Shaw, W. W., Cudney-Bueno, S., & Torre-Cosío, J. (2011, 2012). Integrating spatial and temporal dimensions of artisanal fishing for management in the Gulf of California, Mexico. Ocean & Coastal Management / Marine Policy. Base de Datos Geográfica PANGAS.
+    </div>
+
+    <h2>Resumen General de Paquetes (7 Capas)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Carpeta de Paquete</th>
+                <th>Capa en GDB</th>
+                <th>Entidades</th>
+                <th>Artes de Pesca</th>
+                <th>Campos Extraídos</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td><span class="badge">01_Riqueza_Relativa</span></td>
+                <td><code>Riqueza_Relativa</code></td>
+                <td>11,065</td>
+                <td>Todas las artes de pesca artesanal registradas en el Golfo de California</td>
+                <td>52 campos</td>
+                <td><a class="btn" href="./01_Riqueza_Relativa/METADATOS_CAPA.md">Ver Ficha Markdown</a></td>
+            </tr>
+    
+            <tr>
+                <td><span class="badge">02_ZPesca_Buceo</span></td>
+                <td><code>ZPesca_Buceo</code></td>
+                <td>249</td>
+                <td>Buceo autónomo y semiautónomo (Hookah)</td>
+                <td>5 campos</td>
+                <td><a class="btn" href="./02_ZPesca_Buceo/METADATOS_CAPA.md">Ver Ficha Markdown</a></td>
+            </tr>
+    
+            <tr>
+                <td><span class="badge">03_ZPesca_Chinchorro</span></td>
+                <td><code>ZPesca_Chinchorro</code></td>
+                <td>2,209</td>
+                <td>Chinchorro de línea / Redes agalleras de playa</td>
+                <td>22 campos</td>
+                <td><a class="btn" href="./03_ZPesca_Chinchorro/METADATOS_CAPA.md">Ver Ficha Markdown</a></td>
+            </tr>
+    
+            <tr>
+                <td><span class="badge">04_ZPesca_PANGAS</span></td>
+                <td><code>ZPesca_PANGAS</code></td>
+                <td>4,241</td>
+                <td>Multiespecie / PANGAS</td>
+                <td>19 campos</td>
+                <td><a class="btn" href="./04_ZPesca_PANGAS/METADATOS_CAPA.md">Ver Ficha Markdown</a></td>
+            </tr>
+    
+            <tr>
+                <td><span class="badge">05_ZPesca_Redes</span></td>
+                <td><code>ZPesca_Redes</code></td>
+                <td>1,263</td>
+                <td>Redes de enmalle / Agalleras de fondo y deriva</td>
+                <td>24 campos</td>
+                <td><a class="btn" href="./05_ZPesca_Redes/METADATOS_CAPA.md">Ver Ficha Markdown</a></td>
+            </tr>
+    
+            <tr>
+                <td><span class="badge">06_ZPesca_Redes_Manta_Camaron</span></td>
+                <td><code>ZPesca_Redes_Manta_Camaron</code></td>
+                <td>783</td>
+                <td>Red de manta / Red surpera de camarón</td>
+                <td>24 campos</td>
+                <td><a class="btn" href="./06_ZPesca_Redes_Manta_Camaron/METADATOS_CAPA.md">Ver Ficha Markdown</a></td>
+            </tr>
+    
+            <tr>
+                <td><span class="badge">07_ZPesca_Trampa</span></td>
+                <td><code>ZPesca_Trampa</code></td>
+                <td>360</td>
+                <td>Trampas metálicas / Nasas jaiberas</td>
+                <td>22 campos</td>
+                <td><a class="btn" href="./07_ZPesca_Trampa/METADATOS_CAPA.md">Ver Ficha Markdown</a></td>
+            </tr>
+    
+        </tbody>
+    </table>
+
+    <h2>Paquetes Cartográficos Detallados con Mapas y Tablas Estilo QGIS</h2>
+
+    <div class="card">
+        <h3>Paquete: 01_Riqueza_Relativa — Malla de Riqueza Biológica Pesquera Relativa</h3>
+        <p><strong>Capa GDB:</strong> <code>Riqueza_Relativa</code> | <strong>Entidades:</strong> 11,065 | <strong>CRS:</strong> EPSG:4326 (WGS84)</p>
+        <p><strong>Bounding Box:</strong> <code>MinLon: -114.9307, MinLat: 27.2977, MaxLon: -110.5188, MaxLat: 31.8423</code></p>
+        
+        <div class="grid-maps">
+            <div>
+                <h4>Mapa OpenStreetMap Estándar (Estilo QGIS)</h4>
+                <img src="./01_Riqueza_Relativa/mapa_osm.jpg" alt="Mapa OSM Riqueza_Relativa">
+            </div>
+            <div>
+                <h4>Mapa Esri World Imagery (Satelital)</h4>
+                <img src="./01_Riqueza_Relativa/mapa_satelital.jpg" alt="Mapa Satelital Riqueza_Relativa">
+            </div>
+        </div>
+
+        <h4>Tabla de Atributos Extraídos Estilo QGIS (52 Campos)</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre de Campo</th>
+                    <th>Tipo de Dato</th>
+                    <th>Valor de Ejemplo</th>
+                    <th>Descripción Metodológica</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td><code>artnob</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Especie pesquera: Balistes polylepis / Pez ballesta.</td>
+                </tr>
+
+                <tr>
+                    <td><code>atrtub</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Especie pesquera: Atractoscion nobilis / Seabass.</td>
+                </tr>
+
+                <tr>
+                    <td><code>balpol</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Especie pesquera: Balistes polylepis / Cochi.</td>
+                </tr>
+
+                <tr>
+                    <td><code>calbel</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>carlim</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Especie pesquera: Carcharias spp. / Tiburón.</td>
+                </tr>
+
+                <tr>
+                    <td><code>carspp</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Especie pesquera: Caranx spp. / Jurel.</td>
+                </tr>
+
+                <tr>
+                    <td><code>cynoth</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>cynpar</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>cynspp</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>dasdip</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>dasspp</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>dospon</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>epiaca</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>epiana</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>epispp</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>gymmar</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>hexnig</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>hopgue</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>isofus</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Especie pesquera: Isostichopus fuscus / Pepino de mar.</td>
+                </tr>
+
+                <tr>
+                    <td><code>litsty</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Especie pesquera: Litopenaeus stylirostris / Camarón azul.</td>
+                </tr>
+
+                <tr>
+                    <td><code>lutarg</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>lutper</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>micmeg</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>mugspp</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>muscal</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>muslun</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>musspp</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>mycjor</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>mycpri</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>mycros</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>mylcal</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>myllon</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>octspp</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>pangen</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>paninf</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>paraur</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>parmac</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>parple</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>parspp</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>phyery</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>pinrug</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Especie pesquera: Pinna rugosa / Hacha de labio.</td>
+                </tr>
+
+                <tr>
+                    <td><code>rhilon</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>rhipro</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>rhispp</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>scospp</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>sphspp</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>spocal</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>squcal</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Atributo espacial registrado en la capa Riqueza_Relativa.</td>
+                </tr>
+
+                <tr>
+                    <td><code>stegig</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Especie pesquera: Strombus gigas / Caracol.</td>
+                </tr>
+
+                <tr>
+                    <td><code>all</code></td>
+                    <td><code>float64</code></td>
+                    <td><code>0.0</code></td>
+                    <td>Acumulado de riqueza biológica total.</td>
+                </tr>
+
+                <tr>
+                    <td><code>Shape_Length</code></td>
+                    <td><code>float64</code></td>
+                    <td><code>11112.0</code></td>
+                    <td>Perímetro total del polígono expresado en metros.</td>
+                </tr>
+
+                <tr>
+                    <td><code>Shape_Area</code></td>
+                    <td><code>float64</code></td>
+                    <td><code>7717284.0</code></td>
+                    <td>Superficie o área total del polígono expresada en metros cuadrados.</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="card">
+        <h3>Paquete: 02_ZPesca_Buceo — Polígonos de Pesca Comercial por Buceo</h3>
+        <p><strong>Capa GDB:</strong> <code>ZPesca_Buceo</code> | <strong>Entidades:</strong> 249 | <strong>CRS:</strong> EPSG:4326 (WGS84)</p>
+        <p><strong>Bounding Box:</strong> <code>MinLon: -114.1083, MinLat: 27.4209, MaxLon: -111.7763, MaxLat: 31.5724</code></p>
+        
+        <div class="grid-maps">
+            <div>
+                <h4>Mapa OpenStreetMap Estándar (Estilo QGIS)</h4>
+                <img src="./02_ZPesca_Buceo/mapa_osm.jpg" alt="Mapa OSM ZPesca_Buceo">
+            </div>
+            <div>
+                <h4>Mapa Esri World Imagery (Satelital)</h4>
+                <img src="./02_ZPesca_Buceo/mapa_satelital.jpg" alt="Mapa Satelital ZPesca_Buceo">
+            </div>
+        </div>
+
+        <h4>Tabla de Atributos Extraídos Estilo QGIS (5 Campos)</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre de Campo</th>
+                    <th>Tipo de Dato</th>
+                    <th>Valor de Ejemplo</th>
+                    <th>Descripción Metodológica</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td><code>no_comunid</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>1</code></td>
+                    <td>Número correlativo de comunidad pesquera.</td>
+                </tr>
+
+                <tr>
+                    <td><code>comunidad</code></td>
+                    <td><code>str</code></td>
+                    <td><code>PPE, , , , , , , ,</code></td>
+                    <td>Nombre o código corto de la comunidad costera.</td>
+                </tr>
+
+                <tr>
+                    <td><code>ORIG_FID</code></td>
+                    <td><code>int32</code></td>
+                    <td><code>0</code></td>
+                    <td>Identificador de registro original en el dataset de origen.</td>
+                </tr>
+
+                <tr>
+                    <td><code>Shape_Length</code></td>
+                    <td><code>float64</code></td>
+                    <td><code>240636.40965902145</code></td>
+                    <td>Perímetro total del polígono expresado en metros.</td>
+                </tr>
+
+                <tr>
+                    <td><code>Shape_Area</code></td>
+                    <td><code>float64</code></td>
+                    <td><code>557068833.8007089</code></td>
+                    <td>Superficie o área total del polígono expresada en metros cuadrados.</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="card">
+        <h3>Paquete: 03_ZPesca_Chinchorro — Polígonos de Pesca con Chinchorro de Línea</h3>
+        <p><strong>Capa GDB:</strong> <code>ZPesca_Chinchorro</code> | <strong>Entidades:</strong> 2,209 | <strong>CRS:</strong> EPSG:4326 (WGS84)</p>
+        <p><strong>Bounding Box:</strong> <code>MinLon: -114.9171, MinLat: 27.9883, MaxLon: -111.4621, MaxLat: 31.8624</code></p>
+        
+        <div class="grid-maps">
+            <div>
+                <h4>Mapa OpenStreetMap Estándar (Estilo QGIS)</h4>
+                <img src="./03_ZPesca_Chinchorro/mapa_osm.jpg" alt="Mapa OSM ZPesca_Chinchorro">
+            </div>
+            <div>
+                <h4>Mapa Esri World Imagery (Satelital)</h4>
+                <img src="./03_ZPesca_Chinchorro/mapa_satelital.jpg" alt="Mapa Satelital ZPesca_Chinchorro">
+            </div>
+        </div>
+
+        <h4>Tabla de Atributos Extraídos Estilo QGIS (22 Campos)</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre de Campo</th>
+                    <th>Tipo de Dato</th>
+                    <th>Valor de Ejemplo</th>
+                    <th>Descripción Metodológica</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td><code>Id</code></td>
+                    <td><code>int32</code></td>
+                    <td><code>2</code></td>
+                    <td>Identificador único numérico del registro de zona pesquera.</td>
+                </tr>
+
+                <tr>
+                    <td><code>CODE</code></td>
+                    <td><code>str</code></td>
+                    <td><code>B</code></td>
+                    <td>Código alfanumérico asignado al polígono de pesca.</td>
+                </tr>
+
+                <tr>
+                    <td><code>M</code></td>
+                    <td><code>str</code></td>
+                    <td><code>0</code></td>
+                    <td>Indicador del mes o temporada (1 = activo, 0 = inactivo).</td>
+                </tr>
+
+                <tr>
+                    <td><code>J</code></td>
+                    <td><code>str</code></td>
+                    <td><code>0</code></td>
+                    <td>Indicador estacional o de pesquería.</td>
+                </tr>
+
+                <tr>
+                    <td><code>R</code></td>
+                    <td><code>str</code></td>
+                    <td><code>0</code></td>
+                    <td>Indicador de región o zona pesquera.</td>
+                </tr>
+
+                <tr>
+                    <td><code>G</code></td>
+                    <td><code>str</code></td>
+                    <td><code>0</code></td>
+                    <td>Indicador de grupo pesquero o gremio.</td>
+                </tr>
+
+                <tr>
+                    <td><code>NAME</code></td>
+                    <td><code>str</code></td>
+                    <td><code>El Bajo Macho</code></td>
+                    <td>Nombre geográfico o toponímico del sitio de pesca.</td>
+                </tr>
+
+                <tr>
+                    <td><code>ENTREVIS</code></td>
+                    <td><code>str</code></td>
+                    <td><code>SLG04SP030506</code></td>
+                    <td>Código único de la encuesta o entrevista participativa PANGAS.</td>
+                </tr>
+
+                <tr>
+                    <td><code>Int_id</code></td>
+                    <td><code>int32</code></td>
+                    <td><code>0</code></td>
+                    <td>Identificador numérico del pescador o informante clave.</td>
+                </tr>
+
+                <tr>
+                    <td><code>Ent_num</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>4</code></td>
+                    <td>Número secuencial de la entrevista efectuada.</td>
+                </tr>
+
+                <tr>
+                    <td><code>Entvsdr</code></td>
+                    <td><code>str</code></td>
+                    <td><code>SP</code></td>
+                    <td>Iniciales o código del entrevistador de campo.</td>
+                </tr>
+
+                <tr>
+                    <td><code>mes</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Mes del levantamiento o temporada de pesca (1-12).</td>
+                </tr>
+
+                <tr>
+                    <td><code>dia</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Día del levantamiento en campo.</td>
+                </tr>
+
+                <tr>
+                    <td><code>ano</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Año del registro de la información (ej. 2005, 2006).</td>
+                </tr>
+
+                <tr>
+                    <td><code>spp_code</code></td>
+                    <td><code>str</code></td>
+                    <td><code>LITSTY</code></td>
+                    <td>Código taxonómico estándar de la especie (ej. LITSTY = Litopenaeus stylirostris).</td>
+                </tr>
+
+                <tr>
+                    <td><code>sitio_code</code></td>
+                    <td><code>str</code></td>
+                    <td><code>SLG</code></td>
+                    <td>Código corto del campo o comunidad pesquera (ej. SLG, PLO).</td>
+                </tr>
+
+                <tr>
+                    <td><code>Met_Pesca</code></td>
+                    <td><code>str</code></td>
+                    <td><code>Chinchorro</code></td>
+                    <td>Método o arte de pesca registrado (ej. Chinchorro, Trampa, Buceo).</td>
+                </tr>
+
+                <tr>
+                    <td><code>HABITAT</code></td>
+                    <td><code>str</code></td>
+                    <td><code>arena</code></td>
+                    <td>Tipo de sustrato o hábitat bentónico (ej. arena, arrecife, fango).</td>
+                </tr>
+
+                <tr>
+                    <td><code>CODE_COMP</code></td>
+                    <td><code>str</code></td>
+                    <td><code>SLG04SP030506_B</code></td>
+                    <td>Código compuesto de identificación espacial.</td>
+                </tr>
+
+                <tr>
+                    <td><code>CODE_FIN</code></td>
+                    <td><code>str</code></td>
+                    <td><code>SLG04SP030506_B_LITSTY</code></td>
+                    <td>Código final concatenado de sitio, entrevista y especie.</td>
+                </tr>
+
+                <tr>
+                    <td><code>Shape_Length</code></td>
+                    <td><code>float64</code></td>
+                    <td><code>52970.66149454901</code></td>
+                    <td>Perímetro total del polígono expresado en metros.</td>
+                </tr>
+
+                <tr>
+                    <td><code>Shape_Area</code></td>
+                    <td><code>float64</code></td>
+                    <td><code>199078841.69311696</code></td>
+                    <td>Superficie o área total del polígono expresada en metros cuadrados.</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="card">
+        <h3>Paquete: 04_ZPesca_PANGAS — Base Unificada de Zonas Pesqueras PANGAS</h3>
+        <p><strong>Capa GDB:</strong> <code>ZPesca_PANGAS</code> | <strong>Entidades:</strong> 4,241 | <strong>CRS:</strong> EPSG:4326 (WGS84)</p>
+        <p><strong>Bounding Box:</strong> <code>MinLon: -114.9492, MinLat: 27.9883, MaxLon: -111.5713, MaxLat: 31.8958</code></p>
+        
+        <div class="grid-maps">
+            <div>
+                <h4>Mapa OpenStreetMap Estándar (Estilo QGIS)</h4>
+                <img src="./04_ZPesca_PANGAS/mapa_osm.jpg" alt="Mapa OSM ZPesca_PANGAS">
+            </div>
+            <div>
+                <h4>Mapa Esri World Imagery (Satelital)</h4>
+                <img src="./04_ZPesca_PANGAS/mapa_satelital.jpg" alt="Mapa Satelital ZPesca_PANGAS">
+            </div>
+        </div>
+
+        <h4>Tabla de Atributos Extraídos Estilo QGIS (19 Campos)</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre de Campo</th>
+                    <th>Tipo de Dato</th>
+                    <th>Valor de Ejemplo</th>
+                    <th>Descripción Metodológica</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td><code>Id</code></td>
+                    <td><code>int32</code></td>
+                    <td><code>1</code></td>
+                    <td>Identificador único numérico del registro de zona pesquera.</td>
+                </tr>
+
+                <tr>
+                    <td><code>CODE</code></td>
+                    <td><code>str</code></td>
+                    <td><code>-</code></td>
+                    <td>Código alfanumérico asignado al polígono de pesca.</td>
+                </tr>
+
+                <tr>
+                    <td><code>M</code></td>
+                    <td><code>str</code></td>
+                    <td><code>1</code></td>
+                    <td>Indicador del mes o temporada (1 = activo, 0 = inactivo).</td>
+                </tr>
+
+                <tr>
+                    <td><code>J</code></td>
+                    <td><code>str</code></td>
+                    <td><code>1</code></td>
+                    <td>Indicador estacional o de pesquería.</td>
+                </tr>
+
+                <tr>
+                    <td><code>R</code></td>
+                    <td><code>str</code></td>
+                    <td><code>0</code></td>
+                    <td>Indicador de región o zona pesquera.</td>
+                </tr>
+
+                <tr>
+                    <td><code>G</code></td>
+                    <td><code>str</code></td>
+                    <td><code>0</code></td>
+                    <td>Indicador de grupo pesquero o gremio.</td>
+                </tr>
+
+                <tr>
+                    <td><code>ENTREVIS</code></td>
+                    <td><code>str</code></td>
+                    <td><code>SLG04SP030506</code></td>
+                    <td>Código único de la encuesta o entrevista participativa PANGAS.</td>
+                </tr>
+
+                <tr>
+                    <td><code>Ent_num</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>4</code></td>
+                    <td>Número secuencial de la entrevista efectuada.</td>
+                </tr>
+
+                <tr>
+                    <td><code>Entvsdr</code></td>
+                    <td><code>str</code></td>
+                    <td><code>SP</code></td>
+                    <td>Iniciales o código del entrevistador de campo.</td>
+                </tr>
+
+                <tr>
+                    <td><code>spp_code</code></td>
+                    <td><code>str</code></td>
+                    <td><code>LITSTY</code></td>
+                    <td>Código taxonómico estándar de la especie (ej. LITSTY = Litopenaeus stylirostris).</td>
+                </tr>
+
+                <tr>
+                    <td><code>sitio_code</code></td>
+                    <td><code>str</code></td>
+                    <td><code>SLG</code></td>
+                    <td>Código corto del campo o comunidad pesquera (ej. SLG, PLO).</td>
+                </tr>
+
+                <tr>
+                    <td><code>HABITAT</code></td>
+                    <td><code>str</code></td>
+                    <td><code>arena</code></td>
+                    <td>Tipo de sustrato o hábitat bentónico (ej. arena, arrecife, fango).</td>
+                </tr>
+
+                <tr>
+                    <td><code>day</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>5</code></td>
+                    <td>Día del registro participativo.</td>
+                </tr>
+
+                <tr>
+                    <td><code>month</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>3</code></td>
+                    <td>Mes del registro participativo.</td>
+                </tr>
+
+                <tr>
+                    <td><code>year</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>2006</code></td>
+                    <td>Año del registro participativo.</td>
+                </tr>
+
+                <tr>
+                    <td><code>sitio_nomb</code></td>
+                    <td><code>str</code></td>
+                    <td><code>Reserva de la Biosfera AGC-DRC</code></td>
+                    <td>Nombre oficial del sitio o Área Natural Protegida.</td>
+                </tr>
+
+                <tr>
+                    <td><code>CODE_COMP</code></td>
+                    <td><code>str</code></td>
+                    <td><code>SLG04SP030506_LITSTY_-</code></td>
+                    <td>Código compuesto de identificación espacial.</td>
+                </tr>
+
+                <tr>
+                    <td><code>Shape_Length</code></td>
+                    <td><code>float64</code></td>
+                    <td><code>6982.154519027305</code></td>
+                    <td>Perímetro total del polígono expresado en metros.</td>
+                </tr>
+
+                <tr>
+                    <td><code>Shape_Area</code></td>
+                    <td><code>float64</code></td>
+                    <td><code>3567391.412694994</code></td>
+                    <td>Superficie o área total del polígono expresada en metros cuadrados.</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="card">
+        <h3>Paquete: 05_ZPesca_Redes — Polígonos de Pesca con Redes de Enmalle</h3>
+        <p><strong>Capa GDB:</strong> <code>ZPesca_Redes</code> | <strong>Entidades:</strong> 1,263 | <strong>CRS:</strong> EPSG:4326 (WGS84)</p>
+        <p><strong>Bounding Box:</strong> <code>MinLon: -114.9402, MinLat: 27.9883, MaxLon: -111.6857, MaxLat: 31.8724</code></p>
+        
+        <div class="grid-maps">
+            <div>
+                <h4>Mapa OpenStreetMap Estándar (Estilo QGIS)</h4>
+                <img src="./05_ZPesca_Redes/mapa_osm.jpg" alt="Mapa OSM ZPesca_Redes">
+            </div>
+            <div>
+                <h4>Mapa Esri World Imagery (Satelital)</h4>
+                <img src="./05_ZPesca_Redes/mapa_satelital.jpg" alt="Mapa Satelital ZPesca_Redes">
+            </div>
+        </div>
+
+        <h4>Tabla de Atributos Extraídos Estilo QGIS (24 Campos)</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre de Campo</th>
+                    <th>Tipo de Dato</th>
+                    <th>Valor de Ejemplo</th>
+                    <th>Descripción Metodológica</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td><code>Id</code></td>
+                    <td><code>int32</code></td>
+                    <td><code>1</code></td>
+                    <td>Identificador único numérico del registro de zona pesquera.</td>
+                </tr>
+
+                <tr>
+                    <td><code>CODE</code></td>
+                    <td><code>str</code></td>
+                    <td><code> </code></td>
+                    <td>Código alfanumérico asignado al polígono de pesca.</td>
+                </tr>
+
+                <tr>
+                    <td><code>M</code></td>
+                    <td><code>str</code></td>
+                    <td><code>1</code></td>
+                    <td>Indicador del mes o temporada (1 = activo, 0 = inactivo).</td>
+                </tr>
+
+                <tr>
+                    <td><code>J</code></td>
+                    <td><code>str</code></td>
+                    <td><code>1</code></td>
+                    <td>Indicador estacional o de pesquería.</td>
+                </tr>
+
+                <tr>
+                    <td><code>R</code></td>
+                    <td><code>str</code></td>
+                    <td><code>0</code></td>
+                    <td>Indicador de región o zona pesquera.</td>
+                </tr>
+
+                <tr>
+                    <td><code>G</code></td>
+                    <td><code>str</code></td>
+                    <td><code>0</code></td>
+                    <td>Indicador de grupo pesquero o gremio.</td>
+                </tr>
+
+                <tr>
+                    <td><code>NAME</code></td>
+                    <td><code>str</code></td>
+                    <td><code> </code></td>
+                    <td>Nombre geográfico o toponímico del sitio de pesca.</td>
+                </tr>
+
+                <tr>
+                    <td><code>ENTREVIS</code></td>
+                    <td><code>str</code></td>
+                    <td><code>SLG04SP030506</code></td>
+                    <td>Código único de la encuesta o entrevista participativa PANGAS.</td>
+                </tr>
+
+                <tr>
+                    <td><code>Int_id</code></td>
+                    <td><code>int32</code></td>
+                    <td><code>0</code></td>
+                    <td>Identificador numérico del pescador o informante clave.</td>
+                </tr>
+
+                <tr>
+                    <td><code>Ent_num</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>4</code></td>
+                    <td>Número secuencial de la entrevista efectuada.</td>
+                </tr>
+
+                <tr>
+                    <td><code>Entvsdr</code></td>
+                    <td><code>str</code></td>
+                    <td><code>SP</code></td>
+                    <td>Iniciales o código del entrevistador de campo.</td>
+                </tr>
+
+                <tr>
+                    <td><code>mes</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Mes del levantamiento o temporada de pesca (1-12).</td>
+                </tr>
+
+                <tr>
+                    <td><code>dia</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Día del levantamiento en campo.</td>
+                </tr>
+
+                <tr>
+                    <td><code>ano</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Año del registro de la información (ej. 2005, 2006).</td>
+                </tr>
+
+                <tr>
+                    <td><code>spp_code</code></td>
+                    <td><code>str</code></td>
+                    <td><code>LITSTY</code></td>
+                    <td>Código taxonómico estándar de la especie (ej. LITSTY = Litopenaeus stylirostris).</td>
+                </tr>
+
+                <tr>
+                    <td><code>sitio_code</code></td>
+                    <td><code>str</code></td>
+                    <td><code>SLG</code></td>
+                    <td>Código corto del campo o comunidad pesquera (ej. SLG, PLO).</td>
+                </tr>
+
+                <tr>
+                    <td><code>Met_Pesca</code></td>
+                    <td><code>str</code></td>
+                    <td><code>Chinchorro</code></td>
+                    <td>Método o arte de pesca registrado (ej. Chinchorro, Trampa, Buceo).</td>
+                </tr>
+
+                <tr>
+                    <td><code>HABITAT</code></td>
+                    <td><code>str</code></td>
+                    <td><code>arena</code></td>
+                    <td>Tipo de sustrato o hábitat bentónico (ej. arena, arrecife, fango).</td>
+                </tr>
+
+                <tr>
+                    <td><code>weight_pc</code></td>
+                    <td><code>float64</code></td>
+                    <td><code>0.0</code></td>
+                    <td>Ponderación porcentual de uso pesquero.</td>
+                </tr>
+
+                <tr>
+                    <td><code>NorSur</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>1</code></td>
+                    <td>Orientación geográfica del caladero (1 = Norte, 0 = Sur).</td>
+                </tr>
+
+                <tr>
+                    <td><code>TEMP</code></td>
+                    <td><code>str</code></td>
+                    <td><code>SLG04SP030506_LITSTY_</code></td>
+                    <td>Código de identificación temporal del polígono.</td>
+                </tr>
+
+                <tr>
+                    <td><code>NAME_ORG</code></td>
+                    <td><code>str</code></td>
+                    <td><code> </code></td>
+                    <td>Nombre registrado originalmente en las entrevistas.</td>
+                </tr>
+
+                <tr>
+                    <td><code>Shape_Length</code></td>
+                    <td><code>float64</code></td>
+                    <td><code>6982.154519027305</code></td>
+                    <td>Perímetro total del polígono expresado en metros.</td>
+                </tr>
+
+                <tr>
+                    <td><code>Shape_Area</code></td>
+                    <td><code>float64</code></td>
+                    <td><code>3567391.412694994</code></td>
+                    <td>Superficie o área total del polígono expresada en metros cuadrados.</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="card">
+        <h3>Paquete: 06_ZPesca_Redes_Manta_Camaron — Polígonos de Pesca de Camarón y Redes de Manta</h3>
+        <p><strong>Capa GDB:</strong> <code>ZPesca_Redes_Manta_Camaron</code> | <strong>Entidades:</strong> 783 | <strong>CRS:</strong> EPSG:4326 (WGS84)</p>
+        <p><strong>Bounding Box:</strong> <code>MinLon: -114.9402, MinLat: 28.6917, MaxLon: -111.8732, MaxLat: 31.8724</code></p>
+        
+        <div class="grid-maps">
+            <div>
+                <h4>Mapa OpenStreetMap Estándar (Estilo QGIS)</h4>
+                <img src="./06_ZPesca_Redes_Manta_Camaron/mapa_osm.jpg" alt="Mapa OSM ZPesca_Redes_Manta_Camaron">
+            </div>
+            <div>
+                <h4>Mapa Esri World Imagery (Satelital)</h4>
+                <img src="./06_ZPesca_Redes_Manta_Camaron/mapa_satelital.jpg" alt="Mapa Satelital ZPesca_Redes_Manta_Camaron">
+            </div>
+        </div>
+
+        <h4>Tabla de Atributos Extraídos Estilo QGIS (24 Campos)</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre de Campo</th>
+                    <th>Tipo de Dato</th>
+                    <th>Valor de Ejemplo</th>
+                    <th>Descripción Metodológica</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td><code>Id</code></td>
+                    <td><code>int32</code></td>
+                    <td><code>1</code></td>
+                    <td>Identificador único numérico del registro de zona pesquera.</td>
+                </tr>
+
+                <tr>
+                    <td><code>CODE</code></td>
+                    <td><code>str</code></td>
+                    <td><code> </code></td>
+                    <td>Código alfanumérico asignado al polígono de pesca.</td>
+                </tr>
+
+                <tr>
+                    <td><code>M</code></td>
+                    <td><code>str</code></td>
+                    <td><code>1</code></td>
+                    <td>Indicador del mes o temporada (1 = activo, 0 = inactivo).</td>
+                </tr>
+
+                <tr>
+                    <td><code>J</code></td>
+                    <td><code>str</code></td>
+                    <td><code>1</code></td>
+                    <td>Indicador estacional o de pesquería.</td>
+                </tr>
+
+                <tr>
+                    <td><code>R</code></td>
+                    <td><code>str</code></td>
+                    <td><code>0</code></td>
+                    <td>Indicador de región o zona pesquera.</td>
+                </tr>
+
+                <tr>
+                    <td><code>G</code></td>
+                    <td><code>str</code></td>
+                    <td><code>0</code></td>
+                    <td>Indicador de grupo pesquero o gremio.</td>
+                </tr>
+
+                <tr>
+                    <td><code>NAME</code></td>
+                    <td><code>str</code></td>
+                    <td><code> </code></td>
+                    <td>Nombre geográfico o toponímico del sitio de pesca.</td>
+                </tr>
+
+                <tr>
+                    <td><code>ENTREVIS</code></td>
+                    <td><code>str</code></td>
+                    <td><code>SLG04SP030506</code></td>
+                    <td>Código único de la encuesta o entrevista participativa PANGAS.</td>
+                </tr>
+
+                <tr>
+                    <td><code>Int_id</code></td>
+                    <td><code>int32</code></td>
+                    <td><code>0</code></td>
+                    <td>Identificador numérico del pescador o informante clave.</td>
+                </tr>
+
+                <tr>
+                    <td><code>Ent_num</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>4</code></td>
+                    <td>Número secuencial de la entrevista efectuada.</td>
+                </tr>
+
+                <tr>
+                    <td><code>Entvsdr</code></td>
+                    <td><code>str</code></td>
+                    <td><code>SP</code></td>
+                    <td>Iniciales o código del entrevistador de campo.</td>
+                </tr>
+
+                <tr>
+                    <td><code>mes</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Mes del levantamiento o temporada de pesca (1-12).</td>
+                </tr>
+
+                <tr>
+                    <td><code>dia</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Día del levantamiento en campo.</td>
+                </tr>
+
+                <tr>
+                    <td><code>ano</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>0</code></td>
+                    <td>Año del registro de la información (ej. 2005, 2006).</td>
+                </tr>
+
+                <tr>
+                    <td><code>spp_code</code></td>
+                    <td><code>str</code></td>
+                    <td><code>LITSTY</code></td>
+                    <td>Código taxonómico estándar de la especie (ej. LITSTY = Litopenaeus stylirostris).</td>
+                </tr>
+
+                <tr>
+                    <td><code>sitio_code</code></td>
+                    <td><code>str</code></td>
+                    <td><code>SLG</code></td>
+                    <td>Código corto del campo o comunidad pesquera (ej. SLG, PLO).</td>
+                </tr>
+
+                <tr>
+                    <td><code>Met_Pesca</code></td>
+                    <td><code>str</code></td>
+                    <td><code>Chinchorro</code></td>
+                    <td>Método o arte de pesca registrado (ej. Chinchorro, Trampa, Buceo).</td>
+                </tr>
+
+                <tr>
+                    <td><code>HABITAT</code></td>
+                    <td><code>str</code></td>
+                    <td><code>arena</code></td>
+                    <td>Tipo de sustrato o hábitat bentónico (ej. arena, arrecife, fango).</td>
+                </tr>
+
+                <tr>
+                    <td><code>weight_pc</code></td>
+                    <td><code>float64</code></td>
+                    <td><code>0.0</code></td>
+                    <td>Ponderación porcentual de uso pesquero.</td>
+                </tr>
+
+                <tr>
+                    <td><code>NorSur</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>1</code></td>
+                    <td>Orientación geográfica del caladero (1 = Norte, 0 = Sur).</td>
+                </tr>
+
+                <tr>
+                    <td><code>TEMP</code></td>
+                    <td><code>str</code></td>
+                    <td><code>SLG04SP030506_LITSTY_</code></td>
+                    <td>Código de identificación temporal del polígono.</td>
+                </tr>
+
+                <tr>
+                    <td><code>NAME_ORG</code></td>
+                    <td><code>str</code></td>
+                    <td><code> </code></td>
+                    <td>Nombre registrado originalmente en las entrevistas.</td>
+                </tr>
+
+                <tr>
+                    <td><code>Shape_Length</code></td>
+                    <td><code>float64</code></td>
+                    <td><code>6982.154519027305</code></td>
+                    <td>Perímetro total del polígono expresado en metros.</td>
+                </tr>
+
+                <tr>
+                    <td><code>Shape_Area</code></td>
+                    <td><code>float64</code></td>
+                    <td><code>3567391.412694994</code></td>
+                    <td>Superficie o área total del polígono expresada en metros cuadrados.</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="card">
+        <h3>Paquete: 07_ZPesca_Trampa — Polígonos de Pesca con Trampas (Jaiba y Peces)</h3>
+        <p><strong>Capa GDB:</strong> <code>ZPesca_Trampa</code> | <strong>Entidades:</strong> 360 | <strong>CRS:</strong> EPSG:4326 (WGS84)</p>
+        <p><strong>Bounding Box:</strong> <code>MinLon: -114.7043, MinLat: 28.3656, MaxLon: -111.5806, MaxLat: 31.6367</code></p>
+        
+        <div class="grid-maps">
+            <div>
+                <h4>Mapa OpenStreetMap Estándar (Estilo QGIS)</h4>
+                <img src="./07_ZPesca_Trampa/mapa_osm.jpg" alt="Mapa OSM ZPesca_Trampa">
+            </div>
+            <div>
+                <h4>Mapa Esri World Imagery (Satelital)</h4>
+                <img src="./07_ZPesca_Trampa/mapa_satelital.jpg" alt="Mapa Satelital ZPesca_Trampa">
+            </div>
+        </div>
+
+        <h4>Tabla de Atributos Extraídos Estilo QGIS (22 Campos)</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre de Campo</th>
+                    <th>Tipo de Dato</th>
+                    <th>Valor de Ejemplo</th>
+                    <th>Descripción Metodológica</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td><code>Id</code></td>
+                    <td><code>int32</code></td>
+                    <td><code>848</code></td>
+                    <td>Identificador único numérico del registro de zona pesquera.</td>
+                </tr>
+
+                <tr>
+                    <td><code>CODE</code></td>
+                    <td><code>str</code></td>
+                    <td><code>B</code></td>
+                    <td>Código alfanumérico asignado al polígono de pesca.</td>
+                </tr>
+
+                <tr>
+                    <td><code>M</code></td>
+                    <td><code>str</code></td>
+                    <td><code>0</code></td>
+                    <td>Indicador del mes o temporada (1 = activo, 0 = inactivo).</td>
+                </tr>
+
+                <tr>
+                    <td><code>J</code></td>
+                    <td><code>str</code></td>
+                    <td><code>0</code></td>
+                    <td>Indicador estacional o de pesquería.</td>
+                </tr>
+
+                <tr>
+                    <td><code>R</code></td>
+                    <td><code>str</code></td>
+                    <td><code>0</code></td>
+                    <td>Indicador de región o zona pesquera.</td>
+                </tr>
+
+                <tr>
+                    <td><code>G</code></td>
+                    <td><code>str</code></td>
+                    <td><code>0</code></td>
+                    <td>Indicador de grupo pesquero o gremio.</td>
+                </tr>
+
+                <tr>
+                    <td><code>NAME</code></td>
+                    <td><code>str</code></td>
+                    <td><code>Lizos</code></td>
+                    <td>Nombre geográfico o toponímico del sitio de pesca.</td>
+                </tr>
+
+                <tr>
+                    <td><code>ENTREVIS</code></td>
+                    <td><code>str</code></td>
+                    <td><code>PLO08OM121605</code></td>
+                    <td>Código único de la encuesta o entrevista participativa PANGAS.</td>
+                </tr>
+
+                <tr>
+                    <td><code>Int_id</code></td>
+                    <td><code>int32</code></td>
+                    <td><code>163</code></td>
+                    <td>Identificador numérico del pescador o informante clave.</td>
+                </tr>
+
+                <tr>
+                    <td><code>Ent_num</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>8</code></td>
+                    <td>Número secuencial de la entrevista efectuada.</td>
+                </tr>
+
+                <tr>
+                    <td><code>Entvsdr</code></td>
+                    <td><code>str</code></td>
+                    <td><code>OM</code></td>
+                    <td>Iniciales o código del entrevistador de campo.</td>
+                </tr>
+
+                <tr>
+                    <td><code>mes</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>12</code></td>
+                    <td>Mes del levantamiento o temporada de pesca (1-12).</td>
+                </tr>
+
+                <tr>
+                    <td><code>dia</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>16</code></td>
+                    <td>Día del levantamiento en campo.</td>
+                </tr>
+
+                <tr>
+                    <td><code>ano</code></td>
+                    <td><code>int16</code></td>
+                    <td><code>2005</code></td>
+                    <td>Año del registro de la información (ej. 2005, 2006).</td>
+                </tr>
+
+                <tr>
+                    <td><code>spp_code</code></td>
+                    <td><code>str</code></td>
+                    <td><code>BALPOL</code></td>
+                    <td>Código taxonómico estándar de la especie (ej. LITSTY = Litopenaeus stylirostris).</td>
+                </tr>
+
+                <tr>
+                    <td><code>sitio_code</code></td>
+                    <td><code>str</code></td>
+                    <td><code>PLO</code></td>
+                    <td>Código corto del campo o comunidad pesquera (ej. SLG, PLO).</td>
+                </tr>
+
+                <tr>
+                    <td><code>Met_Pesca</code></td>
+                    <td><code>str</code></td>
+                    <td><code>Piola y trampa</code></td>
+                    <td>Método o arte de pesca registrado (ej. Chinchorro, Trampa, Buceo).</td>
+                </tr>
+
+                <tr>
+                    <td><code>HABITAT</code></td>
+                    <td><code>str</code></td>
+                    <td><code>arrecife</code></td>
+                    <td>Tipo de sustrato o hábitat bentónico (ej. arena, arrecife, fango).</td>
+                </tr>
+
+                <tr>
+                    <td><code>CODE_COMP</code></td>
+                    <td><code>str</code></td>
+                    <td><code>PLO08OM121605_B</code></td>
+                    <td>Código compuesto de identificación espacial.</td>
+                </tr>
+
+                <tr>
+                    <td><code>CODE_FIN</code></td>
+                    <td><code>str</code></td>
+                    <td><code>PLO08OM121605_B_BALPOL</code></td>
+                    <td>Código final concatenado de sitio, entrevista y especie.</td>
+                </tr>
+
+                <tr>
+                    <td><code>Shape_Length</code></td>
+                    <td><code>float64</code></td>
+                    <td><code>24247.542109495957</code></td>
+                    <td>Perímetro total del polígono expresado en metros.</td>
+                </tr>
+
+                <tr>
+                    <td><code>Shape_Area</code></td>
+                    <td><code>float64</code></td>
+                    <td><code>43907156.74350939</code></td>
+                    <td>Superficie o área total del polígono expresada en metros cuadrados.</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+</html>
