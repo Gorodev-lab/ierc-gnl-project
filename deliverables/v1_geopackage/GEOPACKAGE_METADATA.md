@@ -14,21 +14,22 @@
 
 ## 1. Resumen Ejecutivo
 
-Este archivo GeoPackage constituye el **1er Entregable Espacial del Proyecto IERC-GNL** para **Causa Natura Data**. Consolida la información geográfica de infraestructura industrial de GNL, trazados de gasoductos, Áreas Naturales Protegidas (CONANP), delimitación de las 3 localidades de estudio prioritarias (**Punta Chueca Comca'ac**, **Puerto Libertad**, **Guaymas**), espacialización del esfuerzo pesquero artesanal PANGAS (Moreno-Báez et al. 2011, 2012) con la clave única `uid_espaciotemporal`, y la grilla hexagonal adaptativa Uber H3 (Res 8 mar abierto / Res 9 zonas portuarias) con la evaluación integrada del IERC y los sub-índices socioeconómicos.
+Este archivo GeoPackage constituye el **1er Entregable Espacial del Proyecto IERC-GNL** para **Causa Natura Data**, actualizado con el reporte de cobertura institucional (ASEA, CENAGAS, SENER, GEBCO). Consolida 11 proyectos consolidados de infraestructura industrial de GNL, trazados de gasoductos, Áreas Naturales Protegidas (CONANP), delimitación de las 3 localidades de estudio prioritarias (**Punta Chueca Comca'ac**, **Puerto Libertad**, **Guaymas**), espacialización del esfuerzo pesquero artesanal PANGAS (Moreno-Báez et al. 2011, 2012) con la clave única `uid_espaciotemporal`, contornos batimétricos GEBCO 2024 / ETOPO1 y la grilla hexagonal adaptativa Uber H3 (Res 8 mar abierto / Res 9 zonas portuarias) con la evaluación integrada del IERC y los sub-índices socioeconómicos.
 
 ---
 
-## 2. Estructura de Capas Espaciales (7 Capas Vectoriales)
+## 2. Estructura de Capas Espaciales (8 Capas Vectoriales)
 
 | Nombre de Capa | Tipo Geometría | N° Entidades | Descripción |
 |---|---|---|---|
-|  `proyectos_gnl` | `Point` | 5 | Ubicación puntual y nivel de riesgo de terminales GNL en el Golfo. |
-|  `gasoductos_infraestructura_gnl` | `LineString` | 2 | Trazados conocidos y proyectados de ductos GNL (Sonora, Saguaro, Guaymas). |
-|  `localidades_estudio_ierc` | `Point` | 3 | Las 3 localidades prioritarias del POA (Punta Chueca, Puerto Libertad, Guaymas). |
-|  `anp_habitats_criticos` | `Polygon` | 2 | Áreas Naturales Protegidas (CONANP) y hábitats marinos críticos. |
-|  `zonas_pesqueras_pangas` | `MultiPolygon` | 17 | Polígonos consolidados por sitio pesquero con la clave `uid_espaciotemporal`. |
-| ⬡ `grilla_h3_riesgo` | `Polygon` | 5,244 | Grilla hexagonal Uber H3 adaptativa (Res 8 / Res 9) con scores IERC. |
-|  `riqueza_relativa_pesquera` | `MultiPolygon` | 11,065 | Malla espacial de riqueza biológica pesquera relativa (PANGAS). |
+| 🏭 `proyectos_gnl` | `Point` / `Polygon` | 11 | Ubicación, polígonos y estatus de 11 proyectos GNL consolidados en el Golfo y Noroeste. |
+| 🛤️ `gasoductos_infraestructura_gnl` | `LineString` | 3 | Trazados conocidos y proyectados de ductos GNL (Sonora, Saguaro, Guaymas, Corredor Norte). |
+| 📍 `localidades_estudio_ierc` | `Point` | 3 | Las 3 localidades prioritarias del POA (Punta Chueca, Puerto Libertad, Guaymas). |
+| 🛡️ `anp_habitats_criticos` | `Polygon` | 2 | Áreas Naturales Protegidas (CONANP) y hábitats marinos críticos. |
+| ⛵ `zonas_pesqueras_pangas` | `MultiPolygon` | 17 | Polígonos consolidados por sitio pesquero con la clave `uid_espaciotemporal`. |
+| ⬡ `grilla_h3_riesgo` | `Polygon` | 5,244 | Grilla hexagonal Uber H3 adaptativa (Res 8 / Res 9) con profundidad GEBCO y IERC. |
+| 🐟 `riqueza_relativa_pesquera` | `MultiPolygon` | 11,065 | Malla espacial de riqueza biológica pesquera relativa (PANGAS). |
+| 🌊 `batimetria_contornos_gebco` | `LineString` | 851 | Contornos de profundidad batimétrica GEBCO 2024 / ETOPO1 (-5000m a 0m). |
 
 ---
 

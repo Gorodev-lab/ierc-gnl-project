@@ -39,3 +39,10 @@ Thumbs.db
 # Temporary / OS
 tmp/
 *.tmp
+
+# Heavy raw datasets (> 100MB)
+causanaturadata/batimetria/*.grd
+causanaturadata/batimetria/*.zip
+causanaturadata/batimetria/*.nc
+causanaturadata/batimetria/*.gz
+

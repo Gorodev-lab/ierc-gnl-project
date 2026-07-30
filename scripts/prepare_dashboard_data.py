@@ -1,69 +1,50 @@
 #!/usr/bin/env python3
 """
-Prepara los datos para el dashboard IERC-GNL.
-- Copia el JSON de resultados procesados a public/data/
-- Genera una muestra ligera del GeoJSON WGS84 de PANGAS (~500 zonas únicas)
+prepare_dashboard_data.py
+-------------------------
+Prepara y sincroniza los datasets espaciales y cuantitativos para el visor interactivo Next.js:
+- Exporta 11 proyectos GNL consolidados a public/data/proyectos_gnl.geojson
+- Exporta contornos batimétricos GEBCO/ETOPO1 a public/data/batimetria_golfo.geojson
+- Sincroniza reporte_cobertura_datos.json a public/data/reporte_cobertura.json
+- Exporta grilla H3 con IERC a public/data/grilla_h3_riesgo.geojson
 """
 
 import json
+import shutil
 from pathlib import Path
+import geopandas as gpd
 
 BASE = Path('/home/gorops/ierc-gnl-project')
-PROCESSED_DIR = BASE / 'data/processed'
+OUTPUT_DIR = BASE / 'causanaturadata/output'
+DELIVERABLE_GPKG = BASE / 'deliverables/v1_geopackage/ierc_golfo_california.gpkg'
 PUBLIC_DIR = BASE / 'dashboard/public/data'
 
 PUBLIC_DIR.mkdir(parents=True, exist_ok=True)
+print(f"[+] Exportando datos a {PUBLIC_DIR}...")
 
-# ── 1. Copiar resultados de riesgo ──────────────────────────────────────────
-src = PROCESSED_DIR / 'riesgo_pesquero_proyectos_gnl_detalle.json'
-dst = PUBLIC_DIR / 'riesgo_proyectos.json'
-if src.exists():
-    with open(src, 'r', encoding='utf-8') as f:
-        risk_data = json.load(f)
-    with open(dst, 'w', encoding='utf-8') as f:
-        json.dump(risk_data, f, ensure_ascii=False, indent=2)
-    print(f"✓ Copiado: {dst.name}")
+# 1. Proyectos GNL consolidados (11)
+gnl_geojson = OUTPUT_DIR / 'proyectos_gnl_consolidados.geojson'
+if gnl_geojson.exists():
+    shutil.copy(gnl_geojson, PUBLIC_DIR / 'proyectos_gnl.geojson')
+    print("   ✔ Copiado: proyectos_gnl.geojson")
 
-# ── 2. Datos de especies críticas ────────────────────────────────────────────
-species_data = {
-    "metadata": {
-        "fecha": "2026-07-29",
-        "fuente": "Fish_Zones_PANGAS (Moreno-Báez et al. 2011/2012)",
-        "total_zonas_analizadas": 4241
-    },
-    "especies_criticas": [
-        {"codigo": "carspp", "nombre_comun": "Camarones", "nombre_cientifico": "Farfantepenaeus sp.", "estado_iucn": "LC", "importancia": "Alta comercial"},
-        {"codigo": "gymmar", "nombre_comun": "Mero gigante", "nombre_cientifico": "Epinephelus itajara", "estado_iucn": "CR", "importancia": "Crítica"},
-        {"codigo": "rhilon", "nombre_comun": "Rayas guitarrón", "nombre_cientifico": "Rhinobatos lentiginosus", "estado_iucn": "VU", "importancia": "Alta"},
-        {"codigo": "rhipro", "nombre_comun": "Raya bocona", "nombre_cientifico": "Rhinobatos productus", "estado_iucn": "NT", "importancia": "Moderada"},
-        {"codigo": "rhispp", "nombre_comun": "Rayas (spp)", "nombre_cientifico": "Rhinobatos spp.", "estado_iucn": "VU", "importancia": "Alta"},
-        {"codigo": "sphspp", "nombre_comun": "Tiburones", "nombre_cientifico": "Sphyrna spp.", "estado_iucn": "EN", "importancia": "Crítica"},
-        {"codigo": "lutarg", "nombre_comun": "Pargo lunarejo", "nombre_cientifico": "Lutjanus argentiventris", "estado_iucn": "LC", "importancia": "Alta comercial"},
-        {"codigo": "parspp", "nombre_comun": "Pargos (spp)", "nombre_cientifico": "Paralabrax spp.", "estado_iucn": "LC", "importancia": "Alta comercial"},
-        {"codigo": "dasspp", "nombre_comun": "Rayas mariposa", "nombre_cientifico": "Dasyatis spp.", "estado_iucn": "NT", "importancia": "Moderada"},
-        {"codigo": "mycros", "nombre_comun": "Mero almejero", "nombre_cientifico": "Mycteroperca rosacea", "estado_iucn": "NT", "importancia": "Alta"},
-    ],
-    "por_proyecto": {
-        "MPL_Saguaro_Puerto_Libertad": {
-            "especies_presentes": ["carspp", "rhilon", "rhipro", "rhispp", "sphspp", "gymmar", "lutarg", "parspp"],
-            "num_criticas": 8,
-            "riesgo_pesquero": 90.27
-        },
-        "Bazan_San_Felipe": {
-            "especies_presentes": ["carspp", "rhilon", "rhipro", "rhispp", "sphspp", "gymmar", "lutarg", "parspp", "mycros"],
-            "num_criticas": 9,
-            "riesgo_pesquero": 97.76
-        },
-        "Guaymas_Terminal": {
-            "especies_presentes": ["carspp", "rhilon", "rhipro", "rhispp", "gymmar", "parspp", "mycros"],
-            "num_criticas": 7,
-            "riesgo_pesquero": 93.80
-        }
-    }
-}
+# 2. Reporte de Cobertura JSON
+reporte_json = OUTPUT_DIR / 'reporte_cobertura_datos.json'
+if reporte_json.exists():
+    shutil.copy(reporte_json, PUBLIC_DIR / 'reporte_cobertura.json')
+    print("   ✔ Copiado: reporte_cobertura.json")
 
-species_path = PUBLIC_DIR / 'especies_criticas.json'
-with open(species_path, 'w', encoding='utf-8') as f:
-    json.dump(species_data, f, ensure_ascii=False, indent=2)
+# 3. Batimetría GEBCO (simplificada para visor web)
+gebco_gpkg = OUTPUT_DIR / 'GEBCO_Batimetria_Golfo.gpkg'
+if gebco_gpkg.exists():
+    gdf_gebco = gpd.read_file(gebco_gpkg, layer="batimetria_gebco_2024").to_crs("EPSG:4326")
+    gdf_gebco.to_file(PUBLIC_DIR / 'batimetria_golfo.geojson', driver="GeoJSON")
+    print("   ✔ Exportado: batimetria_golfo.geojson")
 
-print("✓ Datos de especies críticas preparados para el dashboard.")
+# 4. Malla H3 con IERC
+if DELIVERABLE_GPKG.exists():
+    gdf_h3 = gpd.read_file(DELIVERABLE_GPKG, layer="grilla_h3_riesgo").to_crs("EPSG:4326")
+    gdf_h3.to_file(PUBLIC_DIR / 'grilla_h3_riesgo.geojson', driver="GeoJSON")
+    print("   ✔ Exportado: grilla_h3_riesgo.geojson")
+
+print("[✔] Todos los insumos del Dashboard web han sido preparados.")

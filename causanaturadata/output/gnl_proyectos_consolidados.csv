@@ -1,0 +1,12 @@
+﻿nombre,folio,estado,tipo,empresa,estatus,lat,lon,fuente
+Terminal de Licuefacción y Almacenamiento LNG Amigo,26SO2025G0143,Sonora,Terminal GNL,"Amigo LNG, S.A. de C.V.",En evaluación,29.0,-111.0,ASEA
+Sistema de Distribución de Gas Natural por Medio de Ductos en Los Cabos,03BS2025G0021,Baja California Sur,Gasoducto distribución,"Gas Natural del Noroeste, S.A. de C.V.",En evaluación,24.1,-109.9,ASEA
+Vista Pacífico LNG,25SI2024G0038,Sinaloa,Terminal GNL,"Vista Pacífico LNG, S.A.P.I. de C.V.",En evaluación,25.0,-106.5,ASEA
+Gasoducto Corredor Norte,25SI2024G0039,Sinaloa,Gasoducto,"Gasoducto Corredor Norte, S.A.P.I. de C.V.",En evaluación,25.0,-106.5,ASEA
+Construcción y Operación de Planta de Licuefacción GNL Cosalá,25SI2024G0034,Sinaloa,Planta Licuefacción GNL,"GNL Cosalá, S.A. de C.V.",En evaluación,24.5,-106.5,ASEA
+Sistema de Transporte de Gas Natural Los Ramones Fase II Sur,T06-SLP,Sonora/Baja California,Gasoducto transporte,CENAGAS,En operación/Planificación,29.0,-110.0,ASEA Transparencia/CENAGAS
+STGN Sierra Madre (Frontera-Puerto Libertad),08CI2023G0004,Sonora,Gasoducto transporte,CENAGAS,En operación/Planificación,29.5,-110.5,ASEA Transparencia/CENAGAS
+Terminal de Licuefacción LNG (proyecto Puerto Libertad),MIA Puerto Libertad,Sonora,Terminal GNL,México Pacific Limited / MPL,En evaluación,29.5,-110.5,SENER/Plan Quinquenal CENAGAS
+Reconfiguración Estación de Compresión Cempoala,CENAGAS-Cempoala,Veracruz,Estación compresión,CENAGAS,En ejecución,19.3,-96.4,Plan Quinquenal CENAGAS 2025-2029
+Gasoducto Naco-Hermosillo,CENAGAS-NacoHermo,Sonora,Gasoducto transporte,CENAGAS,Planificado,29.0,-110.0,Plan Quinquenal CENAGAS 2025-2029
+Gasoducto Puerto Libertad-Guaymas,CENAGAS-PLGuaymas,Sonora,Gasoducto transporte,CENAGAS,Planificado,29.5,-110.5,Plan Quinquenal CENAGAS 2025-2029

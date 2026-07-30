@@ -1,0 +1,244 @@
+{
+  "resumen_ejecutivo": {
+    "fecha": "2026-07-30",
+    "proyecto": "IERC - Índice Espacial de Riesgo Socioeconómico para Infraestructura GNL",
+    "area_interes": "Golfo de California - Sonora, Baja California, Baja California Sur, Sinaloa",
+    "objetivo_iteracion": "Compilar proyectos de gas natural/GNL y batimetría para modelo IERC"
+  },
+  "cobertura_datos": {
+    "proyectos_asea": {
+      "total_portal_consulta_publica": 10,
+      "filtrados_sonora_bc_bcs_gnl": 2,
+      "estados_cubiertos": [
+        "Sonora",
+        "Baja California Sur",
+        "Veracruz",
+        "Sinaloa",
+        "Tabasco",
+        "Colima",
+        "Ciudad de Mexico"
+      ],
+      "con_mia_pdf": 10,
+      "detalle_filtrados": [
+        {
+          "folio": "26SO2025G0143",
+          "nombre": "Terminal de Licuefacción y Almacenamiento LNG Amigo.",
+          "estado": "Sonora"
+        },
+        {
+          "folio": "03BS2025G0021",
+          "nombre": "Sistema de Distribución de Gas Naturalpor Medio de Ductos en la Zona Geográfica Única: Los Cabos.",
+          "estado": "Baja California Sur"
+        }
+      ]
+    },
+    "proyectos_gnl_consolidados": {
+      "total": 11,
+      "por_tipo": {
+        "Gasoducto transporte": 4,
+        "Terminal GNL": 3,
+        "Gasoducto distribución": 1,
+        "Gasoducto": 1,
+        "Planta Licuefacción GNL": 1,
+        "Estación compresión": 1
+      },
+      "por_estado": {
+        "Sonora": 5,
+        "Sinaloa": 3,
+        "Baja California Sur": 1,
+        "Sonora/Baja California": 1,
+        "Veracruz": 1
+      },
+      "por_fuente": {
+        "ASEA": 5,
+        "Plan Quinquenal CENAGAS 2025-2029": 3,
+        "ASEA Transparencia/CENAGAS": 2,
+        "SENER/Plan Quinquenal CENAGAS": 1
+      },
+      "detalle": [
+        {
+          "nombre": "Terminal de Licuefacción y Almacenamiento LNG Amigo",
+          "estado": "Sonora",
+          "tipo": "Terminal GNL",
+          "empresa": "Amigo LNG, S.A. de C.V.",
+          "estatus": "En evaluación",
+          "fuente": "ASEA"
+        },
+        {
+          "nombre": "Sistema de Distribución de Gas Natural por Medio de Ductos en Los Cabos",
+          "estado": "Baja California Sur",
+          "tipo": "Gasoducto distribución",
+          "empresa": "Gas Natural del Noroeste, S.A. de C.V.",
+          "estatus": "En evaluación",
+          "fuente": "ASEA"
+        },
+        {
+          "nombre": "Vista Pacífico LNG",
+          "estado": "Sinaloa",
+          "tipo": "Terminal GNL",
+          "empresa": "Vista Pacífico LNG, S.A.P.I. de C.V.",
+          "estatus": "En evaluación",
+          "fuente": "ASEA"
+        },
+        {
+          "nombre": "Gasoducto Corredor Norte",
+          "estado": "Sinaloa",
+          "tipo": "Gasoducto",
+          "empresa": "Gasoducto Corredor Norte, S.A.P.I. de C.V.",
+          "estatus": "En evaluación",
+          "fuente": "ASEA"
+        },
+        {
+          "nombre": "Construcción y Operación de Planta de Licuefacción GNL Cosalá",
+          "estado": "Sinaloa",
+          "tipo": "Planta Licuefacción GNL",
+          "empresa": "GNL Cosalá, S.A. de C.V.",
+          "estatus": "En evaluación",
+          "fuente": "ASEA"
+        },
+        {
+          "nombre": "Sistema de Transporte de Gas Natural Los Ramones Fase II Sur",
+          "estado": "Sonora/Baja California",
+          "tipo": "Gasoducto transporte",
+          "empresa": "CENAGAS",
+          "estatus": "En operación/Planificación",
+          "fuente": "ASEA Transparencia/CENAGAS"
+        },
+        {
+          "nombre": "STGN Sierra Madre (Frontera-Puerto Libertad)",
+          "estado": "Sonora",
+          "tipo": "Gasoducto transporte",
+          "empresa": "CENAGAS",
+          "estatus": "En operación/Planificación",
+          "fuente": "ASEA Transparencia/CENAGAS"
+        },
+        {
+          "nombre": "Terminal de Licuefacción LNG (proyecto Puerto Libertad)",
+          "estado": "Sonora",
+          "tipo": "Terminal GNL",
+          "empresa": "México Pacific Limited / MPL",
+          "estatus": "En evaluación",
+          "fuente": "SENER/Plan Quinquenal CENAGAS"
+        },
+        {
+          "nombre": "Reconfiguración Estación de Compresión Cempoala",
+          "estado": "Veracruz",
+          "tipo": "Estación compresión",
+          "empresa": "CENAGAS",
+          "estatus": "En ejecución",
+          "fuente": "Plan Quinquenal CENAGAS 2025-2029"
+        },
+        {
+          "nombre": "Gasoducto Naco-Hermosillo",
+          "estado": "Sonora",
+          "tipo": "Gasoducto transporte",
+          "empresa": "CENAGAS",
+          "estatus": "Planificado",
+          "fuente": "Plan Quinquenal CENAGAS 2025-2029"
+        },
+        {
+          "nombre": "Gasoducto Puerto Libertad-Guaymas",
+          "estado": "Sonora",
+          "tipo": "Gasoducto transporte",
+          "empresa": "CENAGAS",
+          "estatus": "Planificado",
+          "fuente": "Plan Quinquenal CENAGAS 2025-2029"
+        }
+      ]
+    },
+    "batimetria": {
+      "fuente_principal": "ETOPO1 1 arc-min (NOAA) recortado a Golfo de California",
+      "resolucion": "~1.8 km en el ecuador",
+      "coordenadas": {
+        "lat_min": 23,
+        "lat_max": 32,
+        "lon_min": -114,
+        "lon_max": -105
+      },
+      "contornos_generados": 2732,
+      "rango_profundidad": {
+        "min": -5000,
+        "max": 0
+      },
+      "clases_profundidad": [
+        "-5000 a -2000m",
+        "-2000 a -1000m",
+        "-1000 a -500m",
+        "-500 a -200m",
+        "-200 a -100m",
+        "-100 a -50m",
+        "-50 a -20m",
+        "-20 a -10m",
+        "-10 a 0m"
+      ],
+      "formatos_disponibles": [
+        "GeoPackage (polígonos)",
+        "GeoTIFF (raster original)"
+      ]
+    },
+    "gaceta_ecologica": {
+      "total_publicaciones": 203,
+      "años_cubiertos": "2023-2026",
+      "frecuencia": "Semanal",
+      "formato": "PDF (descarga directa desde SINAT)",
+      "url_base": "https://sinat.semarnat.gob.mx:8443/Gacetas/archivos{año}/gaceta_{num}-{año}.pdf"
+    }
+  },
+  "gaps_identificados": {
+    "proyectos_gnl": [
+      "Falta acceso a datos oficiales de CRE (permisos, autorizaciones) - portal requiere autenticación",
+      "Falta shapefiles oficiales de CENAGAS (trazados exactos gasoductos, servidumbres)",
+      "Datos de SIE/SENER requieren registro/login para descarga completa",
+      "Ubicaciones exactas (coordenadas) de terminales GNL propuestas son aproximadas",
+      "Cronogramas de construcción/operación no disponibles públicamente"
+    ],
+    "batimetria": [
+      "ETOPO1 (1 arc-min) es baja resolución para modelo IERC a escala fina (hexágonos 1km²)",
+      "Se requiere GEBCO 2024 (15 arc-sec ~450m) o datos multihaz de CONABIO/INEGI",
+      "Falta batimetría de alta resolución (<100m) en zonas costeras/estuarios prioritarios",
+      "No hay datos de corrientes, mareas, oleaje integrados (requeridos para modelo exposición)"
+    ],
+    "informacion_pesquera": [
+      "Línea base histórica PANGAS/Moreno-Báez disponible pero desactualizada (2012)",
+      "Calendarios pesqueros históricos requieren validación en campo",
+      "Datos oficiales CONAPESCA/INAPESCA requieren solicitud formal",
+      "Información de género y valor biocultural solo se obtiene en campo"
+    ],
+    "gobernanza": [
+      "Operación de Consejos Asesores (GAGE) solo en fase de diagnóstico",
+      "Datos de marginación/rezago social a nivel localidad (CONAPO/CONEVAL) requieren integración",
+      "Percepción de riesgo y umbrales no negociables Comca'ac requieren trabajo de campo"
+    ]
+  },
+  "acciones_recomendadas_proxima_iteracion": {
+    "prioridad_alta": [
+      "Descargar GEBCO 2024 15 arc-sec via OpenDAP subsetting para Golfo de California",
+      "Solicitar a CONABIO/INECC shapefiles batimétricos multihaz (resolución <100m)",
+      "Procesar MIAs descargados (PDFs) con OCR/NLP para extraer coordenadas exactas, polígonos de proyecto, cronogramas",
+      "Contactar CENAGAS para acceso a shapefiles SISTRANGAS (trazados gasoductos, estaciones)",
+      "Contactar CRE para acceso a base de datos de permisos gas natural/GNL"
+    ],
+    "prioridad_media": [
+      "Integrar variables oceanográficas (Copernicus: corrientes, SST, clorofila, oleaje)",
+      "Integrar capas ecológicas CONABIO (manglares, pastos marinos, arrecifes, ANP)",
+      "Solicitar datos CONAPESCA/INAPESCA: desembarques, esfuerzo, permisos, vedas",
+      "Integrar capas socioeconómicas (CONAPO, CONEVAL, DENUE, Censo 2020)"
+    ],
+    "prioridad_baja": [
+      "Descargar Gacetas Ecológicas 2023-2026 y extraer proyectos via OCR",
+      "Validar calendario pesquero histórico con trabajo de campo (Mes 2)",
+      "Integrar Matriz GAGE en modelo de capacidad adaptativa"
+    ]
+  },
+  "archivos_generados": {
+    "geopackage_principal": "/home/gorops/ierc-gnl-project/causanaturadata/output/IERC_GNL_Data.gpkg",
+    "capas": {
+      "asea_proyectos_filtrados": "2 proyectos Sonora/BCS con MIA PDFs (Terminal GNL Amigo, Gasoducto Los Cabos)",
+      "asea_proyectos_todos": "10 proyectos del portal ASEA Consulta Pública (2023-2026)",
+      "gnl_proyectos_consolidados": "11 proyectos GNL/gasoductos de ASEA, CENAGAS, SENER",
+      "batimetria_golfo_california": "2732 contornos de profundidad (ETOPO1, -5000 a 0m)",
+      "gaceta_ecologica_sinat": "203 publicaciones SINAT (2023-2026) con URLs a PDFs"
+    },
+    "csv_consolidado": "/home/gorops/ierc-gnl-project/causanaturadata/output/gnl_proyectos_consolidados.csv"
+  }
+}

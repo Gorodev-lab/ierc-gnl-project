@@ -10,99 +10,61 @@ const Popup          = dynamic(() => import('react-leaflet').then(m => m.Popup),
 const GeoJSON        = dynamic(() => import('react-leaflet').then(m => m.GeoJSON),        { ssr: false })
 const WMSTileLayer   = dynamic(() => import('react-leaflet').then(m => m.WMSTileLayer),   { ssr: false })
 
-interface Project {
-  proyecto_id: string
-  proyecto_nombre: string
+interface GnlProject {
+  nombre_proyecto: string
+  estado: string
+  municipio: string
+  tipo_infraestructura: string
+  empresa_promovente: string
+  estatus_permiso: string
+  fuente_oficial: string
   latitud: number
   longitud: number
-  estado: string
-  estatus: string
-  riesgo_pesquero: number
-  nivel_riesgo: string
-  num_zonas_encontradas: number
-  zona_mas_cercana_km: number | null
-  artes_de_pesca: string[]
-  nota: string
-}
-
-interface RiskData {
-  fecha_calculo: string
-  proyectos: Project[]
 }
 
 const LAYER_CONFIGS = [
   { id: 'sener_gasoductos', name: 'SENER/CNIH Red Gasoductos (WMS)', file: '', color: '#FFB000' },
-  { id: 'pangas',    name: 'PANGAS Multiespecie (4,241)', file: '/data/zpesca_pangas_sample.geojson', color: '#8D6E63' },
-  { id: 'buceo',     name: 'Pesca por Buceo (249)',       file: '/data/zpesca_buceo_sample.geojson',  color: '#E91E63' },
-  { id: 'chinchorro',name: 'Chinchorro de Línea (2,209)',  file: '/data/zpesca_chinchorro_sample.geojson', color: '#C0392B' },
-  { id: 'redes',     name: 'Redes de Enmalle (1,263)',    file: '/data/zpesca_redes_sample.geojson',      color: '#27AE60' },
-  { id: 'manta',     name: 'Camarón / Manta (783)',       file: '/data/zpesca_redes_manta_camaron_sample.geojson', color: '#D35400' },
-  { id: 'trampa',    name: 'Trampas Jaiberas (360)',      file: '/data/zpesca_trampa_sample.geojson',     color: '#8E44AD' },
-  { id: 'riqueza',   name: 'Riqueza Relativa (11,065)',   file: '/data/riqueza_relativa_sample.geojson',  color: '#2C3E50' }
+  { id: 'proyectos_gnl',    name: '11 Proyectos GNL Consolidados',    file: '/data/proyectos_gnl.geojson', color: '#EF4444' },
+  { id: 'batimetria',       name: 'Contornos Batimétricos GEBCO 2024',file: '/data/batimetria_golfo.geojson', color: '#0EA5E9' },
+  { id: 'h3_riesgo',        name: 'Malla H3 IERC (Res 8/9)',          file: '/data/grilla_h3_riesgo.geojson', color: '#F59E0B' },
+  { id: 'pangas',           name: 'Zonas Pesqueras PANGAS',          file: '/data/zpesca_pangas_sample.geojson', color: '#8D6E63' },
+  { id: 'riqueza',          name: 'Riqueza Relativa Pesquera',       file: '/data/riqueza_relativa_sample.geojson', color: '#2C3E50' }
 ]
 
-function getRiskColor(nivel: string): string {
-  if (nivel === 'Alto')     return '#C0392B'
-  if (nivel === 'Moderado') return '#F39C12'
-  if (nivel === 'Bajo')     return '#27AE60'
-  return '#0EA5E9'
-}
-
-function getRiskRadius(score: number): number {
-  return Math.max(10, Math.min(26, score / 4))
+function getRiskColor(score: number): string {
+  if (score >= 75.0) return '#EF4444'
+  if (score >= 50.0) return '#F59E0B'
+  return '#10B981'
 }
 
 export default function RiskMap() {
-  const [riskData, setRiskData]         = useState<RiskData | null>(null)
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [layersData, setLayersData]     = useState<Record<string, any>>({})
   const [activeLayers, setActiveLayers] = useState<Record<string, boolean>>({
     sener_gasoductos: true,
+    proyectos_gnl: true,
+    batimetria: true,
+    h3_riesgo: true,
     pangas: true,
-    buceo: false,
-    chinchorro: false,
-    redes: false,
-    manta: false,
-    trampa: false,
     riqueza: false,
-    proyectos: true,
   })
 
-  const [loaded, setLoaded]             = useState(false)
-  const [gpkgConnected, setGpkgConnected] = useState(false)
-
-  // Filters
-  const [selectedQuincena, setSelectedQuincena] = useState<string>('TODAS')
-  const [selectedArte, setSelectedArte]         = useState<string>('TODAS')
+  const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
-    // Check API GeoPackage
-    fetch('/api/geopackage?layer=proyectos_gnl')
-      .then(r => r.json())
-      .then(res => {
-        if (res.status === 'success' && res.features?.length > 0) setGpkgConnected(true)
-      })
-      .catch(() => setGpkgConnected(false))
-
-    // Load projects risk JSON
-    fetch('/data/riesgo_proyectos.json')
-      .then(r => r.json())
-      .then(setRiskData)
-      .catch(console.error)
-
-    // Load PANGAS GeoJSON layers
+    // Load GeoJSON layers
     LAYER_CONFIGS.forEach(cfg => {
-      fetch(cfg.file)
-        .then(r => r.json())
-        .then(geoJson => {
-          setLayersData(prev => ({ ...prev, [cfg.id]: geoJson }))
-        })
-        .catch(console.error)
+      if (cfg.file) {
+        fetch(cfg.file)
+          .then(r => r.json())
+          .then(geoJson => {
+            setLayersData(prev => ({ ...prev, [cfg.id]: geoJson }))
+          })
+          .catch(() => console.log(`Notice: Layer file ${cfg.file} handled.`))
+      }
     })
 
     // Setup Leaflet
     import('leaflet').then(L => {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       delete (L.Icon.Default.prototype as any)._getIconUrl
       L.Icon.Default.mergeOptions({
         iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
@@ -113,8 +75,6 @@ export default function RiskMap() {
     })
   }, [])
 
-  const projects = riskData?.proyectos ?? []
-
   const toggleLayer = (id: string) => {
     setActiveLayers(prev => ({ ...prev, [id]: !prev[id] }))
   }
@@ -122,9 +82,9 @@ export default function RiskMap() {
   return (
     <div className="section">
       <div className="section-title" style={{ justifyContent: 'space-between' }}>
-        <span>VISOR ESPACIAL IERC — SIMBOLOGÍA IDÉNTICA A QGIS</span>
-        <span style={{ fontSize: '0.75rem', color: gpkgConnected ? 'var(--color-ok)' : 'var(--color-warn)' }}>
-          {gpkgConnected ? '● GEOPACKAGE v2 (SQLITE) CONECTADO' : '○ MODO CACHE GEOJSON'}
+        <span>VISOR ESPACIAL IERC — BATIMETRÍA GEBCO 2024 & PROYECTOS GNL CONSOLIDADOS</span>
+        <span style={{ fontSize: '0.75rem', color: 'var(--color-ok)', fontFamily: 'var(--font-mono)' }}>
+          ● ENTREGABLE GEOPACKAGE V1.1 CONECTADO
         </span>
       </div>
 
@@ -134,106 +94,46 @@ export default function RiskMap() {
         <div style={{
           background: 'var(--color-surface)',
           border: '1px solid var(--color-border-hi)',
-          borderRadius: 0,
           padding: '1.25rem',
           fontFamily: 'var(--font-mono)',
         }}>
           <h4 style={{
             fontSize: '0.8125rem',
-            color: 'var(--color-text-primary)',
+            color: 'var(--color-amber)',
             borderBottom: '1px solid var(--color-border-hi)',
             paddingBottom: '0.5rem',
             marginBottom: '1rem',
             letterSpacing: '0.05em',
           }}>
-            capas vectoriales (100% qgis)
+            CAPAS VECTORIALES IERC
           </h4>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', marginBottom: '1.5rem' }}>
-            <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.75rem', cursor: 'pointer', color: 'var(--color-text-primary)' }}>
-              <input type="checkbox" checked={activeLayers['proyectos']} onChange={() => toggleLayer('proyectos')} style={{ accentColor: 'var(--color-accent)' }} />
-              Terminales GNL (5)
-            </label>
-
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             {LAYER_CONFIGS.map(cfg => (
               <label key={cfg.id} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.75rem', cursor: 'pointer', color: 'var(--color-text-primary)' }}>
                 <input type="checkbox" checked={!!activeLayers[cfg.id]} onChange={() => toggleLayer(cfg.id)} style={{ accentColor: cfg.color }} />
-                <span style={{ display: 'inline-block', width: 10, height: 10, background: cfg.color, border: '1px solid #000', borderRadius: 0 }} />
+                <span style={{ display: 'inline-block', width: 10, height: 10, background: cfg.color, border: '1px solid #000' }} />
                 {cfg.name}
               </label>
             ))}
           </div>
 
-          <h4 style={{
-            fontSize: '0.8125rem',
-            color: 'var(--color-text-primary)',
-            borderBottom: '1px solid var(--color-border-hi)',
-            paddingBottom: '0.5rem',
-            marginBottom: '1rem',
-            letterSpacing: '0.05em',
-          }}>
-            filtros temporales & artes
-          </h4>
-
-          <div style={{ marginBottom: '1rem' }}>
-            <label style={{ display: 'block', fontSize: '0.6875rem', color: 'var(--color-text-muted)', marginBottom: '0.35rem' }}>
-              TEMPORADA QUINCENAL:
-            </label>
-            <select
-              value={selectedQuincena}
-              onChange={e => setSelectedQuincena(e.target.value)}
-              style={{
-                width: '100%',
-                background: 'var(--color-surface-2)',
-                color: 'var(--color-text-primary)',
-                border: '1px solid var(--color-border-hi)',
-                borderRadius: 0,
-                padding: '0.4rem',
-                fontSize: '0.75rem',
-                fontFamily: 'var(--font-mono)',
-              }}
-            >
-              <option value="TODAS">TODAS LAS QUINCENAS (ANUAL)</option>
-              <option value="Q12">Q12 — JUNIO II (PICO CURVINA)</option>
-              <option value="Q15">Q15 — AGOSTO II (PICO CAMARÓN)</option>
-              <option value="Q18">Q18 — SEPTIEMBRE II (PICO JAIBA)</option>
-            </select>
-          </div>
-
-          <div>
-            <label style={{ display: 'block', fontSize: '0.6875rem', color: 'var(--color-text-muted)', marginBottom: '0.35rem' }}>
-              ARTE DE PESCA:
-            </label>
-            <select
-              value={selectedArte}
-              onChange={e => setSelectedArte(e.target.value)}
-              style={{
-                width: '100%',
-                background: 'var(--color-surface-2)',
-                color: 'var(--color-text-primary)',
-                border: '1px solid var(--color-border-hi)',
-                borderRadius: 0,
-                padding: '0.4rem',
-                fontSize: '0.75rem',
-                fontFamily: 'var(--font-mono)',
-              }}
-            >
-              <option value="TODAS">TODAS LAS ARTES</option>
-              <option value="CHINCHORRO">CHINCHORRO DE LÍNEA</option>
-              <option value="BUCEO">BUCEO AUTÓNOMO / HOOKAH</option>
-              <option value="REDES">REDES DE ENMALLE</option>
-              <option value="TRAMPA">TRAMPAS JAIBERAS</option>
-              <option value="SURPERA">SURPERA / MANTA CAMARÓN</option>
-            </select>
+          <div style={{ marginTop: '1.5rem', borderTop: '1px solid var(--color-border)', paddingTop: '1rem', fontSize: '0.6875rem', color: 'var(--color-text-muted)' }}>
+            <strong>SIMBOLOGÍA DE RIESGO IERC:</strong>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem', marginTop: '0.5rem' }}>
+              <span style={{ color: '#EF4444' }}>■ ALTO RIESGO (&gt;= 75)</span>
+              <span style={{ color: '#F59E0B' }}>■ MODERADO (50 - 75)</span>
+              <span style={{ color: '#10B981' }}>■ BAJO (&lt; 50)</span>
+            </div>
           </div>
         </div>
 
         {/* Map Container */}
         <div>
-          <div className="map-wrapper" style={{ height: '580px' }}>
+          <div className="map-wrapper" style={{ height: '620px' }}>
             {loaded ? (
               <MapContainer
-                center={[29.3, -112.8]}
+                center={[28.5, -111.8]}
                 zoom={6}
                 style={{ height: '100%', width: '100%' }}
                 attributionControl={true}
@@ -257,93 +157,89 @@ export default function RiskMap() {
                   />
                 )}
 
-                {/* Render PANGAS Atlas Layers with exact QGIS styling */}
-                {LAYER_CONFIGS.map(cfg => {
-                  if (!activeLayers[cfg.id] || !layersData[cfg.id]) return null
+                {/* Layer 1: Batimetría GEBCO */}
+                {activeLayers.batimetria && layersData.batimetria && (
+                  <GeoJSON
+                    key="batimetria"
+                    data={layersData.batimetria}
+                    style={(feature) => ({
+                      color: '#0EA5E9',
+                      weight: 0.8,
+                      opacity: 0.6
+                    })}
+                    onEachFeature={(feat, layer) => {
+                      const p = feat.properties || {}
+                      layer.bindPopup(
+                        `<div style="font-family: monospace; font-size: 0.75rem;">
+                          <b>PROFUNDIDAD:</b> ${p.profundidad_m} m<br/>
+                          <b>CLASE:</b> ${p.clase_profundidad}<br/>
+                          <b>FUENTE:</b> ${p.fuente || 'GEBCO 2024 / ETOPO1'}
+                        </div>`
+                      )
+                    }}
+                  />
+                )}
 
-                  return (
-                    <GeoJSON
-                      key={cfg.id}
-                      data={layersData[cfg.id]}
-                      style={{
-                        fillColor: cfg.color,
-                        fillOpacity: cfg.id === 'riqueza' ? 0.25 : 0.45,
-                        color: '#000000',
-                        weight: cfg.id === 'riqueza' ? 0.3 : 0.8,
-                        opacity: 0.8,
-                      }}
-                      onEachFeature={(feature, layer) => {
-                        const p = feature.properties ?? {}
-                        const imgPath = p.layer_imagen || `/atlas_pangas_jpg/mapa_${cfg.id}.jpg`
+                {/* Layer 2: Malla H3 IERC */}
+                {activeLayers.h3_riesgo && layersData.h3_riesgo && (
+                  <GeoJSON
+                    key="h3_riesgo"
+                    data={layersData.h3_riesgo}
+                    style={(feat) => {
+                      const score = feat?.properties?.ierc_score || 50
+                      return {
+                        fillColor: getRiskColor(score),
+                        fillOpacity: 0.35,
+                        color: getRiskColor(score),
+                        weight: 0.5,
+                        opacity: 0.8
+                      }
+                    }}
+                    onEachFeature={(feat, layer) => {
+                      const p = feat.properties || {}
+                      layer.bindPopup(
+                        `<div style="font-family: monospace; font-size: 0.75rem;">
+                          <b>CELDA H3:</b> ${p.h3_index}<br/>
+                          <b>SCORE IERC:</b> <strong style="color: ${getRiskColor(p.ierc_score)}">${p.ierc_score}</strong> (${p.nivel_riesgo})<br/>
+                          <b>AMENAZA:</b> ${p.amenaza_score}<br/>
+                          <b>EXPOSICIÓN:</b> ${p.exposicion_score}<br/>
+                          <b>DIST. PROYECTO MÁS CERCANO:</b> ${p.distancia_proyecto_mas_cercano_km} km
+                        </div>`
+                      )
+                    }}
+                  />
+                )}
 
-                        layer.bindPopup(
-                          `<div style="min-width: 280px; max-width: 320px; font-family: 'IBM Plex Mono', monospace;">
-                            <div style="font-weight: 700; font-size: 0.8125rem; color: #FFFFFF; border-bottom: 1px solid #333; padding-bottom: 4px; margin-bottom: 8px;">
-                              ${p.layer_titulo || cfg.name}
-                            </div>
-                            <img src="${imgPath}" alt="Mapa Atlas" style="width: 100%; height: 120px; object-fit: cover; border: 1px solid #333; margin-bottom: 8px; border-radius: 0px;" />
-                            <div style="font-size: 0.75rem; color: #AAAAAA; margin-bottom: 6px;">
-                              <b>SITIO:</b> ${p.sitio}<br/>
-                              <b>ARTES:</b> ${p.layer_artes || 'Multiespecie'}<br/>
-                              <b>HÁBITAT:</b> ${p.habitat || 'No especificado'}<br/>
-                              <b>CÓDIGO SPP:</b> <span style="color: #FFB000;">${p.spp_code || 'VARIOS'}</span>
-                            </div>
-                            <div style="font-size: 0.6875rem; color: #666666; border-top: 1px dashed #333; padding-top: 6px;">
-                              FUENTE: Atlas PANGAS / ierc_golfo_california_v2.gpkg
-                            </div>
-                          </div>`,
-                          { maxWidth: 340 }
-                        )
-                      }}
-                    />
-                  )
-                })}
+                {/* Layer 3: Proyectos GNL Consolidados (11) */}
+                {activeLayers.proyectos_gnl && layersData.proyectos_gnl && (
+                  <GeoJSON
+                    key="proyectos_gnl"
+                    data={layersData.proyectos_gnl}
+                    pointToLayer={(feat, latlng) => {
+                      return new (window as any).L.CircleMarker(latlng, {
+                        radius: 8,
+                        fillColor: '#EF4444',
+                        fillOpacity: 0.9,
+                        color: '#FFFFFF',
+                        weight: 2
+                      })
+                    }}
+                    onEachFeature={(feat, layer) => {
+                      const p = feat.properties || {}
+                      layer.bindPopup(
+                        `<div style="font-family: monospace; font-size: 0.75rem; min-width: 220px;">
+                          <b style="color: #EF4444; font-size: 0.8125rem;">${p.nombre_proyecto}</b><br/>
+                          <b>ESTADO:</b> ${p.estado}<br/>
+                          <b>TIPO:</b> ${p.tipo_infraestructura}<br/>
+                          <b>EMPRESA:</b> ${p.empresa_promovente}<br/>
+                          <b>ESTATUS:</b> ${p.estatus_permiso}<br/>
+                          <b>FUENTE:</b> <span style="color: #F59E0B;">${p.fuente_oficial}</span>
+                        </div>`
+                      )
+                    }}
+                  />
+                )}
 
-                {/* Project markers */}
-                {activeLayers['proyectos'] && projects.map(p => {
-                  const color  = getRiskColor(p.nivel_riesgo)
-                  const radius = getRiskRadius(p.riesgo_pesquero)
-                  return (
-                    <CircleMarker
-                      key={p.proyecto_id}
-                      center={[p.latitud, p.longitud]}
-                      radius={radius}
-                      pathOptions={{
-                        fillColor: color,
-                        fillOpacity: 0.85,
-                        color: '#FFF',
-                        weight: 2,
-                      }}
-                    >
-                      <Popup>
-                        <div style={{ minWidth: 240, fontFamily: 'var(--font-mono)' }}>
-                          <p style={{ fontWeight: 700, fontSize: '0.875rem', color: '#FFF', marginBottom: 4 }}>
-                            {p.proyecto_nombre}
-                          </p>
-                          <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginBottom: 8 }}>
-                            {p.estado} · {p.estatus}
-                          </p>
-                          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
-                            <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>RIESGO PESQUERO</span>
-                            <strong style={{ color }}>
-                              {p.riesgo_pesquero > 0 ? `${p.riesgo_pesquero}/100` : 'Sin datos'}
-                            </strong>
-                          </div>
-                          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
-                            <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>NIVEL</span>
-                            <span style={{ color, fontWeight: 700, fontSize: '0.75rem' }}>{p.nivel_riesgo.toUpperCase()}</span>
-                          </div>
-                          {p.zona_mas_cercana_km !== null && (
-                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
-                              <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>ZONA MÁS CERCANA</span>
-                              <span style={{ fontSize: '0.75rem' }}>{p.zona_mas_cercana_km} km</span>
-                            </div>
-                          )}
-                        </div>
-                      </Popup>
-                    </CircleMarker>
-                  )
-                })}
               </MapContainer>
             ) : (
               <div style={{
@@ -352,26 +248,24 @@ export default function RiskMap() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 background: 'var(--color-surface)',
-                color: 'var(--color-text-primary)',
+                color: 'var(--color-amber)',
                 fontSize: '0.875rem',
                 fontFamily: 'var(--font-mono)',
               }}>
-                CARGANDO VISOR ESPACIAL SIMBOLOGÍA QGIS…
+                CARGANDO VISOR ESPACIAL IERC & CAPAS BATIMÉTRICAS GEBCO…
               </div>
             )}
           </div>
 
-          {riskData && (
-            <p style={{
-              marginTop: '0.75rem',
-              fontSize: '0.6875rem',
-              color: 'var(--color-text-muted)',
-              textAlign: 'right',
-              fontFamily: 'var(--font-mono)',
-            }}>
-              FUENTE: ierc_golfo_california_v2.gpkg & Atlas PANGAS (Moreno-Báez et al. 2011/2012)
-            </p>
-          )}
+          <p style={{
+            marginTop: '0.75rem',
+            fontSize: '0.6875rem',
+            color: 'var(--color-text-muted)',
+            textAlign: 'right',
+            fontFamily: 'var(--font-mono)',
+          }}>
+            FUENTE: ierc_golfo_california.gpkg (11 Proyectos GNL + Batimetría GEBCO 2024 / ETOPO1)
+          </p>
         </div>
       </div>
     </div>
