@@ -1,0 +1,25 @@
+max_score: 42.0
+mean_score: 8.916887748293373
+min_score: 0.0
+risk_distribution:
+  Alto: 0
+  Bajo: 822179
+  Crítico: 0
+  Moderado: 8690
+std_score: 2.710772304235856
+total_cells: 830869
+weights_used:
+  asea_count: 0.12
+  asea_gasoducto: 0.08
+  asea_terminal_gnl: 0.1
+  chlor_a_max: 0.05
+  chlor_a_mean: 0.13
+  depth_mean: 0.08
+  depth_range: 0.02
+  depth_slope: 0.04
+  pangas_total_frac: 0.05
+  sst_max: 0.05
+  sst_mean: 0.08
+  sst_std: 0.03
+  tnc_bajos_area_frac: 0.1
+  tnc_coral_area_frac: 0.08
