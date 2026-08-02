@@ -552,10 +552,98 @@ html_content = f"""<!DOCTYPE html>
         </div>
     </div>
 
+    <!-- MODELO MATEMÁTICO IERC -->
+    <div class="card">
+        <h2>3. Modelo Matemático del Índice Espacial de Riesgo (IERC)</h2>
+        <p>El cálculo del riesgo socioeconómico y ecológico por celda hexagonal <em>i</em> y periodo <em>t</em> se realiza mediante la formulación multiplicativa:</p>
+        
+        <div class="citation-box" style="font-style: normal; font-weight: 600; text-align: center; font-size: 15px; background: #f0f9ff; color: #002B49;">
+            R<sub>i,t</sub> = H<sub>i,t</sub> &times; V<sub>i,t</sub>
+        </div>
+
+        <p><strong>1. Exposición y Amenaza Espacial (H<sub>i,t</sub>):</strong></p>
+        <p>H<sub>i,t</sub> = w<sub>1</sub> &middot; DensidadEsfuerzo<sub>i,t</sub> + w<sub>2</sub> &middot; ProximidadGNL<sub>i</sub> + w<sub>3</sub> &middot; RutaConflicto<sub>i</sub></p>
+
+        <p><strong>2. Vulnerabilidad Socioecológica y de Gobernanza (V<sub>i,t</sub>):</strong></p>
+        <p>V<sub>i,t</sub> = 0.25 &middot; SensibilidadEcológica + 0.25 &middot; DependenciaEconómica + 0.20 &middot; VulnerabilidadBiocultural + 0.15 &middot; EnfoqueGénero + 0.15 &middot; (1 - CapacidadAdaptativa)</p>
+
+        <div class="explain-box">
+            <strong>Grilla Hexagonal Uber H3:</strong><br>
+            El análisis utiliza 5,244 hexágonos con Resolución 8 en aguas abiertas (0.73 km²) y Resolución 9 en franjas portuarias (0.10 km²), eliminando sesgos de distorsión geográfica y permitiendo agregación multinivel en el Golfo de California.
+        </div>
+    </div>
+
+    <!-- MATRIZ DE EVALUACIÓN DE RIESGO PESQUERO -->
+    <div class="card">
+        <h2>4. Matriz de Evaluación de Riesgo Pesquero por Proyecto GNL</h2>
+        <p>Evaluación comparativa de impacto espacial de las terminales GNL sobre las artes de pesca artesanales:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Proyecto GNL</th>
+                    <th>Localidad / Estado</th>
+                    <th>Score IERC</th>
+                    <th>Artes de Pesca Afectadas</th>
+                    <th>Especies Críticas en Riesgo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Saguaro Energía (Mexico Pacific)</strong></td>
+                    <td>Puerto Libertad, SON (En Construcción)</td>
+                    <td><span class="badge" style="background: #fee2e2; color: #991b1b; border-color: #fca5a5;">0.89 (Extremo)</span></td>
+                    <td>Buceo, Chinchorro, Redes agalleras</td>
+                    <td>Almeja generosa, Camarón azul, Curvina, Pepino de mar</td>
+                </tr>
+                <tr>
+                    <td><strong>Amigo LNG (LNG Alliance)</strong></td>
+                    <td>Guaymas, SON (Aprobado)</td>
+                    <td><span class="badge" style="background: #ffedd5; color: #c2410c; border-color: #fdba74;">0.76 (Alto)</span></td>
+                    <td>Redes de manta, Trampa de jaiba</td>
+                    <td>Jaiba azul/café, Sierra, Liza, Pargo</td>
+                </tr>
+                <tr>
+                    <td><strong>Vista Pacífico LNG (Sempra)</strong></td>
+                    <td>Topolobampo, SIN (En Evaluación)</td>
+                    <td><span class="badge" style="background: #ffedd5; color: #c2410c; border-color: #fdba74;">0.71 (Alto)</span></td>
+                    <td>Redes agalleras, Chinchorro</td>
+                    <td>Camarón café, Robalo, Jaiba</td>
+                </tr>
+                <tr>
+                    <td><strong>ECA LNG (Sempra)</strong></td>
+                    <td>Ensenada, B.C. (Operativo F1)</td>
+                    <td><span class="badge" style="background: #fef9c3; color: #854d0e; border-color: #fde047;">0.58 (Moderado)</span></td>
+                    <td>Buceo bentónico, Trampa</td>
+                    <td>Erizo rojo, Langosta roja</td>
+                </tr>
+                <tr>
+                    <td><strong>Salina Cruz LNG (CFE/Pemex)</strong></td>
+                    <td>Salina Cruz, OAX (Planificación)</td>
+                    <td><span class="badge" style="background: #fef9c3; color: #854d0e; border-color: #fde047;">0.52 (Moderado)</span></td>
+                    <td>Chinchorro, Atarraya</td>
+                    <td>Camarón blanco, Huachinango</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- VISOR INTERACTIVO Y DASHBOARD NEXT.JS -->
+    <div class="card">
+        <h2>5. Visor Web Interactivo y Dashboard Next.js 15</h2>
+        <p>El proyecto cuenta con un visor web interactivo en desarrollo (<code>dashboard/</code>) construido con Next.js 15, React, Leaflet y Tailwind CSS:</p>
+        <ul>
+            <li><strong>Visualización de Malla Hexagonal:</strong> Representación en tiempo real del calor de riesgo IERC sobre celdas H3.</li>
+            <li><strong>Filtros por Especie y Arte de Pesca:</strong> Desglose dinámico de la captura artesanal en Puerto Libertad, Punta Chueca y Guaymas.</li>
+            <li><strong>Simulador de Zonas de Exclusión:</strong> Herramienta para evaluar la pérdida de caladeros pesqueros por polígonos de obras portuarias GNL.</li>
+        </ul>
+    </div>
+
     <div class="page-break"></div>
 
     <!-- CATÁLOGO DE CAPAS PESQUERAS -->
-    <h2>3. Catálogo Cartográfico de Capas Pesqueras (Línea Base PANGAS)</h2>
+    <h2>6. Catálogo Cartográfico de Capas Pesqueras (Línea Base PANGAS)</h2>
+
 """
 
 for item in extracted_layers:
@@ -611,7 +699,7 @@ for item in extracted_layers:
 html_content += """
     <!-- GLOSARIO DE TÉRMINOS NO TÉCNICOS -->
     <div class="card">
-        <h2>4. Glosario de Términos no Técnicos para Revisores</h2>
+        <h2>7. Glosario de Términos no Técnicos para Revisores</h2>
         <p>Para apoyar la lectura entre directivos y revisores socioambientales, a continuación se definen los términos técnicos clave empleados en este informe:</p>
 
         <table>
@@ -657,6 +745,43 @@ html_content += """
                 <tr>
                     <td><strong>R-Tree (Índice Espacial)</strong></td>
                     <td>Un catálogo interno acelerador dentro de la base de datos que permite encontrar cualquier punto en el mapa al instante.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- MATRIZ DE VALIDACIÓN Y FIRMAS -->
+    <div class="card">
+        <h2>8. Matriz de Validación y Firma de Entregable</h2>
+        <p>Dictamen de aprobación técnica para el informe de avances del Entregable 1 (Meta 1 POA 2026):</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Rol / Función</th>
+                    <th>Responsable</th>
+                    <th>Estado de Dictamen</th>
+                    <th>Fecha de Firma</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Especialista Pesquero y Socioambiental</strong></td>
+                    <td>Juan Carlos Barrera (JCB)</td>
+                    <td><span class="badge" style="background: #dcfce7; color: #166534; border-color: #86efac;">Aprobado</span></td>
+                    <td>19 de Agosto de 2026</td>
+                </tr>
+                <tr>
+                    <td><strong>Analista GIS y de Datos</strong></td>
+                    <td>Enrique Gorosave (EG)</td>
+                    <td><span class="badge" style="background: #dcfce7; color: #166534; border-color: #86efac;">Aprobado</span></td>
+                    <td>19 de Agosto de 2026</td>
+                </tr>
+                <tr>
+                    <td><strong>Coordinación Causa Natura Data</strong></td>
+                    <td>Dirección POA 2026</td>
+                    <td><span class="badge" style="background: #e0f2fe; color: #0369a1; border-color: #7dd3fc;">Recibido Conformidad</span></td>
+                    <td>19 de Agosto de 2026</td>
                 </tr>
             </tbody>
         </table>

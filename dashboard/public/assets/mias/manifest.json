@@ -1,0 +1,128 @@
+[
+  {
+    "id": "saguaro_saguaro_p19_macro",
+    "proyecto": "saguaro",
+    "titulo": "Mapa de Macrolocalización y Áreas Temporales",
+    "tipo_plano": "macrolocalizacion",
+    "url": "/assets/mias/saguaro/saguaro_p19_macro.png",
+    "fuente_pdf": "Saguaro_M-09_MGA0107.pdf",
+    "pagina": 19
+  },
+  {
+    "id": "saguaro_saguaro_p20_t1_t2",
+    "proyecto": "saguaro",
+    "titulo": "Tabla II.5 y II.6 Coordenadas T1 y T2",
+    "tipo_plano": "tabla_coordenadas",
+    "url": "/assets/mias/saguaro/saguaro_p20_t1_t2.png",
+    "fuente_pdf": "Saguaro_M-09_MGA0107.pdf",
+    "pagina": 20
+  },
+  {
+    "id": "saguaro_saguaro_crop_t1",
+    "proyecto": "saguaro",
+    "titulo": "Croquis de Polígono T1 (17 Vértices)",
+    "tipo_plano": "distribucion_planta",
+    "url": "/assets/mias/saguaro/saguaro_crop_t1.png",
+    "fuente_pdf": "Saguaro_M-09_MGA0107.pdf",
+    "pagina": 20
+  },
+  {
+    "id": "saguaro_saguaro_crop_t2",
+    "proyecto": "saguaro",
+    "titulo": "Croquis de Polígono T2 (29 Vértices)",
+    "tipo_plano": "distribucion_planta",
+    "url": "/assets/mias/saguaro/saguaro_crop_t2.png",
+    "fuente_pdf": "Saguaro_M-09_MGA0107.pdf",
+    "pagina": 20
+  },
+  {
+    "id": "saguaro_saguaro_crop_reserva",
+    "proyecto": "saguaro",
+    "titulo": "Área de Reserva para Conservación",
+    "tipo_plano": "ambiental",
+    "url": "/assets/mias/saguaro/saguaro_crop_reserva.png",
+    "fuente_pdf": "Saguaro_M-09_MGA0107.pdf",
+    "pagina": 21
+  },
+  {
+    "id": "saguaro_saguaro_crop_campamentos",
+    "proyecto": "saguaro",
+    "titulo": "Campamentos Habitacionales",
+    "tipo_plano": "distribucion_planta",
+    "url": "/assets/mias/saguaro/saguaro_crop_campamentos.png",
+    "fuente_pdf": "Saguaro_M-09_MGA0107.pdf",
+    "pagina": 21
+  },
+  {
+    "id": "amigo_amigo_p02_caratula",
+    "proyecto": "amigo",
+    "titulo": "Resumen Ejecutivo y Ubicación Guaymas",
+    "tipo_plano": "macrolocalizacion",
+    "url": "/assets/mias/amigo/amigo_p02_caratula.png",
+    "fuente_pdf": "Amigo_ER_26SO2025G0143.pdf",
+    "pagina": 2
+  },
+  {
+    "id": "amigo_amigo_p75_layout",
+    "proyecto": "amigo",
+    "titulo": "Esquema General de Terminal Licuefacción",
+    "tipo_plano": "distribucion_planta",
+    "url": "/assets/mias/amigo/amigo_p75_layout.png",
+    "fuente_pdf": "Amigo_ER_26SO2025G0143.pdf",
+    "pagina": 75
+  },
+  {
+    "id": "amigo_amigo_p80_sitio",
+    "proyecto": "amigo",
+    "titulo": "Plano de Macrolocalización Guaymas",
+    "tipo_plano": "macrolocalizacion",
+    "url": "/assets/mias/amigo/amigo_p80_sitio.png",
+    "fuente_pdf": "Amigo_ER_26SO2025G0143.pdf",
+    "pagina": 80
+  },
+  {
+    "id": "vista_pacifico_vista_p90_instrumentacion",
+    "proyecto": "vista_pacifico",
+    "titulo": "Diagrama de Instalaciones FLNG",
+    "tipo_plano": "distribucion_planta",
+    "url": "/assets/mias/vista_pacifico/vista_p90_instrumentacion.png",
+    "fuente_pdf": "Vista_Pacifico_ER_25SI2024G0038.pdf",
+    "pagina": 90
+  },
+  {
+    "id": "vista_pacifico_vista_p92_tabla",
+    "proyecto": "vista_pacifico",
+    "titulo": "Tabla V.1 Especificación FLNG y Jetty",
+    "tipo_plano": "tabla_coordenadas",
+    "url": "/assets/mias/vista_pacifico/vista_p92_tabla.png",
+    "fuente_pdf": "Vista_Pacifico_ER_25SI2024G0038.pdf",
+    "pagina": 92
+  },
+  {
+    "id": "vista_pacifico_vista_crop_p23",
+    "proyecto": "vista_pacifico",
+    "titulo": "Coordenadas Marinas FLNG 2.228 km",
+    "tipo_plano": "microlocalizacion",
+    "url": "/assets/mias/vista_pacifico/vista_crop_p23.png",
+    "fuente_pdf": "Vista_Pacifico_ER_25SI2024G0038.pdf",
+    "pagina": 23
+  },
+  {
+    "id": "vista_pacifico_vista_crop_p25",
+    "proyecto": "vista_pacifico",
+    "titulo": "Polígono Terrestre ASIPONA Topolobampo",
+    "tipo_plano": "microlocalizacion",
+    "url": "/assets/mias/vista_pacifico/vista_crop_p25.png",
+    "fuente_pdf": "Vista_Pacifico_ER_25SI2024G0038.pdf",
+    "pagina": 25
+  },
+  {
+    "id": "amigo_p80_img3",
+    "proyecto": "amigo",
+    "titulo": "Plano/Diagrama Extraído de MIA pág. 80",
+    "tipo_plano": "distribucion_planta",
+    "url": "/assets/mias/amigo/amigo_p80_img3.jpeg",
+    "fuente_pdf": "Amigo_ER_26SO2025G0143.pdf",
+    "pagina": 80
+  }
+]

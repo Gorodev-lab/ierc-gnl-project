@@ -28,16 +28,16 @@ export default function Header({ onOpenCoverage }: { onOpenCoverage?: () => void
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.875rem' }}>
             <div className="hex-pulse" style={{
               width: 38, height: 38,
-              borderRadius: 6,
+              borderRadius: 0,
               background: 'var(--color-surface-2)',
               border: '1px solid var(--color-amber)',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
-              fontSize: '1.125rem',
+              fontSize: '1rem',
+              fontWeight: 700,
               color: 'var(--color-amber)',
-              boxShadow: '0 0 12px var(--color-amber-glow)',
               flexShrink: 0,
             }}>
-              ⚓
+              &gt;
             </div>
 
             <div>
@@ -71,7 +71,7 @@ export default function Header({ onOpenCoverage }: { onOpenCoverage?: () => void
                   background: 'var(--color-surface-2)',
                   border: '1px solid var(--color-amber)',
                   color: 'var(--color-amber)',
-                  borderRadius: 4,
+                  borderRadius: 0,
                   padding: '4px 10px',
                   fontSize: '0.6875rem',
                   fontWeight: 700,
@@ -79,7 +79,7 @@ export default function Header({ onOpenCoverage }: { onOpenCoverage?: () => void
                   fontFamily: 'var(--font-mono)'
                 }}
               >
-                📊 VACÍOS & GAPS
+                [VACÍOS & GAPS]
               </button>
             )}
 

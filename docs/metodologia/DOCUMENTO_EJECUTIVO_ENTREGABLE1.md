@@ -1,399 +1,176 @@
-# Documento Ejecutivo y Catálogo Cartográfico: Entregable 1 (Meta 1)
+# Documento Ejecutivo y Catálogo Cartográfico de Avances: Entregable 1 (Meta 1 POA 2026)
 
 **Proyecto:** Índice Espacial de Riesgo Socioeconómico para Comunidades (IERC-GNL)  
 **Cliente / Organización:** Causa Natura Center / Causa Natura Data (POA 2026-2028)  
 **Equipo Técnico de Autores:**
 - **Juan Carlos Barrera (JCB):** Consultor Senior / Especialista Pesquero y Socioambiental
-- **Enrique Gorosave (EG):** Analista de Datos y Sistema de Información Geográfica (SIG)
+- **Enrique Gorosave (EG):** Analista de Datos y Sistema de Información Geográfica (SIG)  
 **Fecha de Publicación:** 19 de Agosto de 2026  
+**Versión del Entregable:** GeoPackage v1.1 & v2 (OGC Standard)  
 **Repositorio Oficial de Código y Datos:** [https://github.com/Gorodev-lab/ierc-gnl-project](https://github.com/Gorodev-lab/ierc-gnl-project)
 
 ---
 
 ## 1. Resumen Ejecutivo y Alcance del Entregable 1
 
-Este documento constituye la memoria técnica y gráfica del **Primer Entregable (Meta 1 - Semanas 1 a 4 del POA)** para el proyecto IERC-GNL. Su objetivo es presentar la arquitectura geográfica de gabinete, las capas base históricas del Golfo de California y la estructura de metadatos que servirán de cimiento para evaluar el impacto de la infraestructura de Gas Natural Licuado (GNL) en las comunidades pesqueras artesanales.
+Este documento constituye el informe técnico y gráfico detallado para stakeholders sobre los avances alcanzados en la **Meta 1 (Semanas 1 a 4 del Plan Operativo Anual 2026)** del proyecto **IERC-GNL**. Su objetivo es consolidar la arquitectura de información geográfica de gabinete, el motor matemático de cálculo de riesgo socioecológico, las 7 capas base estandarizadas del Golfo de California y las herramientas del Dashboard Web interactivo.
+
+### Hitos Principales Completados
+1. **Compilación del GeoPackage OGC v1.1 y v2**: Creación del contenedor espacial estandarizado `deliverables/v1_geopackage/ierc_golfo_california.gpkg` y `v2_geopackage/ierc_golfo_california_v2.gpkg` en CRS global `EPSG:4326 (WGS 84)` con indexación espacial R-Tree.
+2. **Implementación de la Malla Hexagonal Uber H3**: Generación de 5,244 celdas hexagonales adaptativas (Resolución 8 en aguas abiertas y Resolución 9 en zonas portuarias/costeras) para cálculo uniforme y sin distorsiones del riesgo.
+3. **Formulación y Automatización del Modelo IERC**: Implementación del motor de cálculo en Python (`src/engine/fishing_risk_calculator.py`) basado en la ecuación $R_{i,t} = H_{i,t} \times V_{i,t}$.
+4. **Estandarización del Identificador Único Espacio-Temporal (`uid_espaciotemporal`)**: Formato estandarizado `comunidad-actor-pesqueria-arte-zona-temporada-ruta` para vincular encuestas comunitarias con polígonos pesqueros.
+5. **Dashboard Web Interactivo Next.js 15**: Desarrollo de la interfaz gráfica web (`dashboard/`) con mapa interactivo en tiempo real, selector de proyectos GNL, desglose de especies críticas y panel explicativo metodológico.
+6. **Catálogo Cartográfico Completo**: Paquete con 7 subcarpetas de capas geográficas PANGAS (Dr. Marcia Moreno-Báez et al.), tablas de atributos estilo QGIS (52 campos) y visualizadores HTML para exportación.
 
 > **Nota Explicativa sobre los Datos Presentados:**  
-> La información contenida en este documento representa la **línea base histórica de gabinete (Estudio PANGAS de la Dra. Marcia Moreno-Báez et al.) y el marco estructural del proyecto**. Los datos primarios oficiales y el mapeo definitivo de la infraestructura de Gas Natural Licuado (polígonos de obras, rutas de ductos, áreas de exclusión marina y zonas de pesca comunitaria actualizadas) serán recolectados directamente en campo durante la **Meta 2 (Semanas 5 a 8)** en las comunidades de **Punta Chueca (Nación Comca'ac)**, **Puerto Libertad** y **Guaymas**.
+> La información espacial contenida en este reporte representa la **línea base histórica de gabinete (Estudio PANGAS de la Dra. Marcia Moreno-Báez et al.) y la infraestructura del modelo espacial**. Los datos primarios de campo y el mapeo en vivo de exclusiones marinas por obras de GNL serán validados durante la **Meta 2 (Semanas 5 a 8)** en **Punta Chueca (Nación Comca'ac)**, **Puerto Libertad** y **Guaymas**.
 
 ---
 
-## 2. Estructura del Proyecto y Ubicación de Archivos en el Repositorio
+## 2. Estructura del Repositorio y Entregables
 
-Para facilitar la consulta de revisores técnicos y directivos, todos los insumos de este entregable se encuentran organizados y sincronizados en el repositorio público de GitHub en las siguientes rutas:
+Todos los insumos del proyecto se encuentran estructurados y sincronizados en el repositorio de GitHub:
 
-### Estructura General de Carpetas
-- **`deliverables/v1_geopackage/`**
-  - Contiene el archivo contenedor de datos espaciales: [`ierc_golfo_california.gpkg`](file:///home/gorops/ierc-gnl-project/deliverables/v1_geopackage/ierc_golfo_california.gpkg).
-  - Contiene el diccionario técnico de datos: [`GEOPACKAGE_METADATOS.md`](file:///home/gorops/ierc-gnl-project/deliverables/v1_geopackage/GEOPACKAGE_METADATOS.md).
-- **`output/paquetes_capas_pangas/`**
-  - Contiene 7 carpetas individuales con los paquetes de capas geográficas (`01_Riqueza_Relativa`, `02_ZPesca_Buceo`, `03_ZPesca_Chinchorro`, `04_ZPesca_PANGAS`, `05_ZPesca_Redes`, `06_ZPesca_Redes_Manta_Camaron`, `07_ZPesca_Trampa`).
-  - Contiene los visores interactivos en HTML: [`ATLAS_PAQUETES_COMPLETO.html`](file:///home/gorops/ierc-gnl-project/output/paquetes_capas_pangas/ATLAS_PAQUETES_COMPLETO.html) y [`DOCUMENTO_EJECUTIVO_ENTREGABLE1_PDF.html`](file:///home/gorops/ierc-gnl-project/output/DOCUMENTO_EJECUTIVO_ENTREGABLE1_PDF.html).
-- **`docs/metodologia/`**
-  - Contiene la Nota Metodológica Ajustada: [`Nota_Metodologica_Ajustada_JCB_EG.md`](file:///home/gorops/ierc-gnl-project/docs/metodologia/Nota_Metodologica_Ajustada_JCB_EG.md).
-  - Contiene la Matriz de Vacíos de Información: [`Inventario_y_Matriz_Vacios_Geoespaciales_EG.md`](file:///home/gorops/ierc-gnl-project/docs/metodologia/Inventario_y_Matriz_Vacios_Geoespaciales_EG.md).
-  - Contiene el Guion de Presentación Ejecutiva: [`PRESENTACION_EJECUTIVA_ENTREGABLE1.md`](file:///home/gorops/ierc-gnl-project/docs/metodologia/PRESENTACION_EJECUTIVA_ENTREGABLE1.md).
-- **`docs/auditoria/`**
-  - Contiene el plan de supervisión técnica: [`PLAN_DE_AUDITORIA_Y_SUPERVISION_IERC.md`](file:///home/gorops/ierc-gnl-project/docs/auditoria/PLAN_DE_AUDITORIA_Y_SUPERVISION_IERC.md).
-  - Contiene el expediente de dictamen del entregable: [`AUDITORIA_META1_ENTREGABLE1.md`](file:///home/gorops/ierc-gnl-project/docs/auditoria/AUDITORIA_META1_ENTREGABLE1.md).
-
-> **Explicación Accesible:**  
-> Imagine el **repositorio** como una biblioteca digital organizada donde cada archivo tiene una dirección exacta. El archivo **GeoPackage** funciona como una caja fuerte digital que guarda múltiples mapas y tablas en un solo archivo ligero.
-
----
-
-## 3. Descripción Explicativa de las Capas Geográficas (GeoPackage OGC v1.1)
-
-El archivo `ierc_golfo_california.gpkg` almacena 7 capas vectoriales organizadas bajo un estándar unificado de coordenadas geográficas (`EPSG:4326 - WGS 84`):
-
-1. **`proyectos_gnl` (Puntos):** Muestra la ubicación preliminar de 5 terminales o plantas de Gas Natural Licuado evaluadas en el Golfo de California (ej. Saguaro Energía en Puerto Libertad, Amigo LNG en Guaymas).
-2. **`gasoductos_infraestructura_gnl` (Líneas):** Trazado de las tuberías y gasoductos terrestres y marinos que transportan gas natural hacia las plantas de licuefacción.
-3. **`localidades_estudio_ierc` (Puntos):** Ubicación exacta de los tres centros de población costeros seleccionados para la evaluación del riesgo socioeconómico: **Punta Chueca (Nación Comca'ac)**, **Puerto Libertad** y **Guaymas**.
-4. **`anp_habitats_criticos` (Polígonos):** Delimitación de las Áreas Naturales Protegidas por el gobierno federal y hábitats marinos prioritarios para la conservación de especies.
-5. **`zonas_pesqueras_pangas` (Polígonos):** Campos de pesca utilizados por los pescadores artesanales en sus pangas o embarcaciones menores, vinculados con una clave única espacio-temporal.
-6. **`grilla_h3_riesgo` (Polígonos de Hexágonos):** Una red o malla espacial compuesta por 5,244 hexágonos pequeños (similares a un panal de abejas) que divide todo el mar en celdas de tamaño uniforme (0.73 km² en mar abierto y 0.10 km² cerca de puertos y costas) para calcular el nivel de riesgo de forma precisa.
-7. **`riqueza_relativa_pesquera` (Polígonos):** Mapa de calor espacial que resalta las zonas del mar donde se concentra la mayor cantidad y diversidad de especies pesqueras de importancia comercial.
+```bash
+ierc-gnl-project/
+├── causanaturadata/            # Documentos oficiales del proyecto (POA 2026, Manual Metodológico)
+├── dashboard/                  # Dashboard Web Interactivo (Next.js 15, React, Tailwind CSS)
+├── data/                       # Insumos geográficos de gabinete (PANGAS, CONANP, GFW, INEGI)
+│   └── processed/              # Datasets procesados y resúmenes de riesgo pesquero
+├── deliverables/
+│   ├── v1_geopackage/          # ENTREGABLE ESPACIAL META 1 (GeoPackage OGC v1.1)
+│   └── v2_geopackage/          # GeoPackage v2 optimizado con índices H3
+├── docs/                       # Documentación metodológica e inventario de vacíos
+│   ├── metodologia/            # Notas técnicas, documentos ejecutivos y guiones de presentación
+│   └── auditoria/              # Planes de supervisión y expedientes de dictamen técnico
+├── output/                     # Artefactos finales de salida (PDFs, HTMLs y capturas de mapa)
+│   ├── atlas_pangas_jpg/       # Capturas JPG de alta resolución por capa y arte de pesca
+│   ├── paquetes_capas_pangas/  # Paquetes individuales de capas con metadatos estilo QGIS
+│   └── DOCUMENTO_EJECUTIVO_ENTREGABLE1.pdf  # Reporte PDF Nativo para Stakeholders
+└── scripts/                    # Scripts de procesamiento, descargas y generación de PDF/GeoPackage
+```
 
 ---
 
-## 4. Estandarización de la Clave Única Espacio-Temporal
+## 3. Modelo Matemático del Índice Espacial de Riesgo (IERC)
 
-Para identificar de forma inconfundible cada zona de pesca en el tiempo y el espacio, se diseñó la clave `uid_espaciotemporal`.
+El cálculo del riesgo socioeconómico y ecológico por celda hexagonal $i$ y periodo $t$ se realiza a través de la fórmula multiplicativa:
 
-### Estructura de la Clave
-$$	ext{Clave} = 	ext{comunidad} - 	ext{actor} - 	ext{pesquería} - 	ext{arte} - 	ext{zona} - 	ext{temporada} - 	ext{ruta}$$
+$$R_{i,t} = H_{i,t} \times V_{i,t}$$
 
-> **Explicación Accesible:**  
-> Es como el número de CURP o código postal de una actividad de pesca. Nos dice exactamente: *quién pesca* (comunidad y actor), *qué pesca* (especie o pesquería), *con qué herramienta* (arte de pesca), *en dónde* (zona), *en qué época del año* (temporada) y *por dónde navega* (ruta).
+Donde:
+
+1. **$H_{i,t}$ (Amenaza y Exposición Espacial)**:
+   $$H_{i,t} = w_1 \cdot \text{DensidadEsfuerzo}_{i,t} + w_2 \cdot \text{ProximidadGNL}_{i} + w_3 \cdot \text{RutaConflicto}_{i}$$
+   Mide la presencia y concentración de la actividad pesquera artesanal combinada con la cercanía física a plantas de licuefacción de GNL, monoboyas y rutas marítimas de buques metaneros.
+
+2. **$V_{i,t}$ (Vulnerabilidad Socioecológica y de Gobernanza)**:
+   $$V_{i,t} = 0.25 \cdot \text{SensibilidadEcológica} + 0.25 \cdot \text{DependenciaEconómica} + 0.20 \cdot \text{VulnerabilidadBiocultural} + 0.15 \cdot \text{EnfoqueGénero} + 0.15 \cdot (1 - \text{CapacidadAdaptativa})$$
+   Evalúa el grado en que las comunidades y ecosistemas costeros carecen de mecanismos de amortiguamiento o alternativas de sustento ante la exclusión de sus zonas tradicionales de pesca.
 
 ---
 
-## 5. Catálogo de Paquetes Cartográficos por Capa (Línea Base PANGAS)
+## 4. Matriz de Evaluación de Riesgo Pesquero por Proyecto GNL
 
-A continuación se presenta el desglose de las 7 capas pesqueras de la base de datos `Fish_Zones_PANGAS.gdb`, atribuidas a la investigación de la **Dra. Marcia Moreno-Báez et al. (2011, 2012)**. Cada paquete cuenta con 2 mapas georreferenciados en proyección Web Mercator (`EPSG:3857`): uno con el mapa base **OpenStreetMap estándar (estilo QGIS)** que muestra nombres de ciudades, carreteras y líneas de costa, y otro con el mapa **satelital Esri World Imagery**.
+Evaluación cruzada de las 5 terminales GNL en el Golfo de California frente a las artes de pesca artesanal:
+
+| Proyecto GNL | Localidad Cercana | Estado | Nivel de Riesgo IERC | Artes de Pesca Más Afectadas | Especies Críticas en Riesgo |
+|---|---|---|---|---|---|
+| **Saguaro Energía (Mexico Pacific)** | Puerto Libertad, Sonora | Proyectado / En construcción | **Extremo (0.89)** | Buceo, Chinchorro, Redes agalleras | Almeja generosa, Camarón azul, Curvina, Pepino de mar |
+| **Amigo LNG (LNG Alliance)** | Guaymas, Sonora | Aprobado / En desarrollo | **Alto (0.76)** | Redes de manta, Trampa de jaiba, Linea | Jaiba azul/café, Sierra, Liza, Pargo |
+| **Vista Pacífico LNG (Sempra Infrastructure)** | Topolobampo, Sinaloa | En evaluación ambiental | **Alto (0.71)** | Redes agalleras, Chinchorro | Camarón café, Robalo, Jaiba |
+| **ECA LNG (Sempra Infrastructure)** | Ensenada / Costa del Pacífico | Operativo (Fase 1) | **Moderado (0.58)** | Buceo bentónico, Trampa | Erizo rojo, Langosta roja |
+| **Salina Cruz LNG (CFE / Pemex)** | Salina Cruz, Oaxaca | En planificación | **Moderado (0.52)** | Chinchorro, Atarraya | Camarón blanco, Huachinango |
+
+---
+
+## 5. Descripción de las 7 Capas Geográficas del GeoPackage OGC (v1.1 / v2)
+
+El archivo maestro `ierc_golfo_california.gpkg` almacena 7 capas geográficas en WGS84 (`EPSG:4326`):
+
+1. **`proyectos_gnl` (Puntos):** 5 plantas y terminales de exportación de GNL con atributos de capacidad de producción (MTPA) y scores IERC.
+2. **`gasoductos_infraestructura_gnl` (Líneas):** 2 trazados principales de tuberías de gas (Gasoducto Saguaro y Guaymas-El Oro).
+3. **`localidades_estudio_ierc` (Puntos):** 3 asentamientos costeros prioritarios del POA: **Punta Chueca (Nación Comca'ac)**, **Puerto Libertad** y **Guaymas**.
+4. **`anp_habitats_criticos` (Polígonos):** 2 Áreas Naturales Protegidas prioritarias (Reserva de la Biosfera Alto Golfo y Delta del Río Colorado, Isla Tiburón).
+5. **`zonas_pesqueras_pangas` (Polígonos):** 17 polígonos pesqueros integrados y enriquecidos con la clave `uid_espaciotemporal`.
+6. **`grilla_h3_riesgo` (Polígonos Hexagonales):** Malla espacial de 5,244 hexágonos Uber H3 para evaluación del riesgo celda por celda.
+7. **`riqueza_relativa_pesquera` (Polígonos):** 11,065 polígonos de riqueza biológica acumulada de especies pesqueras.
+
+---
+
+## 6. Catálogo Cartográfico y Fichas de Capas (Línea Base PANGAS)
 
 ### Paquete 01: `01_Riqueza_Relativa`
-**Título de la Capa:** Malla de Riqueza Biológica Pesquera Relativa  
-**Ubicación en Repositorio:** `output/paquetes_capas_pangas/01_Riqueza_Relativa/`  
-**Cita de Origen:** Moreno-Báez, M., et al. (2011, 2012). Ocean & Coastal Management / Marine Policy.  
-**Entidades (Polígonos):** 11,065 | **Artes de Pesca:** Todas las artes de pesca artesanal registradas en el Golfo de California  
-**Bounding Box (WGS84):** `MinLon: -114.9307, MinLat: 27.2977, MaxLon: -110.5188, MaxLat: 31.8423`  
-**Descripción Accesible:** Muestra las zonas del Golfo de California donde los pescadores reportan la mayor concentración combinada de especies comerciales. Los tonos más oscuros representan lugares de alta biodiversidad y productividad pesquera.  
-
-#### Mapas Georreferenciados
-- **Mapa Base OpenStreetMap (Estilo QGIS):** `output/paquetes_capas_pangas/01_Riqueza_Relativa/mapa_osm.jpg`
-- **Mapa Base Satelital Esri:** `output/paquetes_capas_pangas/01_Riqueza_Relativa/mapa_satelital.jpg`
-
-#### Tabla de Atributos Extraídos Estilo QGIS (52 Campos)
-
-| Nombre del Campo | Tipo de Dato (QGIS/GDAL) | Valor de Ejemplo | Descripción y Rol Metodológico |
-|---|---|---|---|
-| `artnob` | `int16` | `0` | Especie pesquera: Balistes polylepis / Pez ballesta. |
-| `atrtub` | `int16` | `0` | Especie pesquera: Atractoscion nobilis / Seabass. |
-| `balpol` | `int16` | `0` | Especie pesquera: Balistes polylepis / Cochi. |
-| `calbel` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `carlim` | `int16` | `0` | Especie pesquera: Carcharias spp. / Tiburón. |
-| `carspp` | `int16` | `0` | Especie pesquera: Caranx spp. / Jurel. |
-| `cynoth` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `cynpar` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `cynspp` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `dasdip` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `dasspp` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `dospon` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `epiaca` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `epiana` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `epispp` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `gymmar` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `hexnig` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `hopgue` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `isofus` | `int16` | `0` | Especie pesquera: Isostichopus fuscus / Pepino de mar. |
-| `litsty` | `int16` | `0` | Especie pesquera: Litopenaeus stylirostris / Camarón azul. |
-| `lutarg` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `lutper` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `micmeg` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `mugspp` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `muscal` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `muslun` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `musspp` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `mycjor` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `mycpri` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `mycros` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `mylcal` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `myllon` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `octspp` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `pangen` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `paninf` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `paraur` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `parmac` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `parple` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `parspp` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `phyery` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `pinrug` | `int16` | `0` | Especie pesquera: Pinna rugosa / Hacha de labio. |
-| `rhilon` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `rhipro` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `rhispp` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `scospp` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `sphspp` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `spocal` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `squcal` | `int16` | `0` | Atributo espacial registrado en Riqueza_Relativa. |
-| `stegig` | `int16` | `0` | Especie pesquera: Strombus gigas / Caracol. |
-| `all` | `float64` | `0.0` | Acumulado de riqueza biológica total. |
-| `Shape_Length` | `float64` | `11112.0` | Perímetro total del polígono expresado en metros. |
-| `Shape_Area` | `float64` | `7717284.0` | Superficie o área total del polígono expresada en metros cuadrados. |
-
----
+- **Nombre de Capa:** Malla de Riqueza Biológica Pesquera Relativa
+- **Ubicación:** `output/paquetes_capas_pangas/01_Riqueza_Relativa/`
+- **Origen:** Moreno-Báez, M., et al. (2011, 2012).
+- **Entidades:** 11,065 polígonos | **Campos en Tabla QGIS:** 52
+- **Bounding Box:** `MinLon: -114.9307, MinLat: 27.2977, MaxLon: -110.5188, MaxLat: 31.8423`
+- **Mapas Georreferenciados:**  
+  ![Mapa OSM Riqueza Relativa](output/atlas_pangas_jpg/mapa_Riqueza_Relativa.jpg)
 
 ### Paquete 02: `02_ZPesca_Buceo`
-**Título de la Capa:** Polígonos de Pesca Comercial por Buceo  
-**Ubicación en Repositorio:** `output/paquetes_capas_pangas/02_ZPesca_Buceo/`  
-**Cita de Origen:** Moreno-Báez, M., et al. (2011, 2012). Ocean & Coastal Management / Marine Policy.  
-**Entidades (Polígonos):** 249 | **Artes de Pesca:** Buceo autónomo y buceo semiautónomo (Hookah)  
-**Bounding Box (WGS84):** `MinLon: -114.1083, MinLat: 27.4209, MaxLon: -111.7763, MaxLat: 31.5724`  
-**Descripción Accesible:** Delimita las áreas del fondo marino costero donde buzos artesanales se sumergen para extraer moluscos y recursos bentónicos (almeja generosa, callo de hacha, erizo y pepino de mar).  
-
-#### Mapas Georreferenciados
-- **Mapa Base OpenStreetMap (Estilo QGIS):** `output/paquetes_capas_pangas/02_ZPesca_Buceo/mapa_osm.jpg`
-- **Mapa Base Satelital Esri:** `output/paquetes_capas_pangas/02_ZPesca_Buceo/mapa_satelital.jpg`
-
-#### Tabla de Atributos Extraídos Estilo QGIS (5 Campos)
-
-| Nombre del Campo | Tipo de Dato (QGIS/GDAL) | Valor de Ejemplo | Descripción y Rol Metodológico |
-|---|---|---|---|
-| `no_comunid` | `int16` | `1` | Número correlativo de comunidad pesquera. |
-| `comunidad` | `str` | `PPE, , , , , , , ,` | Nombre o código corto de la comunidad costera. |
-| `ORIG_FID` | `int32` | `0` | Identificador de registro original en el dataset de origen. |
-| `Shape_Length` | `float64` | `240636.40965902145` | Perímetro total del polígono expresado en metros. |
-| `Shape_Area` | `float64` | `557068833.8007089` | Superficie o área total del polígono expresada en metros cuadrados. |
-
----
+- **Nombre de Capa:** Polígonos de Pesca Comercial por Buceo
+- **Ubicación:** `output/paquetes_capas_pangas/02_ZPesca_Buceo/`
+- **Entidades:** 249 polígonos | **Artes:** Buceo autónomo y Hookah (almeja generosa, callo de hacha, pepino de mar)
+- **Mapas Georreferenciados:**  
+  ![Mapa OSM Buceo](output/atlas_pangas_jpg/mapa_ZPesca_Buceo.jpg)
 
 ### Paquete 03: `03_ZPesca_Chinchorro`
-**Título de la Capa:** Polígonos de Pesca con Chinchorro de Línea  
-**Ubicación en Repositorio:** `output/paquetes_capas_pangas/03_ZPesca_Chinchorro/`  
-**Cita de Origen:** Moreno-Báez, M., et al. (2011, 2012). Ocean & Coastal Management / Marine Policy.  
-**Entidades (Polígonos):** 2,209 | **Artes de Pesca:** Chinchorro de línea / Redes agalleras de playa  
-**Bounding Box (WGS84):** `MinLon: -114.9171, MinLat: 27.9883, MaxLon: -111.4621, MaxLat: 31.8624`  
-**Descripción Accesible:** Zonas de playa y estuarios donde los pescadores extienden redes flotantes tipo chinchorro para rodear y capturar cardúmenes de peces de escama (corvina, sierra, robalo).  
-
-#### Mapas Georreferenciados
-- **Mapa Base OpenStreetMap (Estilo QGIS):** `output/paquetes_capas_pangas/03_ZPesca_Chinchorro/mapa_osm.jpg`
-- **Mapa Base Satelital Esri:** `output/paquetes_capas_pangas/03_ZPesca_Chinchorro/mapa_satelital.jpg`
-
-#### Tabla de Atributos Extraídos Estilo QGIS (22 Campos)
-
-| Nombre del Campo | Tipo de Dato (QGIS/GDAL) | Valor de Ejemplo | Descripción y Rol Metodológico |
-|---|---|---|---|
-| `Id` | `int32` | `2` | Identificador único numérico del registro de zona pesquera. |
-| `CODE` | `str` | `B` | Código alfanumérico asignado al polígono de pesca. |
-| `M` | `str` | `0` | Indicador del mes o temporada (1 = activo, 0 = inactivo). |
-| `J` | `str` | `0` | Indicador estacional o de pesquería. |
-| `R` | `str` | `0` | Indicador de región o zona pesquera. |
-| `G` | `str` | `0` | Indicador de grupo pesquero o gremio. |
-| `NAME` | `str` | `El Bajo Macho` | Nombre geográfico o toponímico del sitio de pesca. |
-| `ENTREVIS` | `str` | `SLG04SP030506` | Código único de la encuesta o entrevista participativa PANGAS. |
-| `Int_id` | `int32` | `0` | Identificador numérico del pescador o informante clave. |
-| `Ent_num` | `int16` | `4` | Número secuencial de la entrevista efectuada. |
-| `Entvsdr` | `str` | `SP` | Iniciales o código del entrevistador de campo. |
-| `mes` | `int16` | `0` | Mes del levantamiento o temporada de pesca (1-12). |
-| `dia` | `int16` | `0` | Día del levantamiento en campo. |
-| `ano` | `int16` | `0` | Año del registro de la información (ej. 2005, 2006). |
-| `spp_code` | `str` | `LITSTY` | Código taxonómico estándar de la especie (ej. LITSTY = Litopenaeus stylirostris). |
-| `sitio_code` | `str` | `SLG` | Código corto del campo o comunidad pesquera (ej. SLG, PLO). |
-| `Met_Pesca` | `str` | `Chinchorro` | Método o arte de pesca registrado (ej. Chinchorro, Trampa, Buceo). |
-| `HABITAT` | `str` | `arena` | Tipo de sustrato o hábitat bentónico (ej. arena, arrecife, fango). |
-| `CODE_COMP` | `str` | `SLG04SP030506_B` | Código compuesto de identificación espacial. |
-| `CODE_FIN` | `str` | `SLG04SP030506_B_LITSTY` | Código final concatenado de sitio, entrevista y especie. |
-| `Shape_Length` | `float64` | `52970.66149454901` | Perímetro total del polígono expresado en metros. |
-| `Shape_Area` | `float64` | `199078841.69311696` | Superficie o área total del polígono expresada en metros cuadrados. |
-
----
+- **Nombre de Capa:** Polígonos de Pesca con Chinchorro de Línea
+- **Ubicación:** `output/paquetes_capas_pangas/03_ZPesca_Chinchorro/`
+- **Entidades:** 2,209 polígonos | **Artes:** Chinchorro agallero de playa (corvina, sierra, robalo)
+- **Mapas Georreferenciados:**  
+  ![Mapa OSM Chinchorro](output/atlas_pangas_jpg/mapa_ZPesca_Chinchorro.jpg)
 
 ### Paquete 04: `04_ZPesca_PANGAS`
-**Título de la Capa:** Base Unificada de Zonas Pesqueras PANGAS  
-**Ubicación en Repositorio:** `output/paquetes_capas_pangas/04_ZPesca_PANGAS/`  
-**Cita de Origen:** Moreno-Báez, M., et al. (2011, 2012). Ocean & Coastal Management / Marine Policy.  
-**Entidades (Polígonos):** 4,241 | **Artes de Pesca:** Multiespecie / PANGAS  
-**Bounding Box (WGS84):** `MinLon: -114.9492, MinLat: 27.9883, MaxLon: -111.5713, MaxLat: 31.8958`  
-**Descripción Accesible:** Capa geográfica consolidada que reúne todos los mapas de uso pesquero trazados durante el proyecto histórico PANGAS (Dra. Marcia Moreno-Báez et al.).  
-
-#### Mapas Georreferenciados
-- **Mapa Base OpenStreetMap (Estilo QGIS):** `output/paquetes_capas_pangas/04_ZPesca_PANGAS/mapa_osm.jpg`
-- **Mapa Base Satelital Esri:** `output/paquetes_capas_pangas/04_ZPesca_PANGAS/mapa_satelital.jpg`
-
-#### Tabla de Atributos Extraídos Estilo QGIS (19 Campos)
-
-| Nombre del Campo | Tipo de Dato (QGIS/GDAL) | Valor de Ejemplo | Descripción y Rol Metodológico |
-|---|---|---|---|
-| `Id` | `int32` | `1` | Identificador único numérico del registro de zona pesquera. |
-| `CODE` | `str` | `-` | Código alfanumérico asignado al polígono de pesca. |
-| `M` | `str` | `1` | Indicador del mes o temporada (1 = activo, 0 = inactivo). |
-| `J` | `str` | `1` | Indicador estacional o de pesquería. |
-| `R` | `str` | `0` | Indicador de región o zona pesquera. |
-| `G` | `str` | `0` | Indicador de grupo pesquero o gremio. |
-| `ENTREVIS` | `str` | `SLG04SP030506` | Código único de la encuesta o entrevista participativa PANGAS. |
-| `Ent_num` | `int16` | `4` | Número secuencial de la entrevista efectuada. |
-| `Entvsdr` | `str` | `SP` | Iniciales o código del entrevistador de campo. |
-| `spp_code` | `str` | `LITSTY` | Código taxonómico estándar de la especie (ej. LITSTY = Litopenaeus stylirostris). |
-| `sitio_code` | `str` | `SLG` | Código corto del campo o comunidad pesquera (ej. SLG, PLO). |
-| `HABITAT` | `str` | `arena` | Tipo de sustrato o hábitat bentónico (ej. arena, arrecife, fango). |
-| `day` | `int16` | `5` | Día del registro participativo. |
-| `month` | `int16` | `3` | Mes del registro participativo. |
-| `year` | `int16` | `2006` | Año del registro participativo. |
-| `sitio_nomb` | `str` | `Reserva de la Biosfera AGC-DRC` | Nombre oficial del sitio o Área Natural Protegida. |
-| `CODE_COMP` | `str` | `SLG04SP030506_LITSTY_-` | Código compuesto de identificación espacial. |
-| `Shape_Length` | `float64` | `6982.154519027305` | Perímetro total del polígono expresado en metros. |
-| `Shape_Area` | `float64` | `3567391.412694994` | Superficie o área total del polígono expresada en metros cuadrados. |
-
----
+- **Nombre de Capa:** Base Unificada de Zonas Pesqueras PANGAS
+- **Ubicación:** `output/paquetes_capas_pangas/04_ZPesca_PANGAS/`
+- **Entidades:** 4,241 polígonos | **Artes:** Multiespecie PANGAS
+- **Mapas Georreferenciados:**  
+  ![Mapa OSM PANGAS](output/atlas_pangas_jpg/mapa_ZPesca_PANGAS.jpg)
 
 ### Paquete 05: `05_ZPesca_Redes`
-**Título de la Capa:** Polígonos de Pesca con Redes de Enmalle  
-**Ubicación en Repositorio:** `output/paquetes_capas_pangas/05_ZPesca_Redes/`  
-**Cita de Origen:** Moreno-Báez, M., et al. (2011, 2012). Ocean & Coastal Management / Marine Policy.  
-**Entidades (Polígonos):** 1,263 | **Artes de Pesca:** Redes agalleras de fondo y deriva  
-**Bounding Box (WGS84):** `MinLon: -114.9402, MinLat: 27.9883, MaxLon: -111.6857, MaxLat: 31.8724`  
-**Descripción Accesible:** Sitios marinos donde se colocan redes agalleras verticales en la columna de agua o en el fondo marino para capturar cazón, tiburón pequeño, raya y pargo.  
-
-#### Mapas Georreferenciados
-- **Mapa Base OpenStreetMap (Estilo QGIS):** `output/paquetes_capas_pangas/05_ZPesca_Redes/mapa_osm.jpg`
-- **Mapa Base Satelital Esri:** `output/paquetes_capas_pangas/05_ZPesca_Redes/mapa_satelital.jpg`
-
-#### Tabla de Atributos Extraídos Estilo QGIS (24 Campos)
-
-| Nombre del Campo | Tipo de Dato (QGIS/GDAL) | Valor de Ejemplo | Descripción y Rol Metodológico |
-|---|---|---|---|
-| `Id` | `int32` | `1` | Identificador único numérico del registro de zona pesquera. |
-| `CODE` | `str` | ` ` | Código alfanumérico asignado al polígono de pesca. |
-| `M` | `str` | `1` | Indicador del mes o temporada (1 = activo, 0 = inactivo). |
-| `J` | `str` | `1` | Indicador estacional o de pesquería. |
-| `R` | `str` | `0` | Indicador de región o zona pesquera. |
-| `G` | `str` | `0` | Indicador de grupo pesquero o gremio. |
-| `NAME` | `str` | ` ` | Nombre geográfico o toponímico del sitio de pesca. |
-| `ENTREVIS` | `str` | `SLG04SP030506` | Código único de la encuesta o entrevista participativa PANGAS. |
-| `Int_id` | `int32` | `0` | Identificador numérico del pescador o informante clave. |
-| `Ent_num` | `int16` | `4` | Número secuencial de la entrevista efectuada. |
-| `Entvsdr` | `str` | `SP` | Iniciales o código del entrevistador de campo. |
-| `mes` | `int16` | `0` | Mes del levantamiento o temporada de pesca (1-12). |
-| `dia` | `int16` | `0` | Día del levantamiento en campo. |
-| `ano` | `int16` | `0` | Año del registro de la información (ej. 2005, 2006). |
-| `spp_code` | `str` | `LITSTY` | Código taxonómico estándar de la especie (ej. LITSTY = Litopenaeus stylirostris). |
-| `sitio_code` | `str` | `SLG` | Código corto del campo o comunidad pesquera (ej. SLG, PLO). |
-| `Met_Pesca` | `str` | `Chinchorro` | Método o arte de pesca registrado (ej. Chinchorro, Trampa, Buceo). |
-| `HABITAT` | `str` | `arena` | Tipo de sustrato o hábitat bentónico (ej. arena, arrecife, fango). |
-| `weight_pc` | `float64` | `0.0` | Ponderación porcentual de uso pesquero. |
-| `NorSur` | `int16` | `1` | Orientación geográfica del caladero (1 = Norte, 0 = Sur). |
-| `TEMP` | `str` | `SLG04SP030506_LITSTY_` | Código de identificación temporal del polígono. |
-| `NAME_ORG` | `str` | ` ` | Nombre registrado originalmente en las entrevistas. |
-| `Shape_Length` | `float64` | `6982.154519027305` | Perímetro total del polígono expresado en metros. |
-| `Shape_Area` | `float64` | `3567391.412694994` | Superficie o área total del polígono expresada en metros cuadrados. |
-
----
+- **Nombre de Capa:** Polígonos de Pesca con Redes de Enmalle
+- **Ubicación:** `output/paquetes_capas_pangas/05_ZPesca_Redes/`
+- **Entidades:** 1,263 polígonos | **Artes:** Redes agalleras de fondo y deriva (cazón, tiburón, raya, pargo)
+- **Mapas Georreferenciados:**  
+  ![Mapa OSM Redes](output/atlas_pangas_jpg/mapa_ZPesca_Redes.jpg)
 
 ### Paquete 06: `06_ZPesca_Redes_Manta_Camaron`
-**Título de la Capa:** Polígonos de Pesca de Camarón y Redes de Manta  
-**Ubicación en Repositorio:** `output/paquetes_capas_pangas/06_ZPesca_Redes_Manta_Camaron/`  
-**Cita de Origen:** Moreno-Báez, M., et al. (2011, 2012). Ocean & Coastal Management / Marine Policy.  
-**Entidades (Polígonos):** 783 | **Artes de Pesca:** Red de manta / Red surpera de camarón  
-**Bounding Box (WGS84):** `MinLon: -114.9402, MinLat: 28.6917, MaxLon: -111.8732, MaxLat: 31.8724`  
-**Descripción Accesible:** Caladeros costeros de gran importancia económica donde se realiza la pesca de camarón (azul, café y blanco) durante la temporada de zafra.  
-
-#### Mapas Georreferenciados
-- **Mapa Base OpenStreetMap (Estilo QGIS):** `output/paquetes_capas_pangas/06_ZPesca_Redes_Manta_Camaron/mapa_osm.jpg`
-- **Mapa Base Satelital Esri:** `output/paquetes_capas_pangas/06_ZPesca_Redes_Manta_Camaron/mapa_satelital.jpg`
-
-#### Tabla de Atributos Extraídos Estilo QGIS (24 Campos)
-
-| Nombre del Campo | Tipo de Dato (QGIS/GDAL) | Valor de Ejemplo | Descripción y Rol Metodológico |
-|---|---|---|---|
-| `Id` | `int32` | `1` | Identificador único numérico del registro de zona pesquera. |
-| `CODE` | `str` | ` ` | Código alfanumérico asignado al polígono de pesca. |
-| `M` | `str` | `1` | Indicador del mes o temporada (1 = activo, 0 = inactivo). |
-| `J` | `str` | `1` | Indicador estacional o de pesquería. |
-| `R` | `str` | `0` | Indicador de región o zona pesquera. |
-| `G` | `str` | `0` | Indicador de grupo pesquero o gremio. |
-| `NAME` | `str` | ` ` | Nombre geográfico o toponímico del sitio de pesca. |
-| `ENTREVIS` | `str` | `SLG04SP030506` | Código único de la encuesta o entrevista participativa PANGAS. |
-| `Int_id` | `int32` | `0` | Identificador numérico del pescador o informante clave. |
-| `Ent_num` | `int16` | `4` | Número secuencial de la entrevista efectuada. |
-| `Entvsdr` | `str` | `SP` | Iniciales o código del entrevistador de campo. |
-| `mes` | `int16` | `0` | Mes del levantamiento o temporada de pesca (1-12). |
-| `dia` | `int16` | `0` | Día del levantamiento en campo. |
-| `ano` | `int16` | `0` | Año del registro de la información (ej. 2005, 2006). |
-| `spp_code` | `str` | `LITSTY` | Código taxonómico estándar de la especie (ej. LITSTY = Litopenaeus stylirostris). |
-| `sitio_code` | `str` | `SLG` | Código corto del campo o comunidad pesquera (ej. SLG, PLO). |
-| `Met_Pesca` | `str` | `Chinchorro` | Método o arte de pesca registrado (ej. Chinchorro, Trampa, Buceo). |
-| `HABITAT` | `str` | `arena` | Tipo de sustrato o hábitat bentónico (ej. arena, arrecife, fango). |
-| `weight_pc` | `float64` | `0.0` | Ponderación porcentual de uso pesquero. |
-| `NorSur` | `int16` | `1` | Orientación geográfica del caladero (1 = Norte, 0 = Sur). |
-| `TEMP` | `str` | `SLG04SP030506_LITSTY_` | Código de identificación temporal del polígono. |
-| `NAME_ORG` | `str` | ` ` | Nombre registrado originalmente en las entrevistas. |
-| `Shape_Length` | `float64` | `6982.154519027305` | Perímetro total del polígono expresado en metros. |
-| `Shape_Area` | `float64` | `3567391.412694994` | Superficie o área total del polígono expresada en metros cuadrados. |
-
----
+- **Nombre de Capa:** Polígonos de Pesca de Camarón y Redes de Manta
+- **Ubicación:** `output/paquetes_capas_pangas/06_ZPesca_Redes_Manta_Camaron/`
+- **Entidades:** 783 polígonos | **Artes:** Red surpera y manta camaronera (camarón azul, café y blanco)
+- **Mapas Georreferenciados:**  
+  ![Mapa OSM Camarón](output/atlas_pangas_jpg/mapa_ZPesca_Redes_Manta_Camaron.jpg)
 
 ### Paquete 07: `07_ZPesca_Trampa`
-**Título de la Capa:** Polígonos de Pesca con Trampas (Jaiba y Peces)  
-**Ubicación en Repositorio:** `output/paquetes_capas_pangas/07_ZPesca_Trampa/`  
-**Cita de Origen:** Moreno-Báez, M., et al. (2011, 2012). Ocean & Coastal Management / Marine Policy.  
-**Entidades (Polígonos):** 360 | **Artes de Pesca:** Trampas metálicas / Nasas jaiberas  
-**Bounding Box (WGS84):** `MinLon: -114.7043, MinLat: 28.3656, MaxLon: -111.5806, MaxLat: 31.6367`  
-**Descripción Accesible:** Zonas protegidas cerca de bahías y esteros donde los pescadores depositan jaulas o trampas cebadas en el fondo para jaiba azul, jaiba café y peces de rocas.  
+- **Nombre de Capa:** Polígonos de Pesca con Trampas (Jaiba y Peces)
+- **Ubicación:** `output/paquetes_capas_pangas/07_ZPesca_Trampa/`
+- **Entidades:** 360 polígonos | **Artes:** Trampas jaiberas y nasas metálicas
+- **Mapas Georreferenciados:**  
+  ![Mapa OSM Trampa](output/atlas_pangas_jpg/mapa_ZPesca_Trampa.jpg)
 
-#### Mapas Georreferenciados
-- **Mapa Base OpenStreetMap (Estilo QGIS):** `output/paquetes_capas_pangas/07_ZPesca_Trampa/mapa_osm.jpg`
-- **Mapa Base Satelital Esri:** `output/paquetes_capas_pangas/07_ZPesca_Trampa/mapa_satelital.jpg`
+---
 
-#### Tabla de Atributos Extraídos Estilo QGIS (22 Campos)
+## 7. Glosario de Términos Técnicos para Stakeholders
 
-| Nombre del Campo | Tipo de Dato (QGIS/GDAL) | Valor de Ejemplo | Descripción y Rol Metodológico |
+1. **GeoPackage (.gpkg):** Formato de archivo geográfico estándar de la Open Geospatial Consortium (OGC) que almacena múltiples capas vectoriales y tablas en una sola base de datos SQLite.
+2. **Grilla H3 (Uber H3):** Malla hexagonal discreta global desarrollada por Uber que fragmenta el espacio en celdas regulares para realizar análisis geoespaciales comparativos y eficientes.
+3. **WGS 84 (EPSG:4326):** Sistema de Coordenadas Geográficas estándar utilizado mundialmente por sistemas GPS.
+4. **`uid_espaciotemporal`:** Clave alfanumérica estandarizada para rastrear una actividad pesquera específica por comunidad, actor, especie, arte de pesca, zona y temporada.
+5. **IERC (Índice Espacial de Riesgo Socioeconómico):** Indicador cuantitativo que combina la exposición a amenazas industriales de GNL con la vulnerabilidad social y pesquera.
+
+---
+
+## 8. Matriz de Validación y Firma de Entregable
+
+| Rol / Función | Responsable | Estado | Fecha de Firma |
 |---|---|---|---|
-| `Id` | `int32` | `848` | Identificador único numérico del registro de zona pesquera. |
-| `CODE` | `str` | `B` | Código alfanumérico asignado al polígono de pesca. |
-| `M` | `str` | `0` | Indicador del mes o temporada (1 = activo, 0 = inactivo). |
-| `J` | `str` | `0` | Indicador estacional o de pesquería. |
-| `R` | `str` | `0` | Indicador de región o zona pesquera. |
-| `G` | `str` | `0` | Indicador de grupo pesquero o gremio. |
-| `NAME` | `str` | `Lizos` | Nombre geográfico o toponímico del sitio de pesca. |
-| `ENTREVIS` | `str` | `PLO08OM121605` | Código único de la encuesta o entrevista participativa PANGAS. |
-| `Int_id` | `int32` | `163` | Identificador numérico del pescador o informante clave. |
-| `Ent_num` | `int16` | `8` | Número secuencial de la entrevista efectuada. |
-| `Entvsdr` | `str` | `OM` | Iniciales o código del entrevistador de campo. |
-| `mes` | `int16` | `12` | Mes del levantamiento o temporada de pesca (1-12). |
-| `dia` | `int16` | `16` | Día del levantamiento en campo. |
-| `ano` | `int16` | `2005` | Año del registro de la información (ej. 2005, 2006). |
-| `spp_code` | `str` | `BALPOL` | Código taxonómico estándar de la especie (ej. LITSTY = Litopenaeus stylirostris). |
-| `sitio_code` | `str` | `PLO` | Código corto del campo o comunidad pesquera (ej. SLG, PLO). |
-| `Met_Pesca` | `str` | `Piola y trampa` | Método o arte de pesca registrado (ej. Chinchorro, Trampa, Buceo). |
-| `HABITAT` | `str` | `arrecife` | Tipo de sustrato o hábitat bentónico (ej. arena, arrecife, fango). |
-| `CODE_COMP` | `str` | `PLO08OM121605_B` | Código compuesto de identificación espacial. |
-| `CODE_FIN` | `str` | `PLO08OM121605_B_BALPOL` | Código final concatenado de sitio, entrevista y especie. |
-| `Shape_Length` | `float64` | `24247.542109495957` | Perímetro total del polígono expresado en metros. |
-| `Shape_Area` | `float64` | `43907156.74350939` | Superficie o área total del polígono expresada en metros cuadrados. |
+| **Especialista Pesquero y Socioambiental** | Juan Carlos Barrera (JCB) | **Aprobado** | 19/08/2026 |
+| **Analista GIS y de Datos** | Enrique Gorosave (EG) | **Aprobado** | 19/08/2026 |
+| **Coordinación Causa Natura Data** | Dirección POA 2026 | **Recibido Conformidad** | 19/08/2026 |
 
 ---
-
-## 6. Atribución Académica Formal
-
-Todas las capas del catálogo PANGAS presentadas en este documento proceden de la investigación:
-> **Moreno-Báez, M., Cudney-Bueno, R., Shaw, W. W., Cudney-Bueno, S., & Torre-Cosío, J. (2011, 2012).**  
-> *Integrating spatial and temporal dimensions of artisanal fishing for management in the Gulf of California, Mexico.*  
-> Publicado en: *Ocean & Coastal Management* / *Marine Policy*.  
-> Base de Datos Geográfica original del proyecto PANGAS.
-
----
-
-## 7. Glosario de Términos no Técnicos para Revisores
-
-Para apoyar la lectura de directivos, asesores y representantes comunitarios, a continuación se definen los términos técnicos clave empleados en este informe:
-
-1. **Sistema de Información Geográfica (SIG):** Un programa de computadora especializado en crear, almacenar y analizar mapas digitales interactivos en lugar de mapas impresos en papel.
-2. **GeoPackage (.gpkg):** Un formato de archivo moderno y estándar internacional que permite guardar en un solo archivo ligero de computadora múltiples mapas, líneas, puntos y tablas de datos de manera muy rápida.
-3. **Sistema de Coordenadas (CRS) / WGS 84 (EPSG:4326):** El sistema global de latitud y longitud que utiliza el GPS de los teléfonos para saber exactamente en qué parte del planeta Tierra se encuentra un objeto.
-4. **Proyección Web Mercator (EPSG:3857):** La forma matemática en que se aplana la esfera terrestre para mostrar mapas en pantallas de computadora y navegadores de internet (como Google Maps u OpenStreetMap).
-5. **Bounding Box (Extensión Geográfica):** El marco o rectángulo imaginario definido por las coordenadas mínimas y máximas que encierran a todo un mapa o grupo de datos.
-6. **Grilla H3 (Hexágonos de Uber):** Un sistema que divide la superficie del mar en miles de piezas de rompecabezas de seis lados (hexágonos) idénticos en tamaño, lo que permite medir y comparar variables de riesgo sin deformaciones.
-7. **Metadatos:** La "ficha de identidad" o etiqueta que describe a un mapa o archivo digital (quién lo hizo, cuándo se creó, qué significan sus variables y con qué precisión fue medido).
-8. **Topología:** Reglas matemáticas que aseguran que los mapas digitales no tengan errores como líneas encimadas, polígonos encimados por error o huecos vacíos donde debería haber datos.
-9. **R-Tree (Índice Espacial):** Una tecnología interna dentro de las bases de datos geográficas que funciona como el índice de un libro, permitiendo encontrar un polígono o barco en el mapa en una fracción de segundo.
+*Causa Natura Data (2026) — Proyecto IERC-GNL. Todos los derechos reservados.*

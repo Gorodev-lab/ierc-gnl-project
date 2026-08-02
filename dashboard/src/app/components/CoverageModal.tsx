@@ -62,7 +62,6 @@ export default function CoverageModal({ isOpen, onClose }: { isOpen: boolean; on
       <div style={{
         background: 'var(--color-surface)',
         border: '1px solid var(--color-amber)',
-        boxShadow: '0 0 30px rgba(245, 158, 11, 0.2)',
         maxWidth: '900px',
         width: '100%',
         maxHeight: '90vh',
@@ -82,7 +81,7 @@ export default function CoverageModal({ isOpen, onClose }: { isOpen: boolean; on
         }}>
           <div>
             <h3 style={{ color: 'var(--color-amber)', fontSize: '1.125rem', fontWeight: 700 }}>
-              📊 REPORTES & MATRIZ DE VACÍOS DE INFORMACIÓN (POA 2026)
+              &gt; REPORTES & MATRIZ DE VACÍOS DE INFORMACIÓN (POA 2026)
             </h3>
             <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '0.25rem' }}>
               Diagnóstico de cobertura institucional (ASEA, CENAGAS, SENER, GEBCO) y Plan de Acción Priorizado
@@ -100,7 +99,7 @@ export default function CoverageModal({ isOpen, onClose }: { isOpen: boolean; on
               fontSize: '0.875rem'
             }}
           >
-            ✕ CERRAR
+            [X] CERRAR
           </button>
         </div>
 
@@ -136,7 +135,7 @@ export default function CoverageModal({ isOpen, onClose }: { isOpen: boolean; on
             {/* High Priority Actions */}
             <div>
               <h4 style={{ color: 'var(--color-amber)', borderBottom: '1px dashed var(--color-border)', paddingBottom: '0.35rem', marginBottom: '0.6rem' }}>
-                🎯 ACCIONES PRIORITARIAS DE IMPLEMENTACIÓN (ITERACIÓN ALTA)
+                &gt; ACCIONES PRIORITARIAS DE IMPLEMENTACIÓN (ITERACIÓN ALTA)
               </h4>
               <ul style={{ listStyleType: 'square', paddingLeft: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
                 {data.acciones_recomendadas_proxima_iteracion.prioridad_alta?.map((act, i) => (
@@ -148,7 +147,7 @@ export default function CoverageModal({ isOpen, onClose }: { isOpen: boolean; on
             {/* Identified Gaps */}
             <div>
               <h4 style={{ color: '#EF4444', borderBottom: '1px dashed var(--color-border)', paddingBottom: '0.35rem', marginBottom: '0.6rem' }}>
-                ⚠️ VACÍOS DE INFORMACIÓN CLAVE (GAPS DETECTADOS)
+                [!] VACÍOS DE INFORMACIÓN CLAVE (GAPS DETECTADOS)
               </h4>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <div>

@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState, useRef } from 'react'
 import dynamic from 'next/dynamic'
+import MiaInspectorModal from './MiaInspectorModal'
 
 const MapContainer   = dynamic(() => import('react-leaflet').then(m => m.MapContainer),   { ssr: false })
 const TileLayer      = dynamic(() => import('react-leaflet').then(m => m.TileLayer),      { ssr: false })
@@ -18,7 +19,7 @@ interface LayerConfig {
 }
 
 const LAYER_CONFIGS: LayerConfig[] = [
-  { id: 'proyectos_gnl',    name: '4 Terminales GNL (13 Features Vectoriales)', file: '/data/proyectos_gnl.geojson', color: '#EF4444' },
+  { id: 'proyectos_gnl',    name: '4 Terminales GNL (11 Features v3)', file: '/data/terminales_gnl_v3.geojson', color: '#EF4444' },
   { id: 'capas_contexto',   name: 'Gasoductos, Sitios Ramsar & ANPs',  file: '/data/capas_contextuales.geojson', color: '#FF9800' },
   { id: 'sener_gasoductos', name: 'SENER/CNIH Red Gasoductos (WMS)', file: '', color: '#FFB000' },
   { id: 'batimetria',       name: 'Contornos Batimétricos GEBCO 2024',file: '/data/batimetria_golfo.geojson', color: '#38BDF8' },
@@ -64,6 +65,8 @@ export default function RiskMap() {
   })
 
   const [loaded, setLoaded] = useState(false)
+  const [selectedMiaFeature, setSelectedMiaFeature] = useState<Record<string, any> | null>(null)
+  const [isMiaOpen, setIsMiaOpen] = useState(false)
   const mapRef = useRef<any>(null)
 
   useEffect(() => {
@@ -96,9 +99,13 @@ export default function RiskMap() {
 
   const focusProyectos = () => {
     if (mapRef.current) {
-      // Ajustar la vista al polígono completo del Golfo de California y proyectos
       mapRef.current.setView([25.8, -109.0], 6)
     }
+  }
+
+  const handleOpenMiaModal = (properties: Record<string, any>) => {
+    setSelectedMiaFeature(properties)
+    setIsMiaOpen(true)
   }
 
   const proyectosFeatures = layersData.proyectos_gnl?.features || []
@@ -108,7 +115,7 @@ export default function RiskMap() {
       <div className="section-title" style={{ justifyContent: 'space-between' }}>
         <span>VISOR ESPACIAL IERC — 4 TERMINALES GNL & CONTEXTO SOCIOAMBIENTAL</span>
         <span style={{ fontSize: '0.75rem', color: 'var(--color-ok)', fontFamily: 'var(--font-mono)' }}>
-          ● ENTREGABLE GEOPACKAGE V2 CONECTADO (13 FEATURES)
+          [●] ENTREGABLE GEOPACKAGE V3 CONECTADO (11 FEATURES + MIA PLANOS)
         </span>
       </div>
 
@@ -141,13 +148,13 @@ export default function RiskMap() {
                 color: 'var(--color-amber)',
                 fontSize: '0.6875rem',
                 padding: '0.25rem 0.5rem',
-                borderRadius: 4,
+                borderRadius: 0,
                 cursor: 'pointer',
                 fontWeight: 'bold'
               }}
               title="Centrar mapa en las 4 terminales GNL"
             >
-              🎯 CENTRAR GNL
+              &gt; CENTRAR GNL
             </button>
           </div>
 
@@ -343,15 +350,15 @@ export default function RiskMap() {
                   />
                 )}
 
-                {/* Layer 4 Terminales GNL Consolidados (13 Features Vectoriales Polígonos) */}
+                {/* Layer 4 Terminales GNL Consolidados (11 Features Vectoriales v3) */}
                 {activeLayers.proyectos_gnl && layersData.proyectos_gnl && (
                   <GeoJSON
-                    key="proyectos_gnl_polys"
+                    key="proyectos_gnl_v3"
                     data={layersData.proyectos_gnl}
                     style={(feat) => {
                       const p = feat?.properties || {}
-                      const isCancel = p.status_code === 'cancelado'
-                      const isEval = p.status_code === 'en_evaluacion'
+                      const isCancel = p.status_code === 'cancelled'
+                      const isEval = p.status_code === 'under_review'
                       
                       return {
                         fillColor: isCancel ? '#78909C' : (isEval ? '#00ACC1' : '#EF4444'),
@@ -361,102 +368,47 @@ export default function RiskMap() {
                         dashArray: isCancel ? '6, 4' : '0'
                       }
                     }}
-                    pointToLayer={(feat, latlng) => {
-                      const L_ref = (window as any).L
-                      const p = feat?.properties || {}
-                      const isCancel = p.status_code === 'cancelado'
-                      const isEval = p.status_code === 'en_evaluacion'
-                      const fillColor = isCancel ? '#78909C' : (isEval ? '#00ACC1' : '#EF4444')
-                      
-                      if (L_ref && L_ref.circleMarker) {
-                        return L_ref.circleMarker(latlng, {
-                          radius: 12,
-                          fillColor: fillColor,
-                          fillOpacity: 0.95,
-                          color: '#FFFFFF',
-                          weight: 2
-                        })
-                      }
-                      return null as any
-                    }}
                     onEachFeature={(feat, layer) => {
                       const p = feat.properties || {}
-                      const isCancel = p.status_code === 'cancelado'
-                      const badgeColor = isCancel ? '#78909C' : (p.status_code === 'en_evaluacion' ? '#00ACC1' : '#EF4444')
+                      const isCancel = p.status_code === 'cancelled'
+                      const badgeColor = isCancel ? '#78909C' : (p.status_code === 'under_review' ? '#00ACC1' : '#EF4444')
                       
+                      layer.on('click', () => {
+                        handleOpenMiaModal(p)
+                      })
+
                       layer.bindPopup(
                         `<div style="font-family: monospace; font-size: 0.75rem; min-width: 270px; max-width: 320px;">
                           <div style="font-size: 0.8125rem; font-weight: bold; color: ${badgeColor}; border-bottom: 1px solid #444; padding-bottom: 4px; margin-bottom: 6px;">
-                            ${p.nombre_feature || p.id}
+                            ${p.componente || p.proyecto}
                           </div>
                           
-                          <div style="margin-bottom: 6px;">
-                            <span style="background: ${badgeColor}; color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.6875rem; font-weight: bold;">
-                              ${p.estatus_permiso}
+                          <div style="margin-bottom: 6px; display: flex; gap: 4px; flex-wrap: wrap;">
+                            <span style="background: ${badgeColor}; color: white; padding: 2px 6px; font-size: 0.6875rem; font-weight: bold;">
+                              ${p.status}
+                            </span>
+                            <span style="background: #111; border: 1px solid ${badgeColor}; color: ${badgeColor}; padding: 2px 6px; font-size: 0.6875rem; font-weight: bold;">
+                              ${p.precision_label || '[APROXIMADO]'}
                             </span>
                           </div>
 
-                          <b>GRUPO:</b> ${p.terminal_grupo}<br/>
+                          <b>PROYECTO:</b> ${p.proyecto}<br/>
                           <b>PROMOVENTE:</b> ${p.promovente}<br/>
-                          <b>UBICACIÓN:</b> ${p.estado}, ${p.municipio}<br/>
+                          <b>UBICACIÓN:</b> ${p.municipio}, ${p.estado}<br/>
                           <b>CAPACIDAD:</b> ${p.capacidad_mtpa ? p.capacidad_mtpa + ' MTPA' : 'N/A'}<br/>
                           <b>TIPO ÁREA:</b> ${p.tipo_area}<br/>
-                          <b>PRECISIÓN GEOM:</b> ${p.precision_geom}<br/>
 
-                          ${p.impacto_notes ? `<div style="margin-top:6px; padding:4px; background:#222; border-left:2px solid ${badgeColor}; font-size:0.6875rem; color:#DDD;">${p.impacto_notes}</div>` : ''}
-
-                          <div style="font-size: 0.6875rem; color: #888888; border-top: 1px dashed #444; padding-top: 4px; margin-top: 6px;">
-                            CLAVE ASEA / REF: ${p.clave_proyecto || 'N/A'}
-                          </div>
+                          <button 
+                            id="btn-open-mia-${p.id}"
+                            style="margin-top: 8px; width: 100%; background: #C0392B; border: none; color: white; padding: 6px; font-family: monospace; font-size: 0.6875rem; font-weight: bold; cursor: pointer;"
+                          >
+                            &gt; ABRIR INSPECTOR DE MIA & PLANOS
+                          </button>
                         </div>`
                       )
                     }}
                   />
                 )}
-
-                {/* CircleMarkers Destacados en Centroides para Alta Visibilidad a Cualquier Nivel de Zoom */}
-                {activeLayers.proyectos_gnl && proyectosFeatures.map((feat: any) => {
-                  const p = feat.properties || {}
-                  const lat = p.latitud
-                  const lon = p.longitud
-                  if (!lat || !lon) return null
-                  const isCancel = p.status_code === 'cancelado'
-                  const isEval = p.status_code === 'en_evaluacion'
-                  const badgeColor = isCancel ? '#78909C' : (isEval ? '#00ACC1' : '#EF4444')
-
-                  return (
-                    <CircleMarker
-                      key={`marker_${p.id}`}
-                      center={[lat, lon]}
-                      radius={10}
-                      pathOptions={{
-                        fillColor: badgeColor,
-                        fillOpacity: 0.95,
-                        color: '#FFFFFF',
-                        weight: 2
-                      }}
-                    >
-                      <Popup>
-                        <div style={{ fontFamily: 'monospace', fontSize: '0.75rem', minWidth: 260 }}>
-                          <b style={{ color: badgeColor, fontSize: '0.8125rem' }}>{p.nombre_feature || p.id}</b>
-                          <div style={{ margin: '4px 0' }}>
-                            <span style={{ background: badgeColor, color: '#FFF', padding: '2px 6px', borderRadius: 4, fontSize: '0.6875rem', fontWeight: 'bold' }}>
-                              {p.estatus_permiso}
-                            </span>
-                          </div>
-                          <b>PROMOVENTE:</b> {p.promovente}<br/>
-                          <b>CAPACIDAD:</b> {p.capacidad_mtpa ? `${p.capacidad_mtpa} MTPA` : 'N/A'}<br/>
-                          <b>UBICACIÓN:</b> {p.estado}, {p.municipio}<br/>
-                          {p.impacto_notes && (
-                            <div style={{ marginTop: 6, padding: 4, background: '#222', borderLeft: `2px solid ${badgeColor}`, fontSize: '0.6875rem', color: '#DDD' }}>
-                              {p.impacto_notes}
-                            </div>
-                          )}
-                        </div>
-                      </Popup>
-                    </CircleMarker>
-                  )
-                })}
 
               </MapContainer>
             ) : (
@@ -482,10 +434,17 @@ export default function RiskMap() {
             textAlign: 'right',
             fontFamily: 'var(--font-mono)',
           }}>
-            FUENTE: GeoPackage v2 (4 Terminales GNL / 13 Subconjuntos Vectoriales + Gasoductos + Sitios Ramsar / ANPs + PANGAS)
+            FUENTE: GeoPackage v3 (4 Terminales GNL / 11 Subconjuntos Vectoriales + Catálogo de Planos MIA ASEA)
           </p>
         </div>
       </div>
+
+      {/* MIA Inspector Modal */}
+      <MiaInspectorModal
+        isOpen={isMiaOpen}
+        onClose={() => setIsMiaOpen(false)}
+        featureProps={selectedMiaFeature}
+      />
     </div>
   )
 }
