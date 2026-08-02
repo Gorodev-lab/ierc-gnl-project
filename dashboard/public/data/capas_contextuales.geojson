@@ -1,0 +1,158 @@
+{
+  "type": "FeatureCollection",
+  "name": "capas_contextuales_gnl",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gasoducto_sierra_madre",
+        "nombre": "Gasoducto Sierra Madre (~800 km)",
+        "tipo_capa": "Gasoducto",
+        "empresa": "Mexico Pacific Limited",
+        "estatus": "Propuesto / Permiso en trámite",
+        "color": "#FF9800",
+        "line_weight": 3,
+        "dash_array": "5, 5",
+        "descripcion": "Conecta el Hub Permian (EEUU) a través de Chihuahua/Sonora con la Terminal Saguaro Energía en Puerto Libertad (30 MTPA)."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -108.2,
+            31.3
+          ],
+          [
+            -109.5,
+            30.8
+          ],
+          [
+            -110.8,
+            30.2
+          ],
+          [
+            -112.688,
+            29.9058
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gasoducto_corredor_norte",
+        "nombre": "Gasoducto Corredor Norte (GCN ~75 km)",
+        "tipo_capa": "Gasoducto",
+        "empresa": "Gasoducto Corredor Norte, S.A.P.I.",
+        "estatus": "Asociado a proyecto Vista Pacífico (CANCELADO)",
+        "color": "#78909C",
+        "line_weight": 2.5,
+        "dash_array": "8, 4",
+        "descripcion": "Gasoducto proyectado para alimentar Vista Pacífico LNG en Topolobampo."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -108.85,
+            26.15
+          ],
+          [
+            -108.98,
+            25.8
+          ],
+          [
+            -109.0881,
+            25.6033
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "ramsar_topolobampo",
+        "nombre": "Sitio Ramsar Lagunas Santa María-Topolobampo-Ohuira",
+        "tipo_capa": "Área Protegida / Ramsar",
+        "estatus": "Internacional (Ramsar #1978)",
+        "color": "#2E7D32",
+        "fill_color": "#4CAF50",
+        "fill_opacity": 0.18,
+        "descripcion": "Humedal de importancia internacional. 21.9 ha de afectación calculada por el proyecto Vista Pacífico LNG (ONU AL OTH 39/2025)."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -109.15,
+              25.52
+            ],
+            [
+              -108.95,
+              25.52
+            ],
+            [
+              -108.95,
+              25.68
+            ],
+            [
+              -109.15,
+              25.68
+            ],
+            [
+              -109.15,
+              25.52
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "anp_islas_golfo",
+        "nombre": "ANP Federal Islas del Golfo de California (Zona de Influencia)",
+        "tipo_capa": "Área Natural Protegida",
+        "estatus": "Decreto Federal ANP",
+        "color": "#1B5E20",
+        "fill_color": "#81C784",
+        "fill_opacity": 0.15,
+        "descripcion": "Reserva de la biosfera a 2.15 km al oeste de la ubicación FLNG de Vista Pacífico."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -109.25,
+              25.5
+            ],
+            [
+              -109.13,
+              25.5
+            ],
+            [
+              -109.13,
+              25.62
+            ],
+            [
+              -109.25,
+              25.62
+            ],
+            [
+              -109.25,
+              25.5
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

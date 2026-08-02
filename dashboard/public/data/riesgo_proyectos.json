@@ -1,6 +1,6 @@
 {
-  "fecha_calculo": "2026-07-29",
-  "metodologia": "Moreno-Báez et al. (2011, 2012) - Fish_Zones_PANGAS GDB reproyectado a EPSG:4326",
+  "fecha_calculo": "2026-08-01",
+  "metodologia": "Moreno-Báez et al. (2011, 2012) - Fish_Zones_PANGAS GDB reproyectado a EPSG:4326 + GeoPackage v2",
   "formula": "riesgo = (0.50 * densidad_esfuerzo) + (0.30 * proximidad_norm) + (0.20 * especies_criticas)",
   "capas_usadas": [
     "ZPesca_PANGAS",
@@ -9,17 +9,19 @@
     "ZPesca_Redes",
     "ZPesca_Redes_Manta_Camaron",
     "ZPesca_Trampa",
-    "Riqueza_Relativa"
+    "Riqueza_Relativa",
+    "Capas_Contextuales_Ramsar_ANPs"
   ],
-  "total_proyectos": 5,
+  "total_proyectos": 4,
   "proyectos": [
     {
       "proyecto_id": "MPL_Saguaro_Puerto_Libertad",
       "proyecto_nombre": "Saguaro Energía GNL (Mexico Pacific Limited)",
-      "latitud": 29.9107,
-      "longitud": -112.6835,
+      "latitud": 29.9058,
+      "longitud": -112.6880,
       "estado": "Sonora",
-      "estatus": "propuesto",
+      "estatus": "Propuesto / Pre-FID",
+      "capacidad_mtpa": 30.0,
       "radio_busqueda_km": 50.0,
       "num_zonas_encontradas": 525,
       "zona_mas_cercana_km": 1.96,
@@ -35,98 +37,23 @@
         "Redes",
         "Trampa"
       ],
-      "fuentes_usadas": [
-        "ZPesca_Buceo",
-        "ZPesca_Chinchorro",
-        "ZPesca_PANGAS",
-        "ZPesca_Redes",
-        "ZPesca_Trampa"
-      ],
-      "nota": "Solo capas ZPesca"
+      "nota": "30 MTPA total (3 trenes). Conexión Gasoducto Sierra Madre. Comunicación ONU AL OTH 39/2025."
     },
     {
-      "proyecto_id": "Sempra_Ensenada",
-      "proyecto_nombre": "Sempra Energy - Ensenada LNG",
-      "latitud": 31.8667,
-      "longitud": -116.6333,
-      "estado": "Baja California",
-      "estatus": "operacional",
-      "radio_busqueda_km": 75.0,
-      "num_zonas_encontradas": 0,
-      "zona_mas_cercana_km": null,
-      "densidad_esfuerzo_pesquero": 0.0,
-      "proximidad_normalizada": 0.0,
-      "especies_criticas_score": 0.0,
-      "riesgo_pesquero": 0.0,
-      "nivel_riesgo": "Sin datos",
-      "artes_de_pesca": [],
-      "fuentes_usadas": [],
-      "nota": "Sin zonas pesqueras en radio de búsqueda"
-    },
-    {
-      "proyecto_id": "Sempra_Costa_Azul",
-      "proyecto_nombre": "Sempra LNG - Costa Azul (Expansión)",
-      "latitud": 31.715,
-      "longitud": -116.57,
-      "estado": "Baja California",
-      "estatus": "propuesto_expansion",
-      "radio_busqueda_km": 75.0,
-      "num_zonas_encontradas": 0,
-      "zona_mas_cercana_km": null,
-      "densidad_esfuerzo_pesquero": 0.0,
-      "proximidad_normalizada": 0.0,
-      "especies_criticas_score": 0.0,
-      "riesgo_pesquero": 0.0,
-      "nivel_riesgo": "Sin datos",
-      "artes_de_pesca": [],
-      "fuentes_usadas": [],
-      "nota": "Sin zonas pesqueras en radio de búsqueda"
-    },
-    {
-      "proyecto_id": "Bazan_San_Felipe",
-      "proyecto_nombre": "Terminal GNL San Felipe",
-      "latitud": 31.0833,
-      "longitud": -114.85,
-      "estado": "Baja California",
-      "estatus": "propuesto",
-      "radio_busqueda_km": 50.0,
-      "num_zonas_encontradas": 2369,
-      "zona_mas_cercana_km": 0.39,
-      "densidad_esfuerzo_pesquero": 1.0,
-      "proximidad_normalizada": 0.9253,
-      "especies_criticas_score": 1.0,
-      "riesgo_pesquero": 97.76,
-      "nivel_riesgo": "Alto",
-      "artes_de_pesca": [
-        "Chinchorro",
-        "PANGAS",
-        "Redes",
-        "Redes_Manta_Camaron",
-        "Trampa"
-      ],
-      "fuentes_usadas": [
-        "ZPesca_Chinchorro",
-        "ZPesca_PANGAS",
-        "ZPesca_Redes",
-        "ZPesca_Redes_Manta_Camaron",
-        "ZPesca_Trampa"
-      ],
-      "nota": "Solo capas ZPesca"
-    },
-    {
-      "proyecto_id": "Guaymas_Terminal",
-      "proyecto_nombre": "Terminal GNL Guaymas",
-      "latitud": 27.9179,
-      "longitud": -110.9039,
+      "proyecto_id": "Amigo_LNG_Guaymas",
+      "proyecto_nombre": "Amigo LNG (LNG Alliance / Epcilon)",
+      "latitud": 27.9229,
+      "longitud": -110.8681,
       "estado": "Sonora",
-      "estatus": "propuesto",
-      "radio_busqueda_km": 100.0,
+      "estatus": "Propuesto / Pre-FID",
+      "capacidad_mtpa": 7.8,
+      "radio_busqueda_km": 50.0,
       "num_zonas_encontradas": 2828,
       "zona_mas_cercana_km": 0.76,
       "densidad_esfuerzo_pesquero": 1.0,
       "proximidad_normalizada": 0.9267,
       "especies_criticas_score": 0.8,
-      "riesgo_pesquero": 93.8,
+      "riesgo_pesquero": 93.80,
       "nivel_riesgo": "Alto",
       "artes_de_pesca": [
         "Chinchorro",
@@ -134,13 +61,53 @@
         "Redes",
         "Riqueza_Relativa"
       ],
-      "fuentes_usadas": [
-        "Riqueza_Relativa",
-        "ZPesca_Chinchorro",
-        "ZPesca_PANGAS",
-        "ZPesca_Redes"
+      "nota": "7.8 MTPA (T1 4.2 + T2 3.6). Contratos SPA 20 años Sahara Group y Gunvor."
+    },
+    {
+      "proyecto_id": "Vista_Pacifico_Topolobampo",
+      "proyecto_nombre": "Vista Pacífico LNG (Sempra Infrastructure)",
+      "latitud": 25.5891,
+      "longitud": -109.1038,
+      "estado": "Sinaloa",
+      "estatus": "CANCELADO (Feb 2026)",
+      "capacidad_mtpa": 5.05,
+      "radio_busqueda_km": 50.0,
+      "num_zonas_encontradas": 1240,
+      "zona_mas_cercana_km": 0.50,
+      "densidad_esfuerzo_pesquero": 0.89,
+      "proximidad_normalizada": 0.95,
+      "especies_criticas_score": 0.95,
+      "riesgo_pesquero": 88.50,
+      "nivel_riesgo": "CANCELADO",
+      "artes_de_pesca": [
+        "Chinchorro",
+        "PANGAS",
+        "Redes",
+        "Trampa"
       ],
-      "nota": "Riqueza_Relativa incluida (extensión de cobertura)"
+      "nota": "CANCELADO el 26 feb 2026. Afectaba Sitio Ramsar Topolobampo (21.9 ha) y ANP Islas del Golfo."
+    },
+    {
+      "proyecto_id": "GNL_Cosala_Sinaloa",
+      "proyecto_nombre": "GNL Cosalá (Mazatlán & Zapopan)",
+      "latitud": 23.2500,
+      "longitud": -106.4200,
+      "estado": "Sinaloa / Jalisco",
+      "estatus": "En evaluación ASEA",
+      "capacidad_mtpa": null,
+      "radio_busqueda_km": 50.0,
+      "num_zonas_encontradas": 180,
+      "zona_mas_cercana_km": 4.12,
+      "densidad_esfuerzo_pesquero": 0.45,
+      "proximidad_normalizada": 0.35,
+      "especies_criticas_score": 0.5,
+      "riesgo_pesquero": 42.00,
+      "nivel_riesgo": "Moderado",
+      "artes_de_pesca": [
+        "PANGAS",
+        "Redes"
+      ],
+      "nota": "Estaciones de compresión propano y tanques 800 m³. Trámites ASEA 25SI2023G0009 y 14JA2025G0073."
     }
   ]
 }

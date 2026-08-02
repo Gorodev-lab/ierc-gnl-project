@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import dynamic from 'next/dynamic'
 
 const MapContainer   = dynamic(() => import('react-leaflet').then(m => m.MapContainer),   { ssr: false })
@@ -18,8 +18,9 @@ interface LayerConfig {
 }
 
 const LAYER_CONFIGS: LayerConfig[] = [
+  { id: 'proyectos_gnl',    name: '4 Terminales GNL (13 Features Vectoriales)', file: '/data/proyectos_gnl.geojson', color: '#EF4444' },
+  { id: 'capas_contexto',   name: 'Gasoductos, Sitios Ramsar & ANPs',  file: '/data/capas_contextuales.geojson', color: '#FF9800' },
   { id: 'sener_gasoductos', name: 'SENER/CNIH Red Gasoductos (WMS)', file: '', color: '#FFB000' },
-  { id: 'proyectos_gnl',    name: '11 Proyectos GNL Consolidados',    file: '/data/proyectos_gnl.geojson', color: '#EF4444' },
   { id: 'batimetria',       name: 'Contornos Batimétricos GEBCO 2024',file: '/data/batimetria_golfo.geojson', color: '#38BDF8' },
   { id: 'h3_riesgo',        name: 'Malla H3 IERC (Res 8/9)',          file: '/data/grilla_h3_riesgo.geojson', color: '#F59E0B' },
   { id: 'pangas',           name: 'PANGAS Multiespecie (4,241)',      file: '/data/zpesca_pangas_sample.geojson', color: '#8D6E63' },
@@ -38,18 +39,19 @@ function getRiskColor(score: number): string {
 }
 
 function getBathymetryColor(depth: number): { color: string; weight: number; opacity: number } {
-  if (depth >= -20) return { color: '#7DD3FC', weight: 0.9, opacity: 0.8 } // Somero nerítico
-  if (depth >= -100) return { color: '#38BDF8', weight: 0.8, opacity: 0.7 } // Plataforma
-  if (depth >= -500) return { color: '#0284C7', weight: 0.7, opacity: 0.6 } // Borde plataforma / talud
-  if (depth >= -2000) return { color: '#0369A1', weight: 0.6, opacity: 0.5 } // Batiatlántica
-  return { color: '#1E3A8A', weight: 0.5, opacity: 0.4 } // Profunda (-5000m)
+  if (depth >= -20) return { color: '#7DD3FC', weight: 0.9, opacity: 0.8 }
+  if (depth >= -100) return { color: '#38BDF8', weight: 0.8, opacity: 0.7 }
+  if (depth >= -500) return { color: '#0284C7', weight: 0.7, opacity: 0.6 }
+  if (depth >= -2000) return { color: '#0369A1', weight: 0.6, opacity: 0.5 }
+  return { color: '#1E3A8A', weight: 0.5, opacity: 0.4 }
 }
 
 export default function RiskMap() {
   const [layersData, setLayersData]     = useState<Record<string, any>>({})
   const [activeLayers, setActiveLayers] = useState<Record<string, boolean>>({
-    sener_gasoductos: true,
     proyectos_gnl: true,
+    capas_contexto: true,
+    sener_gasoductos: false,
     batimetria: true,
     h3_riesgo: false,
     pangas: true,
@@ -62,9 +64,9 @@ export default function RiskMap() {
   })
 
   const [loaded, setLoaded] = useState(false)
+  const mapRef = useRef<any>(null)
 
   useEffect(() => {
-    // Cargar capas GeoJSON pesqueras, GNL y batimetría
     LAYER_CONFIGS.forEach(cfg => {
       if (cfg.file) {
         fetch(cfg.file)
@@ -72,12 +74,12 @@ export default function RiskMap() {
           .then(geoJson => {
             setLayersData(prev => ({ ...prev, [cfg.id]: geoJson }))
           })
-          .catch(() => console.log(`Notice: Layer file ${cfg.file} notice.`))
+          .catch(err => console.error(`Error loading layer ${cfg.file}:`, err))
       }
     })
 
-    // Setup Leaflet
     import('leaflet').then(L => {
+      (window as any).L = L
       delete (L.Icon.Default.prototype as any)._getIconUrl
       L.Icon.Default.mergeOptions({
         iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
@@ -92,12 +94,21 @@ export default function RiskMap() {
     setActiveLayers(prev => ({ ...prev, [id]: !prev[id] }))
   }
 
+  const focusProyectos = () => {
+    if (mapRef.current) {
+      // Ajustar la vista al polígono completo del Golfo de California y proyectos
+      mapRef.current.setView([25.8, -109.0], 6)
+    }
+  }
+
+  const proyectosFeatures = layersData.proyectos_gnl?.features || []
+
   return (
     <div className="section">
       <div className="section-title" style={{ justifyContent: 'space-between' }}>
-        <span>VISOR ESPACIAL IERC — ACTIVIDAD PESQUERA & INFRAESTRUCTURA GNL</span>
+        <span>VISOR ESPACIAL IERC — 4 TERMINALES GNL & CONTEXTO SOCIOAMBIENTAL</span>
         <span style={{ fontSize: '0.75rem', color: 'var(--color-ok)', fontFamily: 'var(--font-mono)' }}>
-          ● ENTREGABLE GEOPACKAGE V1.1 CONECTADO
+          ● ENTREGABLE GEOPACKAGE V2 CONECTADO (13 FEATURES)
         </span>
       </div>
 
@@ -112,16 +123,33 @@ export default function RiskMap() {
           maxHeight: '620px',
           overflowY: 'auto'
         }}>
-          <h4 style={{
-            fontSize: '0.8125rem',
-            color: 'var(--color-amber)',
-            borderBottom: '1px solid var(--color-border-hi)',
-            paddingBottom: '0.5rem',
-            marginBottom: '1rem',
-            letterSpacing: '0.05em',
-          }}>
-            CAPAS VECTORIALES IERC (QGIS)
-          </h4>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+            <h4 style={{
+              fontSize: '0.8125rem',
+              color: 'var(--color-amber)',
+              margin: 0,
+              letterSpacing: '0.05em',
+            }}>
+              CAPAS VECTORIALES IERC
+            </h4>
+
+            <button
+              onClick={focusProyectos}
+              style={{
+                background: 'var(--color-surface-2)',
+                border: '1px solid var(--color-amber)',
+                color: 'var(--color-amber)',
+                fontSize: '0.6875rem',
+                padding: '0.25rem 0.5rem',
+                borderRadius: 4,
+                cursor: 'pointer',
+                fontWeight: 'bold'
+              }}
+              title="Centrar mapa en las 4 terminales GNL"
+            >
+              🎯 CENTRAR GNL
+            </button>
+          </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
             {LAYER_CONFIGS.map(cfg => (
@@ -133,14 +161,22 @@ export default function RiskMap() {
             ))}
           </div>
 
-          <div style={{ marginTop: '1.5rem', borderTop: '1px solid var(--color-border)', paddingTop: '1rem', fontSize: '0.6875rem', color: 'var(--color-text-muted)' }}>
-            <strong>GRADIENTE BATIMÉTRICO (GEBCO):</strong>
+          <div style={{ marginTop: '1.25rem', borderTop: '1px solid var(--color-border)', paddingTop: '0.85rem', fontSize: '0.6875rem' }}>
+            <strong style={{ color: 'var(--color-amber)' }}>ESTATUS PROYECTOS GNL:</strong>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', marginTop: '0.4rem', color: 'var(--color-text-muted)' }}>
+              <span style={{ color: '#EF4444' }}>■ Propuesto / Pre-FID (Saguaro, Amigo)</span>
+              <span style={{ color: '#00ACC1' }}>■ En Evaluación ASEA (GNL Cosalá)</span>
+              <span style={{ color: '#78909C' }}>■ CANCELADO (Vista Pacífico FLNG Feb 2026)</span>
+            </div>
+          </div>
+
+          <div style={{ marginTop: '1rem', borderTop: '1px solid var(--color-border)', paddingTop: '0.85rem', fontSize: '0.6875rem', color: 'var(--color-text-muted)' }}>
+            <strong>BATIMETRÍA GEBCO:</strong>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', marginTop: '0.4rem' }}>
-              <span style={{ color: '#7DD3FC' }}>― -10m a -20m (Zona Somera/Nerítica)</span>
-              <span style={{ color: '#38BDF8' }}>― -50m a -100m (Plataforma Continental)</span>
-              <span style={{ color: '#0284C7' }}>― -200m a -500m (Talud Superior)</span>
+              <span style={{ color: '#7DD3FC' }}>― -10m a -20m (Somera/Nerítica)</span>
+              <span style={{ color: '#38BDF8' }}>― -50m a -100m (Plataforma)</span>
+              <span style={{ color: '#0284C7' }}>― -200m a -500m (Talud)</span>
               <span style={{ color: '#0369A1' }}>― -1000m a -2000m (Batiatlántica)</span>
-              <span style={{ color: '#1E3A8A' }}>― -5000m (Fosa Profunda)</span>
             </div>
           </div>
         </div>
@@ -150,8 +186,9 @@ export default function RiskMap() {
           <div className="map-wrapper" style={{ height: '620px' }}>
             {loaded ? (
               <MapContainer
-                center={[28.5, -111.8]}
+                center={[25.8, -109.0]}
                 zoom={6}
+                ref={mapRef}
                 style={{ height: '100%', width: '100%' }}
                 attributionControl={true}
               >
@@ -162,7 +199,7 @@ export default function RiskMap() {
                   maxZoom={19}
                 />
 
-                {/* SENER / CNIH Official Gas Pipeline WMS Tile Layer */}
+                {/* SENER / CNIH WMS Tile Layer */}
                 {activeLayers.sener_gasoductos && (
                   <WMSTileLayer
                     url="https://mapa-hidrocarburos.energia.gob.mx/mapserver/mapserv.exe?map=C:/inetpub/wwwroot/iicnihmap/ms/wms/prod/es_mx/grp_gas.map"
@@ -174,7 +211,38 @@ export default function RiskMap() {
                   />
                 )}
 
-                {/* Layer Batimetría GEBCO 2024 (Solo contornos marinos < 0m) */}
+                {/* Layer Capas Contextuales (Gasoductos, Sitios Ramsar, ANPs) */}
+                {activeLayers.capas_contexto && layersData.capas_contexto && (
+                  <GeoJSON
+                    key="capas_contexto"
+                    data={layersData.capas_contexto}
+                    style={(feat) => {
+                      const p = feat?.properties || {}
+                      return {
+                        color: p.color || '#FF9800',
+                        fillColor: p.fill_color || p.color || '#FF9800',
+                        fillOpacity: p.fill_opacity ?? 0.2,
+                        weight: p.line_weight || 2,
+                        dashArray: p.dash_array || '0'
+                      }
+                    }}
+                    onEachFeature={(feat, layer) => {
+                      const p = feat.properties || {}
+                      layer.bindPopup(
+                        `<div style="font-family: monospace; font-size: 0.75rem; min-width: 240px;">
+                          <b style="color: ${p.color || '#FF9800'}; font-size: 0.8125rem;">${p.nombre}</b><br/>
+                          <b>TIPO:</b> ${p.tipo_capa}<br/>
+                          <b>ESTATUS:</b> ${p.estatus}<br/>
+                          <div style="margin-top: 6px; font-size: 0.6875rem; color: #CCCCCC; border-top: 1px dashed #444; padding-top: 4px;">
+                            ${p.descripcion}
+                          </div>
+                        </div>`
+                      )
+                    }}
+                  />
+                )}
+
+                {/* Layer Batimetría GEBCO 2024 */}
                 {activeLayers.batimetria && layersData.batimetria && (
                   <GeoJSON
                     key="batimetria"
@@ -202,7 +270,7 @@ export default function RiskMap() {
                   />
                 )}
 
-                {/* Layers Pesqueras PANGAS (Simbología QGIS Original) */}
+                {/* Layers Pesqueras PANGAS */}
                 {['pangas', 'buceo', 'chinchorro', 'redes', 'manta', 'trampa', 'riqueza'].map(id => {
                   const cfg = LAYER_CONFIGS.find(c => c.id === id)
                   if (!cfg || !activeLayers[id] || !layersData[id]) return null
@@ -275,35 +343,120 @@ export default function RiskMap() {
                   />
                 )}
 
-                {/* Layer 11 Proyectos GNL Consolidados */}
+                {/* Layer 4 Terminales GNL Consolidados (13 Features Vectoriales Polígonos) */}
                 {activeLayers.proyectos_gnl && layersData.proyectos_gnl && (
                   <GeoJSON
-                    key="proyectos_gnl"
+                    key="proyectos_gnl_polys"
                     data={layersData.proyectos_gnl}
+                    style={(feat) => {
+                      const p = feat?.properties || {}
+                      const isCancel = p.status_code === 'cancelado'
+                      const isEval = p.status_code === 'en_evaluacion'
+                      
+                      return {
+                        fillColor: isCancel ? '#78909C' : (isEval ? '#00ACC1' : '#EF4444'),
+                        fillOpacity: isCancel ? 0.35 : 0.65,
+                        color: isCancel ? '#455A64' : (isEval ? '#006064' : '#B71C1C'),
+                        weight: 2,
+                        dashArray: isCancel ? '6, 4' : '0'
+                      }
+                    }}
                     pointToLayer={(feat, latlng) => {
-                      return new (window as any).L.CircleMarker(latlng, {
-                        radius: 9,
-                        fillColor: '#EF4444',
-                        fillOpacity: 0.95,
-                        color: '#FFFFFF',
-                        weight: 2
-                      })
+                      const L_ref = (window as any).L
+                      const p = feat?.properties || {}
+                      const isCancel = p.status_code === 'cancelado'
+                      const isEval = p.status_code === 'en_evaluacion'
+                      const fillColor = isCancel ? '#78909C' : (isEval ? '#00ACC1' : '#EF4444')
+                      
+                      if (L_ref && L_ref.circleMarker) {
+                        return L_ref.circleMarker(latlng, {
+                          radius: 12,
+                          fillColor: fillColor,
+                          fillOpacity: 0.95,
+                          color: '#FFFFFF',
+                          weight: 2
+                        })
+                      }
+                      return null as any
                     }}
                     onEachFeature={(feat, layer) => {
                       const p = feat.properties || {}
+                      const isCancel = p.status_code === 'cancelado'
+                      const badgeColor = isCancel ? '#78909C' : (p.status_code === 'en_evaluacion' ? '#00ACC1' : '#EF4444')
+                      
                       layer.bindPopup(
-                        `<div style="font-family: monospace; font-size: 0.75rem; min-width: 230px;">
-                          <b style="color: #EF4444; font-size: 0.8125rem;">${p.nombre_proyecto}</b><br/>
-                          <b>ESTADO:</b> ${p.estado}<br/>
-                          <b>TIPO:</b> ${p.tipo_infraestructura}<br/>
-                          <b>EMPRESA:</b> ${p.empresa_promovente}<br/>
-                          <b>ESTATUS:</b> ${p.estatus_permiso}<br/>
-                          <b>FUENTE:</b> <span style="color: #F59E0B;">${p.fuente_oficial}</span>
+                        `<div style="font-family: monospace; font-size: 0.75rem; min-width: 270px; max-width: 320px;">
+                          <div style="font-size: 0.8125rem; font-weight: bold; color: ${badgeColor}; border-bottom: 1px solid #444; padding-bottom: 4px; margin-bottom: 6px;">
+                            ${p.nombre_feature || p.id}
+                          </div>
+                          
+                          <div style="margin-bottom: 6px;">
+                            <span style="background: ${badgeColor}; color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.6875rem; font-weight: bold;">
+                              ${p.estatus_permiso}
+                            </span>
+                          </div>
+
+                          <b>GRUPO:</b> ${p.terminal_grupo}<br/>
+                          <b>PROMOVENTE:</b> ${p.promovente}<br/>
+                          <b>UBICACIÓN:</b> ${p.estado}, ${p.municipio}<br/>
+                          <b>CAPACIDAD:</b> ${p.capacidad_mtpa ? p.capacidad_mtpa + ' MTPA' : 'N/A'}<br/>
+                          <b>TIPO ÁREA:</b> ${p.tipo_area}<br/>
+                          <b>PRECISIÓN GEOM:</b> ${p.precision_geom}<br/>
+
+                          ${p.impacto_notes ? `<div style="margin-top:6px; padding:4px; background:#222; border-left:2px solid ${badgeColor}; font-size:0.6875rem; color:#DDD;">${p.impacto_notes}</div>` : ''}
+
+                          <div style="font-size: 0.6875rem; color: #888888; border-top: 1px dashed #444; padding-top: 4px; margin-top: 6px;">
+                            CLAVE ASEA / REF: ${p.clave_proyecto || 'N/A'}
+                          </div>
                         </div>`
                       )
                     }}
                   />
                 )}
+
+                {/* CircleMarkers Destacados en Centroides para Alta Visibilidad a Cualquier Nivel de Zoom */}
+                {activeLayers.proyectos_gnl && proyectosFeatures.map((feat: any) => {
+                  const p = feat.properties || {}
+                  const lat = p.latitud
+                  const lon = p.longitud
+                  if (!lat || !lon) return null
+                  const isCancel = p.status_code === 'cancelado'
+                  const isEval = p.status_code === 'en_evaluacion'
+                  const badgeColor = isCancel ? '#78909C' : (isEval ? '#00ACC1' : '#EF4444')
+
+                  return (
+                    <CircleMarker
+                      key={`marker_${p.id}`}
+                      center={[lat, lon]}
+                      radius={10}
+                      pathOptions={{
+                        fillColor: badgeColor,
+                        fillOpacity: 0.95,
+                        color: '#FFFFFF',
+                        weight: 2
+                      }}
+                    >
+                      <Popup>
+                        <div style={{ fontFamily: 'monospace', fontSize: '0.75rem', minWidth: 260 }}>
+                          <b style={{ color: badgeColor, fontSize: '0.8125rem' }}>{p.nombre_feature || p.id}</b>
+                          <div style={{ margin: '4px 0' }}>
+                            <span style={{ background: badgeColor, color: '#FFF', padding: '2px 6px', borderRadius: 4, fontSize: '0.6875rem', fontWeight: 'bold' }}>
+                              {p.estatus_permiso}
+                            </span>
+                          </div>
+                          <b>PROMOVENTE:</b> {p.promovente}<br/>
+                          <b>CAPACIDAD:</b> {p.capacidad_mtpa ? `${p.capacidad_mtpa} MTPA` : 'N/A'}<br/>
+                          <b>UBICACIÓN:</b> {p.estado}, {p.municipio}<br/>
+                          {p.impacto_notes && (
+                            <div style={{ marginTop: 6, padding: 4, background: '#222', borderLeft: `2px solid ${badgeColor}`, fontSize: '0.6875rem', color: '#DDD' }}>
+                              {p.impacto_notes}
+                            </div>
+                          )}
+                        </div>
+                      </Popup>
+                    </CircleMarker>
+                  )
+                })}
 
               </MapContainer>
             ) : (
@@ -317,7 +470,7 @@ export default function RiskMap() {
                 fontSize: '0.875rem',
                 fontFamily: 'var(--font-mono)',
               }}>
-                CARGANDO VISOR ESPACIAL COMPLETO (PANGAS & BATIMETRÍA GEBCO)…
+                CARGANDO VISOR ESPACIAL (4 TERMINALES GNL & CAPAS CONTEXTUALES)…
               </div>
             )}
           </div>
@@ -329,7 +482,7 @@ export default function RiskMap() {
             textAlign: 'right',
             fontFamily: 'var(--font-mono)',
           }}>
-            FUENTE: ierc_golfo_california.gpkg (11 Proyectos GNL + 7 Capas PANGAS + Batimetría GEBCO 2024)
+            FUENTE: GeoPackage v2 (4 Terminales GNL / 13 Subconjuntos Vectoriales + Gasoductos + Sitios Ramsar / ANPs + PANGAS)
           </p>
         </div>
       </div>

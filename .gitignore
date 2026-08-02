@@ -46,3 +46,8 @@ causanaturadata/batimetria/*.zip
 causanaturadata/batimetria/*.nc
 causanaturadata/batimetria/*.gz
 
+# Lakehouse heavy exports
+lakehouse/**/*.csv
+lakehouse/curated/*.csv
+
+
