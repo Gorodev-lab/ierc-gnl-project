@@ -3,15 +3,15 @@
 [![GeoPackage](https://img.shields.io/badge/OGC-GeoPackage_v1.1-blue.svg)](https://www.ogc.org/standard/geopackage/)
 [![CRS](https://img.shields.io/badge/CRS-EPSG%3A4326_(WGS84)-green.svg)](https://epsg.io/4326)
 [![H3 Grid](https://img.shields.io/badge/Uber_H3-Adaptive_Res_8%2F9-orange.svg)](https://h3geo.org/)
-[![Organization](https://img.shields.io/badge/Organization-Causa_Natura_Data-emerald.svg)](https://causanatura.org/)
-[![Next.js](https://img.shields.io/badge/Dashboard-Next.js_15-black.svg)](https://nextjs.org/)
+[![Organization](https://img.shields.io/badge/Organization-Causa_Natura_Center-emerald.svg)](https://causanatura.org/)
+[![Next.js](https://img.shields.io/badge/Dashboard-Next.js_16-black.svg)](https://nextjs.org/)
 [![License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE)
 
 ---
 
 ##  Resumen del Proyecto
 
-El **Índice Espacial de Riesgo Socioeconómico para Comunidades (IERC-GNL)** es una plataforma espacial e instrumento metodológico desarrollado en el marco del **Plan Operativo Anual (POA 2026-2028)** de **Causa Natura Data**. Su objetivo es evaluar la vulnerabilidad socioecológica, pesquera y de gobernanza de las comunidades pesqueras artesanales ante la expansión de proyectos de **Gas Natural Licuado (GNL)** en el **Golfo de California, México**.
+El **Índice Espacial de Riesgo Socioeconómico para Comunidades (IERC-GNL)** es una plataforma espacial e instrumento metodológico desarrollado en el marco del **Plan Operativo Anual (POA 2026-2028)** de **Causa Natura Center**. Su objetivo es evaluar la vulnerabilidad socioecológica, pesquera y de gobernanza de las comunidades pesqueras artesanales ante la expansión de proyectos de **Gas Natural Licuado (GNL)** en el **Golfo de California, México**.
 
 ### Equipo Técnico del Proyecto
 - **Juan Carlos Barrera (JCB):** Consultor Senior / Especialista Pesquero y Socioambiental
@@ -94,4 +94,4 @@ npm run dev
 
 ##  Cita Oficial
 
-**Causa Natura Data (2026):** *Índice Espacial de Riesgo Socioeconómico para Comunidades (IERC) ante proyectos de GNL en el Golfo de California*. Elaborado por Juan Carlos Barrera (JCB) y Enrique Gorosave (EG).
+**Causa Natura Center (2026):** *Índice Espacial de Riesgo Socioeconómico para Comunidades (IERC) ante proyectos de GNL en el Golfo de California*. Elaborado por Juan Carlos Barrera (JCB) y Enrique Gorosave (EG).

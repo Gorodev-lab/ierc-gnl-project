@@ -6,7 +6,7 @@ import MiaInspectorModal from './MiaInspectorModal'
 
 const MapContainer   = dynamic(() => import('react-leaflet').then(m => m.MapContainer),   { ssr: false })
 const TileLayer      = dynamic(() => import('react-leaflet').then(m => m.TileLayer),      { ssr: false })
-const CircleMarker   = dynamic(() => import('react-leaflet').then(m => m.CircleMarker),   { ssr: false })
+const Marker         = dynamic(() => import('react-leaflet').then(m => m.Marker),         { ssr: false })
 const Popup          = dynamic(() => import('react-leaflet').then(m => m.Popup),          { ssr: false })
 const GeoJSON        = dynamic(() => import('react-leaflet').then(m => m.GeoJSON),        { ssr: false })
 const WMSTileLayer   = dynamic(() => import('react-leaflet').then(m => m.WMSTileLayer),   { ssr: false })
@@ -31,6 +31,70 @@ const LAYER_CONFIGS: LayerConfig[] = [
   { id: 'manta',            name: 'Camarón / Manta (783)',           file: '/data/zpesca_redes_manta_camaron_sample.geojson', color: '#D35400' },
   { id: 'trampa',           name: 'Trampas Jaiberas (360)',          file: '/data/zpesca_trampa_sample.geojson', color: '#8E44AD' },
   { id: 'riqueza',          name: 'Riqueza Relativa Pesquera (11,065)', file: '/data/riqueza_relativa_sample.geojson', color: '#2C3E50' }
+]
+
+interface TerminalQuickJump {
+  key: string
+  name: string
+  location: string
+  lat: number
+  lon: number
+  zoom: number
+  precision: string
+  precisionColor: string
+  status: string
+  color: string
+}
+
+const TERMINAL_JUMPS: TerminalQuickJump[] = [
+  {
+    key: 'saguaro',
+    name: 'SAGUARO ENERGÍA GNL',
+    location: 'Puerto Libertad, Sonora',
+    lat: 29.905838,
+    lon: -112.688038,
+    zoom: 13,
+    precision: '[APROXIMADO]',
+    precisionColor: '#C0392B',
+    status: 'Proposed / Pre-FID',
+    color: '#EF4444'
+  },
+  {
+    key: 'amigo',
+    name: 'AMIGO LNG',
+    location: 'Guaymas, Sonora',
+    lat: 27.922867,
+    lon: -110.868082,
+    zoom: 13,
+    precision: '[EXACTO]',
+    precisionColor: '#27AE60',
+    status: 'Proposed / Pre-FID',
+    color: '#27AE60'
+  },
+  {
+    key: 'vista_pacifico',
+    name: 'VISTA PACÍFICO (FLNG)',
+    location: 'Topolobampo, Sinaloa',
+    lat: 25.589100,
+    lon: -109.103800,
+    zoom: 13,
+    precision: '[CALCULADO]',
+    precisionColor: '#F39C12',
+    status: 'CANCELADO (Feb 2026)',
+    color: '#78909C'
+  },
+  {
+    key: 'cosala',
+    name: 'GNL COSALÁ',
+    location: 'Mazatlán / Zapopan',
+    lat: 23.250000,
+    lon: -106.420000,
+    zoom: 11,
+    precision: '[APROXIMADO]',
+    precisionColor: '#00ACC1',
+    status: 'En Evaluación ASEA',
+    color: '#00ACC1'
+  }
 ]
 
 function getRiskColor(score: number): string {
@@ -67,6 +131,7 @@ export default function RiskMap() {
   const [loaded, setLoaded] = useState(false)
   const [selectedMiaFeature, setSelectedMiaFeature] = useState<Record<string, any> | null>(null)
   const [isMiaOpen, setIsMiaOpen] = useState(false)
+  const [leafletIcons, setLeafletIcons] = useState<Record<string, any>>({})
   const mapRef = useRef<any>(null)
 
   useEffect(() => {
@@ -89,6 +154,26 @@ export default function RiskMap() {
         iconUrl:       'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
         shadowUrl:     'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
       })
+
+      // Crear custom divIcons estilo Radar Beacon para cada proyecto
+      const iconsMap: Record<string, any> = {}
+      TERMINAL_JUMPS.forEach(t => {
+        iconsMap[t.key] = L.divIcon({
+          className: 'custom-radar-beacon-icon',
+          html: `
+            <div class="radar-beacon-container" style="--beacon-color: ${t.color}">
+              <div class="beacon-center"></div>
+              <div class="beacon-ring"></div>
+              <div class="map-terminal-label" style="--beacon-color: ${t.color}">
+                [+] ${t.name}
+              </div>
+            </div>
+          `,
+          iconSize: [220, 30],
+          iconAnchor: [7, 15]
+        })
+      })
+      setLeafletIcons(iconsMap)
       setLoaded(true)
     })
   }, [])
@@ -108,89 +193,172 @@ export default function RiskMap() {
     setIsMiaOpen(true)
   }
 
-  const proyectosFeatures = layersData.proyectos_gnl?.features || []
+  const handleQuickJump = (t: TerminalQuickJump) => {
+    if (mapRef.current) {
+      mapRef.current.flyTo([t.lat, t.lon], t.zoom, { duration: 1.2 })
+    }
+    // Buscar la feature correspondiente en el GeoJSON para abrir su modal
+    const features = layersData.proyectos_gnl?.features || []
+    const match = features.find((f: any) => {
+      const p = f.properties || {}
+      const projLower = (p.proyecto || '').toLowerCase()
+      if (t.key === 'saguaro' && projLower.includes('saguaro')) return true
+      if (t.key === 'amigo' && projLower.includes('amigo')) return true
+      if (t.key === 'vista_pacifico' && (projLower.includes('vista') || projLower.includes('pacifico'))) return true
+      if (t.key === 'cosala' && (projLower.includes('cosal') || projLower.includes('cosalá'))) return true
+      return false
+    })
+
+    if (match) {
+      handleOpenMiaModal(match.properties)
+    } else {
+      handleOpenMiaModal({
+        proyecto: t.name,
+        componente: t.name,
+        promovente: t.name,
+        estado: t.location,
+        municipio: t.location,
+        precision_label: t.precision,
+        status: t.status,
+        fuente_coordenadas: `Navegación Rápida (${t.lat.toFixed(4)}, ${t.lon.toFixed(4)})`
+      })
+    }
+  }
 
   return (
     <div className="section">
       <div className="section-title" style={{ justifyContent: 'space-between' }}>
         <span>VISOR ESPACIAL IERC — 4 TERMINALES GNL & CONTEXTO SOCIOAMBIENTAL</span>
         <span style={{ fontSize: '0.75rem', color: 'var(--color-ok)', fontFamily: 'var(--font-mono)' }}>
-          [●] ENTREGABLE GEOPACKAGE V3 CONECTADO (11 FEATURES + MIA PLANOS)
+          [●] ENTREGABLE GEOPACKAGE V3 CONECTADO (11 FEATURES + ACCESO RÁPIDO)
         </span>
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: '340px 1fr', gap: '1.25rem', alignItems: 'start' }}>
         
-        {/* Layer Control Sidebar */}
+        {/* Layer & Navigation Sidebar */}
         <div style={{
-          background: 'var(--color-surface)',
-          border: '1px solid var(--color-border-hi)',
-          padding: '1.25rem',
-          fontFamily: 'var(--font-mono)',
-          maxHeight: '620px',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '1rem',
+          maxHeight: '680px',
           overflowY: 'auto'
         }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-            <h4 style={{
-              fontSize: '0.8125rem',
-              color: 'var(--color-amber)',
-              margin: 0,
+
+          {/* Quick Jump Navigation Panel */}
+          <div style={{
+            background: 'var(--color-surface)',
+            border: '1px solid var(--color-accent)',
+            padding: '1rem',
+            fontFamily: 'var(--font-mono)',
+            borderRadius: 0,
+          }}>
+            <div style={{
+              fontSize: '0.75rem',
+              fontWeight: 800,
+              color: 'var(--color-accent)',
+              marginBottom: '0.75rem',
               letterSpacing: '0.05em',
+              borderBottom: '1px solid var(--color-border)',
+              paddingBottom: '0.4rem'
             }}>
-              CAPAS VECTORIALES IERC
-            </h4>
-
-            <button
-              onClick={focusProyectos}
-              style={{
-                background: 'var(--color-surface-2)',
-                border: '1px solid var(--color-amber)',
-                color: 'var(--color-amber)',
-                fontSize: '0.6875rem',
-                padding: '0.25rem 0.5rem',
-                borderRadius: 0,
-                cursor: 'pointer',
-                fontWeight: 'bold'
-              }}
-              title="Centrar mapa en las 4 terminales GNL"
-            >
-              &gt; CENTRAR GNL
-            </button>
-          </div>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-            {LAYER_CONFIGS.map(cfg => (
-              <label key={cfg.id} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.75rem', cursor: 'pointer', color: 'var(--color-text-primary)' }}>
-                <input type="checkbox" checked={!!activeLayers[cfg.id]} onChange={() => toggleLayer(cfg.id)} style={{ accentColor: cfg.color }} />
-                <span style={{ display: 'inline-block', width: 10, height: 10, background: cfg.color, border: '1px solid #000', flexShrink: 0 }} />
-                <span>{cfg.name}</span>
-              </label>
-            ))}
-          </div>
-
-          <div style={{ marginTop: '1.25rem', borderTop: '1px solid var(--color-border)', paddingTop: '0.85rem', fontSize: '0.6875rem' }}>
-            <strong style={{ color: 'var(--color-amber)' }}>ESTATUS PROYECTOS GNL:</strong>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', marginTop: '0.4rem', color: 'var(--color-text-muted)' }}>
-              <span style={{ color: '#EF4444' }}>■ Propuesto / Pre-FID (Saguaro, Amigo)</span>
-              <span style={{ color: '#00ACC1' }}>■ En Evaluación ASEA (GNL Cosalá)</span>
-              <span style={{ color: '#78909C' }}>■ CANCELADO (Vista Pacífico FLNG Feb 2026)</span>
+              &gt; NAVEGACIÓN RÁPIDA A TERMINALES
+            </div>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+              {TERMINAL_JUMPS.map(t => (
+                <button
+                  key={t.key}
+                  onClick={() => handleQuickJump(t)}
+                  style={{
+                    background: 'var(--color-surface-2)',
+                    border: `1px solid ${t.color}`,
+                    color: '#FFFFFF',
+                    padding: '0.5rem 0.65rem',
+                    cursor: 'pointer',
+                    textAlign: 'left',
+                    fontFamily: 'var(--font-mono)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '0.2rem',
+                    borderRadius: 0,
+                    transition: 'background 0.15s ease'
+                  }}
+                  onMouseEnter={e => (e.currentTarget.style.background = 'var(--color-surface-3)')}
+                  onMouseLeave={e => (e.currentTarget.style.background = 'var(--color-surface-2)')}
+                >
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <span style={{ fontSize: '0.75rem', fontWeight: 800, color: t.color }}>
+                      &gt; {t.name}
+                    </span>
+                    <span style={{ fontSize: '0.625rem', color: t.precisionColor, fontWeight: 800 }}>
+                      {t.precision}
+                    </span>
+                  </div>
+                  <div style={{ fontSize: '0.6875rem', color: 'var(--color-text-secondary)' }}>
+                    {t.location}
+                  </div>
+                  <div style={{ fontSize: '0.625rem', color: 'var(--color-text-muted)' }}>
+                    Estatus: {t.status}
+                  </div>
+                </button>
+              ))}
             </div>
           </div>
 
-          <div style={{ marginTop: '1rem', borderTop: '1px solid var(--color-border)', paddingTop: '0.85rem', fontSize: '0.6875rem', color: 'var(--color-text-muted)' }}>
-            <strong>BATIMETRÍA GEBCO:</strong>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', marginTop: '0.4rem' }}>
-              <span style={{ color: '#7DD3FC' }}>― -10m a -20m (Somera/Nerítica)</span>
-              <span style={{ color: '#38BDF8' }}>― -50m a -100m (Plataforma)</span>
-              <span style={{ color: '#0284C7' }}>― -200m a -500m (Talud)</span>
-              <span style={{ color: '#0369A1' }}>― -1000m a -2000m (Batiatlántica)</span>
+          {/* Layer Control Panel */}
+          <div style={{
+            background: 'var(--color-surface)',
+            border: '1px solid var(--color-border-hi)',
+            padding: '1.25rem',
+            fontFamily: 'var(--font-mono)',
+            borderRadius: 0,
+          }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+              <h4 style={{
+                fontSize: '0.8125rem',
+                color: 'var(--color-accent)',
+                margin: 0,
+                letterSpacing: '0.05em',
+                fontWeight: 800,
+              }}>
+                CAPAS VECTORIALES IERC
+              </h4>
+
+              <button
+                onClick={focusProyectos}
+                style={{
+                  background: 'var(--color-surface-2)',
+                  border: '1px solid var(--color-accent)',
+                  color: 'var(--color-accent)',
+                  fontSize: '0.6875rem',
+                  padding: '0.25rem 0.5rem',
+                  borderRadius: 0,
+                  cursor: 'pointer',
+                  fontWeight: 'bold',
+                  fontFamily: 'var(--font-mono)',
+                }}
+                title="Centrar mapa en las 4 terminales GNL"
+              >
+                &gt; CENTRAR GNL
+              </button>
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+              {LAYER_CONFIGS.map(cfg => (
+                <label key={cfg.id} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.75rem', cursor: 'pointer', color: 'var(--color-text-primary)' }}>
+                  <input type="checkbox" checked={!!activeLayers[cfg.id]} onChange={() => toggleLayer(cfg.id)} style={{ accentColor: cfg.color }} />
+                  <span style={{ display: 'inline-block', width: 10, height: 10, background: cfg.color, border: '1px solid #000', flexShrink: 0 }} />
+                  <span>{cfg.name}</span>
+                </label>
+              ))}
             </div>
           </div>
         </div>
 
         {/* Map Container */}
         <div>
-          <div className="map-wrapper" style={{ height: '620px' }}>
+          <div className="map-wrapper" style={{ height: '680px' }}>
             {loaded ? (
               <MapContainer
                 center={[25.8, -109.0]}
@@ -370,45 +538,52 @@ export default function RiskMap() {
                     }}
                     onEachFeature={(feat, layer) => {
                       const p = feat.properties || {}
-                      const isCancel = p.status_code === 'cancelled'
-                      const badgeColor = isCancel ? '#78909C' : (p.status_code === 'under_review' ? '#00ACC1' : '#EF4444')
-                      
                       layer.on('click', () => {
                         handleOpenMiaModal(p)
                       })
-
-                      layer.bindPopup(
-                        `<div style="font-family: monospace; font-size: 0.75rem; min-width: 270px; max-width: 320px;">
-                          <div style="font-size: 0.8125rem; font-weight: bold; color: ${badgeColor}; border-bottom: 1px solid #444; padding-bottom: 4px; margin-bottom: 6px;">
-                            ${p.componente || p.proyecto}
-                          </div>
-                          
-                          <div style="margin-bottom: 6px; display: flex; gap: 4px; flex-wrap: wrap;">
-                            <span style="background: ${badgeColor}; color: white; padding: 2px 6px; font-size: 0.6875rem; font-weight: bold;">
-                              ${p.status}
-                            </span>
-                            <span style="background: #111; border: 1px solid ${badgeColor}; color: ${badgeColor}; padding: 2px 6px; font-size: 0.6875rem; font-weight: bold;">
-                              ${p.precision_label || '[APROXIMADO]'}
-                            </span>
-                          </div>
-
-                          <b>PROYECTO:</b> ${p.proyecto}<br/>
-                          <b>PROMOVENTE:</b> ${p.promovente}<br/>
-                          <b>UBICACIÓN:</b> ${p.municipio}, ${p.estado}<br/>
-                          <b>CAPACIDAD:</b> ${p.capacidad_mtpa ? p.capacidad_mtpa + ' MTPA' : 'N/A'}<br/>
-                          <b>TIPO ÁREA:</b> ${p.tipo_area}<br/>
-
-                          <button 
-                            id="btn-open-mia-${p.id}"
-                            style="margin-top: 8px; width: 100%; background: #C0392B; border: none; color: white; padding: 6px; font-family: monospace; font-size: 0.6875rem; font-weight: bold; cursor: pointer;"
-                          >
-                            &gt; ABRIR INSPECTOR DE MIA & PLANOS
-                          </button>
-                        </div>`
-                      )
                     }}
                   />
                 )}
+
+                {/* High-Visibility Radar Beacon Markers Permanentes en Mapa */}
+                {activeLayers.proyectos_gnl && TERMINAL_JUMPS.map(t => {
+                  const customIcon = leafletIcons[t.key]
+                  if (!customIcon) return null
+
+                  return (
+                    <Marker
+                      key={`beacon_${t.key}`}
+                      position={[t.lat, t.lon]}
+                      icon={customIcon}
+                      eventHandlers={{
+                        click: () => handleQuickJump(t)
+                      }}
+                    >
+                      <Popup>
+                        <div style={{ fontFamily: 'monospace', fontSize: '0.75rem', minWidth: 260 }}>
+                          <b style={{ color: t.color, fontSize: '0.8125rem' }}>{t.name}</b>
+                          <div style={{ margin: '4px 0', display: 'flex', gap: 4 }}>
+                            <span style={{ background: t.color, color: '#FFF', padding: '2px 6px', fontSize: '0.6875rem', fontWeight: 'bold' }}>
+                              {t.status}
+                            </span>
+                            <span style={{ border: `1px solid ${t.precisionColor}`, color: t.precisionColor, padding: '2px 6px', fontSize: '0.6875rem', fontWeight: 'bold' }}>
+                              {t.precision}
+                            </span>
+                          </div>
+                          <b>UBICACIÓN:</b> {t.location}<br/>
+                          <button 
+                            onClick={() => handleQuickJump(t)}
+                            style={{
+                              marginTop: 8, width: '100%', background: '#C0392B', border: 'none', color: 'white', padding: 6, fontFamily: 'monospace', fontSize: '0.6875rem', fontWeight: 'bold', cursor: 'pointer'
+                            }}
+                          >
+                            &gt; ABRIR INSPECTOR DE MIA & PLANOS
+                          </button>
+                        </div>
+                      </Popup>
+                    </Marker>
+                  )
+                })}
 
               </MapContainer>
             ) : (
@@ -434,7 +609,7 @@ export default function RiskMap() {
             textAlign: 'right',
             fontFamily: 'var(--font-mono)',
           }}>
-            FUENTE: GeoPackage v3 (4 Terminales GNL / 11 Subconjuntos Vectoriales + Catálogo de Planos MIA ASEA)
+            FUENTE: GeoPackage v3 (4 Terminales GNL / 11 Subconjuntos Vectoriales + Navegación Rápida Radar Beacon)
           </p>
         </div>
       </div>

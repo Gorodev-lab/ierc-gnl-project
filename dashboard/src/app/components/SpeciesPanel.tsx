@@ -38,11 +38,23 @@ const PROJECT_LABELS: Record<string, string> = {
 
 function SpeciesIcon({ code }: { code: string }) {
   const c = code.toLowerCase()
-  if (c.includes('cam') || c.includes('far')) return <span style={{ fontSize: '1.2rem' }}>🦐</span>
-  if (c.includes('sph') || c.includes('tib')) return <span style={{ fontSize: '1.2rem' }}>🦈</span>
-  if (c.includes('rhi') || c.includes('das') || c.includes('ray')) return <span style={{ fontSize: '1.2rem' }}>🪼</span>
-  if (c.includes('epi') || c.includes('myc') || c.includes('mer')) return <span style={{ fontSize: '1.2rem' }}>🐟</span>
-  return <span style={{ fontSize: '1.2rem' }}>🐠</span>
+  let tag = '[PEC]'
+  if (c.includes('cam') || c.includes('far')) tag = '[CAM]'
+  else if (c.includes('sph') || c.includes('tib')) tag = '[TIB]'
+  else if (c.includes('rhi') || c.includes('das') || c.includes('ray')) tag = '[RAY]'
+  else if (c.includes('epi') || c.includes('myc') || c.includes('mer') || c.includes('lut') || c.includes('par')) tag = '[PAR]'
+
+  return (
+    <span style={{
+      fontSize: '0.6875rem',
+      fontWeight: 800,
+      fontFamily: 'var(--font-mono)',
+      color: 'var(--color-accent)',
+      letterSpacing: '0.04em',
+    }}>
+      {tag}
+    </span>
+  )
 }
 
 function IUCNBadge({ status }: { status: string }) {

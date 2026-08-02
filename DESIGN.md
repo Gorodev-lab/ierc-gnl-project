@@ -5,11 +5,11 @@
 
 ## 📋 Resumen Ejecutivo
 
-Este documento describe la arquitectura, implementación y estado del **IERC-GNL Lakehouse**, alineado estrictamente con el **Plan Operativo Anual (POA 2026-2028)** y el **Plan de Trabajo Oficial EG-JCB** de Causa Natura Data. La plataforma calcula el Índice Espacial de Riesgo Socioeconómico (IERC) en el Golfo de California integrando datos marinos, costeros, socioeconómicos y de pesca artesanal.
+Este documento describe la arquitectura, implementación y estado del **IERC-GNL Lakehouse**, alineado estrictamente con el **Plan Operativo Anual (POA 2026-2028)** y el **Plan de Trabajo Oficial EG-JCB** de Causa Natura Center. La plataforma calcula el Índice Espacial de Riesgo Socioeconómico (IERC) en el Golfo de California integrando datos marinos, costeros, socioeconómicos y de pesca artesanal.
 
 **Estado**: Alineado con Nota Metodológica Ajustada y Entregable GeoPackage v1.1  
 **Fecha**: 1 de agosto de 2026  
-**Autores**: Juan Carlos Barrera (JCB) & Enrique Gorosave (EG) / Equipo Causa Natura Data  
+**Autores**: Juan Carlos Barrera (JCB) & Enrique Gorosave (EG) / Equipo Causa Natura Center  
 
 ---
 
@@ -25,7 +25,9 @@ Este documento describe la arquitectura, implementación y estado del **IERC-GNL
 | Feature engineering estructurado en Amenaza ($H$) y Vulnerabilidad ($V$) | ✅ |
 | Cálculo IERC multiplicativo oficial $R_{i,t} = H_{i,t} \times V_{i,t}$ | ✅ |
 | Módulo Nivel III: Mapa de Confianza y Calidad de Información | ✅ |
-| API REST FastAPI con soporte GeoPackage v1.1 y Next.js 15 | ✅ |
+| API REST FastAPI con soporte GeoPackage v1.1 y Next.js 16 | ✅ |
+| Skill Anti-AI-Slop Hallmark (`.gemini/skills/hallmark/SKILL.md`) & Cero-Emoticones | ✅ |
+
 
 ---
 

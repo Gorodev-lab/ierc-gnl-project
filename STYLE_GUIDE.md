@@ -563,6 +563,7 @@ All changes require approval from
 Douglas Galloway before merging.
 
 Version history:
+v1.1 — August 2026 — Integrated Hallmark Anti-AI-Slop Protocol & Zero-Emoji Policy
 v1.0 — March 2026 — Initial release
        Derived from Esoteria main site
        post-rebrand visual audit
@@ -570,6 +571,44 @@ v1.0 — March 2026 — Initial release
 
 ---
 
-*Esoteria Design System v1.0*
-*Intelligence Infrastructure —
-Mission-Driven Organizations*
+## 11. Hallmark Anti-AI-Slop Protocol & Zero-Emoji Policy
+
+### 11.1 Zero-Emoji Policy
+
+```
+No unicode emojis (e.g. 🦐, 🦈, 🐟, ⚡, 🚢, ❌, 📊) allowed anywhere in the UI.
+Emojis are considered generic "AI slop" decoration that undermines institutional credibility.
+
+Substitution rule:
+Replace emojis with Taxonomic Monospace Badges or crisp ASCII text tags:
+- Species / Organisms: [CAM], [TIB], [RAY], [PAR], [PEC]
+- System & Status: [SYSTEM], [GPKG], [GAP], [MIA], [INFO]
+- Navigation & Action: >, [+], [X], [!]
+- Micro-bars: ASCII progress blocks [██████░░░░]
+```
+
+### 11.2 Hallmark Slop-Test Gates (57-Gate Protocol)
+
+```
+1. Layout: Use asymmetric data-dense grids over centered generic SaaS hero templates.
+2. Micro-typography: Monospace font (IBM Plex Mono) on all codes, metrics, and labels.
+3. Contrast & Sharpness: Border-radius: 0px, box-shadow: none, flat colors (NO gradients).
+4. Pre-emit Critique: Evaluate every component against Nutlope/Hallmark gates before merging.
+```
+
+### 11.3 Agent Skill Reference
+
+```
+The official agent skill definition lives at:
+.gemini/skills/hallmark/SKILL.md
+
+All AI coding assistants (Claude Code, Cursor, Codex, Gemini) MUST obey
+these rules when modifying or generating frontend components.
+```
+
+---
+
+*Esoteria Design System v1.1*
+*Intelligence Infrastructure — Mission-Driven Organizations*
+*Hallmark Anti-AI-Slop Certified*
+

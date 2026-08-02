@@ -274,3 +274,117 @@ html, body {
   .section { padding: 1.25rem 0.875rem; }
   .grid-3, .grid-2 { grid-template-columns: 1fr; }
 }
+
+/* ─── Radar Beacon Marker & Map Labels ────────────────────────────── */
+.radar-beacon-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.beacon-center {
+  width: 14px;
+  height: 14px;
+  background: var(--beacon-color, #EF4444);
+  border: 2px solid #FFFFFF;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.beacon-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 36px;
+  height: 36px;
+  margin-top: -18px;
+  margin-left: -18px;
+  border: 2px solid var(--beacon-color, #EF4444);
+  border-radius: 50%;
+  animation: beacon-pulse 2s infinite ease-out;
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes beacon-pulse {
+  0% {
+    transform: scale(0.4);
+    opacity: 0.95;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.map-terminal-label {
+  background: rgba(17, 17, 17, 0.95);
+  border: 1px solid var(--beacon-color, #EF4444);
+  color: #FFFFFF;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  white-space: nowrap;
+  border-radius: 0px !important;
+  box-shadow: none !important;
+  pointer-events: auto;
+  cursor: pointer;
+  margin-left: 6px;
+}
+
+/* ─── Hallmark Anti-AI-Slop & Terminal Utilities ────────────────── */
+.system-ticker-bar {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.4rem 1.25rem;
+  background: #000000;
+  border-bottom: 1px solid var(--color-border);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.system-ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.system-ticker-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--color-ok);
+  border-radius: 0px;
+}
+
+.terminal-tag {
+  display: inline-block;
+  padding: 1px 5px;
+  background: var(--color-surface-3);
+  border: 1px solid var(--color-border-hi);
+  color: var(--color-text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.ascii-score-bar {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+}
+
+

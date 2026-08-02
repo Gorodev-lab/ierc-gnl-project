@@ -29,53 +29,53 @@ export default function Home() {
               lineHeight: 1.6,
               fontFamily: 'var(--font-mono)',
             }}>
-              <span style={{ color: 'var(--color-amber)', fontWeight: 700 }}>[CAUSA NATURA CENTER]</span>{' '}
-              Evaluación espacial del <strong style={{ color: 'var(--color-amber)' }}>Índice Espacial de Riesgo Socioeconómico para Comunidades (IERC)</strong> ante
-              proyectos de Gas Natural Licuado (GNL) en el Golfo de California. Datos integrados en el entregable{' '}
-              <code style={{ background: 'var(--color-surface-2)', padding: '0.15rem 0.4rem', border: '1px solid var(--color-border-hi)', color: 'var(--color-ocean)' }}>
-                ierc_golfo_california.gpkg
+              <span style={{ color: 'var(--color-accent)', fontWeight: 800 }}>[CAUSA NATURA CENTER]</span>{' '}
+              Evaluación espacial e instrumento metodológico del <strong style={{ color: 'var(--color-accent)' }}>Índice Espacial de Riesgo Socioeconómico para Comunidades (IERC)</strong> ante
+              proyectos de Gas Natural Licuado (GNL) en el Golfo de California. Entregable geográfico OGC v1.1:{' '}
+              <code style={{ background: 'var(--color-surface-2)', padding: '0.15rem 0.45rem', border: '1px solid var(--color-border-hi)', color: 'var(--color-ocean)', borderRadius: 0 }}>
+                deliverables/v1_geopackage/ierc_golfo_california.gpkg
               </code>.
             </p>
           </div>
 
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '1rem'
-          }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
             <button
               onClick={() => setIsCoverageOpen(true)}
               style={{
                 background: 'var(--color-surface-2)',
-                border: '1px solid var(--color-amber)',
-                color: 'var(--color-amber)',
+                border: '1px solid var(--color-accent)',
+                color: 'var(--color-accent)',
                 padding: '0.5rem 0.875rem',
                 fontFamily: 'var(--font-mono)',
                 fontSize: '0.75rem',
-                fontWeight: 700,
+                fontWeight: 800,
                 cursor: 'pointer',
-                boxShadow: '0 0 10px rgba(245, 158, 11, 0.2)'
+                borderRadius: 0,
+                letterSpacing: '0.04em',
+                transition: 'background 0.15s ease',
               }}
+              onMouseOver={(e) => e.currentTarget.style.background = 'var(--color-surface-3)'}
+              onMouseOut={(e) => e.currentTarget.style.background = 'var(--color-surface-2)'}
             >
-              📊 VER VACÍOS & COBERTURA DE DATOS
+              &gt; MATRIZ DE VACÍOS DE INFORMACIÓN
             </button>
           </div>
         </div>
       </div>
 
-      {/* Map Section */}
+      {/* Visor Espacial Interactivo Map Section */}
       <RiskMap />
 
-      {/* Zone Cards */}
+      {/* Terminales & Polígonos Pesqueros PANGAS */}
       <ZoneCards />
 
-      {/* Species Panel */}
+      {/* Especies & Biodiversidad */}
       <SpeciesPanel />
 
-      {/* Methodology */}
+      {/* Metodología & Formulación Matemática */}
       <MethodologyPanel />
 
-      {/* Modal reportes */}
+      {/* Modal de cobertura */}
       <CoverageModal isOpen={isCoverageOpen} onClose={() => setIsCoverageOpen(false)} />
     </div>
   )
