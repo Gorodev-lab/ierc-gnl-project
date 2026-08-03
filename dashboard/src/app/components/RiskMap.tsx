@@ -20,6 +20,7 @@ interface LayerConfig {
 
 const LAYER_CONFIGS: LayerConfig[] = [
   { id: 'proyectos_gnl',    name: '4 Terminales GNL (11 Features v3)', file: '/data/terminales_gnl_v3.geojson', color: '#EF4444' },
+  { id: 'poligonos_saguaro', name: 'Polígonos Detalle Saguaro (MIA 181V)', file: '/data/saguaro_polygons_181v.geojson', color: '#10B981' },
   { id: 'capas_contexto',   name: 'Gasoductos, Sitios Ramsar & ANPs',  file: '/data/capas_contextuales.geojson', color: '#FF9800' },
   { id: 'sener_gasoductos', name: 'SENER/CNIH Red Gasoductos (WMS)', file: '', color: '#FFB000' },
   { id: 'batimetria',       name: 'Contornos Batimétricos GEBCO 2024',file: '/data/batimetria_golfo.geojson', color: '#38BDF8' },
@@ -115,6 +116,7 @@ export default function RiskMap() {
   const [layersData, setLayersData]     = useState<Record<string, any>>({})
   const [activeLayers, setActiveLayers] = useState<Record<string, boolean>>({
     proyectos_gnl: true,
+    poligonos_saguaro: true,
     capas_contexto: true,
     sener_gasoductos: false,
     batimetria: true,
@@ -373,6 +375,45 @@ export default function RiskMap() {
                   subdomains="abcd"
                   maxZoom={19}
                 />
+
+                {/* Layer Polígonos Detalle Saguaro (MIA 181V) */}
+                {activeLayers.poligonos_saguaro && layersData.poligonos_saguaro && (
+                  <GeoJSON
+                    key="poligonos_saguaro"
+                    data={layersData.poligonos_saguaro}
+                    style={(feat) => {
+                      const p = feat?.properties || {}
+                      const tipo = p.tipo || ''
+                      let color = '#10B981' // Reserva green
+                      if (tipo.includes('Campamentos')) color = '#F97316' // Naranja
+                      else if (tipo.includes('Vial') || tipo.includes('Caminos')) color = '#FACC15' // Amarillo
+                      else if (tipo.includes('Terminal')) color = '#3B82F6' // Azul terminal
+
+                      return {
+                        color: color,
+                        fillColor: color,
+                        fillOpacity: 0.45,
+                        weight: 2,
+                        dashArray: tipo.includes('Vial') ? '4, 4' : '0'
+                      }
+                    }}
+                    onEachFeature={(feat, layer) => {
+                      const p = feat?.properties || {}
+                      layer.bindPopup(
+                        `<div style="font-family: monospace; font-size: 0.75rem; min-width: 240px;">
+                          <b style="color: #10B981; font-size: 0.8125rem;">${p.nombre}</b><br/>
+                          <b>TIPO:</b> ${p.tipo}<br/>
+                          <b>SUPERFICIE:</b> ${p.superficie_ha} ha<br/>
+                          <b>N° VÉRTICES MIA:</b> ${p.num_vertices}<br/>
+                          <b>ESTATUS MIA:</b> ${p.estatus}<br/>
+                          <div style="margin-top: 6px; font-size: 0.6875rem; color: #CCCCCC; border-top: 1px dashed #444; padding-top: 4px;">
+                            FUENTE: MIA-R Saguaro / GeoPackage v1.2 (Tablas II.5 - II.9)
+                          </div>
+                        </div>`
+                      )
+                    }}
+                  />
+                )}
 
                 {/* SENER / CNIH WMS Tile Layer */}
                 {activeLayers.sener_gasoductos && (

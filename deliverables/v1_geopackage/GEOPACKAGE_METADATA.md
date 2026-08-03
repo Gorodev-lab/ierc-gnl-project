@@ -18,7 +18,7 @@ Este archivo GeoPackage constituye el **1er Entregable Espacial del Proyecto IER
 
 ---
 
-## 2. Estructura de Capas Espaciales (8 Capas Vectoriales)
+## 2. Estructura de Capas Espaciales (9 Capas Vectoriales)
 
 | Nombre de Capa | Tipo Geometría | N° Entidades | Descripción |
 |---|---|---|---|
@@ -27,9 +27,10 @@ Este archivo GeoPackage constituye el **1er Entregable Espacial del Proyecto IER
 | `localidades_estudio_ierc` | `Point` | 3 | Las 3 localidades prioritarias del POA (Punta Chueca, Puerto Libertad, Guaymas). |
 | `anp_habitats_criticos` | `Polygon` | 2 | Áreas Naturales Protegidas (CONANP) y hábitats marinos críticos. |
 | `zonas_pesqueras_pangas` | `MultiPolygon` | 17 | Polígonos consolidados por sitio pesquero con la clave `uid_espaciotemporal`. |
-| `grilla_h3_riesgo` | `Polygon` | 5,244 | Grilla hexagonal Uber H3 adaptativa (Res 8 / Res 9) con profundidad GEBCO y IERC. |
 | `riqueza_relativa_pesquera` | `MultiPolygon` | 11,065 | Malla espacial de riqueza biológica pesquera relativa (PANGAS). |
-| `batimetria_contornos_gebco` | `LineString` | 851 | Contornos de profundidad batimétrica GEBCO 2024 / ETOPO1 (-5000m a 0m). |
+| `batimetria_contornos_gebco` | `LineString` | 1,146 | Contornos de profundidad batimétrica GEBCO 2024 / ETOPO1 (-5000m a 0m). |
+| `poligonos_detalle_saguaro` | `Polygon` / `LineString` | 5 | Polígonos y línea de caminos extraídos del MIA Saguaro (181 vértices: Reserva, Campamentos, Caminos, T1, T2). |
+| `grilla_h3_riesgo` | `Polygon` | 5,244 | Grilla hexagonal Uber H3 adaptativa (Res 8 / Res 9) con recálculo de distancia a fronteras de polígonos e IERC. |
 
 ---
 

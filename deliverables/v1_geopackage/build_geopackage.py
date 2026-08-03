@@ -11,9 +11,10 @@ Capas incluidas en ierc_golfo_california.gpkg (CRS: EPSG:4326 - WGS 84):
   3. `anp_habitats_criticos` (Polígonos): Áreas Naturales Protegidas (CONANP) y zonas de manglares/pastos marinos.
   4. `localidades_estudio_ierc` (Puntos): Las 3 comunidades del POA (Punta Chueca Comca'ac, Puerto Libertad, Guaymas).
   5. `zonas_pesqueras_pangas` (Polígonos): Sitios pesqueros PANGAS con clave `uid_espaciotemporal`.
-  6. `grilla_h3_riesgo` (Polígonos): Grilla hexagonal H3 adaptativa (Res 8 mar / Res 9 puerto) con profundidad GEBCO y IERC.
-  7. `riqueza_relativa_pesquera` (Polígonos): Capa de riqueza biológica pesquera acumulada.
-  8. `batimetria_contornos_gebco` (Líneas): Contornos de profundidad GEBCO 2024 / ETOPO1.
+  6. `riqueza_relativa_pesquera` (Polígonos): Capa de riqueza biológica pesquera acumulada.
+  7. `batimetria_contornos_gebco` (Líneas): Contornos de profundidad GEBCO 2024 / ETOPO1.
+  8. `poligonos_detalle_saguaro` (Polígonos/Líneas): Vértices exactos MIA Saguaro (Reserva, Campamentos, Caminos, T1, T2).
+  9. `grilla_h3_riesgo` (Polígonos): Grilla hexagonal H3 adaptativa (Res 8 mar / Res 9 puerto) con distancia a polígonos e IERC.
 """
 
 import os
@@ -34,11 +35,11 @@ OUTPUT_GPKG = DELIVERABLE_DIR / 'ierc_golfo_california.gpkg'
 
 DELIVERABLE_DIR.mkdir(parents=True, exist_ok=True)
 
-print("Iniciando generación del GeoPackage Entregable v1.1 (Causa Natura Data - JCB/EG)")
+print("Iniciando generación del GeoPackage Entregable v1.1 / v1.2 (Causa Natura Data - JCB/EG)")
 print(f"Archivo destino: {OUTPUT_GPKG}")
 
 # ── 1. Capa: proyectos_gnl ───────────────────────────────────────────────────
-print("\n1/8 Construyendo capa 'proyectos_gnl' (11 proyectos consolidados)...")
+print("\n1/9 Construyendo capa 'proyectos_gnl' (11 proyectos consolidados)...")
 gnl_geojson = OUTPUT_DIR / 'proyectos_gnl_consolidados.geojson'
 if gnl_geojson.exists():
     gdf_proyectos = gpd.read_file(gnl_geojson).to_crs("EPSG:4326")
@@ -63,7 +64,7 @@ gdf_proyectos.to_file(OUTPUT_GPKG, layer='proyectos_gnl', driver='GPKG')
 print(f"   Capa 'proyectos_gnl' creada ({len(gdf_proyectos)} entidades).")
 
 # ── 2. Capa: gasoductos_infraestructura_gnl ──────────────────────────────────
-print("\n2/8 Construyendo capa 'gasoductos_infraestructura_gnl'...")
+print("\n2/9 Construyendo capa 'gasoductos_infraestructura_gnl'...")
 pipelines = [
     {
         'ducto_id': 'DUC_SONORA_P_LIBERTAD',
@@ -95,7 +96,7 @@ gdf_pipelines.to_file(OUTPUT_GPKG, layer='gasoductos_infraestructura_gnl', drive
 print(f"   Capa 'gasoductos_infraestructura_gnl' creada ({len(gdf_pipelines)} trazos).")
 
 # ── 3. Capa: localidades_estudio_ierc ────────────────────────────────────────
-print("\n3/8 Construyendo capa 'localidades_estudio_ierc'...")
+print("\n3/9 Construyendo capa 'localidades_estudio_ierc'...")
 localidades = [
     {
         'localidad_id': 'PUNTA_CHUECA_COMCAAC',
@@ -139,7 +140,7 @@ gdf_locs.to_file(OUTPUT_GPKG, layer='localidades_estudio_ierc', driver='GPKG')
 print(f"   Capa 'localidades_estudio_ierc' creada ({len(gdf_locs)} localidades).")
 
 # ── 4. Capa: anp_habitats_criticos ───────────────────────────────────────────
-print("\n4/8 Construyendo capa 'anp_habitats_criticos'...")
+print("\n4/9 Construyendo capa 'anp_habitats_criticos'...")
 anp_polygons = [
     {
         'anp_id': 'APFF_ISLAS_GOLFO',
@@ -163,7 +164,7 @@ gdf_anp.to_file(OUTPUT_GPKG, layer='anp_habitats_criticos', driver='GPKG')
 print(f"   Capa 'anp_habitats_criticos' creada ({len(gdf_anp)} áreas protegidas).")
 
 # ── 5. Capa: zonas_pesqueras_pangas ──────────────────────────────────────────
-print("\n5/8 Construyendo capa 'zonas_pesqueras_pangas'...")
+print("\n5/9 Construyendo capa 'zonas_pesqueras_pangas'...")
 pangas_geojson_path = PANGAS_WGS84_DIR / 'ZPesca_PANGAS_wgs84.geojson'
 CRITICAL_CODES = {'CARSPP', 'GYMMAR', 'RHILON', 'RHIPRO', 'RHISPP', 'SPHSPP', 'LUTARG', 'PARSPP', 'DASSPP', 'DASDIP', 'MYCROS'}
 
@@ -222,7 +223,7 @@ gdf_pangas.to_file(OUTPUT_GPKG, layer='zonas_pesqueras_pangas', driver='GPKG')
 print(f"   Capa 'zonas_pesqueras_pangas' creada ({len(gdf_pangas)} sitios con `uid_espaciotemporal`).")
 
 # ── 6. Capa: riqueza_relativa_pesquera ───────────────────────────────────────
-print("\n6/8 Construyendo capa 'riqueza_relativa_pesquera'...")
+print("\n6/9 Construyendo capa 'riqueza_relativa_pesquera'...")
 riqueza_geojson_path = PANGAS_WGS84_DIR / 'Riqueza_Relativa_wgs84.geojson'
 if riqueza_geojson_path.exists():
     gdf_riqueza = gpd.read_file(riqueza_geojson_path)
@@ -233,15 +234,24 @@ if riqueza_geojson_path.exists():
     print(f"   Capa 'riqueza_relativa_pesquera' creada ({len(gdf_riqueza)} polígonos).")
 
 # ── 7. Capa: batimetria_contornos_gebco ──────────────────────────────────────
-print("\n7/8 Construyendo capa 'batimetria_contornos_gebco'...")
+print("\n7/9 Construyendo capa 'batimetria_contornos_gebco'...")
 gebco_gpkg = OUTPUT_DIR / 'GEBCO_Batimetria_Golfo.gpkg'
 if gebco_gpkg.exists():
     gdf_gebco = gpd.read_file(gebco_gpkg, layer="batimetria_gebco_2024").to_crs("EPSG:4326")
     gdf_gebco.to_file(OUTPUT_GPKG, layer='batimetria_contornos_gebco', driver='GPKG')
     print(f"   Capa 'batimetria_contornos_gebco' creada ({len(gdf_gebco)} contornos de profundidad).")
 
-# ── 8. Capa: grilla_h3_riesgo ────────────────────────────────────────────────
-print("\n8/8 Construyendo capa 'grilla_h3_riesgo' (H3 Adaptativa Res 8 / Res 9)...")
+# ── 8. Capa: poligonos_detalle_saguaro ───────────────────────────────────────
+print("\n8/9 Construyendo capa 'poligonos_detalle_saguaro' (181 vértices MIA)...")
+saguaro_geojson_path = PROCESSED_DIR / 'saguaro_polygons_181v.geojson'
+gdf_saguaro = None
+if saguaro_geojson_path.exists():
+    gdf_saguaro = gpd.read_file(saguaro_geojson_path).to_crs("EPSG:4326")
+    gdf_saguaro.to_file(OUTPUT_GPKG, layer='poligonos_detalle_saguaro', driver='GPKG')
+    print(f"   Capa 'poligonos_detalle_saguaro' creada ({len(gdf_saguaro)} geometrías con 181 vértices).")
+
+# ── 9. Capa: grilla_h3_riesgo ────────────────────────────────────────────────
+print("\n9/9 Construyendo capa 'grilla_h3_riesgo' (H3 Adaptativa Res 8 / Res 9)...")
 focus_coords_res8 = [(31.0833, -114.8500), (29.0000, -113.5000), (30.5000, -114.0000)]
 focus_coords_res9 = [(29.9107, -112.6835), (27.9179, -110.9039), (28.9886, -112.1603)]
 
@@ -254,7 +264,10 @@ for lat, lon in focus_coords_res9:
     for cell in h3.grid_disk(h3.latlng_to_cell(lat, lon, 9), 15):
         h3_cell_data.append((cell, 9))
 
-gnl_coords = [(row.geometry.centroid.y, row.geometry.centroid.x) for row in gdf_proyectos.itertuples()]
+# Collect GNL geometries (points + exact Saguaro polygon/line boundaries)
+gnl_geometries = [row.geometry for row in gdf_proyectos.itertuples()]
+if gdf_saguaro is not None:
+    gnl_geometries.extend([row.geometry for row in gdf_saguaro.itertuples()])
 
 h3_features = []
 seen_cells = set()
@@ -268,10 +281,11 @@ for cell, res in h3_cell_data:
     poly = Polygon([(lng, lat) for lat, lng in raw_boundary])
     lat, lon = h3.cell_to_latlng(cell)
 
+    # Minimum distance in km to closest GNL geometry boundary (point or polygon/line)
     min_dist_km = min([
-        math.sqrt((lat - p_lat)**2 + (lon - p_lon)**2) * 111.0
-        for p_lat, p_lon in gnl_coords
-    ]) if gnl_coords else 999.0
+        poly.distance(g) * 111.0
+        for g in gnl_geometries
+    ]) if gnl_geometries else 999.0
     
     amenaza = max(0.0, 1.0 - (min_dist_km / 100.0))
     exposicion = min(1.0, 0.3 + (math.sin(lat * 10) + 1) * 0.35)
@@ -310,6 +324,6 @@ for cell, res in h3_cell_data:
 
 gdf_h3 = gpd.GeoDataFrame(h3_features, crs="EPSG:4326")
 gdf_h3.to_file(OUTPUT_GPKG, layer='grilla_h3_riesgo', driver='GPKG')
-print(f"   Capa 'grilla_h3_riesgo' creada ({len(gdf_h3)} celdas H3 adaptativas Res 8/9).")
+print(f"   Capa 'grilla_h3_riesgo' creada ({len(gdf_h3)} celdas H3 adaptativas Res 8/9 con recálculo a bordes de polígonos).")
 
-print(f"\nGeoPackage v1.1 generado exitosamente en:\n   {OUTPUT_GPKG}!")
+print(f"\nGeoPackage v1.2 generado exitosamente en:\n   {OUTPUT_GPKG}!")
