@@ -74,19 +74,31 @@ ierc-gnl-project/
 
 ---
 
-##  Reproducibilidad e Instalación
+## 🛠️ Reproducibilidad e Instalación
 
-### Reconstruir el GeoPackage v1.1
+### Ejecutar Suite Modular de Pruebas (Pytest)
 
 ```bash
-uv run --with geopandas --with shapely --with h3 python3 deliverables/v1_geopackage/build_geopackage.py
+PYTHONPATH=. ./.venv/bin/python3 -m pytest tests/ -v
+```
+
+### Ejecutar Pipeline End-to-End de Ingesta y Cálculo
+
+```bash
+# 1. Inicializar Lakehouse y Catálogo JSON
+PYTHONPATH=. ./.venv/bin/python3 scripts/init_lakehouse.py
+
+# 2. Computar Features Gold IERC H3
+PYTHONPATH=. ./.venv/bin/python3 scripts/compute_ierc_features.py
+
+# 3. Exportar insumos para el Dashboard Web
+PYTHONPATH=. ./.venv/bin/python3 scripts/prepare_dashboard_data.py
 ```
 
 ### Ejecutar el Dashboard Interactivo
 
 ```bash
 cd dashboard
-npm install
 npm run dev
 ```
 

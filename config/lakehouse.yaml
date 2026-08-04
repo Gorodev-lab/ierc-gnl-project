@@ -3,7 +3,7 @@
 
 lakehouse:
   # Raíz del lakehouse (local filesystem compatible S3)
-  root_path: "/home/gorops/ierc-gnl-project/lakehouse"
+  root_path: "lakehouse"
   
   # Capas del lakehouse (Medallion Architecture)
   layers:
@@ -32,9 +32,9 @@ lakehouse:
     frequency: "monthly"          # daily, monthly, yearly
     column: "time_partition"      # Formato: YYYY-MM
   
-  # Catálogo (DuckDB local)
+  # Catálogo
   catalog:
-    path: "/home/gorops/ierc-gnl-project/lakehouse/metadata/catalog.duckdb"
+    path: "lakehouse/metadata/catalog.json"
     backup_retention_days: 30
 
 # Configuración de fuentes de datos
@@ -58,14 +58,14 @@ data_sources:
   
   gfw_fishing_effort:
     enabled: true
-    source_path: "/home/gorops/ierc-gnl-project/data/raw/gfw"
+    source_path: "data/raw/gfw"
     zenodo_record_id: "14982712"
     target_years: [2020, 2021, 2022, 2023]
     h3_resolution: 8
   
   tnc_conservation:
     enabled: true
-    source_path: "/home/gorops/ierc-gnl-project/data/raw/tnc"
+    source_path: "data/raw/tnc"
     layers:
       - "bajos_marinos"
       - "arrecifes_coral_negro"
@@ -73,7 +73,7 @@ data_sources:
   
   asea_mias:
     enabled: true
-    source_path: "/home/gorops/ierc-gnl-project/causanaturadata/output"
+    source_path: "causanaturadata/output"
     files:
       - "gnl_proyectos_consolidados.csv"
       - "asea_mias_alto_golfo.csv"
@@ -82,7 +82,7 @@ data_sources:
   
   bathymetry:
     enabled: true
-    source_path: "/home/gorops/ierc-gnl-project/causanaturadata/batimetria"
+    source_path: "causanaturadata/batimetria"
     files:
       - "ETOPO1_Gulf_California.tif"
     h3_resolutions: [8, 9, 10]
@@ -98,7 +98,7 @@ gulf_bbox:
 # Configuración de calidad
 quality:
   enabled: true
-  great_expectations_path: "/home/gorops/ierc-gnl-project/great_expectations"
+  great_expectations_path: "great_expectations"
   notification:
     enabled: false
     # webhook_url: "https://hooks.slack.com/services/..."
@@ -107,6 +107,6 @@ quality:
 logging:
   level: "INFO"
   format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-  file: "/home/gorops/ierc-gnl-project/logs/lakehouse.log"
+  file: "logs/lakehouse.log"
   max_bytes: 10485760
   backup_count: 5

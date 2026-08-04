@@ -24,6 +24,21 @@ from pathlib import Path
 from typing import List, Dict, Tuple, Optional
 from datetime import date
 
+try:
+    from geopy.distance import geodesic
+    def haversine_distance(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
+        """Distancia en km usando geodesic (WGS-84 ellipsoid)."""
+        return geodesic((lat1, lon1), (lat2, lon2)).km
+except ImportError:
+    def haversine_distance(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
+        """Fallback: fórmula haversine."""
+        R = 6371.0
+        phi1, phi2 = math.radians(lat1), math.radians(lat2)
+        dphi = math.radians(lat2 - lat1)
+        dlambda = math.radians(lon2 - lon1)
+        a = math.sin(dphi / 2)**2 + math.cos(phi1) * math.cos(phi2) * math.sin(dlambda / 2)**2
+        return R * 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+
 # ============================================================
 # Proyectos GNL del Alto Golfo de California (Datos Verificados)
 # ============================================================
@@ -80,14 +95,6 @@ CRITICAL_SPECIES_CODES = {
     'rhipro', 'rhispp', 'dasspp', 'dasdip', 'gymmar',
     'mycros', 'sphspp',
 }
-
-def haversine_distance(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
-    R = 6371.0
-    phi1, phi2 = math.radians(lat1), math.radians(lat2)
-    dphi = math.radians(lat2 - lat1)
-    dlambda = math.radians(lon2 - lon1)
-    a = math.sin(dphi / 2)**2 + math.cos(phi1) * math.cos(phi2) * math.sin(dlambda / 2)**2
-    return R * 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
 
 def get_polygon_centroid(coordinates) -> Tuple[Optional[float], Optional[float]]:
     try:
@@ -234,9 +241,12 @@ def calculate_fishing_risk(project: Dict, all_layers: Dict[str, List[Dict]]) -> 
     }
 
 def main():
-    base_dir = Path('/home/gorops/ierc-gnl-project')
-    pangas_dir = base_dir / 'data/raw/pangas_wgs84'
-    output_dir = base_dir / 'data/processed'
+    import sys
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+    from config import PROJECT_ROOT, pangas_raw_dir, get_processed_dir
+
+    pangas_dir = pangas_raw_dir()
+    output_dir = get_processed_dir()
     output_dir.mkdir(exist_ok=True)
 
     print("=" * 60)

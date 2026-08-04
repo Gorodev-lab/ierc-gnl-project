@@ -10,32 +10,32 @@ from pathlib import Path
 from typing import Iterator, Optional, List, Dict, Any
 import logging
 
-from .base import BaseIngester, IngestionConfig, CDCMixin
+from .base import BaseIngester, IngestionConfig
 from ..catalog.catalog import DataCatalog
+from src.utils.h3 import add_h3_column_vectorized
+from src.utils.logging import setup_logging
+from config import get_causanatura_dir
 
-logger = logging.getLogger(__name__)
+logger = setup_logging(__name__)
 
 
-class ASEAMIASIngester(BaseIngester, CDCMixin):
+class ASEAMIASIngester(BaseIngester):
     """
     Ingester para Manifestaciones de Impacto Ambiental (MIA) de ASEA
     y proyectos consolidados de CENAGAS/SENER.
-    
-    Soporta CDC (Change Data Capture) para actualizaciones incrementales.
     """
     
     def __init__(self, 
                  config: IngestionConfig,
                  catalog: DataCatalog,
                  storage,
-                 source_dir: str = "/home/gorops/ierc-gnl-project/causanaturadata/output",
-                 files: List[str] = None,
-                 cdc_key_column: str = "proyecto_id",
-                 cdc_hash_columns: List[str] = None):
+                 source_dir: str = None,
+                 files: List[str] = None):
         
         BaseIngester.__init__(self, config, catalog, storage)
-        CDCMixin.__init__(self, cdc_key_column=cdc_key_column, 
-                          cdc_hash_columns=cdc_hash_columns or ["nombre", "estatus", "tipo_proyecto", "capacidad_mtpa"])
+        
+        if source_dir is None:
+            source_dir = str(get_causanatura_dir("output"))
         
         self.source_dir = Path(source_dir)
         self.files = files or [
@@ -107,12 +107,6 @@ class ASEAMIASIngester(BaseIngester, CDCMixin):
         if 'lat' in df.columns and 'lon' in df.columns:
             df = self._add_h3_vectorized(df, 'lat', 'lon', 'h3_cell_10', 10)
         
-        # Calcular content hash para CDC
-        if self.cdc_hash_columns:
-            df['content_hash'] = df.apply(
-                lambda row: self.compute_content_hash(row, self.cdc_hash_columns), axis=1
-            )
-        
         # Añadir timestamp de ingesta
         df['ingestion_timestamp'] = pd.Timestamp.utcnow()
         
@@ -126,7 +120,7 @@ class ASEAMIASIngester(BaseIngester, CDCMixin):
             'proyecto_id', 'nombre', 'estado', 'tipo_proyecto', 'fuente',
             'lat', 'lon', 'estatus', 'capacidad_mtpa', 'longitud_km',
             'folio_asea', 'pdf_url', 'source_file', 'source_type',
-            'h3_cell_10', 'content_hash', 'ingestion_timestamp',
+            'h3_cell_10', 'ingestion_timestamp',
             'year', 'month', 'time_partition'
         ]
         
@@ -245,8 +239,8 @@ class ASEAMIASIngester(BaseIngester, CDCMixin):
 
 
 def create_asea_ingester(catalog, storage, config_overrides: Dict = None) -> ASEAMIASIngester:
-    """Factory para crear ingester ASEA con CDC."""
-    
+    """Factory para crear ingester ASEA."""
+
     base_config = IngestionConfig(
         dataset_name="asea_mias_consolidated",
         layer="silver",
@@ -257,11 +251,11 @@ def create_asea_ingester(catalog, storage, config_overrides: Dict = None) -> ASE
         batch_size=50000,
         validate=True
     )
-    
+
     if config_overrides:
         for k, v in config_overrides.items():
             setattr(base_config, k, v)
-    
+
     return ASEAMIASIngester(
         config=base_config,
         catalog=catalog,
@@ -270,5 +264,6 @@ def create_asea_ingester(catalog, storage, config_overrides: Dict = None) -> ASE
 
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO)
+    from src.utils.logging import setup_logging
+    setup_logging("ierc_gnl.asea_mias")
     print("ASEA MIA Ingester module loaded")

@@ -224,7 +224,7 @@ datasets:
     description: "Distribución de bajos marinos (montes submarinos, bancos) en el Golfo"
     source:
       type: "file"
-      path: "/home/gorops/ierc-gnl-project/data/raw/tnc/tnc_bajos_marinos_golfo_california.zip"
+      path: "data/raw/tnc/tnc_bajos_marinos_golfo_california.zip"
     format: "shapefile_zip"
     crs: "EPSG:4326"
     temporal:
@@ -269,7 +269,7 @@ datasets:
     description: "Distribución de arrecifes de coral negro (Antipatharia) en el Golfo"
     source:
       type: "file"
-      path: "/home/gorops/ierc-gnl-project/data/raw/tnc/tnc_arrecifes_coral_negro_golfo_california.zip"
+      path: "data/raw/tnc/tnc_arrecifes_coral_negro_golfo_california.zip"
     format: "shapefile_zip"
     crs: "EPSG:4326"
     temporal:
@@ -309,7 +309,7 @@ datasets:
     description: "Proyectos de infraestructura GNL y gasoductos en el Golfo (ASEA + CENAGAS + SENER)"
     source:
       type: "file"
-      path: "/home/gorops/ierc-gnl-project/causanaturadata/output/gnl_proyectos_consolidados.csv"
+      path: "causanaturadata/output/gnl_proyectos_consolidados.csv"
     format: "csv"
     crs: "EPSG:4326"
     temporal:
@@ -380,7 +380,7 @@ datasets:
     description: "Modelo de elevación global 1 arc-min (~1.8km) recortado al Golfo"
     source:
       type: "file"
-      path: "/home/gorops/ierc-gnl-project/causanaturadata/batimetria/ETOPO1_Gulf_California.tif"
+      path: "causanaturadata/batimetria/ETOPO1_Gulf_California.tif"
     format: "geotiff"
     crs: "EPSG:4326"
     temporal:
@@ -423,7 +423,7 @@ datasets:
     description: "Modelo batimétrico global 15 arc-sec (~450m) - vectorizado en contornos"
     source:
       type: "file"
-      path: "/home/gorops/ierc-gnl-project/causanaturadata/output/GEBCO_Batimetria_Golfo.gpkg"
+      path: "causanaturadata/output/GEBCO_Batimetria_Golfo.gpkg"
     format: "geopackage"
     crs: "EPSG:4326"
     temporal:
@@ -467,7 +467,7 @@ datasets:
     description: "Zonas de pesca por arte de pesca (PANGAS, buceo, chinchorro, redes, trampa)"
     source:
       type: "file"
-      path: "/home/gorops/ierc-gnl-project/data/raw/pangas_wgs84/"
+      path: "data/raw/pangas_wgs84/"
     format: "geojson"
     crs: "EPSG:4326"
     temporal:

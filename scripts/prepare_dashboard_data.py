@@ -14,9 +14,11 @@ import shutil
 from pathlib import Path
 import geopandas as gpd
 
-BASE = Path('/home/gorops/ierc-gnl-project')
-OUTPUT_DIR = BASE / 'causanaturadata/output'
-DELIVERABLE_GPKG = BASE / 'deliverables/v1_geopackage/ierc_golfo_california.gpkg'
+from config import PROJECT_ROOT, get_causanatura_dir, get_deliverables_dir
+
+BASE = PROJECT_ROOT
+OUTPUT_DIR = get_causanatura_dir("output")
+DELIVERABLE_GPKG = get_deliverables_dir("v1_geopackage") / 'ierc_golfo_california.gpkg'
 PUBLIC_DIR = BASE / 'dashboard/public/data'
 
 PUBLIC_DIR.mkdir(parents=True, exist_ok=True)

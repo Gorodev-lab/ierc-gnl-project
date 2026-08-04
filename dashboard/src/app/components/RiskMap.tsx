@@ -3,6 +3,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import dynamic from 'next/dynamic'
 import MiaInspectorModal from './MiaInspectorModal'
+import { getRiskColor } from '@/lib/risk'
 
 const MapContainer   = dynamic(() => import('react-leaflet').then(m => m.MapContainer),   { ssr: false })
 const TileLayer      = dynamic(() => import('react-leaflet').then(m => m.TileLayer),      { ssr: false })
@@ -98,18 +99,18 @@ const TERMINAL_JUMPS: TerminalQuickJump[] = [
   }
 ]
 
-function getRiskColor(score: number): string {
-  if (score >= 75.0) return '#EF4444'
-  if (score >= 50.0) return '#F59E0B'
-  return '#10B981'
-}
-
 function getBathymetryColor(depth: number): { color: string; weight: number; opacity: number } {
   if (depth >= -20) return { color: '#7DD3FC', weight: 0.9, opacity: 0.8 }
   if (depth >= -100) return { color: '#38BDF8', weight: 0.8, opacity: 0.7 }
   if (depth >= -500) return { color: '#0284C7', weight: 0.7, opacity: 0.6 }
   if (depth >= -2000) return { color: '#0369A1', weight: 0.6, opacity: 0.5 }
   return { color: '#1E3A8A', weight: 0.5, opacity: 0.4 }
+}
+
+async function loadLayer(file: string): Promise<any> {
+  const response = await fetch(file)
+  if (!response.ok) throw new Error(`Failed to load ${file}: ${response.statusText}`)
+  return response.json()
 }
 
 export default function RiskMap() {
@@ -137,15 +138,25 @@ export default function RiskMap() {
   const mapRef = useRef<any>(null)
 
   useEffect(() => {
-    LAYER_CONFIGS.forEach(cfg => {
-      if (cfg.file) {
-        fetch(cfg.file)
-          .then(r => r.json())
-          .then(geoJson => {
-            setLayersData(prev => ({ ...prev, [cfg.id]: geoJson }))
-          })
-          .catch(err => console.error(`Error loading layer ${cfg.file}:`, err))
-      }
+    // Load all layers in parallel using Promise.all
+    const layerPromises = LAYER_CONFIGS
+      .filter(cfg => cfg.file)
+      .map(async cfg => {
+        try {
+          const geoJson = await loadLayer(cfg.file)
+          return { id: cfg.id, data: geoJson }
+        } catch (err) {
+          console.error(`Error loading layer ${cfg.file}:`, err)
+          return { id: cfg.id, data: null }
+        }
+      })
+
+    Promise.all(layerPromises).then(results => {
+      const newLayers: Record<string, any> = {}
+      results.forEach(r => {
+        if (r.data) newLayers[r.id] = r.data
+      })
+      setLayersData(newLayers)
     })
 
     import('leaflet').then(L => {

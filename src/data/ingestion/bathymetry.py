@@ -13,9 +13,11 @@ from typing import Iterator, Optional, List, Dict, Any, Tuple
 import logging
 
 from .base import BaseIngester, IngestionConfig
-from ..lakehouse.partitioning import vector_to_h3_grid
+from src.utils.h3 import vector_to_h3_grid
+from src.utils.logging import setup_logging
+from config import get_causanatura_dir
 
-logger = logging.getLogger(__name__)
+logger = setup_logging(__name__)
 
 # Bounding box Golfo de California
 MIN_LAT, MAX_LAT = 22.5, 32.0
@@ -150,7 +152,7 @@ class BathymetryIngester(BaseIngester):
 
 def create_bathymetry_ingester(catalog, storage, config_overrides: Dict = None):
     """Factory para crear ingester de batimetría (GEBCO)."""
-    
+
     base_config = IngestionConfig(
         dataset_name="bathymetry_gebco",
         layer="silver",
@@ -161,22 +163,17 @@ def create_bathymetry_ingester(catalog, storage, config_overrides: Dict = None):
         batch_size=50000,
         validate=True
     )
-    
-    source_paths = {
-        "etopo1": "/home/gorops/ierc-gnl-project/causanaturadata/batimetria/ETOPO1_Gulf_California.tif",
-        "gebco": "/home/gorops/ierc-gnl-project/causanaturadata/output/GEBCO_Batimetria_Golfo.gpkg",
-    }
-    
+
     if config_overrides:
         for k, v in config_overrides.items():
             setattr(base_config, k, v)
-    
+
     return BathymetryIngester(
         config=base_config,
         catalog=catalog,
         storage=storage,
         source_paths={
-            "gebco": "/home/gorops/ierc-gnl-project/causanaturadata/output/GEBCO_Batimetria_Golfo.gpkg",
+            "gebco": str(get_causanatura_dir("output/GEBCO_Batimetria_Golfo.gpkg")),
         },
         h3_resolutions=[8, 9, 10],
         stats=['mean', 'min', 'max', 'std', 'count']
@@ -184,5 +181,6 @@ def create_bathymetry_ingester(catalog, storage, config_overrides: Dict = None):
 
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO)
+    from src.utils.logging import setup_logging
+    setup_logging("ierc_gnl.bathymetry")
     print("Bathymetry Ingester module loaded")

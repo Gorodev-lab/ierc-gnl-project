@@ -19,12 +19,13 @@ import geopandas as gpd
 
 from ..catalog.catalog import DataCatalog, IngestionRun, DatasetMetadata
 from ..lakehouse.storage import LocalFileStorage, StorageConfig
-from ..lakehouse.partitioning import (
+from src.utils.h3 import (
     add_h3_column_vectorized, vector_to_h3_grid, netcdf_to_h3_parquet,
     create_temporal_partition_columns, get_gulf_h3_cells
 )
+from src.utils.logging import setup_logging
 
-logger = logging.getLogger(__name__)
+logger = setup_logging(__name__)
 
 
 @dataclass
@@ -190,15 +191,16 @@ class BaseIngester(abc.ABC):
                 self.records_processed += len(batch_df)
                 self.records_inserted += len(transformed)
                 
-                # Registrar calidad en catálogo
+                # Registrar calidad en catálogo si el método existe
                 for warning in quality_results.get("warnings", []):
-                    self.catalog.record_quality_validation(
-                        run_id=self.run_id,
-                        dataset_name=self.config.dataset_name,
-                        expectation_name=f"batch_{batch_idx}_warning",
-                        success=False,
-                        observed_value=warning
-                    )
+                    if hasattr(self.catalog, "record_quality_validation"):
+                        self.catalog.record_quality_validation(
+                            run_id=self.run_id,
+                            dataset_name=self.config.dataset_name,
+                            expectation_name=f"batch_{batch_idx}_warning",
+                            success=False,
+                            observed_value=warning
+                        )
             
             # Finalizar con éxito
             self.catalog.finish_ingestion_run(
@@ -248,49 +250,6 @@ class BaseIngester(abc.ABC):
         """Calcula hash de contenido para CDC."""
         content = "|".join(str(row.get(c, "")) for c in columns)
         return hashlib.sha256(content.encode()).hexdigest()[:16]
-
-
-class CDCMixin:
-    """Mixin para Change Data Capture en fuentes incrementales."""
-    
-    def __init__(self, *args, cdc_key_column: str = None, 
-                 cdc_hash_columns: List[str] = None, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.cdc_key_column = cdc_key_column
-        self.cdc_hash_columns = cdc_hash_columns or []
-        self.cdc_changes = {"new": [], "updated": [], "unchanged": [], "removed": []}
-    
-    def detect_changes(self, new_data: pd.DataFrame) -> Dict[str, pd.DataFrame]:
-        """
-        Detecta cambios comparando con estado anterior en catálogo.
-        
-        Returns:
-            Dict con DataFrames: new, updated, unchanged, removed
-        """
-        if not self.cdc_key_column or not self.cdc_hash_columns:
-            # Sin CDC configurado, todo es nuevo
-            return {"new": new_data, "updated": pd.DataFrame(), 
-                    "unchanged": pd.DataFrame(), "removed": pd.DataFrame()}
-        
-        # Obtener estado anterior del catálogo
-        # (En implementación real, consultar tabla de estado CDC)
-        # Por ahora, simular: todo es nuevo
-        return {"new": new_data, "updated": pd.DataFrame(), 
-                "unchanged": pd.DataFrame(), "removed": pd.DataFrame()}
-    
-    def apply_cdc(self, changes: Dict[str, pd.DataFrame]) -> pd.DataFrame:
-        """Aplica cambios CDC (insert new + updated, marca removed)."""
-        # Combinar new + updated para escritura
-        to_write = pd.concat([
-            changes.get("new", pd.DataFrame()),
-            changes.get("updated", pd.DataFrame())
-        ], ignore_index=True)
-        
-        # Registrar removed para soft delete si aplica
-        if len(changes.get("removed", pd.DataFrame())) > 0:
-            logger.info(f"CDC: {len(changes['removed'])} registros marcados como removed")
-        
-        return to_write
 
 
 if __name__ == "__main__":

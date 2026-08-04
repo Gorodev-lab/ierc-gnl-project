@@ -12,9 +12,11 @@ from typing import Iterator, Optional, List, Dict, Any
 import logging
 
 from .base import BaseIngester, IngestionConfig
-from ..lakehouse.partitioning import vector_to_h3_grid
+from src.utils.h3 import vector_to_h3_grid
+from src.utils.logging import setup_logging
+from config import get_raw_dir
 
-logger = logging.getLogger(__name__)
+logger = setup_logging(__name__)
 
 CRITICAL_SPECIES_CODES = {
     'CARSPP', 'GYMMAR', 'RHILON', 'RHIPRO', 'RHISPP',
@@ -35,11 +37,15 @@ class PangasVectorIngester(BaseIngester):
                  config: IngestionConfig,
                  catalog,
                  storage,
-                 source_dir: str = "/home/gorops/ierc-gnl-project/data/raw/pangas_wgs84",
+                 source_dir: str = None,
                  h3_resolution: int = 8):
-        super().__init__(config, catalog, storage)
+        if source_dir is None:
+            source_dir = str(get_raw_dir("pangas_wgs84"))
+        
         self.source_dir = Path(source_dir)
         self.h3_resolution = h3_resolution
+        
+        super().__init__(config, catalog, storage)
 
     def extract(self) -> Iterator[pd.DataFrame]:
         """Extrae y convierte polígonos PANGAS a grid H3 con uid_espaciotemporal."""
@@ -65,7 +71,7 @@ class PangasVectorIngester(BaseIngester):
             sitio_code = str(row.get('sitio_code') or 'ZONA_PESCA')
             arte = str(row.get('ARTE') or 'PANGAS').upper().replace(' ', '_')
             spp = str(row.get('spp_code') or row.get('spp_nomb') or 'MULTIESPECIE').upper().replace(' ', '_')
-            
+
             uid = f"{comunidad}-ARTESANAL-{spp}-{arte}-{sitio_code}-ANUAL-RUTA_PRINCIPAL"
             uids.append(uid)
 
@@ -130,5 +136,6 @@ def create_pangas_ingester(catalog, storage, config_overrides: Dict = None) -> P
 
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO)
+    from src.utils.logging import setup_logging
+    setup_logging("ierc_gnl.pangas_vector")
     print("PANGAS Vector Ingester module loaded")

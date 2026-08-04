@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import RiskBadge from './RiskBadge'
+import { getRiskColor } from '@/lib/risk'
 
 interface Project {
   proyecto_id: string

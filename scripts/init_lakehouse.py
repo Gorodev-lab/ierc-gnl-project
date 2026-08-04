@@ -20,6 +20,8 @@ from src.data.ingestion.gfw_fishing import create_gfw_ingester
 from src.data.ingestion.tnc_vector import create_tnc_ingester
 from src.data.ingestion.asea_mias import create_asea_ingester
 
+from config import PROJECT_ROOT, get_config_dir, get_lakehouse_dir
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
@@ -27,8 +29,10 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-def init_lakehouse_structure(config_path: str = "/home/gorops/ierc-gnl-project/config/lakehouse.yaml"):
+def init_lakehouse_structure(config_path: str = None):
     """Inicializa estructura de directorios del lakehouse."""
+    if config_path is None:
+        config_path = str(get_config_dir() / "lakehouse.yaml")
     storage = create_storage_from_config(config_path)
     logger.info(f"Lakehouse inicializado en: {storage.root}")
     
@@ -40,14 +44,18 @@ def init_lakehouse_structure(config_path: str = "/home/gorops/ierc-gnl-project/c
     return storage
 
 
-def init_catalog(config_path: str = "/home/gorops/ierc-gnl-project/config/lakehouse.yaml",
-                 catalog_yaml: str = "/home/gorops/ierc-gnl-project/config/data_catalog.yaml"):
-    """Inicializa catálogo DuckDB desde YAML."""
+def init_catalog(config_path: str = None, catalog_yaml: str = None):
+    """Inicializa catálogo JSON desde YAML."""
+    if config_path is None:
+        config_path = str(get_config_dir() / "lakehouse.yaml")
+    if catalog_yaml is None:
+        catalog_yaml = str(get_config_dir() / "data_catalog.yaml")
+
     storage = create_storage_from_config(config_path)
-    catalog_path = storage.root / "metadata" / "catalog.duckdb"
+    catalog_dir = storage.root / "metadata"
     
-    logger.info(f"Inicializando catálogo en: {catalog_path}")
-    catalog = load_catalog_from_yaml(str(catalog_path), catalog_yaml)
+    logger.info(f"Inicializando catálogo en: {catalog_dir}")
+    catalog = load_catalog_from_yaml(str(catalog_dir), catalog_yaml)
     
     # Listar datasets registrados
     datasets = catalog.list_datasets()
@@ -168,13 +176,6 @@ def main():
         logger.error(f"Fallo ingesta ASEA: {e}")
         results['asea'] = {"status": "failed", "error": str(e)}
     
-    # GFW es grande, hacerlo opcional
-    # try:
-    #     results['gfw_vessels'] = run_gfw_ingestion(catalog, storage, "vessels")
-    #     results['gfw_fishing'] = run_gfw_ingestion(catalog, storage, "fishing_effort")
-    # except Exception as e:
-    #     logger.error(f"Fallo ingesta GFW: {e}")
-    
     # 4. Verificar lakehouse
     verify_lakehouse(storage)
     
@@ -184,20 +185,20 @@ def main():
     logger.info("=" * 60)
     
     for name, result in results.items():
-        status = result.get('status', 'unknown')
-        if status == 'success':
-            inserted = result.get('records_inserted', 0)
-            logger.info(f"  ✅ {name}: {inserted:,} registros")
+        if isinstance(result, dict) and "status" in result:
+            status = result.get('status', 'unknown')
+            if status == 'success':
+                inserted = result.get('records_inserted', 0)
+                logger.info(f"  ✅ {name}: {inserted:,} registros")
+            else:
+                error = result.get('error', 'unknown error')
+                logger.info(f"  ❌ {name}: FALLÓ - {error}")
         else:
-            error = result.get('error', 'unknown error')
-            logger.info(f"  ❌ {name}: FALLÓ - {error}")
-    
-    # Cerrar catálogo
-    catalog.close()
+            logger.info(f"  ℹ️ {name}: {result}")
     
     logger.info("\n✅ Inicialización completada")
     logger.info(f"Lakehouse listo en: {storage.root}")
-    logger.info(f"Catálogo: {storage.root / 'metadata' / 'catalog.duckdb'}")
+    logger.info(f"Catálogo en: {storage.root / 'metadata' / 'datasets.json'}")
 
 
 if __name__ == "__main__":

@@ -7,23 +7,26 @@ clasificando variables en los ejes de Amenaza (H) y Vulnerabilidad (V).
 """
 
 import sys
-from pathlib import Path
+from config import PROJECT_ROOT, get_lakehouse_dir
 
-sys.path.insert(0, str(Path("/home/gorops/ierc-gnl-project/src")))
+sys.path.insert(0, str(PROJECT_ROOT / "src"))
 
 import pandas as pd
 import numpy as np
 import duckdb
 import logging
 
-from data.lakehouse.partitioning import get_adaptive_gulf_h3_cells
+from src.utils.h3 import get_gulf_h3_cells
+
+def get_adaptive_gulf_h3_cells(resolution: int = 8):
+    cells = get_gulf_h3_cells(resolution)
+    return [{'h3_cell': c, 'resolution': resolution} for c in cells]
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-LAKEHOUSE_ROOT = Path("/home/gorops/ierc-gnl-project/lakehouse")
-SILVER = LAKEHOUSE_ROOT / "processed"
-GOLD = LAKEHOUSE_ROOT / "curated"
+SILVER = get_lakehouse_dir("silver")
+GOLD = get_lakehouse_dir("gold")
 
 
 def load_silver_parquet(path: Path, columns: list = None) -> pd.DataFrame:

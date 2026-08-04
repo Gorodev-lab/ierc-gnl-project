@@ -18,11 +18,12 @@ import os
 from pathlib import Path
 import folium
 from folium import plugins
+from config import get_data_dir, get_causanatura_dir, get_deliverables_dir, get_raw_dir, PROJECT_ROOT
 
-BASE_DIR = Path('/home/gorops/ierc-gnl-project')
+BASE_DIR = PROJECT_ROOT
 PUBLIC_DATA_DIR = BASE_DIR / 'dashboard/public/data'
-PANGAS_DIR = BASE_DIR / 'data/raw/pangas_wgs84'
-OUTPUT_DIR = BASE_DIR / 'output'
+PANGAS_DIR = get_raw_dir("pangas_wgs84")
+OUTPUT_DIR = get_deliverables_dir()
 
 # Datos de riesgo pesquero consolidados para los 4 proyectos
 RISK_METRICS = {

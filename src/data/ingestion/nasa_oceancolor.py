@@ -13,8 +13,11 @@ from datetime import datetime
 import logging
 
 from .base import BaseIngester, IngestionConfig
+from src.utils.h3 import netcdf_to_h3_parquet
+from src.utils.logging import setup_logging
+from config import get_raw_dir
 
-logger = logging.getLogger(__name__)
+logger = setup_logging(__name__)
 
 
 class NASAOceanColorIngester(BaseIngester):
@@ -34,10 +37,14 @@ class NASAOceanColorIngester(BaseIngester):
                  catalog,
                  storage,
                  variable: str = "chlor_a",
-                 source_dir: str = "/home/gorops/ierc-gnl-project/data/raw/nasa",
+                 source_dir: str = None,
                  chunk_size: Dict[str, int] = None):
         super().__init__(config, catalog, storage)
         self.variable = variable
+        
+        if source_dir is None:
+            source_dir = str(get_raw_dir("nasa"))
+        
         self.source_dir = Path(source_dir)
         self.chunk_size = chunk_size or {"time": 1, "lat": 500, "lon": 500}
         

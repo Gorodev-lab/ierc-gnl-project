@@ -13,9 +13,11 @@ import tempfile
 import logging
 
 from .base import BaseIngester, IngestionConfig
-from ..lakehouse.partitioning import vector_to_h3_grid
+from src.utils.h3 import vector_to_h3_grid
+from src.utils.logging import setup_logging
+from config import get_raw_dir
 
-logger = logging.getLogger(__name__)
+logger = setup_logging(__name__)
 
 
 class TNCVectorIngester(BaseIngester):
@@ -34,10 +36,14 @@ class TNCVectorIngester(BaseIngester):
                  config: IngestionConfig,
                  catalog,
                  storage,
-                 source_dir: str = "/home/gorops/ierc-gnl-project/data/raw/tnc",
+                 source_dir: str = None,
                  layers: List[str] = None,
                  h3_resolution: int = 8):
         super().__init__(config, catalog, storage)
+        
+        if source_dir is None:
+            source_dir = str(get_raw_dir("tnc"))
+        
         self.source_dir = Path(source_dir)
         self.layers = layers or ["bajos_marinos", "arrecifes_coral_negro"]
         self.h3_resolution = h3_resolution
