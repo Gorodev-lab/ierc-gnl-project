@@ -128,7 +128,7 @@ def compute_ierc_features() -> pd.DataFrame:
 
     # 5. PANGAS Zonas Pesqueras & Riqueza (Exposición Pesquera H y Riqueza V)
     logger.info("Cargando PANGAS Real...")
-    pangas = load_silver_parquet(SILVER / "pangas/fishing_zones_h3", columns=['h3_cell', 'uid_espaciotemporal', 'riqueza_relativa_mean'])
+    pangas = load_silver_parquet(SILVER / "pangas_fishing_zones", columns=['h3_cell', 'uid_espaciotemporal', 'riqueza_relativa_mean'])
     if not pangas.empty:
         pangas_agg = pangas.groupby('h3_cell').agg(
             pangas_densidad_esfuerzo=('uid_espaciotemporal', 'count'),
