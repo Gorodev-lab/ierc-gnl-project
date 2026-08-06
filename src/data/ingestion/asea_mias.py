@@ -12,7 +12,8 @@ import logging
 
 from .base import BaseIngester, IngestionConfig
 from ..catalog.catalog import DataCatalog
-from src.utils.h3 import add_h3_column_vectorized
+from src.utils.h3 import add_h3_column_vectorized, filter_df_bbox
+from src.utils.standardize import standardize_columns
 from src.utils.logging import setup_logging
 from config import get_causanatura_dir
 
@@ -105,7 +106,7 @@ class ASEAMIASIngester(BaseIngester):
         
         # Añadir H3 cell (resolución 10 para infraestructura puntual)
         if 'lat' in df.columns and 'lon' in df.columns:
-            df = self._add_h3_vectorized(df, 'lat', 'lon', 'h3_cell_10', 10)
+            df = add_h3_column_vectorized(df, 'lat', 'lon', 'h3_cell_10', 10)
         
         # Añadir timestamp de ingesta
         df['ingestion_timestamp'] = pd.Timestamp.utcnow()
@@ -217,50 +218,14 @@ class ASEAMIASIngester(BaseIngester):
         content = f"{row.get('nombre', '')}|{row.get('estado', '')}|{row.get('tipo_proyecto', '')}"
         return f"GEN_{hashlib.md5(content.encode()).hexdigest()[:12]}"
     
-    def _add_h3_vectorized(self, df: pd.DataFrame, lat_col: str, lon_col: str, 
-                           h3_col: str, resolution: int) -> pd.DataFrame:
-        """Versión vectorizada para H3."""
-        df = df.copy()
-        import h3
-        
-        valid_mask = df[lat_col].notna() & df[lon_col].notna()
-        
-        if valid_mask.any():
-            lats = df.loc[valid_mask, lat_col].values
-            lons = df.loc[valid_mask, lon_col].values
-            h3_cells = [h3.latlng_to_cell(lat, lon, resolution) for lat, lon in zip(lats, lons)]
-            df.loc[valid_mask, h3_col] = h3_cells
-        
-        df.loc[~valid_mask, h3_col] = None
-        return df
-    
     def _get_partition_path(self, df: pd.DataFrame) -> str:
-        return "asea/mias_enriched/"
+            return "asea/mias_enriched/"
 
 
-def create_asea_ingester(catalog, storage, config_overrides: Dict = None) -> ASEAMIASIngester:
-    """Factory para crear ingester ASEA."""
-
-    base_config = IngestionConfig(
-        dataset_name="asea_mias_consolidated",
-        layer="silver",
-        partition_cols=["h3_cell_10", "tipo_proyecto"],
-        h3_resolution=10,
-        bbox=(22.5, -115.0, 32.0, -108.0),
-        compression="zstd",
-        batch_size=50000,
-        validate=True
-    )
-
-    if config_overrides:
-        for k, v in config_overrides.items():
-            setattr(base_config, k, v)
-
-    return ASEAMIASIngester(
-        config=base_config,
-        catalog=catalog,
-        storage=storage
-    )
+def create_asea_ingester(catalog, storage, **kwargs):
+    """Factory para crear ASEAMIASIngester."""
+    from src.data.ingestion.factory import create_ingester
+    return create_ingester(ASEAMIASIngester, "asea_mias", catalog, storage, **kwargs)
 
 
 if __name__ == "__main__":

@@ -107,10 +107,61 @@ function getBathymetryColor(depth: number): { color: string; weight: number; opa
   return { color: '#1E3A8A', weight: 0.5, opacity: 0.4 }
 }
 
-async function loadLayer(file: string): Promise<any> {
-  const response = await fetch(file)
-  if (!response.ok) throw new Error(`Failed to load ${file}: ${response.statusText}`)
-  return response.json()
+function toGeoJSON(data: any): any {
+  if (!data) return null
+  if (data.type === 'FeatureCollection') return data
+  if (data.features && Array.isArray(data.features)) {
+    const features = data.features.map((item: any) => {
+      if (item.type === 'Feature') return item
+      const { geometry, ...properties } = item
+      return {
+        type: 'Feature',
+        geometry: typeof geometry === 'string' ? JSON.parse(geometry) : (geometry || null),
+        properties
+      }
+    })
+    return { type: 'FeatureCollection', features }
+  }
+  if (Array.isArray(data)) {
+    const features = data.map((item: any) => {
+      const { geometry, ...properties } = item
+      return {
+        type: 'Feature',
+        geometry: typeof geometry === 'string' ? JSON.parse(geometry) : (geometry || null),
+        properties
+      }
+    })
+    return { type: 'FeatureCollection', features }
+  }
+  return data
+}
+
+async function loadLayer(id: string, file: string): Promise<any> {
+  if (file) {
+    try {
+      const response = await fetch(file)
+      if (response.ok) {
+        const json = await response.json()
+        return toGeoJSON(json)
+      }
+    } catch {
+      // Fallthrough to API fallback
+    }
+  }
+
+  const tableMap: Record<string, string> = {
+    proyectos_gnl: 'proyectos_gnl',
+    h3_riesgo: 'grilla_h3_riesgo',
+    pangas: 'zonas_pesqueras_pangas',
+    riqueza: 'riqueza_relativa_pesquera',
+    capas_contexto: 'gasoductos_infraestructura_gnl',
+  }
+
+  const table = tableMap[id] || id
+  const apiRes = await fetch(`/api/geopackage?layer=${table}&limit=5000`)
+  if (!apiRes.ok) throw new Error(`Failed to load layer ${id}`)
+  const data = await apiRes.json()
+  return toGeoJSON(data)
 }
 
 export default function RiskMap() {
@@ -140,13 +191,12 @@ export default function RiskMap() {
   useEffect(() => {
     // Load all layers in parallel using Promise.all
     const layerPromises = LAYER_CONFIGS
-      .filter(cfg => cfg.file)
       .map(async cfg => {
         try {
-          const geoJson = await loadLayer(cfg.file)
+          const geoJson = await loadLayer(cfg.id, cfg.file)
           return { id: cfg.id, data: geoJson }
         } catch (err) {
-          console.error(`Error loading layer ${cfg.file}:`, err)
+          console.error(`Error loading layer ${cfg.id}:`, err)
           return { id: cfg.id, data: null }
         }
       })

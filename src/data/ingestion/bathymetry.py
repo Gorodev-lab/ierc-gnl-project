@@ -13,7 +13,7 @@ from typing import Iterator, Optional, List, Dict, Any, Tuple
 import logging
 
 from .base import BaseIngester, IngestionConfig
-from src.utils.h3 import vector_to_h3_grid
+from src.utils.h3 import vector_to_h3_grid, filter_gdf_bbox
 from src.utils.logging import setup_logging
 from config import get_causanatura_dir
 
@@ -35,10 +35,17 @@ class BathymetryIngester(BaseIngester):
                  config: IngestionConfig,
                  catalog,
                  storage,
-                 source_paths: Dict[str, str],
+                 source_paths: Dict[str, str] = None,
                  h3_resolutions: List[int] = None,
                  stats: List[str] = None):
         super().__init__(config, catalog, storage)
+        # Allow source_paths from config_overrides or default
+        if source_paths is None:
+            source_paths = getattr(config, 'source_paths', None)
+        if source_paths is None:
+            source_paths = {
+                "gebco": "/home/gorops/ierc-gnl-project/causanaturadata/output/GEBCO_Batimetria_Golfo.gpkg"
+            }
         self.source_paths = source_paths
         self.h3_resolutions = h3_resolutions or [8, 9, 10]
         self.stats = stats or ['mean', 'min', 'max', 'std', 'count']
@@ -101,7 +108,7 @@ class BathymetryIngester(BaseIngester):
             gdf = gdf.to_crs("EPSG:4326")
         
         # Filtrar solo líneas dentro del bbox del Golfo
-        gdf = gdf.cx[MIN_LON:MAX_LON, MIN_LAT:MAX_LAT]
+        gdf = filter_gdf_bbox(gdf)
         
         if gdf.crs != "EPSG:4326":
             gdf = gdf.to_crs("EPSG:4326")
@@ -150,34 +157,10 @@ class BathymetryIngester(BaseIngester):
             yield agg
 
 
-def create_bathymetry_ingester(catalog, storage, config_overrides: Dict = None):
-    """Factory para crear ingester de batimetría (GEBCO)."""
-
-    base_config = IngestionConfig(
-        dataset_name="bathymetry_gebco",
-        layer="silver",
-        partition_cols=["resolution"],  # Solo por resolución (3 particiones)
-        h3_resolution=8,
-        bbox=(22.5, -115.0, 32.0, -108.0),
-        compression="zstd",
-        batch_size=50000,
-        validate=True
-    )
-
-    if config_overrides:
-        for k, v in config_overrides.items():
-            setattr(base_config, k, v)
-
-    return BathymetryIngester(
-        config=base_config,
-        catalog=catalog,
-        storage=storage,
-        source_paths={
-            "gebco": str(get_causanatura_dir("output/GEBCO_Batimetria_Golfo.gpkg")),
-        },
-        h3_resolutions=[8, 9, 10],
-        stats=['mean', 'min', 'max', 'std', 'count']
-    )
+def create_bathymetry_ingester(catalog, storage, **kwargs):
+    """Factory para crear BathymetryIngester."""
+    from src.data.ingestion.factory import create_ingester
+    return create_ingester(BathymetryIngester, "bathymetry_gebco", catalog, storage, **kwargs)
 
 
 if __name__ == "__main__":

@@ -13,6 +13,63 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+# ============================================================
+# Bbox Filtering (Native geopandas)
+# ============================================================
+
+GULF_BBOX = (22.5, -115.0, 32.0, -108.0)
+
+
+def filter_gdf_bbox(
+    gdf: gpd.GeoDataFrame,
+    bbox: Tuple[float, float, float, float] = GULF_BBOX
+) -> gpd.GeoDataFrame:
+    """
+    Filtra GeoDataFrame por bbox usando geopandas .cx[] indexer (native, fast).
+    
+    Args:
+        gdf: GeoDataFrame con geometría
+        bbox: (min_lat, min_lon, max_lat, max_lon)
+    
+    Returns:
+        GeoDataFrame filtrado
+    """
+    if gdf.empty:
+        return gdf
+    
+    min_lat, min_lon, max_lat, max_lon = bbox
+    # geopandas .cx[] expects (x, y) = (lon, lat)
+    return gdf.cx[min_lon:max_lon, min_lat:max_lat]
+
+
+def filter_df_bbox(
+    df: pd.DataFrame,
+    bbox: Tuple[float, float, float, float] = GULF_BBOX,
+    lat_col: str = 'lat',
+    lon_col: str = 'lon'
+) -> pd.DataFrame:
+    """
+    Filtra DataFrame con lat/lon por bbox usando boolean indexing (vectorized).
+    
+    Args:
+        df: DataFrame con columnas lat/lon
+        bbox: (min_lat, min_lon, max_lat, max_lon)
+        lat_col: nombre de columna latitud
+        lon_col: nombre de columna longitud
+    
+    Returns:
+        DataFrame filtrado
+    """
+    if df.empty or lat_col not in df.columns or lon_col not in df.columns:
+        return df
+    
+    min_lat, min_lon, max_lat, max_lon = bbox
+    mask = (
+        (df[lat_col] >= min_lat) & (df[lat_col] <= max_lat) &
+        (df[lon_col] >= min_lon) & (df[lon_col] <= max_lon)
+    )
+    return df[mask].copy()
+
 
 # ============================================================
 # H3 Cell Generation
@@ -20,7 +77,7 @@ logger = logging.getLogger(__name__)
 
 def get_gulf_h3_cells(
     resolution: int,
-    bbox: Tuple[float, float, float, float] = (22.5, -115.0, 32.0, -108.0)
+    bbox: Tuple[float, float, float, float] = GULF_BBOX
 ) -> List[str]:
     """
     Obtiene todas las celdas H3 que intersectan el bounding box del Golfo.
@@ -304,6 +361,10 @@ def netcdf_to_h3_parquet(
 
     return result
 
+
+# ============================================================
+# If __name__ == "__main__"
+# ============================================================
 
 if __name__ == "__main__":
     from ..utils.logging import setup_logging

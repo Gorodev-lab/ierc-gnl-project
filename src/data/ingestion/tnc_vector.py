@@ -188,39 +188,18 @@ class TNCVectorIngester(BaseIngester):
         return f"tnc/{layer}_h3/h3_{self.h3_resolution}={{h3_cell}}/"
 
 
-def create_tnc_ingester(catalog, storage, layer_name: str, config_overrides: Dict = None) -> TNCVectorIngester:
-    """Factory para crear ingester TNC para una capa específica."""
-    
+def create_tnc_ingester(catalog, storage, layer_name: str = "bajos_marinos", **kwargs):
+    """Factory para crear TNCVectorIngester."""
+    from src.data.ingestion.factory import create_ingester
     dataset_map = {
         "bajos_marinos": "tnc_bajos_marinos",
-        "arrecifes_coral_negro": "tnc_arrecifes_coral_negro"
+        "arrecifes_coral_negro": "tnc_arrecifes_coral_negro",
     }
-    
-    dataset_name = dataset_map.get(layer_name, f"tnc_{layer_name}")
-    
-    base_config = IngestionConfig(
-        dataset_name=dataset_name,
-        layer="silver",
-        partition_cols=["tnc_layer"],  # Solo por capa, NO por h3_cell
-        h3_resolution=8,
-        bbox=(22.5, -115.0, 32.0, -108.0),
-        compression="zstd",
-        batch_size=50000,
-        validate=True
-    )
-    
-    if config_overrides:
-        for k, v in config_overrides.items():
-            setattr(base_config, k, v)
-    
-    return TNCVectorIngester(
-        config=base_config,
-        catalog=catalog,
-        storage=storage,
-        layers=[layer_name]
-    )
+    dataset_name = dataset_map.get(layer_name, "tnc_bajos_marinos")
+    return create_ingester(TNCVectorIngester, dataset_name, catalog, storage, layers=[layer_name], **kwargs)
 
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO)
+    from src.utils.logging import setup_logging
+    setup_logging("ierc_gnl.tnc_vector")
     print("TNC Vector Ingester module loaded")

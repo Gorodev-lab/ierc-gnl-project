@@ -1,0 +1,3900 @@
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512833fffff', 8,
+            30.40681, -113.89374,
+            60.41, 'Moderado',
+            0.0, 0.866,
+            0.623, 0.7,
+            0.85, 0.3,
+            143.6, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.89270399414998, 30.40171198974301], [-113.88808698011694, 30.405078236812244], [-113.88912566647639, 30.410179747337338], [-113.89478176704529, 30.411914889816764], [-113.89939877307128, 30.408548476726498], [-113.89835968656622, 30.403447087192486], [-113.89270399414998, 30.40171198974301]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485129d9fffff', 8,
+            30.41528, -113.89016,
+            60.07, 'Moderado',
+            0.0, 0.842,
+            0.631, 0.7,
+            0.85, 0.3,
+            143.6, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.88912566647639, 30.410179747337338], [-113.88450817440197, 30.413545836973544], [-113.8855467907944, 30.418647235048713], [-113.89120329953055, 30.420382422579863], [-113.8958207836762, 30.417016166969457], [-113.89478176704529, 30.411914889816764], [-113.88912566647639, 30.410179747337338]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485129d1fffff', 8,
+            30.42375, -113.88659,
+            59.69, 'Moderado',
+            0.0, 0.817,
+            0.64, 0.7,
+            0.85, 0.3,
+            143.6, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.8855467907944, 30.418647235048713], [-113.88092882062237, 30.422013167012135], [-113.8819673670061, 30.427114452419403], [-113.887624283924, 30.42884968502405], [-113.89224224624563, 30.425483587133268], [-113.89120329953055, 30.420382422579863], [-113.8855467907944, 30.418647235048713]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485129d7fffff', 8,
+            30.43222, -113.88301,
+            59.3, 'Moderado',
+            0.0, 0.79,
+            0.649, 0.7,
+            0.85, 0.3,
+            143.62, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.8819673670061, 30.427114452419403], [-113.8773489186802, 30.4304802264703], [-113.87838739501345, 30.435581398991715], [-113.88404472012769, 30.43731667669166], [-113.88866316068156, 30.433950736760217], [-113.887624283924, 30.42884968502405], [-113.8819673670061, 30.427114452419403]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '884851299dfffff', 8,
+            30.44068, -113.87943,
+            58.88, 'Moderado',
+            0.0, 0.763,
+            0.658, 0.7,
+            0.85, 0.3,
+            143.64, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.87838739501345, 30.435581398991715], [-113.87376846847746, 30.438947014890363], [-113.87480687471852, 30.444048074308014], [-113.88046460804358, 30.445783397125062], [-113.88508352688595, 30.442417615392674], [-113.88404472012769, 30.43731667669166], [-113.87838739501345, 30.435581398991715]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512995fffff', 8,
+            30.44915, -113.87585,
+            58.44, 'Moderado',
+            0.0, 0.734,
+            0.667, 0.7,
+            0.85, 0.3,
+            143.67, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.87480687471852, 30.444048074308014], [-113.87018746991619, 30.447413531814696], [-113.87122580602328, 30.452514477910707], [-113.87688394757365, 30.454249845866673], [-113.88150334476082, 30.450884222573034], [-113.88046460804358, 30.445783397125062], [-113.87480687471852, 30.444048074308014]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485129bbfffff', 8,
+            30.45762, -113.87226,
+            58.0, 'Moderado',
+            0.0, 0.705,
+            0.676, 0.7,
+            0.85, 0.3,
+            143.71, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.87122580602328, 30.452514477910707], [-113.86660592289836, 30.455879776785743], [-113.8676441888297, 30.460980609342243], [-113.87330273861987, 30.46271602245898], [-113.87792261420812, 30.459350557843766], [-113.87688394757365, 30.454249845866673], [-113.87122580602328, 30.452514477910707]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485129b3fffff', 8,
+            30.46608, -113.86868,
+            57.54, 'Moderado',
+            0.0, 0.676,
+            0.685, 0.7,
+            0.85, 0.3,
+            143.75, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.8676441888297, 30.460980609342243], [-113.86302382732599, 30.46434574934596], [-113.86406202303976, 30.469446468145144], [-113.8697209810842, 30.471181926444512], [-113.87434133512978, 30.467816620747364], [-113.87330273861987, 30.46271602245898], [-113.8676441888297, 30.460980609342243]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9359fffff', 8,
+            30.47455, -113.8651,
+            57.08, 'Moderado',
+            0.0, 0.646,
+            0.694, 0.7,
+            0.85, 0.3,
+            143.8, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.86406202303976, 30.469446468145144], [-113.85944118310101, 30.472811449037888], [-113.86047930855544, 30.477912053861964], [-113.86613867486858, 30.479647557365826], [-113.87075950742776, 30.476282410826407], [-113.8697209810842, 30.471181926444512], [-113.86406202303976, 30.469446468145144]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9351fffff', 8,
+            30.48301, -113.86152,
+            56.62, 'Moderado',
+            0.0, 0.617,
+            0.703, 0.7,
+            0.85, 0.3,
+            143.86, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.86047930855544, 30.477912053861964], [-113.85585799012541, 30.481276875404124], [-113.85689604527869, 30.486377366035338], [-113.86255581987493, 30.488112914765562], [-113.867177131004, 30.484747927623477], [-113.86613867486858, 30.479647557365826], [-113.86047930855544, 30.477912053861964]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9357fffff', 8,
+            30.49148, -113.85793,
+            56.17, 'Moderado',
+            0.0, 0.587,
+            0.711, 0.7,
+            0.85, 0.3,
+            143.92, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.85689604527869, 30.486377366035338], [-113.85227424830114, 30.489742027987255], [-113.85331223311138, 30.494842404207912], [-113.85897241600517, 30.496577998186414], [-113.86359420576039, 30.493213170681262], [-113.86255581987493, 30.488112914765562], [-113.85689604527869, 30.486377366035338]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e931dfffff', 8,
+            30.49994, -113.85435,
+            55.72, 'Moderado',
+            0.0, 0.558,
+            0.72, 0.7,
+            0.85, 0.3,
+            144.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.85331223311138, 30.494842404207912], [-113.84868995753013, 30.49820690633002], [-113.8497278719555, 30.50330716792241], [-113.85538846316122, 30.5050428071711], [-113.86001073159882, 30.501678139542477], [-113.85897241600517, 30.496577998186414], [-113.85331223311138, 30.494842404207912]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9315fffff', 8,
+            30.50841, -113.85077,
+            55.28, 'Moderado',
+            0.0, 0.53,
+            0.729, 0.7,
+            0.85, 0.3,
+            144.08, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.8497278719555, 30.50330716792241], [-113.84510511771428, 30.50667150997514], [-113.84614296171293, 30.51177165672162], [-113.85180396124493, 30.5135073412624], [-113.85642670842121, 30.510142833749867], [-113.85538846316122, 30.5050428071711], [-113.8497278719555, 30.50330716792241]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e933bfffff', 8,
+            30.51687, -113.84718,
+            54.86, 'Moderado',
+            0.0, 0.503,
+            0.737, 0.7,
+            0.85, 0.3,
+            144.16, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.84614296171293, 30.51177165672162], [-113.84151972875553, 30.515135838465387], [-113.84255750228554, 30.520235870148348], [-113.8482189101582, 30.52197160000318], [-113.8528421361294, 30.518607252846266], [-113.85180396124493, 30.5135073412624], [-113.84614296171293, 30.51177165672162]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9333fffff', 8,
+            30.52534, -113.8436,
+            54.46, 'Moderado',
+            0.0, 0.476,
+            0.745, 0.7,
+            0.85, 0.3,
+            144.26, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.84255750228554, 30.520235870148348], [-113.83793379055575, 30.523599891343615], [-113.83897149357526, 30.528699807745454], [-113.8446333098029, 30.530435582936292], [-113.84925701462528, 30.527071396374545], [-113.8482189101582, 30.52197160000318], [-113.84255750228554, 30.520235870148348]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9065fffff', 8,
+            30.53217, -113.8503,
+            53.82, 'Moderado',
+            0.0, 0.456,
+            0.73, 0.7,
+            0.85, 0.3,
+            145.27, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.84925701462528, 30.527071396374545], [-113.8446333098029, 30.530435582936292], [-113.84567134381066, 30.535535263877634], [-113.85133348409936, 30.53727063816935], [-113.85595718186443, 30.53390628627128], [-113.85491874642895, 30.528806725432535], [-113.84925701462528, 30.527071396374545]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9067fffff', 8,
+            30.53901, -113.857,
+            53.19, 'Moderado',
+            0.0, 0.437,
+            0.714, 0.7,
+            0.85, 0.3,
+            146.29, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.85595718186443, 30.53390628627128], [-113.85133348409936, 30.53727063816935], [-113.85237184912681, 30.54237008342915], [-113.85803431335795, 30.54410505663094], [-113.86265800391575, 30.54074053942674], [-113.8616192374805, 30.5356412143416], [-113.85595718186443, 30.53390628627128]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9029fffff', 8,
+            30.54584, -113.8637,
+            52.57, 'Moderado',
+            0.0, 0.418,
+            0.697, 0.7,
+            0.85, 0.3,
+            147.3, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.86265800391575, 30.54074053942674], [-113.85803431335795, 30.54410505663094], [-113.8590730094364, 30.549204265988276], [-113.86473579749135, 30.550938837909403], [-113.86935948069191, 30.547574155429256], [-113.86832038322562, 30.54247506631864], [-113.86265800391575, 30.54074053942674]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e902bfffff', 8,
+            30.55267, -113.8704,
+            51.98, 'Moderado',
+            0.0, 0.401,
+            0.681, 0.7,
+            0.85, 0.3,
+            148.32, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.86935948069191, 30.547574155429256], [-113.86473579749135, 30.550938837909403], [-113.86577482465216, 30.55603781114336], [-113.87143793641222, 30.557771981593152], [-113.87606161210549, 30.554407133867286], [-113.87502218357685, 30.549308280952072], [-113.86935948069191, 30.547574155429256]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e903dfffff', 8,
+            30.55951, -113.8771,
+            51.4, 'Moderado',
+            0.0, 0.385,
+            0.664, 0.7,
+            0.85, 0.3,
+            149.34, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.87606161210549, 30.554407133867286], [-113.87143793641222, 30.557771981593152], [-113.87247729468668, 30.56287071848291], [-113.87814073003307, 30.564604487270753], [-113.88276439806897, 30.561239474329415], [-113.88172463844674, 30.556140857830417], [-113.87606161210549, 30.554407133867286]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9031fffff', 8,
+            30.56634, -113.8838,
+            50.85, 'Moderado',
+            0.0, 0.37,
+            0.647, 0.7,
+            0.85, 0.3,
+            150.36, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.88276439806897, 30.561239474329415], [-113.87814073003307, 30.564604487270753], [-113.87918041945247, 30.56970298759554], [-113.88484417826635, 30.571436354530945], [-113.88946783849478, 30.568071176404377], [-113.8884277477477, 30.56297279654234], [-113.88276439806897, 30.561239474329415]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9033fffff', 8,
+            30.57317, -113.89051,
+            50.33, 'Moderado',
+            0.0, 0.356,
+            0.631, 0.7,
+            0.85, 0.3,
+            151.38, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.88946783849478, 30.568071176404377], [-113.88484417826635, 30.571436354530945], [-113.88588419886196, 30.57653461807], [-113.89154828102441, 30.578267582962518], [-113.8961719332952, 30.574902239681002], [-113.89513151139207, 30.569804096676624], [-113.88946783849478, 30.568071176404377]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e90e5fffff', 8,
+            30.58, -113.89721,
+            49.83, 'Bajo',
+            0.0, 0.344,
+            0.614, 0.7,
+            0.85, 0.3,
+            152.4, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.8961719332952, 30.574902239681002], [-113.89154828102441, 30.578267582962518], [-113.89258863282747, 30.5833656094952], [-113.89825303821955, 30.585098172154456], [-113.90287668238247, 30.58173266374827], [-113.90183592929208, 30.5766347578222], [-113.8961719332952, 30.574902239681002]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e90e7fffff', 8,
+            30.58683, -113.90392,
+            49.37, 'Bajo',
+            0.0, 0.333,
+            0.597, 0.7,
+            0.85, 0.3,
+            153.42, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.90287668238247, 30.58173266374827], [-113.89825303821955, 30.585098172154456], [-113.89929372126124, 30.590195961460143], [-113.90495844976391, 30.591928121695837], [-113.90958208566872, 30.5885624481953], [-113.90854100135991, 30.58346477956812], [-113.90287668238247, 30.58173266374827]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e90a9fffff', 8,
+            30.59366, -113.91062,
+            48.94, 'Bajo',
+            0.0, 0.324,
+            0.581, 0.7,
+            0.85, 0.3,
+            154.44, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.90958208566872, 30.5885624481953], [-113.90495844976391, 30.591928121695837], [-113.90599946407545, 30.597025673553983], [-113.9116645155696, 30.598757431175873], [-113.916288143066, 30.59539159261131], [-113.91524672750764, 30.59029416150358], [-113.90958208566872, 30.5885624481953]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e90abfffff', 8,
+            30.60049, -113.91733,
+            48.54, 'Bajo',
+            0.0, 0.316,
+            0.565, 0.7,
+            0.85, 0.3,
+            155.46, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.916288143066, 30.59539159261131], [-113.9116645155696, 30.598757431175873], [-113.91270586118215, 30.603854745365968], [-113.9183712355486, 30.605586100183956], [-113.92299485448628, 30.602220096585697], [-113.92195310764721, 30.597122903217855], [-113.916288143066, 30.59539159261131]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e90bdfffff', 8,
+            30.60732, -113.92404,
+            48.18, 'Bajo',
+            0.0, 0.309,
+            0.55, 0.7,
+            0.85, 0.3,
+            156.48, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.92299485448628, 30.602220096585697], [-113.9183712355486, 30.605586100183956], [-113.91941291249333, 30.61068317648555], [-113.92507860961285, 30.612414128309513], [-113.92970221984139, 30.609047959707944], [-113.92866014169054, 30.603951004300427], [-113.92299485448628, 30.602220096585697]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e90b1fffff', 8,
+            30.61414, -113.93074,
+            47.86, 'Bajo',
+            0.0, 0.305,
+            0.535, 0.7,
+            0.85, 0.3,
+            157.51, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.92970221984139, 30.609047959707944], [-113.92507860961285, 30.612414128309513], [-113.92612061792086, 30.61751096650224], [-113.93178663767416, 30.619241515142196], [-113.93641023904317, 30.61587518156769], [-113.93536782954942, 30.610778464340846], [-113.92970221984139, 30.609047959707944]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e90b3fffff', 8,
+            30.62097, -113.93745,
+            47.58, 'Bajo',
+            0.0, 0.302,
+            0.52, 0.7,
+            0.85, 0.3,
+            158.53, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.93641023904317, 30.61587518156769], [-113.93178663767416, 30.619241515142196], [-113.93282897737654, 30.624338115005717], [-113.93849531964428, 30.626068260271744], [-113.94311891200326, 30.6227017617547], [-113.94207617113557, 30.61760528292885], [-113.93641023904317, 30.61587518156769]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9565fffff', 8,
+            30.6278, -113.94416,
+            47.34, 'Bajo',
+            0.0, 0.3,
+            0.506, 0.7,
+            0.85, 0.3,
+            159.56, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.94311891200326, 30.6227017617547], [-113.93849531964428, 30.626068260271744], [-113.93953799077212, 30.631164621585775], [-113.94520465543481, 30.63289436328802], [-113.94982823863329, 30.629527699858862], [-113.94878516636064, 30.62443145965425], [-113.94311891200326, 30.6227017617547]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9561fffff', 8,
+            30.62616, -113.95445,
+            47.04, 'Bajo',
+            0.0, 0.3,
+            0.486, 0.7,
+            0.85, 0.3,
+            160.45, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.95340826952892, 30.621064634932825], [-113.94878516636064, 30.62443145965425], [-113.94982823863329, 30.629527699858862], [-113.95549481513612, 30.63125699410701], [-113.96011790891494, 30.627890004457612], [-113.95907443561146, 30.62279388550273], [-113.95340826952892, 30.621064634932825]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e956bfffff', 8,
+            30.62452, -113.96474,
+            46.77, 'Bajo',
+            0.0, 0.301,
+            0.467, 0.7,
+            0.85, 0.3,
+            161.36, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.96369704933852, 30.619426734754107], [-113.95907443561146, 30.62279388550273], [-113.96011790891494, 30.627890004457612], [-113.96578439689337, 30.629618851288598], [-113.97040700100204, 30.626251535596225], [-113.96936312678173, 30.621155538031296], [-113.96369704933852, 30.619426734754107]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9547fffff', 8,
+            30.62288, -113.97503,
+            46.53, 'Bajo',
+            0.0, 0.301,
+            0.451, 0.7,
+            0.85, 0.3,
+            162.26, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.97398525081718, 30.617788061432737], [-113.96936312678173, 30.621155538031296], [-113.97040700100204, 30.626251535596225], [-113.97607340009164, 30.62797993504704], [-113.98069551427979, 30.62461229348897], [-113.97965123925673, 30.61951641745425], [-113.97398525081718, 30.617788061432737]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9543fffff', 8,
+            30.62124, -113.98532,
+            46.32, 'Bajo',
+            0.0, 0.302,
+            0.436, 0.7,
+            0.85, 0.3,
+            163.17, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.98427287335028, 30.61614861518304], [-113.97965123925673, 30.61951641745425], [-113.98069551427979, 30.62461229348897], [-113.98636182411614, 30.626340245596737], [-113.99098344813355, 30.62297227835034], [-113.98993877242187, 30.617876523986023], [-113.98427287335028, 30.61614861518304]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e955dfffff', 8,
+            30.6196, -113.9956,
+            46.15, 'Bajo',
+            0.0, 0.302,
+            0.424, 0.7,
+            0.85, 0.3,
+            164.08, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.99455991632344, 30.614508396219538], [-113.98993877242187, 30.617876523986023], [-113.99098344813355, 30.62297227835034], [-113.99664966835236, 30.62469978315227], [-114.00127080194896, 30.62133149039496], [-114.00022572566284, 30.61623585784119], [-113.99455991632344, 30.614508396219538]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9559fffff', 8,
+            30.61796, -114.00589,
+            46.02, 'Bajo',
+            0.0, 0.303,
+            0.414, 0.7,
+            0.85, 0.3,
+            164.99, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.00484637912243, 30.61286740475689], [-114.00022572566284, 30.61623585784119], [-114.00127080194896, 30.62133149039496], [-114.00693693218598, 30.62305854792838], [-114.01155757511185, 30.619689929837662], [-114.01051209836554, 30.614594419234574], [-114.00484637912243, 30.61286740475689]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9465fffff', 8,
+            30.61632, -114.01618,
+            45.92, 'Bajo',
+            0.0, 0.304,
+            0.407, 0.7,
+            0.85, 0.3,
+            165.91, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.01513226113329, 30.61122564100996], [-114.01051209836554, 30.614594419234574], [-114.01155757511185, 30.619689929837662], [-114.01722361500292, 30.621416540139975], [-114.02184376700825, 30.618047596893398], [-114.02079788991607, 30.612952208381092], [-114.01513226113329, 30.61122564100996]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9461fffff', 8,
+            30.61468, -114.02646,
+            45.87, 'Bajo',
+            0.0, 0.304,
+            0.402, 0.7,
+            0.85, 0.3,
+            166.83, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.02541756174229, 30.60958310519373], [-114.02079788991607, 30.612952208381092], [-114.02184376700825, 30.618047596893398], [-114.02750971618931, 30.619773760002126], [-114.03212937702443, 30.616404491777335], [-114.03108309970077, 30.611309225495866], [-114.02541756174229, 30.60958310519373]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e946bfffff', 8,
+            30.61304, -114.03675,
+            45.86, 'Bajo',
+            0.0, 0.305,
+            0.4, 0.7,
+            0.85, 0.3,
+            167.75, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.0357022803359, 30.607939797523397], [-114.03108309970077, 30.611309225495866], [-114.03212937702443, 30.616404491777335], [-114.03779523513151, 30.61813020773008], [-114.04241440454689, 30.61476061470474], [-114.04136772710613, 30.609665470794155], [-114.0357022803359, 30.607939797523397]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9447fffff', 8,
+            30.61139, -114.04703,
+            45.89, 'Bajo',
+            0.0, 0.306,
+            0.401, 0.7,
+            0.85, 0.3,
+            168.68, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.04598641630078, 30.606295718214287], [-114.04136772710613, 30.609665470794155], [-114.04241440454689, 30.61476061470474], [-114.04808017121606, 30.616485883539234], [-114.05269884896235, 30.613115965891126], [-114.05165177151902, 30.608020944491386], [-114.04598641630078, 30.606295718214287]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9443fffff', 8,
+            30.60975, -114.05732,
+            45.96, 'Bajo',
+            0.0, 0.308,
+            0.404, 0.7,
+            0.85, 0.3,
+            169.61, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.05626996902387, 30.604650867481908], [-114.05165177151902, 30.608020944491386], [-114.05269884896235, 30.613115965891126], [-114.05836452382977, 30.614840787645157], [-114.0629827096577, 30.611470545552105], [-114.06193523232633, 30.606375646803187], [-114.05626996902387, 30.604650867481908]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e945dfffff', 8,
+            30.6081, -114.0676,
+            46.07, 'Bajo',
+            0.0, 0.309,
+            0.41, 0.7,
+            0.85, 0.3,
+            170.54, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.06655293789227, 30.60300524554192], [-114.06193523232633, 30.606375646803187], [-114.0629827096577, 30.611470545552105], [-114.06864829235964, 30.6131949202636], [-114.07326598602013, 30.609824353903495], [-114.07221810891534, 30.604729577945324], [-114.06655293789227, 30.60300524554192]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9459fffff', 8,
+            30.60645, -114.07788,
+            46.22, 'Bajo',
+            0.0, 0.31,
+            0.418, 0.7,
+            0.85, 0.3,
+            171.47, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.07683532229332, 30.60135885261018], [-114.07221810891534, 30.604729577945324], [-114.07326598602013, 30.609824353903495], [-114.0789314761929, 30.611548281610453], [-114.083548677437, 30.608177391161238], [-114.08250040067344, 30.603082738133725], [-114.07683532229332, 30.60135885261018]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e96e5fffff', 8,
+            30.60481, -114.08817,
+            46.41, 'Bajo',
+            0.0, 0.312,
+            0.429, 0.7,
+            0.85, 0.3,
+            172.41, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.08711712161463, 30.599711688902673], [-114.08250040067344, 30.603082738133725], [-114.083548677437, 30.608177391161238], [-114.089214074717, 30.609900871901782], [-114.09383078329586, 30.6065296575415], [-114.09278210698828, 30.601435127584484], [-114.08711712161463, 30.599711688902673]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e96e1fffff', 8,
+            30.60316, -114.09845,
+            46.64, 'Bajo',
+            0.0, 0.313,
+            0.442, 0.7,
+            0.85, 0.3,
+            173.35, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.09739833524395, 30.59806375463557], [-114.09278210698828, 30.601435127584484], [-114.09383078329586, 30.6065296575415], [-114.09949608731962, 30.60825269135382], [-114.10411230298455, 30.604881153260553], [-114.10306322724774, 30.59978674651387], [-114.09739833524395, 30.59806375463557]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e96e9fffff', 8,
+            30.59469, -114.10201,
+            46.9, 'Bajo',
+            0.0, 0.322,
+            0.447, 0.7,
+            0.85, 0.3,
+            173.28, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.100965338587, 30.589597576896644], [-114.09634959059717, 30.59296910819482], [-114.09739833524395, 30.59806375463557], [-114.10306322724774, 30.59978674651387], [-114.10767896256932, 30.596415050025186], [-114.10662981858664, 30.59132052686328], [-114.100965338587, 30.589597576896644]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9613fffff', 8,
+            30.58623, -114.10558,
+            47.21, 'Bajo',
+            0.0, 0.334,
+            0.452, 0.7,
+            0.85, 0.3,
+            173.23, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.1045317934239, 30.581131124781194], [-114.09991652564256, 30.584502814189204], [-114.100965338587, 30.589597576896644], [-114.10662981858664, 30.59132052686328], [-114.11124507362223, 30.587948672218573], [-114.11019586143522, 30.58285403285848], [-114.1045317934239, 30.581131124781194]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e961bfffff', 8,
+            30.57776, -114.10915,
+            47.57, 'Bajo',
+            0.0, 0.348,
+            0.458, 0.7,
+            0.85, 0.3,
+            173.18, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.1080976998535, 30.572664398745708], [-114.10348291222328, 30.576036246024163], [-114.1045317934239, 30.581131124781194], [-114.11019586143522, 30.58285403285848], [-114.11481063624221, 30.57948202029715], [-114.11376135589236, 30.574387264955963], [-114.1080976998535, 30.572664398745708]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c5925fffff', 8,
+            30.56929, -114.11271,
+            47.98, 'Bajo',
+            0.0, 0.364,
+            0.464, 0.7,
+            0.85, 0.3,
+            173.13, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.11166305797468, 30.56419739924676], [-114.10704875043825, 30.567569404156206], [-114.1080976998535, 30.572664398745708], [-114.11376135589236, 30.574387264955963], [-114.11837565052815, 30.571015094717445], [-114.11732630205697, 30.565920223612288], [-114.11166305797468, 30.56419739924676]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c592dfffff', 8,
+            30.56083, -114.11628,
+            48.43, 'Bajo',
+            0.0, 0.382,
+            0.47, 0.7,
+            0.85, 0.3,
+            173.1, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.11522786788629, 30.55573012674095], [-114.1106140403863, 30.559102289041935], [-114.11166305797468, 30.56419739924676], [-114.11732630205697, 30.565920223612288], [-114.12194011657893, 30.562547895936003], [-114.1208907000279, 30.557452909284027], [-114.11522786788629, 30.55573012674095]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c5967fffff', 8,
+            30.55236, -114.11984,
+            48.92, 'Bajo',
+            0.0, 0.402,
+            0.476, 0.7,
+            0.85, 0.3,
+            173.06, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.11879212968718, 30.547262581684937], [-114.11417878216626, 30.550634901137993], [-114.11522786788629, 30.55573012674095], [-114.1208907000279, 30.557452909284027], [-114.1255040344934, 30.554080424409445], [-114.12445454990397, 30.548985322427843], [-114.11879212968718, 30.547262581684937]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c5961fffff', 8,
+            30.54389, -114.12341,
+            49.45, 'Bajo',
+            0.0, 0.423,
+            0.482, 0.7,
+            0.85, 0.3,
+            173.04, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.12235584347614, 30.538794764535442], [-114.11774297587696, 30.54216724090108], [-114.11879212968718, 30.547262581684937], [-114.12445454990397, 30.548985322427843], [-114.12906740437046, 30.545612680594427], [-114.12801785178408, 30.540517463500414], [-114.12235584347614, 30.538794764535442]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c5969fffff', 8,
+            30.53542, -114.12697,
+            50.02, 'Moderado',
+            0.0, 0.447,
+            0.489, 0.7,
+            0.85, 0.3,
+            173.02, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.125919009352, 30.530326675749215], [-114.12130662161721, 30.533699308787927], [-114.12235584347614, 30.538794764535442], [-114.12801785178408, 30.540517463500414], [-114.1326302263089, 30.537144664947682], [-114.13158060576703, 30.53204933295852], [-114.125919009352, 30.530326675749215]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512c93fffff', 8,
+            30.52695, -114.13053,
+            50.62, 'Moderado',
+            0.0, 0.472,
+            0.496, 0.7,
+            0.85, 0.3,
+            173.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.12948162741358, 30.521858315783085], [-114.1248697194858, 30.525231105255337], [-114.125919009352, 30.530326675749215], [-114.13158060576703, 30.53204933295852], [-114.1361925004076, 30.528676377925965], [-114.13514281195162, 30.523580931258923], [-114.12948162741358, 30.521858315783085]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512c9bfffff', 8,
+            30.51849, -114.13409,
+            51.25, 'Moderado',
+            0.0, 0.498,
+            0.503, 0.7,
+            0.85, 0.3,
+            173.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.13304369775962, 30.513389685093923], [-114.1284322695815, 30.51676263076018], [-114.12948162741358, 30.521858315783085], [-114.13514281195162, 30.523580931258923], [-114.13975422676532, 30.520207819986094], [-114.13870447043668, 30.515112258858522], [-114.13304369775962, 30.513389685093923]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c5b25fffff', 8,
+            30.51002, -114.13765,
+            51.9, 'Moderado',
+            0.0, 0.525,
+            0.51, 0.7,
+            0.85, 0.3,
+            172.99, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.1366052204889, 30.50492078413864], [-114.13199427200307, 30.508293885759326], [-114.13304369775962, 30.513389685093923], [-114.13870447043668, 30.515112258858522], [-114.14331540548092, 30.51173899158494], [-114.14226558132096, 30.50664331621417], [-114.1366052204889, 30.50492078413864]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c5b2dfffff', 8,
+            30.50155, -114.14122,
+            52.58, 'Moderado',
+            0.0, 0.553,
+            0.518, 0.7,
+            0.85, 0.3,
+            173.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.14016619570022, 30.496451613374198], [-114.1355557268493, 30.49982487070974], [-114.1366052204889, 30.50492078413864], [-114.14226558132096, 30.50664331621417], [-114.14687603665313, 30.503269893179425], [-114.14582614470326, 30.49817410378285], [-114.14016619570022, 30.496451613374198]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c5b67fffff', 8,
+            30.49308, -114.14478,
+            53.27, 'Moderado',
+            0.0, 0.582,
+            0.526, 0.7,
+            0.85, 0.3,
+            173.01, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.14372662349226, 30.487982173257627], [-114.13911663421892, 30.491355586068433], [-114.14016619570022, 30.496451613374198], [-114.14582614470326, 30.49817410378285], [-114.15043612038077, 30.49480052522653], [-114.14938616068233, 30.489704622021566], [-114.14372662349226, 30.487982173257627]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c5b61fffff', 8,
+            30.48461, -114.14834,
+            53.97, 'Moderado',
+            0.0, 0.611,
+            0.533, 0.7,
+            0.85, 0.3,
+            173.02, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.14728650396378, 30.479512464245985], [-114.14267699421063, 30.482886032292452], [-114.14372662349226, 30.487982173257627], [-114.14938616068233, 30.489704622021566], [-114.15399565676258, 30.486330888183264], [-114.15294562935692, 30.481234871387368], [-114.14728650396378, 30.479512464245985]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c5b69fffff', 8,
+            30.47614, -114.1519,
+            54.68, 'Moderado',
+            0.0, 0.641,
+            0.541, 0.7,
+            0.85, 0.3,
+            173.04, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.15084583721348, 30.471042486796424], [-114.14623680692317, 30.47441620983889], [-114.14728650396378, 30.479512464245985], [-114.15294562935692, 30.481234871387368], [-114.1575546458973, 30.47786098250669], [-114.15650455082574, 30.472764852337352], [-114.15084583721348, 30.471042486796424]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e97fffff', 8,
+            30.46932, -114.14519,
+            54.94, 'Moderado',
+            0.0, 0.664,
+            0.526, 0.7,
+            0.85, 0.3,
+            172.07, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.14413767542811, 30.464223350394807], [-114.13952863153834, 30.467596907567646], [-114.14057799824393, 30.472693399365692], [-114.14623680692317, 30.47441620983889], [-114.15084583721348, 30.471042486796424], [-114.14979607245525, 30.465946119164894], [-114.14413767542811, 30.464223350394807]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e95fffff', 8,
+            30.4625, -114.13848,
+            55.2, 'Moderado',
+            0.0, 0.688,
+            0.512, 0.7,
+            0.85, 0.3,
+            171.11, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.13743016063151, 30.45740357371116], [-114.13282110329267, 30.460776964983005], [-114.13387013969331, 30.4658736939516], [-114.13952863153834, 30.467596907567646], [-114.14413767542811, 30.464223350394807], [-114.14308824095316, 30.45912674552143], [-114.13743016063151, 30.45740357371116]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e83fffff', 8,
+            30.45568, -114.13177,
+            55.46, 'Moderado',
+            0.0, 0.712,
+            0.498, 0.7,
+            0.85, 0.3,
+            170.14, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.1307232929139, 30.450583157154874], [-114.12611422227634, 30.453956382494347], [-114.12716292840219, 30.45905334841309], [-114.13282110329267, 30.460776964983005], [-114.13743016063151, 30.45740357371116], [-114.13638105640977, 30.452306731816304], [-114.1307232929139, 30.450583157154874]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e81fffff', 8,
+            30.44886, -114.12507,
+            55.74, 'Moderado',
+            0.0, 0.735,
+            0.485, 0.7,
+            0.85, 0.3,
+            169.17, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.12401707236542, 30.44376210113552], [-114.11940798857948, 30.447135160511255], [-114.12045636446062, 30.452232363159688], [-114.12611422227634, 30.453956382494347], [-114.1307232929139, 30.450583157154874], [-114.12967451891531, 30.445486078459002], [-114.12401707236542, 30.44376210113552]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e8dfffff', 8,
+            30.44204, -114.11836,
+            56.01, 'Moderado',
+            0.0, 0.758,
+            0.473, 0.7,
+            0.85, 0.3,
+            168.21, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.11731149907614, 30.436940406062746], [-114.11270240229206, 30.440313299443435], [-114.11375044795868, 30.445410738601023], [-114.11940798857948, 30.447135160511255], [-114.12401707236542, 30.44376210113552], [-114.12296862855987, 30.438664785859103], [-114.11731149907614, 30.436940406062746]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512eebfffff', 8,
+            30.43522, -114.11165,
+            56.29, 'Moderado',
+            0.0, 0.781,
+            0.462, 0.7,
+            0.85, 0.3,
+            167.25, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.11060657313601, 30.430118072346385], [-114.10599746350405, 30.43349079970071], [-114.10704517898628, 30.438588475146872], [-114.11270240229206, 30.440313299443435], [-114.11731149907614, 30.436940406062746], [-114.11626338543348, 30.431842854426367], [-114.11060657313601, 30.430118072346385]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512ee9fffff', 8,
+            30.42839, -114.10495,
+            56.57, 'Moderado',
+            0.0, 0.802,
+            0.451, 0.7,
+            0.85, 0.3,
+            166.28, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.1039022946349, 30.42329510039638], [-114.09929317230524, 30.42666766169303], [-114.10034055763332, 30.431765573207127], [-114.10599746350405, 30.43349079970071], [-114.11060657313601, 30.430118072346385], [-114.10955878962609, 30.425020284570657], [-114.1039022946349, 30.42329510039638]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e17fffff', 8,
+            30.42157, -114.09825,
+            56.84, 'Moderado',
+            0.0, 0.824,
+            0.441, 0.7,
+            0.85, 0.3,
+            165.32, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.09719866366262, 30.416471490622786], [-114.0925895287854, 30.41984388583052], [-114.09363658398954, 30.424942033191844], [-114.09929317230524, 30.42666766169303], [-114.1039022946349, 30.42329510039638], [-114.10285484122755, 30.41819707670196], [-114.09719866366262, 30.416471490622786]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e15fffff', 8,
+            30.41475, -114.09154,
+            57.12, 'Moderado',
+            0.0, 0.844,
+            0.433, 0.7,
+            0.85, 0.3,
+            164.36, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.09049568030885, 30.40964724343582], [-114.08588653303417, 30.413019472523356], [-114.08693325814463, 30.418117855511166], [-114.0925895287854, 30.41984388583052], [-114.09719866366262, 30.416471490622786], [-114.09615154032764, 30.411373231230417], [-114.09049568030885, 30.40964724343582]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e03fffff', 8,
+            30.40792, -114.08484,
+            57.39, 'Moderado',
+            0.0, 0.863,
+            0.425, 0.7,
+            0.85, 0.3,
+            163.41, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.08379334466322, 30.40282235924582], [-114.07918418514116, 30.406194422181915], [-114.08023058018816, 30.411293040575394], [-114.08588653303417, 30.413019472523356], [-114.09049568030885, 30.40964724343582], [-114.089448887016, 30.404548748566278], [-114.08379334466322, 30.40282235924582]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e01fffff', 8,
+            30.4011, -114.07814,
+            57.66, 'Moderado',
+            0.0, 0.882,
+            0.418, 0.7,
+            0.85, 0.3,
+            162.45, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.07709165681523, 30.395996838463212], [-114.07248248519579, 30.39936873521667], [-114.07352855020966, 30.404467588794965], [-114.07918418514116, 30.406194422181915], [-114.08379334466322, 30.40282235924582], [-114.08274688138225, 30.397723629119934], [-114.07709165681523, 30.395996838463212]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e0dfffff', 8,
+            30.39427, -114.07144,
+            57.92, 'Moderado',
+            0.0, 0.899,
+            0.412, 0.7,
+            0.85, 0.3,
+            161.49, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.07039061685433, 30.389170681498634], [-114.06578143328748, 30.39254241203823], [-114.06682716829854, 30.397641500580416], [-114.07248248519579, 30.39936873521667], [-114.07709165681523, 30.395996838463212], [-114.07604552351589, 30.390897873301892], [-114.07039061685433, 30.389170681498634]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e6bfffff', 8,
+            30.38744, -114.06474,
+            58.17, 'Moderado',
+            0.0, 0.915,
+            0.408, 0.7,
+            0.85, 0.3,
+            160.54, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.06369022486984, 30.382343888762783], [-114.05908102950555, 30.38571545305735], [-114.06012643454412, 30.39081477634245], [-114.06578143328748, 30.39254241203823], [-114.07039061685433, 30.389170681498634], [-114.06934481350632, 30.38407148152282], [-114.06369022486984, 30.382343888762783]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e69fffff', 8,
+            30.38062, -114.05804,
+            58.42, 'Moderado',
+            0.0, 0.93,
+            0.404, 0.7,
+            0.85, 0.3,
+            159.59, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.05699048095107, 30.375516460666514], [-114.0523812739392, 30.378887858684877], [-114.05342634903565, 30.38398741649187], [-114.05908102950555, 30.38571545305735], [-114.06369022486984, 30.382343888762783], [-114.06264475144286, 30.37724445419347], [-114.05699048095107, 30.375516460666514]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512197fffff', 8,
+            30.37379, -114.05134,
+            58.65, 'Moderado',
+            0.0, 0.944,
+            0.402, 0.7,
+            0.85, 0.3,
+            158.64, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.05029138518717, 30.368688397620804], [-114.04568216667755, 30.372059629331833], [-114.04672691186227, 30.37715942143962], [-114.0523812739392, 30.378887858684877], [-114.05699048095107, 30.375516460666514], [-114.05594533741476, 30.37041679172479], [-114.05029138518717, 30.368688397620804]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512195fffff', 8,
+            30.36696, -114.04464,
+            58.88, 'Moderado',
+            0.0, 0.956,
+            0.4, 0.7,
+            0.85, 0.3,
+            157.69, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.04359293766719, 30.361859700036806], [-114.03898370780968, 30.365230765409326], [-114.04002812311305, 30.370330791596782], [-114.04568216667755, 30.372059629331833], [-114.05029138518717, 30.368688397620804], [-114.04924657151116, 30.36358849452778], [-114.04359293766719, 30.361859700036806]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485121b9fffff', 8,
+            30.3686, -114.03437,
+            58.82, 'Moderado',
+            0.0, 0.953,
+            0.4, 0.7,
+            0.85, 0.3,
+            156.67, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.03332998287695, 30.36350152737456], [-114.02872026367147, 30.36687227217314], [-114.02976428048846, 30.371972421314762], [-114.0354184150283, 30.373701702718193], [-114.04002812311305, 30.370330791596782], [-114.03898370780968, 30.365230765409326], [-114.03332998287695, 30.36350152737456]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485121bdfffff', 8,
+            30.37024, -114.02411,
+            58.8, 'Moderado',
+            0.0, 0.95,
+            0.403, 0.7,
+            0.85, 0.3,
+            155.65, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.0230664480116, 30.365142590557348], [-114.01845623970608, 30.368513014604538], [-114.01949985792298, 30.373613286560108], [-114.02515408307646, 30.3753430116691], [-114.02976428048846, 30.371972421314762], [-114.02872026367147, 30.36687227217314], [-114.0230664480116, 30.365142590557348]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485121a3fffff', 8,
+            30.37188, -114.01385,
+            58.82, 'Moderado',
+            0.0, 0.947,
+            0.408, 0.7,
+            0.85, 0.3,
+            154.64, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.01280233368068, 30.366782889370615], [-114.00819163652316, 30.37015299248909], [-114.00923485602632, 30.375253387118303], [-114.01488917143169, 30.376983555969968], [-114.01949985792298, 30.373613286560108], [-114.01845623970608, 30.368513014604538], [-114.01280233368068, 30.366782889370615]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485121a7fffff', 8,
+            30.37352, -114.00358,
+            58.88, 'Moderado',
+            0.0, 0.944,
+            0.416, 0.7,
+            0.85, 0.3,
+            153.63, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.00253764049397, 30.368422423600027], [-113.99792645473265, 30.37179220561248], [-113.99896927540847, 30.376892722775015], [-114.0046236807039, 30.37862333540635], [-114.00923485602632, 30.375253387118303], [-114.00819163652316, 30.37015299248909], [-114.00253764049397, 30.368422423600027]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512a9bfffff', 8,
+            30.37516, -113.99331,
+            58.97, 'Moderado',
+            0.0, 0.941,
+            0.427, 0.7,
+            0.85, 0.3,
+            152.62, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.99227236906147, 30.370061193031344], [-113.98766069494464, 30.373430653760547], [-113.98870311667962, 30.378531293316062], [-113.99435761150319, 30.380262349763964], [-113.99896927540847, 30.376892722775015], [-113.99792645473265, 30.37179220561248], [-113.99227236906147, 30.370061193031344]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512a91fffff', 8,
+            30.3768, -113.98305,
+            59.1, 'Moderado',
+            0.0, 0.938,
+            0.439, 0.7,
+            0.85, 0.3,
+            151.61, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.98200651999338, 30.371699197450535], [-113.9773943577695, 30.37506833671936], [-113.97843638045015, 30.38016909852744], [-113.9840909644399, 30.381900598828715], [-113.98870311667962, 30.378531293316062], [-113.98766069494464, 30.373430653760547], [-113.98200651999338, 30.371699197450535]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512a95fffff', 8,
+            30.37844, -113.97278,
+            59.26, 'Moderado',
+            0.0, 0.935,
+            0.454, 0.7,
+            0.85, 0.3,
+            150.6, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.97174009390011, 30.373336436643726], [-113.9671274438178, 30.376705254275066], [-113.96816906733072, 30.38180613819531], [-113.97382374012456, 30.383538082386664], [-113.97843638045015, 30.38016909852744], [-113.9773943577695, 30.37506833671936], [-113.97174009390011, 30.373336436643726]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512ab9fffff', 8,
+            30.38007, -113.96251,
+            59.44, 'Moderado',
+            0.0, 0.931,
+            0.471, 0.7,
+            0.85, 0.3,
+            149.6, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.96147309139232, 30.37497291039721], [-113.9568599537003, 30.37834140621403], [-113.95790117793214, 30.383442412105993], [-113.96355593916796, 30.38517480022402], [-113.96816906733072, 30.38180613819531], [-113.9671274438178, 30.376705254275066], [-113.96147309139232, 30.37497291039721]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512abdfffff', 8,
+            30.38171, -113.95225,
+            59.66, 'Moderado',
+            0.0, 0.928,
+            0.49, 0.7,
+            0.85, 0.3,
+            148.59, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.95120551308088, 30.376608618497414], [-113.94659188802802, 30.37997679232278], [-113.9476327128655, 30.38507792004596], [-113.95328756218103, 30.38681075212717], [-113.95790117793214, 30.383442412105993], [-113.9568599537003, 30.37834140621403], [-113.95120551308088, 30.376608618497414]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512aa3fffff', 8,
+            30.38334, -113.94198,
+            59.89, 'Moderado',
+            0.0, 0.924,
+            0.51, 0.7,
+            0.85, 0.3,
+            147.59, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.94093735957684, 30.378243560730983], [-113.93632324741218, 30.381611412387976], [-113.93736367274204, 30.386712661801862], [-113.94301860977501, 30.388445937882665], [-113.9476327128655, 30.38507792004596], [-113.94659188802802, 30.37997679232278], [-113.94093735957684, 30.378243560730983]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512aa7fffff', 8,
+            30.38498, -113.93171,
+            60.15, 'Moderado',
+            0.0, 0.921,
+            0.532, 0.7,
+            0.85, 0.3,
+            146.6, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.9306686314915, 30.37987773688467], [-113.92605403246417, 30.383245266196468], [-113.92709405817327, 30.38834663716051], [-113.9327490825613, 30.39008035727722], [-113.93736367274204, 30.386712661801862], [-113.93632324741218, 30.381611412387976], [-113.9306686314915, 30.37987773688467]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '884851281bfffff', 8,
+            30.38661, -113.92144,
+            60.43, 'Moderado',
+            0.0, 0.917,
+            0.556, 0.7,
+            0.85, 0.3,
+            145.6, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.92039932943638, 30.38151114674544], [-113.91578424379567, 30.38487835353529], [-113.91682386977088, 30.389979845908883], [-113.9224789811515, 30.391714010097704], [-113.92709405817327, 30.38834663716051], [-113.92605403246417, 30.383245266196468], [-113.92039932943638, 30.38151114674544]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512811fffff', 8,
+            30.38825, -113.91117,
+            60.72, 'Moderado',
+            0.0, 0.913,
+            0.58, 0.7,
+            0.85, 0.3,
+            144.61, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.9101294540232, 30.38314379010037], [-113.90551388201852, 30.38651067419158], [-113.90655310814681, 30.39161228783413], [-113.91220830615748, 30.39334689613117], [-113.91682386977088, 30.389979845908883], [-113.91578424379567, 30.38487835353529], [-113.9101294540232, 30.38314379010037]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512815fffff', 8,
+            30.38988, -113.9009,
+            61.02, 'Moderado',
+            0.0, 0.91,
+            0.605, 0.7,
+            0.85, 0.3,
+            143.62, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.89985900586387, 30.384775666736783], [-113.89524294774483, 30.388142227952702], [-113.89628177391317, 30.393243962723545], [-113.90193705819132, 30.394979015164818], [-113.90655310814681, 30.39161228783413], [-113.90551388201852, 30.38651067419158], [-113.89985900586387, 30.384775666736783]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512839fffff', 8,
+            30.39151, -113.89063,
+            61.32, 'Moderado',
+            0.0, 0.906,
+            0.63, 0.7,
+            0.85, 0.3,
+            142.63, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.88958798557061, 30.386406776442065], [-113.88497144158686, 30.38977301460615], [-113.88600986768236, 30.3948748703646], [-113.89166523786524, 30.396610366986028], [-113.89628177391317, 30.393243962723545], [-113.89524294774483, 30.388142227952702], [-113.88958798557061, 30.386406776442065]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512831fffff', 8,
+            30.39998, -113.88705,
+            61.03, 'Moderado',
+            0.0, 0.885,
+            0.639, 0.7,
+            0.85, 0.3,
+            142.62, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.88600986768236, 30.3948748703646], [-113.88139284579178, 30.39824095138233], [-113.88243120191085, 30.403342695058306], [-113.88808698011694, 30.405078236812244], [-113.89270399414998, 30.40171198974301], [-113.89166523786524, 30.396610366986028], [-113.88600986768236, 30.3948748703646]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512837fffff', 8,
+            30.40844, -113.88347,
+            60.71, 'Moderado',
+            0.0, 0.862,
+            0.648, 0.7,
+            0.85, 0.3,
+            142.61, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.88243120191085, 30.403342695058306], [-113.87781370205722, 30.406708618689876], [-113.87885198815813, 30.411810250065354], [-113.88450817440197, 30.413545836973544], [-113.88912566647639, 30.410179747337338], [-113.88808698011694, 30.405078236812244], [-113.88243120191085, 30.403342695058306]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485129ddfffff', 8,
+            30.41691, -113.87989,
+            60.36, 'Moderado',
+            0.0, 0.838,
+            0.657, 0.7,
+            0.85, 0.3,
+            142.62, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.87885198815813, 30.411810250065354], [-113.87423401028526, 30.415176016070973], [-113.8752722263263, 30.420277534927923], [-113.88092882062237, 30.422013167012135], [-113.8855467907944, 30.418647235048713], [-113.88450817440197, 30.413545836973544], [-113.87885198815813, 30.411810250065354]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485129d5fffff', 8,
+            30.42538, -113.87631,
+            59.98, 'Moderado',
+            0.0, 0.812,
+            0.666, 0.7,
+            0.85, 0.3,
+            142.63, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.8752722263263, 30.420277534927923], [-113.87065377037798, 30.423643143067864], [-113.87169191631739, 30.42874454918829], [-113.8773489186802, 30.4304802264703], [-113.8819673670061, 30.427114452419403], [-113.88092882062237, 30.422013167012135], [-113.8752722263263, 30.420277534927923]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '884851298bfffff', 8,
+            30.43385, -113.87273,
+            59.57, 'Moderado',
+            0.0, 0.785,
+            0.675, 0.7,
+            0.85, 0.3,
+            142.65, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.87169191631739, 30.42874454918829], [-113.86707298223743, 30.4321099992228], [-113.86811105803346, 30.43721129238877], [-113.87376846847746, 30.438947014890363], [-113.87838739501345, 30.435581398991715], [-113.8773489186802, 30.4304802264703], [-113.87169191631739, 30.42874454918829]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512983fffff', 8,
+            30.44231, -113.86915,
+            59.15, 'Moderado',
+            0.0, 0.757,
+            0.684, 0.7,
+            0.85, 0.3,
+            142.68, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.86811105803346, 30.43721129238877], [-113.86349164576563, 30.440576584078133], [-113.86452965137653, 30.445677764071718], [-113.87018746991619, 30.447413531814696], [-113.87480687471852, 30.444048074308014], [-113.87376846847746, 30.438947014890363], [-113.86811105803346, 30.43721129238877]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485129b9fffff', 8,
+            30.45078, -113.86557,
+            58.71, 'Moderado',
+            0.0, 0.729,
+            0.693, 0.7,
+            0.85, 0.3,
+            142.71, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.86452965137653, 30.445677764071718], [-113.85990976086464, 30.44904289717623], [-113.86094769624862, 30.454143963779543], [-113.86660592289836, 30.455879776785743], [-113.87122580602328, 30.452514477910707], [-113.87018746991619, 30.447413531814696], [-113.86452965137653, 30.445677764071718]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485129b1fffff', 8,
+            30.45924, -113.86199,
+            58.26, 'Moderado',
+            0.0, 0.7,
+            0.701, 0.7,
+            0.85, 0.3,
+            142.75, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.86094769624862, 30.454143963779543], [-113.85632732743647, 30.457508938059522], [-113.85736519255173, 30.462609891054733], [-113.86302382732599, 30.46434574934596], [-113.8676441888297, 30.460980609342243], [-113.86660592289836, 30.455879776785743], [-113.86094769624862, 30.454143963779543]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485129b7fffff', 8,
+            30.46771, -113.8584,
+            57.8, 'Moderado',
+            0.0, 0.67,
+            0.71, 0.7,
+            0.85, 0.3,
+            142.8, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.85736519255173, 30.462609891054733], [-113.85274434538313, 30.465974706270508], [-113.85378214018785, 30.471075545439767], [-113.85944118310101, 30.472811449037888], [-113.86406202303976, 30.469446468145144], [-113.86302382732599, 30.46434574934596], [-113.85736519255173, 30.462609891054733]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e935dfffff', 8,
+            30.47618, -113.85482,
+            57.34, 'Moderado',
+            0.0, 0.64,
+            0.719, 0.7,
+            0.85, 0.3,
+            142.86, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.85378214018785, 30.471075545439767], [-113.84916081460659, 30.474440201351705], [-113.85019853905895, 30.479540926477245], [-113.85585799012541, 30.481276875404124], [-113.86047930855544, 30.477912053861964], [-113.85944118310101, 30.472811449037888], [-113.85378214018785, 30.471075545439767]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9355fffff', 8,
+            30.48464, -113.85124,
+            56.88, 'Moderado',
+            0.0, 0.611,
+            0.727, 0.7,
+            0.85, 0.3,
+            142.92, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.85019853905895, 30.479540926477245], [-113.84557673500886, 30.482905422845697], [-113.84661438906701, 30.488006033709773], [-113.85227424830114, 30.489742027987255], [-113.85689604527869, 30.486377366035338], [-113.85585799012541, 30.481276875404124], [-113.85019853905895, 30.479540926477245]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e930bfffff', 8,
+            30.49311, -113.84765,
+            56.42, 'Moderado',
+            0.0, 0.582,
+            0.736, 0.7,
+            0.85, 0.3,
+            142.99, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.84661438906701, 30.488006033709773], [-113.8419921064919, 30.491370370295133], [-113.84302969011398, 30.496470866680024], [-113.84868995753013, 30.49820690633002], [-113.85331223311138, 30.494842404207912], [-113.85227424830114, 30.489742027987255], [-113.84661438906701, 30.488006033709773]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9303fffff', 8,
+            30.50157, -113.84407,
+            55.97, 'Moderado',
+            0.0, 0.553,
+            0.744, 0.7,
+            0.85, 0.3,
+            143.07, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.84302969011398, 30.496470866680024], [-113.83840692895765, 30.499835043242708], [-113.8394444421018, 30.504935424930714], [-113.84510511771428, 30.50667150997514], [-113.8497278719555, 30.50330716792241], [-113.84868995753013, 30.49820690633002], [-113.84302969011398, 30.496470866680024]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9339fffff', 8,
+            30.51004, -113.84048,
+            55.53, 'Moderado',
+            0.0, 0.525,
+            0.753, 0.7,
+            0.85, 0.3,
+            143.15, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.8394444421018, 30.504935424930714], [-113.83482120230806, 30.508299441231138], [-113.83585864493239, 30.51339970800461], [-113.84151972875553, 30.515135838465387], [-113.84614296171293, 30.51177165672162], [-113.84510511771428, 30.50667150997514], [-113.8394444421018, 30.504935424930714]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9331fffff', 8,
+            30.5185, -113.8369,
+            55.11, 'Moderado',
+            0.0, 0.498,
+            0.761, 0.7,
+            0.85, 0.3,
+            143.24, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.83585864493239, 30.51339970800461], [-113.83123492644506, 30.51676356380325], [-113.83227229850765, 30.52186371544456], [-113.83793379055575, 30.523599891343615], [-113.84255750228554, 30.520235870148348], [-113.84151972875553, 30.515135838465387], [-113.83585864493239, 30.51339970800461]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9337fffff', 8,
+            30.52696, -113.83331,
+            54.71, 'Moderado',
+            0.0, 0.472,
+            0.769, 0.7,
+            0.85, 0.3,
+            143.34, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.83227229850765, 30.52186371544456], [-113.82764810127055, 30.525227410501856], [-113.8286854027295, 30.53032744679343], [-113.83434730301686, 30.532063668152727], [-113.83897149357526, 30.528699807745454], [-113.83793379055575, 30.523599891343615], [-113.83227229850765, 30.52186371544456]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9159fffff', 8,
+            30.5338, -113.84001,
+            54.08, 'Moderado',
+            0.0, 0.451,
+            0.754, 0.7,
+            0.85, 0.3,
+            144.36, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.83897149357526, 30.528699807745454], [-113.83434730301686, 30.532063668152727], [-113.8353849354839, 30.5371634690559], [-113.84104716008088, 30.538899289604707], [-113.84567134381066, 30.535535263877634], [-113.8446333098029, 30.530435582936292], [-113.83897149357526, 30.528699807745454]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e915bfffff', 8,
+            30.54063, -113.84671,
+            53.46, 'Moderado',
+            0.0, 0.432,
+            0.738, 0.7,
+            0.85, 0.3,
+            145.37, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.84567134381066, 30.535535263877634], [-113.84104716008088, 30.538899289604707], [-113.84208512358744, 30.543998854898483], [-113.8477476723755, 30.545734274445927], [-113.85237184912681, 30.54237008342915], [-113.85133348409936, 30.53727063816935], [-113.84567134381066, 30.535535263877634]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e902dfffff', 8,
+            30.54747, -113.85341,
+            52.86, 'Moderado',
+            0.0, 0.414,
+            0.722, 0.7,
+            0.85, 0.3,
+            146.39, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.85237184912681, 30.54237008342915], [-113.8477476723755, 30.545734274445927], [-113.848785966953, 30.550833603909307], [-113.85444883981359, 30.552568622264584], [-113.8590730094364, 30.549204265988276], [-113.85803431335795, 30.54410505663094], [-113.85237184912681, 30.54237008342915]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9021fffff', 8,
+            30.5543, -113.86011,
+            52.28, 'Moderado',
+            0.0, 0.397,
+            0.706, 0.7,
+            0.85, 0.3,
+            147.41, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.8590730094364, 30.549204265988276], [-113.85444883981359, 30.552568622264584], [-113.85548746549337, 30.557667715676658], [-113.86115066230785, 30.559402332649025], [-113.86577482465216, 30.55603781114336], [-113.86473579749135, 30.550938837909403], [-113.8590730094364, 30.549204265988276]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9023fffff', 8,
+            30.56114, -113.86681,
+            51.71, 'Moderado',
+            0.0, 0.381,
+            0.69, 0.7,
+            0.85, 0.3,
+            148.43, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.86577482465216, 30.55603781114336], [-113.86115066230785, 30.559402332649025], [-113.86218961912127, 30.56450118978893], [-113.86785313977092, 30.56623540518773], [-113.87247729468668, 30.56287071848291], [-113.87143793641222, 30.557771981593152], [-113.86577482465216, 30.55603781114336]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9035fffff', 8,
+            30.56797, -113.87352,
+            51.17, 'Moderado',
+            0.0, 0.366,
+            0.673, 0.7,
+            0.85, 0.3,
+            149.45, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.87247729468668, 30.56287071848291], [-113.86785313977092, 30.56623540518773], [-113.86889242774933, 30.571334025834663], [-113.87455627211536, 30.57306783946932], [-113.87918041945247, 30.56970298759554], [-113.87814073003307, 30.564604487270753], [-113.87247729468668, 30.56287071848291]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9037fffff', 8,
+            30.5748, -113.88022,
+            50.65, 'Moderado',
+            0.0, 0.353,
+            0.656, 0.7,
+            0.85, 0.3,
+            150.47, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.87918041945247, 30.56970298759554], [-113.87455627211536, 30.57306783946932], [-113.87559589129006, 30.578166223402516], [-113.88126005925365, 30.579899635082505], [-113.88588419886196, 30.57653461807], [-113.88484417826635, 30.571436354530945], [-113.87918041945247, 30.56970298759554]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e91d9fffff', 8,
+            30.58163, -113.88692,
+            50.16, 'Moderado',
+            0.0, 0.341,
+            0.64, 0.7,
+            0.85, 0.3,
+            151.49, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.88588419886196, 30.57653461807], [-113.88126005925365, 30.579899635082505], [-113.88230000965589, 30.584997782081285], [-113.88796450109815, 30.586730791616183], [-113.89258863282747, 30.5833656094952], [-113.89154828102441, 30.578267582962518], [-113.88588419886196, 30.57653461807]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e91dbfffff', 8,
+            30.58846, -113.89363,
+            49.7, 'Bajo',
+            0.0, 0.331,
+            0.623, 0.7,
+            0.85, 0.3,
+            152.52, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.89258863282747, 30.5833656094952], [-113.88796450109815, 30.586730791616183], [-113.88900478275922, 30.591828701459885], [-113.89466959756115, 30.59356130865933], [-113.89929372126124, 30.590195961460143], [-113.89825303821955, 30.585098172154456], [-113.89258863282747, 30.5833656094952]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e90adfffff', 8,
+            30.59529, -113.90033,
+            49.27, 'Bajo',
+            0.0, 0.322,
+            0.606, 0.7,
+            0.85, 0.3,
+            153.54, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.89929372126124, 30.590195961460143], [-113.89466959756115, 30.59356130865933], [-113.89571021051228, 30.598658981127397], [-113.90137534855485, 30.600391185801076], [-113.90599946407545, 30.597025673553983], [-113.90495844976391, 30.591928121695837], [-113.89929372126124, 30.590195961460143]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e90a1fffff', 8,
+            30.60212, -113.90704,
+            48.88, 'Bajo',
+            0.0, 0.314,
+            0.59, 0.7,
+            0.85, 0.3,
+            154.56, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.90599946407545, 30.597025673553983], [-113.90137534855485, 30.600391185801076], [-113.90241629282725, 30.60548862067299], [-113.90808175399135, 30.607220422630693], [-113.91270586118215, 30.603854745365968], [-113.9116645155696, 30.598757431175873], [-113.90599946407545, 30.597025673553983]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e90a3fffff', 8,
+            30.60895, -113.91375,
+            48.52, 'Bajo',
+            0.0, 0.308,
+            0.574, 0.7,
+            0.85, 0.3,
+            155.59, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.91270586118215, 30.603854745365968], [-113.90808175399135, 30.607220422630693], [-113.90912302961624, 30.61231761968597], [-113.91478881378272, 30.614049018737568], [-113.91941291249333, 30.61068317648555], [-113.9183712355486, 30.605586100183956], [-113.91270586118215, 30.603854745365968]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e90b5fffff', 8,
+            30.61578, -113.92045,
+            48.19, 'Bajo',
+            0.0, 0.304,
+            0.558, 0.7,
+            0.85, 0.3,
+            156.61, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.91941291249333, 30.61068317648555], [-113.91478881378272, 30.614049018737568], [-113.91583042079121, 30.619145977755796], [-113.92149652784083, 30.620876973711205], [-113.92612061792086, 30.61751096650224], [-113.92507860961285, 30.612414128309513], [-113.91941291249333, 30.61068317648555]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e90b7fffff', 8,
+            30.62261, -113.92716,
+            47.91, 'Bajo',
+            0.0, 0.301,
+            0.543, 0.7,
+            0.85, 0.3,
+            157.63, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.92612061792086, 30.61751096650224], [-113.92149652784083, 30.620876973711205], [-113.92253846626411, 30.625973694472044], [-113.92820489607755, 30.627704287141288], [-113.93282897737654, 30.624338115005717], [-113.93178663767416, 30.619241515142196], [-113.92612061792086, 30.61751096650224]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e8259fffff', 8,
+            30.62943, -113.93387,
+            47.67, 'Bajo',
+            0.0, 0.3,
+            0.528, 0.7,
+            0.85, 0.3,
+            158.66, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.93282897737654, 30.624338115005717], [-113.92820489607755, 30.627704287141288], [-113.92924716594673, 30.632800769424414], [-113.93491391840465, 30.634530958617567], [-113.93953799077212, 30.631164621585775], [-113.93849531964428, 30.626068260271744], [-113.93282897737654, 30.624338115005717]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e825bfffff', 8,
+            30.63626, -113.94058,
+            47.46, 'Bajo',
+            0.0, 0.301,
+            0.513, 0.7,
+            0.85, 0.3,
+            159.69, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.93953799077212, 30.631164621585775], [-113.93491391840465, 30.634530958617567], [-113.93595651975083, 30.639627202202757], [-113.94162359473376, 30.641356987729985], [-113.9462476580192, 30.637990485832347], [-113.94520465543481, 30.63289436328802], [-113.93953799077212, 30.631164621585775]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9567fffff', 8,
+            30.63462, -113.95087,
+            47.14, 'Bajo',
+            0.0, 0.3,
+            0.493, 0.7,
+            0.85, 0.3,
+            160.58, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.94982823863329, 30.629527699858862], [-113.94520465543481, 30.63289436328802], [-113.9462476580192, 30.637990485832347], [-113.95191464495736, 30.639719823781046], [-113.95653821884474, 30.636352995470187], [-113.95549481513612, 30.63125699410701], [-113.94982823863329, 30.629527699858862]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9563fffff', 8,
+            30.63299, -113.96116,
+            46.85, 'Bajo',
+            0.0, 0.3,
+            0.473, 0.7,
+            0.85, 0.3,
+            161.48, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.96011790891494, 30.627890004457612], [-113.95549481513612, 30.63125699410701], [-113.95653821884474, 30.636352995470187], [-113.96220511737349, 30.638081885877245], [-113.96682820161224, 30.634714731330362], [-113.96578439689337, 30.629618851288598], [-113.96011790891494, 30.627890004457612]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e950dfffff', 8,
+            30.63135, -113.97145,
+            46.59, 'Bajo',
+            0.0, 0.3,
+            0.456, 0.7,
+            0.85, 0.3,
+            162.38, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.97040700100204, 30.626251535596225], [-113.96578439689337, 30.629618851288598], [-113.96682820161224, 30.634714731330362], [-113.97249501136699, 30.636443174232777], [-113.97711760570664, 30.633075693627163], [-113.97607340009164, 30.62797993504704], [-113.97040700100204, 30.626251535596225]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9509fffff', 8,
+            30.62971, -113.98174,
+            46.37, 'Bajo',
+            0.0, 0.3,
+            0.441, 0.7,
+            0.85, 0.3,
+            163.28, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.98069551427979, 30.62461229348897], [-113.97607340009164, 30.62797993504704], [-113.97711760570664, 30.633075693627163], [-113.98278432632293, 30.634803689062032], [-113.98740643051318, 30.631435882575015], [-113.98636182411614, 30.626340245596737], [-113.98069551427979, 30.62461229348897]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9555fffff', 8,
+            30.62807, -113.99203,
+            46.17, 'Bajo',
+            0.0, 0.3,
+            0.428, 0.7,
+            0.85, 0.3,
+            164.19, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.99098344813355, 30.62297227835034], [-113.98636182411614, 30.626340245596737], [-113.98740643051318, 30.631435882575015], [-113.99307306162657, 30.633163430579533], [-113.99769467541722, 30.629795298388547], [-113.99664966835236, 30.62469978315227], [-113.99098344813355, 30.62297227835034]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9551fffff', 8,
+            30.62643, -114.00232,
+            46.02, 'Bajo',
+            0.0, 0.3,
+            0.417, 0.7,
+            0.85, 0.3,
+            165.1, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.00127080194896, 30.62133149039496], [-113.99664966835236, 30.62469978315227], [-113.99769467541722, 30.629795298388547], [-114.00336121666341, 30.63152239900001], [-114.00798233980443, 30.628153941282516], [-114.00693693218598, 30.62305854792838], [-114.00127080194896, 30.62133149039496]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e955bfffff', 8,
+            30.62479, -114.0126,
+            45.9, 'Bajo',
+            0.0, 0.301,
+            0.409, 0.7,
+            0.85, 0.3,
+            166.01, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.01155757511185, 30.619689929837662], [-114.00693693218598, 30.62305854792838], [-114.00798233980443, 30.628153941282516], [-114.01364879081915, 30.629880594538324], [-114.01826942306063, 30.626511811471868], [-114.01722361500292, 30.621416540139975], [-114.01155757511185, 30.619689929837662]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9467fffff', 8,
+            30.62314, -114.02289,
+            45.82, 'Bajo',
+            0.0, 0.301,
+            0.404, 0.7,
+            0.85, 0.3,
+            166.93, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.02184376700825, 30.618047596893398], [-114.01722361500292, 30.621416540139975], [-114.01826942306063, 30.626511811471868], [-114.02393578347971, 30.628238017409526], [-114.02855592457192, 30.624868909171724], [-114.02750971618931, 30.619773760002126], [-114.02184376700825, 30.618047596893398]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9463fffff', 8,
+            30.6215, -114.03318,
+            45.79, 'Bajo',
+            0.0, 0.301,
+            0.401, 0.7,
+            0.85, 0.3,
+            167.84, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.03212937702443, 30.616404491777335], [-114.02750971618931, 30.619773760002126], [-114.02855592457192, 30.624868909171724], [-114.03422219403129, 30.62659466782879], [-114.03884184372457, 30.62322523459733], [-114.03779523513151, 30.61813020773008], [-114.03212937702443, 30.616404491777335]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e940dfffff', 8,
+            30.61986, -114.04346,
+            45.79, 'Bajo',
+            0.0, 0.302,
+            0.4, 0.7,
+            0.85, 0.3,
+            168.77, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.04241440454689, 30.61476061470474], [-114.03779523513151, 30.61813020773008], [-114.03884184372457, 30.62322523459733], [-114.04450802186018, 30.624950546011537], [-114.0491271799051, 30.621580787964156], [-114.04808017121606, 30.616485883539234], [-114.04241440454689, 30.61476061470474]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9409fffff', 8,
+            30.61821, -114.05375,
+            45.84, 'Bajo',
+            0.0, 0.303,
+            0.402, 0.7,
+            0.85, 0.3,
+            169.69, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.05269884896235, 30.613115965891126], [-114.04808017121606, 30.616485883539234], [-114.0491271799051, 30.621580787964156], [-114.05479326635304, 30.623305652173272], [-114.05941193250023, 30.619935569487783], [-114.05836452382977, 30.614840787645157], [-114.05269884896235, 30.613115965891126]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9455fffff', 8,
+            30.61657, -114.06403,
+            45.93, 'Bajo',
+            0.0, 0.303,
+            0.407, 0.7,
+            0.85, 0.3,
+            170.62, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.0629827096577, 30.611470545552105], [-114.05836452382977, 30.614840787645157], [-114.05941193250023, 30.619935569487783], [-114.06507792689665, 30.621659986529718], [-114.0696961008969, 30.618289579383983], [-114.06864829235964, 30.6131949202636], [-114.0629827096577, 30.611470545552105]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9451fffff', 8,
+            30.61492, -114.07431,
+            46.06, 'Bajo',
+            0.0, 0.304,
+            0.415, 0.7,
+            0.85, 0.3,
+            171.55, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.07326598602013, 30.609824353903495], [-114.06864829235964, 30.6131949202636], [-114.0696961008969, 30.618289579383983], [-114.07536200287802, 30.620013549296715], [-114.0799796844823, 30.616642817868705], [-114.0789314761929, 30.611548281610453], [-114.07326598602013, 30.609824353903495]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e945bfffff', 8,
+            30.61327, -114.0846,
+            46.22, 'Bajo',
+            0.0, 0.305,
+            0.425, 0.7,
+            0.85, 0.3,
+            172.48, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.083548677437, 30.608177391161238], [-114.0789314761929, 30.611548281610453], [-114.0799796844823, 30.616642817868705], [-114.08564549368444, 30.61836634069033], [-114.0902626826438, 30.614995285158034], [-114.089214074717, 30.609900871901782], [-114.083548677437, 30.608177391161238]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e96e7fffff', 8,
+            30.61162, -114.09488,
+            46.43, 'Bajo',
+            0.0, 0.306,
+            0.437, 0.7,
+            0.85, 0.3,
+            173.41, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.09383078329586, 30.6065296575415], [-114.089214074717, 30.609900871901782], [-114.0902626826438, 30.614995285158034], [-114.09592839870334, 30.616718360926747], [-114.10054509476902, 30.61334698146825], [-114.09949608731962, 30.60825269135382], [-114.09383078329586, 30.6065296575415]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e96e3fffff', 8,
+            30.60998, -114.10516,
+            46.67, 'Bajo',
+            0.0, 0.307,
+            0.452, 0.7,
+            0.85, 0.3,
+            174.35, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.10411230298455, 30.604881153260553], [-114.09949608731962, 30.60825269135382], [-114.10054509476902, 30.61334698146825], [-114.10621071732243, 30.61506961022234], [-114.1108269202458, 30.611697907015774], [-114.10977751338862, 30.60660374018298], [-114.10411230298455, 30.604881153260553]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e96ebfffff', 8,
+            30.60151, -114.10873,
+            46.9, 'Bajo',
+            0.0, 0.315,
+            0.457, 0.7,
+            0.85, 0.3,
+            174.29, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.10767896256932, 30.596415050025186], [-114.10306322724774, 30.59978674651387], [-114.10411230298455, 30.604881153260553], [-114.10977751338862, 30.60660374018298], [-114.11439323589111, 30.60323187853487], [-114.11334376083991, 30.59813759513832], [-114.10767896256932, 30.596415050025186]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e96c5fffff', 8,
+            30.59304, -114.11229,
+            47.18, 'Bajo',
+            0.0, 0.324,
+            0.463, 0.7,
+            0.85, 0.3,
+            174.23, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.11124507362223, 30.587948672218573], [-114.10662981858664, 30.59132052686328], [-114.10767896256932, 30.596415050025186], [-114.11334376083991, 30.59813759513832], [-114.11795900297894, 30.594765575288037], [-114.11690945977523, 30.58967117554477], [-114.11124507362223, 30.587948672218573]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e96cdfffff', 8,
+            30.58458, -114.11586,
+            47.51, 'Bajo',
+            0.0, 0.336,
+            0.469, 0.7,
+            0.85, 0.3,
+            174.18, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.11481063624221, 30.57948202029715], [-114.11019586143522, 30.58285403285848], [-114.11124507362223, 30.587948672218573], [-114.11690945977523, 30.58967117554477], [-114.12152422160823, 30.586298997731696], [-114.1204746102935, 30.581204481858737], [-114.11481063624221, 30.57948202029715]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c5927fffff', 8,
+            30.57611, -114.11943,
+            47.89, 'Bajo',
+            0.0, 0.351,
+            0.475, 0.7,
+            0.85, 0.3,
+            174.13, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.11837565052815, 30.571015094717445], [-114.11376135589236, 30.574387264955963], [-114.11481063624221, 30.57948202029715], [-114.1204746102935, 30.581204481858737], [-114.12508889187791, 30.57783214632229], [-114.12403921249366, 30.572737514536737], [-114.11837565052815, 30.571015094717445]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c5921fffff', 8,
+            30.56764, -114.12299,
+            48.31, 'Bajo',
+            0.0, 0.367,
+            0.482, 0.7,
+            0.85, 0.3,
+            174.09, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.12194011657893, 30.562547895936003], [-114.11732630205697, 30.565920223612288], [-114.11837565052815, 30.571015094717445], [-114.12403921249366, 30.572737514536737], [-114.12865301388685, 30.569365021516354], [-114.12760326647458, 30.56427027403531], [-114.12194011657893, 30.562547895936003]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c5929fffff', 8,
+            30.55918, -114.12655,
+            48.78, 'Bajo',
+            0.0, 0.385,
+            0.488, 0.7,
+            0.85, 0.3,
+            174.06, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.1255040344934, 30.554080424409445], [-114.1208907000279, 30.557452909284027], [-114.12194011657893, 30.562547895936003], [-114.12760326647458, 30.56427027403531], [-114.132216587734, 30.56089762377042], [-114.13116677233515, 30.555802760811062], [-114.1255040344934, 30.554080424409445]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c5963fffff', 8,
+            30.55071, -114.13012,
+            49.29, 'Bajo',
+            0.0, 0.406,
+            0.495, 0.7,
+            0.85, 0.3,
+            174.03, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.12906740437046, 30.545612680594427], [-114.12445454990397, 30.548985322427843], [-114.1255040344934, 30.554080424409445], [-114.13116677233515, 30.555802760811062], [-114.13577961351825, 30.55242995354113], [-114.13472973017426, 30.54733497532063], [-114.12906740437046, 30.545612680594427]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c596bfffff', 8,
+            30.54224, -114.13368,
+            49.84, 'Bajo',
+            0.0, 0.428,
+            0.502, 0.7,
+            0.85, 0.3,
+            174.01, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.1326302263089, 30.537144664947682], [-114.12801785178408, 30.540517463500414], [-114.12906740437046, 30.545612680594427], [-114.13472973017426, 30.54733497532063], [-114.13934209133845, 30.543962011285135], [-114.13829214009075, 30.53886691802072], [-114.1326302263089, 30.537144664947682]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c5945fffff', 8,
+            30.53377, -114.13724,
+            50.42, 'Moderado',
+            0.0, 0.451,
+            0.51, 0.7,
+            0.85, 0.3,
+            173.99, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.1361925004076, 30.528676377925965], [-114.13158060576703, 30.53204933295852], [-114.1326302263089, 30.537144664947682], [-114.13829214009075, 30.53886691802072], [-114.14290402129346, 30.535493797459157], [-114.14185400218346, 30.530398589368097], [-114.1361925004076, 30.528676377925965]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c594dfffff', 8,
+            30.5253, -114.1408,
+            51.04, 'Moderado',
+            0.0, 0.477,
+            0.517, 0.7,
+            0.85, 0.3,
+            173.98, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.13975422676532, 30.520207819986094], [-114.13514281195162, 30.523580931258923], [-114.1361925004076, 30.528676377925965], [-114.14185400218346, 30.530398589368097], [-114.14646540348214, 30.52702531251998], [-114.14541531655124, 30.521929989819537], [-114.13975422676532, 30.520207819986094]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c5b27fffff', 8,
+            30.51683, -114.14437,
+            51.68, 'Moderado',
+            0.0, 0.503,
+            0.525, 0.7,
+            0.85, 0.3,
+            173.97, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.14331540548092, 30.51173899158494], [-114.13870447043668, 30.515112258858522], [-114.13975422676532, 30.520207819986094], [-114.14541531655124, 30.521929989819537], [-114.1500262380033, 30.518556556924413], [-114.14897608329291, 30.513461119831913], [-114.14331540548092, 30.51173899158494]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c5b21fffff', 8,
+            30.50837, -114.14793,
+            52.34, 'Moderado',
+            0.0, 0.53,
+            0.532, 0.7,
+            0.85, 0.3,
+            173.97, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.14687603665313, 30.503269893179425], [-114.14226558132096, 30.50664331621417], [-114.14331540548092, 30.51173899158494], [-114.14897608329291, 30.513461119831913], [-114.1535865249558, 30.510087531129336], [-114.15253630250726, 30.504991979862126], [-114.14687603665313, 30.503269893179425]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c5b29fffff', 8,
+            30.4999, -114.15149,
+            53.03, 'Moderado',
+            0.0, 0.559,
+            0.54, 0.7,
+            0.85, 0.3,
+            173.98, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.15043612038077, 30.49480052522653], [-114.14582614470326, 30.49817410378285], [-114.14687603665313, 30.503269893179425], [-114.15253630250726, 30.504991979862126], [-114.15714626443841, 30.501618235591653], [-114.15609597429308, 30.49652257036714], [-114.15043612038077, 30.49480052522653]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c5b63fffff', 8,
+            30.49143, -114.15505,
+            53.72, 'Moderado',
+            0.0, 0.587,
+            0.548, 0.7,
+            0.85, 0.3,
+            173.99, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.15399565676258, 30.486330888183264], [-114.14938616068233, 30.489704622021566], [-114.15043612038077, 30.49480052522653], [-114.15609597429308, 30.49652257036714], [-114.16070545654995, 30.49314867076837], [-114.15965509874916, 30.488052891803946], [-114.15399565676258, 30.486330888183264]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c5b6bfffff', 8,
+            30.48296, -114.1586,
+            54.43, 'Moderado',
+            0.0, 0.617,
+            0.557, 0.7,
+            0.85, 0.3,
+            174.01, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.1575546458973, 30.47786098250669], [-114.15294562935692, 30.481234871387368], [-114.15399565676258, 30.486330888183264], [-114.15965509874916, 30.488052891803946], [-114.16426410138918, 30.484678837116476], [-114.16321367597428, 30.479582944629612], [-114.1575546458973, 30.47786098250669]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c5b45fffff', 8,
+            30.47449, -114.16216,
+            55.15, 'Moderado',
+            0.0, 0.646,
+            0.565, 0.7,
+            0.85, 0.3,
+            174.04, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.16111308788369, 30.46939080865396], [-114.15650455082574, 30.472764852337352], [-114.1575546458973, 30.47786098250669], [-114.16321367597428, 30.479582944629612], [-114.16782219905485, 30.476208735093067], [-114.16677170606714, 30.471112729301236], [-114.16111308788369, 30.46939080865396]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e93fffff', 8,
+            30.46767, -114.15545,
+            55.39, 'Moderado',
+            0.0, 0.67,
+            0.549, 0.7,
+            0.85, 0.3,
+            173.07, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.15440462334008, 30.46257224136608], [-114.14979607245525, 30.465946119164894], [-114.15084583721348, 30.471042486796424], [-114.15650455082574, 30.472764852337352], [-114.16111308788369, 30.46939080865396], [-114.16006292518755, 30.464294565328693], [-114.15440462334008, 30.46257224136608]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e91fffff', 8,
+            30.46085, -114.14875,
+            55.64, 'Moderado',
+            0.0, 0.694,
+            0.534, 0.7,
+            0.85, 0.3,
+            172.1, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.14769680551449, 30.455753033638622], [-114.14308824095316, 30.45912674552143], [-114.14413767542811, 30.464223350394807], [-114.14979607245525, 30.465946119164894], [-114.15440462334008, 30.46257224136608], [-114.15335479090554, 30.457475760727682], [-114.14769680551449, 30.455753033638622]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e9dfffff', 8,
+            30.45403, -114.14204,
+            55.9, 'Moderado',
+            0.0, 0.718,
+            0.52, 0.7,
+            0.85, 0.3,
+            171.14, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.1409896344972, 30.44893318588093], [-114.13638105640977, 30.452306731816304], [-114.13743016063151, 30.45740357371116], [-114.14308824095316, 30.45912674552143], [-114.14769680551449, 30.455753033638622], [-114.14664730331148, 30.450656315907473], [-114.1409896344972, 30.44893318588093]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e8bfffff', 8,
+            30.44721, -114.13533,
+            56.15, 'Moderado',
+            0.0, 0.741,
+            0.506, 0.7,
+            0.85, 0.3,
+            170.17, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.1342831103785, 30.442112698502427], [-114.12967451891531, 30.445486078459002], [-114.1307232929139, 30.450583157154874], [-114.13638105640977, 30.452306731816304], [-114.1409896344972, 30.44893318588093], [-114.13994046249573, 30.443836231277416], [-114.1342831103785, 30.442112698502427]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e89fffff', 8,
+            30.44039, -114.12863,
+            56.41, 'Moderado',
+            0.0, 0.764,
+            0.492, 0.7,
+            0.85, 0.3,
+            169.21, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.12757723324853, 30.43529157191272], [-114.12296862855987, 30.438664785859103], [-114.12401707236542, 30.44376210113552], [-114.12967451891531, 30.445486078459002], [-114.1342831103785, 30.442112698502427], [-114.13323426854849, 30.437015507247054], [-114.12757723324853, 30.43529157191272]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512ec7fffff', 8,
+            30.43357, -114.12192,
+            56.66, 'Moderado',
+            0.0, 0.786,
+            0.48, 0.7,
+            0.85, 0.3,
+            168.25, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.12087200319739, 30.428469806521523], [-114.11626338543348, 30.431842854426367], [-114.11731149907614, 30.436940406062746], [-114.12296862855987, 30.438664785859103], [-114.12757723324853, 30.43529157191272], [-114.12652872155988, 30.430194144226025], [-114.12087200319739, 30.428469806521523]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512ec5fffff', 8,
+            30.42675, -114.11522,
+            56.92, 'Moderado',
+            0.0, 0.808,
+            0.468, 0.7,
+            0.85, 0.3,
+            167.29, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.11416742031503, 30.421647402738685], [-114.10955878962609, 30.425020284570657], [-114.11060657313601, 30.430118072346385], [-114.11626338543348, 30.431842854426367], [-114.12087200319739, 30.428469806521523], [-114.11982382161999, 30.423372142624086], [-114.11416742031503, 30.421647402738685]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e13fffff', 8,
+            30.41992, -114.10851,
+            57.17, 'Moderado',
+            0.0, 0.829,
+            0.457, 0.7,
+            0.85, 0.3,
+            166.33, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.10746348469134, 30.414824360974187], [-114.10285484122755, 30.41819707670196], [-114.1039022946349, 30.42329510039638], [-114.10955878962609, 30.425020284570657], [-114.11416742031503, 30.421647402738685], [-114.11311956881876, 30.416549502851144], [-114.10746348469134, 30.414824360974187]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e11fffff', 8,
+            30.4131, -114.10181,
+            57.42, 'Moderado',
+            0.0, 0.849,
+            0.447, 0.7,
+            0.85, 0.3,
+            165.37, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.10076019641615, 30.408000681638136], [-114.09615154032764, 30.411373231230417], [-114.09719866366262, 30.416471490622786], [-114.10285484122755, 30.41819707670196], [-114.10746348469134, 30.414824360974187], [-114.10641596324605, 30.40972622531724], [-114.10076019641615, 30.408000681638136]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e1dfffff', 8,
+            30.40627, -114.0951,
+            57.67, 'Moderado',
+            0.0, 0.868,
+            0.437, 0.7,
+            0.85, 0.3,
+            164.42, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.09405755557917, 30.401176365140774], [-114.089448887016, 30.404548748566278], [-114.09049568030885, 30.40964724343582], [-114.09615154032764, 30.411373231230417], [-114.10076019641615, 30.408000681638136], [-114.09971300499167, 30.402902310432534], [-114.09405755557917, 30.401176365140774]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e0bfffff', 8,
+            30.39945, -114.0884,
+            57.9, 'Moderado',
+            0.0, 0.886,
+            0.429, 0.7,
+            0.85, 0.3,
+            163.46, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.08735556227005, 30.394351411892444], [-114.08274688138225, 30.397723629119934], [-114.08379334466322, 30.40282235924582], [-114.089448887016, 30.404548748566278], [-114.09405755557917, 30.401176365140774], [-114.09301069414526, 30.396077758607337], [-114.08735556227005, 30.394351411892444]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e09fffff', 8,
+            30.39262, -114.0817,
+            58.14, 'Moderado',
+            0.0, 0.903,
+            0.422, 0.7,
+            0.85, 0.3,
+            162.51, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.08065421657831, 30.387525822303694], [-114.07604552351589, 30.390897873301892], [-114.07709165681523, 30.395996838463212], [-114.08274688138225, 30.397723629119934], [-114.08735556227005, 30.394351411892444], [-114.08630903079651, 30.38925257025206], [-114.08065421657831, 30.387525822303694]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e47fffff', 8,
+            30.3858, -114.075,
+            58.36, 'Moderado',
+            0.0, 0.919,
+            0.415, 0.7,
+            0.85, 0.3,
+            161.55, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.07395351859341, 30.380699596785117], [-114.06934481350632, 30.38407148152282], [-114.07039061685433, 30.389170681498634], [-114.07604552351589, 30.390897873301892], [-114.08065421657831, 30.387525822303694], [-114.07960801503488, 30.38242674577727], [-114.07395351859341, 30.380699596785117]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e45fffff', 8,
+            30.37897, -114.0683,
+            58.57, 'Moderado',
+            0.0, 0.934,
+            0.41, 0.7,
+            0.85, 0.3,
+            160.6, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.0672534684047, 30.37387273574749], [-114.06264475144286, 30.37724445419347], [-114.06369022486984, 30.382343888762783], [-114.06934481350632, 30.38407148152282], [-114.07395351859341, 30.380699596785117], [-114.07290764694982, 30.375600285593638], [-114.0672534684047, 30.37387273574749]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512193fffff', 8,
+            30.37214, -114.0616,
+            58.78, 'Moderado',
+            0.0, 0.947,
+            0.406, 0.7,
+            0.85, 0.3,
+            159.65, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.0605540661015, 30.3670452396017], [-114.05594533741476, 30.37041679172479], [-114.05699048095107, 30.375516460666514], [-114.06264475144286, 30.37724445419347], [-114.0672534684047, 30.37387273574749], [-114.06620792663068, 30.368773190111977], [-114.0605540661015, 30.3670452396017]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512191fffff', 8,
+            30.36532, -114.0549,
+            58.97, 'Moderado',
+            0.0, 0.959,
+            0.403, 0.7,
+            0.85, 0.3,
+            158.71, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.05385531177295, 30.36021710875876], [-114.04924657151116, 30.36358849452778], [-114.05029138518717, 30.368688397620804], [-114.05594533741476, 30.37041679172479], [-114.0605540661015, 30.3670452396017], [-114.0595088541667, 30.36194545974325], [-114.05385531177295, 30.36021710875876]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '884851219dfffff', 8,
+            30.35849, -114.0482,
+            59.15, 'Moderado',
+            0.0, 0.969,
+            0.401, 0.7,
+            0.85, 0.3,
+            157.76, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.0471572055082, 30.35338834362983], [-114.04254845382111, 30.356759563013625], [-114.04359293766719, 30.361859700036806], [-114.04924657151116, 30.36358849452778], [-114.05385531177295, 30.36021710875876], [-114.05281042964705, 30.355117094898528], [-114.0471572055082, 30.35338834362983]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512183fffff', 8,
+            30.36013, -114.03794,
+            59.09, 'Moderado',
+            0.0, 0.967,
+            0.4, 0.7,
+            0.85, 0.3,
+            156.74, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.03689513848015, 30.355030368325703], [-114.03228589742447, 30.35840126732865], [-114.03332998287695, 30.36350152737456], [-114.03898370780968, 30.365230765409326], [-114.04359293766719, 30.361859700036806], [-114.04254845382111, 30.356759563013625], [-114.03689513848015, 30.355030368325703]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512187fffff', 8,
+            30.36177, -114.02768,
+            59.07, 'Moderado',
+            0.0, 0.965,
+            0.402, 0.7,
+            0.85, 0.3,
+            155.72, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.02663249124288, 30.356671629184284], [-114.02202276106642, 30.36004220762895], [-114.0230664480116, 30.365142590557348], [-114.02872026367147, 30.36687227217314], [-114.03332998287695, 30.36350152737456], [-114.03228589742447, 30.35840126732865], [-114.02663249124288, 30.356671629184284]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485121abfffff', 8,
+            30.36341, -114.01741,
+            59.08, 'Moderado',
+            0.0, 0.962,
+            0.406, 0.7,
+            0.85, 0.3,
+            154.7, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.01636926440574, 30.358312125991], [-114.01175904535647, 30.361682383700035], [-114.01280233368068, 30.366782889370615], [-114.01845623970608, 30.368513014604538], [-114.0230664480116, 30.365142590557348], [-114.02202276106642, 30.36004220762895], [-114.01636926440574, 30.358312125991]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485121a1fffff', 8,
+            30.36505, -114.00715,
+            59.14, 'Moderado',
+            0.0, 0.959,
+            0.413, 0.7,
+            0.85, 0.3,
+            153.69, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.00610545857832, 30.35995185853146], [-114.00149475090429, 30.363321795327554], [-114.00253764049397, 30.368422423600027], [-114.00819163652316, 30.37015299248909], [-114.01280233368068, 30.366782889370615], [-114.01175904535647, 30.361682383700035], [-114.00610545857832, 30.35995185853146]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485121a5fffff', 8,
+            30.36669, -113.99688,
+            59.22, 'Moderado',
+            0.0, 0.957,
+            0.423, 0.7,
+            0.85, 0.3,
+            152.67, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.99584107437039, 30.36159082659143], [-113.99122987831984, 30.364960442297342], [-113.99227236906147, 30.370061193031344], [-113.99792645473265, 30.37179220561248], [-114.00253764049397, 30.368422423600027], [-114.00149475090429, 30.363321795327554], [-113.99584107437039, 30.36159082659143]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512a99fffff', 8,
+            30.36833, -113.98662,
+            59.34, 'Moderado',
+            0.0, 0.954,
+            0.435, 0.7,
+            0.85, 0.3,
+            151.66, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.98557611239198, 30.363229029956813], [-113.98096442821326, 30.36659832439538], [-113.98200651999338, 30.371699197450535], [-113.98766069494464, 30.373430653760547], [-113.99227236906147, 30.370061193031344], [-113.99122987831984, 30.364960442297342], [-113.98557611239198, 30.363229029956813]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512a9dfffff', 8,
+            30.36997, -113.97635,
+            59.5, 'Moderado',
+            0.0, 0.951,
+            0.449, 0.7,
+            0.85, 0.3,
+            150.65, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.97531057325332, 30.364866468413716], [-113.97069840119494, 30.368235441407837], [-113.97174009390011, 30.373336436643726], [-113.9773943577695, 30.37506833671936], [-113.98200651999338, 30.371699197450535], [-113.98096442821326, 30.36659832439538], [-113.97531057325332, 30.364866468413716]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512a83fffff', 8,
+            30.3716, -113.96609,
+            59.68, 'Moderado',
+            0.0, 0.948,
+            0.465, 0.7,
+            0.85, 0.3,
+            149.64, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.96504445756483, 30.3665031417484], [-113.96043179787542, 30.36987179312103], [-113.96147309139232, 30.37497291039721], [-113.9671274438178, 30.376705254275066], [-113.97174009390011, 30.373336436643726], [-113.97069840119494, 30.368235441407837], [-113.96504445756483, 30.3665031417484]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512a87fffff', 8,
+            30.37324, -113.95582,
+            59.9, 'Moderado',
+            0.0, 0.945,
+            0.483, 0.7,
+            0.85, 0.3,
+            148.64, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.95477776593721, 30.368139049747267], [-113.95016461886554, 30.371507379321443], [-113.95120551308088, 30.376608618497414], [-113.9568599537003, 30.37834140621403], [-113.96147309139232, 30.37497291039721], [-113.96043179787542, 30.36987179312103], [-113.95477776593721, 30.368139049747267]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512aabfffff', 8,
+            30.37488, -113.94555,
+            60.13, 'Moderado',
+            0.0, 0.942,
+            0.503, 0.7,
+            0.85, 0.3,
+            147.63, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.94451049898129, 30.36977419219691], [-113.9398968647763, 30.3731421997957], [-113.94093735957684, 30.378243560730983], [-113.94659188802802, 30.37997679232278], [-113.95120551308088, 30.376608618497414], [-113.95016461886554, 30.371507379321443], [-113.94451049898129, 30.36977419219691]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512aa1fffff', 8,
+            30.37651, -113.93528,
+            60.39, 'Moderado',
+            0.0, 0.939,
+            0.525, 0.7,
+            0.85, 0.3,
+            146.63, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.9342426573082, 30.371408568884068], [-113.92962853621893, 30.374776254330662], [-113.9306686314915, 30.37987773688467], [-113.93632324741218, 30.381611412387976], [-113.94093735957684, 30.378243560730983], [-113.9398968647763, 30.3731421997957], [-113.9342426573082, 30.371408568884068]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512aa5fffff', 8,
+            30.37814, -113.92501,
+            60.67, 'Moderado',
+            0.0, 0.935,
+            0.547, 0.7,
+            0.85, 0.3,
+            145.63, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.92397424152925, 30.37304217959566], [-113.91935963380486, 30.376409542713255], [-113.92039932943638, 30.38151114674544], [-113.92605403246417, 30.383245266196468], [-113.9306686314915, 30.37987773688467], [-113.92962853621893, 30.374776254330662], [-113.92397424152925, 30.37304217959566]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512819fffff', 8,
+            30.37978, -113.91474,
+            60.96, 'Moderado',
+            0.0, 0.932,
+            0.571, 0.7,
+            0.85, 0.3,
+            144.63, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.91370525225594, 30.374675024118755], [-113.9090901581458, 30.378042064730653], [-113.9101294540232, 30.38314379010037], [-113.91578424379567, 30.38487835353529], [-113.92039932943638, 30.38151114674544], [-113.91935963380486, 30.376409542713255], [-113.91370525225594, 30.374675024118755]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '884851281dfffff', 8,
+            30.38141, -113.90447,
+            61.26, 'Moderado',
+            0.0, 0.929,
+            0.596, 0.7,
+            0.85, 0.3,
+            143.64, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.90343569010004, 30.3763071022406], [-113.89882010985359, 30.379673820170154], [-113.89985900586387, 30.384775666736783], [-113.90551388201852, 30.38651067419158], [-113.9101294540232, 30.38314379010037], [-113.9090901581458, 30.378042064730653], [-113.90343569010004, 30.3763071022406]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512803fffff', 8,
+            30.38304, -113.8942,
+            61.57, 'Moderado',
+            0.0, 0.925,
+            0.621, 0.7,
+            0.85, 0.3,
+            142.64, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.89316555567349, 30.377938413748602], [-113.88854948954032, 30.38130480881923], [-113.88958798557061, 30.386406776442065], [-113.89524294774483, 30.388142227952702], [-113.89985900586387, 30.384775666736783], [-113.89882010985359, 30.379673820170154], [-113.89316555567349, 30.377938413748602]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512807fffff', 8,
+            30.38467, -113.88393,
+            61.88, 'Moderado',
+            0.0, 0.921,
+            0.647, 0.7,
+            0.85, 0.3,
+            141.65, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.88289484958845, 30.37956895843031], [-113.87827829781835, 30.38293503046551], [-113.87931639375572, 30.388037119003855], [-113.88497144158686, 30.38977301460615], [-113.88958798557061, 30.386406776442065], [-113.88854948954032, 30.38130480881923], [-113.88289484958845, 30.37956895843031]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '884851283dfffff', 8,
+            30.39314, -113.88035,
+            61.63, 'Moderado',
+            0.0, 0.902,
+            0.656, 0.7,
+            0.85, 0.3,
+            141.64, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.87931639375572, 30.388037119003855], [-113.87469936415711, 30.391403033939604], [-113.8757373900669, 30.396505010544953], [-113.88139284579178, 30.39824095138233], [-113.88600986768236, 30.3948748703646], [-113.88497144158686, 30.38977301460615], [-113.87931639375572, 30.388037119003855]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512835fffff', 8,
+            30.40161, -113.87678,
+            61.33, 'Moderado',
+            0.0, 0.88,
+            0.665, 0.7,
+            0.85, 0.3,
+            141.64, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.8757373900669, 30.396505010544953], [-113.87111988258361, 30.399870768141422], [-113.87215783842412, 30.404972632595687], [-113.87781370205722, 30.406708618689876], [-113.88243120191085, 30.403342695058306], [-113.88139284579178, 30.39824095138233], [-113.8757373900669, 30.396505010544953]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485129cbfffff', 8,
+            30.41007, -113.8732,
+            61.0, 'Moderado',
+            0.0, 0.857,
+            0.674, 0.7,
+            0.85, 0.3,
+            141.64, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.87215783842412, 30.404972632595687], [-113.86753985299998, 30.408338232613115], [-113.86857773872947, 30.413439984698243], [-113.87423401028526, 30.415176016070973], [-113.87885198815813, 30.411810250065354], [-113.87781370205722, 30.406708618689876], [-113.87215783842412, 30.404972632595687]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485129c3fffff', 8,
+            30.41854, -113.86962,
+            60.64, 'Moderado',
+            0.0, 0.833,
+            0.683, 0.7,
+            0.85, 0.3,
+            141.65, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.86857773872947, 30.413439984698243], [-113.86395927530832, 30.416805426896833], [-113.86499709088504, 30.42190706639483], [-113.87065377037798, 30.423643143067864], [-113.8752722263263, 30.420277534927923], [-113.87423401028526, 30.415176016070973], [-113.86857773872947, 30.413439984698243]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512989fffff', 8,
+            30.42701, -113.86603,
+            60.26, 'Moderado',
+            0.0, 0.807,
+            0.692, 0.7,
+            0.85, 0.3,
+            141.66, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.86499709088504, 30.42190706639483], [-113.8603781494107, 30.425272350534843], [-113.8614158947929, 30.430373877227694], [-113.86707298223743, 30.4321099992228], [-113.87169191631739, 30.42874454918829], [-113.87065377037798, 30.423643143067864], [-113.86499709088504, 30.42190706639483]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512981fffff', 8,
+            30.43548, -113.86245,
+            59.85, 'Moderado',
+            0.0, 0.78,
+            0.7, 0.7,
+            0.85, 0.3,
+            141.69, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.8614158947929, 30.430373877227694], [-113.8567964752092, 30.433739003069405], [-113.85783415035515, 30.438840416739176], [-113.86349164576563, 30.440576584078133], [-113.86811105803346, 30.43721129238877], [-113.86707298223743, 30.4321099992228], [-113.8614158947929, 30.430373877227694]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512987fffff', 8,
+            30.44394, -113.85887,
+            59.42, 'Moderado',
+            0.0, 0.752,
+            0.709, 0.7,
+            0.85, 0.3,
+            141.72, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.85783415035515, 30.438840416739176], [-113.85321425260591, 30.44220538404285], [-113.85425185747376, 30.44730668447163], [-113.85990976086464, 30.44904289717623], [-113.86452965137653, 30.445677764071718], [-113.86349164576563, 30.440576584078133], [-113.85783415035515, 30.438840416739176]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485129bdfffff', 8,
+            30.45241, -113.85529,
+            58.98, 'Moderado',
+            0.0, 0.723,
+            0.718, 0.7,
+            0.85, 0.3,
+            141.76, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.85425185747376, 30.44730668447163], [-113.84963148150284, 30.450671492997568], [-113.85066901605083, 30.455772679967453], [-113.85632732743647, 30.457508938059522], [-113.86094769624862, 30.454143963779543], [-113.85990976086464, 30.44904289717623], [-113.85425185747376, 30.44730668447163]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485129b5fffff', 8,
+            30.46087, -113.85171,
+            58.52, 'Moderado',
+            0.0, 0.694,
+            0.726, 0.7,
+            0.85, 0.3,
+            141.8, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.85066901605083, 30.455772679967453], [-113.84604816180207, 30.459137329475997], [-113.84708562598836, 30.464238402769144], [-113.85274434538313, 30.465974706270508], [-113.85736519255173, 30.462609891054733], [-113.85632732743647, 30.457508938059522], [-113.85066901605083, 30.455772679967453]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e934bfffff', 8,
+            30.46934, -113.84812,
+            58.06, 'Moderado',
+            0.0, 0.664,
+            0.735, 0.7,
+            0.85, 0.3,
+            141.85, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.84708562598836, 30.464238402769144], [-113.84246429340558, 30.46760289302062], [-113.84350168718836, 30.4727038524192], [-113.84916081460659, 30.474440201351705], [-113.85378214018785, 30.471075545439767], [-113.85274434538313, 30.465974706270508], [-113.84708562598836, 30.464238402769144]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9343fffff', 8,
+            30.4778, -113.84454,
+            57.59, 'Moderado',
+            0.0, 0.635,
+            0.743, 0.7,
+            0.85, 0.3,
+            141.91, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.84350168718836, 30.4727038524192], [-113.83887987621544, 30.47606818317397], [-113.83991719955283, 30.48116902846021], [-113.84557673500886, 30.482905422845697], [-113.85019853905895, 30.479540926477245], [-113.84916081460659, 30.474440201351705], [-113.84350168718836, 30.4727038524192]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9309fffff', 8,
+            30.48627, -113.84095,
+            57.13, 'Moderado',
+            0.0, 0.605,
+            0.751, 0.7,
+            0.85, 0.3,
+            141.98, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.83991719955283, 30.48116902846021], [-113.83529491013361, 30.484533199478655], [-113.83633216298375, 30.489633930434795], [-113.8419921064919, 30.491370370295133], [-113.84661438906701, 30.488006033709773], [-113.84557673500886, 30.482905422845697], [-113.83991719955283, 30.48116902846021]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9301fffff', 8,
+            30.49473, -113.83737,
+            56.66, 'Moderado',
+            0.0, 0.576,
+            0.76, 0.7,
+            0.85, 0.3,
+            142.06, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.83633216298375, 30.489633930434795], [-113.83170939506208, 30.49299794147728], [-113.83274657738312, 30.498098557885605], [-113.83840692895765, 30.499835043242708], [-113.84302969011398, 30.496470866680024], [-113.8419921064919, 30.491370370295133], [-113.83633216298375, 30.489633930434795]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9307fffff', 8,
+            30.5032, -113.83378,
+            56.21, 'Moderado',
+            0.0, 0.547,
+            0.768, 0.7,
+            0.85, 0.3,
+            142.14, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.83274657738312, 30.498098557885605], [-113.82812333090281, 30.501462408712577], [-113.82916044265285, 30.506562910355388], [-113.83482120230806, 30.508299441231138], [-113.8394444421018, 30.504935424930714], [-113.83840692895765, 30.499835043242708], [-113.83274657738312, 30.498098557885605]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e933dfffff', 8,
+            30.51166, -113.8302,
+            55.77, 'Moderado',
+            0.0, 0.519,
+            0.775, 0.7,
+            0.85, 0.3,
+            142.23, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.82916044265285, 30.506562910355388], [-113.8245367175578, 30.509926600727276], [-113.82557375869493, 30.51502698738693], [-113.83123492644506, 30.51676356380325], [-113.83585864493239, 30.51339970800461], [-113.83482120230806, 30.508299441231138], [-113.82916044265285, 30.506562910355388]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9335fffff', 8,
+            30.52013, -113.82661,
+            55.35, 'Moderado',
+            0.0, 0.492,
+            0.783, 0.7,
+            0.85, 0.3,
+            142.32, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.82557375869493, 30.51502698738693], [-113.82094955492897, 30.518390517064166], [-113.82198652541126, 30.523490788523045], [-113.82764810127055, 30.525227410501856], [-113.83227229850765, 30.52186371544456], [-113.83123492644506, 30.51676356380325], [-113.82557375869493, 30.51502698738693]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e914bfffff', 8,
+            30.52859, -113.82302,
+            54.94, 'Moderado',
+            0.0, 0.467,
+            0.791, 0.7,
+            0.85, 0.3,
+            142.43, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.82198652541126, 30.523490788523045], [-113.81736184291826, 30.52685415726612], [-113.81839874270378, 30.531954313306635], [-113.82406072668647, 30.53369098086987], [-113.8286854027295, 30.53032744679343], [-113.82764810127055, 30.525227410501856], [-113.82198652541126, 30.523490788523045]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e915dfffff', 8,
+            30.53543, -113.82972,
+            54.33, 'Moderado',
+            0.0, 0.447,
+            0.776, 0.7,
+            0.85, 0.3,
+            143.44, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.8286854027295, 30.53032744679343], [-113.82406072668647, 30.53369098086987], [-113.82509795749982, 30.538790901594158], [-113.83076026604068, 30.54052716843564], [-113.8353849354839, 30.5371634690559], [-113.83434730301686, 30.532063668152727], [-113.8286854027295, 30.53032744679343]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9151fffff', 8,
+            30.54226, -113.83642,
+            53.73, 'Moderado',
+            0.0, 0.428,
+            0.762, 0.7,
+            0.85, 0.3,
+            144.46, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.8353849354839, 30.5371634690559], [-113.83076026604068, 30.54052716843564], [-113.83179782791338, 30.54562685362265], [-113.83746046089395, 30.547362719551423], [-113.84208512358744, 30.543998854898483], [-113.84104716008088, 30.538899289604707], [-113.8353849354839, 30.5371634690559]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9153fffff', 8,
+            30.5491, -113.84312,
+            53.14, 'Moderado',
+            0.0, 0.41,
+            0.746, 0.7,
+            0.85, 0.3,
+            145.48, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.84208512358744, 30.543998854898483], [-113.83746046089395, 30.547362719551423], [-113.83849835385739, 30.55246216898014], [-113.8441613111592, 30.55419763380532], [-113.848785966953, 30.550833603909307], [-113.8477476723755, 30.545734274445927], [-113.84208512358744, 30.543998854898483]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9025fffff', 8,
+            30.55593, -113.84982,
+            52.57, 'Moderado',
+            0.0, 0.393,
+            0.731, 0.7,
+            0.85, 0.3,
+            146.5, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.848785966953, 30.550833603909307], [-113.8441613111592, 30.55419763380532], [-113.8451995352448, 30.559296847254828], [-113.85086281674923, 30.561031910785612], [-113.85548746549337, 30.557667715676658], [-113.85444883981359, 30.552568622264584], [-113.848785966953, 30.550833603909307]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9027fffff', 8,
+            30.56277, -113.85653,
+            52.02, 'Moderado',
+            0.0, 0.377,
+            0.715, 0.7,
+            0.85, 0.3,
+            147.53, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.85548746549337, 30.557667715676658], [-113.85086281674923, 30.561031910785612], [-113.85190137198843, 30.566130888035012], [-113.85756497757684, 30.567865550080686], [-113.86218961912127, 30.56450118978893], [-113.86115066230785, 30.559402332649025], [-113.85548746549337, 30.557667715676658]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e91c9fffff', 8,
+            30.5696, -113.86323,
+            51.49, 'Moderado',
+            0.0, 0.363,
+            0.698, 0.7,
+            0.85, 0.3,
+            148.55, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.86218961912127, 30.56450118978893], [-113.85756497757684, 30.567865550080686], [-113.85860386400097, 30.57296429090913], [-113.86426779355469, 30.574698551279038], [-113.86889242774933, 30.571334025834663], [-113.86785313977092, 30.56623540518773], [-113.86218961912127, 30.56450118978893]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e91cbfffff', 8,
+            30.57643, -113.86993,
+            50.98, 'Moderado',
+            0.0, 0.35,
+            0.682, 0.7,
+            0.85, 0.3,
+            149.57, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.86889242774933, 30.571334025834663], [-113.86426779355469, 30.574698551279038], [-113.86530701119511, 30.579797055465782], [-113.87097126459531, 30.58153091396932], [-113.87559589129006, 30.578166223402516], [-113.87455627211536, 30.57306783946932], [-113.86889242774933, 30.571334025834663]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e91ddfffff', 8,
+            30.58326, -113.87664,
+            50.5, 'Moderado',
+            0.0, 0.338,
+            0.665, 0.7,
+            0.85, 0.3,
+            150.59, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.87559589129006, 30.578166223402516], [-113.87097126459531, 30.58153091396932], [-113.87201081348337, 30.586629181293638], [-113.87767539061124, 30.58836263774032], [-113.88230000965589, 30.584997782081285], [-113.88126005925365, 30.579899635082505], [-113.87559589129006, 30.578166223402516]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e91d1fffff', 8,
+            30.5901, -113.88334,
+            50.04, 'Moderado',
+            0.0, 0.328,
+            0.648, 0.7,
+            0.85, 0.3,
+            151.62, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.88230000965589, 30.584997782081285], [-113.87767539061124, 30.58836263774032], [-113.87871527077824, 30.593460667981528], [-113.88438017151486, 30.595193722180937], [-113.88900478275922, 30.591828701459885], [-113.88796450109815, 30.586730791616183], [-113.88230000965589, 30.584997782081285]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e91d3fffff', 8,
+            30.59693, -113.89005,
+            49.62, 'Bajo',
+            0.0, 0.32,
+            0.632, 0.7,
+            0.85, 0.3,
+            152.64, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.88900478275922, 30.591828701459885], [-113.88438017151486, 30.595193722180937], [-113.88542038299208, 30.600291515118442], [-113.89108560721847, 30.602024166880206], [-113.89571021051228, 30.598658981127397], [-113.89466959756115, 30.59356130865933], [-113.88900478275922, 30.591828701459885]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e90a5fffff', 8,
+            30.60376, -113.89675,
+            49.23, 'Bajo',
+            0.0, 0.312,
+            0.615, 0.7,
+            0.85, 0.3,
+            153.66, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.89571021051228, 30.598658981127397], [-113.89108560721847, 30.602024166880206], [-113.89212615003714, 30.607121722293453], [-113.89779169763429, 30.608853971427287], [-113.90241629282725, 30.60548862067299], [-113.90137534855485, 30.600391185801076], [-113.89571021051228, 30.598658981127397]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e90a7fffff', 8,
+            30.61059, -113.90346,
+            48.87, 'Bajo',
+            0.0, 0.307,
+            0.599, 0.7,
+            0.85, 0.3,
+            154.69, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.90241629282725, 30.60548862067299], [-113.89779169763429, 30.608853971427287], [-113.89883257182568, 30.613951289095795], [-113.90449844267448, 30.615683135411487], [-113.90912302961624, 30.61231761968597], [-113.90808175399135, 30.607220422630693], [-113.90241629282725, 30.60548862067299]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e8249fffff', 8,
+            30.61741, -113.91016,
+            48.54, 'Bajo',
+            0.0, 0.303,
+            0.582, 0.7,
+            0.85, 0.3,
+            155.72, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.90912302961624, 30.61231761968597], [-113.90449844267448, 30.615683135411487], [-113.90553964826977, 30.620780215114817], [-113.91120584225101, 30.622511658422244], [-113.91583042079121, 30.619145977755796], [-113.91478881378272, 30.614049018737568], [-113.90912302961624, 30.61231761968597]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e824bfffff', 8,
+            30.62424, -113.91687,
+            48.26, 'Bajo',
+            0.0, 0.301,
+            0.566, 0.7,
+            0.85, 0.3,
+            156.74, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.91583042079121, 30.619145977755796], [-113.91120584225101, 30.622511658422244], [-113.91224737928142, 30.627608499939996], [-113.91791389627592, 30.62933954004909], [-113.92253846626411, 30.625973694472044], [-113.92149652784083, 30.620876973711205], [-113.91583042079121, 30.619145977755796]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e825dfffff', 8,
+            30.63107, -113.92358,
+            48.01, 'Bajo',
+            0.0, 0.3,
+            0.551, 0.7,
+            0.85, 0.3,
+            157.77, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.92253846626411, 30.625973694472044], [-113.91791389627592, 30.62933954004909], [-113.9189557647726, 30.63443614316095], [-113.92462260466101, 30.63616677988173], [-113.92924716594673, 30.632800769424414], [-113.92820489607755, 30.627704287141288], [-113.92253846626411, 30.625973694472044]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e8251fffff', 8,
+            30.6379, -113.93029,
+            47.8, 'Bajo',
+            0.0, 0.301,
+            0.536, 0.7,
+            0.85, 0.3,
+            158.8, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.92924716594673, 30.632800769424414], [-113.92462260466101, 30.63616677988173], [-113.92566480465513, 30.641263144367446], [-113.93133196731809, 30.642993377510003], [-113.93595651975083, 30.639627202202757], [-113.93491391840465, 30.634530958617567], [-113.92924716594673, 30.632800769424414]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e8253fffff', 8,
+            30.64472, -113.937,
+            47.63, 'Bajo',
+            0.0, 0.304,
+            0.521, 0.7,
+            0.85, 0.3,
+            159.82, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.93595651975083, 30.639627202202757], [-113.93133196731809, 30.642993377510003], [-113.93237449884074, 30.64808950314934], [-113.93804198415882, 30.649819332523837], [-113.94266652758803, 30.646452992397034], [-113.94162359473376, 30.641356987729985], [-113.93595651975083, 30.639627202202757]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e952dfffff', 8,
+            30.64309, -113.94729,
+            47.3, 'Bajo',
+            0.0, 0.303,
+            0.5, 0.7,
+            0.85, 0.3,
+            160.71, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.9462476580192, 30.637990485832347], [-113.94162359473376, 30.641356987729985], [-113.94266652758803, 30.646452992397034], [-113.94833392497647, 30.64818237406857], [-113.95295797902928, 30.644815707335518], [-113.95191464495736, 30.639719823781046], [-113.9462476580192, 30.637990485832347]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9529fffff', 8,
+            30.64145, -113.95758,
+            46.99, 'Bajo',
+            0.0, 0.302,
+            0.48, 0.7,
+            0.85, 0.3,
+            161.61, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.95653821884474, 30.636352995470187], [-113.95191464495736, 30.639719823781046], [-113.95295797902928, 30.644815707335518], [-113.95862528812334, 30.646544641340945], [-113.96324885254907, 30.643177648178852], [-113.96220511737349, 30.638081885877245], [-113.95653821884474, 30.636352995470187]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9505fffff', 8,
+            30.63981, -113.96787,
+            46.71, 'Bajo',
+            0.0, 0.302,
+            0.462, 0.7,
+            0.85, 0.3,
+            162.5, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.96682820161224, 30.634714731330362], [-113.96220511737349, 30.638081885877245], [-113.96324885254907, 30.643177648178852], [-113.96891607298409, 30.64490613455518], [-113.97353914753216, 30.641538815141303], [-113.97249501136699, 30.636443174232777], [-113.96682820161224, 30.634714731330362]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9501fffff', 8,
+            30.63817, -113.97816,
+            46.46, 'Bajo',
+            0.0, 0.301,
+            0.446, 0.7,
+            0.85, 0.3,
+            163.4, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.97711760570664, 30.633075693627163], [-113.97249501136699, 30.636443174232777], [-113.97353914753216, 30.641538815141303], [-113.97920627894352, 30.643266853925578], [-113.98382886336354, 30.639899208437267], [-113.98278432632293, 30.634803689062032], [-113.97711760570664, 30.633075693627163]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e950bfffff', 8,
+            30.63653, -113.98845,
+            46.25, 'Bajo',
+            0.0, 0.301,
+            0.432, 0.7,
+            0.85, 0.3,
+            164.3, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.98740643051318, 30.631435882575015], [-113.98278432632293, 30.634803689062032], [-113.98382886336354, 30.639899208437267], [-113.98949590538676, 30.641626799666692], [-113.99411799942844, 30.638258828281305], [-113.99307306162657, 30.633163430579533], [-113.98740643051318, 30.631435882575015]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9557fffff', 8,
+            30.63489, -113.99874,
+            46.07, 'Bajo',
+            0.0, 0.3,
+            0.421, 0.7,
+            0.85, 0.3,
+            165.21, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.99769467541722, 30.629795298388547], [-113.99307306162657, 30.633163430579533], [-113.99411799942844, 30.638258828281305], [-113.99978495169907, 30.639985971993152], [-114.00440655511225, 30.636617674888193], [-114.00336121666341, 30.63152239900001], [-113.99769467541722, 30.629795298388547]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9553fffff', 8,
+            30.63325, -114.00903,
+            45.93, 'Bajo',
+            0.0, 0.3,
+            0.412, 0.7,
+            0.85, 0.3,
+            166.12, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.00798233980443, 30.628153941282516], [-114.00336121666341, 30.63152239900001], [-114.00440655511225, 30.636617674888193], [-114.01007341726596, 30.638344371119825], [-114.01469452980068, 30.6349757484728], [-114.01364879081915, 30.629880594538324], [-114.00798233980443, 30.628153941282516]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e942dfffff', 8,
+            30.63161, -114.01932,
+            45.83, 'Bajo',
+            0.0, 0.3,
+            0.405, 0.7,
+            0.85, 0.3,
+            167.03, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.01826942306063, 30.626511811471868], [-114.01364879081915, 30.629880594538324], [-114.01469452980068, 30.6349757484728], [-114.02036130147317, 30.636701997261703], [-114.02498192287955, 30.63333304925023], [-114.02393578347971, 30.628238017409526], [-114.01826942306063, 30.626511811471868]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9429fffff', 8,
+            30.62996, -114.0296,
+            45.77, 'Bajo',
+            0.0, 0.3,
+            0.401, 0.7,
+            0.85, 0.3,
+            167.94, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.02855592457192, 30.624868909171724], [-114.02393578347971, 30.628238017409526], [-114.02498192287955, 30.63333304925023], [-114.03064860370665, 30.635058850633964], [-114.03526873373498, 30.631689577435704], [-114.03422219403129, 30.62659466782879], [-114.02855592457192, 30.624868909171724]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9405fffff', 8,
+            30.62832, -114.03989,
+            45.75, 'Bajo',
+            0.0, 0.3,
+            0.4, 0.7,
+            0.85, 0.3,
+            168.86, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.03884184372457, 30.62322523459733], [-114.03422219403129, 30.62659466782879], [-114.03526873373498, 30.631689577435704], [-114.04093532335257, 30.633414931451973], [-114.04555496175327, 30.630045333244635], [-114.04450802186018, 30.624950546011537], [-114.03884184372457, 30.62322523459733]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9401fffff', 8,
+            30.62668, -114.05017,
+            45.78, 'Bajo',
+            0.0, 0.3,
+            0.401, 0.7,
+            0.85, 0.3,
+            169.78, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.0491271799051, 30.621580787964156], [-114.04450802186018, 30.624950546011537], [-114.04555496175327, 30.630045333244635], [-114.05122145979729, 30.631770239931203], [-114.05584060632096, 30.6284003168926], [-114.05479326635304, 30.623305652173272], [-114.0491271799051, 30.621580787964156]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e940bfffff', 8,
+            30.62503, -114.06046,
+            45.84, 'Bajo',
+            0.0, 0.301,
+            0.405, 0.7,
+            0.85, 0.3,
+            170.7, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.05941193250023, 30.619935569487783], [-114.05479326635304, 30.623305652173272], [-114.05584060632096, 30.6284003168926], [-114.06150701242747, 30.630124776287325], [-114.06612566682476, 30.626754528595317], [-114.06507792689665, 30.621659986529718], [-114.05941193250023, 30.619935569487783]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9457fffff', 8,
+            30.62338, -114.07074,
+            45.95, 'Bajo',
+            0.0, 0.301,
+            0.412, 0.7,
+            0.85, 0.3,
+            171.63, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.0696961008969, 30.618289579383983], [-114.06507792689665, 30.621659986529718], [-114.06612566682476, 30.626754528595317], [-114.0717919806299, 30.62847854073618], [-114.07641014265167, 30.625107968568713], [-114.07536200287802, 30.620013549296715], [-114.0696961008969, 30.618289579383983]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9453fffff', 8,
+            30.62174, -114.08103,
+            46.09, 'Bajo',
+            0.0, 0.301,
+            0.421, 0.7,
+            0.85, 0.3,
+            172.56, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.0799796844823, 30.616642817868705], [-114.07536200287802, 30.620013549296715], [-114.07641014265167, 30.625107968568713], [-114.08207636379164, 30.626831533493792], [-114.08669403318888, 30.623460637028835], [-114.08564549368444, 30.61836634069033], [-114.0799796844823, 30.616642817868705]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e96adfffff', 8,
+            30.62009, -114.09131,
+            46.27, 'Bajo',
+            0.0, 0.302,
+            0.432, 0.7,
+            0.85, 0.3,
+            173.49, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.0902626826438, 30.614995285158034], [-114.08564549368444, 30.61836634069033], [-114.08669403318888, 30.623460637028835], [-114.09236016129996, 30.625183754776295], [-114.09697733782379, 30.621812534191925], [-114.09592839870334, 30.616718360926747], [-114.0902626826438, 30.614995285158034]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e96a9fffff', 8,
+            30.61844, -114.10159,
+            46.49, 'Bajo',
+            0.0, 0.303,
+            0.446, 0.7,
+            0.85, 0.3,
+            174.42, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.10054509476902, 30.61334698146825], [-114.09592839870334, 30.616718360926747], [-114.09697733782379, 30.621812534191925], [-114.10264337254236, 30.62353520480005], [-114.10726005594402, 30.62016366027438], [-114.10621071732243, 30.61506961022234], [-114.10054509476902, 30.61334698146825]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e9685fffff', 8,
+            30.61679, -114.11188,
+            46.75, 'Bajo',
+            0.0, 0.303,
+            0.462, 0.7,
+            0.85, 0.3,
+            175.36, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.1108269202458, 30.611697907015774], [-114.10621071732243, 30.61506961022234], [-114.10726005594402, 30.62016366027438], [-114.11292599690655, 30.621885883781538], [-114.11754218693746, 30.618514015492774], [-114.1164924489296, 30.61342008879362], [-114.1108269202458, 30.611697907015774]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e968dfffff', 8,
+            30.60833, -114.11544,
+            46.94, 'Bajo',
+            0.0, 0.309,
+            0.468, 0.7,
+            0.85, 0.3,
+            175.29, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.11439323589111, 30.60323187853487], [-114.10977751338862, 30.60660374018298], [-114.1108269202458, 30.611697907015774], [-114.1164924489296, 30.61342008879362], [-114.12110815846216, 30.610048062017192], [-114.12005835231213, 30.604954018605795], [-114.11439323589111, 30.60323187853487]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e96c7fffff', 8,
+            30.59986, -114.11901,
+            47.19, 'Bajo',
+            0.0, 0.316,
+            0.474, 0.7,
+            0.85, 0.3,
+            175.23, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.11795900297894, 30.594765575288037], [-114.11334376083991, 30.59813759513832], [-114.11439323589111, 30.60323187853487], [-114.12005835231213, 30.604954018605795], [-114.12467358140375, 30.60158183358108], [-114.12362370715309, 30.59648767367442], [-114.11795900297894, 30.594765575288037]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e96c1fffff', 8,
+            30.59139, -114.12257,
+            47.49, 'Bajo',
+            0.0, 0.326,
+            0.481, 0.7,
+            0.85, 0.3,
+            175.18, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.12152422160823, 30.586298997731696], [-114.11690945977523, 30.58967117554477], [-114.11795900297894, 30.594765575288037], [-114.12362370715309, 30.59648767367442], [-114.1282384558613, 30.59311533064077], [-114.12718851355143, 30.58802105445588], [-114.12152422160823, 30.586298997731696]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485e96c9fffff', 8,
+            30.58293, -114.12614,
+            47.84, 'Bajo',
+            0.0, 0.339,
+            0.488, 0.7,
+            0.85, 0.3,
+            175.13, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.12508889187791, 30.57783214632229], [-114.1204746102935, 30.581204481858737], [-114.12152422160823, 30.586298997731696], [-114.12718851355143, 30.58802105445588], [-114.13180278193363, 30.58464855365271], [-114.13075277160611, 30.579554161406627], [-114.12508889187791, 30.57783214632229]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c5923fffff', 8,
+            30.57446, -114.1297,
+            48.24, 'Bajo',
+            0.0, 0.354,
+            0.494, 0.7,
+            0.85, 0.3,
+            175.09, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.12865301388685, 30.569365021516354], [-114.12403921249366, 30.572737514536737], [-114.12508889187791, 30.57783214632229], [-114.13075277160611, 30.579554161406627], [-114.13536655971978, 30.576181503073336], [-114.13431648141606, 30.57108699498315], [-114.12865301388685, 30.569365021516354]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c592bfffff', 8,
+            30.56599, -114.13327,
+            48.68, 'Bajo',
+            0.0, 0.37,
+            0.501, 0.7,
+            0.85, 0.3,
+            175.05, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.132216587734, 30.56089762377042], [-114.12760326647458, 30.56427027403531], [-114.12865301388685, 30.569365021516354], [-114.13431648141606, 30.57108699498315], [-114.13892978931868, 30.567714179359175], [-114.1378796430802, 30.562619555642012], [-114.132216587734, 30.56089762377042]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c5905fffff', 8,
+            30.55752, -114.13683,
+            49.16, 'Bajo',
+            0.0, 0.389,
+            0.509, 0.7,
+            0.85, 0.3,
+            175.02, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.13577961351825, 30.55242995354113], [-114.13116677233515, 30.555802760811062], [-114.132216587734, 30.56089762377042], [-114.1378796430802, 30.562619555642012], [-114.1424924708292, 30.559246582966797], [-114.1414422566974, 30.554151843839797], [-114.13577961351825, 30.55242995354113]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c590dfffff', 8,
+            30.54906, -114.14039,
+            49.69, 'Bajo',
+            0.0, 0.41,
+            0.516, 0.7,
+            0.85, 0.3,
+            174.99, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.13934209133845, 30.543962011285135], [-114.13472973017426, 30.54733497532063], [-114.13577961351825, 30.55242995354113], [-114.1414422566974, 30.554151843839797], [-114.14605460435028, 30.55077871435281], [-114.14500432236662, 30.545683860033154], [-114.13934209133845, 30.543962011285135]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c5947fffff', 8,
+            30.54059, -114.14395,
+            50.25, 'Moderado',
+            0.0, 0.432,
+            0.524, 0.7,
+            0.85, 0.3,
+            174.97, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.14290402129346, 30.535493797459157], [-114.13829214009075, 30.53886691802072], [-114.13934209133845, 30.543962011285135], [-114.14500432236662, 30.545683860033154], [-114.1496161899808, 30.542310573973886], [-114.14856584018666, 30.537215604678806], [-114.14290402129346, 30.535493797459157]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c5941fffff', 8,
+            30.53212, -114.14752,
+            50.85, 'Moderado',
+            0.0, 0.456,
+            0.532, 0.7,
+            0.85, 0.3,
+            174.96, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.14646540348214, 30.52702531251998], [-114.14185400218346, 30.530398589368097], [-114.14290402129346, 30.535493797459157], [-114.14856584018666, 30.537215604678806], [-114.15317722781967, 30.533842162286756], [-114.15212681025643, 30.5287470782335], [-114.14646540348214, 30.52702531251998]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c5949fffff', 8,
+            30.52365, -114.15108,
+            51.47, 'Moderado',
+            0.0, 0.482,
+            0.539, 0.7,
+            0.85, 0.3,
+            174.95, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.1500262380033, 30.518556556924413], [-114.14541531655124, 30.521929989819537], [-114.14646540348214, 30.52702531251998], [-114.15212681025643, 30.5287470782335], [-114.1567377179657, 30.525373479748186], [-114.15568723267477, 30.520278281154045], [-114.1500262380033, 30.518556556924413]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c5b23fffff', 8,
+            30.51518, -114.15464,
+            52.12, 'Moderado',
+            0.0, 0.508,
+            0.547, 0.7,
+            0.85, 0.3,
+            174.95, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.1535865249558, 30.510087531129336], [-114.14897608329291, 30.513461119831913], [-114.1500262380033, 30.518556556924413], [-114.15568723267477, 30.520278281154045], [-114.16029766051778, 30.516904526814994], [-114.15924710754052, 30.511809213897283], [-114.1535865249558, 30.510087531129336]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c5b2bfffff', 8,
+            30.50671, -114.1582,
+            52.8, 'Moderado',
+            0.0, 0.536,
+            0.556, 0.7,
+            0.85, 0.3,
+            174.96, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.15714626443841, 30.501618235591653], [-114.15253630250726, 30.504991979862126], [-114.1535865249558, 30.510087531129336], [-114.15924710754052, 30.511809213897283], [-114.16385705557474, 30.508435303944072], [-114.16280643495249, 30.50333987692014], [-114.15714626443841, 30.501618235591653]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c5b05fffff', 8,
+            30.49824, -114.16176,
+            53.49, 'Moderado',
+            0.0, 0.564,
+            0.564, 0.7,
+            0.85, 0.3,
+            174.97, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.16070545654995, 30.49314867076837], [-114.15609597429308, 30.49652257036714], [-114.15714626443841, 30.501618235591653], [-114.16280643495249, 30.50333987692014], [-114.1674159032354, 30.49996581159233], [-114.16636521500949, 30.494870270679566], [-114.16070545654995, 30.49314867076837]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c5b0dfffff', 8,
+            30.48977, -114.16531,
+            54.2, 'Moderado',
+            0.0, 0.593,
+            0.572, 0.7,
+            0.85, 0.3,
+            174.98, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.16426410138918, 30.484678837116476], [-114.15965509874916, 30.488052891803946], [-114.16070545654995, 30.49314867076837], [-114.16636521500949, 30.494870270679566], [-114.17097420359859, 30.491496050216746], [-114.16992344781035, 30.486400395632568], [-114.16426410138918, 30.484678837116476]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c5b47fffff', 8,
+            30.4813, -114.16887,
+            54.91, 'Moderado',
+            0.0, 0.623,
+            0.581, 0.7,
+            0.85, 0.3,
+            175.01, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.16782219905485, 30.476208735093067], [-114.16321367597428, 30.479582944629612], [-114.16426410138918, 30.484678837116476], [-114.16992344781035, 30.486400395632568], [-114.17453195676308, 30.483026020274348], [-114.17348113345379, 30.477930252236206], [-114.16782219905485, 30.476208735093067]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c5b41fffff', 8,
+            30.47283, -114.17243,
+            55.63, 'Moderado',
+            0.0, 0.652,
+            0.589, 0.7,
+            0.85, 0.3,
+            175.04, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.17137974964575, 30.467738365155274], [-114.16677170606714, 30.471112729301236], [-114.16782219905485, 30.476208735093067], [-114.17348113345379, 30.477930252236206], [-114.17808916282766, 30.474555722222224], [-114.17703827203864, 30.4694598409476], [-114.17137974964575, 30.467738365155274]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485c5b4dfffff', 8,
+            30.46602, -114.16572,
+            55.87, 'Moderado',
+            0.0, 0.676,
+            0.573, 0.7,
+            0.85, 0.3,
+            174.07, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.16467098282045, 30.460920367082217], [-114.16006292518755, 30.464294565328693], [-114.16111308788369, 30.46939080865396], [-114.16677170606714, 30.471112729301236], [-114.17137974964575, 30.467738365155274], [-114.1703291891265, 30.462642246276], [-114.16467098282045, 30.460920367082217]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e9bfffff', 8,
+            30.4592, -114.15901,
+            56.11, 'Moderado',
+            0.0, 0.7,
+            0.558, 0.7,
+            0.85, 0.3,
+            173.1, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.15796286244229, 30.45410172841218], [-114.15335479090554, 30.457475760727682], [-114.15440462334008, 30.46257224136608], [-114.16006292518755, 30.464294565328693], [-114.16467098282045, 30.460920367082217], [-114.16362075254102, 30.45582401081858], [-114.15796286244229, 30.45410172841218]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e99fffff', 8,
+            30.45238, -114.15231,
+            56.35, 'Moderado',
+            0.0, 0.723,
+            0.542, 0.7,
+            0.85, 0.3,
+            172.14, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.1512553886017, 30.447282449554393], [-114.14664730331148, 30.450656315907473], [-114.14769680551449, 30.455753033638622], [-114.15335479090554, 30.457475760727682], [-114.15796286244229, 30.45410172841218], [-114.1569129623727, 30.44900513498452], [-114.1512553886017, 30.447282449554393]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512ed7fffff', 8,
+            30.44556, -114.1456,
+            56.59, 'Moderado',
+            0.0, 0.746,
+            0.527, 0.7,
+            0.85, 0.3,
+            171.18, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.14454856138904, 30.440462530918182], [-114.13994046249573, 30.443836231277416], [-114.1409896344972, 30.44893318588093], [-114.14664730331148, 30.450656315907473], [-114.1512553886017, 30.447282449554393], [-114.15020581871195, 30.4421856191831], [-114.14454856138904, 30.440462530918182]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512ed5fffff', 8,
+            30.43874, -114.13889,
+            56.83, 'Moderado',
+            0.0, 0.769,
+            0.513, 0.7,
+            0.85, 0.3,
+            170.22, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.1378423808946, 30.433641972913087], [-114.13323426854849, 30.437015507247054], [-114.1342831103785, 30.442112698502427], [-114.13994046249573, 30.443836231277416], [-114.14454856138904, 30.440462530918182], [-114.14349932164913, 30.435365463823715], [-114.1378423808946, 30.433641972913087]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512ec3fffff', 8,
+            30.43192, -114.13219,
+            57.06, 'Moderado',
+            0.0, 0.791,
+            0.499, 0.7,
+            0.85, 0.3,
+            169.26, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.13113684720852, 30.426820775948716], [-114.12652872155988, 30.430194144226025], [-114.12757723324853, 30.43529157191272], [-114.13323426854849, 30.437015507247054], [-114.1378423808946, 30.433641972913087], [-114.13679347127446, 30.428544669315936], [-114.13113684720852, 30.426820775948716]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512ec1fffff', 8,
+            30.4251, -114.12548,
+            57.3, 'Moderado',
+            0.0, 0.813,
+            0.486, 0.7,
+            0.85, 0.3,
+            168.3, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.12443196042092, 30.41999894043482], [-114.11982382161999, 30.423372142624086], [-114.12087200319739, 30.428469806521523], [-114.12652872155988, 30.430194144226025], [-114.13113684720852, 30.426820775948716], [-114.13008826767809, 30.421723236069454], [-114.12443196042092, 30.41999894043482]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512ecdfffff', 8,
+            30.41827, -114.11878,
+            57.53, 'Moderado',
+            0.0, 0.833,
+            0.474, 0.7,
+            0.85, 0.3,
+            167.34, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.11772772062179, 30.413176466781277], [-114.11311956881876, 30.416549502851144], [-114.11416742031503, 30.421647402738685], [-114.11982382161999, 30.423372142624086], [-114.12443196042092, 30.41999894043482], [-114.12338371095015, 30.414901164494065], [-114.11772772062179, 30.413176466781277]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e1bfffff', 8,
+            30.41145, -114.11207,
+            57.75, 'Moderado',
+            0.0, 0.853,
+            0.462, 0.7,
+            0.85, 0.3,
+            166.38, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.11102412790106, 30.406353355398124], [-114.10641596324605, 30.40972622531724], [-114.10746348469134, 30.414824360974187], [-114.11311956881876, 30.416549502851144], [-114.11772772062179, 30.413176466781277], [-114.11667980118054, 30.408078454999696], [-114.11102412790106, 30.406353355398124]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e19fffff', 8,
+            30.40463, -114.10537,
+            57.97, 'Moderado',
+            0.0, 0.872,
+            0.452, 0.7,
+            0.85, 0.3,
+            165.43, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.10432118234854, 30.399529606695474], [-114.09971300499167, 30.402902310432534], [-114.10076019641615, 30.408000681638136], [-114.10641596324605, 30.40972622531724], [-114.11102412790106, 30.406353355398124], [-114.10997653845918, 30.40125510799645], [-114.10432118234854, 30.399529606695474]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e57fffff', 8,
+            30.3978, -114.09867,
+            58.19, 'Moderado',
+            0.0, 0.89,
+            0.442, 0.7,
+            0.85, 0.3,
+            164.47, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.09761888405399, 30.39270522108364], [-114.09301069414526, 30.396077758607337], [-114.09405755557917, 30.401176365140774], [-114.09971300499167, 30.402902310432534], [-114.10432118234854, 30.399529606695474], [-114.10327392287589, 30.39443112389452], [-114.09761888405399, 30.39270522108364]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e55fffff', 8,
+            30.39098, -114.09196,
+            58.39, 'Moderado',
+            0.0, 0.907,
+            0.433, 0.7,
+            0.85, 0.3,
+            163.52, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.09091723310702, 30.38588019897302], [-114.08630903079651, 30.38925257025206], [-114.08735556227005, 30.394351411892444], [-114.09301069414526, 30.396077758607337], [-114.09761888405399, 30.39270522108364], [-114.09657195452037, 30.387606503104227], [-114.09091723310702, 30.38588019897302]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e43fffff', 8,
+            30.38415, -114.08526,
+            58.58, 'Moderado',
+            0.0, 0.923,
+            0.425, 0.7,
+            0.85, 0.3,
+            162.57, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.08421622959723, 30.379054540774135], [-114.07960801503488, 30.38242674577727], [-114.08065421657831, 30.387525822303694], [-114.08630903079651, 30.38925257025206], [-114.09091723310702, 30.38588019897302], [-114.08987063348225, 30.38078124603604], [-114.08421622959723, 30.379054540774135]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e41fffff', 8,
+            30.37733, -114.07856,
+            58.77, 'Moderado',
+            0.0, 0.937,
+            0.419, 0.7,
+            0.85, 0.3,
+            161.62, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.07751587361409, 30.37222824689767], [-114.07290764694982, 30.375600285593638], [-114.07395351859341, 30.380699596785117], [-114.07960801503488, 30.38242674577727], [-114.08421622959723, 30.379054540774135], [-114.08316995985108, 30.37395535310056], [-114.07751587361409, 30.37222824689767]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512e4dfffff', 8,
+            30.3705, -114.07186,
+            58.94, 'Moderado',
+            0.0, 0.95,
+            0.413, 0.7,
+            0.85, 0.3,
+            160.67, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.07081616524695, 30.365401317754426], [-114.06620792663068, 30.368773190111977], [-114.0672534684047, 30.37387273574749], [-114.07290764694982, 30.375600285593638], [-114.07751587361409, 30.37222824689767], [-114.07646993371628, 30.36712882470851], [-114.07081616524695, 30.365401317754426]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '884851219bfffff', 8,
+            30.36367, -114.06516,
+            59.1, 'Moderado',
+            0.0, 0.962,
+            0.408, 0.7,
+            0.85, 0.3,
+            159.73, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.06411710458515, 30.35857375375531], [-114.0595088541667, 30.36194545974325], [-114.0605540661015, 30.3670452396017], [-114.06620792663068, 30.368773190111977], [-114.07081616524695, 30.365401317754426], [-114.06977055516725, 30.36030166127073], [-114.06411710458515, 30.35857375375531]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512199fffff', 8,
+            30.35685, -114.05846,
+            59.25, 'Moderado',
+            0.0, 0.972,
+            0.404, 0.7,
+            0.85, 0.3,
+            158.78, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.05741869171787, 30.3517455553114], [-114.05281042964705, 30.355117094898528], [-114.05385531177295, 30.36021710875876], [-114.0595088541667, 30.36194545974325], [-114.06411710458515, 30.35857375375531], [-114.06307182429323, 30.353473863198214], [-114.05741869171787, 30.3517455553114]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485121d7fffff', 8,
+            30.35002, -114.05177,
+            59.38, 'Moderado',
+            0.0, 0.98,
+            0.402, 0.7,
+            0.85, 0.3,
+            157.84, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.05072092673426, 30.34491672283386], [-114.04611265316082, 30.348288095989027], [-114.0471572055082, 30.35338834362983], [-114.05281042964705, 30.355117094898528], [-114.05741869171787, 30.3517455553114], [-114.05637374118345, 30.34664543090206], [-114.05072092673426, 30.34491672283386]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '884851218bfffff', 8,
+            30.35166, -114.0415,
+            59.32, 'Moderado',
+            0.0, 0.978,
+            0.4, 0.7,
+            0.85, 0.3,
+            156.81, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.04045974739621, 30.34655894462619], [-114.03585098443361, 30.349929997593616], [-114.03689513848015, 30.355030368325703], [-114.04254845382111, 30.356759563013625], [-114.0471572055082, 30.35338834362983], [-114.04611265316082, 30.348288095989027], [-114.04045974739621, 30.34655894462619]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512181fffff', 8,
+            30.3533, -114.03124,
+            59.29, 'Moderado',
+            0.0, 0.976,
+            0.401, 0.7,
+            0.85, 0.3,
+            155.79, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.03019798771496, 30.348200402898897], [-114.02558873561087, 30.351571135501164], [-114.02663249124288, 30.356671629184284], [-114.03228589742447, 30.35840126732865], [-114.03689513848015, 30.355030368325703], [-114.03585098443361, 30.349929997593616], [-114.03019798771496, 30.348200402898897]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512185fffff', 8,
+            30.35494, -114.02098,
+            59.3, 'Moderado',
+            0.0, 0.974,
+            0.404, 0.7,
+            0.85, 0.3,
+            154.77, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.01993564829961, 30.34984109743742], [-114.01532590730189, 30.35321150949714], [-114.01636926440574, 30.358312125991], [-114.02202276106642, 30.36004220762895], [-114.02663249124288, 30.356671629184284], [-114.02558873561087, 30.351571135501164], [-114.01993564829961, 30.34984109743742]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485121a9fffff', 8,
+            30.35658, -114.01072,
+            59.35, 'Moderado',
+            0.0, 0.972,
+            0.411, 0.7,
+            0.85, 0.3,
+            153.75, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-114.00967272975957, 30.351481028027308], [-114.00506250011622, 30.354851119367154], [-114.00610545857832, 30.35995185853146], [-114.01175904535647, 30.361682383700035], [-114.01636926440574, 30.358312125991], [-114.01532590730189, 30.35321150949714], [-114.00967272975957, 30.351481028027308]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485121adfffff', 8,
+            30.35822, -114.00045,
+            59.43, 'Moderado',
+            0.0, 0.97,
+            0.419, 0.7,
+            0.85, 0.3,
+            152.73, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.99940923270445, 30.35312019445428], [-113.99479851466359, 30.356489964897023], [-113.99584107437039, 30.36159082659143], [-114.00149475090429, 30.363321795327554], [-114.00610545857832, 30.35995185853146], [-114.00506250011622, 30.354851119367154], [-113.99940923270445, 30.35312019445428]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512ad3fffff', 8,
+            30.35986, -113.99019,
+            59.55, 'Moderado',
+            0.0, 0.967,
+            0.43, 0.7,
+            0.85, 0.3,
+            151.72, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.98914515774403, 30.354758596504244], [-113.9845339515539, 30.358128045872697], [-113.98557611239198, 30.363229029956813], [-113.99122987831984, 30.364960442297342], [-113.99584107437039, 30.36159082659143], [-113.99479851466359, 30.356489964897023], [-113.98914515774403, 30.354758596504244]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512ad7fffff', 8,
+            30.3615, -113.97992,
+            59.7, 'Moderado',
+            0.0, 0.965,
+            0.444, 0.7,
+            0.85, 0.3,
+            150.7, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.97888050548838, 30.356396233963256], [-113.9742688113974, 30.359765362080292], [-113.97531057325332, 30.364866468413716], [-113.98096442821326, 30.36659832439538], [-113.98557611239198, 30.363229029956813], [-113.9845339515539, 30.358128045872697], [-113.97888050548838, 30.356396233963256]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512a8bfffff', 8,
+            30.36313, -113.96966,
+            59.88, 'Moderado',
+            0.0, 0.962,
+            0.459, 0.7,
+            0.85, 0.3,
+            149.69, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.9686152765477, 30.35803310661754], [-113.9640030948044, 30.36140191330611], [-113.96504445756483, 30.3665031417484], [-113.97069840119494, 30.368235441407837], [-113.97531057325332, 30.364866468413716], [-113.9742688113974, 30.359765362080292], [-113.9686152765477, 30.35803310661754]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512a81fffff', 8,
+            30.36477, -113.95939,
+            60.09, 'Moderado',
+            0.0, 0.96,
+            0.477, 0.7,
+            0.85, 0.3,
+            148.68, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.95834947153249, 30.35966921425347], [-113.95373680238554, 30.363037699336598], [-113.95477776593721, 30.368139049747267], [-113.96043179787542, 30.36987179312103], [-113.96504445756483, 30.3665031417484], [-113.9640030948044, 30.36140191330611], [-113.95834947153249, 30.35966921425347]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512a85fffff', 8,
+            30.36641, -113.94912,
+            60.33, 'Moderado',
+            0.0, 0.957,
+            0.496, 0.7,
+            0.85, 0.3,
+            147.67, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.94808309105338, 30.36130455665762], [-113.94346993475163, 30.364672719958374], [-113.94451049898129, 30.36977419219691], [-113.95016461886554, 30.371507379321443], [-113.95477776593721, 30.368139049747267], [-113.95373680238554, 30.363037699336598], [-113.94808309105338, 30.36130455665762]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512aa9fffff', 8,
+            30.36804, -113.93886,
+            60.59, 'Moderado',
+            0.0, 0.954,
+            0.517, 0.7,
+            0.85, 0.3,
+            146.67, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.93781613572133, 30.362939133616667], [-113.93320249251371, 30.366306974958192], [-113.9342426573082, 30.371408568884068], [-113.9398968647763, 30.3731421997957], [-113.94451049898129, 30.36977419219691], [-113.94346993475163, 30.364672719958374], [-113.93781613572133, 30.362939133616667]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512aadfffff', 8,
+            30.36967, -113.92859,
+            60.87, 'Moderado',
+            0.0, 0.951,
+            0.539, 0.7,
+            0.85, 0.3,
+            145.67, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.92754860614741, 30.364572944917523], [-113.92293447628303, 30.36794046412303], [-113.92397424152925, 30.37304217959566], [-113.92962853621893, 30.374776254330662], [-113.9342426573082, 30.371408568884068], [-113.93320249251371, 30.366306974958192], [-113.92754860614741, 30.364572944917523]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512853fffff', 8,
+            30.37131, -113.91832,
+            61.16, 'Moderado',
+            0.0, 0.948,
+            0.563, 0.7,
+            0.85, 0.3,
+            144.66, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.91728050294296, 30.36620599034722], [-113.91266588667105, 30.369573187239983], [-113.91370525225594, 30.374675024118755], [-113.91935963380486, 30.376409542713255], [-113.92397424152925, 30.37304217959566], [-113.92293447628303, 30.36794046412303], [-113.91728050294296, 30.36620599034722]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512857fffff', 8,
+            30.37294, -113.90805,
+            61.47, 'Moderado',
+            0.0, 0.945,
+            0.587, 0.7,
+            0.85, 0.3,
+            143.66, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.90701182671953, 30.36783826969296], [-113.90239672428945, 30.371205144096322], [-113.90343569010004, 30.3763071022406], [-113.9090901581458, 30.378042064730653], [-113.91370525225594, 30.374675024118755], [-113.91266588667105, 30.369573187239983], [-113.90701182671953, 30.36783826969296]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '884851280bfffff', 8,
+            30.37457, -113.89778,
+            61.79, 'Moderado',
+            0.0, 0.942,
+            0.613, 0.7,
+            0.85, 0.3,
+            142.67, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.89674257808889, 30.369469782742126], [-113.89212698975012, 30.372836334479484], [-113.89316555567349, 30.377938413748602], [-113.89882010985359, 30.379673820170154], [-113.90343569010004, 30.3763071022406], [-113.90239672428945, 30.371205144096322], [-113.89674257808889, 30.369469782742126]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512801fffff', 8,
+            30.3762, -113.88751,
+            62.1, 'Moderado',
+            0.0, 0.939,
+            0.638, 0.7,
+            0.85, 0.3,
+            141.67, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.88647275766299, 30.371100529282234], [-113.8818566836652, 30.374466758177075], [-113.88289484958845, 30.37956895843031], [-113.88854948954032, 30.38130480881923], [-113.89316555567349, 30.377938413748602], [-113.89212698975012, 30.372836334479484], [-113.88647275766299, 30.371100529282234]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512805fffff', 8,
+            30.37783, -113.87724,
+            62.42, 'Moderado',
+            0.0, 0.936,
+            0.664, 0.7,
+            0.85, 0.3,
+            140.68, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.87620236605402, 30.372730509101018], [-113.87158580664699, 30.376096414976868], [-113.87262357245734, 30.38119873607348], [-113.87827829781835, 30.38293503046551], [-113.88289484958845, 30.37956895843031], [-113.8818566836652, 30.374466758177075], [-113.87620236605402, 30.372730509101018]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '884851282bfffff', 8,
+            30.3863, -113.87366,
+            62.2, 'Moderado',
+            0.0, 0.918,
+            0.673, 0.7,
+            0.85, 0.3,
+            140.66, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.87262357245734, 30.38119873607348], [-113.86800653530015, 30.384564484896806], [-113.86904423103182, 30.3896666942099], [-113.87469936415711, 30.391403033939604], [-113.87931639375572, 30.388037119003855], [-113.87827829781835, 30.38293503046551], [-113.87262357245734, 30.38119873607348]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512823fffff', 8,
+            30.39477, -113.87008,
+            61.93, 'Moderado',
+            0.0, 0.898,
+            0.682, 0.7,
+            0.85, 0.3,
+            140.66, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.86904423103182, 30.3896666942099], [-113.86442671606834, 30.393032285740876], [-113.8654643416796, 30.398134383052362], [-113.87111988258361, 30.399870768141422], [-113.8757373900669, 30.396505010544953], [-113.87469936415711, 30.391403033939604], [-113.86904423103182, 30.3896666942099]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485129c9fffff', 8,
+            30.40324, -113.8665,
+            61.63, 'Moderado',
+            0.0, 0.876,
+            0.69, 0.7,
+            0.85, 0.3,
+            140.66, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.8654643416796, 30.398134383052362], [-113.86084634885368, 30.40149981705119], [-113.86188390430281, 30.406601802142983], [-113.86753985299998, 30.408338232613115], [-113.87215783842412, 30.404972632595687], [-113.87111988258361, 30.399870768141422], [-113.8654643416796, 30.398134383052362]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485129c1fffff', 8,
+            30.4117, -113.86292,
+            61.29, 'Moderado',
+            0.0, 0.853,
+            0.699, 0.7,
+            0.85, 0.3,
+            140.66, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.86188390430281, 30.406601802142983], [-113.85726543355834, 30.409967078369853], [-113.85830291880359, 30.415068951023894], [-113.86395927530832, 30.416805426896833], [-113.86857773872947, 30.413439984698243], [-113.86753985299998, 30.408338232613115], [-113.86188390430281, 30.406601802142983]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485129c7fffff', 8,
+            30.42017, -113.85934,
+            60.92, 'Moderado',
+            0.0, 0.828,
+            0.708, 0.7,
+            0.85, 0.3,
+            140.68, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.85830291880359, 30.415068951023894], [-113.85368397008439, 30.418434069239062], [-113.85472138508402, 30.423535829237334], [-113.8603781494107, 30.425272350534843], [-113.86499709088504, 30.42190706639483], [-113.86395927530832, 30.416805426896833], [-113.85830291880359, 30.415068951023894]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '884851298dfffff', 8,
+            30.42864, -113.85576,
+            60.53, 'Moderado',
+            0.0, 0.802,
+            0.717, 0.7,
+            0.85, 0.3,
+            140.7, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.85472138508402, 30.423535829237334], [-113.850101958334, 30.426900789201056], [-113.85113930304622, 30.432002436325558], [-113.8567964752092, 30.433739003069405], [-113.8614158947929, 30.430373877227694], [-113.8603781494107, 30.425272350534843], [-113.85472138508402, 30.423535829237334]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '8848512985fffff', 8,
+            30.4371, -113.85218,
+            60.12, 'Moderado',
+            0.0, 0.774,
+            0.725, 0.7,
+            0.85, 0.3,
+            140.72, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.85113930304622, 30.432002436325558], [-113.84651939820922, 30.4353672377981], [-113.84755667259223, 30.44046877183091], [-113.85321425260591, 30.44220538404285], [-113.85783415035515, 30.438840416739176], [-113.8567964752092, 30.433739003069405], [-113.85113930304622, 30.432002436325558]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485129abfffff', 8,
+            30.44557, -113.84859,
+            59.68, 'Moderado',
+            0.0, 0.746,
+            0.734, 0.7,
+            0.85, 0.3,
+            140.76, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.84755667259223, 30.44046877183091], [-113.84293628961215, 30.44383341457255], [-113.84397349362418, 30.448934835295734], [-113.84963148150284, 30.450671492997568], [-113.85425185747376, 30.44730668447163], [-113.85321425260591, 30.44220538404285], [-113.84755667259223, 30.44046877183091]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;
+INSERT INTO public.grilla_h3_riesgo (
+            h3_index, resolucion, latitud_centroide, longitud_centroide, ierc_score, nivel_riesgo,
+            amenaza_score, exposicion_score, sensibilidad_score, dependencia_score, biocultural_score,
+            capacidad_adaptativa_score, distancia_proyecto_mas_cercano_km, geometry
+        ) VALUES (
+            '88485129a3fffff', 8,
+            30.45404, -113.84501,
+            59.23, 'Moderado',
+            0.0, 0.718,
+            0.742, 0.7,
+            0.85, 0.3,
+            140.8, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "Polygon", "coordinates": [[[-113.84397349362418, 30.448934835295734], [-113.83935263244489, 30.45229931906678], [-113.84038976604405, 30.45740062626246], [-113.84604816180207, 30.459137329475997], [-113.85066901605083, 30.455772679967453], [-113.84963148150284, 30.450671492997568], [-113.84397349362418, 30.448934835295734]]]}'), 4326)
+        ) ON CONFLICT (h3_index) DO NOTHING;

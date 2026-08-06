@@ -1,0 +1,2400 @@
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1505895051, 28.7523193029], [-113.1483779051, 28.7272968903], [-113.176765507, 28.7253453551], [-113.1789826928, 28.7503674671], [-113.1505895051, 28.7523193029]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1528019811, 28.7773405818], [-113.1505895051, 28.7523193029], [-113.1789826928, 28.7503674671], [-113.1812007567, 28.7753884457], [-113.1528019811, 28.7773405818]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1550153336, 28.8023607221], [-113.1528019811, 28.7773405818], [-113.1812007567, 28.7753884457], [-113.1834196994, 28.800408286], [-113.1550153336, 28.8023607221]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1572295632, 28.8273797188], [-113.1550153336, 28.8023607221], [-113.1834196994, 28.800408286], [-113.1856395214, 28.8254269829], [-113.1572295632, 28.8273797188]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1594446704, 28.852397567], [-113.1572295632, 28.8273797188], [-113.1856395214, 28.8254269829], [-113.1878602231, 28.8504445315], [-113.1594446704, 28.852397567]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1616606556, 28.8774142617], [-113.1594446704, 28.852397567], [-113.1878602231, 28.8504445315], [-113.190081805, 28.8754609269], [-113.1616606556, 28.8774142617]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1638775194, 28.9024297978], [-113.1616606556, 28.8774142617], [-113.190081805, 28.8754609269], [-113.1923042678, 28.9004761641], [-113.1638775194, 28.9024297978]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1660952624, 28.9274441706], [-113.1638775194, 28.9024297978], [-113.1923042678, 28.9004761641], [-113.1945276119, 28.9254902381], [-113.1660952624, 28.9274441706]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.168313885, 28.952457375], [-113.1660952624, 28.9274441706], [-113.1945276119, 28.9254902381], [-113.1967518378, 28.950503144], [-113.168313885, 28.952457375]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1705333878, 28.977469406], [-113.168313885, 28.952457375], [-113.1967518378, 28.950503144], [-113.1989769461, 28.9755148768], [-113.1705333878, 28.977469406]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1727537713, 29.0024802587], [-113.1705333878, 28.977469406], [-113.1989769461, 28.9755148768], [-113.2012029373, 29.0005254316], [-113.1727537713, 29.0024802587]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            6.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.174975036, 29.0274899281], [-113.1727537713, 29.0024802587], [-113.2012029373, 29.0005254316], [-113.2034298119, 29.0255348034], [-113.174975036, 29.0274899281]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            5.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1771971825, 29.0524984093], [-113.174975036, 29.0274899281], [-113.2034298119, 29.0255348034], [-113.2056575705, 29.0505429872], [-113.1771971825, 29.0524984093]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1794202112, 29.0775056974], [-113.1771971825, 29.0524984093], [-113.2056575705, 29.0505429872], [-113.2078862135, 29.0755499782], [-113.1794202112, 29.0775056974]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1816441228, 29.1025117873], [-113.1794202112, 29.0775056974], [-113.2078862135, 29.0755499782], [-113.2101157416, 29.1005557712], [-113.1816441228, 29.1025117873]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1927769407, 29.2275240912], [-113.1905486073, 29.2025240663], [-113.2190427142, 29.2005668656], [-113.2212766751, 29.2255665949], [-113.1927769407, 29.2275240912]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1972362658, 29.2775204522], [-113.19500616, 29.2525228881], [-113.2235115241, 29.2505650966], [-113.2257472619, 29.2755623658], [-113.1972362658, 29.2775204522]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            8.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1994672586, 29.3025167785], [-113.1972362658, 29.2775204522], [-113.2257472619, 29.2755623658], [-113.2279838889, 29.3005583974], [-113.1994672586, 29.3025167785]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            5.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2016991389, 29.3275118621], [-113.1994672586, 29.3025167785], [-113.2279838889, 29.3005583974], [-113.2302214056, 29.3255531865], [-113.2016991389, 29.3275118621]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2039319073, 29.3525056979], [-113.2016991389, 29.3275118621], [-113.2302214056, 29.3255531865], [-113.2324598126, 29.3505467282], [-113.2039319073, 29.3525056979]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2061655643, 29.3774982811], [-113.2039319073, 29.3525056979], [-113.2324598126, 29.3505467282], [-113.2346991104, 29.3755390176], [-113.2061655643, 29.3774982811]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2084001104, 29.4024896067], [-113.2061655643, 29.3774982811], [-113.2346991104, 29.3755390176], [-113.2369392995, 29.4005300495], [-113.2084001104, 29.4024896067]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2106355462, 29.4274796697], [-113.2084001104, 29.4024896067], [-113.2369392995, 29.4005300495], [-113.2391803805, 29.4255198192], [-113.2106355462, 29.4274796697]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2128718721, 29.4524684652], [-113.2106355462, 29.4274796697], [-113.2391803805, 29.4255198192], [-113.2414223539, 29.4505083216], [-113.2128718721, 29.4524684652]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2151090887, 29.4774559882], [-113.2128718721, 29.4524684652], [-113.2414223539, 29.4505083216], [-113.2436652202, 29.4754955518], [-113.2151090887, 29.4774559882]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2173471966, 29.5024422337], [-113.2151090887, 29.4774559882], [-113.2436652202, 29.4754955518], [-113.24590898, 29.5004815048], [-113.2173471966, 29.5024422337]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2195861963, 29.5274271969], [-113.2173471966, 29.5024422337], [-113.24590898, 29.5004815048], [-113.2481536338, 29.5254661757], [-113.2195861963, 29.5274271969]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2218260882, 29.5524108727], [-113.2195861963, 29.5274271969], [-113.2481536338, 29.5254661757], [-113.2503991821, 29.5504495596], [-113.2218260882, 29.5524108727]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.224066873, 29.5773932563], [-113.2218260882, 29.5524108727], [-113.2503991821, 29.5504495596], [-113.2526456255, 29.5754316514], [-113.224066873, 29.5773932563]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2263085512, 29.6023743425], [-113.224066873, 29.5773932563], [-113.2526456255, 29.5754316514], [-113.2548929645, 29.6004124463], [-113.2263085512, 29.6023743425]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2285511233, 29.6273541266], [-113.2263085512, 29.6023743425], [-113.2548929645, 29.6004124463], [-113.2571411996, 29.6253919392], [-113.2285511233, 29.6273541266]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2307945898, 29.6523326036], [-113.2285511233, 29.6273541266], [-113.2571411996, 29.6253919392], [-113.2593903314, 29.6503701252], [-113.2307945898, 29.6523326036]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2330389513, 29.6773097684], [-113.2307945898, 29.6523326036], [-113.2593903314, 29.6503701252], [-113.2616403604, 29.6753469994], [-113.2330389513, 29.6773097684]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2352842082, 29.7022856161], [-113.2330389513, 29.6773097684], [-113.2616403604, 29.6753469994], [-113.2638912871, 29.7003225568], [-113.2352842082, 29.7022856161]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2375303613, 29.7272601419], [-113.2352842082, 29.7022856161], [-113.2638912871, 29.7003225568], [-113.2661431121, 29.7252967925], [-113.2375303613, 29.7272601419]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2397774109, 29.7522333407], [-113.2375303613, 29.7272601419], [-113.2661431121, 29.7252967925], [-113.2683958359, 29.7502697015], [-113.2397774109, 29.7522333407]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2420253576, 29.7772052076], [-113.2397774109, 29.7522333407], [-113.2683958359, 29.7502697015], [-113.270649459, 29.7752412789], [-113.2420253576, 29.7772052076]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2442742019, 29.8021757377], [-113.2420253576, 29.7772052076], [-113.270649459, 29.7752412789], [-113.2729039821, 29.8002115197], [-113.2442742019, 29.8021757377]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2465239445, 29.8271449259], [-113.2442742019, 29.8021757377], [-113.2729039821, 29.8002115197], [-113.2751594055, 29.8251804189], [-113.2465239445, 29.8271449259]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2487745858, 29.8521127674], [-113.2465239445, 29.8271449259], [-113.2751594055, 29.8251804189], [-113.27741573, 29.8501479717], [-113.2487745858, 29.8521127674]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2510261263, 29.8770792571], [-113.2487745858, 29.8521127674], [-113.27741573, 29.8501479717], [-113.2796729559, 29.875114173], [-113.2510261263, 29.8770792571]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2532785666, 29.9020443902], [-113.2510261263, 29.8770792571], [-113.2796729559, 29.875114173], [-113.2819310839, 29.900079018], [-113.2532785666, 29.9020443902]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2555319073, 29.9270081617], [-113.2532785666, 29.9020443902], [-113.2819310839, 29.900079018], [-113.2841901144, 29.9250425016], [-113.2555319073, 29.9270081617]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2577861488, 29.9519705667], [-113.2555319073, 29.9270081617], [-113.2841901144, 29.9250425016], [-113.2864500481, 29.950004619], [-113.2577861488, 29.9519705667]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2600412917, 29.9769316002], [-113.2577861488, 29.9519705667], [-113.2864500481, 29.950004619], [-113.2887108854, 29.9749653651], [-113.2600412917, 29.9769316002]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2622973366, 30.0018912572], [-113.2600412917, 29.9769316002], [-113.2887108854, 29.9749653651], [-113.290972627, 29.999924735], [-113.2622973366, 30.0018912572]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.264554284, 30.0268495328], [-113.2622973366, 30.0018912572], [-113.290972627, 29.999924735], [-113.2932352732, 30.0248827239], [-113.264554284, 30.0268495328]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2668121345, 30.0518064221], [-113.264554284, 30.0268495328], [-113.2932352732, 30.0248827239], [-113.2954988248, 30.0498393266], [-113.2668121345, 30.0518064221]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2690708885, 30.0767619201], [-113.2668121345, 30.0518064221], [-113.2954988248, 30.0498393266], [-113.2977632822, 30.0747945384], [-113.2690708885, 30.0767619201]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2713305466, 30.1017160219], [-113.2690708885, 30.0767619201], [-113.2977632822, 30.0747945384], [-113.300028646, 30.0997483542], [-113.2713305466, 30.1017160219]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2735911094, 30.1266687224], [-113.2713305466, 30.1017160219], [-113.300028646, 30.0997483542], [-113.3022949166, 30.1247007691], [-113.2735911094, 30.1266687224]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2758525773, 30.1516200169], [-113.2735911094, 30.1266687224], [-113.3022949166, 30.1247007691], [-113.3045620948, 30.1496517781], [-113.2758525773, 30.1516200169]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2781149511, 30.1765699003], [-113.2758525773, 30.1516200169], [-113.3045620948, 30.1496517781], [-113.3068301809, 30.1746013764], [-113.2781149511, 30.1765699003]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2803782311, 30.2015183677], [-113.2781149511, 30.1765699003], [-113.3068301809, 30.1746013764], [-113.3090991756, 30.1995495589], [-113.2803782311, 30.2015183677]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            4.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2826424179, 30.2264654142], [-113.2803782311, 30.2015183677], [-113.3090991756, 30.1995495589], [-113.3113690793, 30.2244963208], [-113.2826424179, 30.2264654142]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            4.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2849075121, 30.2514110347], [-113.2826424179, 30.2264654142], [-113.3113690793, 30.2244963208], [-113.3136398927, 30.249441657], [-113.2849075121, 30.2514110347]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2871735142, 30.2763552244], [-113.2849075121, 30.2514110347], [-113.3136398927, 30.249441657], [-113.3159116163, 30.2743855627], [-113.2871735142, 30.2763552244]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2894404248, 30.3012979784], [-113.2871735142, 30.2763552244], [-113.3159116163, 30.2743855627], [-113.3181842506, 30.2993280329], [-113.2894404248, 30.3012979784]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2917082444, 30.3262392916], [-113.2894404248, 30.3012979784], [-113.3181842506, 30.2993280329], [-113.3204577962, 30.3242690626], [-113.2917082444, 30.3262392916]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2939769736, 30.3511791591], [-113.2917082444, 30.3262392916], [-113.3204577962, 30.3242690626], [-113.3227322536, 30.3492086469], [-113.2939769736, 30.3511791591]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2962466128, 30.3761175761], [-113.2939769736, 30.3511791591], [-113.3227322536, 30.3492086469], [-113.3250076234, 30.3741467809], [-113.2962466128, 30.3761175761]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2985171627, 30.4010545374], [-113.2962466128, 30.3761175761], [-113.3250076234, 30.3741467809], [-113.3272839061, 30.3990834596], [-113.2985171627, 30.4010545374]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3007886238, 30.4259900384], [-113.2985171627, 30.4010545374], [-113.3272839061, 30.3990834596], [-113.3295611023, 30.4240186782], [-113.3007886238, 30.4259900384]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3030609966, 30.4509240738], [-113.3007886238, 30.4259900384], [-113.3295611023, 30.4240186782], [-113.3318392124, 30.4489524315], [-113.3030609966, 30.4509240738]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3053342818, 30.475856639], [-113.3030609966, 30.4509240738], [-113.3318392124, 30.4489524315], [-113.3341182372, 30.4738847148], [-113.3053342818, 30.475856639]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3076084797, 30.5007877288], [-113.3053342818, 30.475856639], [-113.3341182372, 30.4738847148], [-113.336398177, 30.4988155231], [-113.3076084797, 30.5007877288]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3098835911, 30.5257173384], [-113.3076084797, 30.5007877288], [-113.336398177, 30.4988155231], [-113.3386790325, 30.5237448514], [-113.3098835911, 30.5257173384]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3121596163, 30.5506454627], [-113.3098835911, 30.5257173384], [-113.3386790325, 30.5237448514], [-113.3409608042, 30.5486726948], [-113.3121596163, 30.5506454627]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3144365561, 30.575572097], [-113.3121596163, 30.5506454627], [-113.3409608042, 30.5486726948], [-113.3432434927, 30.5735990484], [-113.3144365561, 30.575572097]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3167144109, 30.6004972363], [-113.3144365561, 30.575572097], [-113.3432434927, 30.5735990484], [-113.3455270985, 30.5985239071], [-113.3167144109, 30.6004972363]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3189931813, 30.6254208755], [-113.3167144109, 30.6004972363], [-113.3455270985, 30.5985239071], [-113.3478116222, 30.6234472662], [-113.3189931813, 30.6254208755]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3212728678, 30.6503430098], [-113.3189931813, 30.6254208755], [-113.3478116222, 30.6234472662], [-113.3500970643, 30.6483691206], [-113.3212728678, 30.6503430098]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.323553471, 30.6752636343], [-113.3212728678, 30.6503430098], [-113.3500970643, 30.6483691206], [-113.3523834253, 30.6732894655], [-113.323553471, 30.6752636343]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3258349915, 30.7001827439], [-113.323553471, 30.6752636343], [-113.3523834253, 30.6732894655], [-113.3546707059, 30.6982082958], [-113.3258349915, 30.7001827439]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3281174297, 30.7251003339], [-113.3258349915, 30.7001827439], [-113.3546707059, 30.6982082958], [-113.3569589066, 30.7231256067], [-113.3281174297, 30.7251003339]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3304007863, 30.7500163991], [-113.3281174297, 30.7251003339], [-113.3569589066, 30.7231256067], [-113.3592480279, 30.7480413932], [-113.3304007863, 30.7500163991]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3326850618, 30.7749309348], [-113.3304007863, 30.7500163991], [-113.3592480279, 30.7480413932], [-113.3615380704, 30.7729556503], [-113.3326850618, 30.7749309348]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3349702567, 30.799843936], [-113.3326850618, 30.7749309348], [-113.3615380704, 30.7729556503], [-113.3638290346, 30.7978683733], [-113.3349702567, 30.799843936]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3372563716, 30.8247553976], [-113.3349702567, 30.799843936], [-113.3638290346, 30.7978683733], [-113.3661209212, 30.822779557], [-113.3372563716, 30.8247553976]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3395434071, 30.8496653149], [-113.3372563716, 30.8247553976], [-113.3661209212, 30.822779557], [-113.3684137305, 30.8476891966], [-113.3395434071, 30.8496653149]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3418313637, 30.8745736829], [-113.3395434071, 30.8496653149], [-113.3684137305, 30.8476891966], [-113.3707074633, 30.8725972872], [-113.3418313637, 30.8745736829]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.344120242, 30.8994804966], [-113.3418313637, 30.8745736829], [-113.3707074633, 30.8725972872], [-113.3730021201, 30.8975038238], [-113.344120242, 30.8994804966]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3464100425, 30.9243857511], [-113.344120242, 30.8994804966], [-113.3730021201, 30.8975038238], [-113.3752977014, 30.9224088015], [-113.3464100425, 30.9243857511]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3487007658, 30.9492894416], [-113.3464100425, 30.9243857511], [-113.3752977014, 30.9224088015], [-113.3775942078, 30.9473122154], [-113.3487007658, 30.9492894416]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3509924125, 30.9741915629], [-113.3487007658, 30.9492894416], [-113.3775942078, 30.9473122154], [-113.3798916398, 30.9722140605], [-113.3509924125, 30.9741915629]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.353284983, 30.9990921103], [-113.3509924125, 30.9741915629], [-113.3798916398, 30.9722140605], [-113.382189998, 30.9971143319], [-113.353284983, 30.9990921103]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.355578478, 31.0239910788], [-113.353284983, 30.9990921103], [-113.382189998, 30.9971143319], [-113.384489283, 31.0220130247], [-113.355578478, 31.0239910788]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.357872898, 31.0488884635], [-113.355578478, 31.0239910788], [-113.384489283, 31.0220130247], [-113.3867894952, 31.0469101339], [-113.357872898, 31.0488884635]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3601682435, 31.0737842594], [-113.357872898, 31.0488884635], [-113.3867894952, 31.0469101339], [-113.3890906354, 31.0718056547], [-113.3601682435, 31.0737842594]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3624645152, 31.0986784617], [-113.3601682435, 31.0737842594], [-113.3890906354, 31.0718056547], [-113.391392704, 31.0966995821], [-113.3624645152, 31.0986784617]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3647617136, 31.1235710653], [-113.3624645152, 31.0986784617], [-113.391392704, 31.0966995821], [-113.3936957016, 31.1215919111], [-113.3647617136, 31.1235710653]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3670598393, 31.1484620654], [-113.3647617136, 31.1235710653], [-113.3936957016, 31.1215919111], [-113.3959996288, 31.1464826369], [-113.3670598393, 31.1484620654]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3693588927, 31.1733514571], [-113.3670598393, 31.1484620654], [-113.3959996288, 31.1464826369], [-113.3983044861, 31.1713717545], [-113.3693588927, 31.1733514571]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            4.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3716588745, 31.1982392354], [-113.3693588927, 31.1733514571], [-113.3983044861, 31.1713717545], [-113.400610274, 31.1962592591], [-113.3716588745, 31.1982392354]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            5.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3739597853, 31.2231253953], [-113.3716588745, 31.1982392354], [-113.400610274, 31.1962592591], [-113.4029169932, 31.2211451456], [-113.3739597853, 31.2231253953]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            9.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3762616255, 31.2480099321], [-113.3739597853, 31.2231253953], [-113.4029169932, 31.2211451456], [-113.4052246443, 31.2460294091], [-113.3762616255, 31.2480099321]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            14.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3785643958, 31.2728928407], [-113.3762616255, 31.2480099321], [-113.4052246443, 31.2460294091], [-113.4075332277, 31.2709120448], [-113.3785643958, 31.2728928407]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            14.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3808680967, 31.2977741162], [-113.3785643958, 31.2728928407], [-113.4075332277, 31.2709120448], [-113.409842744, 31.2957930477], [-113.3808680967, 31.2977741162]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3831727288, 31.3226537538], [-113.3808680967, 31.2977741162], [-113.409842744, 31.2957930477], [-113.4121531938, 31.3206724129], [-113.3831727288, 31.3226537538]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3854782926, 31.3475317484], [-113.3831727288, 31.3226537538], [-113.4121531938, 31.3206724129], [-113.4144645777, 31.3455501355], [-113.3854782926, 31.3475317484]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3877847888, 31.3724080952], [-113.3854782926, 31.3475317484], [-113.4144645777, 31.3455501355], [-113.4167768962, 31.3704262105], [-113.3877847888, 31.3724080952]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3900922178, 31.3972827893], [-113.3877847888, 31.3724080952], [-113.4167768962, 31.3704262105], [-113.41909015, 31.3953006331], [-113.3900922178, 31.3972827893]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3924005803, 31.4221558257], [-113.3900922178, 31.3972827893], [-113.41909015, 31.3953006331], [-113.4214043395, 31.4201733983], [-113.3924005803, 31.4221558257]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3947098767, 31.4470271995], [-113.3924005803, 31.4221558257], [-113.4214043395, 31.4201733983], [-113.4237194653, 31.4450445012], [-113.3947098767, 31.4470271995]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0891966983, 28.3788092068], [-113.0870037301, 28.3537700807], [-113.1153086741, 28.3518280344], [-113.117507196, 28.3768668567], [-113.0891966983, 28.3788092068]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0913905327, 28.4038472734], [-113.0891966983, 28.3788092068], [-113.117507196, 28.3768668567], [-113.1197065862, 28.4019046197], [-113.0913905327, 28.4038472734]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0935852336, 28.4288842755], [-113.0913905327, 28.4038472734], [-113.1197065862, 28.4019046197], [-113.1219068452, 28.4269413186], [-113.0935852336, 28.4288842755]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0957808017, 28.4539202082], [-113.0935852336, 28.4288842755], [-113.1219068452, 28.4269413186], [-113.1241079735, 28.4519769483], [-113.0957808017, 28.4539202082]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0979772375, 28.4789550665], [-113.0957808017, 28.4539202082], [-113.1241079735, 28.4519769483], [-113.1263099716, 28.4770115038], [-113.0979772375, 28.4789550665]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            4.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1001745413, 28.5039888454], [-113.0979772375, 28.4789550665], [-113.1263099716, 28.4770115038], [-113.12851284, 28.5020449802], [-113.1001745413, 28.5039888454]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            4.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1023727139, 28.52902154], [-113.1001745413, 28.5039888454], [-113.12851284, 28.5020449802], [-113.1307165792, 28.5270773726], [-113.1023727139, 28.52902154]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            5.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1045717556, 28.5540531453], [-113.1023727139, 28.52902154], [-113.1307165792, 28.5270773726], [-113.1329211898, 28.552108676], [-113.1045717556, 28.5540531453]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            4.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.106771667, 28.5790836564], [-113.1045717556, 28.5540531453], [-113.1329211898, 28.552108676], [-113.1351266723, 28.5771388854], [-113.106771667, 28.5790836564]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            4.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1089724486, 28.6041130683], [-113.106771667, 28.5790836564], [-113.1351266723, 28.5771388854], [-113.1373330271, 28.6021679958], [-113.1089724486, 28.6041130683]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            4.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1111741009, 28.629141376], [-113.1089724486, 28.6041130683], [-113.1373330271, 28.6021679958], [-113.1395402548, 28.6271960024], [-113.1111741009, 28.629141376]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1133766245, 28.6541685745], [-113.1111741009, 28.629141376], [-113.1395402548, 28.6271960024], [-113.141748356, 28.6522229001], [-113.1133766245, 28.6541685745]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1155800198, 28.679194659], [-113.1133766245, 28.6541685745], [-113.141748356, 28.6522229001], [-113.1439573311, 28.6772486839], [-113.1155800198, 28.679194659]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1177842874, 28.7042196244], [-113.1155800198, 28.679194659], [-113.1439573311, 28.6772486839], [-113.1461671806, 28.702273349], [-113.1177842874, 28.7042196244]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1199894278, 28.7292434658], [-113.1177842874, 28.7042196244], [-113.1461671806, 28.702273349], [-113.1483779051, 28.7272968903], [-113.1199894278, 28.7292434658]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1221954414, 28.7542661782], [-113.1199894278, 28.7292434658], [-113.1483779051, 28.7272968903], [-113.1505895051, 28.7523193029], [-113.1221954414, 28.7542661782]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1244023289, 28.7792877567], [-113.1221954414, 28.7542661782], [-113.1505895051, 28.7523193029], [-113.1528019811, 28.7773405818], [-113.1244023289, 28.7792877567]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1266100908, 28.8043081963], [-113.1244023289, 28.7792877567], [-113.1528019811, 28.7773405818], [-113.1550153336, 28.8023607221], [-113.1266100908, 28.8043081963]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1288187275, 28.829327492], [-113.1266100908, 28.8043081963], [-113.1550153336, 28.8023607221], [-113.1572295632, 28.8273797188], [-113.1288187275, 28.829327492]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1310282396, 28.8543456389], [-113.1288187275, 28.829327492], [-113.1572295632, 28.8273797188], [-113.1594446704, 28.852397567], [-113.1310282396, 28.8543456389]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1332386275, 28.8793626321], [-113.1310282396, 28.8543456389], [-113.1594446704, 28.852397567], [-113.1616606556, 28.8774142617], [-113.1332386275, 28.8793626321]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1354498919, 28.9043784665], [-113.1332386275, 28.8793626321], [-113.1616606556, 28.8774142617], [-113.1638775194, 28.9024297978], [-113.1354498919, 28.9043784665]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1376620333, 28.9293931372], [-113.1354498919, 28.9043784665], [-113.1638775194, 28.9024297978], [-113.1660952624, 28.9274441706], [-113.1376620333, 28.9293931372]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1398750521, 28.9544066392], [-113.1376620333, 28.9293931372], [-113.1660952624, 28.9274441706], [-113.168313885, 28.952457375], [-113.1398750521, 28.9544066392]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1420889488, 28.9794189677], [-113.1398750521, 28.9544066392], [-113.168313885, 28.952457375], [-113.1705333878, 28.977469406], [-113.1420889488, 28.9794189677]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            7.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1443037241, 29.0044301175], [-113.1420889488, 28.9794189677], [-113.1705333878, 28.977469406], [-113.1727537713, 29.0024802587], [-113.1443037241, 29.0044301175]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            7.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1465193784, 29.0294400838], [-113.1443037241, 29.0044301175], [-113.1727537713, 29.0024802587], [-113.174975036, 29.0274899281], [-113.1465193784, 29.0294400838]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1487359122, 29.0544488617], [-113.1465193784, 29.0294400838], [-113.174975036, 29.0274899281], [-113.1771971825, 29.0524984093], [-113.1487359122, 29.0544488617]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            6.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1509533261, 29.079456446], [-113.1487359122, 29.0544488617], [-113.1771971825, 29.0524984093], [-113.1794202112, 29.0775056974], [-113.1509533261, 29.079456446]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            6.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1531716206, 29.104462832], [-113.1509533261, 29.079456446], [-113.1794202112, 29.0775056974], [-113.1816441228, 29.1025117873], [-113.1531716206, 29.104462832]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            5.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1553907962, 29.1294680146], [-113.1531716206, 29.104462832], [-113.1816441228, 29.1025117873], [-113.1838689176, 29.1275166741], [-113.1553907962, 29.1294680146]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            6.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1576108535, 29.1544719889], [-113.1553907962, 29.1294680146], [-113.1838689176, 29.1275166741], [-113.1860945963, 29.1525203528], [-113.1576108535, 29.1544719889]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            6.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1598317929, 29.1794747499], [-113.1576108535, 29.1544719889], [-113.1860945963, 29.1525203528], [-113.1883211593, 29.1775228186], [-113.1598317929, 29.1794747499]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            6.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.162053615, 29.2044762927], [-113.1598317929, 29.1794747499], [-113.1883211593, 29.1775228186], [-113.1905486073, 29.2025240663], [-113.162053615, 29.2044762927]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            6.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1642763203, 29.2294766122], [-113.162053615, 29.2044762927], [-113.1905486073, 29.2025240663], [-113.1927769407, 29.2275240912], [-113.1642763203, 29.2294766122]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            7.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1664999094, 29.2544757036], [-113.1642763203, 29.2294766122], [-113.1927769407, 29.2275240912], [-113.19500616, 29.2525228881], [-113.1664999094, 29.2544757036]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            7.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1687243827, 29.2794735619], [-113.1664999094, 29.2544757036], [-113.19500616, 29.2525228881], [-113.1972362658, 29.2775204522], [-113.1687243827, 29.2794735619]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            8.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1709497408, 29.3044701822], [-113.1687243827, 29.2794735619], [-113.1972362658, 29.2775204522], [-113.1994672586, 29.3025167785], [-113.1709497408, 29.3044701822]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1731759842, 29.3294655594], [-113.1709497408, 29.3044701822], [-113.1994672586, 29.3025167785], [-113.2016991389, 29.3275118621], [-113.1731759842, 29.3294655594]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1754031135, 29.3544596886], [-113.1731759842, 29.3294655594], [-113.2016991389, 29.3275118621], [-113.2039319073, 29.3525056979], [-113.1754031135, 29.3544596886]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1776311291, 29.3794525649], [-113.1754031135, 29.3544596886], [-113.2039319073, 29.3525056979], [-113.2061655643, 29.3774982811], [-113.1776311291, 29.3794525649]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1798600317, 29.4044441833], [-113.1776311291, 29.3794525649], [-113.2061655643, 29.3774982811], [-113.2084001104, 29.4024896067], [-113.1798600317, 29.4044441833]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1820898216, 29.4294345389], [-113.1798600317, 29.4044441833], [-113.2084001104, 29.4024896067], [-113.2106355462, 29.4274796697], [-113.1820898216, 29.4294345389]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1843204996, 29.4544236267], [-113.1820898216, 29.4294345389], [-113.2106355462, 29.4274796697], [-113.2128718721, 29.4524684652], [-113.1843204996, 29.4544236267]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.186552066, 29.4794114417], [-113.1843204996, 29.4544236267], [-113.2128718721, 29.4524684652], [-113.2151090887, 29.4774559882], [-113.186552066, 29.4794114417]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1887845214, 29.504397979], [-113.186552066, 29.4794114417], [-113.2151090887, 29.4774559882], [-113.2173471966, 29.5024422337], [-113.1887845214, 29.504397979]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1910178664, 29.5293832337], [-113.1887845214, 29.504397979], [-113.2173471966, 29.5024422337], [-113.2195861963, 29.5274271969], [-113.1910178664, 29.5293832337]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1932521015, 29.5543672007], [-113.1910178664, 29.5293832337], [-113.2195861963, 29.5274271969], [-113.2218260882, 29.5524108727], [-113.1932521015, 29.5543672007]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1954872272, 29.5793498752], [-113.1932521015, 29.5543672007], [-113.2218260882, 29.5524108727], [-113.224066873, 29.5773932563], [-113.1954872272, 29.5793498752]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.197723244, 29.6043312521], [-113.1954872272, 29.5793498752], [-113.224066873, 29.5773932563], [-113.2263085512, 29.6023743425], [-113.197723244, 29.6043312521]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1999601525, 29.6293113266], [-113.197723244, 29.6043312521], [-113.2263085512, 29.6023743425], [-113.2285511233, 29.6273541266], [-113.1999601525, 29.6293113266]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2021979532, 29.6542900937], [-113.1999601525, 29.6293113266], [-113.2285511233, 29.6273541266], [-113.2307945898, 29.6523326036], [-113.2021979532, 29.6542900937]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2044366467, 29.6792675484], [-113.2021979532, 29.6542900937], [-113.2307945898, 29.6523326036], [-113.2330389513, 29.6773097684], [-113.2044366467, 29.6792675484]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2066762334, 29.7042436857], [-113.2044366467, 29.6792675484], [-113.2330389513, 29.6773097684], [-113.2352842082, 29.7022856161], [-113.2066762334, 29.7042436857]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2089167139, 29.7292185008], [-113.2066762334, 29.7042436857], [-113.2352842082, 29.7022856161], [-113.2375303613, 29.7272601419], [-113.2089167139, 29.7292185008]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2111580887, 29.7541919887], [-113.2089167139, 29.7292185008], [-113.2375303613, 29.7272601419], [-113.2397774109, 29.7522333407], [-113.2111580887, 29.7541919887]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2134003585, 29.7791641443], [-113.2111580887, 29.7541919887], [-113.2397774109, 29.7522333407], [-113.2420253576, 29.7772052076], [-113.2134003585, 29.7791641443]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2156435236, 29.8041349629], [-113.2134003585, 29.7791641443], [-113.2420253576, 29.7772052076], [-113.2442742019, 29.8021757377], [-113.2156435236, 29.8041349629]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2178875847, 29.8291044393], [-113.2156435236, 29.8041349629], [-113.2442742019, 29.8021757377], [-113.2465239445, 29.8271449259], [-113.2178875847, 29.8291044393]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2201325423, 29.8540725688], [-113.2178875847, 29.8291044393], [-113.2465239445, 29.8271449259], [-113.2487745858, 29.8521127674], [-113.2201325423, 29.8540725688]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2223783969, 29.8790393462], [-113.2201325423, 29.8540725688], [-113.2487745858, 29.8521127674], [-113.2510261263, 29.8770792571], [-113.2223783969, 29.8790393462]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.224625149, 29.9040047667], [-113.2223783969, 29.8790393462], [-113.2510261263, 29.8770792571], [-113.2532785666, 29.9020443902], [-113.224625149, 29.9040047667]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2268727992, 29.9289688254], [-113.224625149, 29.9040047667], [-113.2532785666, 29.9020443902], [-113.2555319073, 29.9270081617], [-113.2268727992, 29.9289688254]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2291213481, 29.9539315172], [-113.2268727992, 29.9289688254], [-113.2555319073, 29.9270081617], [-113.2577861488, 29.9519705667], [-113.2291213481, 29.9539315172]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2313707961, 29.9788928372], [-113.2291213481, 29.9539315172], [-113.2577861488, 29.9519705667], [-113.2600412917, 29.9769316002], [-113.2313707961, 29.9788928372]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2336211438, 30.0038527806], [-113.2313707961, 29.9788928372], [-113.2600412917, 29.9769316002], [-113.2622973366, 30.0018912572], [-113.2336211438, 30.0038527806]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2358723918, 30.0288113422], [-113.2336211438, 30.0038527806], [-113.2622973366, 30.0018912572], [-113.264554284, 30.0268495328], [-113.2358723918, 30.0288113422]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2381245406, 30.0537685173], [-113.2358723918, 30.0288113422], [-113.264554284, 30.0268495328], [-113.2668121345, 30.0518064221], [-113.2381245406, 30.0537685173]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2403775906, 30.0787243008], [-113.2381245406, 30.0537685173], [-113.2668121345, 30.0518064221], [-113.2690708885, 30.0767619201], [-113.2403775906, 30.0787243008]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2426315426, 30.1036786878], [-113.2403775906, 30.0787243008], [-113.2690708885, 30.0767619201], [-113.2713305466, 30.1017160219], [-113.2426315426, 30.1036786878]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2448863969, 30.1286316733], [-113.2426315426, 30.1036786878], [-113.2713305466, 30.1017160219], [-113.2735911094, 30.1266687224], [-113.2448863969, 30.1286316733]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2471421542, 30.1535832525], [-113.2448863969, 30.1286316733], [-113.2735911094, 30.1266687224], [-113.2758525773, 30.1516200169], [-113.2471421542, 30.1535832525]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2493988149, 30.1785334203], [-113.2471421542, 30.1535832525], [-113.2758525773, 30.1516200169], [-113.2781149511, 30.1765699003], [-113.2493988149, 30.1785334203]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2516563797, 30.2034821718], [-113.2493988149, 30.1785334203], [-113.2781149511, 30.1765699003], [-113.2803782311, 30.2015183677], [-113.2516563797, 30.2034821718]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            4.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2539148491, 30.2284295021], [-113.2516563797, 30.2034821718], [-113.2803782311, 30.2015183677], [-113.2826424179, 30.2264654142], [-113.2539148491, 30.2284295021]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            4.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2561742236, 30.2533754062], [-113.2539148491, 30.2284295021], [-113.2826424179, 30.2264654142], [-113.2849075121, 30.2514110347], [-113.2561742236, 30.2533754062]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2584345037, 30.2783198792], [-113.2561742236, 30.2533754062], [-113.2849075121, 30.2514110347], [-113.2871735142, 30.2763552244], [-113.2584345037, 30.2783198792]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.26069569, 30.3032629162], [-113.2584345037, 30.2783198792], [-113.2871735142, 30.2763552244], [-113.2894404248, 30.3012979784], [-113.26069569, 30.3032629162]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2629577831, 30.3282045121], [-113.26069569, 30.3032629162], [-113.2894404248, 30.3012979784], [-113.2917082444, 30.3262392916], [-113.2629577831, 30.3282045121]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2652207834, 30.3531446621], [-113.2629577831, 30.3282045121], [-113.2917082444, 30.3262392916], [-113.2939769736, 30.3511791591], [-113.2652207834, 30.3531446621]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2674846916, 30.3780833613], [-113.2652207834, 30.3531446621], [-113.2939769736, 30.3511791591], [-113.2962466128, 30.3761175761], [-113.2674846916, 30.3780833613]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2697495081, 30.4030206046], [-113.2674846916, 30.3780833613], [-113.2962466128, 30.3761175761], [-113.2985171627, 30.4010545374], [-113.2697495081, 30.4030206046]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2720152336, 30.4279563871], [-113.2697495081, 30.4030206046], [-113.2985171627, 30.4010545374], [-113.3007886238, 30.4259900384], [-113.2720152336, 30.4279563871]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2742818686, 30.452890704], [-113.2720152336, 30.4279563871], [-113.3007886238, 30.4259900384], [-113.3030609966, 30.4509240738], [-113.2742818686, 30.452890704]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2765494135, 30.4778235502], [-113.2742818686, 30.452890704], [-113.3030609966, 30.4509240738], [-113.3053342818, 30.475856639], [-113.2765494135, 30.4778235502]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.278817869, 30.5027549209], [-113.2765494135, 30.4778235502], [-113.3053342818, 30.475856639], [-113.3076084797, 30.5007877288], [-113.278817869, 30.5027549209]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2810872357, 30.527684811], [-113.278817869, 30.5027549209], [-113.3076084797, 30.5007877288], [-113.3098835911, 30.5257173384], [-113.2810872357, 30.527684811]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2833575139, 30.5526132156], [-113.2810872357, 30.527684811], [-113.3098835911, 30.5257173384], [-113.3121596163, 30.5506454627], [-113.2833575139, 30.5526132156]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2856287044, 30.5775401299], [-113.2833575139, 30.5526132156], [-113.3121596163, 30.5506454627], [-113.3144365561, 30.575572097], [-113.2856287044, 30.5775401299]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2879008077, 30.6024655488], [-113.2856287044, 30.5775401299], [-113.3144365561, 30.575572097], [-113.3167144109, 30.6004972363], [-113.2879008077, 30.6024655488]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2901738242, 30.6273894675], [-113.2879008077, 30.6024655488], [-113.3167144109, 30.6004972363], [-113.3189931813, 30.6254208755], [-113.2901738242, 30.6273894675]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2924477546, 30.652311881], [-113.2901738242, 30.6273894675], [-113.3189931813, 30.6254208755], [-113.3212728678, 30.6503430098], [-113.2924477546, 30.652311881]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2947225994, 30.6772327843], [-113.2924477546, 30.652311881], [-113.3212728678, 30.6503430098], [-113.323553471, 30.6752636343], [-113.2947225994, 30.6772327843]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2969983592, 30.7021521726], [-113.2947225994, 30.6772327843], [-113.323553471, 30.6752636343], [-113.3258349915, 30.7001827439], [-113.2969983592, 30.7021521726]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2992750344, 30.7270700409], [-113.2969983592, 30.7021521726], [-113.3258349915, 30.7001827439], [-113.3281174297, 30.7251003339], [-113.2992750344, 30.7270700409]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3015526257, 30.7519863842], [-113.2992750344, 30.7270700409], [-113.3281174297, 30.7251003339], [-113.3304007863, 30.7500163991], [-113.3015526257, 30.7519863842]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3038311337, 30.7769011976], [-113.3015526257, 30.7519863842], [-113.3304007863, 30.7500163991], [-113.3326850618, 30.7749309348], [-113.3038311337, 30.7769011976]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3061105587, 30.8018144763], [-113.3038311337, 30.7769011976], [-113.3326850618, 30.7749309348], [-113.3349702567, 30.799843936], [-113.3061105587, 30.8018144763]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3083909015, 30.8267262152], [-113.3061105587, 30.8018144763], [-113.3349702567, 30.799843936], [-113.3372563716, 30.8247553976], [-113.3083909015, 30.8267262152]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3106721626, 30.8516364094], [-113.3083909015, 30.8267262152], [-113.3372563716, 30.8247553976], [-113.3395434071, 30.8496653149], [-113.3106721626, 30.8516364094]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3129543425, 30.876545054], [-113.3106721626, 30.8516364094], [-113.3395434071, 30.8496653149], [-113.3418313637, 30.8745736829], [-113.3129543425, 30.876545054]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3152374417, 30.9014521441], [-113.3129543425, 30.876545054], [-113.3418313637, 30.8745736829], [-113.344120242, 30.8994804966], [-113.3152374417, 30.9014521441]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3175214609, 30.9263576748], [-113.3152374417, 30.9014521441], [-113.344120242, 30.8994804966], [-113.3464100425, 30.9243857511], [-113.3175214609, 30.9263576748]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3198064006, 30.951261641], [-113.3175214609, 30.9263576748], [-113.3464100425, 30.9243857511], [-113.3487007658, 30.9492894416], [-113.3198064006, 30.951261641]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3220922613, 30.9761640379], [-113.3198064006, 30.951261641], [-113.3487007658, 30.9492894416], [-113.3509924125, 30.9741915629], [-113.3220922613, 30.9761640379]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3243790435, 31.0010648606], [-113.3220922613, 30.9761640379], [-113.3509924125, 30.9741915629], [-113.353284983, 30.9990921103], [-113.3243790435, 31.0010648606]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.326666748, 31.0259641041], [-113.3243790435, 31.0010648606], [-113.353284983, 30.9990921103], [-113.355578478, 31.0239910788], [-113.326666748, 31.0259641041]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3289553751, 31.0508617635], [-113.326666748, 31.0259641041], [-113.355578478, 31.0239910788], [-113.357872898, 31.0488884635], [-113.3289553751, 31.0508617635]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3312449255, 31.0757578338], [-113.3289553751, 31.0508617635], [-113.357872898, 31.0488884635], [-113.3601682435, 31.0737842594], [-113.3312449255, 31.0757578338]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3335353998, 31.1006523102], [-113.3312449255, 31.0757578338], [-113.3601682435, 31.0737842594], [-113.3624645152, 31.0986784617], [-113.3335353998, 31.1006523102]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            4.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3358267984, 31.1255451877], [-113.3335353998, 31.1006523102], [-113.3624645152, 31.0986784617], [-113.3647617136, 31.1235710653], [-113.3358267984, 31.1255451877]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            4.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3381191219, 31.1504364614], [-113.3358267984, 31.1255451877], [-113.3647617136, 31.1235710653], [-113.3670598393, 31.1484620654], [-113.3381191219, 31.1504364614]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.340412371, 31.1753261264], [-113.3381191219, 31.1504364614], [-113.3670598393, 31.1484620654], [-113.3693588927, 31.1733514571], [-113.340412371, 31.1753261264]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            4.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3427065461, 31.2002141777], [-113.340412371, 31.1753261264], [-113.3693588927, 31.1733514571], [-113.3716588745, 31.1982392354], [-113.3427065461, 31.2002141777]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            7.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3450016478, 31.2251006105], [-113.3427065461, 31.2002141777], [-113.3716588745, 31.1982392354], [-113.3739597853, 31.2231253953], [-113.3450016478, 31.2251006105]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            11.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3472976767, 31.2499854197], [-113.3450016478, 31.2251006105], [-113.3739597853, 31.2231253953], [-113.3762616255, 31.2480099321], [-113.3472976767, 31.2499854197]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            12.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3495946333, 31.2748686005], [-113.3472976767, 31.2499854197], [-113.3762616255, 31.2480099321], [-113.3785643958, 31.2728928407], [-113.3495946333, 31.2748686005]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3518925183, 31.2997501479], [-113.3495946333, 31.2748686005], [-113.3785643958, 31.2728928407], [-113.3808680967, 31.2977741162], [-113.3518925183, 31.2997501479]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.354191332, 31.3246300571], [-113.3518925183, 31.2997501479], [-113.3808680967, 31.2977741162], [-113.3831727288, 31.3226537538], [-113.354191332, 31.3246300571]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3564910753, 31.3495083231], [-113.354191332, 31.3246300571], [-113.3831727288, 31.3226537538], [-113.3854782926, 31.3475317484], [-113.3564910753, 31.3495083231]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3587917485, 31.374384941], [-113.3564910753, 31.3495083231], [-113.3854782926, 31.3475317484], [-113.3877847888, 31.3724080952], [-113.3587917485, 31.374384941]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0608853345, 28.3807466082], [-113.0586979204, 28.3557071791], [-113.0870037301, 28.3537700807], [-113.0891966983, 28.3788092068], [-113.0608853345, 28.3807466082]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0630736125, 28.4057849775], [-113.0608853345, 28.3807466082], [-113.0891966983, 28.3788092068], [-113.0913905327, 28.4038472734], [-113.0630736125, 28.4057849775]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0652627549, 28.4308222821], [-113.0630736125, 28.4057849775], [-113.0913905327, 28.4038472734], [-113.0935852336, 28.4288842755], [-113.0652627549, 28.4308222821]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0674527623, 28.455858517], [-113.0652627549, 28.4308222821], [-113.0935852336, 28.4288842755], [-113.0957808017, 28.4539202082], [-113.0674527623, 28.455858517]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0696436352, 28.4808936772], [-113.0674527623, 28.455858517], [-113.0957808017, 28.4539202082], [-113.0979772375, 28.4789550665], [-113.0696436352, 28.4808936772]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            4.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.071835374, 28.5059277579], [-113.0696436352, 28.4808936772], [-113.0979772375, 28.4789550665], [-113.1001745413, 28.5039888454], [-113.071835374, 28.5059277579]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            5.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0740279793, 28.5309607539], [-113.071835374, 28.5059277579], [-113.1001745413, 28.5039888454], [-113.1023727139, 28.52902154], [-113.0740279793, 28.5309607539]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0762214517, 28.5559926603], [-113.0740279793, 28.5309607539], [-113.1023727139, 28.52902154], [-113.1045717556, 28.5540531453], [-113.0762214517, 28.5559926603]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0784157915, 28.5810234723], [-113.0762214517, 28.5559926603], [-113.1045717556, 28.5540531453], [-113.106771667, 28.5790836564], [-113.0784157915, 28.5810234723]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0806109994, 28.6060531848], [-113.0784157915, 28.5810234723], [-113.106771667, 28.5790836564], [-113.1089724486, 28.6041130683], [-113.0806109994, 28.6060531848]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0828070758, 28.6310817929], [-113.0806109994, 28.6060531848], [-113.1089724486, 28.6041130683], [-113.1111741009, 28.629141376], [-113.0828070758, 28.6310817929]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0850040212, 28.6561092915], [-113.0828070758, 28.6310817929], [-113.1111741009, 28.629141376], [-113.1133766245, 28.6541685745], [-113.0850040212, 28.6561092915]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0872018363, 28.6811356758], [-113.0850040212, 28.6561092915], [-113.1133766245, 28.6541685745], [-113.1155800198, 28.679194659], [-113.0872018363, 28.6811356758]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0894005214, 28.7061609408], [-113.0872018363, 28.6811356758], [-113.1155800198, 28.679194659], [-113.1177842874, 28.7042196244], [-113.0894005214, 28.7061609408]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0916000771, 28.7311850815], [-113.0894005214, 28.7061609408], [-113.1177842874, 28.7042196244], [-113.1199894278, 28.7292434658], [-113.0916000771, 28.7311850815]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.093800504, 28.7562080929], [-113.0916000771, 28.7311850815], [-113.1199894278, 28.7292434658], [-113.1221954414, 28.7542661782], [-113.093800504, 28.7562080929]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0960018024, 28.7812299702], [-113.093800504, 28.7562080929], [-113.1221954414, 28.7542661782], [-113.1244023289, 28.7792877567], [-113.0960018024, 28.7812299702]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0982039731, 28.8062507083], [-113.0960018024, 28.7812299702], [-113.1244023289, 28.7792877567], [-113.1266100908, 28.8043081963], [-113.0982039731, 28.8062507083]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1004070164, 28.8312703023], [-113.0982039731, 28.8062507083], [-113.1266100908, 28.8043081963], [-113.1288187275, 28.829327492], [-113.1004070164, 28.8312703023]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1026109329, 28.8562887471], [-113.1004070164, 28.8312703023], [-113.1288187275, 28.829327492], [-113.1310282396, 28.8543456389], [-113.1026109329, 28.8562887471]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1048157231, 28.881306038], [-113.1026109329, 28.8562887471], [-113.1310282396, 28.8543456389], [-113.1332386275, 28.8793626321], [-113.1048157231, 28.881306038]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1070213875, 28.9063221698], [-113.1048157231, 28.881306038], [-113.1332386275, 28.8793626321], [-113.1354498919, 28.9043784665], [-113.1070213875, 28.9063221698]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1092279267, 28.9313371377], [-113.1070213875, 28.9063221698], [-113.1354498919, 28.9043784665], [-113.1376620333, 28.9293931372], [-113.1092279267, 28.9313371377]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1114353411, 28.9563509366], [-113.1092279267, 28.9313371377], [-113.1376620333, 28.9293931372], [-113.1398750521, 28.9544066392], [-113.1114353411, 28.9563509366]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            7.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1136436313, 28.9813635617], [-113.1114353411, 28.9563509366], [-113.1398750521, 28.9544066392], [-113.1420889488, 28.9794189677], [-113.1136436313, 28.9813635617]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            7.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1158527978, 29.0063750079], [-113.1136436313, 28.9813635617], [-113.1420889488, 28.9794189677], [-113.1443037241, 29.0044301175], [-113.1158527978, 29.0063750079]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1180628412, 29.0313852704], [-113.1158527978, 29.0063750079], [-113.1443037241, 29.0044301175], [-113.1465193784, 29.0294400838], [-113.1180628412, 29.0313852704]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            6.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1202737619, 29.056394344], [-113.1180628412, 29.0313852704], [-113.1465193784, 29.0294400838], [-113.1487359122, 29.0544488617], [-113.1202737619, 29.056394344]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            7.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1224855604, 29.081402224], [-113.1202737619, 29.056394344], [-113.1487359122, 29.0544488617], [-113.1509533261, 29.079456446], [-113.1224855604, 29.081402224]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            7.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1246982374, 29.1064089052], [-113.1224855604, 29.081402224], [-113.1509533261, 29.079456446], [-113.1531716206, 29.104462832], [-113.1246982374, 29.1064089052]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1269117932, 29.1314143829], [-113.1246982374, 29.1064089052], [-113.1531716206, 29.104462832], [-113.1553907962, 29.1294680146], [-113.1269117932, 29.1314143829]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1291262285, 29.1564186519], [-113.1269117932, 29.1314143829], [-113.1553907962, 29.1294680146], [-113.1576108535, 29.1544719889], [-113.1291262285, 29.1564186519]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1313415437, 29.1814217074], [-113.1291262285, 29.1564186519], [-113.1576108535, 29.1544719889], [-113.1598317929, 29.1794747499], [-113.1313415437, 29.1814217074]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            4.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1335577395, 29.2064235444], [-113.1313415437, 29.1814217074], [-113.1598317929, 29.1794747499], [-113.162053615, 29.2044762927], [-113.1335577395, 29.2064235444]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1357748162, 29.2314241579], [-113.1335577395, 29.2064235444], [-113.162053615, 29.2044762927], [-113.1642763203, 29.2294766122], [-113.1357748162, 29.2314241579]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1379927745, 29.256423543], [-113.1357748162, 29.2314241579], [-113.1642763203, 29.2294766122], [-113.1664999094, 29.2544757036], [-113.1379927745, 29.256423543]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            7.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1402116148, 29.2814216947], [-113.1379927745, 29.256423543], [-113.1664999094, 29.2544757036], [-113.1687243827, 29.2794735619], [-113.1402116148, 29.2814216947]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            8.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1424313377, 29.3064186081], [-113.1402116148, 29.2814216947], [-113.1687243827, 29.2794735619], [-113.1709497408, 29.3044701822], [-113.1424313377, 29.3064186081]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1446519436, 29.3314142782], [-113.1424313377, 29.3064186081], [-113.1709497408, 29.3044701822], [-113.1731759842, 29.3294655594], [-113.1446519436, 29.3314142782]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1468734333, 29.3564087001], [-113.1446519436, 29.3314142782], [-113.1731759842, 29.3294655594], [-113.1754031135, 29.3544596886], [-113.1468734333, 29.3564087001]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.149095807, 29.3814018687], [-113.1468734333, 29.3564087001], [-113.1754031135, 29.3544596886], [-113.1776311291, 29.3794525649], [-113.149095807, 29.3814018687]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1513190655, 29.4063937792], [-113.149095807, 29.3814018687], [-113.1776311291, 29.3794525649], [-113.1798600317, 29.4044441833], [-113.1513190655, 29.4063937792]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1535432092, 29.4313844266], [-113.1513190655, 29.4063937792], [-113.1798600317, 29.4044441833], [-113.1820898216, 29.4294345389], [-113.1535432092, 29.4313844266]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1557682386, 29.4563738059], [-113.1535432092, 29.4313844266], [-113.1820898216, 29.4294345389], [-113.1843204996, 29.4544236267], [-113.1557682386, 29.4563738059]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1579941543, 29.4813619122], [-113.1557682386, 29.4563738059], [-113.1843204996, 29.4544236267], [-113.186552066, 29.4794114417], [-113.1579941543, 29.4813619122]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1602209567, 29.5063487405], [-113.1579941543, 29.4813619122], [-113.186552066, 29.4794114417], [-113.1887845214, 29.504397979], [-113.1602209567, 29.5063487405]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1624486465, 29.5313342859], [-113.1602209567, 29.5063487405], [-113.1887845214, 29.504397979], [-113.1910178664, 29.5293832337], [-113.1624486465, 29.5313342859]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1646772242, 29.5563185434], [-113.1624486465, 29.5313342859], [-113.1910178664, 29.5293832337], [-113.1932521015, 29.5543672007], [-113.1646772242, 29.5563185434]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1669066902, 29.581301508], [-113.1646772242, 29.5563185434], [-113.1932521015, 29.5543672007], [-113.1954872272, 29.5793498752], [-113.1669066902, 29.581301508]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1691370452, 29.6062831749], [-113.1669066902, 29.581301508], [-113.1954872272, 29.5793498752], [-113.197723244, 29.6043312521], [-113.1691370452, 29.6062831749]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1713682895, 29.631263539], [-113.1691370452, 29.6062831749], [-113.197723244, 29.6043312521], [-113.1999601525, 29.6293113266], [-113.1713682895, 29.631263539]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1736004239, 29.6562425955], [-113.1713682895, 29.631263539], [-113.1999601525, 29.6293113266], [-113.2021979532, 29.6542900937], [-113.1736004239, 29.6562425955]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1758334488, 29.6812203393], [-113.1736004239, 29.6562425955], [-113.2021979532, 29.6542900937], [-113.2044366467, 29.6792675484], [-113.1758334488, 29.6812203393]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1780673647, 29.7061967654], [-113.1758334488, 29.6812203393], [-113.2044366467, 29.6792675484], [-113.2066762334, 29.7042436857], [-113.1780673647, 29.7061967654]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1803021722, 29.7311718691], [-113.1780673647, 29.7061967654], [-113.2066762334, 29.7042436857], [-113.2089167139, 29.7292185008], [-113.1803021722, 29.7311718691]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1825378718, 29.7561456452], [-113.1803021722, 29.7311718691], [-113.2089167139, 29.7292185008], [-113.2111580887, 29.7541919887], [-113.1825378718, 29.7561456452]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.184774464, 29.7811180889], [-113.1825378718, 29.7561456452], [-113.2111580887, 29.7541919887], [-113.2134003585, 29.7791641443], [-113.184774464, 29.7811180889]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1870119494, 29.8060891952], [-113.184774464, 29.7811180889], [-113.2134003585, 29.7791641443], [-113.2156435236, 29.8041349629], [-113.1870119494, 29.8060891952]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1892503285, 29.8310589591], [-113.1870119494, 29.8060891952], [-113.2156435236, 29.8041349629], [-113.2178875847, 29.8291044393], [-113.1892503285, 29.8310589591]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1914896018, 29.8560273757], [-113.1892503285, 29.8310589591], [-113.2178875847, 29.8291044393], [-113.2201325423, 29.8540725688], [-113.1914896018, 29.8560273757]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1937297699, 29.8809944401], [-113.1914896018, 29.8560273757], [-113.2201325423, 29.8540725688], [-113.2223783969, 29.8790393462], [-113.1937297699, 29.8809944401]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1959708333, 29.9059601473], [-113.1937297699, 29.8809944401], [-113.2223783969, 29.8790393462], [-113.224625149, 29.9040047667], [-113.1959708333, 29.9059601473]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1982127926, 29.9309244923], [-113.1959708333, 29.9059601473], [-113.224625149, 29.9040047667], [-113.2268727992, 29.9289688254], [-113.1982127926, 29.9309244923]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2004556482, 29.9558874703], [-113.1982127926, 29.9309244923], [-113.2268727992, 29.9289688254], [-113.2291213481, 29.9539315172], [-113.2004556482, 29.9558874703]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2026994008, 29.9808490762], [-113.2004556482, 29.9558874703], [-113.2291213481, 29.9539315172], [-113.2313707961, 29.9788928372], [-113.2026994008, 29.9808490762]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2049440508, 30.0058093051], [-113.2026994008, 29.9808490762], [-113.2313707961, 29.9788928372], [-113.2336211438, 30.0038527806], [-113.2049440508, 30.0058093051]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2071895988, 30.030768152], [-113.2049440508, 30.0058093051], [-113.2336211438, 30.0038527806], [-113.2358723918, 30.0288113422], [-113.2071895988, 30.030768152]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2094360453, 30.0557256121], [-113.2071895988, 30.030768152], [-113.2358723918, 30.0288113422], [-113.2381245406, 30.0537685173], [-113.2094360453, 30.0557256121]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2116833909, 30.0806816803], [-113.2094360453, 30.0557256121], [-113.2381245406, 30.0537685173], [-113.2403775906, 30.0787243008], [-113.2116833909, 30.0806816803]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2139316361, 30.1056363518], [-113.2116833909, 30.0806816803], [-113.2403775906, 30.0787243008], [-113.2426315426, 30.1036786878], [-113.2139316361, 30.1056363518]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2161807815, 30.1305896215], [-113.2139316361, 30.1056363518], [-113.2426315426, 30.1036786878], [-113.2448863969, 30.1286316733], [-113.2161807815, 30.1305896215]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2184308275, 30.1555414846], [-113.2161807815, 30.1305896215], [-113.2448863969, 30.1286316733], [-113.2471421542, 30.1535832525], [-113.2184308275, 30.1555414846]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2206817748, 30.180491936], [-113.2184308275, 30.1555414846], [-113.2471421542, 30.1535832525], [-113.2493988149, 30.1785334203], [-113.2206817748, 30.180491936]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2229336238, 30.2054409709], [-113.2206817748, 30.180491936], [-113.2493988149, 30.1785334203], [-113.2516563797, 30.2034821718], [-113.2229336238, 30.2054409709]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2251863752, 30.2303885843], [-113.2229336238, 30.2054409709], [-113.2516563797, 30.2034821718], [-113.2539148491, 30.2284295021], [-113.2251863752, 30.2303885843]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2274400293, 30.2553347713], [-113.2251863752, 30.2303885843], [-113.2539148491, 30.2284295021], [-113.2561742236, 30.2533754062], [-113.2274400293, 30.2553347713]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2296945869, 30.2802795269], [-113.2274400293, 30.2553347713], [-113.2561742236, 30.2533754062], [-113.2584345037, 30.2783198792], [-113.2296945869, 30.2802795269]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2319500484, 30.3052228461], [-113.2296945869, 30.2802795269], [-113.2584345037, 30.2783198792], [-113.26069569, 30.3032629162], [-113.2319500484, 30.3052228461]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2342064144, 30.3301647241], [-113.2319500484, 30.3052228461], [-113.26069569, 30.3032629162], [-113.2629577831, 30.3282045121], [-113.2342064144, 30.3301647241]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2364636854, 30.3551051558], [-113.2342064144, 30.3301647241], [-113.2629577831, 30.3282045121], [-113.2652207834, 30.3531446621], [-113.2364636854, 30.3551051558]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.238721862, 30.3800441364], [-113.2364636854, 30.3551051558], [-113.2652207834, 30.3531446621], [-113.2674846916, 30.3780833613], [-113.238721862, 30.3800441364]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2409809446, 30.4049816609], [-113.238721862, 30.3800441364], [-113.2674846916, 30.3780833613], [-113.2697495081, 30.4030206046], [-113.2409809446, 30.4049816609]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.243240934, 30.4299177244], [-113.2409809446, 30.4049816609], [-113.2697495081, 30.4030206046], [-113.2720152336, 30.4279563871], [-113.243240934, 30.4299177244]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2455018305, 30.4548523219], [-113.243240934, 30.4299177244], [-113.2720152336, 30.4279563871], [-113.2742818686, 30.452890704], [-113.2455018305, 30.4548523219]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2477636347, 30.4797854484], [-113.2455018305, 30.4548523219], [-113.2742818686, 30.452890704], [-113.2765494135, 30.4778235502], [-113.2477636347, 30.4797854484]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2500263472, 30.5047170992], [-113.2477636347, 30.4797854484], [-113.2765494135, 30.4778235502], [-113.278817869, 30.5027549209], [-113.2500263472, 30.5047170992]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2522899686, 30.5296472691], [-113.2500263472, 30.5047170992], [-113.278817869, 30.5027549209], [-113.2810872357, 30.527684811], [-113.2522899686, 30.5296472691]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2545544994, 30.5545759533], [-113.2522899686, 30.5296472691], [-113.2810872357, 30.527684811], [-113.2833575139, 30.5526132156], [-113.2545544994, 30.5545759533]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            4.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.25681994, 30.5795031468], [-113.2545544994, 30.5545759533], [-113.2833575139, 30.5526132156], [-113.2856287044, 30.5775401299], [-113.25681994, 30.5795031468]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            4.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2590862912, 30.6044288447], [-113.25681994, 30.5795031468], [-113.2856287044, 30.5775401299], [-113.2879008077, 30.6024655488], [-113.2590862912, 30.6044288447]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            4.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2613535533, 30.6293530421], [-113.2590862912, 30.6044288447], [-113.2879008077, 30.6024655488], [-113.2901738242, 30.6273894675], [-113.2613535533, 30.6293530421]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            4.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.263621727, 30.654275734], [-113.2613535533, 30.6293530421], [-113.2901738242, 30.6273894675], [-113.2924477546, 30.652311881], [-113.263621727, 30.654275734]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2658908129, 30.6791969155], [-113.263621727, 30.654275734], [-113.2924477546, 30.652311881], [-113.2947225994, 30.6772327843], [-113.2658908129, 30.6791969155]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2681608114, 30.7041165816], [-113.2658908129, 30.6791969155], [-113.2947225994, 30.6772327843], [-113.2969983592, 30.7021521726], [-113.2681608114, 30.7041165816]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2704317231, 30.7290347275], [-113.2681608114, 30.7041165816], [-113.2969983592, 30.7021521726], [-113.2992750344, 30.7270700409], [-113.2704317231, 30.7290347275]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2727035486, 30.7539513481], [-113.2704317231, 30.7290347275], [-113.2992750344, 30.7270700409], [-113.3015526257, 30.7519863842], [-113.2727035486, 30.7539513481]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2749762884, 30.7788664386], [-113.2727035486, 30.7539513481], [-113.3015526257, 30.7519863842], [-113.3038311337, 30.7769011976], [-113.2749762884, 30.7788664386]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2772499431, 30.803779994], [-113.2749762884, 30.7788664386], [-113.3038311337, 30.7769011976], [-113.3061105587, 30.8018144763], [-113.2772499431, 30.803779994]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2795245132, 30.8286920094], [-113.2772499431, 30.803779994], [-113.3061105587, 30.8018144763], [-113.3083909015, 30.8267262152], [-113.2795245132, 30.8286920094]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2818, 30.8536024799], [-113.2795245132, 30.8286920094], [-113.3083909015, 30.8267262152], [-113.3106721626, 30.8516364094], [-113.2818, 30.8536024799]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2840764018, 30.8785114004], [-113.2818, 30.8536024799], [-113.3106721626, 30.8516364094], [-113.3129543425, 30.876545054], [-113.2840764018, 30.8785114004]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2863537215, 30.9034187662], [-113.2840764018, 30.8785114004], [-113.3129543425, 30.876545054], [-113.3152374417, 30.9014521441], [-113.2863537215, 30.9034187662]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2886319588, 30.9283245722], [-113.2863537215, 30.9034187662], [-113.3152374417, 30.9014521441], [-113.3175214609, 30.9263576748], [-113.2886319588, 30.9283245722]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2909111142, 30.9532288135], [-113.2886319588, 30.9283245722], [-113.3175214609, 30.9263576748], [-113.3198064006, 30.951261641], [-113.2909111142, 30.9532288135]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2931911884, 30.9781314853], [-113.2909111142, 30.9532288135], [-113.3198064006, 30.951261641], [-113.3220922613, 30.9761640379], [-113.2931911884, 30.9781314853]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2954721819, 31.0030325825], [-113.2931911884, 30.9781314853], [-113.3220922613, 30.9761640379], [-113.3243790435, 31.0010648606], [-113.2954721819, 31.0030325825]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.2977540953, 31.0279321003], [-113.2954721819, 31.0030325825], [-113.3243790435, 31.0010648606], [-113.326666748, 31.0259641041], [-113.2977540953, 31.0279321003]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            4.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.300036929, 31.0528300336], [-113.2977540953, 31.0279321003], [-113.326666748, 31.0259641041], [-113.3289553751, 31.0508617635], [-113.300036929, 31.0528300336]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3023206837, 31.0777263777], [-113.300036929, 31.0528300336], [-113.3289553751, 31.0508617635], [-113.3312449255, 31.0757578338], [-113.3023206837, 31.0777263777]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            4.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3046053599, 31.1026211275], [-113.3023206837, 31.0777263777], [-113.3312449255, 31.0757578338], [-113.3335353998, 31.1006523102], [-113.3046053599, 31.1026211275]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            4.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3068909582, 31.1275142782], [-113.3046053599, 31.1026211275], [-113.3335353998, 31.1006523102], [-113.3358267984, 31.1255451877], [-113.3068909582, 31.1275142782]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            4.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3091774791, 31.1524058248], [-113.3068909582, 31.1275142782], [-113.3358267984, 31.1255451877], [-113.3381191219, 31.1504364614], [-113.3091774791, 31.1524058248]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            5.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3114649232, 31.1772957624], [-113.3091774791, 31.1524058248], [-113.3381191219, 31.1504364614], [-113.340412371, 31.1753261264], [-113.3114649232, 31.1772957624]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            5.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.313753291, 31.202184086], [-113.3114649232, 31.1772957624], [-113.340412371, 31.1753261264], [-113.3427065461, 31.2002141777], [-113.313753291, 31.202184086]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            9.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3160425832, 31.2270707908], [-113.313753291, 31.202184086], [-113.3427065461, 31.2002141777], [-113.3450016478, 31.2251006105], [-113.3160425832, 31.2270707908]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            12.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3183328001, 31.2519558718], [-113.3160425832, 31.2270707908], [-113.3450016478, 31.2251006105], [-113.3472976767, 31.2499854197], [-113.3183328001, 31.2519558718]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            12.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3206239426, 31.276839324], [-113.3183328001, 31.2519558718], [-113.3472976767, 31.2499854197], [-113.3495946333, 31.2748686005], [-113.3206239426, 31.276839324]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3229160109, 31.3017211427], [-113.3206239426, 31.276839324], [-113.3495946333, 31.2748686005], [-113.3518925183, 31.2997501479], [-113.3229160109, 31.3017211427]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3252090059, 31.3266013228], [-113.3229160109, 31.3017211427], [-113.3518925183, 31.2997501479], [-113.354191332, 31.3246300571], [-113.3252090059, 31.3266013228]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3275029279, 31.3514798594], [-113.3252090059, 31.3266013228], [-113.354191332, 31.3246300571], [-113.3564910753, 31.3495083231], [-113.3275029279, 31.3514798594]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.3297977776, 31.3763567477], [-113.3275029279, 31.3514798594], [-113.3564910753, 31.3495083231], [-113.3587917485, 31.374384941], [-113.3297977776, 31.3763567477]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0325731068, 28.3826790606], [-113.0303912474, 28.3576393293], [-113.0586979204, 28.3557071791], [-113.0608853345, 28.3807466082], [-113.0325731068, 28.3826790606]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0347558279, 28.4077177319], [-113.0325731068, 28.3826790606], [-113.0608853345, 28.3807466082], [-113.0630736125, 28.4057849775], [-113.0347558279, 28.4077177319]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0369394113, 28.4327553381], [-113.0347558279, 28.4077177319], [-113.0630736125, 28.4057849775], [-113.0652627549, 28.4308222821], [-113.0369394113, 28.4327553381]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0391238575, 28.4577918745], [-113.0369394113, 28.4327553381], [-113.0652627549, 28.4308222821], [-113.0674527623, 28.455858517], [-113.0391238575, 28.4577918745]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            5.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0413091669, 28.4828273359], [-113.0391238575, 28.4577918745], [-113.0674527623, 28.455858517], [-113.0696436352, 28.4808936772], [-113.0413091669, 28.4828273359]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            5.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0434953402, 28.5078617174], [-113.0413091669, 28.4828273359], [-113.0696436352, 28.4808936772], [-113.071835374, 28.5059277579], [-113.0434953402, 28.5078617174]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0456823778, 28.532895014], [-113.0434953402, 28.5078617174], [-113.071835374, 28.5059277579], [-113.0740279793, 28.5309607539], [-113.0456823778, 28.532895014]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0478702802, 28.5579272209], [-113.0456823778, 28.532895014], [-113.0740279793, 28.5309607539], [-113.0762214517, 28.5559926603], [-113.0478702802, 28.5579272209]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.050059048, 28.5829583329], [-113.0478702802, 28.5579272209], [-113.0762214517, 28.5559926603], [-113.0784157915, 28.5810234723], [-113.050059048, 28.5829583329]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0522486816, 28.6079883452], [-113.050059048, 28.5829583329], [-113.0784157915, 28.5810234723], [-113.0806109994, 28.6060531848], [-113.0522486816, 28.6079883452]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0544391816, 28.6330172529], [-113.0522486816, 28.6079883452], [-113.0806109994, 28.6060531848], [-113.0828070758, 28.6310817929], [-113.0544391816, 28.6330172529]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0566305484, 28.6580450508], [-113.0544391816, 28.6330172529], [-113.0828070758, 28.6310817929], [-113.0850040212, 28.6561092915], [-113.0566305484, 28.6580450508]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0588227826, 28.6830717342], [-113.0566305484, 28.6580450508], [-113.0850040212, 28.6561092915], [-113.0872018363, 28.6811356758], [-113.0588227826, 28.6830717342]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0610158848, 28.7080972979], [-113.0588227826, 28.6830717342], [-113.0872018363, 28.6811356758], [-113.0894005214, 28.7061609408], [-113.0610158848, 28.7080972979]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0632098553, 28.7331217372], [-113.0610158848, 28.7080972979], [-113.0894005214, 28.7061609408], [-113.0916000771, 28.7311850815], [-113.0632098553, 28.7331217372]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0654046948, 28.7581450469], [-113.0632098553, 28.7331217372], [-113.0916000771, 28.7311850815], [-113.093800504, 28.7562080929], [-113.0654046948, 28.7581450469]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0676004038, 28.7831672221], [-113.0654046948, 28.7581450469], [-113.093800504, 28.7562080929], [-113.0960018024, 28.7812299702], [-113.0676004038, 28.7831672221]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0697969827, 28.8081882579], [-113.0676004038, 28.7831672221], [-113.0960018024, 28.7812299702], [-113.0982039731, 28.8062507083], [-113.0697969827, 28.8081882579]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0719944321, 28.8332081494], [-113.0697969827, 28.8081882579], [-113.0982039731, 28.8062507083], [-113.1004070164, 28.8312703023], [-113.0719944321, 28.8332081494]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0741927525, 28.8582268914], [-113.0719944321, 28.8332081494], [-113.1004070164, 28.8312703023], [-113.1026109329, 28.8562887471], [-113.0741927525, 28.8582268914]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0763919444, 28.8832444792], [-113.0741927525, 28.8582268914], [-113.1026109329, 28.8562887471], [-113.1048157231, 28.881306038], [-113.0763919444, 28.8832444792]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0785920083, 28.9082609077], [-113.0763919444, 28.8832444792], [-113.1048157231, 28.881306038], [-113.1070213875, 28.9063221698], [-113.0785920083, 28.9082609077]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0807929448, 28.933276172], [-113.0785920083, 28.9082609077], [-113.1070213875, 28.9063221698], [-113.1092279267, 28.9313371377], [-113.0807929448, 28.933276172]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0829947544, 28.958290267], [-113.0807929448, 28.933276172], [-113.1092279267, 28.9313371377], [-113.1114353411, 28.9563509366], [-113.0829947544, 28.958290267]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            7.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0851974375, 28.983303188], [-113.0829947544, 28.958290267], [-113.1114353411, 28.9563509366], [-113.1136436313, 28.9813635617], [-113.0851974375, 28.983303188]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            7.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0874009948, 29.0083149298], [-113.0851974375, 28.983303188], [-113.1136436313, 28.9813635617], [-113.1158527978, 29.0063750079], [-113.0874009948, 29.0083149298]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            6.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0896054266, 29.0333254875], [-113.0874009948, 29.0083149298], [-113.1158527978, 29.0063750079], [-113.1180628412, 29.0313852704], [-113.0896054266, 29.0333254875]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            8.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0918107337, 29.0583348563], [-113.0896054266, 29.0333254875], [-113.1180628412, 29.0313852704], [-113.1202737619, 29.056394344], [-113.0918107337, 29.0583348563]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            7.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0940169163, 29.083343031], [-113.0918107337, 29.0583348563], [-113.1202737619, 29.056394344], [-113.1224855604, 29.081402224], [-113.0940169163, 29.083343031]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            3.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0962239752, 29.1083500068], [-113.0940169163, 29.083343031], [-113.1224855604, 29.081402224], [-113.1246982374, 29.1064089052], [-113.0962239752, 29.1083500068]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.0984319108, 29.1333557787], [-113.0962239752, 29.1083500068], [-113.1246982374, 29.1064089052], [-113.1269117932, 29.1314143829], [-113.0984319108, 29.1333557787]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1006407236, 29.1583603417], [-113.0984319108, 29.1333557787], [-113.1269117932, 29.1314143829], [-113.1291262285, 29.1564186519], [-113.1006407236, 29.1583603417]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1028504141, 29.1833636909], [-113.1006407236, 29.1583603417], [-113.1291262285, 29.1564186519], [-113.1313415437, 29.1814217074], [-113.1028504141, 29.1833636909]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            2.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.105060983, 29.2083658214], [-113.1028504141, 29.1833636909], [-113.1313415437, 29.1814217074], [-113.1335577395, 29.2064235444], [-113.105060983, 29.2083658214]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1072724306, 29.2333667281], [-113.105060983, 29.2083658214], [-113.1335577395, 29.2064235444], [-113.1357748162, 29.2314241579], [-113.1072724306, 29.2333667281]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1094847575, 29.2583664061], [-113.1072724306, 29.2333667281], [-113.1357748162, 29.2314241579], [-113.1379927745, 29.256423543], [-113.1094847575, 29.2583664061]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1116979643, 29.2833648505], [-113.1094847575, 29.2583664061], [-113.1379927745, 29.256423543], [-113.1402116148, 29.2814216947], [-113.1116979643, 29.2833648505]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1139120514, 29.3083620562], [-113.1116979643, 29.2833648505], [-113.1402116148, 29.2814216947], [-113.1424313377, 29.3064186081], [-113.1139120514, 29.3083620562]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1161270195, 29.3333580185], [-113.1139120514, 29.3083620562], [-113.1424313377, 29.3064186081], [-113.1446519436, 29.3314142782], [-113.1161270195, 29.3333580185]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1183428689, 29.3583527322], [-113.1161270195, 29.3333580185], [-113.1446519436, 29.3314142782], [-113.1468734333, 29.3564087001], [-113.1183428689, 29.3583527322]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1205596003, 29.3833461924], [-113.1183428689, 29.3583527322], [-113.1468734333, 29.3564087001], [-113.149095807, 29.3814018687], [-113.1205596003, 29.3833461924]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1227772141, 29.4083383942], [-113.1205596003, 29.3833461924], [-113.149095807, 29.3814018687], [-113.1513190655, 29.4063937792], [-113.1227772141, 29.4083383942]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.124995711, 29.4333293326], [-113.1227772141, 29.4083383942], [-113.1513190655, 29.4063937792], [-113.1535432092, 29.4313844266], [-113.124995711, 29.4333293326]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1272150913, 29.4583190027], [-113.124995711, 29.4333293326], [-113.1535432092, 29.4313844266], [-113.1557682386, 29.4563738059], [-113.1272150913, 29.4583190027]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1294353557, 29.4833073995], [-113.1272150913, 29.4583190027], [-113.1557682386, 29.4563738059], [-113.1579941543, 29.4813619122], [-113.1294353557, 29.4833073995]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1316565047, 29.508294518], [-113.1294353557, 29.4833073995], [-113.1579941543, 29.4813619122], [-113.1602209567, 29.5063487405], [-113.1316565047, 29.508294518]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1338785388, 29.5332803533], [-113.1316565047, 29.508294518], [-113.1602209567, 29.5063487405], [-113.1624486465, 29.5313342859], [-113.1338785388, 29.5332803533]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1361014585, 29.5582649005], [-113.1338785388, 29.5332803533], [-113.1624486465, 29.5313342859], [-113.1646772242, 29.5563185434], [-113.1361014585, 29.5582649005]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1383252643, 29.5832481546], [-113.1361014585, 29.5582649005], [-113.1646772242, 29.5563185434], [-113.1669066902, 29.581301508], [-113.1383252643, 29.5832481546]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1405499569, 29.6082301106], [-113.1383252643, 29.5832481546], [-113.1669066902, 29.581301508], [-113.1691370452, 29.6062831749], [-113.1405499569, 29.6082301106]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1427755366, 29.6332107637], [-113.1405499569, 29.6082301106], [-113.1691370452, 29.6062831749], [-113.1713682895, 29.631263539], [-113.1427755366, 29.6332107637]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            0.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1450020041, 29.6581901087], [-113.1427755366, 29.6332107637], [-113.1713682895, 29.631263539], [-113.1736004239, 29.6562425955], [-113.1450020041, 29.6581901087]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1472293599, 29.6831681408], [-113.1450020041, 29.6581901087], [-113.1736004239, 29.6562425955], [-113.1758334488, 29.6812203393], [-113.1472293599, 29.6831681408]]]]}'), 4326)
+        );
+INSERT INTO public.riqueza_relativa_pesquera (
+            riqueza_absoluta, shape_length, shape_area, geometry
+        ) VALUES (
+            1.0, 11112.0,
+            7717284.0, ST_SetSRID(ST_GeomFromGeoJSON('{"type": "MultiPolygon", "coordinates": [[[[-113.1494576044, 29.7081448551], [-113.1472293599, 29.6831681408], [-113.1758334488, 29.6812203393], [-113.1780673647, 29.7061967654], [-113.1494576044, 29.7081448551]]]]}'), 4326)
+        );

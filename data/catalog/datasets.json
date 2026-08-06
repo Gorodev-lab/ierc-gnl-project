@@ -1,0 +1,839 @@
+[
+  {
+    "name": "nasa_chlor_a",
+    "description": "Concentración de clorofila-a superficial (mg/m³) del sensor MODIS-Aqua, resolución 4km diaria",
+    "source_type": "api",
+    "source_path": "https://oceandata.sci.gsfc.nasa.gov/opendap/MODISA/L3SMI/2024/001/A2024001.L3m_DAY_CHL_chlor_a_4km.nc",
+    "format": "netcdf",
+    "crs": "EPSG:4326",
+    "temporal_frequency": "daily",
+    "temporal_range": [
+      "2020-01-01",
+      "2024-12-31"
+    ],
+    "spatial_bbox": [
+      22.5,
+      -115.0,
+      32.0,
+      -108.0
+    ],
+    "h3_resolution": 8,
+    "schema": {
+      "columns": [
+        {
+          "name": "chlor_a",
+          "dtype": "float32",
+          "units": "mg/m³",
+          "valid_range": [
+            0.0,
+            100.0
+          ],
+          "fill_value": -32767
+        },
+        {
+          "name": "quality_flag",
+          "dtype": "uint8",
+          "description": "Bandera de calidad del pixel"
+        }
+      ],
+      "derived": [
+        {
+          "name": "h3_cell_8",
+          "dtype": "string",
+          "description": "Celda H3 nivel 8"
+        },
+        {
+          "name": "time_partition",
+          "dtype": "string",
+          "description": "Partición temporal YYYY-MM"
+        }
+      ]
+    },
+    "lakehouse_paths": {
+      "bronze_path": "raw/nasa/chlor_a/{year}/{month}/",
+      "silver_path": "processed/nasa/chlor_a/year={year}/month={month:02d}/h3_8={h3_cell_8}/",
+      "gold_path": "curated/nasa/chlor_a_monthly_h3_8/"
+    },
+    "quality_expectations": [
+      "expect_table_row_count_to_be_between: {min_value: 1000, max_value: 500000}",
+      "expect_column_values_to_not_be_null: chlor_a",
+      "expect_column_values_to_be_between: {column: chlor_a, min_value: 0.0, max_value: 50.0}",
+      "expect_column_values_to_be_in_set: {column: h3_cell_8, value_set: $valid_h3_cells_gulf}"
+    ],
+    "priority": "critical",
+    "tags": [
+      "environmental",
+      "satellite",
+      "timeseries",
+      "chlorophyll"
+    ],
+    "status": "active",
+    "size_estimate_gb": null,
+    "cdc_enabled": false,
+    "cdc_key_column": null,
+    "cdc_hash_columns": [],
+    "created_at": "2026-08-04T23:12:42.304085",
+    "updated_at": "2026-08-04T23:12:42.304201"
+  },
+  {
+    "name": "nasa_sst",
+    "description": "SST diaria MODIS-Aqua, resolución 4km",
+    "source_type": "api",
+    "source_path": "https://oceandata.sci.gsfc.nasa.gov/opendap/MODISA/L3SMI/2024/001/A2024001.L3m_DAY_SST_sst_4km.nc",
+    "format": "netcdf",
+    "crs": "EPSG:4326",
+    "temporal_frequency": "daily",
+    "temporal_range": [
+      "2020-01-01",
+      "2024-12-31"
+    ],
+    "spatial_bbox": [
+      22.5,
+      -115.0,
+      32.0,
+      -108.0
+    ],
+    "h3_resolution": 8,
+    "schema": {
+      "columns": [
+        {
+          "name": "sst",
+          "dtype": "float32",
+          "units": "°C",
+          "valid_range": [
+            -2.0,
+            40.0
+          ],
+          "fill_value": -32767
+        }
+      ],
+      "derived": [
+        {
+          "name": "h3_cell_8",
+          "dtype": "string"
+        },
+        {
+          "name": "time_partition",
+          "dtype": "string"
+        }
+      ]
+    },
+    "lakehouse_paths": {
+      "bronze_path": "raw/nasa/sst/{year}/{month}/",
+      "silver_path": "processed/nasa/sst/year={year}/month={month:02d}/h3_8={h3_cell_8}/",
+      "gold_path": "curated/nasa/sst_monthly_h3_8/"
+    },
+    "quality_expectations": [
+      "expect_table_row_count_to_be_between: {min_value: 1000, max_value: 500000}",
+      "expect_column_values_to_not_be_null: sst",
+      "expect_column_values_to_be_between: {column: sst, min_value: 10.0, max_value: 35.0}"
+    ],
+    "priority": "critical",
+    "tags": [
+      "environmental",
+      "satellite",
+      "timeseries",
+      "temperature"
+    ],
+    "status": "active",
+    "size_estimate_gb": null,
+    "cdc_enabled": false,
+    "cdc_key_column": null,
+    "cdc_hash_columns": [],
+    "created_at": "2026-08-04T23:12:42.304469",
+    "updated_at": "2026-08-04T23:12:42.304542"
+  },
+  {
+    "name": "gfw_fishing_effort",
+    "description": "Horas de pesca aparente por celda 0.01° x 0.01°, derivado de AIS",
+    "source_type": "zenodo",
+    "source_path": "zenodo:14982712",
+    "format": "csv_zip",
+    "crs": "EPSG:4326",
+    "temporal_frequency": "daily",
+    "temporal_range": [
+      "2012-01-01",
+      "2023-12-31"
+    ],
+    "spatial_bbox": [
+      22.5,
+      -115.0,
+      32.0,
+      -108.0
+    ],
+    "h3_resolution": 8,
+    "schema": {
+      "columns": [
+        {
+          "name": "date",
+          "dtype": "date"
+        },
+        {
+          "name": "lat",
+          "dtype": "float32"
+        },
+        {
+          "name": "lon",
+          "dtype": "float32"
+        },
+        {
+          "name": "fishing_hours",
+          "dtype": "float32",
+          "units": "hours"
+        },
+        {
+          "name": "mmsi",
+          "dtype": "string"
+        },
+        {
+          "name": "gear_type",
+          "dtype": "string",
+          "categories": [
+            "trawlers",
+            "longliners",
+            "purse_seines",
+            "fixed_gear",
+            "other"
+          ]
+        },
+        {
+          "name": "flag",
+          "dtype": "string"
+        }
+      ],
+      "derived": [
+        {
+          "name": "h3_cell_8",
+          "dtype": "string"
+        },
+        {
+          "name": "year",
+          "dtype": "int16"
+        },
+        {
+          "name": "month",
+          "dtype": "int8"
+        },
+        {
+          "name": "date_partition",
+          "dtype": "string"
+        }
+      ]
+    },
+    "lakehouse_paths": {
+      "bronze_path": "raw/gfw/fishing_effort/{year}/",
+      "silver_path": "processed/gfw/fishing_effort_h3/year={year}/month={month:02d}/h3_8={h3_cell_8}/",
+      "gold_path": "curated/gfw/fishing_effort_monthly_h3_8/"
+    },
+    "quality_expectations": [
+      "expect_table_row_count_to_be_between: {min_value: 10000, max_value: 10000000}",
+      "expect_column_values_to_not_be_null: [date, lat, lon, fishing_hours, mmsi]",
+      "expect_column_values_to_be_between: {column: fishing_hours, min_value: 0.0, max_value: 720.0}",
+      "expect_column_values_to_be_in_set: {column: gear_type, value_set: [trawlers, longliners, purse_seines, fixed_gear, other]}"
+    ],
+    "priority": "critical",
+    "tags": [
+      "fisheries",
+      "ais",
+      "timeseries",
+      "human_activity"
+    ],
+    "status": "active",
+    "size_estimate_gb": 5100,
+    "cdc_enabled": false,
+    "cdc_key_column": null,
+    "cdc_hash_columns": [],
+    "created_at": "2026-08-04T23:12:42.304731",
+    "updated_at": "2026-08-04T23:12:42.304809"
+  },
+  {
+    "name": "gfw_vessels",
+    "description": "Metadatos de embarcaciones pesqueras (MMSI, tipo, bandera, eslora)",
+    "source_type": "zenodo",
+    "source_path": "zenodo:14982712",
+    "format": "csv",
+    "crs": "EPSG:4326",
+    "temporal_frequency": "static",
+    "temporal_range": [
+      "",
+      ""
+    ],
+    "spatial_bbox": [
+      22.5,
+      -115.0,
+      32.0,
+      -108.0
+    ],
+    "h3_resolution": 8,
+    "schema": {
+      "columns": [
+        {
+          "name": "mmsi",
+          "dtype": "string",
+          "primary_key": true
+        },
+        {
+          "name": "vessel_name",
+          "dtype": "string"
+        },
+        {
+          "name": "ship_type",
+          "dtype": "string"
+        },
+        {
+          "name": "gear_type",
+          "dtype": "string"
+        },
+        {
+          "name": "flag",
+          "dtype": "string"
+        },
+        {
+          "name": "length_m",
+          "dtype": "float32"
+        },
+        {
+          "name": "tonnage_gt",
+          "dtype": "float32"
+        }
+      ],
+      "derived": []
+    },
+    "lakehouse_paths": {
+      "bronze_path": "raw/gfw/vessels/",
+      "silver_path": "processed/gfw/vessels/",
+      "gold_path": "curated/gfw/vessels/"
+    },
+    "quality_expectations": [
+      "expect_column_values_to_not_be_null: mmsi",
+      "expect_column_values_to_be_unique: mmsi"
+    ],
+    "priority": "high",
+    "tags": [
+      "fisheries",
+      "reference",
+      "vessels"
+    ],
+    "status": "active",
+    "size_estimate_gb": null,
+    "cdc_enabled": false,
+    "cdc_key_column": null,
+    "cdc_hash_columns": [],
+    "created_at": "2026-08-04T23:12:42.305010",
+    "updated_at": "2026-08-04T23:12:42.305104"
+  },
+  {
+    "name": "tnc_bajos_marinos",
+    "description": "Distribución de bajos marinos (montes submarinos, bancos) en el Golfo",
+    "source_type": "file",
+    "source_path": "data/raw/tnc/tnc_bajos_marinos_golfo_california.zip",
+    "format": "shapefile_zip",
+    "crs": "EPSG:4326",
+    "temporal_frequency": "static",
+    "temporal_range": [
+      "",
+      ""
+    ],
+    "spatial_bbox": [
+      22.5,
+      -115.0,
+      32.0,
+      -108.0
+    ],
+    "h3_resolution": 8,
+    "schema": {
+      "columns": [
+        {
+          "name": "objectid",
+          "dtype": "int64"
+        },
+        {
+          "name": "nombre",
+          "dtype": "string"
+        },
+        {
+          "name": "tipo",
+          "dtype": "string"
+        },
+        {
+          "name": "area_km2",
+          "dtype": "float64"
+        },
+        {
+          "name": "profundidad_min_m",
+          "dtype": "float32"
+        },
+        {
+          "name": "profundidad_max_m",
+          "dtype": "float32"
+        }
+      ],
+      "derived": [
+        {
+          "name": "h3_cell_8",
+          "dtype": "string"
+        },
+        {
+          "name": "area_frac",
+          "dtype": "float32",
+          "description": "Fracción de la celda H3 cubierta por el polígono"
+        }
+      ]
+    },
+    "lakehouse_paths": {
+      "bronze_path": "raw/tnc/bajos_marinos/",
+      "silver_path": "processed/tnc/bajos_marinos_h3/h3_8={h3_cell_8}/",
+      "gold_path": "curated/tnc/bajos_marinos_h3_8/"
+    },
+    "quality_expectations": [
+      "expect_table_row_count_to_be_between: {min_value: 10, max_value: 1000}",
+      "expect_column_values_to_not_be_null: [nombre, geometry]"
+    ],
+    "priority": "high",
+    "tags": [
+      "conservation",
+      "bathymetry_features",
+      "static",
+      "vector"
+    ],
+    "status": "active",
+    "size_estimate_gb": null,
+    "cdc_enabled": false,
+    "cdc_key_column": null,
+    "cdc_hash_columns": [],
+    "created_at": "2026-08-04T23:12:42.305329",
+    "updated_at": "2026-08-04T23:12:42.305436"
+  },
+  {
+    "name": "tnc_arrecifes_coral_negro",
+    "description": "Distribución de arrecifes de coral negro (Antipatharia) en el Golfo",
+    "source_type": "file",
+    "source_path": "data/raw/tnc/tnc_arrecifes_coral_negro_golfo_california.zip",
+    "format": "shapefile_zip",
+    "crs": "EPSG:4326",
+    "temporal_frequency": "static",
+    "temporal_range": [
+      "",
+      ""
+    ],
+    "spatial_bbox": [
+      22.5,
+      -115.0,
+      32.0,
+      -108.0
+    ],
+    "h3_resolution": 8,
+    "schema": {
+      "columns": [
+        {
+          "name": "objectid",
+          "dtype": "int64"
+        },
+        {
+          "name": "nombre",
+          "dtype": "string"
+        },
+        {
+          "name": "area_km2",
+          "dtype": "float64"
+        }
+      ],
+      "derived": [
+        {
+          "name": "h3_cell_8",
+          "dtype": "string"
+        },
+        {
+          "name": "area_frac",
+          "dtype": "float32"
+        }
+      ]
+    },
+    "lakehouse_paths": {
+      "bronze_path": "raw/tnc/arrecifes_coral_negro/",
+      "silver_path": "processed/tnc/arrecifes_coral_negro_h3/h3_8={h3_cell_8}/",
+      "gold_path": "curated/tnc/arrecifes_coral_negro_h3_8/"
+    },
+    "quality_expectations": [
+      "expect_table_row_count_to_be_between: {min_value: 1, max_value: 500}"
+    ],
+    "priority": "high",
+    "tags": [
+      "conservation",
+      "biodiversity",
+      "static",
+      "vector"
+    ],
+    "status": "active",
+    "size_estimate_gb": null,
+    "cdc_enabled": false,
+    "cdc_key_column": null,
+    "cdc_hash_columns": [],
+    "created_at": "2026-08-04T23:12:42.305675",
+    "updated_at": "2026-08-04T23:12:42.305794"
+  },
+  {
+    "name": "asea_mias_consolidated",
+    "description": "Proyectos de infraestructura GNL y gasoductos en el Golfo (ASEA + CENAGAS + SENER)",
+    "source_type": "file",
+    "source_path": "causanaturadata/output/gnl_proyectos_consolidados.csv",
+    "format": "csv",
+    "crs": "EPSG:4326",
+    "temporal_frequency": "incremental_weekly",
+    "temporal_range": [
+      "",
+      ""
+    ],
+    "spatial_bbox": [
+      22.5,
+      -115.0,
+      32.0,
+      -108.0
+    ],
+    "h3_resolution": 10,
+    "schema": {
+      "columns": [
+        {
+          "name": "proyecto_id",
+          "dtype": "string",
+          "primary_key": true
+        },
+        {
+          "name": "nombre",
+          "dtype": "string"
+        },
+        {
+          "name": "estado",
+          "dtype": "string"
+        },
+        {
+          "name": "tipo_proyecto",
+          "dtype": "string",
+          "categories": [
+            "terminal_gnl",
+            "gasoducto_transporte",
+            "gasoducto_distribucion",
+            "planta_licuefaccion",
+            "estacion_compresion"
+          ]
+        },
+        {
+          "name": "fuente",
+          "dtype": "string",
+          "categories": [
+            "ASEA",
+            "CENAGAS",
+            "SENER",
+            "Plan_Quinquenal_2025-29"
+          ]
+        },
+        {
+          "name": "lat",
+          "dtype": "float64"
+        },
+        {
+          "name": "lon",
+          "dtype": "float64"
+        },
+        {
+          "name": "estatus",
+          "dtype": "string",
+          "categories": [
+            "En_operacion",
+            "En_construccion",
+            "En_planeacion",
+            "Autorizado",
+            "En_evaluacion"
+          ]
+        },
+        {
+          "name": "capacidad_mtpa",
+          "dtype": "float32"
+        },
+        {
+          "name": "longitud_km",
+          "dtype": "float32"
+        },
+        {
+          "name": "folio_asea",
+          "dtype": "string"
+        },
+        {
+          "name": "pdf_url",
+          "dtype": "string"
+        }
+      ],
+      "derived": [
+        {
+          "name": "h3_cell_10",
+          "dtype": "string"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "dtype": "datetime64[ns]"
+        },
+        {
+          "name": "content_hash",
+          "dtype": "string"
+        }
+      ]
+    },
+    "lakehouse_paths": {
+      "bronze_path": "raw/asea/mias_consolidated/",
+      "silver_path": "processed/asea/mias_enriched/h3_10={h3_cell_10}/",
+      "gold_path": "curated/asea/mias_gnl_gulf/"
+    },
+    "quality_expectations": [
+      "expect_column_values_to_not_be_null: [proyecto_id, nombre, lat, lon, tipo_proyecto]",
+      "expect_column_values_to_be_unique: proyecto_id",
+      "expect_column_values_to_be_between: {column: lat, min_value: 22.5, max_value: 32.0}",
+      "expect_column_values_to_be_between: {column: lon, min_value: -115.0, max_value: -108.0}"
+    ],
+    "priority": "critical",
+    "tags": [
+      "infrastructure",
+      "gnl",
+      "regulatory",
+      "incremental",
+      "point"
+    ],
+    "status": "active",
+    "size_estimate_gb": null,
+    "cdc_enabled": true,
+    "cdc_key_column": "proyecto_id",
+    "cdc_hash_columns": [
+      "nombre",
+      "estatus",
+      "tipo_proyecto",
+      "capacidad_mtpa"
+    ],
+    "created_at": "2026-08-04T23:12:42.306032",
+    "updated_at": "2026-08-04T23:12:42.306162"
+  },
+  {
+    "name": "bathymetry_etopo1",
+    "description": "Modelo de elevación global 1 arc-min (~1.8km) recortado al Golfo",
+    "source_type": "file",
+    "source_path": "causanaturadata/batimetria/ETOPO1_Gulf_California.tif",
+    "format": "geotiff",
+    "crs": "EPSG:4326",
+    "temporal_frequency": "static",
+    "temporal_range": [
+      "",
+      ""
+    ],
+    "spatial_bbox": [
+      22.5,
+      -115.0,
+      32.0,
+      -108.0
+    ],
+    "h3_resolution": 8,
+    "schema": {
+      "columns": [],
+      "derived": [
+        {
+          "name": "h3_cell",
+          "dtype": "string"
+        },
+        {
+          "name": "resolution",
+          "dtype": "int8"
+        },
+        {
+          "name": "depth_mean_m",
+          "dtype": "float32"
+        },
+        {
+          "name": "depth_min_m",
+          "dtype": "float32"
+        },
+        {
+          "name": "depth_max_m",
+          "dtype": "float32"
+        },
+        {
+          "name": "depth_std_m",
+          "dtype": "float32"
+        },
+        {
+          "name": "pixel_count",
+          "dtype": "int32"
+        }
+      ]
+    },
+    "lakehouse_paths": {
+      "bronze_path": "raw/bathymetry/etopo1/",
+      "silver_path": "processed/bathymetry/etopo1_h3/h3_{resolution}={h3_cell}/",
+      "gold_path": "curated/bathymetry/etopo1_multi_res/"
+    },
+    "quality_expectations": [
+      "expect_column_values_to_not_be_null: [h3_cell, depth_mean_m]",
+      "expect_column_values_to_be_between: {column: depth_mean_m, min_value: -5000, max_value: 0}"
+    ],
+    "priority": "high",
+    "tags": [
+      "bathymetry",
+      "raster",
+      "static",
+      "multi_resolution"
+    ],
+    "status": "active",
+    "size_estimate_gb": null,
+    "cdc_enabled": false,
+    "cdc_key_column": null,
+    "cdc_hash_columns": [],
+    "created_at": "2026-08-04T23:12:42.306445",
+    "updated_at": "2026-08-04T23:12:42.306600"
+  },
+  {
+    "name": "bathymetry_gebco",
+    "description": "Modelo batimétrico global 15 arc-sec (~450m) - vectorizado en contornos",
+    "source_type": "file",
+    "source_path": "causanaturadata/output/GEBCO_Batimetria_Golfo.gpkg",
+    "format": "geopackage",
+    "crs": "EPSG:4326",
+    "temporal_frequency": "static",
+    "temporal_range": [
+      "",
+      ""
+    ],
+    "spatial_bbox": [
+      22.5,
+      -115.0,
+      32.0,
+      -108.0
+    ],
+    "h3_resolution": 8,
+    "schema": {
+      "columns": [
+        {
+          "name": "depth_range",
+          "dtype": "string"
+        },
+        {
+          "name": "depth_min_m",
+          "dtype": "int32"
+        },
+        {
+          "name": "depth_max_m",
+          "dtype": "int32"
+        },
+        {
+          "name": "area_km2",
+          "dtype": "float64"
+        }
+      ],
+      "derived": [
+        {
+          "name": "h3_cell",
+          "dtype": "string"
+        },
+        {
+          "name": "resolution",
+          "dtype": "int8"
+        },
+        {
+          "name": "area_frac",
+          "dtype": "float32"
+        }
+      ]
+    },
+    "lakehouse_paths": {
+      "bronze_path": "raw/bathymetry/gebco/",
+      "silver_path": "processed/bathymetry/gebco_h3/h3_{resolution}={h3_cell}/",
+      "gold_path": "curated/bathymetry/gebco_multi_res/"
+    },
+    "quality_expectations": [
+      "expect_column_values_to_not_be_null: [depth_min_m, depth_max_m]"
+    ],
+    "priority": "medium",
+    "tags": [
+      "bathymetry",
+      "vector",
+      "contours",
+      "static"
+    ],
+    "status": "active",
+    "size_estimate_gb": null,
+    "cdc_enabled": false,
+    "cdc_key_column": null,
+    "cdc_hash_columns": [],
+    "created_at": "2026-08-04T23:12:42.306895",
+    "updated_at": "2026-08-04T23:12:42.307060"
+  },
+  {
+    "name": "pangas_fishing_zones",
+    "description": "Zonas de pesca por arte de pesca (PANGAS, buceo, chinchorro, redes, trampa)",
+    "source_type": "file",
+    "source_path": "data/raw/pangas_wgs84/",
+    "format": "geojson",
+    "crs": "EPSG:4326",
+    "temporal_frequency": "static",
+    "temporal_range": [
+      "",
+      ""
+    ],
+    "spatial_bbox": [
+      22.5,
+      -115.0,
+      32.0,
+      -108.0
+    ],
+    "h3_resolution": 8,
+    "schema": {
+      "columns": [
+        {
+          "name": "zone_id",
+          "dtype": "string"
+        },
+        {
+          "name": "arte_pesca",
+          "dtype": "string"
+        },
+        {
+          "name": "area_km2",
+          "dtype": "float64"
+        }
+      ],
+      "derived": [
+        {
+          "name": "uid_espaciotemporal",
+          "dtype": "string",
+          "description": "Identificador único espacio-temporal: comunidad-actor-pesquería-arte-zona-temporada-ruta"
+        },
+        {
+          "name": "h3_cell_8",
+          "dtype": "string"
+        },
+        {
+          "name": "area_frac",
+          "dtype": "float32"
+        }
+      ]
+    },
+    "lakehouse_paths": {
+      "bronze_path": "raw/pangas/{arte}/",
+      "silver_path": "processed/pangas/fishing_zones_h3/h3_8={h3_cell_8}/",
+      "gold_path": "curated/pangas/fishing_zones_by_arte/"
+    },
+    "quality_expectations": [
+      "expect_column_values_to_not_be_null: [arte_pesca, geometry]"
+    ],
+    "priority": "high",
+    "tags": [
+      "fisheries",
+      "zones",
+      "artisanal",
+      "static",
+      "vector"
+    ],
+    "status": "active",
+    "size_estimate_gb": null,
+    "cdc_enabled": false,
+    "cdc_key_column": null,
+    "cdc_hash_columns": [],
+    "created_at": "2026-08-04T23:12:42.307368",
+    "updated_at": "2026-08-04T23:12:42.307546"
+  }
+]
