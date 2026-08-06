@@ -31,7 +31,7 @@ def load_env():
                     os.environ[key.strip()] = val.strip().strip('"').strip("'")
 
 load_env()
-token = os.getenv('GFW_API_TOKEN') or os.getenv('GFW_TOKEN')
+token = os.getenv('GFW_API_TOKEN') or os.getenv('GFW_API_KEY')
 
 print("=======================================================================")
 print("Procesador de Datos Global Fishing Watch (GFW)")

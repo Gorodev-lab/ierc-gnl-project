@@ -1,6 +1,12 @@
 import React from 'react'
 
-export default function Header({ onOpenCoverage }: { onOpenCoverage?: () => void }) {
+export default function Header({
+  onOpenCoverage,
+  onOpenExport,
+}: {
+  onOpenCoverage?: () => void
+  onOpenExport?: () => void
+}) {
   return (
     <>
       <header style={{
@@ -89,6 +95,29 @@ export default function Header({ onOpenCoverage }: { onOpenCoverage?: () => void
 
           {/* Controls & Actions */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.875rem', flexWrap: 'wrap' }}>
+            {onOpenExport && (
+              <button
+                onClick={onOpenExport}
+                style={{
+                  background: 'var(--color-surface-2)',
+                  border: '1px solid var(--color-ok)',
+                  color: 'var(--color-ok)',
+                  borderRadius: 0,
+                  padding: '5px 12px',
+                  fontSize: '0.72rem',
+                  fontWeight: 700,
+                  cursor: 'pointer',
+                  fontFamily: 'var(--font-mono)',
+                  letterSpacing: '0.04em',
+                  transition: 'background 0.15s ease',
+                }}
+                onMouseOver={(e) => e.currentTarget.style.background = 'var(--color-surface-3)'}
+                onMouseOut={(e) => e.currentTarget.style.background = 'var(--color-surface-2)'}
+              >
+                &gt; EXPORT GPKG / CSV
+              </button>
+            )}
+
             {onOpenCoverage && (
               <button
                 onClick={onOpenCoverage}

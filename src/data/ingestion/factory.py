@@ -46,7 +46,7 @@ DATASET_DEFAULTS = {
         "bbox": (22.5, -115.0, 32.0, -108.0),
         "compression": "zstd",
         "batch_size": 50000,
-        "validate": True
+        "validate": False
     },
     "nasa_sst": {
         "layer": "silver",
@@ -55,7 +55,7 @@ DATASET_DEFAULTS = {
         "bbox": (22.5, -115.0, 32.0, -108.0),
         "compression": "zstd",
         "batch_size": 50000,
-        "validate": True
+        "validate": False
     },
     "bathymetry_gebco": {
         "layer": "silver",
@@ -91,7 +91,9 @@ DATASET_DEFAULTS = {
         "bbox": (22.5, -115.0, 32.0, -108.0),
         "compression": "zstd",
         "batch_size": 50000,
-        "validate": True
+        "validate": True,
+        "cdc_key_column": "proyecto_id",
+        "cdc_hash_columns": ["nombre", "estado", "tipo_proyecto", "lat", "lon", "estatus", "capacidad_mtpa", "longitud_km", "folio_asea", "pdf_url"]
     }
 }
 

@@ -7,13 +7,18 @@ import ZoneCards from './components/ZoneCards'
 import SpeciesPanel from './components/SpeciesPanel'
 import MethodologyPanel from './components/MethodologyPanel'
 import CoverageModal from './components/CoverageModal'
+import ExportModal from './components/ExportModal'
 
 export default function Home() {
   const [isCoverageOpen, setIsCoverageOpen] = useState(false)
+  const [isExportOpen, setIsExportOpen] = useState(false)
 
   return (
     <div className="main-content">
-      <Header onOpenCoverage={() => setIsCoverageOpen(true)} />
+      <Header
+        onOpenCoverage={() => setIsCoverageOpen(true)}
+        onOpenExport={() => setIsExportOpen(true)}
+      />
 
       {/* Terminal Intro Banner */}
       <div style={{
@@ -39,6 +44,27 @@ export default function Home() {
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+            <button
+              onClick={() => setIsExportOpen(true)}
+              style={{
+                background: 'var(--color-surface-2)',
+                border: '1px solid var(--color-ok)',
+                color: 'var(--color-ok)',
+                padding: '0.5rem 0.875rem',
+                fontFamily: 'var(--font-mono)',
+                fontSize: '0.75rem',
+                fontWeight: 800,
+                cursor: 'pointer',
+                borderRadius: 0,
+                letterSpacing: '0.04em',
+                transition: 'background 0.15s ease',
+              }}
+              onMouseOver={(e) => e.currentTarget.style.background = 'var(--color-surface-3)'}
+              onMouseOut={(e) => e.currentTarget.style.background = 'var(--color-surface-2)'}
+            >
+              &gt; EXPORTAR GPKG / CSV
+            </button>
+
             <button
               onClick={() => setIsCoverageOpen(true)}
               style={{
@@ -77,6 +103,9 @@ export default function Home() {
 
       {/* Modal de cobertura */}
       <CoverageModal isOpen={isCoverageOpen} onClose={() => setIsCoverageOpen(false)} />
+
+      {/* Modal de exportación */}
+      <ExportModal isOpen={isExportOpen} onClose={() => setIsExportOpen(false)} />
     </div>
   )
 }

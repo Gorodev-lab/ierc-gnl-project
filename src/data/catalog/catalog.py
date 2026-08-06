@@ -84,7 +84,7 @@ class IngestionRun:
 class DataCatalog:
     """
     Catálogo de datos basado en archivos JSON.
-    
+
     Proporciona:
     - Registro de datasets y sus metadatos (datasets.json)
     - Tracking de ejecuciones de ingesta (runs.jsonl)
@@ -95,17 +95,17 @@ class DataCatalog:
         if catalog_dir is None:
             from config import get_data_dir
             catalog_dir = get_data_dir("catalog")
-        
+
         self.catalog_dir = Path(catalog_dir)
         self.catalog_dir.mkdir(parents=True, exist_ok=True)
-        
+
         self.datasets_file = self.catalog_dir / "datasets.json"
         self.runs_file = self.catalog_dir / "runs.jsonl"
-        
+
         # Initialize files if they don't exist
         if not self.datasets_file.exists():
             self.datasets_file.write_text("[]", encoding="utf-8")
-        
+
         logger.info(f"DataCatalog inicializado en {self.catalog_dir}")
 
     def _load_datasets(self) -> List[Dict]:
@@ -134,17 +134,17 @@ class DataCatalog:
     def register_dataset(self, metadata: DatasetMetadata) -> bool:
         """Registra o actualiza un dataset en el catálogo."""
         datasets = self._load_datasets()
-        
+
         # Check if exists
         existing_idx = None
         for i, ds in enumerate(datasets):
             if ds["name"] == metadata.name:
                 existing_idx = i
                 break
-        
+
         metadata.updated_at = datetime.utcnow().isoformat()
         data = asdict(metadata)
-        
+
         if existing_idx is not None:
             # Update
             data["created_at"] = datasets[existing_idx].get("created_at", metadata.created_at)
@@ -154,7 +154,7 @@ class DataCatalog:
             # Insert
             datasets.append(data)
             logger.info(f"Dataset registrado: {metadata.name}")
-        
+
         self._save_datasets(datasets)
         return True
 
@@ -172,7 +172,7 @@ class DataCatalog:
                       tags: Optional[List[str]] = None) -> List[DatasetMetadata]:
         """Lista datasets con filtros opcionales."""
         datasets = self._load_datasets()
-        
+
         filtered = []
         for ds in datasets:
             if status and ds.get("status") != status:
@@ -184,11 +184,11 @@ class DataCatalog:
                 if not any(tag in ds_tags for tag in tags):
                     continue
             filtered.append(DatasetMetadata(**ds))
-        
+
         # Sort by priority desc, then name
         priority_order = {"critical": 3, "high": 2, "medium": 1, "low": 0}
         filtered.sort(key=lambda d: (-priority_order.get(d.priority, 0), d.name))
-        
+
         return filtered
 
     # ============================================================
@@ -202,7 +202,7 @@ class DataCatalog:
         """Inicia tracking de una ejecución de ingesta."""
         if run_id is None:
             run_id = f"{dataset_name}_{datetime.utcnow().strftime('%Y%m%d_%H%M%S')}_{uuid.uuid4().hex[:8]}"
-        
+
         run = IngestionRun(
             run_id=run_id,
             dataset_name=dataset_name,
@@ -210,7 +210,7 @@ class DataCatalog:
             input_path=input_path,
             status="running"
         )
-        
+
         self._append_run(run)
         logger.info(f"Ingestion run iniciado: {run_id}")
         return run_id
@@ -233,7 +233,7 @@ class DataCatalog:
                 for line in f:
                     if line.strip():
                         runs.append(json.loads(line))
-        
+
         # Update the matching run
         for run in runs:
             if run["run_id"] == run_id:
@@ -247,12 +247,12 @@ class DataCatalog:
                 run["error_message"] = error_message
                 run["quality_results"] = quality_results
                 break
-        
+
         # Rewrite the entire file
         with self.runs_file.open("w", encoding="utf-8") as f:
             for run in runs:
                 f.write(json.dumps(run, ensure_ascii=False) + "\n")
-        
+
         logger.info(f"Ingestion run finalizado: {run_id} - {status}")
 
     def get_ingestion_history(self,
@@ -267,25 +267,47 @@ class DataCatalog:
                         run_data = json.loads(line)
                         if dataset_name is None or run_data.get("dataset_name") == dataset_name:
                             runs.append(IngestionRun(**run_data))
-        
+
         # Sort by started_at desc
         runs.sort(key=lambda r: r.started_at, reverse=True)
         return runs[:limit]
+
+    def register_derived_dataset(self,
+                                 name: str,
+                                 source_datasets: List[str],
+                                 transform_logic_version: str,
+                                 **metadata) -> DatasetMetadata:
+        """Registra dataset derivado con lineage y versión de lógica."""
+        tags = metadata.pop("tags", []) + ["derived"]
+        # Embebir lineage en schema para trazabilidad
+        schema = metadata.get("schema", {})
+        schema["lineage"] = {
+            "sources": source_datasets,
+            "transform_version": transform_logic_version,
+            "created_by": "pipeline_v1"
+        }
+        metadata["schema"] = schema
+        metadata["tags"] = tags
+        metadata["lakehouse_paths"] = metadata.get("lakehouse_paths", {"gold": f"curated/{name}/"})
+
+        ds_meta = DatasetMetadata(name=name, **metadata)
+        self.register_dataset(ds_meta)
+        return ds_meta
 
 
 def load_catalog_from_yaml(catalog_dir: Union[str, Path], yaml_path: str) -> DataCatalog:
     """Carga catálogo desde archivo YAML."""
     import yaml
-    
+
     catalog = DataCatalog(catalog_dir)
-    
+
     with open(yaml_path, 'r') as f:
         config = yaml.safe_load(f)
-    
+
     for name, ds_config in config.get('datasets', {}).items():
         if ds_config.get('status') == 'pending_access':
             continue
-            
+
         source = ds_config.get('source', {})
         if source.get('type') == 'file':
             source_path = source.get('path', '')
@@ -297,7 +319,7 @@ def load_catalog_from_yaml(catalog_dir: Union[str, Path], yaml_path: str) -> Dat
             source_path = source.get('url', '')
         else:
             source_path = source.get('path', '')
-        
+
         schema_config = ds_config.get('schema', {})
         if 'columns' in schema_config:
             columns = schema_config['columns']
@@ -307,7 +329,7 @@ def load_catalog_from_yaml(catalog_dir: Union[str, Path], yaml_path: str) -> Dat
             columns = schema_config['properties']
         else:
             columns = []
-        
+
         metadata = DatasetMetadata(
             name=name,
             description=ds_config.get('description', ''),
@@ -330,8 +352,8 @@ def load_catalog_from_yaml(catalog_dir: Union[str, Path], yaml_path: str) -> Dat
             cdc_key_column=ds_config.get('quality', {}).get('cdc', {}).get('key_column'),
             cdc_hash_columns=ds_config.get('quality', {}).get('cdc', {}).get('hash_columns')
         )
-        
+
         catalog.register_dataset(metadata)
-    
+
     logger.info(f"Catálogo cargado desde {yaml_path}")
     return catalog

@@ -12,6 +12,14 @@ const Popup          = dynamic(() => import('react-leaflet').then(m => m.Popup),
 const GeoJSON        = dynamic(() => import('react-leaflet').then(m => m.GeoJSON),        { ssr: false })
 const WMSTileLayer   = dynamic(() => import('react-leaflet').then(m => m.WMSTileLayer),   { ssr: false })
 
+// Leaflet only available client-side
+const getLeaflet = () => {
+  if (typeof window !== 'undefined') {
+    return (window as any).L
+  }
+  return null
+}
+
 interface LayerConfig {
   id: string
   name: string
@@ -26,6 +34,7 @@ const LAYER_CONFIGS: LayerConfig[] = [
   { id: 'sener_gasoductos', name: 'SENER/CNIH Red Gasoductos (WMS)', file: '', color: '#FFB000' },
   { id: 'batimetria',       name: 'Contornos Batimétricos GEBCO 2024',file: '/data/batimetria_golfo.geojson', color: '#38BDF8' },
   { id: 'h3_riesgo',        name: 'Malla H3 IERC (Res 8/9)',          file: '/data/grilla_h3_riesgo.geojson', color: '#F59E0B' },
+  { id: 'gfw_fishing',      name: 'GFW Esfuerzo Pesquero (H3, 9960 celdas)', file: '/data/gfw_fishing_h3.geojson', color: '#6366F1' },
   { id: 'pangas',           name: 'PANGAS Multiespecie (4,241)',      file: '/data/zpesca_pangas_sample.geojson', color: '#8D6E63' },
   { id: 'buceo',            name: 'Pesca por Buceo (249)',            file: '/data/zpesca_buceo_sample.geojson', color: '#E91E63' },
   { id: 'chinchorro',       name: 'Chinchorro de Línea (2,209)',      file: '/data/zpesca_chinchorro_sample.geojson', color: '#C0392B' },
@@ -166,6 +175,7 @@ async function loadLayer(id: string, file: string): Promise<any> {
 
 export default function RiskMap() {
   const [layersData, setLayersData]     = useState<Record<string, any>>({})
+  const [confidenceThreshold, setConfidenceThreshold] = useState<number>(0.0)
   const [activeLayers, setActiveLayers] = useState<Record<string, boolean>>({
     proyectos_gnl: true,
     poligonos_saguaro: true,
@@ -180,6 +190,7 @@ export default function RiskMap() {
     manta: false,
     trampa: false,
     riqueza: true,
+    gfw_fishing: false,
   })
 
   const [loaded, setLoaded] = useState(false)
@@ -190,7 +201,9 @@ export default function RiskMap() {
 
   useEffect(() => {
     // Load all layers in parallel using Promise.all
-    const layerPromises = LAYER_CONFIGS
+    // Skip gfw_fishing initially since it's large (2.3 MB) and disabled by default
+    const layersToLoad = LAYER_CONFIGS.filter(cfg => cfg.id !== 'gfw_fishing')
+    const layerPromises = layersToLoad
       .map(async cfg => {
         try {
           const geoJson = await loadLayer(cfg.id, cfg.file)
@@ -208,6 +221,22 @@ export default function RiskMap() {
       })
       setLayersData(newLayers)
     })
+
+    // Lazy load gfw_fishing when user enables it
+    const loadGfwFishing = async () => {
+      const cfg = LAYER_CONFIGS.find(c => c.id === 'gfw_fishing')
+      if (cfg) {
+        try {
+          const geoJson = await loadLayer(cfg.id, cfg.file)
+          setLayersData(prev => ({ ...prev, gfw_fishing: geoJson }))
+        } catch (err) {
+          console.error('Error loading gfw_fishing:', err)
+        }
+      }
+    }
+
+    // Store loader for later use
+    ;(window as any).loadGfwFishing = loadGfwFishing
 
     import('leaflet').then(L => {
       (window as any).L = L
@@ -243,6 +272,10 @@ export default function RiskMap() {
 
   const toggleLayer = (id: string) => {
     setActiveLayers(prev => ({ ...prev, [id]: !prev[id] }))
+    // Lazy load gfw_fishing on first enable
+    if (id === 'gfw_fishing' && !layersData.gfw_fishing) {
+      ;(window as any).loadGfwFishing?.()
+    }
   }
 
   const focusProyectos = () => {
@@ -366,6 +399,43 @@ export default function RiskMap() {
                   </div>
                 </button>
               ))}
+            </div>
+          </div>
+
+          {/* Spatial Confidence Filter Panel */}
+          <div style={{
+            background: 'var(--color-surface)',
+            border: '1px solid var(--color-ocean)',
+            padding: '1rem',
+            fontFamily: 'var(--font-mono)',
+            borderRadius: 0,
+          }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+              <span style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--color-ocean)', letterSpacing: '0.05em' }}>
+                &gt; FILTRO CONFIANZA ESPACIAL
+              </span>
+              <span style={{ fontSize: '0.75rem', fontWeight: 800, color: confidenceThreshold > 0 ? 'var(--color-accent)' : 'var(--color-text-muted)' }}>
+                ≥ {(confidenceThreshold * 100).toFixed(0)}%
+              </span>
+            </div>
+            
+            <input
+              type="range"
+              min="0.0"
+              max="0.95"
+              step="0.05"
+              value={confidenceThreshold}
+              onChange={(e) => setConfidenceThreshold(parseFloat(e.target.value))}
+              style={{
+                width: '100%',
+                accentColor: 'var(--color-ocean)',
+                cursor: 'pointer',
+              }}
+            />
+            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.62rem', color: 'var(--color-text-muted)', marginTop: '4px' }}>
+              <span>0% (Todos)</span>
+              <span>50% (Media)</span>
+              <span>95% (Alta)</span>
             </div>
           </div>
 
@@ -547,6 +617,52 @@ export default function RiskMap() {
                   />
                 )}
 
+                {/* Layer GFW Fishing Effort H3 */}
+                {activeLayers.gfw_fishing && layersData.gfw_fishing && (
+                  <GeoJSON
+                    key="gfw_fishing"
+                    data={layersData.gfw_fishing}
+                    pointToLayer={(feature, latlng) => {
+                      const L = getLeaflet()
+                      if (!L) return null
+                      const hours = feature.properties?.fishing_hours || 0
+                      const intensity = Math.min(hours / 100, 1)
+                      const radius = 3 + intensity * 5
+                      return L.circleMarker(latlng, {
+                        radius,
+                        fillColor: '#6366F1',
+                        fillOpacity: 0.3 + intensity * 0.5,
+                        color: '#000000',
+                        weight: 0.5,
+                        opacity: 0.6,
+                      })
+                    }}
+                    onEachFeature={(feature, layer) => {
+                      const p = feature.properties ?? {}
+                      layer.bindPopup(
+                        `<div style="min-width: 240px; font-family: 'IBM Plex Mono', monospace;">
+                          <div style="font-weight: 700; font-size: 0.8125rem; color: #FFFFFF; border-bottom: 1px solid #333; padding-bottom: 4px; margin-bottom: 8px;">
+                            GFW Esfuerzo Pesquero (H3)
+                          </div>
+                          <div style="font-size: 0.75rem; color: #AAAAAA; margin-bottom: 6px;">
+                            <b>H3 CELL:</b> ${p.h3_cell}<br/>
+                            <b>HORAS PESCA:</b> ${Number(p.fishing_hours).toFixed(2)}<br/>
+                            <b>HORAS TOTALES:</b> ${Number(p.hours).toFixed(2)}<br/>
+                            <b>FLAG:</b> ${p.flag}<br/>
+                            <b>ARTES:</b> ${p.geartype}<br/>
+                            <b>AÑO:</b> ${p.year}<br/>
+                            <b>MES:</b> ${p.month}
+                          </div>
+                          <div style="font-size: 0.6875rem; color: #666666; border-top: 1px dashed #333; padding-top: 6px;">
+                            FUENTE: GFW Fleet Daily (Zenodo) / H3 Res 8 / 2016-2020
+                          </div>
+                        </div>`,
+                        { maxWidth: 300 }
+                      )
+                    }}
+                  />
+                )}
+
                 {/* Layers Pesqueras PANGAS */}
                 {['pangas', 'buceo', 'chinchorro', 'redes', 'manta', 'trampa', 'riqueza'].map(id => {
                   const cfg = LAYER_CONFIGS.find(c => c.id === id)
@@ -593,27 +709,32 @@ export default function RiskMap() {
                 {/* Layer Malla H3 IERC */}
                 {activeLayers.h3_riesgo && layersData.h3_riesgo && (
                   <GeoJSON
-                    key="h3_riesgo"
+                    key={`h3_riesgo_conf_${confidenceThreshold}`}
                     data={layersData.h3_riesgo}
                     style={(feat) => {
                       const score = feat?.properties?.ierc_score || 50
+                      const conf = feat?.properties?.confidence_score ?? 0.85
+                      const isFiltered = confidenceThreshold > 0 && conf < confidenceThreshold
+
                       return {
-                        fillColor: getRiskColor(score),
-                        fillOpacity: 0.35,
-                        color: getRiskColor(score),
-                        weight: 0.5,
-                        opacity: 0.8
+                        fillColor: isFiltered ? '#1A1A1A' : getRiskColor(score),
+                        fillOpacity: isFiltered ? 0.05 : 0.35,
+                        color: isFiltered ? '#333333' : getRiskColor(score),
+                        weight: isFiltered ? 0.2 : 0.5,
+                        opacity: isFiltered ? 0.2 : 0.8
                       }
                     }}
                     onEachFeature={(feat, layer) => {
                       const p = feat.properties || {}
+                      const conf = p.confidence_score ?? 0.85
                       layer.bindPopup(
                         `<div style="font-family: monospace; font-size: 0.75rem;">
-                          <b>CELDA H3:</b> ${p.h3_index}<br/>
-                          <b>SCORE IERC:</b> <strong style="color: ${getRiskColor(p.ierc_score)}">${p.ierc_score}</strong> (${p.nivel_riesgo})<br/>
-                          <b>AMENAZA:</b> ${p.amenaza_score}<br/>
-                          <b>EXPOSICIÓN:</b> ${p.exposicion_score}<br/>
-                          <b>DIST. PROYECTO MÁS CERCANO:</b> ${p.distancia_proyecto_mas_cercano_km} km
+                          <b>CELDA H3:</b> ${p.h3_index || p.h3_cell}<br/>
+                          <b>SCORE IERC:</b> <strong style="color: ${getRiskColor(p.ierc_score)}">${p.ierc_score}</strong> (${p.nivel_riesgo || 'N/A'})<br/>
+                          <b>CONFIANZA ESPACIAL:</b> <span style="color: ${conf >= 0.7 ? '#27AE60' : '#F39C12'};">${(conf * 100).toFixed(0)}%</span><br/>
+                          <b>AMENAZA:</b> ${p.amenaza_score || 'N/A'}<br/>
+                          <b>EXPOSICIÓN:</b> ${p.exposicion_score || 'N/A'}<br/>
+                          <b>DIST. PROYECTO MÁS CERCANO:</b> ${p.distancia_proyecto_mas_cercano_km ?? 'N/A'} km
                         </div>`
                       )
                     }}

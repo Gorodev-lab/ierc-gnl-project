@@ -17,6 +17,15 @@ from src.utils.standardize import standardize_columns
 from src.utils.logging import setup_logging
 from config import get_causanatura_dir
 
+# Optional government API connector for live data
+try:
+    from ..connectors.government_api import GovernmentDataConnector, create_government_connector
+    GOVERNMENT_API_AVAILABLE = True
+except ImportError:
+    GOVERNMENT_API_AVAILABLE = False
+    GovernmentDataConnector = None
+    create_government_connector = None
+
 logger = setup_logging(__name__)
 
 
@@ -45,17 +54,35 @@ class ASEAMIASIngester(BaseIngester):
         ]
     
     def extract(self) -> Iterator[pd.DataFrame]:
-        """Extrae y consolida datos de todos los archivos fuente."""
+        """Extrae y consolida datos: live government APIs primero, fallback a archivos locales."""
         
         all_dfs = []
         
+        # Try live government data first if connector available
+        if GOVERNMENT_API_AVAILABLE and create_government_connector is not None:
+            try:
+                logger.info("Intentando obtener datos live desde APIs gubernamentales...")
+                connector = create_government_connector(timeout=15)
+                live_df = connector.get_consolidated_projects_df()
+                
+                if not live_df.empty:
+                    logger.info(f"Datos live obtenidos: {len(live_df)} registros")
+                    live_df['source_file'] = 'government_api_live'
+                    live_df['source_type'] = 'government_live'
+                    all_dfs.append(live_df)
+                else:
+                    logger.info("APIs gubernamentales no devolvieron datos, usando fallback local")
+            except Exception as e:
+                logger.warning(f"Error accediendo a APIs gubernamentales: {e}, usando fallback local")
+        
+        # Fallback to local files
         for file_name in self.files:
             file_path = self.source_dir / file_name
             if not file_path.exists():
                 logger.warning(f"Archivo no encontrado: {file_path}")
                 continue
             
-            logger.info(f"Leyendo {file_path.name}")
+            logger.info(f"Leyendo {file_path.name} (fallback local)")
             df = pd.read_csv(file_path)
             
             # Añadir metadatos de fuente
@@ -65,19 +92,22 @@ class ASEAMIASIngester(BaseIngester):
             all_dfs.append(df)
         
         if not all_dfs:
-            logger.warning("No se encontraron datos en archivos fuente")
+            logger.warning("No se encontraron datos en ninguna fuente")
             return
         
         # Consolidar
         consolidated = pd.concat(all_dfs, ignore_index=True)
         
-        # Deduplicar por proyecto_id manteniendo el más reciente
+        # Deduplicar por proyecto_id manteniendo el más reciente (live data priority)
         if 'proyecto_id' in consolidated.columns:
-            consolidated = consolidated.sort_values('source_file').drop_duplicates(
-                subset=['proyecto_id'], keep='last'
-            )
+            # Priorizar live data (source_type='government_live') sobre archivos locales
+            source_priority = {'government_live': 0, 'consolidated': 1, 'asea': 2, 'cenagas': 3, 'sener': 4, 'unknown': 5}
+            consolidated['_source_priority'] = consolidated['source_type'].map(lambda x: source_priority.get(x, 5))
+            consolidated = consolidated.sort_values('_source_priority').drop_duplicates(
+                subset=['proyecto_id'], keep='first'
+            ).drop(columns=['_source_priority'])
         
-        logger.info(f"Consolidados {len(consolidated)} proyectos únicos")
+        logger.info(f"Consolidados {len(consolidated)} proyectos únicos (live + fallback)")
         yield consolidated
     
     def _classify_source(self, file_name: str) -> str:

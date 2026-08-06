@@ -46,7 +46,8 @@ class NASAOceanColorIngester(BaseIngester):
             source_dir = str(get_raw_dir("nasa"))
 
         self.source_dir = Path(source_dir)
-        self.chunk_size = chunk_size or {"time": 1, "lat": 500, "lon": 500}
+        # Disable chunking by default to avoid dask dependency
+        self.chunk_size = None
 
         # Mapeo de variable a patrón de archivo
         self.file_patterns = {
@@ -100,8 +101,11 @@ class NASAOceanColorIngester(BaseIngester):
     def _process_netcdf_file(self, file_path: Path, year: int, month: int) -> pd.DataFrame:
         """Procesa un archivo NetCDF individual y agrega por H3 cell."""
 
-        # Abrir con chunking para memoria
-        ds = xr.open_dataset(file_path, chunks=self.chunk_size, engine='netcdf4')
+        # Abrir dataset - sin chunking por defecto (evita dependencia dask)
+        if self.chunk_size:
+            ds = xr.open_dataset(file_path, chunks=self.chunk_size, engine='netcdf4')
+        else:
+            ds = xr.open_dataset(file_path, engine='netcdf4')
 
         # Verificar variable
         if self.variable not in ds.data_vars:

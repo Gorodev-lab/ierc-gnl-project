@@ -51,3 +51,5 @@ lakehouse/**/*.csv
 lakehouse/curated/*.csv
 
 
+\ndocs/research/phase2/shapefiles_ca_pipefish/
+\ndocs/research/phase2/shapefiles_ca_pipefish/

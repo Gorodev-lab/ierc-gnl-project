@@ -207,6 +207,46 @@ grep -r '/home/gorops/ierc-gnl-project' src/ --include='*.py' | grep -v LEGACY |
 
 ---
 
+## Sesión Extra — 2026-08-06: Limpieza Documentos Redundantes + Scripts Legacy
+
+### Cambios Aplicados
+```bash
+rm DATA_INVENTORY_REPORT.md INVENTARIO_DATOS_IERC_GNL.md INVENTARIO_DATOS_IERC_GNL_v2.1.md \
+   scripts/ierc_monte_carlo.py scripts/ierc_monte_carlo_v2.py scripts/generate_pdf_direct.py
+```
+
+### Archivos Eliminados (6)
+| Archivo | Tamaño | Razón |
+|---------|--------|-------|
+| `DATA_INVENTORY_REPORT.md` | ~15KB | Duplicado en inglés del reporte canónico |
+| `INVENTARIO_DATOS_IERC_GNL.md` | ~12KB | v1.0 desactualizado |
+| `INVENTARIO_DATOS_IERC_GNL_v2.1.md` | ~12KB | Duplicado v2.1 (consolidado en canónico) |
+| `scripts/ierc_monte_carlo.py` | ~8KB | v1 legacy Monte Carlo |
+| `scripts/ierc_monte_carlo_v2.py` | ~8KB | v2 legacy Monte Carlo |
+| `scripts/generate_pdf_direct.py` | 816B | Stub PDF sin uso |
+
+### Métricas Actualizadas
+| Métrica | Antes (2026-08-04) | Después (2026-08-06) | Delta Total |
+|---------|-------------------|---------------------|-------------|
+| Líneas Python (src/) | ~7,100 | ~5,300 | **-1,800 (-25%)** |
+| Archivos docs redundantes | 3 | 0 | **-3** |
+| Scripts legacy Monte Carlo | 2 (v1,v2) | 0 (solo v3) | **-2** |
+| Stubs sin uso | 1 | 0 | **-1** |
+
+### Verificación Post-Limpieza
+```bash
+# Tests
+PYTHONPATH=. ./.venv/bin/python3 -m pytest tests/ -v
+# → 45 passed, 11 warnings in 2.25s ✓
+
+# Next.js Build
+cd dashboard && npm run build
+# → Compiled successfully in 4.3s ✓
+# → 8/8 static pages, /api/export/csv & /api/export/gpkg como ƒ dynamic routes ✓
+```
+
+---
+
 ## Conclusión
 
 La sesión aplicó exitosamente la metodología **Ponytail (lazy senior dev)** al proyecto IERC-GNL:

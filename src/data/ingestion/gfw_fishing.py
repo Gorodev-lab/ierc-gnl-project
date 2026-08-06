@@ -59,7 +59,7 @@ class GFWFishingEffortIngester(BaseIngester):
         self._vessels_cache: Optional[pd.DataFrame] = None
 
         # API configuration
-        self.api_token = api_token or os.getenv("GFW_API_TOKEN")
+        self.api_token = api_token or os.getenv("GFW_API_TOKEN") or os.getenv("GFW_API_KEY")
         self.api_base_url = api_base_url.rstrip('/')
         self._session: Optional[requests.Session] = None
 
@@ -316,7 +316,7 @@ class GFWFishingEffortIngester(BaseIngester):
                 raise GFWAPIError(f"GFW API request failed: {e}")
 
         logger.info(f"GFW API v3 extraction complete: {total_fetched} total entries")
-        return  # Success, exit after working endpoint
+        # return  # BUG: This was causing early exit after first page
 
     def _extract_from_local_files(self) -> Iterator[pd.DataFrame]:
         """Fallback: extraer desde archivos ZIP locales (Zenodo)."""

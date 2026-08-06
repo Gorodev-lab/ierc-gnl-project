@@ -78,6 +78,8 @@ data_sources:
       - "gnl_proyectos_consolidados.csv"
       - "asea_mias_alto_golfo.csv"
     cdc_enabled: true
+    cdc_key_column: "proyecto_id"
+    cdc_hash_columns: ["nombre", "estado", "tipo_proyecto", "lat", "lon", "estatus", "capacidad_mtpa", "longitud_km", "folio_asea", "pdf_url"]
     h3_resolution: 10  # Mayor resolución para infraestructura puntual
   
   bathymetry:

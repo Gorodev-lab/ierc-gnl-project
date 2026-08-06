@@ -1,0 +1,310 @@
+[
+  {
+    "ssvid": "574609138",
+    "name": "ME XI CO",
+    "flag": "VNM",
+    "callsign": "607",
+    "imo": null,
+    "geartypes": [
+      "FISHING"
+    ],
+    "shiptypes": [
+      "FISHING"
+    ],
+    "vessel_id": "6c66dead9-955e-cb91-bb3c-0ef572fd988a"
+  },
+  {
+    "ssvid": "227276480",
+    "name": "MEXICO",
+    "flag": "FRA",
+    "callsign": null,
+    "imo": null,
+    "geartypes": [
+      "PASSENGER"
+    ],
+    "shiptypes": [
+      "PASSENGER"
+    ],
+    "vessel_id": "5bc97effb-b7cb-5b4c-fcc9-3594510e41a5"
+  },
+  {
+    "ssvid": "345110006",
+    "name": "MEXICO",
+    "flag": "MEX",
+    "callsign": "XCMK",
+    "imo": "8511419",
+    "geartypes": [
+      "PASSENGER"
+    ],
+    "shiptypes": [
+      "PASSENGER"
+    ],
+    "vessel_id": "ca2c64345-56f8-d8fd-0cf2-ade7e8da055d"
+  },
+  {
+    "ssvid": "345110009",
+    "name": "MEXICO IV",
+    "flag": "MEX",
+    "callsign": "XCFR",
+    "imo": null,
+    "geartypes": [
+      "PASSENGER"
+    ],
+    "shiptypes": [
+      "PASSENGER"
+    ],
+    "vessel_id": "b7fea0b40-06c4-e8e1-2d58-9972d6020e22"
+  },
+  {
+    "ssvid": "290000",
+    "name": "ME SICO",
+    "flag": null,
+    "callsign": "1234567",
+    "imo": null,
+    "geartypes": [
+      "GEAR"
+    ],
+    "shiptypes": [
+      "GEAR"
+    ],
+    "vessel_id": "385efb57f-f1c4-3b35-cff1-590317f35477"
+  },
+  {
+    "ssvid": "564856000",
+    "name": "MT MAXICO",
+    "flag": "SGP",
+    "callsign": "9V3928",
+    "imo": "8151609",
+    "geartypes": [
+      "BUNKER"
+    ],
+    "shiptypes": [
+      "BUNKER"
+    ],
+    "vessel_id": "a5b5a133c-cdbc-d923-5d7e-316797a6fd07"
+  },
+  {
+    "ssvid": "345110005",
+    "name": "MEXICO V",
+    "flag": "MEX",
+    "callsign": "XCKR",
+    "imo": "9101754",
+    "geartypes": [
+      "PASSENGER"
+    ],
+    "shiptypes": [
+      "PASSENGER"
+    ],
+    "vessel_id": "99c553b1f-f26f-2cbc-3c82-da126bca4d7a"
+  },
+  {
+    "ssvid": "345110004",
+    "name": "MEXICO III",
+    "flag": "MEX",
+    "callsign": null,
+    "imo": "9076284",
+    "geartypes": [
+      "PASSENGER"
+    ],
+    "shiptypes": [
+      "PASSENGER"
+    ],
+    "vessel_id": "4b955034c-ca12-5c2e-8504-7e1148b70b0e"
+  },
+  {
+    "ssvid": "477561757",
+    "name": "ME SICO",
+    "flag": "HKG",
+    "callsign": "1234567",
+    "imo": null,
+    "geartypes": [
+      "TRAWLERS"
+    ],
+    "shiptypes": [
+      "FISHING"
+    ],
+    "vessel_id": "8e6d5398f-f282-29ff-f7a6-0316d45cb987"
+  },
+  {
+    "ssvid": "918273100",
+    "name": null,
+    "flag": null,
+    "callsign": "MEXICO",
+    "imo": null,
+    "geartypes": [
+      "SET_GILLNETS"
+    ],
+    "shiptypes": [
+      "FISHING"
+    ],
+    "vessel_id": "0e3b13b25-5603-22a2-7e71-c98d4dfa6f98"
+  },
+  {
+    "ssvid": "918273100",
+    "name": "DON PASCUAL",
+    "flag": null,
+    "callsign": "MEXICO",
+    "imo": null,
+    "geartypes": [
+      "SET_GILLNETS"
+    ],
+    "shiptypes": [
+      "FISHING"
+    ],
+    "vessel_id": "5a9433770-0b3a-a0b0-2b38-463e53c6f4fb"
+  },
+  {
+    "ssvid": "574703010",
+    "name": "SATAORAOK 27D",
+    "flag": "VNM",
+    "callsign": "MEXICO",
+    "imo": null,
+    "geartypes": [
+      "OTHER"
+    ],
+    "shiptypes": [
+      "OTHER"
+    ],
+    "vessel_id": "c84f8acd7-7016-4919-ad26-69aadaa552b4"
+  },
+  {
+    "ssvid": "178532150",
+    "name": "CRISTO4\\/",
+    "flag": null,
+    "callsign": "MEXICO",
+    "imo": null,
+    "geartypes": [
+      "OTHER"
+    ],
+    "shiptypes": [
+      "OTHER"
+    ],
+    "vessel_id": "2a68d00e0-07b4-7838-d328-b0a6bbdb50fe"
+  },
+  {
+    "ssvid": "696969690",
+    "name": null,
+    "flag": null,
+    "callsign": "MEXICO",
+    "imo": null,
+    "geartypes": [
+      "OTHER"
+    ],
+    "shiptypes": [
+      "OTHER"
+    ],
+    "vessel_id": "43a969090-0470-62d4-206a-ca89c57ffae5"
+  },
+  {
+    "ssvid": "696969690",
+    "name": "LE0NES",
+    "flag": null,
+    "callsign": "MEXICO",
+    "imo": null,
+    "geartypes": [
+      "OTHER"
+    ],
+    "shiptypes": [
+      "OTHER"
+    ],
+    "vessel_id": "f331a85fc-c036-162f-7a4c-3386ab17956f"
+  },
+  {
+    "ssvid": "178532150",
+    "name": "DIOS>DE\\ISRAEL",
+    "flag": null,
+    "callsign": "MEXICO",
+    "imo": null,
+    "geartypes": [
+      "OTHER"
+    ],
+    "shiptypes": [
+      "OTHER"
+    ],
+    "vessel_id": "3cd3db8ea-a642-75be-6925-025678d424d9"
+  },
+  {
+    "ssvid": "178532150",
+    "name": "CAPITAN^JESUS",
+    "flag": null,
+    "callsign": "MEXICO",
+    "imo": null,
+    "geartypes": [
+      "OTHER"
+    ],
+    "shiptypes": [
+      "OTHER"
+    ],
+    "vessel_id": "2a227d322-2912-74e4-71fe-34d51455798b"
+  },
+  {
+    "ssvid": "574703010",
+    "name": "H0ANG 27D",
+    "flag": "VNM",
+    "callsign": "MEXICO",
+    "imo": null,
+    "geartypes": [
+      "OTHER"
+    ],
+    "shiptypes": [
+      "OTHER"
+    ],
+    "vessel_id": "076092abd-d581-3244-064c-c923bda5b2d6"
+  },
+  {
+    "ssvid": "178532150",
+    "name": "DIOS>DE\\ISRAEL",
+    "flag": null,
+    "callsign": "MEXICO",
+    "imo": null,
+    "geartypes": [
+      "OTHER"
+    ],
+    "shiptypes": [
+      "OTHER"
+    ],
+    "vessel_id": "783c4c9d6-6f8d-6512-51c2-bf91d535bab2"
+  },
+  {
+    "ssvid": "574703010",
+    "name": "TUAN71D27",
+    "flag": "VNM",
+    "callsign": "MEXICO",
+    "imo": null,
+    "geartypes": [
+      "OTHER"
+    ],
+    "shiptypes": [
+      "OTHER"
+    ],
+    "vessel_id": "374a4ccc9-9c77-6ef8-0869-05c329cda7e0"
+  },
+  {
+    "ssvid": "696969690",
+    "name": "PUTO TOBAS",
+    "flag": null,
+    "callsign": "MEXICO",
+    "imo": null,
+    "geartypes": [
+      "OTHER"
+    ],
+    "shiptypes": [
+      "OTHER"
+    ],
+    "vessel_id": "92941d50a-ae59-ecb4-3e0d-6df515d3859a"
+  },
+  {
+    "ssvid": "574151281",
+    "name": "MEXIC0",
+    "flag": "VNM",
+    "callsign": "9",
+    "imo": null,
+    "geartypes": [
+      "GEAR"
+    ],
+    "shiptypes": [
+      "GEAR"
+    ],
+    "vessel_id": "859b8be34-484a-5646-9d89-49087ead25d6"
+  }
+]

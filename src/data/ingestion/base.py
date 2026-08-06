@@ -38,6 +38,9 @@ class IngestionConfig:
     compression: str = "zstd"
     batch_size: int = 100000
     validate: bool = True
+    # CDC / exact-once deduplication
+    cdc_key_column: str = ""           # columna clave única (ej. proyecto_id)
+    cdc_hash_columns: List[str] = field(default_factory=list)  # columnas para hash de contenido
 
 
 class BaseIngester:
@@ -106,19 +109,22 @@ class BaseIngester:
 
     def validate_data(self, df: pd.DataFrame) -> Dict[str, Any]:
         """
-        Validaciones básicas de calidad.
+        Validaciones básicas de calidad + schema contract.
 
         Returns:
             Dict con resultados de validación
         """
+        # --- Schema contract validation ---
+        schema_results = self._validate_schema_contract(df)
+
         results = {
             "total_rows": len(df),
             "null_counts": df.isnull().sum().to_dict(),
             "duplicate_rows": int(df.duplicated().sum()),
             "h3_cells_unique": df['h3_cell'].nunique() if 'h3_cell' in df.columns else 0,
             "time_partitions": df['time_partition'].nunique() if 'time_partition' in df.columns else 0,
-            "passed": True,
-            "warnings": []
+            "passed": schema_results["passed"],
+            "warnings": schema_results["warnings"]
         }
 
         # Validaciones específicas
@@ -136,14 +142,72 @@ class BaseIngester:
         # Validar bbox
         if 'lat' in df.columns and 'lon' in df.columns:
             min_lat, min_lon, max_lat, max_lon = self.config.bbox
-            out_of_bbox = (
-                (df['lat'] < min_lat) | (df['lat'] > max_lat) |
-                (df['lon'] < min_lon) | (df['lon'] > max_lon)
-            ).sum()
-            if out_of_bbox > 0:
-                results["warnings"].append(f"{out_of_bbox} filas fuera del bbox del Golfo")
+            try:
+                out_of_bbox = (
+                    (df['lat'] < min_lat) | (df['lat'] > max_lat) |
+                    (df['lon'] < min_lon) | (df['lon'] > max_lon)
+                ).sum()
+                if out_of_bbox > 0:
+                    results["warnings"].append(f"{out_of_bbox} filas fuera del bbox del Golfo")
+            except TypeError:
+                # Columnas lat/lon no son numéricas - ya reportado por schema contract
+                pass
 
         return results
+
+    def _validate_schema_contract(self, df: pd.DataFrame) -> Dict[str, Any]:
+        """Valida DataFrame contra schema registrado en catálogo."""
+        ds_meta = self.catalog.get_dataset(self.config.dataset_name)
+        if not ds_meta or not ds_meta.schema.get("columns"):
+            return {"passed": True, "warnings": []}
+
+        # Solo validar columnas de negocio (no particiones técnicas ni derivadas)
+        # Las columnas técnicas añadidas durante ingesta: h3_cell*, year, month, time_partition, ingestion_timestamp, _cdc_hash
+        technical_cols = {'year', 'month', 'time_partition', 'ingestion_timestamp', '_cdc_hash'}
+        h3_prefix = 'h3_cell'
+
+        expected_cols = [
+            c["name"] if isinstance(c, dict) else c 
+            for c in ds_meta.schema["columns"]
+        ]
+        # Filtrar columnas técnicas del DataFrame para comparar
+        business_cols = [c for c in df.columns if c not in technical_cols and not c.startswith(h3_prefix)]
+        
+        missing = set(expected_cols) - set(business_cols)
+        extra = set(business_cols) - set(expected_cols)
+
+        warnings = []
+        if missing:
+            warnings.append(f"Schema contract: columnas faltantes {missing}")
+        if extra:
+            warnings.append(f"Schema contract: columnas extra no declaradas {extra}")
+
+        # Validar tipos si están definidos
+        type_warnings = []
+        for col_def in ds_meta.schema["columns"]:
+            if isinstance(col_def, dict):
+                expected_type = col_def.get("dtype") or col_def.get("type")
+                if expected_type:
+                    col_name = col_def["name"]
+                    if col_name in df.columns:
+                        actual_type = str(df[col_name].dtype)
+                        # Mapeo pandas dtype -> schema type (incluyendo identidades)
+                        type_map = {
+                            "int64": "int64", "int32": "int32", "int16": "int16", "int8": "int8",
+                            "float64": "float64", "float32": "float32",
+                            "object": "string", "str": "string", "string": "string",
+                            "datetime64[ns]": "timestamp", "datetime64[ns, UTC]": "timestamp",
+                            "bool": "boolean"
+                        }
+                        actual_normalized = type_map.get(actual_type, actual_type).lower()
+                        expected_normalized = expected_type.lower()
+                        if actual_normalized != expected_normalized:
+                            # Solo warn si son tipos fundamentalmente distintos (no float32 vs float64)
+                            if not (expected_normalized in ("float32", "float64") and actual_normalized in ("float32", "float64")):
+                                type_warnings.append(f"{col_name}: esperado {expected_type}, got {actual_type}")
+
+        passed = len(missing) == 0 and len(type_warnings) == 0
+        return {"passed": passed, "warnings": warnings + type_warnings}
 
     def run(self, input_path: Optional[str] = None) -> Dict[str, Any]:
         """
@@ -169,6 +233,9 @@ class BaseIngester:
                 # Transformar
                 transformed = self.transform(batch_df)
 
+                # CDC deduplication (exact-once)
+                transformed = self._deduplicate_by_cdc_hash(transformed)
+
                 # Validar
                 quality_results = self.validate_data(transformed)
 
@@ -190,31 +257,31 @@ class BaseIngester:
                 for warning in quality_results.get("warnings", []):
                     pass
 
-                # Finalizar con éxito
-                self.catalog.finish_ingestion_run(
-                    run_id=self.run_id,
-                    status="success",
-                    records_processed=self.records_processed,
-                    records_inserted=self.records_inserted,
-                    records_updated=self.records_updated,
-                    records_failed=self.records_failed,
-                    quality_results={
-                        "total_batches": batch_idx + 1,
-                        "warnings_count": len(self.errors)
-                    }
-                )
-
-                logger.info(f"Ingesta completada: {self.config.dataset_name} - "
-                           f"{self.records_inserted} registros insertados")
-
-                return {
-                    "status": "success",
-                    "run_id": self.run_id,
-                    "records_processed": self.records_processed,
-                    "records_inserted": self.records_inserted,
-                    "records_updated": self.records_updated,
-                    "records_failed": self.records_failed
+            # Finalizar con éxito (after ALL batches)
+            self.catalog.finish_ingestion_run(
+                run_id=self.run_id,
+                status="success",
+                records_processed=self.records_processed,
+                records_inserted=self.records_inserted,
+                records_updated=self.records_updated,
+                records_failed=self.records_failed,
+                quality_results={
+                    "total_batches": batch_idx + 1,
+                    "warnings_count": len(self.errors)
                 }
+            )
+
+            logger.info(f"Ingesta completada: {self.config.dataset_name} - "
+                       f"{self.records_inserted} registros insertados")
+
+            return {
+                "status": "success",
+                "run_id": self.run_id,
+                "records_processed": self.records_processed,
+                "records_inserted": self.records_inserted,
+                "records_updated": self.records_updated,
+                "records_failed": self.records_failed
+            }
 
         except Exception as e:
             logger.error(f"Error en ingesta {self.config.dataset_name}: {e}")
@@ -237,6 +304,39 @@ class BaseIngester:
         """Genera ruta de partición basada en dataset y datos."""
         # Por defecto: dataset_name/
         return f"{self.config.dataset_name}/"
+
+    # --- CDC / exact-once deduplication ---
+    def _deduplicate_by_cdc_hash(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Elimina filas cuyo hash de contenido ya existe en el lakehouse."""
+        if not self.config.cdc_hash_columns or not self.config.cdc_key_column:
+            return df
+        if df.empty:
+            return df
+
+        # Hash de contenido por fila (vectorizado con pandas)
+        content = df[self.config.cdc_hash_columns].astype(str).agg('|'.join, axis=1)
+        df = df.copy()
+        df['_cdc_hash'] = content.apply(lambda x: hashlib.md5(x.encode()).hexdigest()[:16])
+
+        # Leer hashes existentes del lakehouse (una vez por run)
+        if not hasattr(self, '_existing_hashes'):
+            try:
+                existing = self.storage.read_parquet(
+                    self.config.layer,
+                    self._get_partition_path(df),
+                    columns=[self.config.cdc_key_column, '_cdc_hash']
+                )
+                self._existing_hashes = set(existing['_cdc_hash'].tolist()) if not existing.empty else set()
+            except Exception:
+                self._existing_hashes = set()
+
+        # Filtrar solo filas nuevas
+        new_mask = ~df['_cdc_hash'].isin(list(self._existing_hashes))
+        n_dups = len(df) - int(new_mask.sum())
+        if n_dups:
+            logger.info(f"CDC dedup: {len(df)} filas → {int(new_mask.sum())} nuevas ({n_dups} duplicados)")
+        # Mantener _cdc_hash para persistencia en lakehouse
+        return df.loc[new_mask].reset_index(drop=True)
 
 
 if __name__ == "__main__":
