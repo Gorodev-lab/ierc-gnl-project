@@ -274,13 +274,6 @@ export default function Home() {
               position: 'right',
             },
             {
-              id: 'heatmap',
-              target: '[data-tour="gfw-filters"]',
-              title: 'Heatmap GFW',
-              content: 'Ajusta radio, blur, valor máximo y opacidad mínima del mapa de calor. El contador muestra celdas filtradas / total.',
-              position: 'left',
-            },
-            {
               id: 'terminals',
               target: '[data-tour="terminal-jumps"]',
               title: 'Navegación Rápida',
