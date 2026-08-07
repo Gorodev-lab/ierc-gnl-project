@@ -133,8 +133,8 @@ export default function GasInfraPanel() {
     <div className="section" style={{ borderTop: '1px solid var(--color-border)', paddingTop: '2rem' }}>
       <div className="section-title" style={{ justifyContent: 'space-between' }}>
         <span>INFRAESTRUCTURA GAS NATURAL · SISTRANGAS &amp; CNIH/SENER</span>
-        <span style={{ fontSize: 10, color: 'var(--color-warn)', fontFamily: 'var(--font-mono)', letterSpacing: '0.04em' }}>
-          ORIGEN: {dataSource.toUpperCase()}
+        <span style={{ fontSize: 10, color: dataSource.includes('fallback') || dataSource.includes('Static') ? 'var(--color-text-muted)' : 'var(--color-ok)', fontFamily: 'var(--font-mono)', letterSpacing: '0.04em' }}>
+          {dataSource.includes('fallback') || dataSource.includes('Static') ? '[ DATOS CURADOS v2.3 ]' : `[ ${dataSource.toUpperCase()} ]`}
         </span>
       </div>
 

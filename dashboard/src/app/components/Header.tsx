@@ -20,32 +20,27 @@ export default function Header({
         <div className="system-ticker-bar">
           <div className="system-ticker-item">
             <span className="system-ticker-dot" />
-            <span style={{ color: 'var(--color-text-primary)', fontWeight: 600 }}>SYSTEM: ONLINE</span>
+            <span style={{ color: 'var(--color-text-primary)', fontWeight: 600 }}>ONLINE</span>
           </div>
           <span>|</span>
           <div className="system-ticker-item">
-            <span>GEOPACKAGE:</span>
-            <span style={{ color: 'var(--color-ocean)' }}>ierc_golfo_california.gpkg (v1.1)</span>
+            <span>GPKG:</span>
+            <span style={{ color: 'var(--color-ocean)' }}>v1.1</span>
           </div>
           <span>|</span>
           <div className="system-ticker-item">
             <span>INVENTARIO:</span>
-            <span style={{ color: 'var(--color-accent)', fontWeight: 700 }}>v2.3 · 2026-08-07</span>
+            <span style={{ color: 'var(--color-accent)', fontWeight: 700 }}>v2.3</span>
           </div>
           <span>|</span>
           <div className="system-ticker-item">
-            <span>H3 GRID:</span>
-            <span style={{ color: 'var(--color-accent)', fontVariantNumeric: 'tabular-nums' }}>830,869 CELDAS (RES 8)</span>
+            <span>H3:</span>
+            <span style={{ color: 'var(--color-accent)', fontVariantNumeric: 'tabular-nums' }}>830K CELDAS</span>
           </div>
           <span>|</span>
           <div className="system-ticker-item">
-            <span>TESTS:</span>
-            <span style={{ color: 'var(--color-ok)', fontVariantNumeric: 'tabular-nums' }}>45 PASSING</span>
-          </div>
-          <span>|</span>
-          <div className="system-ticker-item">
-            <span>CI/CD:</span>
-            <span style={{ color: 'var(--color-ok)' }}>5 JOBS [OK]</span>
+            <span>CI:</span>
+            <span style={{ color: 'var(--color-ok)' }}>45 TESTS · 5 JOBS</span>
           </div>
         </div>
 
@@ -180,10 +175,11 @@ export default function Header({
             margin: '0 auto',
             padding: '0.45rem 1.5rem',
             display: 'flex',
-            gap: '2.5rem',
+            gap: '1.75rem',
             overflowX: 'auto',
+            scrollbarWidth: 'none',
             fontFamily: 'var(--font-mono)',
-          }}>
+          } as React.CSSProperties}>
             {[
               { label: 'FUENTES SILVER',    value: '14 DATASETS',      sub: '165 Parquets · ZSTD' },
               { label: 'PRODUCTOS GOLD',    value: '13 ANALÍTICOS',    sub: '6 IERC + 6 gas + 1 env', color: 'var(--color-ok)' },

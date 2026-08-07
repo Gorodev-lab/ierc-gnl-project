@@ -835,12 +835,12 @@ export default function RiskMap() {
 
             {loaded ? (
               <MapContainer
-                center={[25.8, -109.0]}
-                zoom={6}
+                center={[27.5, -111.8]}
+                zoom={5}
                 ref={mapRef}
                 style={{ height: '100%', width: '100%' }}
                 attributionControl={true}
-                whenReady={() => { mapRef.current?.on('zoomend', () => setMapZoom(mapRef.current?.getZoom() ?? 6)) }}
+                whenReady={() => { mapRef.current?.on('zoomend', () => setMapZoom(mapRef.current?.getZoom() ?? 5)) }}
               >
                 <TileLayer
                   attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> | CartoDB'
