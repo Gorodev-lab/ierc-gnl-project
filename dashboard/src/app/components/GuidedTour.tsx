@@ -21,16 +21,30 @@ export default function GuidedTour({ steps, onComplete, storageKey = 'ierc-tour-
   const [currentStep, setCurrentStep] = useState(0)
   const [isOpen, setIsOpen] = useState(false)
   const [targetRect, setTargetRect] = useState<DOMRect | null>(null)
+  const [targetsReady, setTargetsReady] = useState(false)
 
-  // Auto-start on first visit
+  // Wait for all target elements to exist in DOM
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const completed = localStorage.getItem(storageKey)
-      if (!completed) {
-        setTimeout(() => setIsOpen(true), 1000)
+    const checkTargets = () => {
+      const allExist = steps.every(step => document.querySelector(step.target))
+      if (allExist) {
+        setTargetsReady(true)
+      } else {
+        requestAnimationFrame(checkTargets)
       }
     }
-  }, [storageKey])
+    checkTargets()
+  }, [steps])
+
+  // Auto-start on first visit (after targets ready)
+  useEffect(() => {
+    if (typeof window !== 'undefined' && targetsReady) {
+      const completed = localStorage.getItem(storageKey)
+      if (!completed) {
+        setTimeout(() => setIsOpen(true), 500)
+      }
+    }
+  }, [storageKey, targetsReady])
 
   // Update target position on step change
   useEffect(() => {
@@ -53,11 +67,20 @@ export default function GuidedTour({ steps, onComplete, storageKey = 'ierc-tour-
 
   const skip = () => complete()
 
-  if (!isOpen || currentStep >= steps.length) return null
+  if (!isOpen || currentStep >= steps.length || !targetsReady) return null
 
   const step = steps[currentStep]
-  const pos = targetRect
   const position = step.position || 'bottom'
+
+  // Re-query element on each render to handle dynamic DOM (conditional rendering)
+  let pos = targetRect
+  if (!pos) {
+    const el = document.querySelector(steps[currentStep].target)
+    if (el) {
+      pos = el.getBoundingClientRect()
+      setTargetRect(pos)
+    }
+  }
 
   // Calculate portal position
   let portalStyle: React.CSSProperties = { position: 'fixed', zIndex: 9999, left: 0, top: 0 }
