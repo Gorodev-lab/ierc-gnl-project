@@ -1,0 +1,52 @@
+{
+  "source": "cnih_sener",
+  "dataset": "anp_ramsar_cnih",
+  "build_date": "2026-08-07T05:29:34.517555Z",
+  "source_files": [
+    "capas_contextuales.geojson"
+  ],
+  "rows": 2,
+  "columns": [
+    "nombre",
+    "proyecto",
+    "tipo",
+    "longitud_km",
+    "tramo",
+    "permiso",
+    "inicio_de_",
+    "zona_tarifaria",
+    "integrado_sistrangas",
+    "notas",
+    "Chihuahua",
+    "IDD",
+    "OBJECTID",
+    "GlobalID",
+    "Shape__Length",
+    "geometry",
+    "source_dataset",
+    "capacidad",
+    "inversin_m",
+    "empresa",
+    "fecha_de_i",
+    "observacio",
+    "Id",
+    "regin",
+    "servicio",
+    "capacida_1",
+    "id",
+    "tipo_capa",
+    "estatus",
+    "color",
+    "fill_color",
+    "fill_opacity",
+    "line_weight",
+    "dash_array",
+    "descripcion"
+  ],
+  "geometry_type": "Polygon",
+  "crs": "EPSG:4326",
+  "schema_version": "1.0",
+  "by_source": {
+    "capas_contextuales": 2
+  }
+}

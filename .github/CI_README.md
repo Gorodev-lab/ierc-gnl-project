@@ -93,9 +93,45 @@ Este CI valida automáticamente:
 4. **Responsible AI** — Tests de `responsible_ai` (explainability, bias, smooth failing)
 5. **Dashboard** — Build Next.js 16 sin errores de TypeScript/ESLint
 
+## Datasets Silver/Gold Validados por CI
+
+El pipeline valida indirectamente la integridad de:
+
+| Capa Silver | Filas | .meta.json |
+|-------------|-------|------------|
+| CENEGAS inyecciones | 103,596 | ✅ |
+| CENEGAS extracciones | 698,079 | ✅ |
+| CENEGAS tarifas | 378 | ✅ |
+| SENER prontuario | 16 | ✅ |
+| SENER volumen | 186 | ✅ |
+| PROFEPA inspección | 51 | ✅ |
+| SEMARNAT sitios | 481 | ✅ |
+| datos.gob.mx registros | 1 | ✅ |
+| ECC Climabase catálogo | 48 | ✅ |
+| Ductos CNIH | 24 | ✅ |
+| ANP/Ramsar CNIH | 2 | ✅ |
+| GFW fishing effort | 11,652 | ❌ |
+| NASA chlor_a/sst | 2,298,240 c/u | ❌ |
+| ASEA MIAs | 11 | ❌ |
+| GEBCO batimetría | 59,998 | ❌ |
+| PANGAS fishing zones | 263,796 | ❌ |
+
+| Capa Gold | Filas |
+|-----------|-------|
+| IERC risk/features/MC/adaptive/multiplicative/confidence | 830,869 c/u |
+| Gas master inyecciones | 33 |
+| Gas master extracciones | 225 |
+| Gas injection yearly | 315 |
+| Gas extraction yearly | 2,307 |
+| Tarifas zone summary | 63 |
+| Env risk by nodo | 33 |
+
 ## Referencias
 
-- **Inventario completo:** `INVENTARIO_DATOS_IERC_GNL_v2.1.md`
+- **Inventario completo v2.3:** `REPORTE_INVENTARIO_DATOS_IERC_GNL_v2.3_ENRIQUE_GOROSAVE.md`
+- **Inventario v2.2:** `REPORTE_INVENTARIO_DATOS_IERC_GNL_v2.2_ENRIQUE_GOROSAVE.md`
 - **GeoPackage Meta 1:** `REPORTE_INVENTARIO_GEOPACKAGE.md`
 - **Metodología:** `docs/metodologia/Nota_Metodologica_Ajustada_JCB_EG.md`
 - **Matriz de vacíos:** `docs/metodologia/Inventario_y_Matriz_Vacios_Geoespaciales_EG.md`
+- **Estrategia cosecha datos.gob.mx:** `docs/ESTRATEGIA_COSECHA_DATASETS.md`
+- **Estrategia GFW:** `docs/GFW_MAP_STRATEGY.md`

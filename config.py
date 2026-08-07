@@ -110,3 +110,21 @@ def asea_raw_dir() -> Path:
 
 def h3_output_dir() -> Path:
     return get_lakehouse_dir("silver")
+
+def cenegas_raw_dir() -> Path:
+    return get_raw_dir("cenegas")
+
+def sener_raw_dir() -> Path:
+    return get_raw_dir("sener")
+
+def gasoductos_raw_dir() -> Path:
+    return get_raw_dir("gasoductos")
+
+def profepa_raw_dir() -> Path:
+    return get_raw_dir("profepa")
+
+def semarnat_raw_dir() -> Path:
+    return get_raw_dir("semarnat")
+
+def ecc_raw_dir() -> Path:
+    return get_raw_dir("ecc_climabase")

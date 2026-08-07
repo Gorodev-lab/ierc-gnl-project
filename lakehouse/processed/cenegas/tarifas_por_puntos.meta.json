@@ -1,0 +1,23 @@
+{
+  "source": "cenegas",
+  "dataset": "tarifas_por_puntos",
+  "download_date": "2026-08-07T07:14:32.669464Z",
+  "source_file": "CENEGAS_1_Tarifas_por_puntos.csv",
+  "rows": 378,
+  "columns": [
+    "zona_inyeccion",
+    "zona_extraccion",
+    "capacidad_base_firme",
+    "uso_base_firme",
+    "servicio_base_interrumpible",
+    "fecha_inicio",
+    "fecha_fin"
+  ],
+  "schema_version": "1.0",
+  "date_range": {
+    "min": "2019-01-01T00:00:00",
+    "max": "2025-12-31T00:00:00"
+  },
+  "zonas_inyeccion": 7,
+  "zonas_extraccion": 9
+}

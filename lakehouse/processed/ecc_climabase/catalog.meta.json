@@ -1,0 +1,40 @@
+{
+  "source": "ecc_climabase",
+  "dataset": "catalog",
+  "build_date": "2026-08-07T00:59:50.397627Z",
+  "source_path": "/home/gorops/ierc-gnl-project/data/raw/ecc_climabase/ECC_Climabase",
+  "rows": 48,
+  "columns": [
+    "variable",
+    "variable_dir",
+    "month",
+    "period",
+    "file_name",
+    "file_path",
+    "size_bytes",
+    "size_mb"
+  ],
+  "schema_version": "1.0",
+  "variables": [
+    "precipitation_mm",
+    "tmax_celsius",
+    "tmed_celsius",
+    "tmin_celsius"
+  ],
+  "months_covered": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "total_size_mb": 327.52,
+  "notes": "ECC Climabase - Monthly climate normals 1950-2000 for Mexico (Hijmans et al.). Precipitation in mm, temperatures in °C. GeoTIFF format."
+}

@@ -9,15 +9,16 @@ export async function GET(request: NextRequest) {
     const limit = limitParam ? parseInt(limitParam, 10) : 1000
 
     const validLayers = [
-      'proyectos_gnl',
-      'gasoductos_infraestructura_gnl',
-      'localidades_estudio_ierc',
-      'anp_habitats_criticos',
-      'zonas_pesqueras_pangas',
-      'riqueza_relativa_pesquera',
-      'grilla_h3_riesgo',
-      'ierc_features_summary',
-    ]
+        'proyectos_gnl',
+        'gasoductos_infraestructura_gnl',
+        'localidades_estudio_ierc',
+        'anp_habitats_criticos',
+        'zonas_pesqueras_pangas',
+        'riqueza_relativa_pesquera',
+        'grilla_h3_riesgo',
+        'ierc_features_summary',
+        'ductos_cnih',
+      ]
 
     if (!validLayers.includes(layer)) {
       return NextResponse.json(

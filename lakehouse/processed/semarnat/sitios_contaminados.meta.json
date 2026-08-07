@@ -1,0 +1,30 @@
+{
+  "source": "semarnat",
+  "dataset": "sitios_contaminados",
+  "download_date": "2026-08-07T00:17:16.440789Z",
+  "source_file": "sitios_contaminados_tipo_contaminante.csv",
+  "rows": 481,
+  "columns": [
+    "entidad_federativa",
+    "municipio",
+    "anio",
+    "tipo_contaminante",
+    "nombre_contaminante",
+    "numero_sitios"
+  ],
+  "schema_version": "1.0",
+  "date_range": {
+    "min": 2015,
+    "max": 2024
+  },
+  "entidades": 32,
+  "municipios": 249,
+  "total_sitios": 547,
+  "tipos_contaminante": [
+    "Hidrocarburos, fracción ligera",
+    "Hidrocarburos, fracción media",
+    "Hidrocarburos, fracción pesada",
+    "Hidrocarburos, más de una fracción",
+    "Otros contaminantes distintos a hidrocarburos"
+  ]
+}

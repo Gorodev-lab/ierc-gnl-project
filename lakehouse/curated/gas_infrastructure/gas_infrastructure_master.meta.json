@@ -1,0 +1,29 @@
+{
+  "source": "curated",
+  "dataset": "gas_infrastructure_master",
+  "build_date": "2026-08-07T00:54:33.583831Z",
+  "tables": {
+    "master_inyecciones": {
+      "rows": 33,
+      "cols": 14
+    },
+    "master_extracciones": {
+      "rows": 225,
+      "cols": 15
+    },
+    "yearly_injection": {
+      "rows": 315,
+      "cols": 8
+    },
+    "yearly_extraction": {
+      "rows": 2307,
+      "cols": 9
+    },
+    "zone_tarifas": {
+      "rows": 63,
+      "cols": 5
+    }
+  },
+  "schema_version": "1.0",
+  "notes": "Inyecciones (Vxxx) and Extracciones (Exxx) are separate punto networks. Link via tariff zones. Ductos/infrastructure geospatial not yet integrated."
+}

@@ -12,7 +12,7 @@
 | Documento | Descripción | Versión |
 |-----------|-------------|---------|
 | **[README.md](README.md)** | Resumen ejecutivo, arquitectura, instalación, cita oficial, CI/CD | v2.1 |
-| **[REPORTE_INVENTARIO_DETALLADO_IERC_GNL.md](REPORTE_INVENTARIO_DETALLADO_IERC_GNL.md)** | **Reporte oficial detallado** — Inventario SILVER/GOLD + capas dashboard + cadena ingesta y auditoría + Responsible AI — *Autor: Enrique Gorosave Meza* | v2.1 (2026-08-06) |
+| **[REPORTE_INVENTARIO_DATOS_IERC_GNL_v2.1_ENRIQUE_GOROSAVE.md](REPORTE_INVENTARIO_DATOS_IERC_GNL_v2.1_ENRIQUE_GOROSAVE.md)** | **Reporte oficial detallado** — Inventario SILVER/GOLD + capas dashboard + cadena ingesta y auditoría + Responsible AI — *Autor: Enrique Gorosave Meza* | v2.1 (2026-08-06) |
 | **[INVENTARIO_DATOS_IERC_GNL_v2.1.md](INVENTARIO_DATOS_IERC_GNL_v2.1.md)** | Inventario técnico SILVER/GOLD + cadena ingesta + auditoría + Responsible AI | v2.1 (2026-08-06) |
 | **[REPORTE_INVENTARIO_GEOPACKAGE.md](REPORTE_INVENTARIO_GEOPACKAGE.md)** | Metadata entregable GeoPackage Meta 1 (OGC v1.1) | v1.1 |
 | **[DATA_INVENTORY_REPORT.md](DATA_INVENTORY_REPORT.md)** | Inventario completo SILVER/GOLD + cadena ingesta + auditoría | v2.0 (versión anterior) |
@@ -105,8 +105,9 @@ PYTHONPATH=. ./.venv/bin/python3 -m pytest tests/unit/ -v
 | `dashboard/src/app/components/MiaInspectorModal.tsx` | Visor planos MIA (macro/micro/distribución) |
 | `dashboard/src/app/components/Header.tsx` | System ticker, brand, metrics strip |
 | `dashboard/src/app/components/RiskBadge.tsx` | Badge nivel de riesgo |
+| `dashboard/src/app/components/ExportModal.tsx` | Export GeoJSON/CSV/GeoPackage |
 
-**Estándar:** Esoteria Design System v1.0 — IBM Plex Mono, `#0A0A0A`, `border-radius: 0`, sin sombras.
+**Estándar:** Esoteria Design System v1.1 — IBM Plex Mono, `#0A0A0A`, `border-radius: 0`, sin sombras.
 
 ---
 

@@ -1,0 +1,22 @@
+{
+  "source": "sener",
+  "dataset": "volumen_almacenamiento_gas",
+  "download_date": "2026-08-07T00:15:34.860293Z",
+  "source_file": "bd_volumen_gas_natural_ta.csv",
+  "rows": 186,
+  "columns": [
+    "periodo_reporte",
+    "permiso",
+    "permisionario",
+    "actividad",
+    "unidad",
+    "energia_gj"
+  ],
+  "schema_version": "1.0",
+  "date_range": {
+    "min": "2026-01-01T00:00:00",
+    "max": "2026-03-01T00:00:00"
+  },
+  "permisionarios": 62,
+  "total_gj": 1810248407.19
+}

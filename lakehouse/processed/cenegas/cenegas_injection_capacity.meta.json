@@ -1,0 +1,26 @@
+{
+  "source": "cenagas",
+  "dataset": "capacidad_historica_inyecciones",
+  "download_date": "2026-08-07T00:17:51.147558Z",
+  "source_file": "cenegas_3_capacidad_historica_de_inyecciones_sistrangas.csv",
+  "rows": 103596,
+  "columns": [
+    "punto",
+    "descripcion",
+    "cve_ent",
+    "nom_ent",
+    "cve_mun",
+    "nom_mun",
+    "origen",
+    "cantidad_inyectada_gj",
+    "fecha",
+    "unidad_medida"
+  ],
+  "schema_version": "1.0",
+  "date_range": {
+    "min": "2015-01-01T00:00:00",
+    "max": "2025-01-31T00:00:00"
+  },
+  "puntos": 30,
+  "total_gj": 18819236584.763
+}

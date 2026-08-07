@@ -404,6 +404,67 @@ def get_summary_stats():
     }
 
 
+@app.get("/gas-infra")
+def get_gas_infra():
+    """Obtiene los datos de infraestructura de gas e inyecciones desde Parquets de DuckDB."""
+    try:
+        inyecciones_path = GOLD / "gas_infrastructure" / "gas_infrastructure_master_inyecciones.parquet"
+        ductos_path = SILVER / "gasoductos" / "ductos_cnih.parquet"
+        env_risk_path = GOLD / "env_risk" / "env_risk_by_nodo.parquet"
+
+        # 1. Inyecciones SISTRANGAS
+        inyecciones = []
+        if inyecciones_path.exists():
+            df_iny = conn.execute("""
+                SELECT punto, descripcion, total_gj_inyectado_all, avg_daily_gj_inyectado, days_with_data_iny, origen_principal_iny
+                FROM read_parquet(?)
+                WHERE total_gj_inyectado_all IS NOT NULL AND total_gj_inyectado_all > 0
+                ORDER BY total_gj_inyectado_all DESC
+                LIMIT 10
+            """, [str(inyecciones_path)]).fetchdf()
+            # Reemplazar NaN por None para evitar errores JSON
+            df_iny = df_iny.replace({np.nan: None})
+            inyecciones = df_iny.to_dict(orient="records")
+
+        # 2. Ductos CNIH
+        ductos = []
+        if ductos_path.exists():
+            df_duc = conn.execute("""
+                SELECT nombre, longitud_km, empresa, tipo, integrado_sistrangas, fuente_capa
+                FROM read_parquet(?)
+                ORDER BY longitud_km DESC
+                LIMIT 15
+            """, [str(ductos_path)]).fetchdf()
+            df_duc = df_duc.replace({np.nan: None})
+            # Convertir booleanos a booleanos puros
+            if 'integrado_sistrangas' in df_duc.columns:
+                df_duc['integrado_sistrangas'] = df_duc['integrado_sistrangas'].astype(bool)
+            ductos = df_duc.to_dict(orient="records")
+
+        # 3. Riesgo Ambiental
+        env_risk = []
+        if env_risk_path.exists():
+            df_risk = conn.execute("""
+                SELECT punto, descripcion, total_sitios, env_risk_score, total_gj_all_years
+                FROM read_parquet(?)
+                WHERE env_risk_score IS NOT NULL AND env_risk_score > 0
+                ORDER BY env_risk_score DESC
+                LIMIT 10
+            """, [str(env_risk_path)]).fetchdf()
+            df_risk = df_risk.replace({np.nan: None})
+            env_risk = df_risk.to_dict(orient="records")
+
+        return {
+            "status": "success",
+            "inyecciones": inyecciones,
+            "ductos": ductos,
+            "env_risk": env_risk
+        }
+    except Exception as e:
+        logger.error(f"Error in /gas-infra: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)

@@ -1,0 +1,15 @@
+{
+  "source": "profepa",
+  "dataset": "acciones_inspeccion_iao_zofemat",
+  "download_date": "2026-08-07T00:16:39.054562Z",
+  "source_file": "accionesInspeccioniazofemat.csv",
+  "rows": 51,
+  "columns": [
+    "entidad",
+    "materia",
+    "inspecciones"
+  ],
+  "schema_version": "1.0",
+  "entidades": 33,
+  "total_inspecciones": 1278
+}

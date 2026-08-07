@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import Header from './components/Header'
 import RiskMap from './components/RiskMap'
 import ZoneCards from './components/ZoneCards'
+import GasInfraPanel from './components/GasInfraPanel'
 import SpeciesPanel from './components/SpeciesPanel'
 import MethodologyPanel from './components/MethodologyPanel'
 import CoverageModal from './components/CoverageModal'
@@ -94,6 +95,9 @@ export default function Home() {
 
       {/* Terminales & Polígonos Pesqueros PANGAS */}
       <ZoneCards />
+
+      {/* Infraestructura Gas Natural — SISTRANGAS & CNIH/SENER */}
+      <GasInfraPanel />
 
       {/* Especies & Biodiversidad */}
       <SpeciesPanel />

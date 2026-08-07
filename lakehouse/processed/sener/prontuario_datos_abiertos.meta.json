@@ -1,0 +1,24 @@
+{
+  "source": "sener",
+  "dataset": "prontuario_datos_abiertos",
+  "download_date": "2026-08-07T00:15:03.194871Z",
+  "source_file": "prontuario_datos_abiertos.csv",
+  "rows": 16,
+  "columns": [
+    "periodo_reporte",
+    "producto",
+    "unidad",
+    "produccion",
+    "importacion",
+    "exportacion",
+    "demanda"
+  ],
+  "schema_version": "1.0",
+  "date_range": {
+    "min": "2026-01-01T00:00:00",
+    "max": "2026-02-01T00:00:00"
+  },
+  "productos": 8,
+  "total_produccion_mt": 4784.274,
+  "total_importacion_mt": 12115.563
+}

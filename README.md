@@ -17,7 +17,7 @@ El **Índice Espacial de Riesgo Socioeconómico para Comunidades (IERC-GNL)** es
 
 ### Equipo Técnico del Proyecto
 - **Juan Carlos Barrera (JCB):** Consultor Senior / Especialista Pesquero y Socioambiental
-- **Enrique Gorosave (EG):** Analista de Datos y SIG
+- **Enrique Gorosave Meza (EG):** Analista de Datos y SIG
 
 ---
 
@@ -25,8 +25,9 @@ El **Índice Espacial de Riesgo Socioeconómico para Comunidades (IERC-GNL)** es
 
 | Reporte | Descripción | Autor | Versión |
 |---------|-------------|-------|---------|
-| **[REPORTE_INVENTARIO_DETALLADO_IERC_GNL.md](REPORTE_INVENTARIO_DETALLADO_IERC_GNL.md)** | Inventario completo SILVER/GOLD + capas dashboard + cadena ingesta y auditoría + Responsible AI | Enrique Gorosave Meza | v2.1 (2026-08-06) |
-| **[INVENTARIO_DATOS_IERC_GNL_v2.1.md](INVENTARIO_DATOS_IERC_GNL_v2.1.md)** | Inventario técnico SILVER/GOLD + cadena ingesta + auditoría + Responsible AI | Enrique Gorosave Meza | v2.1 (2026-08-06) |
+| **[REPORTE_INVENTARIO_DATOS_IERC_GNL_v2.3_ENRIQUE_GOROSAVE.md](REPORTE_INVENTARIO_DATOS_IERC_GNL_v2.3_ENRIQUE_GOROSAVE.md)** | **Reporte oficial detallado v2.3** — Inventario SILVER (14 fuentes, 165 parquets, conteos verificados) + capas dashboard (15) + ductos CNIH/SENER + cadena ingesta y auditoría + Responsible AI | Enrique Gorosave Meza | v2.3 (2026-08-07) |
+| **[REPORTE_INVENTARIO_DATOS_IERC_GNL_v2.2_ENRIQUE_GOROSAVE.md](REPORTE_INVENTARIO_DATOS_IERC_GNL_v2.2_ENRIQUE_GOROSAVE.md)** | Reporte v2.2 — Inventario + capas dashboard + ingesta + auditoría | Enrique Gorosave Meza | v2.2 (2026-08-07) |
+| **[REPORTE_INVENTARIO_DETALLADO_IERC_GNL.md](REPORTE_INVENTARIO_DETALLADO_IERC_GNL.md)** | Inventario técnico SILVER/GOLD + cadena ingesta + auditoría + Responsible AI | Enrique Gorosave Meza | v2.1 (2026-08-06) |
 | **[REPORTE_INVENTARIO_GEOPACKAGE.md](REPORTE_INVENTARIO_GEOPACKAGE.md)** | Metadata entregable GeoPackage Meta 1 | Enrique Gorosave Meza | v1.1 |
 
 ---
@@ -52,27 +53,40 @@ El archivo principal de datos geográficos estandarizado OGC se ubica en:
 
 ## Lakehouse Medallion Architecture (v2.0)
 
-### Capa SILVER — 12 Datasets Fuente (procesados, particionados H3)
+### Capa SILVER — 14 Fuentes Procesadas (165 Parquets)
 
-| Dominio | Datasets | Resolución H3 | Frecuencia |
-|---------|----------|---------------|------------|
-| **GFW** | fishing_effort_h3, vessels | 8 | Diario / Estático |
-| **NASA** | chlor_a, sst | 8 | Mensual (2020-2024) |
-| **TNC** | bajos_marinos, arrecifes_coral_negro | 8 | Estático |
-| **Batimetría** | gebco (res 8, 9) | 8, 9 | Estático |
-| **ASEA** | mias_enriched (GNL) | 10 | Incremental semanal |
-| **PANGAS** | fishing_zones | 8 (embebido) | Estático |
+| Dominio | Datasets | Filas | Particionado |
+|---------|----------|-------|--------------|
+| **CENEGAS** | injection_capacity, extracciones, tarifas | 103,596 + 698,079 + 378 | Plano |
+| **SENER** | prontuario, volumen_almacenamiento | 16 + 186 | Plano |
+| **PROFEPA** | acciones_inspeccion | 51 | Plano |
+| **SEMARNAT** | sitios_contaminados | 481 | Plano |
+| **datos.gob.mx** | registros_publicos | 1 | Plano |
+| **ECC Climabase** | catalog (48 GeoTIFFs) | 48 | Plano |
+| **CNIH/SENER** | ductos_cnih (24 LineStrings, 6,399 km) + anp_ramsar (2 Polygons) + capas_contextuales (2) | 24 + 2 + 2 | GeoParquet |
+| **GFW** | fishing_effort_h3, vessels | 11,652 | year/month H3-8 |
+| **NASA** | chlor_a, sst | 2,298,240 c/u | year/month H3-8 |
+| **ASEA** | mias_enriched (CDC) | 11 | H3-10/tipo |
+| **GEBCO** | bathymetry (res 8, 9) | 59,998 | resolution |
+| **TNC** | bajos_marinos, arrecifes_coral_negro | — | H3-8 |
+| **PANGAS** | fishing_zones | 263,796 | Plano |
 
-### Capa GOLD — 6 Productos Analíticos
+### Capa GOLD — 13 Productos Analíticos
 
 | Dataset | Filas | Descripción |
 |---------|-------|-------------|
-| `ierc_risk_h3_8.parquet` | 830,869 | Índice principal de riesgo (score 0-1, percentiles) |
-| `ierc_features_h3_8.parquet` | 830,869 | Features para ML (sin scores finales) |
-| `ierc_monte_carlo_h3_8.parquet` | 830,869 | Simulación N=1000 (mean, std, p05, p95, median) |
-| `ierc_features_adaptive_h3.parquet` | 830,869 | Multi-resolución H3 + features socioeconómicos PANGAS |
-| `ierc_risk_multiplicative.parquet` | 833,032 | Modelo multiplicativo Amenaza × Vulnerabilidad (IPCC) |
-| `ierc_confidence_h3.parquet` | 833,032 | Scores de confianza espacial para filtrado dashboard |
+| `ierc_risk_h3_8.parquet` | 830,869 | Índice principal de riesgo (score 0-1) |
+| `ierc_features_h3_8.parquet` | 830,869 | Features para ML |
+| `ierc_monte_carlo_h3_8.parquet` | 830,869 | Simulación N=1000 (p05, p95, median) |
+| `ierc_features_adaptive_h3.parquet` | 830,869 | Multi-resolución H3 + PANGAS |
+| `ierc_risk_multiplicative.parquet` | 830,869 | Modelo IPCC H×V |
+| `ierc_confidence_h3.parquet` | 830,869 | Scores de confianza espacial |
+| `gas_infrastructure_master_inyecciones.parquet` | 33 | Master inyecciones por punto |
+| `gas_infrastructure_master_extracciones.parquet` | 225 | Master extracciones por punto |
+| `gas_injection_yearly.parquet` | 315 | Agregación anual inyecciones |
+| `gas_extraction_yearly.parquet` | 2,307 | Agregación anual extracciones |
+| `tarifas_zone_summary.parquet` | 63 | Resumen tarifas por zona |
+| `env_risk_by_nodo.parquet` | 33 | Riesgo ambiental por nodo |
 
 ---
 
@@ -85,6 +99,9 @@ $$R_{i,t} = H_{i,t} \times V_{i,t}$$
 Donde $H_{i,t}$ representa la **amenaza y exposición espacial** (densidad de esfuerzo, proximidad GNL, conflicto de rutas) y $V_{i,t}$ la **vulnerabilidad socioeconómica y de gobernanza**:
 
 $$V_{i,t} = 0.25 \text{Sensibilidad} + 0.25 \text{Dependencia} + 0.20 \text{Biocultural} + 0.15 \text{Género} + 0.15 [1 - \text{Cap.Adaptative}]$$
+
+### Modelo Aditivo (Oficial POA 2026)
+$$IERC_{total} = (Amenaza \times 0.20) + (Exposición \times 0.20) + (Sensibilidad \times 0.15) + (Dependencia \times 0.15) + (Valor\_Biocultural \times 0.15) + ((1 - Capacidad\_Adaptativa) \times 0.15)$$
 
 ### Estándar de Identificador Único Espacio-Temporal (`uid_espaciotemporal`)
 
@@ -147,14 +164,18 @@ Cada ingesta genera registro en `lakehouse/metadata/ingestion_runs.jsonl`:
 
 ## Dashboard Web Interactivo (Next.js 16)
 
-### Capas Base Disponibles
-- **Esfuerzo Pesquero GFW** — Heatmap H3 temporal (año/mes/arte/bandera)
-- **Buques Mexicanos** — Puntos + metadata popup (MMSI, IMO, flag)
-- **Clorofila-a / SST** — Raster mensual 2020-2024 con percentiles/anomalías
-- **Batimetría GEBCO** — Contornos + hillshade (res 8/9)
-- **Bajos Marinos / Coral Negro TNC** — Polígonos H3 con area_fraction
-- **PANGAS Zonas** — Hexágonos H3 + riqueza por especie/arte/comunidad
-- **Proyectos GNL ASEA** — Puntos + buffers H3-10 (tipo/estatus/estado)
+### Capas Base Disponibles (15 Capas)
+- **4 Terminales GNL (11 Features)** — Puntos + buffers H3-10 (tipo/estatus/estado)
+- **Polígonos Saguaro (MIA 181V)** — Detalle del proyecto Saguaro
+- **Gasoductos, Sitios Ramsar & ANPs** — Contexto regulatorio (capas_contextuales)
+- **Ductos CNIH/SENER (24 tramos, 6,399 km)** — NUEVO: tramos reales de ArcGIS con popups enriquecidos
+- **SENER/CNIH Red Gasoductos (WMS)** — Capa WMS externa
+- **Contornos Batimétricos GEBCO 2024** — 1,146 contornos con profundidad
+- **Malla H3 IERC (Res 8/9)** — 5,244 hexágonos con scores IERC
+- **GFW Esfuerzo Pesquero (H3, 9,960)** — Heatmap zoom≤7 / círculos zoom>7, filtros: año/mes/arte/bandera/confianza
+- **PANGAS Multiespecie (4,241)** — Hexágonos H3 + riqueza por especie/arte
+- **Pesca Buceo (249)**, **Chinchorro (2,209)**, **Redes (1,263)**, **Camarón/Manta (783)**, **Trampas (360)**
+- **Riqueza Relativa Pesquera (11,065)** — 51 especies
 
 ### Capas Derivadas (Análisis)
 - **IERC Score** — Índice integrado 0–1
@@ -195,9 +216,9 @@ ierc-gnl-project/
 │   └── data_catalog.yaml       # Catálogo declarativo con schemas por dataset
 ├── scripts/                    # Scripts operacionales (init, compute, dashboard prep)
 ├── tests/unit/                 # 45 tests pasando (storage, catalog, h3, ierc, responsible_ai, spatial_validator, monte_carlo, pipeline_e2e)
-├── REPORTE_INVENTARIO_DETALLADO_IERC_GNL.md    # Reporte oficial detallado v2.1
-├── INVENTARIO_DATOS_IERC_GNL_v2.1.md           # Inventario técnico v2.1
-├── REPORTE_INVENTARIO_GEOPACKAGE.md            # Metadata entregable GeoPackage Meta 1
+├── REPORTE_INVENTARIO_DATOS_IERC_GNL_v2.1_ENRIQUE_GOROSAVE.md
+├── INVENTARIO_DATOS_IERC_GNL_v2.1.md
+├── REPORTE_INVENTARIO_GEOPACKAGE.md
 └── README.md
 ```
 
@@ -254,14 +275,14 @@ El proyecto incluye un pipeline de CI completo (`.github/workflows/ci.yml`) con 
 
 ## Cita Oficial
 
-**Causa Natura Center (2026):** *Índice Espacial de Riesgo Socioeconómico para Comunidades (IERC) ante proyectos de GNL en el Golfo de California*. Elaborado por Juan Carlos Barrera (JCB) y Enrique Gorosave (EG).
+**Causa Natura Center (2026):** *Índice Espacial de Riesgo Socioeconómico para Comunidades (IERC) ante proyectos de GNL en el Golfo de California*. Elaborado por Juan Carlos Barrera (JCB) y Enrique Gorosave Meza (EG).
 
 ---
 
 ## Documentación Técnica Vinculada
 
-- **[INVENTARIO_DATOS_IERC_GNL_v2.1.md](INVENTARIO_DATOS_IERC_GNL_v2.1.md)** — Inventario completo SILVER/GOLD + cadena ingesta + auditoría + Responsible AI (v2.1) — *Autor: Enrique Gorosave Meza, Analista de Datos GIS, Causa Natura Center*
-- **[REPORTE_INVENTARIO_DETALLADO_IERC_GNL.md](REPORTE_INVENTARIO_DETALLADO_IERC_GNL.md)** — Reporte oficial detallado v2.1 con capas dashboard + ingesta + auditoría
+- **[REPORTE_INVENTARIO_DATOS_IERC_GNL_v2.3_ENRIQUE_GOROSAVE.md](REPORTE_INVENTARIO_DATOS_IERC_GNL_v2.3_ENRIQUE_GOROSAVE.md)** — Reporte oficial v2.3 con conteos verificados de todos los datasets Silver/Gold, capas dashboard, cadena de ingesta y auditoría — *Autor: Enrique Gorosave Meza, Causa Natura Center*
+- **[REPORTE_INVENTARIO_DATOS_IERC_GNL_v2.2_ENRIQUE_GOROSAVE.md](REPORTE_INVENTARIO_DATOS_IERC_GNL_v2.2_ENRIQUE_GOROSAVE.md)** — Reporte oficial v2.2
 - **[REPORTE_INVENTARIO_GEOPACKAGE.md](REPORTE_INVENTARIO_GEOPACKAGE.md)** — Metadata entregable GeoPackage Meta 1
 - **[config/lakehouse.yaml](config/lakehouse.yaml)** — Configuración lakehouse, CDC keys, particionamiento
 - **[config/data_catalog.yaml](config/data_catalog.yaml)** — Catálogo declarativo con schemas por dataset

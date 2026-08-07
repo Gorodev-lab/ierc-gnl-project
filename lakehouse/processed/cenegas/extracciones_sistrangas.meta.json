@@ -1,0 +1,28 @@
+{
+  "source": "cenagas",
+  "dataset": "extracciones_sistrangas",
+  "download_date": "2026-08-07T07:49:41.079698Z",
+  "source_url": "https://www.datos.gob.mx/dataset/extracciones_inyecciones_gas_natural_sistrangas",
+  "rows": 698079,
+  "columns": [
+    "punto",
+    "descripcion",
+    "origen",
+    "cve_ent",
+    "nom_ent",
+    "cve_mun",
+    "nom_mun",
+    "zona_tarifaria",
+    "cantidad_extraida_gj",
+    "fecha",
+    "unidad_medida",
+    "tipo"
+  ],
+  "schema_version": "1.0",
+  "date_range": {
+    "min": "2015-01-01T00:00:00",
+    "max": "2025-01-31T00:00:00"
+  },
+  "puntos": 198,
+  "total_gj": 18394532583.799
+}

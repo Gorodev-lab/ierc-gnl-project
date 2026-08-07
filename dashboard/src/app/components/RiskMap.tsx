@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState, useRef, useMemo } from 'react'
 import dynamic from 'next/dynamic'
 import MiaInspectorModal from './MiaInspectorModal'
 import { getRiskColor } from '@/lib/risk'
@@ -11,6 +11,7 @@ const Marker         = dynamic(() => import('react-leaflet').then(m => m.Marker)
 const Popup          = dynamic(() => import('react-leaflet').then(m => m.Popup),          { ssr: false })
 const GeoJSON        = dynamic(() => import('react-leaflet').then(m => m.GeoJSON),        { ssr: false })
 const WMSTileLayer   = dynamic(() => import('react-leaflet').then(m => m.WMSTileLayer),   { ssr: false })
+import Heatmap from './Heatmap'
 
 // Leaflet only available client-side
 const getLeaflet = () => {
@@ -31,6 +32,7 @@ const LAYER_CONFIGS: LayerConfig[] = [
   { id: 'proyectos_gnl',    name: '4 Terminales GNL (11 Features v3)', file: '/data/terminales_gnl_v3.geojson', color: '#EF4444' },
   { id: 'poligonos_saguaro', name: 'Polígonos Detalle Saguaro (MIA 181V)', file: '/data/saguaro_polygons_181v.geojson', color: '#10B981' },
   { id: 'capas_contexto',   name: 'Gasoductos, Sitios Ramsar & ANPs',  file: '/data/capas_contextuales.geojson', color: '#FF9800' },
+  { id: 'ductos_cnih',      name: 'Ductos CNIH/SENER (24 tramos, 6.4k km)', file: '/data/ductos_cnih.geojson', color: '#FF6B00' },
   { id: 'sener_gasoductos', name: 'SENER/CNIH Red Gasoductos (WMS)', file: '', color: '#FFB000' },
   { id: 'batimetria',       name: 'Contornos Batimétricos GEBCO 2024',file: '/data/batimetria_golfo.geojson', color: '#38BDF8' },
   { id: 'h3_riesgo',        name: 'Malla H3 IERC (Res 8/9)',          file: '/data/grilla_h3_riesgo.geojson', color: '#F59E0B' },
@@ -164,6 +166,7 @@ async function loadLayer(id: string, file: string): Promise<any> {
     pangas: 'zonas_pesqueras_pangas',
     riqueza: 'riqueza_relativa_pesquera',
     capas_contexto: 'gasoductos_infraestructura_gnl',
+    ductos_cnih: 'ductos_cnih',
   }
 
   const table = tableMap[id] || id
@@ -180,6 +183,7 @@ export default function RiskMap() {
     proyectos_gnl: true,
     poligonos_saguaro: true,
     capas_contexto: true,
+    ductos_cnih: false,
     sener_gasoductos: false,
     batimetria: true,
     h3_riesgo: false,
@@ -193,10 +197,18 @@ export default function RiskMap() {
     gfw_fishing: false,
   })
 
+  const [gfwFilters, setGfwFilters] = useState({
+    year: 'all' as string,
+    month: 'all' as string,
+    geartype: 'all' as string,
+    flag: 'all' as string,
+  })
+
   const [loaded, setLoaded] = useState(false)
   const [selectedMiaFeature, setSelectedMiaFeature] = useState<Record<string, any> | null>(null)
   const [isMiaOpen, setIsMiaOpen] = useState(false)
   const [leafletIcons, setLeafletIcons] = useState<Record<string, any>>({})
+  const [mapZoom, setMapZoom] = useState<number>(6)
   const mapRef = useRef<any>(null)
 
   useEffect(() => {
@@ -269,6 +281,60 @@ export default function RiskMap() {
       setLoaded(true)
     })
   }, [])
+
+  useEffect(() => {
+    const handleFocusMapNode = (e: Event) => {
+      const customEvent = e as CustomEvent<{ lat: number; lng: number; label: string; layerId?: string }>
+      const { lat, lng, label, layerId } = customEvent.detail
+      
+      if (mapRef.current) {
+        // 1. Activar la capa de gasoductos/infraestructura de gas si es necesario
+        if (layerId === 'capas_contexto') {
+          setActiveLayers(prev => ({ ...prev, capas_contexto: true }))
+        }
+        
+        // 2. Centrar mapa y hacer zoom
+        mapRef.current.setView([lat, lng], 11)
+
+        // 3. Abrir popup de Leaflet de forma dinámica en la posición del nodo
+        const L = (window as any).L
+        if (L) {
+          L.popup()
+            .setLatLng([lat, lng])
+            .setContent(
+              `<div style="font-family: monospace; font-size: 0.75rem; min-width: 180px; color: #fff; background: #000; padding: 4px;">
+                <b style="color: var(--color-accent); font-size: 0.8125rem;">[NODO GAS SISTRANGAS]</b><br/>
+                <span style="font-weight: 700; color: #fff;">${label}</span><br/>
+                <span style="color: var(--color-text-muted); font-size: 0.625rem; display: block; margin-top: 4px;">Coordenadas: ${lat.toFixed(4)}N · ${Math.abs(lng).toFixed(4)}W</span>
+              </div>`
+            )
+            .openOn(mapRef.current)
+        }
+      }
+    }
+
+    window.addEventListener('focus-map-node', handleFocusMapNode)
+    return () => {
+      window.removeEventListener('focus-map-node', handleFocusMapNode)
+    }
+  }, [])
+
+
+  // Filtered GFW data (memoized)
+  const filteredGfwData = useMemo(() => {
+    if (!layersData.gfw_fishing) return null
+    const features = layersData.gfw_fishing.features as Array<{ properties: Record<string, any> }>
+    return {
+      ...layersData.gfw_fishing,
+      features: features.filter(f => {
+        const p = f.properties
+        return (gfwFilters.year === 'all' || String(p.year) === gfwFilters.year) &&
+               (gfwFilters.month === 'all' || String(p.month) === gfwFilters.month) &&
+               (gfwFilters.geartype === 'all' || p.geartype === gfwFilters.geartype) &&
+               (gfwFilters.flag === 'all' || p.flag === gfwFilters.flag)
+      })
+    }
+  }, [layersData.gfw_fishing, gfwFilters])
 
   const toggleLayer = (id: string) => {
     setActiveLayers(prev => ({ ...prev, [id]: !prev[id] }))
@@ -439,36 +505,35 @@ export default function RiskMap() {
             </div>
           </div>
 
-          {/* Layer Control Panel */}
+          {/* Layer Control Panel — con grupos, color swatches y contadores */}
           <div style={{
             background: 'var(--color-surface)',
             border: '1px solid var(--color-border-hi)',
-            padding: '1.25rem',
+            padding: '1rem',
             fontFamily: 'var(--font-mono)',
             borderRadius: 0,
           }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.875rem' }}>
               <h4 style={{
-                fontSize: '0.8125rem',
+                fontSize: '0.75rem',
                 color: 'var(--color-accent)',
                 margin: 0,
                 letterSpacing: '0.05em',
                 fontWeight: 800,
               }}>
-                CAPAS VECTORIALES IERC
+                &gt; CAPAS VECTORIALES (15)
               </h4>
-
               <button
                 onClick={focusProyectos}
                 style={{
                   background: 'var(--color-surface-2)',
                   border: '1px solid var(--color-accent)',
                   color: 'var(--color-accent)',
-                  fontSize: '0.6875rem',
-                  padding: '0.25rem 0.5rem',
+                  fontSize: '0.6rem',
+                  padding: '0.2rem 0.45rem',
                   borderRadius: 0,
                   cursor: 'pointer',
-                  fontWeight: 'bold',
+                  fontWeight: 800,
                   fontFamily: 'var(--font-mono)',
                 }}
                 title="Centrar mapa en las 4 terminales GNL"
@@ -477,21 +542,297 @@ export default function RiskMap() {
               </button>
             </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-              {LAYER_CONFIGS.map(cfg => (
-                <label key={cfg.id} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.75rem', cursor: 'pointer', color: 'var(--color-text-primary)' }}>
-                  <input type="checkbox" checked={!!activeLayers[cfg.id]} onChange={() => toggleLayer(cfg.id)} style={{ accentColor: cfg.color }} />
-                  <span style={{ display: 'inline-block', width: 10, height: 10, background: cfg.color, border: '1px solid #000', flexShrink: 0 }} />
-                  <span>{cfg.name}</span>
-                </label>
-              ))}
+            {/* GRUPO 1: Infraestructura GNL */}
+            <div style={{ marginBottom: '0.75rem' }}>
+              <div style={{
+                fontSize: '0.6rem',
+                fontWeight: 800,
+                color: 'var(--color-alert)',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+                marginBottom: '0.4rem',
+                paddingBottom: '0.2rem',
+                borderBottom: '1px solid rgba(192,57,43,0.25)',
+              }}>
+                [INFRAESTRUCTURA GNL]
+              </div>
+              {LAYER_CONFIGS.filter(l => ['proyectos_gnl','poligonos_saguaro','capas_contexto','ductos_cnih','sener_gasoductos'].includes(l.id)).map(cfg => {
+                const featureCount = layersData[cfg.id]?.features?.length ?? null
+                const isActive = activeLayers[cfg.id]
+                return (
+                  <div key={cfg.id} style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    padding: '0.3rem 0.25rem',
+                    borderBottom: '1px solid var(--color-border)',
+                    cursor: 'pointer',
+                    opacity: isActive ? 1 : 0.55,
+                    transition: 'opacity 0.15s ease',
+                  }}
+                  onClick={() => toggleLayer(cfg.id)}
+                  >
+                    {/* Color swatch */}
+                    <span style={{
+                      display: 'inline-block',
+                      width: 10,
+                      height: 10,
+                      flexShrink: 0,
+                      background: cfg.id === 'sener_gasoductos' ? 'transparent' : cfg.color,
+                      border: cfg.id === 'sener_gasoductos' ? `2px solid ${cfg.color}` : 'none',
+                      opacity: isActive ? 1 : 0.4,
+                    }} />
+                    {/* Toggle indicator */}
+                    <span style={{
+                      fontSize: '0.625rem',
+                      fontWeight: 800,
+                      color: isActive ? 'var(--color-ok)' : 'var(--color-text-disabled)',
+                      fontFamily: 'var(--font-mono)',
+                      flexShrink: 0,
+                    }}>
+                      {isActive ? '[ON]' : '[--]'}
+                    </span>
+                    {/* Label */}
+                    <span style={{
+                      fontSize: '0.6875rem',
+                      color: isActive ? 'var(--color-text-primary)' : 'var(--color-text-muted)',
+                      flex: 1,
+                      lineHeight: 1.3,
+                    }}>
+                      {cfg.name}
+                    </span>
+                    {/* Feature count */}
+                    {featureCount !== null && (
+                      <span style={{
+                        fontSize: '0.5625rem',
+                        color: 'var(--color-text-muted)',
+                        fontVariantNumeric: 'tabular-nums',
+                        flexShrink: 0,
+                      }}>
+                        {featureCount.toLocaleString()}
+                      </span>
+                    )}
+                  </div>
+                )
+              })}
             </div>
+
+            {/* GRUPO 2: Pesquería Artesanal */}
+            <div style={{ marginBottom: '0.75rem' }}>
+              <div style={{
+                fontSize: '0.6rem',
+                fontWeight: 800,
+                color: 'var(--color-ocean)',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+                marginBottom: '0.4rem',
+                paddingBottom: '0.2rem',
+                borderBottom: '1px solid rgba(14,165,233,0.25)',
+              }}>
+                [PESQUERÍA ARTESANAL]
+              </div>
+              {LAYER_CONFIGS.filter(l => ['pangas','buceo','chinchorro','redes','manta','trampa','riqueza','gfw_fishing'].includes(l.id)).map(cfg => {
+                const featureCount = cfg.id === 'gfw_fishing'
+                  ? (filteredGfwData?.features?.length ?? null)
+                  : (layersData[cfg.id]?.features?.length ?? null)
+                const isActive = activeLayers[cfg.id]
+                return (
+                  <div key={cfg.id} style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    padding: '0.3rem 0.25rem',
+                    borderBottom: '1px solid var(--color-border)',
+                    cursor: 'pointer',
+                    opacity: isActive ? 1 : 0.55,
+                    transition: 'opacity 0.15s ease',
+                  }}
+                  onClick={() => toggleLayer(cfg.id)}
+                  >
+                    <span style={{ display: 'inline-block', width: 10, height: 10, flexShrink: 0, background: cfg.color, opacity: isActive ? 1 : 0.4 }} />
+                    <span style={{ fontSize: '0.625rem', fontWeight: 800, color: isActive ? 'var(--color-ok)' : 'var(--color-text-disabled)', fontFamily: 'var(--font-mono)', flexShrink: 0 }}>
+                      {isActive ? '[ON]' : '[--]'}
+                    </span>
+                    <span style={{ fontSize: '0.6875rem', color: isActive ? 'var(--color-text-primary)' : 'var(--color-text-muted)', flex: 1, lineHeight: 1.3 }}>
+                      {cfg.name}
+                    </span>
+                    {featureCount !== null && (
+                      <span style={{ fontSize: '0.5625rem', color: 'var(--color-text-muted)', fontVariantNumeric: 'tabular-nums', flexShrink: 0 }}>
+                        {featureCount.toLocaleString()}
+                      </span>
+                    )}
+                  </div>
+                )
+              })}
+            </div>
+
+            {/* GRUPO 3: Ambiental */}
+            <div>
+              <div style={{
+                fontSize: '0.6rem',
+                fontWeight: 800,
+                color: 'var(--color-ok)',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+                marginBottom: '0.4rem',
+                paddingBottom: '0.2rem',
+                borderBottom: '1px solid rgba(39,174,96,0.25)',
+              }}>
+                [AMBIENTAL / RIESGO]
+              </div>
+              {LAYER_CONFIGS.filter(l => ['batimetria','h3_riesgo'].includes(l.id)).map(cfg => {
+                const featureCount = layersData[cfg.id]?.features?.length ?? null
+                const isActive = activeLayers[cfg.id]
+                return (
+                  <div key={cfg.id} style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    padding: '0.3rem 0.25rem',
+                    borderBottom: '1px solid var(--color-border)',
+                    cursor: 'pointer',
+                    opacity: isActive ? 1 : 0.55,
+                    transition: 'opacity 0.15s ease',
+                  }}
+                  onClick={() => toggleLayer(cfg.id)}
+                  >
+                    <span style={{ display: 'inline-block', width: 10, height: 10, flexShrink: 0, background: cfg.color, opacity: isActive ? 1 : 0.4 }} />
+                    <span style={{ fontSize: '0.625rem', fontWeight: 800, color: isActive ? 'var(--color-ok)' : 'var(--color-text-disabled)', fontFamily: 'var(--font-mono)', flexShrink: 0 }}>
+                      {isActive ? '[ON]' : '[--]'}
+                    </span>
+                    <span style={{ fontSize: '0.6875rem', color: isActive ? 'var(--color-text-primary)' : 'var(--color-text-muted)', flex: 1, lineHeight: 1.3 }}>
+                      {cfg.name}
+                    </span>
+                    {featureCount !== null && (
+                      <span style={{ fontSize: '0.5625rem', color: 'var(--color-text-muted)', fontVariantNumeric: 'tabular-nums', flexShrink: 0 }}>
+                        {featureCount.toLocaleString()}
+                      </span>
+                    )}
+                  </div>
+                )
+              })}
+            </div>
+
+            {/* GFW Filter Controls (conditional) */}
+            {activeLayers.gfw_fishing && (
+              <div style={{
+                background: 'var(--color-surface-2)',
+                border: '1px solid #6366F1',
+                padding: '0.75rem',
+                marginTop: '0.75rem',
+                fontFamily: 'var(--font-mono)',
+                borderRadius: 0,
+              }}>
+                <div style={{ fontSize: '0.6875rem', fontWeight: 800, color: '#6366F1', marginBottom: '0.5rem', letterSpacing: '0.05em' }}>
+                  {'>'} FILTROS GFW PESQUERO
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.625rem', color: 'var(--color-text-secondary)', marginBottom: '0.2rem' }}>AÑO</label>
+                    <select value={gfwFilters.year} onChange={e => setGfwFilters(prev => ({ ...prev, year: e.target.value }))} style={{ width: '100%', background: 'var(--color-surface)', border: '1px solid var(--color-border)', color: 'var(--color-text-primary)', fontSize: '0.6875rem', padding: '0.3rem', fontFamily: 'var(--font-mono)' }}>
+                      <option value="all">Todos</option>
+                      <option value="2016">2016</option>
+                      <option value="2020">2020</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.625rem', color: 'var(--color-text-secondary)', marginBottom: '0.2rem' }}>MES</label>
+                    <select value={gfwFilters.month} onChange={e => setGfwFilters(prev => ({ ...prev, month: e.target.value }))} style={{ width: '100%', background: 'var(--color-surface)', border: '1px solid var(--color-border)', color: 'var(--color-text-primary)', fontSize: '0.6875rem', padding: '0.3rem', fontFamily: 'var(--font-mono)' }}>
+                      <option value="all">Todos</option>
+                      {Array.from({length: 12}, (_, i) => i + 1).map(m => <option key={m} value={String(m)}>{String(m).padStart(2,'0')}</option>)}
+                    </select>
+                  </div>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.625rem', color: 'var(--color-text-secondary)', marginBottom: '0.2rem' }}>ARTE</label>
+                    <select value={gfwFilters.geartype} onChange={e => setGfwFilters(prev => ({ ...prev, geartype: e.target.value }))} style={{ width: '100%', background: 'var(--color-surface)', border: '1px solid var(--color-border)', color: 'var(--color-text-primary)', fontSize: '0.6875rem', padding: '0.3rem', fontFamily: 'var(--font-mono)' }}>
+                      <option value="all">Todos</option>
+                      <option value="tuna_purse_seines">Tuna Purse Seines</option>
+                      <option value="fishing">Fishing (Generic)</option>
+                      <option value="pole_and_line">Pole and Line</option>
+                      <option value="trawlers">Trawlers</option>
+                      <option value="other_purse_seines">Other Purse Seines</option>
+                      <option value="set_gillnets">Set Gillnets</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.625rem', color: 'var(--color-text-secondary)', marginBottom: '0.2rem' }}>BANDERA</label>
+                    <select value={gfwFilters.flag} onChange={e => setGfwFilters(prev => ({ ...prev, flag: e.target.value }))} style={{ width: '100%', background: 'var(--color-surface)', border: '1px solid var(--color-border)', color: 'var(--color-text-primary)', fontSize: '0.6875rem', padding: '0.3rem', fontFamily: 'var(--font-mono)' }}>
+                      <option value="all">Todos</option>
+                      <option value="MEX">MEX</option>
+                      <option value="BMU">BMU</option>
+                      <option value="USA">USA</option>
+                      <option value="UNKNOWN-MEX">UNKNOWN-MEX</option>
+                      <option value="JAM">JAM</option>
+                      <option value="CAN">CAN</option>
+                    </select>
+                  </div>
+                </div>
+                <div style={{ fontSize: '0.625rem', color: 'var(--color-text-muted)', marginTop: '0.5rem', fontFamily: 'var(--font-mono)' }}>
+                  {filteredGfwData ? filteredGfwData.features.length : 0} / {layersData.gfw_fishing?.features.length || 0} celdas
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
         {/* Map Container */}
         <div>
           <div className="map-wrapper" style={{ height: '680px' }}>
+            {/* Leyenda flotante — capas activas y escala IERC */}
+            {(() => {
+              const activeCfgs = LAYER_CONFIGS.filter(cfg => activeLayers[cfg.id] && cfg.id !== 'sener_gasoductos')
+              if (activeCfgs.length === 0 && !activeLayers.h3_riesgo) return null
+              return (
+                <div style={{
+                  position: 'absolute',
+                  bottom: 36,
+                  left: 10,
+                  zIndex: 500,
+                  background: 'rgba(10,10,10,0.92)',
+                  border: '1px solid var(--color-border-hi)',
+                  padding: '0.5rem 0.75rem',
+                  fontFamily: 'var(--font-mono)',
+                  minWidth: 180,
+                  maxWidth: 225,
+                }}>
+                  {activeCfgs.length > 0 && (
+                    <>
+                      <div style={{ fontSize: '0.55rem', fontWeight: 800, color: 'var(--color-accent)', letterSpacing: '0.08em', marginBottom: '0.35rem' }}>
+                        &gt; CAPAS ACTIVAS
+                      </div>
+                      {activeCfgs.map(cfg => (
+                        <div key={cfg.id} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', padding: '0.1rem 0' }}>
+                          <span style={{ display: 'inline-block', width: 8, height: 8, flexShrink: 0, background: cfg.color }} />
+                          <span style={{ fontSize: '0.5625rem', color: 'var(--color-text-secondary)', lineHeight: 1.3 }}>
+                            {cfg.name.length > 30 ? cfg.name.slice(0, 30) + '…' : cfg.name}
+                          </span>
+                        </div>
+                      ))}
+                      <div style={{ borderTop: '1px dashed var(--color-border-hi)', margin: '0.5rem 0' }} />
+                    </>
+                  )}
+
+                  {/* Rampa de color del IERC fija */}
+                  <div style={{ fontSize: '0.55rem', fontWeight: 800, color: 'var(--color-accent)', letterSpacing: '0.08em', marginBottom: '0.35rem' }}>
+                    &gt; RANGO DE RIESGO IERC
+                  </div>
+                  {[
+                    { label: 'CRÍTICO (≥ 70.0)',  color: 'var(--color-alert)' },
+                    { label: 'ALTO (50.0–69.9)',    color: 'var(--color-warn)' },
+                    { label: 'MODERADO (30.0–49.9)',color: 'var(--color-amber)' },
+                    { label: 'BAJO (< 30.0)',     color: 'var(--color-ok)' },
+                  ].map(item => (
+                    <div key={item.label} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', padding: '0.1rem 0' }}>
+                      <span style={{ display: 'inline-block', width: 8, height: 8, flexShrink: 0, background: item.color }} />
+                      <span style={{ fontSize: '0.5625rem', color: 'var(--color-text-secondary)', lineHeight: 1.3 }}>
+                        {item.label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              )
+            })()}
+
             {loaded ? (
               <MapContainer
                 center={[25.8, -109.0]}
@@ -499,6 +840,7 @@ export default function RiskMap() {
                 ref={mapRef}
                 style={{ height: '100%', width: '100%' }}
                 attributionControl={true}
+                whenReady={() => { mapRef.current?.on('zoomend', () => setMapZoom(mapRef.current?.getZoom() ?? 6)) }}
               >
                 <TileLayer
                   attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> | CartoDB'
@@ -558,6 +900,55 @@ export default function RiskMap() {
                   />
                 )}
 
+                {/* Layer Ductos CNIH/SENER (Real ductos from CNIH ArcGIS) */}
+                {activeLayers.ductos_cnih && layersData.ductos_cnih && (
+                  <GeoJSON
+                    key="ductos_cnih"
+                    data={layersData.ductos_cnih}
+                    style={(feat) => {
+                      const p = feat?.properties || {}
+                      const source = p.source_dataset || ''
+                      // Color by source
+                      let color = '#FF6B00'
+                      if (source.includes('integrados')) color = '#FF6B00'
+                      else if (source.includes('no_integrados')) color = '#FFB000'
+                      else if (source.includes('poliductos')) color = '#00D4AA'
+                      else if (source.includes('pacific')) color = '#A855F7'
+                      
+                      return {
+                        color,
+                        weight: 2.5,
+                        opacity: 0.9,
+                        dashArray: source.includes('pacific') ? '8, 4' : '0'
+                      }
+                    }}
+                    onEachFeature={(feat, layer) => {
+                      const p = feat?.properties || {}
+                      const source = p.source_dataset || ''
+                      const longitud = p.longitud_km ? `${Number(p.longitud_km).toFixed(1)} km` : 'N/A'
+                      const capacidad = p.capacidad ? `${Number(p.capacidad).toLocaleString()}` : 'N/A'
+                      
+                      layer.bindPopup(
+                        `<div style="font-family: monospace; font-size: 0.75rem; min-width: 260px;">
+                          <b style="color: #FF6B00; font-size: 0.8125rem;">${p.nombre || p.ducto || 'Ducto CNIH'}</b><br/>
+                          <b>FUENTE:</b> ${source.replace('_', ' ')}<br/>
+                          <b>TIPO:</b> ${p.tipo || 'N/A'}<br/>
+                          <b>LONGITUD:</b> ${longitud}<br/>
+                          <b>CAPACIDAD:</b> ${capacidad} m³/d<br/>
+                          <b>PROYECTO:</b> ${p.proyecto || 'N/A'}<br/>
+                          <b>TRAMO:</b> ${p.tramo || 'N/A'}<br/>
+                          <b>PERMISO:</b> ${p.permiso || 'N/A'}<br/>
+                          <b>EMPRESA:</b> ${p.empresa || 'N/A'}<br/>
+                          <div style="margin-top: 6px; font-size: 0.6875rem; color: #CCCCCC; border-top: 1px dashed #444; padding-top: 4px;">
+                            FUENTE: CNIH/SENER ArcGIS (Capas: integrados, no_integrados, poliductos, Pacific Limited)
+                          </div>
+                        </div>`,
+                        { maxWidth: 320 }
+                      )
+                    }}
+                  />
+                )}
+                
                 {/* Layer Capas Contextuales (Gasoductos, Sitios Ramsar, ANPs) */}
                 {activeLayers.capas_contexto && layersData.capas_contexto && (
                   <GeoJSON
@@ -617,11 +1008,28 @@ export default function RiskMap() {
                   />
                 )}
 
-                {/* Layer GFW Fishing Effort H3 */}
-                {activeLayers.gfw_fishing && layersData.gfw_fishing && (
+                {/* Layer GFW Fishing Effort H3 - Heatmap at low zoom, circles at high zoom */}
+                {activeLayers.gfw_fishing && filteredGfwData && mapZoom <= 7 && (
+                  <Heatmap
+                    latLngs={filteredGfwData.features.map((f: any) => [
+                      f.geometry.coordinates[1],
+                      f.geometry.coordinates[0],
+                      f.properties?.hours || 0
+                    ])}
+                    options={{
+                      radius: 25,
+                      blur: 15,
+                      maxZoom: 7,
+                      gradient: { 0.2: '#4F46E5', 0.4: '#6366F1', 0.6: '#818CF8', 0.8: '#A5B4FC', 1: '#FFFFFF' },
+                      minOpacity: 0.15,
+                      max: 100,
+                    }}
+                  />
+                )}
+                {activeLayers.gfw_fishing && filteredGfwData && mapZoom > 7 && (
                   <GeoJSON
                     key="gfw_fishing"
-                    data={layersData.gfw_fishing}
+                    data={filteredGfwData}
                     pointToLayer={(feature, latlng) => {
                       const L = getLeaflet()
                       if (!L) return null

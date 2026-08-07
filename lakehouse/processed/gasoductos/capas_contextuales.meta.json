@@ -1,0 +1,41 @@
+{
+  "source": "gasoductos",
+  "dataset": "capas_contextuales",
+  "build_date": "2026-08-07T01:13:00.572469Z",
+  "source_file": "capas_contextuales.geojson",
+  "rows": 2,
+  "columns": [
+    "id",
+    "descripcion",
+    "tipo_capa",
+    "empresa",
+    "estatus",
+    "color",
+    "fill_color",
+    "fill_opacity",
+    "line_weight",
+    "dash_array",
+    "geometry",
+    "source",
+    "catalog_date",
+    "length_km"
+  ],
+  "geometry_type": "LineString",
+  "crs": "EPSG:4326",
+  "schema_version": "1.0",
+  "total_length_km": 609.1587453264707,
+  "features": [
+    {
+      "descripcion": "Gasoducto Sierra Madre (~800 km)",
+      "empresa": "Mexico Pacific Limited",
+      "estatus": "Propuesto / Permiso en trámite",
+      "length_km": 536.349545140507
+    },
+    {
+      "descripcion": "Gasoducto Corredor Norte (GCN ~75 km)",
+      "empresa": "Gasoducto Corredor Norte, S.A.P.I.",
+      "estatus": "Asociado a proyecto Vista Pacífico (CANCELADO)",
+      "length_km": 72.8092001859637
+    }
+  ]
+}

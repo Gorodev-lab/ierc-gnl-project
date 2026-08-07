@@ -1,0 +1,20 @@
+{
+  "source": "gobmx",
+  "dataset": "registros_publicos_oficiales",
+  "download_date": "2026-08-07T00:18:53.713882Z",
+  "source_file": "42_Registros_Publicos_Oficiales.csv",
+  "rows": 1,
+  "columns": [
+    "institucion",
+    "area_responsable",
+    "registro",
+    "siglas_registro",
+    "descripcion_registro",
+    "marco_juridico_liga_documentos",
+    "liga_publica_consulta",
+    "liga_publica_datos_abiertos",
+    "correo_contacto"
+  ],
+  "schema_version": "1.0",
+  "note": "Catálogo de 42 registros públicos oficiales del gobierno federal. Solo 1 registro de datos en el CSV original."
+}

@@ -29,13 +29,23 @@ export default function Header({
           </div>
           <span>|</span>
           <div className="system-ticker-item">
-            <span>COORDINATES:</span>
-            <span style={{ color: 'var(--color-text-secondary)', fontVariantNumeric: 'tabular-nums' }}>27.5000° N, 110.5000° W</span>
+            <span>INVENTARIO:</span>
+            <span style={{ color: 'var(--color-accent)', fontWeight: 700 }}>v2.3 · 2026-08-07</span>
           </div>
           <span>|</span>
           <div className="system-ticker-item">
             <span>H3 GRID:</span>
-            <span style={{ color: 'var(--color-accent)', fontVariantNumeric: 'tabular-nums' }}>5,244 HEX (RES 8/9)</span>
+            <span style={{ color: 'var(--color-accent)', fontVariantNumeric: 'tabular-nums' }}>830,869 CELDAS (RES 8)</span>
+          </div>
+          <span>|</span>
+          <div className="system-ticker-item">
+            <span>TESTS:</span>
+            <span style={{ color: 'var(--color-ok)', fontVariantNumeric: 'tabular-nums' }}>45 PASSING</span>
+          </div>
+          <span>|</span>
+          <div className="system-ticker-item">
+            <span>CI/CD:</span>
+            <span style={{ color: 'var(--color-ok)' }}>5 JOBS [OK]</span>
           </div>
         </div>
 
@@ -160,7 +170,7 @@ export default function Header({
           </div>
         </div>
 
-        {/* Esoteria Metrics Strip */}
+        {/* Esoteria Metrics Strip — datos verificados v2.3 */}
         <div style={{
           borderTop: '1px solid var(--color-border)',
           background: 'var(--color-surface-2)',
@@ -175,11 +185,13 @@ export default function Header({
             fontFamily: 'var(--font-mono)',
           }}>
             {[
-              { label: 'PROYECTOS GNL', value: '5 TERMINALES', sub: 'Moreno-Báez et al.' },
-              { label: 'ALTO RIESGO', value: '3 ZONAS', sub: 'Score > 0.65', color: 'var(--color-alert)' },
-              { label: 'GRILLA HEXAGONAL', value: '5,244 CELDAS', sub: 'Uber H3 Res 8/9' },
-              { label: 'ZONAS PESQUERAS', value: '17 POLÍGONOS', sub: 'PANGAS / Pescadores', color: 'var(--color-ocean)' },
-              { label: 'CRS ESPACIAL', value: 'EPSG:4326', sub: 'WGS84 Datum' },
+              { label: 'FUENTES SILVER',    value: '14 DATASETS',      sub: '165 Parquets · ZSTD' },
+              { label: 'PRODUCTOS GOLD',    value: '13 ANALÍTICOS',    sub: '6 IERC + 6 gas + 1 env', color: 'var(--color-ok)' },
+              { label: 'CELDAS H3-8 GOLD', value: '830,869',           sub: 'IERC score 0–1' },
+              { label: 'ZONAS PANGAS',      value: '263,796 FILAS',    sub: '7 artes de pesca', color: 'var(--color-ocean)' },
+              { label: 'SCRIPTS PYTHON',    value: '44 OPS',           sub: 'ETL · Gold · API' },
+              { label: 'DUCTOS CNIH/SENER', value: '24 TRAMOS',        sub: '6,399 km · EPSG:4326', color: 'var(--color-warn)' },
+              { label: 'TERMINALES GNL',    value: '4 PROYECTOS',      sub: 'Saguaro · Amigo · Vista · Cosalá', color: 'var(--color-alert)' },
             ].map(m => (
               <div key={m.label} style={{ flexShrink: 0 }}>
                 <div style={{

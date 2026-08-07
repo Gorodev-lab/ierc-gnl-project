@@ -1,0 +1,14 @@
+{
+  "source": "curated",
+  "dataset": "env_risk_by_nodo",
+  "build_date": "2026-08-07T00:37:17.332616Z",
+  "rows": 33,
+  "cols": 24,
+  "schema_version": "1.0",
+  "inputs": [
+    "silver/cenegas/cenegas_injection_capacity.parquet",
+    "silver/semarnat/sitios_contaminados.parquet",
+    "silver/profepa/acciones_inspeccion_iao_zofemat.parquet"
+  ],
+  "notes": "Join at entidad level. Municipio-level join needs punto-municipio mapping. ANP/acuíferos not yet integrated."
+}
