@@ -9,6 +9,8 @@ import SpeciesPanel from './components/SpeciesPanel'
 import MethodologyPanel from './components/MethodologyPanel'
 import CoverageModal from './components/CoverageModal'
 import ExportModal from './components/ExportModal'
+import GuidedTour from './components/GuidedTour'
+import Tooltip from './components/Tooltip'
 
 const SECTIONS = [
   { id: 'mapa', label: 'VISOR ESPACIAL' },
@@ -261,6 +263,32 @@ export default function Home() {
         <CoverageModal isOpen={isCoverageOpen} onClose={() => setIsCoverageOpen(false)} />
 
         <ExportModal isOpen={isExportOpen} onClose={() => setIsExportOpen(false)} />
+
+        <GuidedTour
+          steps={[
+            {
+              id: 'layers',
+              target: '[data-tour="layer-panel"]',
+              title: 'Capas y Filtros',
+              content: 'Activa/desactiva capas (GFW pesca, PANGAS, IERC, ductos). Usa los filtros de año, mes, arte y bandera para refinar la vista.',
+              position: 'right',
+            },
+            {
+              id: 'heatmap',
+              target: '[data-tour="gfw-filters"]',
+              title: 'Heatmap GFW',
+              content: 'Ajusta radio, blur, valor máximo y opacidad mínima del mapa de calor. El contador muestra celdas filtradas / total.',
+              position: 'left',
+            },
+            {
+              id: 'terminals',
+              target: '[data-tour="terminal-jumps"]',
+              title: 'Navegación Rápida',
+              content: 'Click en cualquier terminal (Saguaro, Amigo, Vista, Cosalá) para volar al sitio y abrir su ficha MIA con planos y metadatos.',
+              position: 'left',
+            },
+          ]}
+        />
 
         <ScrollToTop />
       </main>

@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic'
 import { useSearchParams, useRouter, usePathname } from 'next/navigation'
 import MiaInspectorModal from './MiaInspectorModal'
 import { getRiskColor } from '@/lib/risk'
+import Tooltip from './Tooltip'
 
 const MapContainer   = dynamic(() => import('react-leaflet').then(m => m.MapContainer),   { ssr: false })
 const TileLayer      = dynamic(() => import('react-leaflet').then(m => m.TileLayer),      { ssr: false })
@@ -600,7 +601,9 @@ export default function RiskMap() {
         }}>
 
           {/* Quick Jump Navigation Panel */}
-          <div style={{
+          <div
+            data-tour="terminal-jumps"
+            style={{
             background: 'var(--color-surface)',
             border: '1px solid var(--color-accent)',
             padding: '1rem',
@@ -698,7 +701,9 @@ export default function RiskMap() {
           </div>
 
           {/* Layer Control Panel — con grupos, color swatches y contadores */}
-          <div style={{
+          <div
+            data-tour="layer-panel"
+            style={{
             background: 'var(--color-surface)',
             border: '1px solid var(--color-border-hi)',
             padding: '1rem',
@@ -799,7 +804,9 @@ export default function RiskMap() {
 
             {/* GFW Filter Controls (conditional) */}
             {activeLayers.gfw_fishing && (
-              <div style={{
+              <div
+                data-tour="gfw-filters"
+                style={{
                 background: 'var(--color-surface-2)',
                 border: '1px solid #6366F1',
                 padding: '0.75rem',
@@ -811,45 +818,53 @@ export default function RiskMap() {
                   {'>'} FILTROS GFW PESQUERO
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
-                  <div>
-                    <label style={{ display: 'block', fontSize: '0.625rem', color: 'var(--color-text-secondary)', marginBottom: '0.2rem' }}>AÑO</label>
-                    <select value={gfwFilters.year} onChange={e => setGfwFilters(prev => ({ ...prev, year: e.target.value }))} style={{ width: '100%', background: 'var(--color-surface)', border: '1px solid var(--color-border)', color: 'var(--color-text-primary)', fontSize: '0.6875rem', padding: '0.3rem', fontFamily: 'var(--font-mono)' }}>
-                      <option value="all">Todos</option>
-                      <option value="2016">2016</option>
-                      <option value="2020">2020</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label style={{ display: 'block', fontSize: '0.625rem', color: 'var(--color-text-secondary)', marginBottom: '0.2rem' }}>MES</label>
-                    <select value={gfwFilters.month} onChange={e => setGfwFilters(prev => ({ ...prev, month: e.target.value }))} style={{ width: '100%', background: 'var(--color-surface)', border: '1px solid var(--color-border)', color: 'var(--color-text-primary)', fontSize: '0.6875rem', padding: '0.3rem', fontFamily: 'var(--font-mono)' }}>
-                      <option value="all">Todos</option>
-                      {Array.from({length: 12}, (_, i) => i + 1).map(m => <option key={m} value={String(m)}>{String(m).padStart(2,'0')}</option>)}
-                    </select>
-                  </div>
-                  <div>
-                    <label style={{ display: 'block', fontSize: '0.625rem', color: 'var(--color-text-secondary)', marginBottom: '0.2rem' }}>ARTE</label>
-                    <select value={gfwFilters.geartype} onChange={e => setGfwFilters(prev => ({ ...prev, geartype: e.target.value }))} style={{ width: '100%', background: 'var(--color-surface)', border: '1px solid var(--color-border)', color: 'var(--color-text-primary)', fontSize: '0.6875rem', padding: '0.3rem', fontFamily: 'var(--font-mono)' }}>
-                      <option value="all">Todos</option>
-                      <option value="tuna_purse_seines">Tuna Purse Seines</option>
-                      <option value="fishing">Fishing (Generic)</option>
-                      <option value="pole_and_line">Pole and Line</option>
-                      <option value="trawlers">Trawlers</option>
-                      <option value="other_purse_seines">Other Purse Seines</option>
-                      <option value="set_gillnets">Set Gillnets</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label style={{ display: 'block', fontSize: '0.625rem', color: 'var(--color-text-secondary)', marginBottom: '0.2rem' }}>BANDERA</label>
-                    <select value={gfwFilters.flag} onChange={e => setGfwFilters(prev => ({ ...prev, flag: e.target.value }))} style={{ width: '100%', background: 'var(--color-surface)', border: '1px solid var(--color-border)', color: 'var(--color-text-primary)', fontSize: '0.6875rem', padding: '0.3rem', fontFamily: 'var(--font-mono)' }}>
-                      <option value="all">Todos</option>
-                      <option value="MEX">MEX</option>
-                      <option value="BMU">BMU</option>
-                      <option value="USA">USA</option>
-                      <option value="UNKNOWN-MEX">UNKNOWN-MEX</option>
-                      <option value="JAM">JAM</option>
-                      <option value="CAN">CAN</option>
-                    </select>
-                  </div>
+                  <Tooltip content="Filtrar por año de captura GFW (2016 o 2020).">
+                    <div>
+                      <label style={{ display: 'block', fontSize: '0.625rem', color: 'var(--color-text-secondary)', marginBottom: '0.2rem' }}>AÑO</label>
+                      <select value={gfwFilters.year} onChange={e => setGfwFilters(prev => ({ ...prev, year: e.target.value }))} style={{ width: '100%', background: 'var(--color-surface)', border: '1px solid var(--color-border)', color: 'var(--color-text-primary)', fontSize: '0.6875rem', padding: '0.3rem', fontFamily: 'var(--font-mono)' }}>
+                        <option value="all">Todos</option>
+                        <option value="2016">2016</option>
+                        <option value="2020">2020</option>
+                      </select>
+                    </div>
+                  </Tooltip>
+                  <Tooltip content="Filtrar por mes (1-12).">
+                    <div>
+                      <label style={{ display: 'block', fontSize: '0.625rem', color: 'var(--color-text-secondary)', marginBottom: '0.2rem' }}>MES</label>
+                      <select value={gfwFilters.month} onChange={e => setGfwFilters(prev => ({ ...prev, month: e.target.value }))} style={{ width: '100%', background: 'var(--color-surface)', border: '1px solid var(--color-border)', color: 'var(--color-text-primary)', fontSize: '0.6875rem', padding: '0.3rem', fontFamily: 'var(--font-mono)' }}>
+                        <option value="all">Todos</option>
+                        {Array.from({length: 12}, (_, i) => i + 1).map(m => <option key={m} value={String(m)}>{String(m).padStart(2,'0')}</option>)}
+                      </select>
+                    </div>
+                  </Tooltip>
+                  <Tooltip content="Filtrar por tipo de arte de pesca (cerco, arrastre, palangre, etc.).">
+                    <div>
+                      <label style={{ display: 'block', fontSize: '0.625rem', color: 'var(--color-text-secondary)', marginBottom: '0.2rem' }}>ARTE</label>
+                      <select value={gfwFilters.geartype} onChange={e => setGfwFilters(prev => ({ ...prev, geartype: e.target.value }))} style={{ width: '100%', background: 'var(--color-surface)', border: '1px solid var(--color-border)', color: 'var(--color-text-primary)', fontSize: '0.6875rem', padding: '0.3rem', fontFamily: 'var(--font-mono)' }}>
+                        <option value="all">Todos</option>
+                        <option value="tuna_purse_seines">Tuna Purse Seines</option>
+                        <option value="fishing">Fishing (Generic)</option>
+                        <option value="pole_and_line">Pole and Line</option>
+                        <option value="trawlers">Trawlers</option>
+                        <option value="other_purse_seines">Other Purse Seines</option>
+                        <option value="set_gillnets">Set Gillnets</option>
+                      </select>
+                    </div>
+                  </Tooltip>
+                  <Tooltip content="Filtrar por bandera del país de la embarcación.">
+                    <div>
+                      <label style={{ display: 'block', fontSize: '0.625rem', color: 'var(--color-text-secondary)', marginBottom: '0.2rem' }}>BANDERA</label>
+                      <select value={gfwFilters.flag} onChange={e => setGfwFilters(prev => ({ ...prev, flag: e.target.value }))} style={{ width: '100%', background: 'var(--color-surface)', border: '1px solid var(--color-border)', color: 'var(--color-text-primary)', fontSize: '0.6875rem', padding: '0.3rem', fontFamily: 'var(--font-mono)' }}>
+                        <option value="all">Todos</option>
+                        <option value="MEX">MEX</option>
+                        <option value="BMU">BMU</option>
+                        <option value="USA">USA</option>
+                        <option value="UNKNOWN-MEX">UNKNOWN-MEX</option>
+                        <option value="JAM">JAM</option>
+                        <option value="CAN">CAN</option>
+                      </select>
+                    </div>
+                  </Tooltip>
                 </div>
                 <div style={{ fontSize: '0.625rem', color: 'var(--color-text-muted)', marginTop: '0.5rem', fontFamily: 'var(--font-mono)' }}>
                   {filteredGfwData ? filteredGfwData.features.length : 0} / {layersData.gfw_fishing?.features.length || 0} celdas
@@ -861,58 +876,66 @@ export default function RiskMap() {
                     {'>'} INTENSIDAD HEATMAP
                   </div>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
-                    <div>
-                      <label style={{ display: 'block', fontSize: '0.625rem', color: 'var(--color-text-secondary)', marginBottom: '0.2rem' }}>RADIO</label>
-                      <input
-                        type="range"
-                        min="5"
-                        max="50"
-                        step="1"
-                        value={heatmapOptions.radius}
-                        onChange={e => setHeatmapOptions(prev => ({ ...prev, radius: parseInt(e.target.value) }))}
-                        style={{ width: '100%', accentColor: '#6366F1', cursor: 'pointer' }}
-                      />
-                      <div style={{ fontSize: '0.5625rem', color: 'var(--color-text-muted)', textAlign: 'right' }}>{heatmapOptions.radius}px</div>
-                    </div>
-                    <div>
-                      <label style={{ display: 'block', fontSize: '0.625rem', color: 'var(--color-text-secondary)', marginBottom: '0.2rem' }}>BLUR</label>
-                      <input
-                        type="range"
-                        min="5"
-                        max="30"
-                        step="1"
-                        value={heatmapOptions.blur}
-                        onChange={e => setHeatmapOptions(prev => ({ ...prev, blur: parseInt(e.target.value) }))}
-                        style={{ width: '100%', accentColor: '#6366F1', cursor: 'pointer' }}
-                      />
-                      <div style={{ fontSize: '0.5625rem', color: 'var(--color-text-muted)', textAlign: 'right' }}>{heatmapOptions.blur}px</div>
-                    </div>
-                    <div>
-                      <label style={{ display: 'block', fontSize: '0.625rem', color: 'var(--color-text-secondary)', marginBottom: '0.2rem' }}>MAX VALOR</label>
-                      <input
-                        type="range"
-                        min="0.5"
-                        max="10"
-                        step="0.1"
-                        value={heatmapOptions.max}
-                        onChange={e => setHeatmapOptions(prev => ({ ...prev, max: parseFloat(e.target.value) }))}
-                        style={{ width: '100%', accentColor: '#6366F1', cursor: 'pointer' }}
-                      />
-                      <div style={{ fontSize: '0.5625rem', color: 'var(--color-text-muted)', textAlign: 'right' }}>{heatmapOptions.max.toFixed(1)}</div>
-                    </div>
-                    <div>
-                      <label style={{ display: 'block', fontSize: '0.625rem', color: 'var(--color-text-secondary)', marginBottom: '0.2rem' }}>OPACIDAD MÍN</label>
-                      <input
-                        type="range"
-                        min="0.05"
-                        max="0.5"
-                        step="0.01"
-                        value={heatmapOptions.minOpacity}
-                        onChange={e => setHeatmapOptions(prev => ({ ...prev, minOpacity: parseFloat(e.target.value) }))}
-                        style={{ width: '100%', accentColor: '#6366F1', cursor: 'pointer' }}
-                      />
-                      <div style={{ fontSize: '0.5625rem', color: 'var(--color-text-muted)', textAlign: 'right' }}>{(heatmapOptions.minOpacity * 100).toFixed(0)}%</div>
-                    </div>
+                    <Tooltip content="Radio de influencia de cada punto de calor (px). Mayor = áreas más difusas.">
+                      <div>
+                        <label style={{ display: 'block', fontSize: '0.625rem', color: 'var(--color-text-secondary)', marginBottom: '0.2rem' }}>RADIO</label>
+                        <input
+                          type="range"
+                          min="5"
+                          max="50"
+                          step="1"
+                          value={heatmapOptions.radius}
+                          onChange={e => setHeatmapOptions(prev => ({ ...prev, radius: parseInt(e.target.value) }))}
+                          style={{ width: '100%', accentColor: '#6366F1', cursor: 'pointer' }}
+                        />
+                        <div style={{ fontSize: '0.5625rem', color: 'var(--color-text-muted)', textAlign: 'right' }}>{heatmapOptions.radius}px</div>
+                      </div>
+                    </Tooltip>
+                    <Tooltip content="Desenfoque del borde de cada punto (px). Mayor = transición más suave.">
+                      <div>
+                        <label style={{ display: 'block', fontSize: '0.625rem', color: 'var(--color-text-secondary)', marginBottom: '0.2rem' }}>BLUR</label>
+                        <input
+                          type="range"
+                          min="5"
+                          max="30"
+                          step="1"
+                          value={heatmapOptions.blur}
+                          onChange={e => setHeatmapOptions(prev => ({ ...prev, blur: parseInt(e.target.value) }))}
+                          style={{ width: '100%', accentColor: '#6366F1', cursor: 'pointer' }}
+                        />
+                        <div style={{ fontSize: '0.5625rem', color: 'var(--color-text-muted)', textAlign: 'right' }}>{heatmapOptions.blur}px</div>
+                      </div>
+                    </Tooltip>
+                    <Tooltip content="Valor máximo de intensidad para normalizar colores. Ajusta según rango de horas de pesca.">
+                      <div>
+                        <label style={{ display: 'block', fontSize: '0.625rem', color: 'var(--color-text-secondary)', marginBottom: '0.2rem' }}>MAX VALOR</label>
+                        <input
+                          type="range"
+                          min="0.5"
+                          max="10"
+                          step="0.1"
+                          value={heatmapOptions.max}
+                          onChange={e => setHeatmapOptions(prev => ({ ...prev, max: parseFloat(e.target.value) }))}
+                          style={{ width: '100%', accentColor: '#6366F1', cursor: 'pointer' }}
+                        />
+                        <div style={{ fontSize: '0.5625rem', color: 'var(--color-text-muted)', textAlign: 'right' }}>{heatmapOptions.max.toFixed(1)}</div>
+                      </div>
+                    </Tooltip>
+                    <Tooltip content="Opacidad mínima visible (0-50%). Evita que zonas de bajo valor desaparezcan.">
+                      <div>
+                        <label style={{ display: 'block', fontSize: '0.625rem', color: 'var(--color-text-secondary)', marginBottom: '0.2rem' }}>OPACIDAD MÍN</label>
+                        <input
+                          type="range"
+                          min="0.05"
+                          max="0.5"
+                          step="0.01"
+                          value={heatmapOptions.minOpacity}
+                          onChange={e => setHeatmapOptions(prev => ({ ...prev, minOpacity: parseFloat(e.target.value) }))}
+                          style={{ width: '100%', accentColor: '#6366F1', cursor: 'pointer' }}
+                        />
+                        <div style={{ fontSize: '0.5625rem', color: 'var(--color-text-muted)', textAlign: 'right' }}>{(heatmapOptions.minOpacity * 100).toFixed(0)}%</div>
+                      </div>
+                    </Tooltip>
                   </div>
                 </div>
 
