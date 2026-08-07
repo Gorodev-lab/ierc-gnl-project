@@ -236,21 +236,38 @@ export default function RiskMap() {
       setLayersData(newLayers)
     })
 
-    // Lazy load gfw_fishing when user enables it — fetch directo sin fallthrough al API
+    // Lazy load gfw_fishing — usa formato compacto (330 KB) en lugar del GeoJSON bruto (2.1 MB)
     const loadGfwFishing = async () => {
       setGfwLoading(true)
       setGfwError(null)
       try {
-        const res = await fetch('/data/gfw_fishing_h3.geojson')
+        const res = await fetch('/data/gfw_compact.json')
         if (!res.ok) throw new Error(`HTTP ${res.status}`)
-        const json = await res.json()
-        // toGeoJSON pass-through (ya es GeoJSON válido)
-        const geoJson = json.type === 'FeatureCollection' ? json : { type: 'FeatureCollection', features: [] }
+        const compact = await res.json()
+        // Decodificar formato compacto → GeoJSON FeatureCollection
+        const { flags, geartypes, rows } = compact as {
+          flags: string[]
+          geartypes: string[]
+          rows: number[][]
+        }
+        const geoJson = {
+          type: 'FeatureCollection' as const,
+          features: rows.map((r: number[]) => ({
+            type: 'Feature' as const,
+            properties: {
+              hours:    r[2],
+              year:     r[3],
+              month:    r[4],
+              flag:     flags[r[5]],
+              geartype: geartypes[r[6]],
+            },
+            geometry: { type: 'Point' as const, coordinates: [r[0], r[1]] }
+          }))
+        }
         setLayersData(prev => ({ ...prev, gfw_fishing: geoJson }))
       } catch (err: any) {
         console.error('Error loading gfw_fishing:', err)
         setGfwError(err.message ?? 'Error desconocido')
-        // Revertir el toggle si falló la carga
         setActiveLayers(prev => ({ ...prev, gfw_fishing: false }))
       } finally {
         setGfwLoading(false)
