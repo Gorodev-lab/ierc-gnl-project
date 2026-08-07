@@ -1,7 +1,8 @@
 'use client'
 
-import React, { useEffect, useState, useRef, useMemo } from 'react'
+import React, { useEffect, useState, useRef, useMemo, useCallback } from 'react'
 import dynamic from 'next/dynamic'
+import { useSearchParams, useRouter, usePathname } from 'next/navigation'
 import MiaInspectorModal from './MiaInspectorModal'
 import { getRiskColor } from '@/lib/risk'
 
@@ -254,6 +255,27 @@ export default function RiskMap() {
     flag: 'all' as string,
   })
 
+  // Heatmap intensity controls
+  const [heatmapOptions, setHeatmapOptions] = useState({
+    radius: 25,
+    blur: 15,
+    max: 2,
+    minOpacity: 0.25,
+  })
+
+  // Vessel intelligence report data
+  const [vesselReport, setVesselReport] = useState<{
+    totalVessels: number
+    totalHours: number
+    uniqueMMSI: number
+    topFlags: { flag: string; count: number }[]
+    topGearTypes: { gear: string; hours: number }[]
+    yearsAvailable: number[]
+    monthsAvailable: number[]
+    timeRange: { start: string; end: string }
+    lastUpdated: string
+  } | null>(null)
+
   const [loaded, setLoaded] = useState(false)
   const [gfwLoading, setGfwLoading] = useState(false)
   const [gfwError, setGfwError] = useState<string | null>(null)
@@ -262,6 +284,49 @@ export default function RiskMap() {
   const [leafletIcons, setLeafletIcons] = useState<Record<string, any>>({})
   const [mapZoom, setMapZoom] = useState<number>(5)
   const mapRef = useRef<any>(null)
+
+  // URL state synchronization
+  const searchParams = useSearchParams()
+  const { replace } = useRouter()
+  const pathname = usePathname()
+
+  // Initialize state from URL params
+  useEffect(() => {
+    const params = new URLSearchParams(searchParams.toString())
+    if (params.has('lat') && params.has('lng') && params.has('z')) {
+      mapRef.current?.setView([parseFloat(params.get('lat')!), parseFloat(params.get('lng')!)], parseInt(params.get('z')!))
+    }
+    if (params.has('layers')) {
+      const layerIds = params.get('layers')!.split(',')
+      setActiveLayers(prev => {
+        const next = { ...prev }
+        Object.keys(next).forEach(k => { next[k] = layerIds.includes(k) })
+        return next
+      })
+    }
+  }, [searchParams])
+
+  const syncUrl = useCallback(() => {
+    if (!mapRef.current) return
+    const center = mapRef.current.getCenter()
+    const zoom = mapRef.current.getZoom()
+    const activeLayerIds = Object.entries(activeLayers).filter(([, v]) => v).map(([k]) => k).join(',')
+    const params = new URLSearchParams()
+    params.set('lat', center.lat.toFixed(4))
+    params.set('lng', center.lng.toFixed(4))
+    params.set('z', zoom.toString())
+    if (activeLayerIds) params.set('layers', activeLayerIds)
+    replace(`${pathname}?${params.toString()}`)
+  }, [activeLayers, pathname, replace])
+
+  // Sync URL when map moves or layers change
+  useEffect(() => {
+    if (!mapRef.current) return
+    const handleMoveEnd = () => syncUrl()
+    mapRef.current.on('moveend', handleMoveEnd)
+    syncUrl()
+    return () => mapRef.current?.off('moveend', syncUrl)
+  }, [syncUrl])
 
   useEffect(() => {
     // Load all layers in parallel using Promise.all
@@ -316,6 +381,51 @@ export default function RiskMap() {
           }))
         }
         setLayersData(prev => ({ ...prev, gfw_fishing: geoJson }))
+
+        // Generate vessel intelligence report from loaded data
+        const features = geoJson.features
+        const totalHours = features.reduce((sum, f) => sum + (f.properties.hours || 0), 0)
+        const uniqueMMSI = features.length
+        const flagCounts: Record<string, number> = {}
+        const gearHours: Record<string, number> = {}
+        const yearsSet = new Set<number>()
+        const monthsSet = new Set<number>()
+
+        features.forEach(f => {
+          const p = f.properties
+          flagCounts[p.flag] = (flagCounts[p.flag] || 0) + 1
+          gearHours[p.geartype] = (gearHours[p.geartype] || 0) + (p.hours || 0)
+          yearsSet.add(p.year)
+          monthsSet.add(p.month)
+        })
+
+        const topFlags = Object.entries(flagCounts)
+          .sort(([,a], [,b]) => b - a)
+          .slice(0, 5)
+          .map(([flag, count]) => ({ flag, count }))
+
+        const topGearTypes = Object.entries(gearHours)
+          .sort(([,a], [,b]) => b - a)
+          .slice(0, 5)
+          .map(([gear, hours]) => ({ gear, hours: Number(hours.toFixed(1)) }))
+
+        const yearsAvailable = Array.from(yearsSet).sort()
+        const monthsAvailable = Array.from(monthsSet).sort((a,b) => a-b)
+
+        setVesselReport({
+          totalVessels: uniqueMMSI || features.length,
+          totalHours: Number(totalHours.toFixed(1)),
+          uniqueMMSI,
+          topFlags,
+          topGearTypes,
+          yearsAvailable,
+          monthsAvailable,
+          timeRange: {
+            start: `${yearsAvailable[0]}-${String(monthsAvailable[0]).padStart(2,'0')}`,
+            end: `${yearsAvailable[yearsAvailable.length-1]}-${String(monthsAvailable[monthsAvailable.length-1]).padStart(2,'0')}`
+          },
+          lastUpdated: new Date().toISOString().split('T')[0]
+        })
       } catch (err: any) {
         console.error('Error loading gfw_fishing:', err)
         setGfwError(err.message ?? 'Error desconocido')
@@ -744,6 +854,102 @@ export default function RiskMap() {
                 <div style={{ fontSize: '0.625rem', color: 'var(--color-text-muted)', marginTop: '0.5rem', fontFamily: 'var(--font-mono)' }}>
                   {filteredGfwData ? filteredGfwData.features.length : 0} / {layersData.gfw_fishing?.features.length || 0} celdas
                 </div>
+
+                {/* Heatmap Intensity Controls */}
+                <div style={{ borderTop: '1px solid #6366F1', paddingTop: '0.75rem', marginTop: '0.75rem' }}>
+                  <div style={{ fontSize: '0.6875rem', fontWeight: 800, color: '#6366F1', marginBottom: '0.5rem', letterSpacing: '0.05em' }}>
+                    {'>'} INTENSIDAD HEATMAP
+                  </div>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
+                    <div>
+                      <label style={{ display: 'block', fontSize: '0.625rem', color: 'var(--color-text-secondary)', marginBottom: '0.2rem' }}>RADIO</label>
+                      <input
+                        type="range"
+                        min="5"
+                        max="50"
+                        step="1"
+                        value={heatmapOptions.radius}
+                        onChange={e => setHeatmapOptions(prev => ({ ...prev, radius: parseInt(e.target.value) }))}
+                        style={{ width: '100%', accentColor: '#6366F1', cursor: 'pointer' }}
+                      />
+                      <div style={{ fontSize: '0.5625rem', color: 'var(--color-text-muted)', textAlign: 'right' }}>{heatmapOptions.radius}px</div>
+                    </div>
+                    <div>
+                      <label style={{ display: 'block', fontSize: '0.625rem', color: 'var(--color-text-secondary)', marginBottom: '0.2rem' }}>BLUR</label>
+                      <input
+                        type="range"
+                        min="5"
+                        max="30"
+                        step="1"
+                        value={heatmapOptions.blur}
+                        onChange={e => setHeatmapOptions(prev => ({ ...prev, blur: parseInt(e.target.value) }))}
+                        style={{ width: '100%', accentColor: '#6366F1', cursor: 'pointer' }}
+                      />
+                      <div style={{ fontSize: '0.5625rem', color: 'var(--color-text-muted)', textAlign: 'right' }}>{heatmapOptions.blur}px</div>
+                    </div>
+                    <div>
+                      <label style={{ display: 'block', fontSize: '0.625rem', color: 'var(--color-text-secondary)', marginBottom: '0.2rem' }}>MAX VALOR</label>
+                      <input
+                        type="range"
+                        min="0.5"
+                        max="10"
+                        step="0.1"
+                        value={heatmapOptions.max}
+                        onChange={e => setHeatmapOptions(prev => ({ ...prev, max: parseFloat(e.target.value) }))}
+                        style={{ width: '100%', accentColor: '#6366F1', cursor: 'pointer' }}
+                      />
+                      <div style={{ fontSize: '0.5625rem', color: 'var(--color-text-muted)', textAlign: 'right' }}>{heatmapOptions.max.toFixed(1)}</div>
+                    </div>
+                    <div>
+                      <label style={{ display: 'block', fontSize: '0.625rem', color: 'var(--color-text-secondary)', marginBottom: '0.2rem' }}>OPACIDAD MÍN</label>
+                      <input
+                        type="range"
+                        min="0.05"
+                        max="0.5"
+                        step="0.01"
+                        value={heatmapOptions.minOpacity}
+                        onChange={e => setHeatmapOptions(prev => ({ ...prev, minOpacity: parseFloat(e.target.value) }))}
+                        style={{ width: '100%', accentColor: '#6366F1', cursor: 'pointer' }}
+                      />
+                      <div style={{ fontSize: '0.5625rem', color: 'var(--color-text-muted)', textAlign: 'right' }}>{(heatmapOptions.minOpacity * 100).toFixed(0)}%</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Vessel Intelligence Report */}
+                {vesselReport && (
+                  <div style={{ borderTop: '1px solid #6366F1', paddingTop: '0.75rem', marginTop: '0.75rem' }}>
+                    <div style={{ fontSize: '0.6875rem', fontWeight: 800, color: '#6366F1', marginBottom: '0.5rem', letterSpacing: '0.05em' }}>
+                      {'>'} INTELIGENCIA DE EMBARCACIONES (GFW)
+                    </div>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.3rem', fontSize: '0.625rem' }}>
+                      <div><span style={{ color: 'var(--color-text-muted)' }}>Total Celdas:</span> <span style={{ color: 'var(--color-text-primary)', fontWeight: 700 }}>{vesselReport.totalVessels.toLocaleString()}</span></div>
+                      <div><span style={{ color: 'var(--color-text-muted)' }}>Horas Pesca Totales:</span> <span style={{ color: 'var(--color-text-primary)', fontWeight: 700 }}>{vesselReport.totalHours.toLocaleString()}</span></div>
+                      <div><span style={{ color: 'var(--color-text-muted)' }}>Embarcaciones Únicas:</span> <span style={{ color: 'var(--color-text-primary)', fontWeight: 700 }}>{vesselReport.uniqueMMSI.toLocaleString()}</span></div>
+                      <div><span style={{ color: 'var(--color-text-muted)' }}>Rango Temporal:</span> <span style={{ color: 'var(--color-text-primary)', fontWeight: 700 }}>{vesselReport.timeRange.start} → {vesselReport.timeRange.end}</span></div>
+                      <div><span style={{ color: 'var(--color-text-muted)' }}>Años Disponibles:</span> <span style={{ color: 'var(--color-text-primary)', fontWeight: 700 }}>{vesselReport.yearsAvailable.join(', ')}</span></div>
+                      <div><span style={{ color: 'var(--color-text-muted)' }}>Actualizado:</span> <span style={{ color: 'var(--color-text-primary)', fontWeight: 700 }}>{vesselReport.lastUpdated}</span></div>
+                    </div>
+                    <div style={{ marginTop: '0.5rem', fontSize: '0.5625rem', color: 'var(--color-text-secondary)' }}>
+                      <div style={{ fontWeight: 800, color: 'var(--color-ocean)', marginBottom: '0.2rem' }}>TOP BANDERAS:</div>
+                      {vesselReport.topFlags.map((f, i) => (
+                        <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.1rem 0' }}>
+                          <span>{f.flag}</span>
+                          <span style={{ fontWeight: 700, color: 'var(--color-text-primary)' }}>{f.count.toLocaleString()}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <div style={{ marginTop: '0.5rem', fontSize: '0.5625rem', color: 'var(--color-text-secondary)' }}>
+                      <div style={{ fontWeight: 800, color: 'var(--color-ocean)', marginBottom: '0.2rem' }}>TOP ARTES DE PESCA (HORAS):</div>
+                      {vesselReport.topGearTypes.map((g, i) => (
+                        <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.1rem 0' }}>
+                          <span>{g.gear}</span>
+                          <span style={{ fontWeight: 700, color: 'var(--color-text-primary)' }}>{g.hours.toLocaleString()}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             )}
           </div>
@@ -998,14 +1204,7 @@ export default function RiskMap() {
                       f.geometry.coordinates[0],
                       f.properties?.hours || 0
                     ])}
-                    options={{
-                      radius: 25,
-                      blur: 15,
-                      maxZoom: 7,
-                      gradient: { 0.2: '#FDE047', 0.4: '#F97316', 0.6: '#EF4444', 0.8: '#B91C1C', 1: '#FFFFFF' },
-                      minOpacity: 0.25,
-                      max: 2, // Ajustado para resaltar horas de pesca reales (de 0.1 a 5 horas)
-                    }}
+                    options={heatmapOptions}
                   />
                 )}
                 {activeLayers.gfw_fishing && filteredGfwData && mapZoom > 7 && (

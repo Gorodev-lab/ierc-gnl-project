@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
-const PASSWORD = 'root'
+const PASSWORD = process.env.DASHBOARD_PASSWORD || 'root'
 const COOKIE_NAME = 'ierc_auth'
 
 export function middleware(request: NextRequest) {

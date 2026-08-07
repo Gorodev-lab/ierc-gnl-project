@@ -1,6 +1,7 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useFetch } from '@/lib/useFetch'
 import RiskBadge from './RiskBadge'
 import { getRiskColor } from '@/lib/risk'
 
@@ -219,23 +220,32 @@ function ProjectCard({ project }: { project: Project }) {
 }
 
 export default function ZoneCards() {
-  const [projects, setProjects] = useState<Project[]>([])
-
-  useEffect(() => {
-    fetch('/data/riesgo_proyectos.json')
-      .then(r => r.json())
-      .then(data => {
-        setProjects(data.proyectos || [])
-      })
-      .catch(console.error)
-  }, [])
+  const { data, loading, error, refetch } = useFetch<{ proyectos: Project[] }>('/data/riesgo_proyectos.json')
 
   return (
     <div className="section">
-      <div className="section-title">Terminales GNL &amp; Evaluación de Riesgo Pesquero PANGAS</div>
-      <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.25rem' }}>
-        {projects.map(p => <ProjectCard key={p.proyecto_id} project={p} />)}
-      </div>
+      <div className="section-title">Terminales GNL & Evaluación de Riesgo Pesquero PANGAS</div>
+
+      {loading && (
+        <div style={{ padding: '2rem', textAlign: 'center', fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}>
+          [ CARGANDO TERMINALES GNL... ]
+        </div>
+      )}
+
+      {error && (
+        <div style={{ padding: '1rem', background: 'rgba(192,57,43,0.15)', border: '1px solid #C0392B', color: '#E74C3C', fontFamily: 'var(--font-mono)', fontSize: '0.75rem' }}>
+          Error cargando datos: {error.message}
+          <button onClick={refetch} style={{ marginLeft: '1rem', background: 'transparent', border: '1px solid #C0392B', color: '#E74C3C', padding: '0.2rem 0.5rem', cursor: 'pointer', fontFamily: 'var(--font-mono)', fontSize: '0.6875rem' }}>
+            REINTENTAR
+          </button>
+        </div>
+      )}
+
+      {!loading && !error && (
+        <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.25rem' }}>
+          {data?.proyectos?.map(p => <ProjectCard key={p.proyecto_id} project={p} />) || []}
+        </div>
+      )}
     </div>
   )
 }

@@ -161,18 +161,32 @@ export default function MethodologyPanel() {
               [V] VULNERABILIDAD SOCIOECOLÓGICA
             </div>
             {vAxes.map(a => (
-              <div key={a.label} style={{ marginBottom: '0.5rem' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.2rem' }}>
-                  <span style={{ fontSize: '0.6875rem', color: 'var(--color-text-secondary)' }}>{a.label}</span>
-                  <WeightBar peso={a.peso} color={a.color} />
-                </div>
-                <div style={{ fontSize: '0.625rem', color: 'var(--color-text-muted)' }}>
-                  {a.fuente}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+                          <div key={a.label} style={{ marginBottom: '0.5rem' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.2rem' }}>
+                              <span style={{ fontSize: '0.6875rem', color: 'var(--color-text-secondary)' }}>{a.label}</span>
+                              <WeightBar peso={a.peso} color={a.color} />
+                            </div>
+                            <div style={{ fontSize: '0.625rem', color: 'var(--color-text-muted)' }}>
+                              {a.fuente}
+                            </div>
+                          </div>
+                        ))}
+
+                        {/* Advertencia: datos socioeconómicos constantes */}
+                        <div style={{
+                          marginTop: '0.5rem',
+                          padding: '0.5rem',
+                          background: 'rgba(243, 156, 18, 0.1)',
+                          border: '1px solid #F39C12',
+                          borderRadius: 0,
+                          fontFamily: 'var(--font-mono)',
+                          fontSize: '0.625rem',
+                          color: '#F39C12',
+                        }}>
+                          ⚠ Datos socioeconómicos (dependencia, biocultural, género, capacidad) son constantes por celda — V sub-índice no captura varianza espacial real
+                        </div>
+                      </div>
+                    </div>
 
         {/* Columna derecha: Modelo Multiplicativo + Monte Carlo + Refs */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>

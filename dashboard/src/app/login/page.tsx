@@ -11,13 +11,23 @@ function LoginForm() {
   const [error, setError] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (password === 'root') {
-      document.cookie = `ierc_auth=root; path=/; max-age=2592000; SameSite=Lax`
-      router.push(redirect)
-      router.refresh()
-    } else {
+    try {
+      const res = await fetch('/api/auth', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password })
+      })
+
+      if (res.ok) {
+        router.push(redirect)
+        router.refresh()
+      } else {
+        setError(true)
+        setPassword('')
+      }
+    } catch {
       setError(true)
       setPassword('')
     }

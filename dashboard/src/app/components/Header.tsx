@@ -3,9 +3,11 @@ import React from 'react'
 export default function Header({
   onOpenCoverage,
   onOpenExport,
+  onToggleSidebar,
 }: {
   onOpenCoverage?: () => void
   onOpenExport?: () => void
+  onToggleSidebar?: () => void
 }) {
   return (
     <>
@@ -162,6 +164,30 @@ export default function Header({
             }}>
               [ OGC GPKG v1.1 ]
             </div>
+
+            {onToggleSidebar && (
+              <button
+                onClick={onToggleSidebar}
+                style={{
+                  background: 'var(--color-surface-2)',
+                  border: '1px solid var(--color-border)',
+                  color: 'var(--color-text-primary)',
+                  borderRadius: 0,
+                  padding: '5px 10px',
+                  fontSize: '0.72rem',
+                  fontWeight: 700,
+                  cursor: 'pointer',
+                  fontFamily: 'var(--font-mono)',
+                  letterSpacing: '0.04em',
+                  transition: 'background 0.15s ease',
+                }}
+                onMouseOver={(e) => e.currentTarget.style.background = 'var(--color-surface-3)'}
+                onMouseOut={(e) => e.currentTarget.style.background = 'var(--color-surface-2)'}
+                aria-label="Toggle sidebar"
+              >
+                ☰
+              </button>
+            )}
           </div>
         </div>
 
