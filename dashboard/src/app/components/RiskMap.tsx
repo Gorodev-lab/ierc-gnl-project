@@ -205,10 +205,12 @@ export default function RiskMap() {
   })
 
   const [loaded, setLoaded] = useState(false)
+  const [gfwLoading, setGfwLoading] = useState(false)
+  const [gfwError, setGfwError] = useState<string | null>(null)
   const [selectedMiaFeature, setSelectedMiaFeature] = useState<Record<string, any> | null>(null)
   const [isMiaOpen, setIsMiaOpen] = useState(false)
   const [leafletIcons, setLeafletIcons] = useState<Record<string, any>>({})
-  const [mapZoom, setMapZoom] = useState<number>(6)
+  const [mapZoom, setMapZoom] = useState<number>(5)
   const mapRef = useRef<any>(null)
 
   useEffect(() => {
@@ -234,16 +236,24 @@ export default function RiskMap() {
       setLayersData(newLayers)
     })
 
-    // Lazy load gfw_fishing when user enables it
+    // Lazy load gfw_fishing when user enables it — fetch directo sin fallthrough al API
     const loadGfwFishing = async () => {
-      const cfg = LAYER_CONFIGS.find(c => c.id === 'gfw_fishing')
-      if (cfg) {
-        try {
-          const geoJson = await loadLayer(cfg.id, cfg.file)
-          setLayersData(prev => ({ ...prev, gfw_fishing: geoJson }))
-        } catch (err) {
-          console.error('Error loading gfw_fishing:', err)
-        }
+      setGfwLoading(true)
+      setGfwError(null)
+      try {
+        const res = await fetch('/data/gfw_fishing_h3.geojson')
+        if (!res.ok) throw new Error(`HTTP ${res.status}`)
+        const json = await res.json()
+        // toGeoJSON pass-through (ya es GeoJSON válido)
+        const geoJson = json.type === 'FeatureCollection' ? json : { type: 'FeatureCollection', features: [] }
+        setLayersData(prev => ({ ...prev, gfw_fishing: geoJson }))
+      } catch (err: any) {
+        console.error('Error loading gfw_fishing:', err)
+        setGfwError(err.message ?? 'Error desconocido')
+        // Revertir el toggle si falló la carga
+        setActiveLayers(prev => ({ ...prev, gfw_fishing: false }))
+      } finally {
+        setGfwLoading(false)
       }
     }
 
@@ -636,6 +646,8 @@ export default function RiskMap() {
                   ? (filteredGfwData?.features?.length ?? null)
                   : (layersData[cfg.id]?.features?.length ?? null)
                 const isActive = activeLayers[cfg.id]
+                const isGfwLoading = cfg.id === 'gfw_fishing' && gfwLoading
+                const hasGfwError = cfg.id === 'gfw_fishing' && gfwError
                 return (
                   <div key={cfg.id} style={{
                     display: 'flex',
@@ -643,20 +655,22 @@ export default function RiskMap() {
                     gap: '0.5rem',
                     padding: '0.3rem 0.25rem',
                     borderBottom: '1px solid var(--color-border)',
-                    cursor: 'pointer',
+                    cursor: isGfwLoading ? 'wait' : 'pointer',
                     opacity: isActive ? 1 : 0.55,
                     transition: 'opacity 0.15s ease',
                   }}
-                  onClick={() => toggleLayer(cfg.id)}
+                  onClick={() => !isGfwLoading && toggleLayer(cfg.id)}
                   >
                     <span style={{ display: 'inline-block', width: 10, height: 10, flexShrink: 0, background: cfg.color, opacity: isActive ? 1 : 0.4 }} />
-                    <span style={{ fontSize: '0.625rem', fontWeight: 800, color: isActive ? 'var(--color-ok)' : 'var(--color-text-disabled)', fontFamily: 'var(--font-mono)', flexShrink: 0 }}>
-                      {isActive ? '[ON]' : '[--]'}
+                    <span style={{ fontSize: '0.625rem', fontWeight: 800, color: isGfwLoading ? 'var(--color-warn)' : hasGfwError ? 'var(--color-alert)' : isActive ? 'var(--color-ok)' : 'var(--color-text-disabled)', fontFamily: 'var(--font-mono)', flexShrink: 0 }}>
+                      {isGfwLoading ? '[...]' : hasGfwError ? '[ERR]' : isActive ? '[ON]' : '[--]'}
                     </span>
                     <span style={{ fontSize: '0.6875rem', color: isActive ? 'var(--color-text-primary)' : 'var(--color-text-muted)', flex: 1, lineHeight: 1.3 }}>
                       {cfg.name}
+                      {isGfwLoading && <span style={{ fontSize: '0.5625rem', color: 'var(--color-warn)', fontFamily: 'var(--font-mono)', marginLeft: 4 }}>CARGANDO 2.1 MB…</span>}
+                      {hasGfwError && <span style={{ fontSize: '0.5625rem', color: 'var(--color-alert)', fontFamily: 'var(--font-mono)', marginLeft: 4 }}>{gfwError}</span>}
                     </span>
-                    {featureCount !== null && (
+                    {featureCount !== null && !isGfwLoading && (
                       <span style={{ fontSize: '0.5625rem', color: 'var(--color-text-muted)', fontVariantNumeric: 'tabular-nums', flexShrink: 0 }}>
                         {featureCount.toLocaleString()}
                       </span>
