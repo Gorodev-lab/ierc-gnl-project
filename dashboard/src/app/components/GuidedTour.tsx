@@ -91,7 +91,6 @@ export default function GuidedTour({ steps, onComplete, storageKey = 'ierc-tour-
         inset: 0,
         background: 'rgba(0,0,0,0.6)',
         zIndex: 9998,
-        pointerEvents: 'none',
       }}
       onClick={skip}
     />
@@ -178,7 +177,7 @@ export default function GuidedTour({ steps, onComplete, storageKey = 'ierc-tour-
         border: '2px solid var(--color-accent)',
         boxShadow: '0 0 0 9999px rgba(0,0,0,0.5), 0 0 0 2px var(--color-accent)',
         borderRadius: 4,
-        zIndex: 9999,
+        zIndex: 9998,
         pointerEvents: 'none',
         animation: 'pulse 1.5s ease-in-out infinite',
       }}
