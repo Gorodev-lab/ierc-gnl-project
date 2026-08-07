@@ -110,6 +110,56 @@ const TERMINAL_JUMPS: TerminalQuickJump[] = [
   }
 ]
 
+function LayerToggle({ cfg, isActive, featureCount, onClick,extras }: {
+  cfg: LayerConfig
+  isActive: boolean
+  featureCount: number | null
+  onClick: () => void
+  extras?: React.ReactNode
+}) {
+  return (
+    <div
+      style={{
+        display: 'flex', alignItems: 'center', gap: '0.5rem',
+        padding: '0.3rem 0.25rem',
+        borderBottom: '1px solid var(--color-border)',
+        cursor: 'pointer',
+        opacity: isActive ? 1 : 0.55,
+        transition: 'opacity 0.15s ease',
+      }}
+      onClick={onClick}
+    >
+      <span style={{
+        display: 'inline-block', width: 10, height: 10, flexShrink: 0,
+        background: cfg.id === 'sener_gasoductos' ? 'transparent' : cfg.color,
+        border: cfg.id === 'sener_gasoductos' ? `2px solid ${cfg.color}` : 'none',
+        opacity: isActive ? 1 : 0.4,
+      }} />
+      <span style={{
+        fontSize: '0.625rem', fontWeight: 800, fontFamily: 'var(--font-mono)', flexShrink: 0,
+        color: !isActive ? 'var(--color-text-disabled)' : 'var(--color-ok)',
+      }}>
+        {isActive ? '[ON]' : '[--]'}
+      </span>
+      <span style={{
+        fontSize: '0.6875rem', flex: 1, lineHeight: 1.3,
+        color: isActive ? 'var(--color-text-primary)' : 'var(--color-text-muted)',
+      }}>
+        {cfg.name}
+        {extras}
+      </span>
+      {featureCount !== null && (
+        <span style={{
+          fontSize: '0.5625rem', color: 'var(--color-text-muted)',
+          fontVariantNumeric: 'tabular-nums', flexShrink: 0,
+        }}>
+          {featureCount.toLocaleString()}
+        </span>
+      )}
+    </div>
+  )
+}
+
 function getBathymetryColor(depth: number): { color: string; weight: number; opacity: number } {
   if (depth >= -20) return { color: '#7DD3FC', weight: 0.9, opacity: 0.8 }
   if (depth >= -100) return { color: '#38BDF8', weight: 0.8, opacity: 0.7 }
@@ -277,8 +327,12 @@ export default function RiskMap() {
     // Store loader for later use
     ;(window as any).loadGfwFishing = loadGfwFishing
 
-    import('leaflet').then(L => {
+    import('leaflet').then(async L => {
       (window as any).L = L
+      // @ts-ignore
+      await import('leaflet.heat')
+      return L
+    }).then(L => {
       delete (L.Icon.Default.prototype as any)._getIconUrl
       L.Icon.Default.mergeOptions({
         iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
@@ -871,7 +925,15 @@ export default function RiskMap() {
                 ref={mapRef}
                 style={{ height: '100%', width: '100%' }}
                 attributionControl={true}
-                whenReady={() => { mapRef.current?.on('zoomend', () => setMapZoom(mapRef.current?.getZoom() ?? 5)) }}
+                whenReady={() => {
+                  if (mapRef.current) {
+                    mapRef.current.invalidateSize()
+                    setTimeout(() => {
+                      mapRef.current?.invalidateSize()
+                    }, 250)
+                  }
+                  mapRef.current?.on('zoomend', () => setMapZoom(mapRef.current?.getZoom() ?? 5))
+                }}
               >
                 <TileLayer
                   attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> | CartoDB'
