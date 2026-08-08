@@ -135,3 +135,28 @@ jobs:
           else
             echo "CI PASSED"
           fi
+
+  deploy-vercel:
+    name: Deploy Dashboard to Vercel
+    runs-on: ubuntu-latest
+    needs: [test, lint, verify-cdc, dashboard-build]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel@latest
+
+      - name: Pull Vercel Environment
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Build Project Artifacts
+        run: |
+          cd dashboard
+          npm run build
+
+      - name: Deploy to Vercel
+        run: |
+          cd dashboard
+          vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
