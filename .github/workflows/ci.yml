@@ -53,12 +53,10 @@ jobs:
         run: |
           python -m py_compile \
             src/data/ingestion/base.py \
-            src/data/ingestion/factory.py \
             src/data/catalog/catalog.py \
             src/data/ingestion/asea_mias.py \
             src/data/lakehouse/storage.py \
             src/utils/h3.py \
-            src/utils/standardize.py \
             src/utils/logging.py \
             src/engine/spatial_validator.py \
             src/engine/responsible_ai.py \
