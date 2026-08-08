@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react'
 import { useFetch } from '@/lib/useFetch'
 import RiskBadge from './RiskBadge'
-import { getRiskColor } from '@/lib/risk'
 
 interface Project {
   proyecto_id: string

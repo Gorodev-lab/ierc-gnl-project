@@ -9,8 +9,8 @@ import SpeciesPanel from './components/SpeciesPanel'
 import MethodologyPanel from './components/MethodologyPanel'
 import CoverageModal from './components/CoverageModal'
 import ExportModal from './components/ExportModal'
-import GuidedTour from './components/GuidedTour'
-import Tooltip from './components/Tooltip'
+import driver from 'driver.js'
+import 'driver.js/dist/driver.css'
 
 const SECTIONS = [
   { id: 'mapa', label: 'VISOR ESPACIAL' },
@@ -264,23 +264,58 @@ export default function Home() {
 
         <ExportModal isOpen={isExportOpen} onClose={() => setIsExportOpen(false)} />
 
-        <GuidedTour
-          steps={[
-            {
-              id: 'layers',
-              target: '[data-tour="layer-panel"]',
-              title: 'Capas y Filtros',
-              content: 'Activa/desactiva capas (GFW pesca, PANGAS, IERC, ductos). Usa los filtros de año, mes, arte y bandera para refinar la vista.',
-              position: 'right',
-            },
-            {
-              id: 'terminals',
-              target: '[data-tour="terminal-jumps"]',
-              title: 'Navegación Rápida',
-              content: 'Click en cualquier terminal (Saguaro, Amigo, Vista, Cosalá) para volar al sitio y abrir su ficha MIA con planos y metadatos.',
-              position: 'left',
-            },
-          ]}
+        {/*
+         * driver.js onboarding tour (replaces custom GuidedTour)
+         * Only runs on first visit, uses localStorage to track completion
+         */}
+        <div
+          style={{ display: 'none' }}
+          data-driver-step="1"
+          data-driver-title="Capas y Filtros"
+          data-driver-description="Activa/desactiva capas (GFW pesca, PANGAS, IERC, ductos). Usa los filtros de año, mes, arte y bandera para refinar la vista."
+          data-driver-side="right"
+          data-tour="layer-panel"
+        />
+        <div
+          style={{ display: 'none' }}
+          data-driver-step="2"
+          data-driver-title="Navegación Rápida"
+          data-driver-description="Click en cualquier terminal (Saguaro, Amigo, Vista, Cosalá) para volar al sitio y abrir su ficha MIA con planos y metadatos."
+          data-driver-side="left"
+          data-tour="terminal-jumps"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                const STORAGE_KEY = 'ierc-tour-completed';
+                if (localStorage.getItem(STORAGE_KEY)) return;
+                
+                const driverObj = window.driver?.default || window.driver;
+                if (!driverObj) return;
+                
+                const tour = driverObj({
+                  animate: true,
+                  opacity: 0.6,
+                  padding: 10,
+                  allowClose: true,
+                  doneBtnText: 'Entendido',
+                  nextBtnText: 'Siguiente',
+                  prevBtnText: 'Anterior',
+                  onDestroyStarted: function() {
+                    localStorage.setItem(STORAGE_KEY, 'true');
+                  },
+                  onReset: function() {
+                    localStorage.setItem(STORAGE_KEY, 'true');
+                  }
+                });
+                
+                setTimeout(function() {
+                  tour.drive();
+                }, 500);
+              })();
+            `
+          }}
         />
 
         <ScrollToTop />
