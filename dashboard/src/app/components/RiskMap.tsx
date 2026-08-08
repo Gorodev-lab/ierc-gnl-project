@@ -1,17 +1,10 @@
 'use client'
 
 import React, { useEffect, useState, useRef, useMemo, useCallback } from 'react'
-import dynamic from 'next/dynamic'
 import { useSearchParams, useRouter, usePathname } from 'next/navigation'
 import MiaInspectorModal from './MiaInspectorModal'
 import { getRiskColor } from '@/lib/risk'
-
-const MapContainer   = dynamic(() => import('react-leaflet').then(m => m.MapContainer),   { ssr: false })
-const TileLayer      = dynamic(() => import('react-leaflet').then(m => m.TileLayer),      { ssr: false })
-const Marker         = dynamic(() => import('react-leaflet').then(m => m.Marker),         { ssr: false })
-const Popup          = dynamic(() => import('react-leaflet').then(m => m.Popup),          { ssr: false })
-const GeoJSON        = dynamic(() => import('react-leaflet').then(m => m.GeoJSON),        { ssr: false })
-const WMSTileLayer   = dynamic(() => import('react-leaflet').then(m => m.WMSTileLayer),   { ssr: false })
+import { MapContainer, TileLayer, Marker, Popup, GeoJSON, WMSTileLayer } from 'react-leaflet'
 import Heatmap from './Heatmap'
 
 // Leaflet only available client-side

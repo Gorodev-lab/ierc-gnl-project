@@ -1,14 +1,16 @@
 'use client'
 
 import React, { useState, useEffect, Suspense } from 'react'
+import dynamic from 'next/dynamic'
 import Header from './components/Header'
-import RiskMap from './components/RiskMap'
 import ZoneCards from './components/ZoneCards'
 import GasInfraPanel from './components/GasInfraPanel'
 import SpeciesPanel from './components/SpeciesPanel'
 import MethodologyPanel from './components/MethodologyPanel'
 import CoverageModal from './components/CoverageModal'
 import ExportModal from './components/ExportModal'
+
+const RiskMap = dynamic(() => import('./components/RiskMap').then(m => m.default), { ssr: false })
 import driver from 'driver.js'
 import 'driver.js/dist/driver.css'
 

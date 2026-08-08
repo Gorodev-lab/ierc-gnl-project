@@ -1,6 +1,7 @@
-import React from 'react'
+'use client'
 
-// ─── Tipos ────────────────────────────────────────────────────────────────────
+import React, { useEffect, useState } from 'react'
+
 interface ComponentAxis {
   label: string
   labelEs: string
@@ -10,71 +11,27 @@ interface ComponentAxis {
   subindice: 'H' | 'V'
 }
 
-// ─── Datos verificados del inventario v2.3 ────────────────────────────────────
-const AXES: ComponentAxis[] = [
-  {
-    label: 'Amenaza (H)',
-    labelEs: 'Infraestructura GNL, ruido, rutas metaneros, ductos CNIH',
-    peso: 0.20,
-    color: 'var(--color-alert)',
-    fuente: 'ASEA MIA · GFW rutas · Ductos CNIH',
-    subindice: 'H',
-  },
-  {
-    label: 'Exposición (H)',
-    labelEs: 'Esfuerzo pesquero VMS + pangas artesanales',
-    peso: 0.20,
-    color: '#FF6B00',
-    fuente: 'GFW Zenodo · PANGAS GDB · Ductos CNIH',
-    subindice: 'H',
-  },
-  {
-    label: 'Sensibilidad (V)',
-    labelEs: 'Especies IUCN, endemismo, hábitats críticos',
-    peso: 0.15,
-    color: 'var(--color-warn)',
-    fuente: 'TNC Shapefiles · NASA OceanColor · OBIS',
-    subindice: 'V',
-  },
-  {
-    label: 'Dependencia Económica (V)',
-    labelEs: 'Ingreso pesquero / ingreso total del hogar',
-    peso: 0.15,
-    color: 'var(--color-accent)',
-    fuente: 'Encuestas PANGAS · INEGI 2020',
-    subindice: 'V',
-  },
-  {
-    label: 'Valor Biocultural (V)',
-    labelEs: 'Sitios sagrados Comca\'ac, patrimonio inmaterial',
-    peso: 0.20,
-    color: 'var(--color-ok)',
-    fuente: 'Trabajo de campo · Comunidades POA',
-    subindice: 'V',
-  },
-  {
-    label: '(1 − Cap. Adaptativa) (V)',
-    labelEs: 'Gobernanza GAGE, diversificación, acceso a crédito',
-    peso: 0.15,
-    color: 'var(--color-ocean)',
-    fuente: 'GAGE · Encuestas 2026',
-    subindice: 'V',
-  },
-]
+interface MonteCarloRow {
+  label: string
+  value: string
+}
 
-const MONTE_CARLO_ROWS = [
-  { label: 'Simulaciones Monte Carlo',    value: 'N = 1,000 iter/celda' },
-  { label: 'Intervalo de confianza',      value: 'p05 — p95 (90% IC)' },
-  { label: 'Celdas H3-8 procesadas',      value: '830,869 hexágonos' },
-  { label: 'Formato entregable (Meta 1)', value: 'OGC GeoPackage v1.1' },
-  { label: 'Ruta del entregable',         value: 'deliverables/v1_geopackage/' },
-  { label: 'Resolución espacial H3',      value: 'Res 8 (0.73 km²) + Res 10 costero' },
-  { label: 'Dataset Monte Carlo Gold',    value: 'ierc_monte_carlo_h3_8.parquet (33 MB)' },
-]
+interface Reference {
+  authors: string
+  year: string
+  title: string
+  journal: string
+}
+
+interface MethodologyData {
+  axes: ComponentAxis[]
+  monteCarloRows: MonteCarloRow[]
+  references: Reference[]
+}
 
 function WeightBar({ peso, color }: { peso: number; color: string }) {
   const pct = Math.round(peso * 100)
-  const filled = Math.round((pct / 25) * 10)  // max es 25%
+  const filled = Math.round((pct / 25) * 10)
   const empty = 10 - filled
   return (
     <span style={{
@@ -90,14 +47,37 @@ function WeightBar({ peso, color }: { peso: number; color: string }) {
 }
 
 export default function MethodologyPanel() {
-  const hAxes = AXES.filter(a => a.subindice === 'H')
-  const vAxes = AXES.filter(a => a.subindice === 'V')
+  const [data, setData] = useState<MethodologyData | null>(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    fetch('/data/methodology.json')
+      .then(r => r.json())
+      .then(setData)
+      .catch(console.error)
+      .finally(() => setLoading(false))
+  }, [])
+
+  if (loading || !data) {
+    return (
+      <div className="section" style={{ borderTop: '1px solid var(--color-border)', paddingTop: '2rem' }}>
+        <div className="section-title">Metodología IERC & Motor de Cálculo Monte Carlo</div>
+        <div style={{ padding: '2rem', textAlign: 'center', fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}>
+          [ CARGANDO METODOLOGÍA... ]
+        </div>
+      </div>
+    )
+  }
+
+  const { axes, monteCarloRows, references } = data
+  const hAxes = axes.filter(a => a.subindice === 'H')
+  const vAxes = axes.filter(a => a.subindice === 'V')
 
   return (
     <div className="section" style={{ borderTop: '1px solid var(--color-border)', paddingTop: '2rem' }}>
-      <div className="section-title">Metodología IERC &amp; Motor de Cálculo Monte Carlo</div>
+      <div className="section-title">Metodología IERC & Motor de Cálculo Monte Carlo</div>
 
-      {/* ── Fila superior: dos modelos lado a lado ─────────────────────────── */}
+      {/* Fila superior: dos modelos lado a lado */}
       <div className="grid-2" style={{ marginBottom: '1.25rem' }}>
 
         {/* Modelo Aditivo Oficial */}
@@ -109,7 +89,7 @@ export default function MethodologyPanel() {
             letterSpacing: '0.05em',
             marginBottom: '0.625rem',
           }}>
-            &gt; MODELO ADITIVO (OFICIAL — POA 2026-2028)
+            {' > MODELO ADITIVO (OFICIAL — POA 2026-2028)'}
           </div>
           <div className="formula-box">
             <div style={{ color: 'var(--color-text-muted)', marginBottom: '0.5rem', fontSize: '0.6875rem' }}>
@@ -133,7 +113,7 @@ export default function MethodologyPanel() {
             fontFamily: 'var(--font-mono)',
           }}>
             <div style={{ fontSize: '0.625rem', fontWeight: 800, color: 'var(--color-alert)', letterSpacing: '0.06em', marginBottom: '0.4rem' }}>
-              [H] AMENAZA &amp; EXPOSICIÓN ESPACIAL
+              [H] AMENAZA & EXPOSICIÓN ESPACIAL
             </div>
             {hAxes.map(a => (
               <div key={a.label} style={{ marginBottom: '0.5rem' }}>
@@ -161,32 +141,32 @@ export default function MethodologyPanel() {
               [V] VULNERABILIDAD SOCIOECOLÓGICA
             </div>
             {vAxes.map(a => (
-                          <div key={a.label} style={{ marginBottom: '0.5rem' }}>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.2rem' }}>
-                              <span style={{ fontSize: '0.6875rem', color: 'var(--color-text-secondary)' }}>{a.label}</span>
-                              <WeightBar peso={a.peso} color={a.color} />
-                            </div>
-                            <div style={{ fontSize: '0.625rem', color: 'var(--color-text-muted)' }}>
-                              {a.fuente}
-                            </div>
-                          </div>
-                        ))}
+              <div key={a.label} style={{ marginBottom: '0.5rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.2rem' }}>
+                  <span style={{ fontSize: '0.6875rem', color: 'var(--color-text-secondary)' }}>{a.label}</span>
+                  <WeightBar peso={a.peso} color={a.color} />
+                </div>
+                <div style={{ fontSize: '0.625rem', color: 'var(--color-text-muted)' }}>
+                  {a.fuente}
+                </div>
+              </div>
+            ))}
 
-                        {/* Advertencia: datos socioeconómicos constantes */}
-                        <div style={{
-                          marginTop: '0.5rem',
-                          padding: '0.5rem',
-                          background: 'rgba(243, 156, 18, 0.1)',
-                          border: '1px solid #F39C12',
-                          borderRadius: 0,
-                          fontFamily: 'var(--font-mono)',
-                          fontSize: '0.625rem',
-                          color: '#F39C12',
-                        }}>
-                          ⚠ Datos socioeconómicos (dependencia, biocultural, género, capacidad) son constantes por celda — V sub-índice no captura varianza espacial real
-                        </div>
-                      </div>
-                    </div>
+            {/* Advertencia: datos socioeconómicos constantes */}
+            <div style={{
+              marginTop: '0.5rem',
+              padding: '0.5rem',
+              background: 'rgba(243, 156, 18, 0.1)',
+              border: '1px solid #F39C12',
+              borderRadius: 0,
+              fontFamily: 'var(--font-mono)',
+              fontSize: '0.625rem',
+              color: '#F39C12',
+            }}>
+              ⚠ Datos socioeconómicos (dependencia, biocultural, género, capacidad) son constantes por celda — V sub-índice no captura varianza espacial real
+            </div>
+          </div>
+        </div>
 
         {/* Columna derecha: Modelo Multiplicativo + Monte Carlo + Refs */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -200,22 +180,22 @@ export default function MethodologyPanel() {
               letterSpacing: '0.05em',
               marginBottom: '0.625rem',
             }}>
-              &gt; MODELO MULTIPLICATIVO (IPCC AR5)
+              {' > MODELO MULTIPLICATIVO (IPCC AR5)'}
             </div>
             <div className="formula-box">
               <div style={{ color: 'var(--color-text-muted)', marginBottom: '0.5rem', fontSize: '0.6875rem' }}>
                 // RIESGO INTEGRAL POR CELDA H3 (i) Y PERÍODO (t)
               </div>
-              <span style={{ color: 'var(--color-accent)', fontWeight: 800 }}>{"R_{i,t}"}</span>{" = "}
-              <span style={{ color: 'var(--color-alert)', fontWeight: 700 }}>{"H_{i,t}"}</span>
-              {" × "}
-              <span style={{ color: 'var(--color-ocean)', fontWeight: 700 }}>{"V_{i,t}"}</span>
+              <span style={{ color: 'var(--color-accent)', fontWeight: 800 }}>R<sub>i,t</sub></span> = 
+              <span style={{ color: 'var(--color-alert)', fontWeight: 700 }}>H<sub>i,t</sub></span>
+              × 
+              <span style={{ color: 'var(--color-ocean)', fontWeight: 700 }}>V<sub>i,t</sub></span>
               <br /><br />
               <span style={{ color: 'var(--color-text-muted)', fontSize: '0.6875rem' }}>
                 // RIESGO PESQUERO (MORENO-BÁEZ ET AL. 2012):<br />
                 R = (0.50 × esfuerzo) + (0.30 × proximidad) + (0.20 × spp_críticas)<br /><br />
                 // CONFIANZA ESPACIAL (NIVEL III):<br />
-                C_i = (0.40 × dens.obs) + (0.30 × consist.) + (0.30 × val.comunitaria)
+                C<sub>i</sub> = (0.40 × dens.obs) + (0.30 × consist.) + (0.30 × val.comunitaria)
               </span>
             </div>
 
@@ -249,10 +229,10 @@ export default function MethodologyPanel() {
               letterSpacing: '0.05em',
               marginBottom: '0.75rem',
             }}>
-              &gt; MOTOR DE CÁLCULO &amp; DATOS VERIFICADOS v2.3
+              {' > MOTOR DE CÁLCULO & DATOS VERIFICADOS v2.3'}
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
-              {MONTE_CARLO_ROWS.map(row => (
+              {monteCarloRows.map(row => (
                 <div key={row.label} className="stat-row">
                   <span className="stat-row-label">{row.label}</span>
                   <span className="stat-row-value">{row.value}</span>
@@ -270,22 +250,9 @@ export default function MethodologyPanel() {
               letterSpacing: '0.05em',
               marginBottom: '0.75rem',
             }}>
-              &gt; REFERENCIAS BIBLIOGRÁFICAS
+              {' > REFERENCIAS BIBLIOGRÁFICAS'}
             </div>
-            {[
-              {
-                authors: 'Moreno-Báez et al.',
-                year: '2011',
-                title: 'Integrating the spatial and temporal dimensions of fishing for management in the Northern Gulf of California',
-                journal: 'Marine Policy, 35(3), 297–309',
-              },
-              {
-                authors: 'Moreno-Báez et al.',
-                year: '2012',
-                title: 'Integrating the spatial and temporal dimensions of fishing activities for management in the Northern Gulf of California',
-                journal: 'Marine Policy, 38, 483–489',
-              },
-            ].map(ref => (
+            {references.map(ref => (
               <div key={ref.year} style={{
                 padding: '0.625rem',
                 background: 'var(--color-surface-2)',

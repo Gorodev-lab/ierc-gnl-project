@@ -1,0 +1,75 @@
+{
+  "axes": [
+    {
+      "label": "Amenaza (H)",
+      "labelEs": "Infraestructura GNL, ruido, rutas metaneros, ductos CNIH",
+      "peso": 0.20,
+      "color": "var(--color-alert)",
+      "fuente": "ASEA MIA · GFW rutas · Ductos CNIH",
+      "subindice": "H"
+    },
+    {
+      "label": "Exposición (H)",
+      "labelEs": "Esfuerzo pesquero VMS + pangas artesanales",
+      "peso": 0.20,
+      "color": "#FF6B00",
+      "fuente": "GFW Zenodo · PANGAS GDB · Ductos CNIH",
+      "subindice": "H"
+    },
+    {
+      "label": "Sensibilidad (V)",
+      "labelEs": "Especies IUCN, endemismo, hábitats críticos",
+      "peso": 0.15,
+      "color": "var(--color-warn)",
+      "fuente": "TNC Shapefiles · NASA OceanColor · OBIS",
+      "subindice": "V"
+    },
+    {
+      "label": "Dependencia Económica (V)",
+      "labelEs": "Ingreso pesquero / ingreso total del hogar",
+      "peso": 0.15,
+      "color": "var(--color-accent)",
+      "fuente": "Encuestas PANGAS · INEGI 2020",
+      "subindice": "V"
+    },
+    {
+      "label": "Valor Biocultural (V)",
+      "labelEs": "Sitios sagrados Comca'ac, patrimonio inmaterial",
+      "peso": 0.20,
+      "color": "var(--color-ok)",
+      "fuente": "Trabajo de campo · Comunidades POA",
+      "subindice": "V"
+    },
+    {
+      "label": "(1 − Cap. Adaptativa) (V)",
+      "labelEs": "Gobernanza GAGE, diversificación, acceso a crédito",
+      "peso": 0.15,
+      "color": "var(--color-ocean)",
+      "fuente": "GAGE · Encuestas 2026",
+      "subindice": "V"
+    }
+  ],
+  "monteCarloRows": [
+    { "label": "Simulaciones Monte Carlo", "value": "N = 1,000 iter/celda" },
+    { "label": "Intervalo de confianza", "value": "p05 — p95 (90% IC)" },
+    { "label": "Celdas H3-8 procesadas", "value": "830,869 hexágonos" },
+    { "label": "Formato entregable (Meta 1)", "value": "OGC GeoPackage v1.1" },
+    { "label": "Ruta del entregable", "value": "deliverables/v1_geopackage/" },
+    { "label": "Resolución espacial H3", "value": "Res 8 (0.73 km²) + Res 10 costero" },
+    { "label": "Dataset Monte Carlo Gold", "value": "ierc_monte_carlo_h3_8.parquet (33 MB)" }
+  ],
+  "references": [
+    {
+      "authors": "Moreno-Báez et al.",
+      "year": "2011",
+      "title": "Integrating the spatial and temporal dimensions of fishing for management in the Northern Gulf of California",
+      "journal": "Marine Policy, 35(3), 297–309"
+    },
+    {
+      "authors": "Moreno-Báez et al.",
+      "year": "2012",
+      "title": "Integrating the spatial and temporal dimensions of fishing activities for management in the Northern Gulf of California",
+      "journal": "Marine Policy, 38, 483–489"
+    }
+  ]
+}

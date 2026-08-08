@@ -1,0 +1,22 @@
+{
+  "MPL_Saguaro_Puerto_Libertad": {
+    "zone": "Puerto Libertad (Saguaro GNL)",
+    "code": "PL-SAG-01",
+    "desc": "Terminal Saguaro Energía (30 MTPA total). Conexión con Gasoducto Sierra Madre (800 km). Pesca artesanal de camarón, chano y almeja."
+  },
+  "Amigo_LNG_Guaymas": {
+    "zone": "Guaymas (Amigo LNG)",
+    "code": "GYM-AMG-02",
+    "desc": "Terminal Amigo LNG (7.8 MTPA). Coordenadas exactas GEM Wiki. Puerto pesquero industrial de alta diversidad de artes."
+  },
+  "Vista_Pacifico_Topolobampo": {
+    "zone": "Topolobampo (Vista Pacífico LNG)",
+    "code": "TOP-VPA-03",
+    "desc": "PROYECTO CANCELADO Feb 2026. Afectaba Sitio Ramsar Topolobampo (21.9 ha) y ANP Islas del Golfo de California (2.15 km W)."
+  },
+  "GNL_Cosala_Sinaloa": {
+    "zone": "Mazatlán & Zapopan (GNL Cosalá)",
+    "code": "MZT-COS-04",
+    "desc": "Estaciones de compresión propano y almacenamiento. En evaluación ASEA (trámites 25SI2023G0009 y 14JA2025G0073)."
+  }
+}
