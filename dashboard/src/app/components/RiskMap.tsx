@@ -29,7 +29,7 @@ const LAYER_CONFIGS: LayerConfig[] = [
   { id: 'ductos_cnih',      name: 'Ductos CNIH/SENER (24 tramos, 6.4k km)', file: '/data/ductos_cnih.geojson', color: '#FF6B00' },
   { id: 'sener_gasoductos', name: 'SENER/CNIH Red Gasoductos (WMS)', file: '', color: '#FFB000' },
   { id: 'batimetria',       name: 'Contornos Batimétricos GEBCO 2024',file: '/data/batimetria_golfo.geojson', color: '#38BDF8' },
-  { id: 'h3_riesgo',        name: 'Malla H3 IERC (Res 8/9)',          file: '/data/grilla_h3_riesgo.geojson', color: '#F59E0B' },
+  { id: 'h3_riesgo',        name: 'Nivel de Riesgo por Zona',          file: '/data/grilla_h3_riesgo.geojson', color: '#F59E0B' },
   { id: 'gfw_fishing',      name: 'GFW Esfuerzo Pesquero (H3, 9960 celdas)', file: '/data/gfw_fishing_h3.geojson', color: '#6366F1' },
   { id: 'pangas',           name: 'PANGAS Multiespecie (4,241)',      file: '/data/zpesca_pangas_sample.geojson', color: '#8D6E63' },
   { id: 'buceo',            name: 'Pesca por Buceo (249)',            file: '/data/zpesca_buceo_sample.geojson', color: '#E91E63' },
