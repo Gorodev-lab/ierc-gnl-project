@@ -13,7 +13,6 @@ import logging
 from .base import BaseIngester, IngestionConfig
 from ..catalog.catalog import DataCatalog
 from src.utils.h3 import add_h3_column_vectorized, filter_df_bbox
-from src.utils.standardize import standardize_columns
 from src.utils.logging import setup_logging
 from config import get_causanatura_dir
 
@@ -180,6 +179,7 @@ class ASEAMIASIngester(BaseIngester):
             'pdf_url': ['pdf_url', 'url_pdf', 'pdf_link', 'url']
         }
         
+        # Inline standardize_columns logic
         for std_name, possible_names in column_map.items():
             for col in possible_names:
                 if col in df.columns:
@@ -254,8 +254,28 @@ class ASEAMIASIngester(BaseIngester):
 
 def create_asea_ingester(catalog, storage, **kwargs):
     """Factory para crear ASEAMIASIngester."""
-    from src.data.ingestion.factory import create_ingester
-    return create_ingester(ASEAMIASIngester, "asea_mias", catalog, storage, **kwargs)
+    # Inlined from factory.DATASET_DEFAULTS
+    defaults = {
+        "asea_mias": {
+            "layer": "silver",
+            "partition_cols": ["h3_cell_10", "year", "month"],
+            "h3_resolution": 10,
+            "bbox": (22.5, -115.0, 32.0, -108.0),
+            "compression": "zstd",
+            "batch_size": 50000,
+            "validate": True,
+            "cdc_key_column": "proyecto_id",
+            "cdc_hash_columns": ["nombre", "estado", "tipo_proyecto", "lat", "lon", "estatus", "capacidad_mtpa", "longitud_km", "folio_asea", "pdf_url"]
+        }
+    }
+    
+    config = IngestionConfig(dataset_name="asea_mias", **defaults.get("asea_mias", {}))
+    return ASEAMIASIngester(
+        config=config,
+        catalog=catalog,
+        storage=storage,
+        **kwargs
+    )
 
 
 if __name__ == "__main__":

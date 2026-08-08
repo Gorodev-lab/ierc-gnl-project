@@ -190,13 +190,42 @@ class TNCVectorIngester(BaseIngester):
 
 def create_tnc_ingester(catalog, storage, layer_name: str = "bajos_marinos", **kwargs):
     """Factory para crear TNCVectorIngester."""
-    from src.data.ingestion.factory import create_ingester
     dataset_map = {
         "bajos_marinos": "tnc_bajos_marinos",
         "arrecifes_coral_negro": "tnc_arrecifes_coral_negro",
     }
     dataset_name = dataset_map.get(layer_name, "tnc_bajos_marinos")
-    return create_ingester(TNCVectorIngester, dataset_name, catalog, storage, layers=[layer_name], **kwargs)
+    
+    # Inlined from factory.DATASET_DEFAULTS
+    defaults = {
+        "tnc_bajos_marinos": {
+            "layer": "silver",
+            "partition_cols": ["tnc_layer"],
+            "h3_resolution": 8,
+            "bbox": (22.5, -115.0, 32.0, -108.0),
+            "compression": "zstd",
+            "batch_size": 50000,
+            "validate": True
+        },
+        "tnc_arrecifes_coral_negro": {
+            "layer": "silver",
+            "partition_cols": ["tnc_layer"],
+            "h3_resolution": 8,
+            "bbox": (22.5, -115.0, 32.0, -108.0),
+            "compression": "zstd",
+            "batch_size": 50000,
+            "validate": True
+        }
+    }
+    
+    config = IngestionConfig(dataset_name=dataset_name, **defaults.get(dataset_name, {}))
+    return TNCVectorIngester(
+        config=config,
+        catalog=catalog,
+        storage=storage,
+        layers=[layer_name],
+        **kwargs
+    )
 
 
 if __name__ == "__main__":

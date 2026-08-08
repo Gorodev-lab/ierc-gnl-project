@@ -54,7 +54,7 @@ export default function MethodologyPanel() {
     fetch('/data/methodology.json')
       .then(r => r.json())
       .then(setData)
-      .catch(console.error)
+      .catch(() => {})
       .finally(() => setLoading(false))
   }, [])
 

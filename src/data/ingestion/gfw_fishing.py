@@ -483,13 +483,41 @@ class GFWFishingEffortIngester(BaseIngester):
 
 def create_gfw_ingester(dataset_type: str, catalog, storage, **kwargs):
     """Factory para crear GFWFishingEffortIngester."""
-    from src.data.ingestion.factory import create_ingester
     dataset_map = {
         "fishing_effort": "gfw_fishing_effort",
         "vessels": "gfw_vessels",
     }
     dataset_name = dataset_map.get(dataset_type, "gfw_fishing_effort")
-    return create_ingester(GFWFishingEffortIngester, dataset_name, catalog, storage, **kwargs)
+    
+    # Inlined from factory.DATASET_DEFAULTS
+    defaults = {
+        "gfw_fishing_effort": {
+            "layer": "silver",
+            "partition_cols": ["h3_cell", "year", "month"],
+            "h3_resolution": 8,
+            "bbox": (22.5, -115.0, 32.0, -108.0),
+            "compression": "zstd",
+            "batch_size": 100000,
+            "validate": True
+        },
+        "gfw_vessels": {
+            "layer": "silver",
+            "partition_cols": [],
+            "h3_resolution": 8,
+            "bbox": (22.5, -115.0, 32.0, -108.0),
+            "compression": "zstd",
+            "batch_size": 50000,
+            "validate": True
+        }
+    }
+    
+    config = IngestionConfig(dataset_name=dataset_name, **defaults.get(dataset_name, {}))
+    return GFWFishingEffortIngester(
+        config=config,
+        catalog=catalog,
+        storage=storage,
+        **kwargs
+    )
 
 
 if __name__ == "__main__":

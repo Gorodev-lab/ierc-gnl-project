@@ -73,7 +73,7 @@
     "cdc_key_column": null,
     "cdc_hash_columns": [],
     "created_at": "2026-08-04T21:43:04.370894",
-    "updated_at": "2026-08-05T02:36:09.206647"
+    "updated_at": "2026-08-08T14:27:14.891397"
   },
   {
     "name": "nasa_sst",
@@ -141,7 +141,7 @@
     "cdc_key_column": null,
     "cdc_hash_columns": [],
     "created_at": "2026-08-04T21:43:04.371451",
-    "updated_at": "2026-08-05T02:36:09.207417"
+    "updated_at": "2026-08-08T14:27:14.892275"
   },
   {
     "name": "gfw_fishing_effort",
@@ -244,7 +244,7 @@
     "cdc_key_column": null,
     "cdc_hash_columns": [],
     "created_at": "2026-08-04T21:43:04.371912",
-    "updated_at": "2026-08-05T02:36:09.208383"
+    "updated_at": "2026-08-08T14:27:14.893216"
   },
   {
     "name": "gfw_vessels",
@@ -320,7 +320,7 @@
     "cdc_key_column": null,
     "cdc_hash_columns": [],
     "created_at": "2026-08-04T21:43:04.372383",
-    "updated_at": "2026-08-05T02:36:09.208988"
+    "updated_at": "2026-08-08T14:27:14.893833"
   },
   {
     "name": "tnc_bajos_marinos",
@@ -402,7 +402,7 @@
     "cdc_key_column": null,
     "cdc_hash_columns": [],
     "created_at": "2026-08-04T21:43:04.372898",
-    "updated_at": "2026-08-05T02:36:09.209583"
+    "updated_at": "2026-08-08T14:27:14.894411"
   },
   {
     "name": "tnc_arrecifes_coral_negro",
@@ -470,7 +470,7 @@
     "cdc_key_column": null,
     "cdc_hash_columns": [],
     "created_at": "2026-08-04T21:43:04.373448",
-    "updated_at": "2026-08-05T02:36:09.210179"
+    "updated_at": "2026-08-08T14:27:14.894995"
   },
   {
     "name": "asea_mias_consolidated",
@@ -608,7 +608,7 @@
       "capacidad_mtpa"
     ],
     "created_at": "2026-08-04T21:43:04.374193",
-    "updated_at": "2026-08-05T02:36:09.210751"
+    "updated_at": "2026-08-08T14:27:14.895574"
   },
   {
     "name": "bathymetry_etopo1",
@@ -684,7 +684,7 @@
     "cdc_key_column": null,
     "cdc_hash_columns": [],
     "created_at": "2026-08-04T21:43:04.375095",
-    "updated_at": "2026-08-05T02:36:09.211295"
+    "updated_at": "2026-08-08T14:27:14.896159"
   },
   {
     "name": "bathymetry_gebco",
@@ -760,7 +760,7 @@
     "cdc_key_column": null,
     "cdc_hash_columns": [],
     "created_at": "2026-08-04T21:43:04.375886",
-    "updated_at": "2026-08-05T02:36:09.211853"
+    "updated_at": "2026-08-08T14:27:14.896733"
   },
   {
     "name": "pangas_fishing_zones",
@@ -834,6 +834,6 @@
     "cdc_key_column": null,
     "cdc_hash_columns": [],
     "created_at": "2026-08-04T21:43:04.376671",
-    "updated_at": "2026-08-05T02:36:09.212418"
+    "updated_at": "2026-08-08T14:27:14.897301"
   }
 ]

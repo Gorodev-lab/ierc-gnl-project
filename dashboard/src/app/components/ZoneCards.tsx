@@ -31,7 +31,7 @@ export default function ZoneCards() {
     fetch('/data/zone_meta.json')
       .then(r => r.json())
       .then(setZoneMeta)
-      .catch(console.error)
+      .catch(() => {})
   }, [])
 
   return (

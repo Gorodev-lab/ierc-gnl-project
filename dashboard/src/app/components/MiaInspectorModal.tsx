@@ -28,7 +28,7 @@ export default function MiaInspectorModal({ isOpen, onClose, featureProps }: Mia
       fetch('/assets/mias/manifest.json')
         .then(res => res.json())
         .then(data => setManifest(data))
-        .catch(console.error)
+        .catch(() => {})
     }
   }, [isOpen, manifest.length])
 

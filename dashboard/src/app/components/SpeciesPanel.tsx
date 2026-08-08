@@ -85,7 +85,7 @@ export default function SpeciesPanel() {
     fetch('/data/especies_criticas.json')
       .then(r => r.json())
       .then(setData)
-      .catch(console.error)
+      .catch(() => {})
   }, [])
 
   if (!data) return null

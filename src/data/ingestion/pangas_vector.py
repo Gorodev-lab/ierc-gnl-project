@@ -114,8 +114,26 @@ class PangasVectorIngester(BaseIngester):
 
 def create_pangas_ingester(catalog, storage, **kwargs):
     """Factory para crear PangasVectorIngester."""
-    from src.data.ingestion.factory import create_ingester
-    return create_ingester(PangasVectorIngester, "pangas_fishing_zones", catalog, storage, **kwargs)
+    # Inlined from factory.DATASET_DEFAULTS
+    defaults = {
+        "pangas_fishing_zones": {
+            "layer": "silver",
+            "partition_cols": [],
+            "h3_resolution": 8,
+            "bbox": (22.5, -115.0, 32.0, -108.0),
+            "compression": "zstd",
+            "batch_size": 50000,
+            "validate": True
+        }
+    }
+    
+    config = IngestionConfig(dataset_name="pangas_fishing_zones", **defaults.get("pangas_fishing_zones", {}))
+    return PangasVectorIngester(
+        config=config,
+        catalog=catalog,
+        storage=storage,
+        **kwargs
+    )
 
 
 if __name__ == "__main__":

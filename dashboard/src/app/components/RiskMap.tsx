@@ -328,7 +328,6 @@ export default function RiskMap() {
           const geoJson = await loadLayer(cfg.id, cfg.file)
           return { id: cfg.id, data: geoJson }
         } catch (err) {
-          console.error(`Error loading layer ${cfg.id}:`, err)
           return { id: cfg.id, data: null }
         }
       })
@@ -417,7 +416,6 @@ export default function RiskMap() {
           lastUpdated: new Date().toISOString().split('T')[0]
         })
       } catch (err: any) {
-        console.error('Error loading gfw_fishing:', err)
         setGfwError(err.message ?? 'Error desconocido')
         setActiveLayers(prev => ({ ...prev, gfw_fishing: false }))
       } finally {

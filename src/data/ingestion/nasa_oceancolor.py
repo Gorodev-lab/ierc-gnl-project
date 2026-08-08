@@ -202,13 +202,42 @@ class NASAOceanColorIngester(BaseIngester):
 
 def create_nasa_ingester(variable: str, catalog, storage, **kwargs):
     """Factory para crear NASAOceanColorIngester."""
-    from src.data.ingestion.factory import create_ingester
     dataset_map = {
         "chlor_a": "nasa_chlor_a",
         "sst": "nasa_sst",
     }
     dataset_name = dataset_map.get(variable, "nasa_chlor_a")
-    return create_ingester(NASAOceanColorIngester, dataset_name, catalog, storage, variable=variable, **kwargs)
+    
+    # Inlined from factory.DATASET_DEFAULTS
+    defaults = {
+        "nasa_chlor_a": {
+            "layer": "silver",
+            "partition_cols": ["year", "month"],
+            "h3_resolution": 8,
+            "bbox": (22.5, -115.0, 32.0, -108.0),
+            "compression": "zstd",
+            "batch_size": 50000,
+            "validate": False
+        },
+        "nasa_sst": {
+            "layer": "silver",
+            "partition_cols": ["year", "month"],
+            "h3_resolution": 8,
+            "bbox": (22.5, -115.0, 32.0, -108.0),
+            "compression": "zstd",
+            "batch_size": 50000,
+            "validate": False
+        }
+    }
+    
+    config = IngestionConfig(dataset_name=dataset_name, **defaults.get(dataset_name, {}))
+    return NASAOceanColorIngester(
+        config=config,
+        catalog=catalog,
+        storage=storage,
+        variable=variable,
+        **kwargs
+    )
 
 
 if __name__ == "__main__":

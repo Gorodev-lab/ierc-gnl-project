@@ -100,7 +100,7 @@ export default function CoverageModal({ isOpen, onClose }: { isOpen: boolean; on
       fetch('/data/reporte_cobertura.json')
         .then(res => res.json())
         .then(setData)
-        .catch(console.error)
+        .catch(() => {})
     }
   }, [isOpen, data])
 

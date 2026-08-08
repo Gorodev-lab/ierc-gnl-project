@@ -159,8 +159,26 @@ class BathymetryIngester(BaseIngester):
 
 def create_bathymetry_ingester(catalog, storage, **kwargs):
     """Factory para crear BathymetryIngester."""
-    from src.data.ingestion.factory import create_ingester
-    return create_ingester(BathymetryIngester, "bathymetry_gebco", catalog, storage, **kwargs)
+    # Inlined from factory.DATASET_DEFAULTS
+    defaults = {
+        "bathymetry_gebco": {
+            "layer": "silver",
+            "partition_cols": ["resolution"],
+            "h3_resolution": 8,
+            "bbox": (22.5, -115.0, 32.0, -108.0),
+            "compression": "zstd",
+            "batch_size": 50000,
+            "validate": True
+        }
+    }
+    
+    config = IngestionConfig(dataset_name="bathymetry_gebco", **defaults.get("bathymetry_gebco", {}))
+    return BathymetryIngester(
+        config=config,
+        catalog=catalog,
+        storage=storage,
+        **kwargs
+    )
 
 
 if __name__ == "__main__":

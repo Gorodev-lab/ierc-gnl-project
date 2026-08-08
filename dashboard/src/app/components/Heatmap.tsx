@@ -29,7 +29,6 @@ export default function Heatmap({ latLngs, options }: HeatmapProps) {
       if (typeof window === 'undefined') return
       const L = (window as any).L
       if (!L) {
-        console.warn('[Heatmap] Leaflet not available')
         return
       }
       if (!HeatLayerClass) {
@@ -37,7 +36,6 @@ export default function Heatmap({ latLngs, options }: HeatmapProps) {
           await import('leaflet.heat')
           HeatLayerClass = (L as any).heatLayer
         } catch (e) {
-          console.error('[Heatmap] Failed to load leaflet.heat:', e)
           return
         }
       }
@@ -74,9 +72,7 @@ export default function Heatmap({ latLngs, options }: HeatmapProps) {
 
       heatLayerRef.current = layer
       layer.addTo(map)
-      console.log('[Heatmap] Layer added', { points: latLngs.length, dataMax, effectiveMax })
     } catch (err) {
-      console.error('[Heatmap] Error creating layer:', err)
     }
 
     return () => {

@@ -95,7 +95,6 @@ export default function GasInfraPanel() {
         setLoading(false)
       })
       .catch(err => {
-        console.error('Error loading gas-infra API:', err)
         setLoading(false)
       })
   }, [])
