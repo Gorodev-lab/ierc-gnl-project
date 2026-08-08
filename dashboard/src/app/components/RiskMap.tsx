@@ -242,10 +242,7 @@ export default function RiskMap() {
   })
 
   const [gfwFilters, setGfwFilters] = useState({
-    year: 'all' as string,
-    month: 'all' as string,
-    geartype: 'all' as string,
-    flag: 'all' as string,
+    fleetGroup: 'all' as string,
   })
 
   // Heatmap intensity controls
@@ -513,10 +510,12 @@ export default function RiskMap() {
       ...layersData.gfw_fishing,
       features: features.filter(f => {
         const p = f.properties
-        return (gfwFilters.year === 'all' || String(p.year) === gfwFilters.year) &&
-               (gfwFilters.month === 'all' || String(p.month) === gfwFilters.month) &&
-               (gfwFilters.geartype === 'all' || p.geartype === gfwFilters.geartype) &&
-               (gfwFilters.flag === 'all' || p.flag === gfwFilters.flag)
+        const group = gfwFilters.fleetGroup
+        if (group === 'all') return true
+        if (group === 'artesanal') return p.geartype === 'set_gillnets' || p.geartype === 'pole_and_line'
+        if (group === 'industrial') return p.geartype === 'trawlers' || p.geartype === 'tuna_purse_seines' || p.geartype === 'other_purse_seines'
+        if (group === 'extranjera') return p.flag !== 'MEX'
+        return true
       })
     }
   }, [layersData.gfw_fishing, gfwFilters])
@@ -807,59 +806,21 @@ export default function RiskMap() {
                 borderRadius: 0,
               }}>
                 <div style={{ fontSize: '0.6875rem', fontWeight: 800, color: '#6366F1', marginBottom: '0.5rem', letterSpacing: '0.05em' }}>
-                  {'>'} FILTROS GFW PESQUERO
+                  {'>'} GRUPO DE FLOTA
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
-                  <div title="Filtrar por año de captura GFW (2016 o 2020).">
-                    <div>
-                      <label style={{ display: 'block', fontSize: '0.625rem', color: 'var(--color-text-secondary)', marginBottom: '0.2rem' }}>AÑO</label>
-                      <select value={gfwFilters.year} onChange={e => setGfwFilters(prev => ({ ...prev, year: e.target.value }))} style={{ width: '100%', background: 'var(--color-surface)', border: '1px solid var(--color-border)', color: 'var(--color-text-primary)', fontSize: '0.6875rem', padding: '0.3rem', fontFamily: 'var(--font-mono)' }}>
-                        <option value="all">Todos</option>
-                        <option value="2016">2016</option>
-                        <option value="2020">2020</option>
-                      </select>
-                    </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.625rem', color: 'var(--color-text-secondary)', marginBottom: '0.2rem' }}>GRUPO DE FLOTA</label>
+                    <select value={gfwFilters.fleetGroup} onChange={e => setGfwFilters(prev => ({ ...prev, fleetGroup: e.target.value }))} style={{ width: '100%', background: 'var(--color-surface)', border: '1px solid var(--color-border)', color: 'var(--color-text-primary)', fontSize: '0.6875rem', padding: '0.3rem', fontFamily: 'var(--font-mono)' }}>
+                      <option value="all">Todas las flotas</option>
+                      <option value="artesanal">Pesca Artesanal</option>
+                      <option value="industrial">Pesca Industrial</option>
+                      <option value="extranjera">Flota Extranjera</option>
+                    </select>
                   </div>
-                  <div title="Filtrar por mes (1-12).">
-                    <div>
-                      <label style={{ display: 'block', fontSize: '0.625rem', color: 'var(--color-text-secondary)', marginBottom: '0.2rem' }}>MES</label>
-                      <select value={gfwFilters.month} onChange={e => setGfwFilters(prev => ({ ...prev, month: e.target.value }))} style={{ width: '100%', background: 'var(--color-surface)', border: '1px solid var(--color-border)', color: 'var(--color-text-primary)', fontSize: '0.6875rem', padding: '0.3rem', fontFamily: 'var(--font-mono)' }}>
-                        <option value="all">Todos</option>
-                        {Array.from({length: 12}, (_, i) => i + 1).map(m => <option key={m} value={String(m)}>{String(m).padStart(2,'0')}</option>)}
-                      </select>
-                    </div>
+                  <div style={{ fontSize: '0.625rem', color: 'var(--color-text-muted)', marginTop: '0.5rem', fontFamily: 'var(--font-mono)' }}>
+                    {filteredGfwData ? filteredGfwData.features.length : 0} / {layersData.gfw_fishing?.features.length || 0} celdas
                   </div>
-                  <div title="Filtrar por tipo de arte de pesca (cerco, arrastre, palangre, etc.).">
-                    <div>
-                      <label style={{ display: 'block', fontSize: '0.625rem', color: 'var(--color-text-secondary)', marginBottom: '0.2rem' }}>ARTE</label>
-                      <select value={gfwFilters.geartype} onChange={e => setGfwFilters(prev => ({ ...prev, geartype: e.target.value }))} style={{ width: '100%', background: 'var(--color-surface)', border: '1px solid var(--color-border)', color: 'var(--color-text-primary)', fontSize: '0.6875rem', padding: '0.3rem', fontFamily: 'var(--font-mono)' }}>
-                        <option value="all">Todos</option>
-                        <option value="tuna_purse_seines">Tuna Purse Seines</option>
-                        <option value="fishing">Fishing (Generic)</option>
-                        <option value="pole_and_line">Pole and Line</option>
-                        <option value="trawlers">Trawlers</option>
-                        <option value="other_purse_seines">Other Purse Seines</option>
-                        <option value="set_gillnets">Set Gillnets</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div title="Filtrar por bandera del país de la embarcación.">
-                    <div>
-                      <label style={{ display: 'block', fontSize: '0.625rem', color: 'var(--color-text-secondary)', marginBottom: '0.2rem' }}>BANDERA</label>
-                      <select value={gfwFilters.flag} onChange={e => setGfwFilters(prev => ({ ...prev, flag: e.target.value }))} style={{ width: '100%', background: 'var(--color-surface)', border: '1px solid var(--color-border)', color: 'var(--color-text-primary)', fontSize: '0.6875rem', padding: '0.3rem', fontFamily: 'var(--font-mono)' }}>
-                        <option value="all">Todos</option>
-                        <option value="MEX">MEX</option>
-                        <option value="BMU">BMU</option>
-                        <option value="USA">USA</option>
-                        <option value="UNKNOWN-MEX">UNKNOWN-MEX</option>
-                        <option value="JAM">JAM</option>
-                        <option value="CAN">CAN</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div style={{ fontSize: '0.625rem', color: 'var(--color-text-muted)', marginTop: '0.5rem', fontFamily: 'var(--font-mono)' }}>
-                  {filteredGfwData ? filteredGfwData.features.length : 0} / {layersData.gfw_fishing?.features.length || 0} celdas
                 </div>
 
                 {/* Heatmap Intensity Controls */}

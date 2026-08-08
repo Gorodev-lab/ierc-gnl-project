@@ -26,11 +26,11 @@ export default function Heatmap({ latLngs, options }: HeatmapProps) {
   useEffect(() => {
     const initHeat = async () => {
       if (typeof window === 'undefined') return
-      // Leaflet se carga asíncronamente en RiskMap, esperar a que esté disponible
       let L = (window as any).L
-      while (!L) {
-        await new Promise(r => setTimeout(r, 100))
-        L = (window as any).L
+      if (!L) {
+        // Leaflet should already be loaded by RiskMap; if not, skip
+        console.warn('Leaflet not available for heatmap')
+        return
       }
       
       // Cargar leaflet.heat dinámicamente
