@@ -1,0 +1,12 @@
+pandas>=2.0.0
+geopandas>=0.14.0
+pyarrow>=14.0.0
+h3>=4.0.0
+shapely>=2.0.0
+pyyaml>=6.0
+pytest>=7.0.0
+numpy>=1.24.0
+scipy>=1.10.0
+duckdb>=0.8.0
+xarray>=2023.0.0
+netCDF4>=1.6.0
