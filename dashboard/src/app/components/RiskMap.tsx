@@ -249,7 +249,7 @@ export default function RiskMap() {
   const [heatmapOptions, setHeatmapOptions] = useState({
     radius: 25,
     blur: 15,
-    max: 2,
+    max: 4000,  // Data max is ~3762; default high enough to show full range
     minOpacity: 0.25,
   })
 
@@ -864,14 +864,14 @@ export default function RiskMap() {
                         <label style={{ display: 'block', fontSize: '0.625rem', color: 'var(--color-text-secondary)', marginBottom: '0.2rem' }}>MAX VALOR</label>
                         <input
                           type="range"
-                          min="0.5"
-                          max="10"
-                          step="0.1"
+                          min="10"
+                          max="5000"
+                          step="10"
                           value={heatmapOptions.max}
-                          onChange={e => setHeatmapOptions(prev => ({ ...prev, max: parseFloat(e.target.value) }))}
+                          onChange={e => setHeatmapOptions(prev => ({ ...prev, max: parseInt(e.target.value) }))}
                           style={{ width: '100%', accentColor: '#6366F1', cursor: 'pointer' }}
                         />
-                        <div style={{ fontSize: '0.5625rem', color: 'var(--color-text-muted)', textAlign: 'right' }}>{heatmapOptions.max.toFixed(1)}</div>
+                        <div style={{ fontSize: '0.5625rem', color: 'var(--color-text-muted)', textAlign: 'right' }}>{heatmapOptions.max}</div>
                       </div>
                     </div>
                     <div title="Opacidad mínima visible (0-50%). Evita que zonas de bajo valor desaparezcan.">

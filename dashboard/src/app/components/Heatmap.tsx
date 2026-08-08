@@ -15,7 +15,6 @@ interface HeatmapProps {
   }
 }
 
-// Variable a nivel de módulo para evitar re-definir la clase en cada render
 let HeatLayerClass: any = null
 
 export default function Heatmap({ latLngs, options }: HeatmapProps) {
@@ -23,69 +22,74 @@ export default function Heatmap({ latLngs, options }: HeatmapProps) {
   const heatLayerRef = useRef<any>(null)
   const [ready, setReady] = useState(false)
 
+  // Initialize leaflet.heat once
   useEffect(() => {
+    let mounted = true
     const initHeat = async () => {
       if (typeof window === 'undefined') return
-      let L = (window as any).L
+      const L = (window as any).L
       if (!L) {
-        // Leaflet should already be loaded by RiskMap; if not, skip
-        console.warn('Leaflet not available for heatmap')
+        console.warn('[Heatmap] Leaflet not available')
         return
       }
-      
-      // Cargar leaflet.heat dinámicamente
       if (!HeatLayerClass) {
         try {
           await import('leaflet.heat')
           HeatLayerClass = (L as any).heatLayer
-          setReady(true)
         } catch (e) {
-          console.error('Failed to load leaflet.heat:', e)
+          console.error('[Heatmap] Failed to load leaflet.heat:', e)
+          return
         }
       }
+      if (mounted) setReady(true)
     }
     initHeat()
+    return () => { mounted = false }
   }, [])
 
+  // Create/update heat layer when ready and data changes
   useEffect(() => {
     if (!ready || !latLngs?.length || !HeatLayerClass) return
     const L = (window as any).L
     if (!L) return
+
+    // Compute max from data - use passed max only if it's >= data max (user explicitly wants clamp)
+    const dataMax = latLngs.length ? Math.max(...latLngs.map(d => d[2])) : 100
+    const passedMax = options?.max
+    // If passed max is unreasonably low (< data max / 10), ignore it and use data max
+    const effectiveMax = (passedMax !== undefined && passedMax >= dataMax / 10) ? passedMax : Math.max(dataMax, 1)
+
+    // Gradient visible on dark basemap: start bright, not dark indigo
+    const defaultGradient = { 0.1: '#FFFF00', 0.3: '#FF8C00', 0.5: '#FF4444', 0.7: '#FF00FF', 1: '#FFFFFF' }
 
     try {
       const layer = HeatLayerClass(latLngs, {
         radius: options?.radius ?? 25,
         blur: options?.blur ?? 15,
         maxZoom: options?.maxZoom ?? 7,
-        gradient: options?.gradient ?? { 0.2: '#4F46E5', 0.4: '#6366F1', 0.6: '#818CF8', 0.8: '#A5B4FC', 1: '#FFFFFF' },
+        gradient: options?.gradient ?? defaultGradient,
         minOpacity: options?.minOpacity ?? 0.15,
-        max: options?.max ?? 100,
-        ...options,
+        max: effectiveMax,
       })
 
       heatLayerRef.current = layer
       layer.addTo(map)
+      console.log('[Heatmap] Layer added', { points: latLngs.length, dataMax, effectiveMax })
     } catch (err) {
-      console.error('Error creating heatLayer:', err)
+      console.error('[Heatmap] Error creating layer:', err)
     }
 
     return () => {
       if (heatLayerRef.current) {
-        try {
-          map.removeLayer(heatLayerRef.current)
-        } catch (e) {
-          // ignore removal errors during unmount
-        }
+        try { map.removeLayer(heatLayerRef.current) } catch {}
       }
     }
   }, [ready, latLngs, options, map])
 
-  // Update latLngs when they change
+  // Update latLngs on data change (without recreating layer)
   useEffect(() => {
-    if (heatLayerRef.current && latLngs) {
-      try {
-        heatLayerRef.current.setLatLngs(latLngs)
-      } catch (e) {}
+    if (heatLayerRef.current && latLngs?.length) {
+      try { heatLayerRef.current.setLatLngs(latLngs) } catch {}
     }
   }, [latLngs])
 
